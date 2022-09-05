@@ -11,10 +11,29 @@ It is also present in particle trajectory reconstruction algorithms, calorimeter
 One of the most common examples is the fitting of a particle species invariant mass distribution reconstructed from its decay products.
 It was famously used in the discovery of the Higgs boson \cite{ATLAS:2012yve,CMS:2012qbp}, in the  $\H\ra\Z\Zstar\ra 4\ell$ and $\H\ra\g\g$ decay channels.
 
-Fitting consists of two main steps: point estimation and confidence-interval estimation. 
+Fitting consists of two main steps: point estimation and uncertainty (confidence-interval) estimation. 
 In the latter, a best guess for a set of parameters is derived, which describes a given dataset.
 The former sets the confidence interval on each parameter in the set. 
-In this section, the mathematical background for fitting will be presented.
+In this section, the mathematical basis for fitting will be presented.
 
-\subsection{Loss}
+The overview here presents only the most relevant concepts and methods that were used in the work presented in this thesis. 
+For a more in-depth consideration of statistical methods in data science and physics, I refer the readers to Refs. \cite{Behnke:2013pga,Blobel_Lohrmann_1998,Bohm:2014vmk}, which the material presented here summarises.
+\subsection{Main definitions}
 
+
+The main frequentist parameter estimation approaches are maximum likelihood and least squares fits. \todo[inline]{Add sections here in the future}
+Bayesian approach is briefly discussed as well.
+The work that is summarised in this document mostly relies on the maximum likelihood method and is, therefore, discussed most widely.
+
+An observed dataset can be defined as $\vec{x} = (x_1, x_2,...,x_N)$, with $x_i$ being the result of $N$ independent measurements following an unknown probability density $f(x)$, and $i\in[0,N]$.
+The function $f(x)$ is, usually, not known and the shape is often parametrised as $f(x, a)$, where $\vec{a}=(a_1,...,a_M)$ is a dimension-$M$ vector of unknown-valued parameters. 
+For a fitting procedure, one has to construct an \textit{estimator}, which is a function of the observed data that can provide an estimated numerical value, $\hat{\vec{a}}$, corresponding to the parameter vector $\vec{a}$.
+
+Any estimator needs to satisfy four main criterion:
+
+\begin{itemize}
+    \item Consistency
+    \item Bias
+    \item Effectiveness
+    \item Robustness
+\end{itemize}
