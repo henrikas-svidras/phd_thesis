@@ -1,0 +1,14 @@
+%BIBTEX URL BREAK
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{7000}
+\setcounter{biburlnumpenalty}{7000}
+
+
+\makeatletter
+\if@twoside % commands below work only for twoside option of \documentclass
+    \newlength{\textblockoffset}
+    \setlength{\textblockoffset}{12mm}
+    \addtolength{\hoffset}{\textblockoffset}
+    \addtolength{\evensidemargin}{-2.0\textblockoffset}
+\fi
+\makeatother

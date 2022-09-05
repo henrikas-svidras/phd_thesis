@@ -1,57 +1,19 @@
 \documentclass[a4paper,11pt,twoside]{book}
 
 
-\usepackage[DIV=14,BCOR=2mm,headinclude=true,footinclude=false]{typearea}
-\usepackage{hyperref}
-\usepackage{url}
-
-\usepackage[T1]{fontenc}
-\usepackage{newpxtext,newpxmath}
-
-\usepackage[backend=biber,
-            hyperref=true,
-            sortcites=true,
-            url=false,
-            isbn=false,
-            backref=true,
-            style=ieee,
-            citereset=chapter,
-            maxcitenames=3,
-            maxbibnames=3,
-            doi=true,
-            dashed=false
-            block=none]{biblatex}
-
-%BIBTEX URL BREAK
-\setcounter{biburllcpenalty}{7000}
-\setcounter{biburlucpenalty}{7000}
-\setcounter{biburlnumpenalty}{7000}
-
-
-\makeatletter
-\if@twoside % commands below work only for twoside option of \documentclass
-    \newlength{\textblockoffset}
-    \setlength{\textblockoffset}{12mm}
-    \addtolength{\hoffset}{\textblockoffset}
-    \addtolength{\evensidemargin}{-2.0\textblockoffset}
-\fi
-\makeatother
-
-\input{belle2sym.tex}
+\input{inputs/packages.tex}
+\input{inputs/abbreviations.tex}
+\input{inputs/styling.tex}
 
 \begin{document}
 
-    \input{title.tex}
+% Chapters
+\input{title.tex}
 
-    \tableofcontents
+\tableofcontents
 
-    \chapter{New section}
 
-    This is the first section
 
-    \chapter{Next section}
-
-    This is the second section
 
 \end{document}
 
