@@ -5,6 +5,7 @@
 \input{inputs/abbreviations.tex}
 \input{inputs/styling.tex}
 
+%To be removed when thesis is finished
 \addbibresource{inputs/bibliography.bib}
 
 \begin{document}
@@ -19,8 +20,12 @@
 % Bibliography
 \newpage
 
+% To not get a stupid message saying "Page breaks have changed"
+\setlength\bibitemsep{1.7\itemsep plus 1pt minus 1pt}
 \printbibliography
 
+% To be removed when thesis is finished
+\newpage
 \end{document}
 
 
