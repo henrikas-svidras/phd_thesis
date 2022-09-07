@@ -107,7 +107,23 @@ It is interesting to note, that in the asymptotic limit, both the profiling and 
 However, reevaluating the likelihood for every given value of $a_k$ requires a minimisation of all other parameters, therefore the profiling method can be computationally intensive. 
 Therefore, it is often sufficient to apply the Hessian matrix inversion method, as long as additional checks are performed to ensure that the provided uncertainties are accurate.
 
-In high-energy physics, a commonly used minimisation software is \texttt{Minuit} \cite{James:1975dr,James:2296388}.
+In particle physics, a commonly used minimisation software is \texttt{Minuit} \cite{James:1975dr,James:2296388}.
 It implements the Hessian matrix inversion as the \texttt{HESSE} method and the likelihood-based uncertainty estimation method as \texttt{MINOS}.
 
-\section{Multivariate analysis}
+\section{Classification}
+
+When collecting data in measurements, many independent observations (`events') are usually performed in order to get a statistically significant sample.
+Resulting datasets generally contain a component of interest, often referred to as \textit{signal}, and many components which might show similar behaviour as the signal in certain distributions. 
+The latter is commonly referred to as \textit{background}. Disentangling the signal and background contributions in a given dataset is an extremely important task in Big-Data fields, where there may be hundreds or thousands of sub-components contributin to background that may be misclassified as signal.
+
+In particle physics, the signal component usually refers to a single or a group of decay channels, whose properties are being measured. 
+The most straightforward approach is to separate signal and background events by imposing requirements on observables, that are typical or expected for signal.
+A requirement on some observable is often referred to as a \textit{selection} or a \textit{cut}.
+The downside to this is that there can be non-linear underlying correlations between different selections, which might make them less efficient at background process separation than they could be in conjunction with other observables. 
+Therefore, a multidimensional observable space is often desired.
+
+This section introduces the multivariate analyses concepts and boosted decision trees, which is a machine learning technique that can perform classification tasks. 
+The material presented here is only a summary detailing techniques used in the analyses presented in the thesis.
+For detailed overview of multivariate-classification techniques I refer the reader to to Ref.\cite{Behnke:2013pga}.
+
+\subsection{Multivariate classification}
