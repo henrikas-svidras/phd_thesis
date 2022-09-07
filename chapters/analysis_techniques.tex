@@ -9,14 +9,14 @@ It is one of the key tasks of statistical analyses and, consequentially, particl
 Nearly every particle physics analysis features some kind of fitting for the result extraction. 
 It is also present in particle trajectory reconstruction algorithms, calorimeter cluster shape parametrisation, and calibration procedures.
 One of the most common examples is the fitting of a particle species invariant mass distribution reconstructed from its decay products.
-It was famously used in the discovery of the Higgs boson \cite{ATLAS:2012yve,CMS:2012qbp}, in the  $\H\ra\Z\Zstar\ra 4\ell$ and $\H\ra\g\g$ decay channels.
+It was, for example, famously used in the discovery of the Higgs boson \cite{ATLAS:2012yve,CMS:2012qbp}, in the  $\H\ra\Z\Zstar\ra 4\ell$ and $\H\ra\g\g$ decay channels.
 
 Fitting consists of two main steps: point estimation and uncertainty (confidence-interval) estimation. 
-In the latter, a best guess for a set of parameters is derived, which describes a given dataset.
-The former sets the confidence interval on each parameter in the set. 
+In the former, a best estimate for a set of parameters is derived, which describes a given dataset.
+The latter sets the confidence interval on each parameter estimate in the set. 
 
-The overview here presents only the most relevant concepts and methods that were used in the work presented in this thesis. 
-For a more in-depth consideration of statistical methods in data science and physics, I refer the readers to Refs. \cite{Behnke:2013pga,Blobel_Lohrmann_1998} and for rigorous proofs of the underlying statistical concepts, \cite{Bohm:2014vmk,James_2006}. The material presented here only summarises the details in these books.
+The overview here presents only a brief overview of the most relevant method that was used in the work presented in this thesis. 
+For a more in-depth consideration of statistical methods in data science and physics, I refer the readers to Refs. \cite{Behnke:2013pga,Blobel_Lohrmann_1998} and for rigorous proofs of the underlying statistical concepts, Refs. \cite{Bohm:2014vmk,James_2006}. The material presented here only summarises the details in these books.
 \subsection{Maximum-likelihood method}
 
 One of the most common and popular methods for fitting is the maximum-likelihood method. It is also used here widely in Chapter \todo[inline]{give chapter name}
@@ -24,7 +24,6 @@ One of the most common and popular methods for fitting is the maximum-likelihood
 An observed dataset can be defined as $x = (x_1, x_2,...,x_N)$, with $x_i$ being the result of $N$ independent measurements following an unknown probability density $f(x)$, and $i\in[0,N]$.
 The function $f(x)$ is, usually, not known and the shape is often parametrised as $f(x; a)$, where $a=(a_1,...,a_M)$ is a dimension-$M$ vector of unknown-valued parameters. 
 For a fitting procedure, one has to construct an \textit{estimator}, which is a function of the observed data that can provide an estimated numerical value, $\hat{a}$, corresponding to the parameter vector $a$.
-
 % Any estimator should satisfy four main criterion:
 
 % \begin{itemize}
@@ -46,14 +45,15 @@ For a fitting procedure, one has to construct an \textit{estimator}, which is a 
 % \end{itemize}
 %Usually, it is difficult to choose an estimator that can satisfy all of these criterion simultaneously. One common estimator is the maximum-likelihood estimator.
 
+A very common technique for an estimator is the so-called maximum-likelihood estimate, which uses the likelihood function.
 The likelihood function is built from one- or multi-dimensional PDFs $f(x;a)$ of the measured values $x$:
 \begin{equation}
     \mathcal{L}(x;a) = \prod_{i=1}^N f(x_i; a).
 \end{equation}
-The PDFs used to construct the likelihood function have to be normalised, which implies that the integral of the likelihood function is independent of parameters $a$:
-\begin{equation}
-    \int f(x;a)dx = 1 \quad \ra \quad \int \mathcal{L}(x;a)dx_1dx_2...dx_N = 1
-\end{equation}
+% The PDFs used to construct the likelihood function have to be normalised, which implies that the integral of the likelihood function is independent of parameters $a$:
+% \begin{equation}
+%     \int f(x;a)dx = 1 \quad \ra \quad \int \mathcal{L}(x;a)dx_1dx_2...dx_N = 1.
+% \end{equation}
 In this case, the maximum-likelihood estimate of the parameters $a$ correspond to $\hat{a}$ for which $\mathcal{L}(x;a)$ is globally maximised.
 Because the product of a large number of components can vary over many orders of magnitude, in real-life applications it is more convenient to work with sums.
 Therefore, a log-likelihood function is used in practice:
@@ -61,35 +61,53 @@ Therefore, a log-likelihood function is used in practice:
     l(x;a) \equiv \ln\mathcal{L}(x;a) = \sum_{i=1}^N \ln f(x_i;a).
 \end{equation}
 It is worthwhile to note that a logarithm is a monotonic function, therefore the maximum of a function is the same as the maximum of its logarithm. 
-The maximum of the likelihood function satisfies the standard requirement for an extremum point:
+The maximum of the log-likelihood function satisfies the standard requirement for an extremum point:
 
 \begin{equation}\label{eq:likelihood_equation}
     \pdv{l(x;a)}{a_j}=0 \quad \mathrm{for} \quad j=1,...,M.
 \end{equation}
 The roots of \Cref{eq:likelihood_equation} are maximum-likelihood estimates of $\hat{a}$. Generally, it is impossible to find an extremum in a large parameter space using analytical methods.
-In practice, numerical procedures and optimisers are usually used.
-Many optimisers used in modern day computers tend to minimise functions, rather than maximise them, therefore a \textit{negative log-likelihood} function is often used in practice. \todo[inline]{Add here examples/quote/further explanations} 
+In practice, numerical procedures and dedicated software packages for optimisation are usually used.
+Many optimisers used in modern day computers tend to minimise functions, rather than maximise them, therefore a \textit{negative log-likelihood} function is often used. \todo[inline]{Add here examples/quote/further explanations} 
 Maximum-likelihood method is unbiased and consistent as the number of measurements grows, i.e. $N\ra\infty$.
 However, it requires a good prior knowledge of the form of the PDF $f(x;a)$, as otherwise the result might be incorrect.
 
-The likelihood function generally can have any non-Gaussian shape, however it can be shown that as the number of measurements grow, $N\ra\infty$, 
-any given $f(x;a)$ can be approximated with a multivariate Gaussian distribution:
+\subsection{Variance of the maximum-likelihood method}
+
+The likelihood function generally can have any non-Gaussian shape, however it can be shown~\cite{James_2006} that in the asymptotic limit, $N\ra\infty$, 
+any given $f(x;a)$ can have its likelihood function approximated with a multivariate Gaussian distribution:
 
 \begin{equation}
-    L \propto \exp{-\frac{1}{2}(a-\hat{a})^T H(a-\hat{a})},
+    \mathcal{L} \propto \exp{-\frac{1}{2}(a-\hat{a})^T H(a-\hat{a})},
 \end{equation}
-where $H$ is the Hessian matrix of the log-likelihood function. Assuming a good minimum is found (\Cref{eq:likelihood_equation}), the log-likelihood function can be expanded at $a=\hat{a}$:
+where $H$ is the Hessian matrix of the log-likelihood function. Assuming a good minimum is found (\Cref{eq:likelihood_equation}), the log-likelihood function can be expanded at $a=\hat{a}$ and approximated as a parabola:
 \begin{equation}
-    l(x;a_1,a_2,...,a_N) = l(x;\hat{a}_1,\hat{a}_2,...,\hat{a}_N) + \frac{1}{2}\sum_{i,k} \pdv{l}{a_i}{a_k}(a_i-\hat{a}_i)(a_k-\hat{a}_k)+...,
+    l(x;a_1,a_2,...,a_N) = l(x;\hat{a}_1,\hat{a}_2,...,\hat{a}_N) + \frac{1}{2}\sum_{i,k} \pdv{l}{a_i}{a_k} (a_i-\hat{a}_i)(a_k-\hat{a}_k)+...
 \end{equation}
-and in this case the covariance matrix,$V(\hat{a})$ of the estimated parameter vector is equal to the inverted Hessian matrix, taken at the maximum-likelihood estimate $\hat{a}$:
+In this case, the covariance matrix, $V(\hat{a})$, of the estimated parameter vector is approximated as the inverted Hessian matrix, taken at the maximum-likelihood estimate $\hat{a}$:
 \begin{equation}
     V(\hat{a}) = \left[-\pdv[2]{l(x;a)}{a}\middle|{}_{a=\hat{a}}\right]^{-1} = H^{-1}.
 \end{equation}
-This gives the uncertainty for each estimated parameter $a_j$ as:
+This gives a symmetric uncertainty for each estimated parameter $a_j$ as:
 \begin{equation}
-    \hat{\sigma}_{a_j} = \sqrt{\hat{V}_jj(\hat{a})}.
+    \hat{\sigma}_{a_j} = \sqrt{\hat{V}_{jj}(\hat{a})}.
 \end{equation}
-This method, unless the parameters are known very precisely, is an approximation of the true covariance matrix.
+This method is always an approximation of the true covariance matrix, because the likelihood function shape is approximated as a parabola.
 
-A more rigorous approach to profile the likelihood function.
+A more rigorous approach is to profile the likelihood function in order to calculate a likelihood-based confidence interval.
+A profile likelihood ratio for a single parameter, $a_k$, is defined as:
+\begin{equation}
+    \lambda_{\mu} = \frac{l(x;a_k,\hat{\hat{a}})}{l(x;\hat{a_k},\hat{a})},
+\end{equation} 
+where the numerator is the log-likelihood for a set of parameters $\hat{\hat{a}}$ estimated for some given value of $a_k$. 
+The denominator is the likelihood evaluated at the global extremum of the likelihood. 
+The method follows the likelihood ratio function from the minimum to find where it crosses the value corresponding to a desired confidence interval.
+In general, this leads to asymmetric uncertainty bars and a different result than uncertainties estimated by the Hessian matrix inversion method.
+It is interesting to note, that in the asymptotic limit, both the profiling and Hessian matrix inversion methods give the same results.
+However, reevaluating the likelihood for every given value of $a_k$ requires a minimisation of all other parameters, therefore the profiling method can be computationally intensive. 
+Therefore, it is often sufficient to apply the Hessian matrix inversion method, as long as additional checks are performed to ensure that the provided uncertainties are accurate.
+
+In high-energy physics, a commonly used minimisation software is \texttt{Minuit} \cite{James:1975dr,James:2296388}.
+It implements the Hessian matrix inversion as the \texttt{HESSE} method and the likelihood-based uncertainty estimation method as \texttt{MINOS}.
+
+\section{Multivariate analysis}
