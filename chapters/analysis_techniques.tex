@@ -16,8 +16,9 @@ In the former, a best estimate for a set of parameters is derived, which describ
 The latter sets the confidence interval on each parameter estimate in the set. 
 
 The overview here presents only a brief overview of the most relevant method that was used in the work presented in this thesis. 
-For a more in-depth consideration of statistical methods in data science and physics, I refer the readers to Refs. \cite{Behnke:2013pga,Blobel_Lohrmann_1998} and for rigorous proofs of the underlying statistical concepts, Refs. \cite{Bohm:2014vmk,James_2006}. The material presented here only summarises the details in these books.
-\subsection{Maximum-likelihood method}
+For a more in-depth consideration of statistical methods in data science and physics, I refer the readers to Refs. \cite{Behnke:2013pga,Blobel_Lohrmann_1998} and for rigorous proofs of the underlying statistical concepts, Refs. \cite{Bohm:2014vmk,James_2006,Barlow:1990vc}. 
+The material presented here only summarises the details in these books and articles.
+\subsection{Maximum-likelihood method}\label{sec:mle}
 
 One of the most common and popular methods for fitting is the maximum-likelihood method. It is also used here widely in Chapter \todo[inline]{give chapter name}
 
@@ -47,7 +48,7 @@ For a fitting procedure, one has to construct an \textit{estimator}, which is a 
 
 A very common technique for an estimator is the so-called maximum-likelihood estimate, which uses the likelihood function.
 The likelihood function is built from one- or multi-dimensional PDFs $f(x;a)$ of the measured values $x$:
-\begin{equation}
+\begin{equation}\label{eq:likelihood_equation}
     \mathcal{L}(x;a) = \prod_{i=1}^N f(x_i; a).
 \end{equation}
 % The PDFs used to construct the likelihood function have to be normalised, which implies that the integral of the likelihood function is independent of parameters $a$:
@@ -63,16 +64,17 @@ Therefore, a log-likelihood function is used in practice:
 It is worthwhile to note that a logarithm is a monotonic function, therefore the maximum of a function is the same as the maximum of its logarithm. 
 The maximum of the log-likelihood function satisfies the standard requirement for an extremum point:
 
-\begin{equation}\label{eq:likelihood_equation}
+\begin{equation}\label{eq:likelihood_derivative}
     \pdv{l(x;a)}{a_j}=0 \quad \mathrm{for} \quad j=1,...,M.
 \end{equation}
-The roots of \Cref{eq:likelihood_equation} are maximum-likelihood estimates of $\hat{a}$. Generally, it is impossible to find an extremum in a large parameter space using analytical methods.
+The roots of \Cref{eq:likelihood_derivative} are maximum-likelihood estimates of $\hat{a}$. Generally, it is impossible to find an extremum in a large parameter space using analytical methods.
 In practice, numerical procedures and dedicated software packages for optimisation are usually used.
-Many optimisers used in modern day computers tend to minimise functions, rather than maximise them, therefore a \textit{negative log-likelihood} function is often used. \todo[inline]{Add here examples/quote/further explanations} 
+Many optimisers used in modern day computers tend to minimise functions, rather than maximise them, therefore a \textit{negative log-likelihood} function is often used.
 Maximum-likelihood method is unbiased and consistent as the number of measurements grows, i.e. $N\ra\infty$.
 However, it requires a good prior knowledge of the form of the PDF $f(x;a)$, as otherwise the result might be incorrect.
 
-\subsection{Variance of the maximum-likelihood method}
+\subsection{Variance of the maximum-likelihood method}\label{sec:mle_variance}
+
 
 The likelihood function generally can have any non-Gaussian shape, however it can be shown~\cite{James_2006} that in the asymptotic limit, $N\ra\infty$, 
 any given $f(x;a)$ can have its likelihood function approximated with a multivariate Gaussian distribution:
@@ -86,7 +88,7 @@ where $H$ is the Hessian matrix of the log-likelihood function. Assuming a good 
 \end{equation}
 In this case, the covariance matrix, $V(\hat{a})$, of the estimated parameter vector is approximated as the inverted Hessian matrix, taken at the maximum-likelihood estimate $\hat{a}$:
 \begin{equation}
-    V(\hat{a}) = \left[-\pdv[2]{l(x;a)}{a}\middle|{}_{a=\hat{a}}\right]^{-1} = H^{-1}.
+    V(\hat{a}) = \left[-\pdv[2]{l(x;a)}{a}\middle|^{}_{\ds a=\hat{a}}\right]^{-1} = H^{-1}.
 \end{equation}
 This gives a symmetric uncertainty for each estimated parameter $a_j$ as:
 \begin{equation}
@@ -109,12 +111,48 @@ Therefore, it is often sufficient to apply the Hessian matrix inversion method, 
 
 In particle physics, a commonly used minimisation software is \texttt{Minuit} \cite{James:1975dr,James:2296388}.
 It implements the Hessian matrix inversion as the \texttt{HESSE} method and the likelihood-based uncertainty estimation method as \texttt{MINOS}.
+\subsection{Extended maximum-likelihood}
+
+In particle physics, it is common to not only parametrise a shape of a distribution of an observable, but also measure the absolute rate (normalisation) of the distribution.
+The standard setup for maximum-likelihood method does not allow to determine the absolute normalisation. 
+An additional term to the likelihood is to be introduced.
+In Nature, if a measurement is performed repeatedly, its rate will fluctuate according to Poissonian statisics.
+Hence, the \cref{eq:likelihood_equation}, needs to be have a Poissonian term included:
+\begin{equation}\label{eq:extended_likelihood}
+    \mathcal{L}(x;a) = \frac{\nu^N}{N!}\exp(-\nu)\prod_{i=1}^N f(x;a),
+\end{equation}
+where $N$ is the observed number of events and $\nu$ is the expected, or `true', normalisation. 
+Such a modified likelihoon is called \textit{extended} likelihood.
+Taking the logarithm of \Cref{eq:extended_likelihood} gives:
+\begin{equation}\label{eq:extended_log_likelihood}
+    l(x;a) = -\nu + N\ln{\nu} + \sum_{i=1}^N \ln (f(x;a)) + C,
+\end{equation}
+where $C$ is independent of $a$ and $\nu$. 
+The extended log-likelihood fitting otherwise follows the same procedure as \Cref{sec:mle,sec:mle_variance}.
+As such, when optimising \Cref{eq:extended_log_likelihood} for $a$ and $\nu$, the constant parameter $C$ can be ignored.
+
+\subsection{Unbinned maximum-likelihood fitting}
+
+There are two ways that data can be arranged for a fit: 
+
+\begin{itemize}
+    \item Each event enters the likelihood function (\Cref{eq:likelihood_derivative} or \Cref{eq:extended_likelihood}) independently,
+    \item Events are first grouped in intervals of the observable $x$ and the count of measurements falling into each interval are provided as inputs to the likelihood function.
+\end{itemize}
+The intervals are often referred to as \textit{bins}. 
+Consequentially, the techniques are referred to as \textit{unbinned} and \textit{binned} fits, respectively.
+In this thesis, unbinned maximum-likelihood fits have been used. 
+They are computationally more intensive, but are always more statistically-optimal than binned fits. 
+
+Throughout this thesis, fitting is implemented using the \texttt{zfit} framework \cite{ESCHLE2020100508}. 
+It provides a Python-based library that is developed to fulfill particle physics fitting requirements.
+The \texttt{zfit} framework implements minimisation using the \texttt{iminuit} minimiser \cite{iminuit} which is a Python-friendly implementation of \texttt{Minuit}.
 
 \section{Classification}
 
 When collecting data in measurements, many independent observations (`events') are usually performed in order to get a statistically significant sample.
 Resulting datasets generally contain a component of interest, often referred to as \textit{signal}, and many components which might show similar behaviour as the signal in certain distributions. 
-The latter is commonly referred to as \textit{background}. Disentangling the signal and background contributions in a given dataset is an extremely important task in Big-Data fields, where there may be hundreds or thousands of sub-components contributin to background that may be misclassified as signal.
+The latter is commonly referred to as \textit{background}. Disentangling the signal and background contributions in a given dataset is an extremely important task in Big-Data fields, where there may be hundreds or thousands of sub-components contributing to background that may be misclassified as signal.
 
 In particle physics, the signal component usually refers to a single or a group of decay channels, whose properties are being measured. 
 The most straightforward approach is to separate signal and background events by imposing requirements on observables, that are typical or expected for signal.
