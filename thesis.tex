@@ -4,6 +4,7 @@
 \input{inputs/packages.tex}
 \input{inputs/abbreviations.tex}
 \input{inputs/styling.tex}
+\input{inputs/glossary.tex}
 
 %To be removed when thesis is finished
 \addbibresource{inputs/bibliography.bib}
@@ -17,9 +18,12 @@
 
 \input{chapters/analysis_techniques.tex}
 
+% Glossary
+\newpage
+\printnoidxglossaries
+
 % Bibliography
 \newpage
-
 % To not get a stupid message saying "Page breaks have changed"
 \setlength\bibitemsep{1.7\itemsep plus 1pt minus 1pt}
 \printbibliography

@@ -149,8 +149,8 @@ It provides a Python-based library that is developed to fulfill particle physics
 The \texttt{zfit} framework implements minimisation using the \texttt{iminuit} minimiser \cite{iminuit} which is a Python-friendly implementation of \texttt{Minuit}.
 
 \section{Classification}
-
-When collecting data in measurements, many independent observations (`events') are usually performed in order to get a statistically significant sample.
+\todo[inline]{This section needs to be called differently, maybe Decision Theory, let's see}
+When collecting data in measurements, many independent observations (\textit{events}) are usually performed in order to get a statistically significant sample.
 Resulting datasets generally contain a component of interest, often referred to as \textit{signal}, and many components which might show similar behaviour as the signal in certain distributions. 
 The latter is commonly referred to as \textit{background}. Disentangling the signal and background contributions in a given dataset is an extremely important task in Big-Data fields, where there may be hundreds or thousands of sub-components contributing to background that may be misclassified as signal.
 
@@ -159,9 +159,71 @@ The most straightforward approach is to separate signal and background events by
 A requirement on some observable is often referred to as a \textit{selection} or a \textit{cut}.
 The downside to this is that there can be non-linear underlying correlations between different selections, which might make them less efficient at background process separation than they could be in conjunction with other observables. 
 Therefore, a multidimensional observable space is often desired.
+However, as the number of observables used in a selection grows, the tuning of such multi-dimensional selection becomes increasingly difficult.
 
-This section introduces the multivariate analyses concepts and boosted decision trees, which is a machine learning technique that can perform classification tasks. 
+
+This sections introduces some relevant techniques to combine the informational of all observables of an event. 
+Particularly, it overviews multivariate classification algorithms (\MVA{s}) concepts and boosted decision trees (\BDT{s}). 
 The material presented here is only a summary detailing techniques used in the analyses presented in the thesis.
-For detailed overview of multivariate-classification techniques I refer the reader to to Ref.\cite{Behnke:2013pga}.
+For detailed overview of multivariate-classification techniques I refer the reader to Ref.\cite{Behnke:2013pga} and for their underlying statistical framework to \cite{Hastie_Tibshirani_Friedman_2001,bishop_2016}.
 
 \subsection{Multivariate classification}
+
+In this subsection, binary classification is implied, as this is the most relevant for the work presented in this thesis. 
+In general, a multi-class \MVA classifier can be broken down into a series of binary \MVA classifiers.
+
+Let us assume, an event is described by $N$ observables, $X=\{x_1,x_2,...,x_N\}$. This is also known as a \textit{feature~vecture}.
+Formally, an \MVA classifier is a mapping function, $f$, that maps the $N$-dimenstional feature vector, $x$, to a single real number, $y$:
+\begin{equation}
+    \mathbb{R}^N \ra \mathbb{R}: y = f(x).
+\end{equation}
+This can then be interpreted as a hypersurface in an $N$-dimensional feature space.
+Signal is usually classified as $y=1$, whereas background as $y=0$, although different labelling is possible and mostly conventional.
+The classifier may therefore output any value between 0 and 1.
+
+The goal of multivariate classification is to build a classifier based on a set of examples: $\{X, Y\} = \{(x_1,y_1),..., (x_M,y_M)\}$, where $M$ is the number of events, and $y_i\in{0,1}$ is an associated \textit{target}.
+The building of such a classifier is called \textit{training}, and $\{X, Y\}$ is called a \textit{training sample}.
+In general, it is also possible to perform a training where no targets, $Y$, are supplied. 
+In this case, the training is called \textit{unsupervised} learning.
+The methods used for data analysis in this thesis only use \textit{supervised} learning.
+
+Mathematically, a \textit{loss function} is desired which returns the discrepancy between training targets, $Y$ and the prediction, $\hat{Y}$, corresponding to the training sample, $X$:
+\begin{equation}
+    \mathcal{L}(Y, \hat{Y} = f(X;a)),
+\end{equation}
+where $a$ is a set of internal degrees of freedom, describing the model. 
+In this formalism, one can minimize the loss to extract a set of parameters that provide the smallest difference between $Y$ and $\hat{Y}$.
+This problem is then equivalent as described in \Cref{sec:mle}, with a different likelihood function.
+
+Classifiers with a smaller number of degrees of freedom tend to be more robust against statistical fluctuations of a sample (smaller variance).
+However, this might make the model unable to learn the more intricate details in the training sample, and lead to bias when applied on a statistically-independent sample.
+Balancing these two requirements is known as the \textit{bias-variance trade-off}. 
+Usually, one uses a \textit{validation} sample, which is equivalent but statistically independent from the training sample.
+An optimally trained classifier will perform the same on the validation and training samples. 
+After the optimal training point of the classifier is reached, further training will only degrade the performance of the classifier on the validation sample.
+This regime is called \textit{overtraining} and needs to be avoided.
+
+\begin{figure}[htbp!]
+    \missingfigure{ROC curve here, AUC + classifier separation}
+\end{figure}
+
+There are many different ways to test for overtraining, but all of them usually rely on comparing the classifier performance between the training sample and a third, independent \textit{testing sample}.
+In particle physics, it is common to use the validation sample also as a testing sample, although formally they should be different.
+To compare the performance on training sample versus testing sample a receiver operating characteristic (\ROC) is often used.
+A \ROC curve represents the the true positive rate as a function of the false positive rate and is calculated by iterating over all possible \MVA classifier outputs.
+Furthermore, an area-under-curve (\AUC) score can be defined which is computed by integrating the \ROC curve.
+An $\mathrm{\AUC}=1$ would represent false positive rate of 0, and a true positive rate of 1. 
+The least-optimal classifier would provide a random guess and have a false-positive and true-positive rate of 0.5, and $\mathrm{\AUC}=0.5$.
+
+\subsection{(Boosted) decision trees}
+
+\todo[inline]{I probably need to talk about non parametric vs parametric in previous chapter, list some examples and say that I'll only talk about BDT}
+
+When combining many different features together, selecting an appropriately parametrised classifier model can nearly impossible.
+Therefore, often non-parametric models are desired, and a common way to implement these are decision trees.
+
+A decision tree is a classification technique where the $N$-dimensional feature space is divided based on a series of binary selections.
+A simple model (often a constant) is used to make a split in each of the feature space regions, and the splitting process is then repeated on the two resulting regions.
+The number of the selections is called the \textit{depth} of the classifier.
+Each final region which has not been sub-splitted is called a \textit{leaf}. 
+A set of selections leading to a leaf is known as a \textit{branch}.
