@@ -178,28 +178,27 @@ Formally, an \MVA classifier is a mapping function, $f$, that maps the $N$-dimen
     \mathbb{R}^N \ra \mathbb{R}: y = f(x).
 \end{equation}
 This can then be interpreted as a hypersurface in an $N$-dimensional feature space.
-Signal is usually classified as $y=1$, whereas background as $y=0$, although different labelling is possible and mostly conventional.
 The classifier may therefore output any value between 0 and 1.
 
-The goal of multivariate classification is to build a classifier based on a set of examples: $\{X, Y\} = \{(x_1,y_1),..., (x_M,y_M)\}$, where $M$ is the number of events, and $y_i\in{0,1}$ is an associated \textit{target}.
-The building of such a classifier is called \textit{training}, and $\{X, Y\}$ is called a \textit{training sample}.
-In general, it is also possible to perform a training where no targets, $Y$, are supplied. 
-In this case, the training is called \textit{unsupervised} learning.
-The methods used for data analysis in this thesis only use \textit{supervised} learning.
+The goal of multivariate classification is to build a classifier based on a set of pre-arranged examples $\{(\vec{x_1},y_1),..., (\vec{x_J},y_J)\}$, where $J$ is the number of events, and $y_j\in\{0,1\}$ is an associated \textit{target}.
+The building of such a classifier is called \textit{training}, and the set of examples is called a \textit{training sample}.
+In general, it is also possible to perform a training where no targets are supplied. 
+These types of methods are called \textit{unsupervised}.
+The methods used for data analysis in this thesis are \textit{supervised} and presented in this section.
 
-Mathematically, a \textit{loss function} is desired which returns the discrepancy between training targets, $Y$ and the prediction, $\hat{Y}$, corresponding to the training sample, $X$:
-\begin{equation}
-    \mathcal{L}(Y, \hat{Y} = f(X;a)),
+Mathematically, a \textit{loss function} is desired which returns the discrepancy between training targets, $y$ and the prediction, $\hat{y}$, corresponding to the input data, $\vec{x}$:
+\begin{equation}\label{eq:loss_function}
+    \mathcal{L}(y, \hat{y} = f(\vec{x};\vec{a})),
 \end{equation}
-where $a$ is a set of internal degrees of freedom, describing the model. 
-In this formalism, one can minimize the loss to extract a set of parameters that provide the smallest difference between $Y$ and $\hat{Y}$.
+where $\vec{a}$ is a set of internal degrees of freedom, describing the model. 
+In this formalism, one can minimize the loss to extract a set of parameters that provide the smallest difference between $y$ and $\hat{y}$.
 This problem is then equivalent as described in \Cref{sec:mle}, with a different likelihood function.
 
 Classifiers with a smaller number of degrees of freedom tend to be more robust against statistical fluctuations of a sample (smaller variance).
 However, this might make the model unable to learn the more intricate details in the training sample, and lead to bias when applied on a statistically-independent sample.
 Balancing these two requirements is known as the \textit{bias-variance trade-off}. 
 Usually, one uses a \textit{validation} sample, which is equivalent but statistically independent from the training sample.
-An optimally trained classifier will perform the same on the validation and training samples. 
+An optimally-trained classifier will perform the same on the validation and training samples. 
 After the optimal training point of the classifier is reached, further training will only degrade the performance of the classifier on the validation sample.
 This regime is called \textit{overtraining} and needs to be avoided.
 
@@ -207,23 +206,101 @@ This regime is called \textit{overtraining} and needs to be avoided.
     \missingfigure{ROC curve here, AUC + classifier separation}
 \end{figure}
 
-There are many different ways to test for overtraining, but all of them usually rely on comparing the classifier performance between the training sample and a third, independent \textit{testing sample}.
-In particle physics, it is common to use the validation sample also as a testing sample, although formally they should be different.
+There are many different ways to test for overtraining, but all of them usually rely on comparing the classifier performance between the training sample and an additional, independent \textit{testing sample}.
+In particle physics, it is common to use the validation sample also as a testing sample, which is acceptable in the case of large training samples.
 To compare the performance on training sample versus testing sample a receiver operating characteristic (\ROC) is often used.
-A \ROC curve represents the the true positive rate as a function of the false positive rate and is calculated by iterating over all possible \MVA classifier outputs.
+A \ROC curve represents the true-positive rate as a function of the false-positive rate and is calculated by iterating over all possible \MVA classifier outputs.
+
 Furthermore, an area-under-curve (\AUC) score can be defined which is computed by integrating the \ROC curve.
-An $\mathrm{\AUC}=1$ would represent false positive rate of 0, and a true positive rate of 1. 
+An $\mathrm{\AUC}=1$ would represent false-positive rate of 0, and a true-positive rate of 1. 
 The least-optimal classifier would provide a random guess and have a false-positive and true-positive rate of 0.5, and $\mathrm{\AUC}=0.5$.
 
 \subsection{(Boosted) decision trees}
 
-\todo[inline]{I probably need to talk about non parametric vs parametric in previous chapter, list some examples and say that I'll only talk about BDT}
-
-When combining many different features together, selecting an appropriately parametrised classifier model can nearly impossible.
-Therefore, often non-parametric models are desired, and a common way to implement these are decision trees.
+When combining many different features together, selecting an appropriately parametrised model (\Cref{eq:loss_function}) can be complicated and sub-optimal.
+Therefore, non-parametric models are often desired, and a simple way to implement these are \textit{decision trees}.
 
 A decision tree is a classification technique where the $N$-dimensional feature space is divided based on a series of binary selections.
 A simple model (often a constant) is used to make a split in each of the feature space regions, and the splitting process is then repeated on the two resulting regions.
-The number of the selections is called the \textit{depth} of the classifier.
-Each final region which has not been sub-splitted is called a \textit{leaf}. 
-A set of selections leading to a leaf is known as a \textit{branch}.
+The exact value to split by is optimised in each region independently.
+For classification problems cross-entropy is common to be used as a loss-function:
+\begin{equation}
+    \mathcal{L}(y,\hat{y})=-\sum_{j=1}^J y_j\log \hat{y}_j + (1-y_j)\log(1-\hat{y}_j),
+\end{equation}
+where $y$ is a target and $y_j$ is a predicted label.
+Each final region which has not been sub-splitted is called a \textit{leaf}.
+A set of selections leading to a leaf is known as a \textit{branch}. 
+Therefore at the end of every branch there is a node with two leaves.
+The maximum number of selections in a branch is called the \textit{depth} of the classifier.
+
+
+The tree could be grown indefinitely and it is obvious that this will quickly lead to overtraining, highlighting the aforementioned bias-variance trade-off.
+In practice, a technique called \textit{pruning} is employed, which removes nodes from the tree based on their overall impact on the performance of the decision tree.
+This produces a smaller tree and the `strength' of pruning is tunable with appropriate parameters.
+
+Decision trees are easily interpretable as they mimic human logic in terms of a number of sequential binary decisions.
+However, they also tend to be highly-dependant on the statistical fluctuations of the training dataset.
+With pruning, their performance on independant samples usually turns out to be weaker than many other MVAs, and the misclassification rate only slightly better than random guesses.
+A single decision tree is, therefore, considered a \textit{weak classifier}.
+
+This and other problems surrounding decision trees are addressed by employing \textit{boosting} and forming boosted decision trees (\BDT{s}).
+Boosting enhances the performance of an ensemble of weak classifiers by combining their output. 
+The performance of such a boosted ensemble can be much better even when all the input classifiers are weak.
+
+During the first training iteration of a \BDT, a regular decision tree would be trained, as explained before, with a shallow limit on the depth.
+However, after that there would follow a second training iteration, where the events that were misclassified in the last training iteration are given a larger weight.
+The procedure is repeated $M$ times to train a set of classifiers $g_{m}(x)$, where $m=1,2,..,M$.
+The final output is a weighted `majority-vote' of all these classifiers:
+\begin{equation}\label{eq:boosted_classifier}
+    G(x) = \sum_{m=1}^M\alpha_mg_m(x),
+\end{equation}
+with $\alpha_m$ being the weight of the $m$-th weak classifier.
+
+The exact procedure to assign weights to misclassified events between training iterations and the computation of $\alpha_m$ depends on the boosting technique used.
+Consider an initial guess $G_1$, which corresponds to $M=1$ case in \Cref{eq:boosted_classifier}.
+One can then, given some learning rate (\textit{shrinkage}) $0<\nu\leq1$, update the prediction with every training iteration:
+\begin{equation}
+    G_m(x) = G_{m-1}(x) + \nu\alpha_mg_m(x),
+\end{equation}
+by minimising the loss function for parameter $\alpha_m$: 
+\begin{equation}\label{eq:minimize_loss}
+    \alpha_m = \arg\min_{\alpha_m}\left(\sum_{i=1}^N\mathcal{L}(y_i, G_{m-1}(x_i) + \alpha_mg_m(x_i))\right).
+\end{equation}
+One way to solve \Cref{eq:minimize_loss} in a numerically-optimal way is to compute the gradient of the loss function.
+Consequentially, a classifier built this way is called \textit{gradient-boosted} decision tree \cite{FRIEDMAN1013203451}.
+
+To further increase robustness of gradient-\BDT{s}, one may only sample (without replacement) a part of the dataset in each training iteration.
+In this case, any statistical fluctuations would average out over the sum of all trees. 
+This technique is called stochastic gradient-\BDT{s} \cite{FRIEDMAN2002367}.
+The fraction of data used at every training iteration is called the \textit{sampling rate}.
+
+In the analyses present in this thesis, \texttt{FastBDT} \cite{Keck:2017gsv} is used as the \MVA for training stochastic gradient-\BDT{s}.
+For the training of the classifier, \texttt{FastBDT} employs 4 parameters that were described in this chapter: number of trees ($M$), maximum depth of each tree, shrinkage and sampling rate. 
+
+\secti
+
+\section{Unfolding}
+
+In physics, we are only able to probe Nature through the experimental setup that we build.
+Any hypothethical detector is therefore subjected to random effects related to the finite resolution and acceptance of the detector.
+Consequentially, the measured result will be convoluted with these effects (\textit{smeared}).
+In order to make the measured dataset useful for theoretical predictions, one wants to present their results in a manner that is independent of the experimental technique used.
+The process of deconvoluting the true distribution from the measured distribution is called \texit{unfolding}.
+
+Consider a true distribution $f(x)$ of observable $x$ being measured in some space $a<x<b$.
+The corresponding measured distribution $g(y)$ as a function of the measured value $s$ is related to $f(x)$ as:
+\begin{equation}
+    g(y) =  \int_a^b A(y,x) f(x) dx,
+\end{equation}
+which is the Fredhold intergral equation of the first kind. 
+The function $A(y, x)$ is the so-called Kernel function, and it holds the information about physical nature of the measurement.
+This function cannot be known precisely, and is usually extracted from Monte Carlo simulation, assuming the measurement $x\ra y$ can be simualted reliably. 
+
+There are multiple effects which contribute to the smearing of the measured result:
+\begin{itemize}
+    \item Statistical fluctuations (predictable based on dataset size)
+    \item Migration between bins
+    \item Missing entries
+    \item A shift
+\end{itemize}
+
