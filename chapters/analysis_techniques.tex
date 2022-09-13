@@ -1,6 +1,6 @@
 \chapter{Data Analysis Techniques}
 
-\section{Fitting}
+\section{Fitting}\label{sec:fitting}
 
 The distributions of observables that are measured experimentally always contain, at the very least, a degree of statistical uncertainty.
 In Physics, we usually model processes with smooth distributions, which can be parametrised with a set of numbers. 
@@ -148,7 +148,7 @@ Throughout this thesis, fitting is implemented using the \texttt{zfit} framework
 It provides a Python-based library that is developed to fulfill particle physics fitting requirements.
 The \texttt{zfit} framework implements minimisation using the \texttt{iminuit} minimiser \cite{iminuit} which is a Python-friendly implementation of \texttt{Minuit}.
 
-\section{Classification}
+\section{Classification}\label{sec:classification}
 \todo[inline]{This section needs to be called differently, maybe Decision Theory, let's see}
 When collecting data in measurements, many independent observations (\textit{events}) are usually performed in order to get a statistically significant sample.
 Resulting datasets generally contain a component of interest, often referred to as \textit{signal}, and many components which might show similar behaviour as the signal in certain distributions. 
@@ -166,7 +166,7 @@ This sections introduces some relevant techniques to combine the informational o
 Particularly, it overviews multivariate classification algorithms (\MVA{s}) concepts and boosted decision trees (\BDT{s}). 
 The material presented here is only a summary detailing techniques used in the analyses presented in the thesis.
 For detailed overview of multivariate-classification techniques I refer the reader to Ref.\cite{Behnke:2013pga} and for their underlying statistical framework to \cite{Hastie_Tibshirani_Friedman_2001,bishop_2016}.
-
+\todo[inline]{This section might need to have more subsections}
 \subsection{Multivariate classification}
 
 In this subsection, binary classification is implied, as this is the most relevant for the work presented in this thesis. 
@@ -276,29 +276,96 @@ The fraction of data used at every training iteration is called the \textit{samp
 
 In the analyses present in this thesis, \texttt{FastBDT} \cite{Keck:2017gsv} is used as the \MVA for training stochastic gradient-\BDT{s}.
 For the training of the classifier, \texttt{FastBDT} employs 4 parameters that were described in this chapter: number of trees ($M$), maximum depth of each tree, shrinkage and sampling rate. 
+\todo[inline]{Say that output is transformed to 0,1 to better correspond to probability}
 
-\section{Unfolding}
+\section{Unfolding}\label{sec:unfolding}
 
 In physics, we are only able to probe Nature through the experimental setup that we build.
 Any hypothethical detector is therefore subjected to random effects related to the finite resolution and acceptance of the detector.
-Consequentially, the measured result will be convoluted with these effects (\textit{smeared}).
-In order to make the measured dataset useful for theoretical predictions, one wants to present their results in a manner that is independent of the experimental technique used.
+Consequentially, the measured results (distributions) will be convoluted with these effects (\textit{smeared}).
+If two different experiments are comparing their measurements, it only makes sense if external factors are of minimal importance.
 The process of deconvoluting the true distribution from the measured distribution is called \textit{unfolding}.
+In this way, it can be considered the `opposite' of measurement.
+
+This section provides a brief overview of the main concepts that feature in the results presenting this thesis.
+A thorough summary of the theory behind unfolding methods can be found in \cite{Behnke:2013pga,Blobel_Lohrmann_1998} and a comparison of different methodologies common in particle physics in \cite{Schmitt:2016orm,Cowan:2002in,Brenner:2019lmf}.
+
+\todo[inline]{Somewhere in this section include some plots}
+\subsection{Mathematical basis}
 
 Consider a true distribution $f(x)$ of observable $x$ being measured in some space $a<x<b$.
-The corresponding measured distribution $g(y)$ as a function of the measured value $s$ is related to $f(x)$ as:
-\begin{equation}
+The corresponding measured distribution $g(y)$ as a function of the measured value $y$ is related to $f(x)$ as:
+\begin{equation}\label{eq:fredholm_integral}
     g(y) =  \int_a^b A(y,x) f(x) dx,
 \end{equation}
-which is the Fredhold intergral equation of the first kind. 
-The function $A(y, x)$ is the so-called Kernel function, and it holds the information about physical nature of the measurement.
-This function cannot be known precisely, and is usually extracted from Monte Carlo simulation, assuming the measurement $x\ra y$ can be simualted reliably. 
+which is the Fredholm intergral equation of the first kind \cite{Blobel_Lohrmann_1998}.
+The function $A(y, x)$ is the Kernel (or response) function, and it holds the information about physical nature of the measurement.
+In the process of unfolding, one seeks to find $f(x)$ given $g(y)$.
+Such a problem does not have a general solution and in the cases when there is a solution it can be highly dependant on small changes in $g(y)$ \cite{Delves_Walsh_1974}.
 
-There are multiple effects which contribute to the smearing of the measured result:
+In science, results are often presented in the form of a histogram. 
+In that case the results are integrated over several shorter intervals (\textit{bins}) and only the integral values are shown at the center of each bin.
+As a result, a simpler matrix form of \Cref{eq:fredholm_integral} can be used which allows a numerical solution:
+\begin{equation}\label{eq:unfolding_linear_equation}
+\hat{A}\vec{x}=\vec{y},
+\end{equation}
+where:
 \begin{itemize}
-    \item Statistical fluctuations (predictable based on dataset size)
-    \item Migration between bins
-    \item Missing entries
-    \item A shift
-\end{itemize}
+    \item $\vec{x}$ is an $m$-dimensional vector of binned unknown true distribution;
+    \item $\vec{y}$ is an $n$-dimensional vector of binned measured distribution;
+    \item $\hat{A}$ is an $n\times m$-dimensional response matrix.
 
+\end{itemize}
+In general, \Cref{eq:fredholm_integral,eq:unfolding_linear_equation} may contain additional terms dependant on $y$ corresponding to background contributions and statistical fluctuations.
+
+The elements $A_{ij}$ of $\hat{A}$ correspond to a probability to measure an event in bin-$j$ that was produced in bin-$i$.
+In particle physics, the response matrix is generally built using Monte Carlo simulated samples that generate a particle collision and simulate signal processing and detector effects.
+By taking the ratio of simulated events generated in a bin $i$, $N_i^{\mathrm{gen}}$, with the number of simulated events that were generated in bin $j$ but were measured in bin $i$, $N_{ij}^{\mathrm{meas}}$:
+\begin{equation}\label{eq:response_matrix_element}
+    A_{ij} = \frac{N_{ij}^{\mathrm{meas}}}{N_i^{\mathrm{gen}}}.
+\end{equation}
+There are a number of methods solve \Cref{eq:unfolding_linear_equation}, discussed in the following sections.
+
+\subsection{Bin-by-bin unfolding}
+
+The simplest approach is to scale the measured distribution in each bin $i$ by a factor determined from simulation:
+\begin{equation}\label{eq:bin_by_bin_unfolding}
+ x_i = y_i \times \frac{N_i^{\mathrm{gen}}}{N_i^{\mathrm{meas}}},
+\end{equation}
+where $N_i^{\mathrm{meas}}$ is $\sum_j N_{ij}^{\mathrm{meas}}$.
+It follows that uncertainties propagate trivially:
+\begin{equation}\label{eq:bin_by_bin_unfolding}
+    \Delta x_i = \Delta y_i \times \frac{N_i^{\mathrm{gen}}}{N_i^{\mathrm{meas}}},
+\end{equation}
+where $\Delta x_i$ and $\Delta y_i$ are uncertainties associated with these quantities.
+
+This method is only possible if the number of bins in the true distribution is equal to the number of bins in the measured distribution.
+Furthermore, it does not take any cross-bin effects into account, and effectively treats each bin as uncorrelated.
+Therefore, it is usually used when the necessary corrections are small or when the statistical fluctuations are larger than expected unfolding uncertainty.
+The method is referred to as \textit{bin-by-bin} unfolding, or bin-by-bin correction method.
+It has been the main method applied in the works of this thesis.
+
+\subsection{Matrix inversion method}
+The matrix inversion method is the simplest method which does not include assumptions about the measured data (e.g. uncorrelated bins).
+In this case the \Cref{eq:unfolding_linear_equation} is solved by inverting the response matrix:
+\begin{equation}
+    \vec{x} = \hat{A}^{-1}\vec{y}.
+\end{equation}
+The number of bins of the true and the measured distribution must be the same, as only square matrices may be inverted.
+While the result is statistically correct, it tends to introduce large negative correlations between neighbouring bins in the unfolded distribution $\vec{x}$.
+This is often undesirable as smooth distributions are expected in Nature.
+
+\subsection{Regularisation and other unfolding methods}
+The correction of the correlations introduced into neighbouring bins by unfolding is called \textit{regularisation}.
+Regularisation is a very delicate task because, roughly put, the scientist has a prejudice towards smooth measured distribution and therefore artificially adds a bias to smoothen it.
+Unsurprisingly, there are many different methods to perform this.
+Although an in-depth discussion is irrelevant for the purpose of the works presented in this thesis, some of the most common ones in particle physics are listed here:
+\begin{itemize}
+    \item \texttt{TUnfold} method \cite{Schmitt:2012kp}: performs a least-squares minimisation of $\vec{y}-\hat{A}{\vec{x}}$ and includes a damping term for oscillations in $x$;
+    \item D'Agostini method \cite{d2010improved,DAgostini:1994fjx}: inversion of response matrix using Bayes' theorem and iterative improvement of the unfolding result, stopping iterations early to not require regularisation;
+    \item Iterative dynamically-stabilised method \cite{Malaescu:2009dm}: combines elements of d'Agostini's and bin-by-bin correction methods, preserving the normalisation of data in each bin;
+    \item Singular value decomposition method \cite{Hocker:1995kb}: solves \Cref{eq:unfolding_linear_equation} by decomposing the response matrix into its singular values, adds a weighted prior condition to the solution.
+\end{itemize}
+In particle physics, unfolding is often implemented using the \texttt{RooUnfold} package \cite{Brenner:2019lmf}, which can perform all the methods described in \Cref{sec:unfolding}.
+
+\section{Blinded analysis}\label{sec:blinding}
