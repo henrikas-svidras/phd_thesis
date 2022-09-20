@@ -369,3 +369,14 @@ Although an in-depth discussion is irrelevant for the purpose of the works prese
 In particle physics, unfolding is often implemented using the \texttt{RooUnfold} package \cite{Brenner:2019lmf}, which can perform all the methods described in \Cref{sec:unfolding}.
 
 \section{Blinded analysis}\label{sec:blinding}
+
+In order to avoid an experimenter's bias analyses are often performed in a \textit{blinded} way \cite{Roodman:2003rw}.
+The bias can occur when using the analysed data directly to perform optimisations or compare several different techniques.
+An experimenter, uninentionally, may enhance statistical or unknown-systematic effects which bias the sample to give a desired or expected result.
+Generally, one restricts access to the analysed sample until after the measurement setup is prepared.
+In particle physics, this is done by performing the analysis on simulated data, and then using independent data-samples to perform checks that the analysis is behaving as appropriate.
+Normally, a certain range of an interesting observable is hidden, for example, in the case of \BtoXsgamma analysis presented here, it can be the photon energy, \Egamma.
+This method is well-suited when performing measurements where the signal region is known in advance, as is the case in the example I mentioned.
+The removal of a constraint and the application the analysis technique on real data is called \textit{unblinding}.
+It is usually performed as the last step, once other steps in the analysis have been scrutinised and validated.
+This is also the procedure that was applied in the inclusive \BtoXsgamma studies described in this thesis.
