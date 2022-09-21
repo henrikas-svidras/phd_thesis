@@ -1,5 +1,47 @@
 \chapter{Theoretical overview}
 
+In this Chapter, the theoretical overview of the Standard Model, flavour physics and \BtoXsgamma will be presented.
+It will introduce the main theoretical concepts that are featured in this thesis and provide a theoretical grounding for the experimental analyses performed.
+\todo[inline]{section listing here once they are finished}
+
 \section{The Standard Model}
 
-\BtoXsgamma is a rare radiative transition that occurs, in the Standard Model,
+a $SU(3)\times SU(2)\times U(1)$ quantum field theory \cite{Peskin:1995ev}.
+Its theoretical framework describes the electroweak and strong force interactions between elementary particles that constitute the world as we know it.
+The elementary particles included in the Standard Model can have a half-integer spin (fermions) or integer spin (bosons).
+The spin-1 bosons are the mediators of the electromagnetic (photon), weak ($\Wpm$ and $\Z$) and strong interactions (gluon) in the SM.
+The spin-0 Higgs boson couples to all massive particles of the Standard Model via the Higgs mechanism \cite{PhysRevLett.13.508}.
+The fermions are subsplit into two additional groups, quarks and leptons, which, respectively, can and cannot interact through the strong force.
+
+\section{Flavour physics}
+
+Ongoing...
+
+\section{Radiative decays \texorpdfstring{\BtoXsdgamma}{B->Xsg}}
+
+In the Standard Model, $b\ra s$ transitions are mediated by so-called flavour-changing neutral currents.
+These processes can only occur through loops mediated by heavy particles.
+One of the decay processes used to study these transitions are the so-called rare radiative $b\ra s\g$ and $b\ra d\g$ decays.
+Due to colour confinement of the quarks, in reality they manifest as \BtoXsgamma or \BtoXdgamma, where $X_s$ and $X_d$ denote any meson state originating from the $s$ quark hadronisation.
+The underlying Standard Model diagrams for \BtoXsdgamma processes are shown in \Cref{fig:sm_diagrams}.
+
+\todo[inline]{citations here are needed, but I don't know how I want to proceed yet. Maybe this is common knowledge}
+
+\begin{figure}[htbp!]
+\resizebox{0.66\textwidth}{!}{
+    \subcaptionbox{\label{fig:sm_diagrams}}{
+        \input{tikz_diagrams/b_to_s_gamma_W.tex}
+        \input{tikz_diagrams/b_to_s_gamma_Q.tex}
+    }
+}
+\resizebox{0.33\textwidth}{!}{
+\subcaptionbox{\label{fig:bsm_diagrams}}{
+    \input{tikz_diagrams/b_to_s_gamma_H.tex}
+}
+}
+\caption{\label{fig:b_to_s_gamma_diagrams}
+The Feynman diagrams for radiative $b\ra s$ transitions. 
+\Cref{fig:sm_diagrams} shows the Standard Model diagrams, where the $b\ra s$ transition occurs via electroweak loops.
+A beyond-Standard Model scenario where this transition is mediated by a charged-Higgs boson particle is shown in \Cref{fig:bsm_diagrams}.
+}
+\end{figure}
