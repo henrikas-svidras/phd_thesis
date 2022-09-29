@@ -86,7 +86,7 @@ Until recently, a 5\% uncertainty was attached to this assumption \cite{Benzke:2
 However, recent developments in understanding the non-perturbative effects \cite{Gunawardana:2019gep} led to an improved treatment of the associated uncertainties \cite{Misiak:2020vlo}.
 As will be seen later, the threshold for \EB is motivated also from the experimental side, as large background-process contamination is present in the low-\EB region.
 
-Using operator product expansion, the perturbative decay rate can be written as \cite{Misiak:2020vlo}:
+Using operator product expansion, one can calculate $|<\s\g|\mathcal{L}_{\mathrm{eff}}|b>|^2$ and then the perturbative decay rate can be written as \cite{Misiak:2020vlo}:
 \begin{equation}\label{eq:theory_decay_rate}
     \Gamma(b\ra\s\g) = \frac{G^2_F m_{\mathrm{b}}^5 \alpha_{\mathrm{em}}}{32\pi^4}|V_{ts}^*V_{tb}|^2\sum_{i,j}^8C^{\mathrm{eff}}_{i}(\mu_b)C^{\mathrm{eff}}_{j}(\mu_b)\hat{G}_{ij}(E_0,\mu_b),
 \end{equation}
@@ -111,12 +111,19 @@ The additional semileptonic phase-space factor:
 \end{equation}  
 accounts for the fact that the charmless semileptonic decay rate is used in $P(E_0)$ determination:
 \begin{equation}
-    \frac{\Gamma(\b\to\s\g)_{\Egamma>E_0}}{|V_{cb}/V_{ub}|^2 \Gamma(\b\to\u e\nub)} = \frac{V_{ts}^*V_{tb}}{V_cb} \frac{6\alpha_{\mathrm{em}}}{\pi}P(E_0).
+    \frac{\Gamma(\b\to\s\g)_{\Egamma>E_0}}{|V_{cb}/V_{ub}|^2 \Gamma(\b\to\u e\nub)} = \left|\frac{V_{ts}^*V_{tb}}{V_{cb}}\right|^2 \frac{6\alpha_{\mathrm{em}}}{\pi}P(E_0).
 \end{equation}
 The factor $C$ is determined using the experimental value of $\B\to X_c \ell\bar{\nu}$ \cite{Alberti:2014yda}.
 The decay channel $\B\to X_c \ell\bar{\nu}$ has a large branching fraction and is known precisely experimentally \cite{Workman:2022ynf}, therefore this requirement does not pose a problem.
 
-
+At leading order, where non-perturbative effects are disregarded, effects from $\mathcal{C}_{2,7,8}$ are most important and this can be expressed in a compact form \cite{Buras:1993xp}:
+\begin{equation}
+    \frac{\mathcal{B}(\BtoXsgamma)}{\mathcal{B}(\B\to X_c\ell\nu_\ell)} = \left|\frac{V_{ts}^*V_{tb}}{V_{cb}}\right|^2\frac{6\alpha_{\mathrm{em}}}{\pi C}|C_{7}^{(0)\mathrm{eff}}(\mu)|^2.
+\end{equation}
+Here $C_{7}^{(0)\mathrm{eff}}(\mu)$ is the effective Wilson coefficient which was already encountered before, defined here as:
+\begin{equation}
+    C_{7}^{(0)\mathrm{eff}}(\mu) = \eta^{16/23}\mathcal{C}^{(0)}_7(M_W) + \frac{8}{3} \left(\eta^{14/23}-\eta^{16/23}\right)\mathcal{C}^{(0)}_8(M_W) + \mathcal{C}^{(0)}_2(M_W) \sum_i^8h_i\eta^{a_i}
+\end{equation}
 
 
 At lowest order, $b\ra\s(\d) \g$ is a two-body decay, which means that the decay rate peaks very close to the kinematic limit equal to half the \B-meson mass, $\lsim E_{\g}$.
