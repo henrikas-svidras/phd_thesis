@@ -17,7 +17,7 @@ The fermions are subsplit into two additional groups, quarks and leptons, which,
 
 Ongoing...
 
-\section{Radiative decays \texorpdfstring{\BtoXsdgamma}{B->Xsg}}\label{eq:btosgamma_theory}
+\section{The decay rate of \texorpdfstring{\BtoXsdgamma}{B->Xsg}}\label{eq:btosgamma_theory}
 
 In the Standard Model, $b\ra s$ transitions are mediated by so-called flavour-changing neutral currents.
 These processes can only occur through loops mediated by heavy particles.
@@ -91,18 +91,18 @@ Using operator product expansion, one can calculate $|<\s\g|\mathcal{L}_{\mathrm
     \Gamma(b\ra\s\g) = \frac{G^2_F m_{\mathrm{b}}^5 \alpha_{\mathrm{em}}}{32\pi^4}|V_{ts}^*V_{tb}|^2\sum_{i,j}^8C^{\mathrm{eff}}_{i}(\mu_b)C^{\mathrm{eff}}_{j}(\mu_b)\hat{G}_{ij}(E_0,\mu_b),
 \end{equation}
 where $m_{\mathrm{b}}$ is the $b$-quark pole mass, $\alpha_{\mathrm{em}}$ is the fine-structure constant.
-The $C_{i}^{\mathrm{eff}}(\mu_b)$ coefficients represent effective Wilson coefficients \cite{Buras:1993xp} that are renormalisation scheme independent and defined through linear combinations of the Wilson coefficients of \Cref{eq:effective_lagrangian}.
+The $C_{i}^{\mathrm{eff}}(\mu_b)$ coefficients represent effective Wilson coefficients \cite{Buras:1993xp} that are renormalisation-scheme independent and defined through linear combinations of the Wilson coefficients of \Cref{eq:effective_lagrangian}.
 Finally, the functions $\hat{G}_{ij}$ encapsulate the terms describing the interference between operators $\mathcal{O}_{i,j}$.
 As already mentioned before, the dominant terms arise from a handful of local operators and the combined efforts to calculate this have brought \BtoXsgamma theoretical estimates to the next-to-next-to-leading order precision.
 The dominant functions $\hat{G}_{77}$ \cite{Asatrian:2006rq}, $\hat{G}_{78}$ \cite{Asatrian:2010rq}, $\hat{G}_{(1,2)7}$ \cite{Boughezal:2007ny,Misiak:2020vlo} have been evaluated.
-Contributions from $\hat{G_{(1,2,8)8}}$ \cite{Ferroglia:2010xe,Misiak:2010tk} have also been calculated.
+Contributions from $\hat{G}_{(1,2,8)8}$ \cite{Ferroglia:2010xe,Misiak:2010tk} have also been calculated.
 In fact, as the calculations have already reached next-to-next-to-leading order precision, even contributions involving $\mathcal{O}_{i}^u$ are accounted \cite{Huber:2014nna}.
 The mixing of $\mathcal{O}_{1-6}\to\mathcal{O}_8$ has been also described \cite{Czakon:2006ss}. 
 
 In order to minimise the uncertainties arising from the CKM matrix element determination and the factor of $m_b^5$ in \Cref{eq:theory_decay_rate}, the calculation of \BtoXsgamma decay rate is usually normalised to the semi-leptonic decay rate of $\B\to\X_c\ell\nu_{\ell}$.
 In doing so, the decay rate is expressed as \cite{Misiak:2020vlo}:
 \begin{equation}\label{eq:normalised_br}
-    \frac{\Gamma(\BtoXsgamma)_{\Egamma>E_0}}{\Gamma(\B\to X_c\ell\nu_\ell)} = \frac{\mathcal{B}(\BtoXsgamma)}{\mathcal{B}(\B\to X_c\ell\nu_\ell)} = \left|\frac{V_{ts}^*V_{tb}}{V_{cb}}\right|^2\frac{6\alpha_{\mathrm{em}}}{\pi C}[P(E_0)+N(E0)].
+    \frac{\Gamma(\BtoXsgamma)_{\Egamma>E_0}}{\Gamma(\B\to X_c\ell\nu_\ell)} = \frac{\mathcal{B}(\BtoXsgamma)}{\mathcal{B}(\B\to X_c\ell\nu_\ell)} = \left|\frac{V_{ts}^*V_{tb}}{V_{cb}}\right|^2\frac{6\alpha_{\mathrm{em}}}{\pi C}[P(E_0)+N(E_0)].
 \end{equation}
 Here, $P(E_0)$ denotes the perturbatively calculable contribution, and $N(E_0)$ the non-perturbative correction, which was already briefly discussed.
 The additional semileptonic phase-space factor:
@@ -120,16 +120,72 @@ At leading order, where non-perturbative effects are disregarded, effects from $
 \begin{equation}
     \frac{\mathcal{B}(\BtoXsgamma)}{\mathcal{B}(\B\to X_c\ell\nu_\ell)} = \left|\frac{V_{ts}^*V_{tb}}{V_{cb}}\right|^2\frac{6\alpha_{\mathrm{em}}}{\pi C}|C_{7}^{(0)\mathrm{eff}}(\mu)|^2.
 \end{equation}
-Here $C_{7}^{(0)\mathrm{eff}}(\mu)$ is the effective Wilson coefficient which was already encountered before, defined here as:
-\begin{equation}
-    C_{7}^{(0)\mathrm{eff}}(\mu) = \eta^{16/23}\mathcal{C}^{(0)}_7(M_W) + \frac{8}{3} \left(\eta^{14/23}-\eta^{16/23}\right)\mathcal{C}^{(0)}_8(M_W) + \mathcal{C}^{(0)}_2(M_W) \sum_i^8h_i\eta^{a_i}
+Here $C_{7}^{(0)\mathrm{eff}}(\mu)$ is the effective Wilson coefficient which was briefly introduced before, defined as:
+\begin{equation}\label{eq:effective_c7}
+    C_{7}^{(0)\mathrm{eff}}(\mu) = \eta^{16/23}\mathcal{C}^{(0)}_7(M_W) + \frac{8}{3} \left(\eta^{14/23}-\eta^{16/23}\right)\mathcal{C}^{(0)}_8(M_W) + \mathcal{C}^{(0)}_2(M_W) \sum_i^8h_i\eta^{a_i}.
 \end{equation}
+The Standard Model coefficients $C_{2,7,8}^{(0)}$ are expressed in terms of $x=(m_t/M_W)^2$:
+\begin{align}
+    \begin{split}
+    C_2^{(0)}(M_W) &= 1\\
+    C_7^{(0)}(M_W) &= \frac{3x^3-2x^2}{4(x-1)^4}\ln x + \frac{-8x^3-5x^2+7x}{24(x-1)^3}\\
+    C_8^{(0)}(M_W) &= \frac{-3x^2}{4(x-1)^4}\ln x + \frac{-x^3+5x^2+2x}{8(x-1)^3}\\
+    \end{split}
+\end{align}
 
-Here $\eta=\alpha_s(M_W)/\alpha_s(\mu)$, whereas $h_i$ and $a_i$ are the eigenvalues of the scheme-independent matrix $\gamma^{(0)\mathrm{eff}}$, which can be found defined in the Appendix A of Ref. \cite{Buras:1993xp}.
-The matrix $\gamma^{(0)\mathrm{eff}}$ governs the leading order QCD corrections to $\b\ra\s\g$ and its elements appear in the renormalisation group equation of effective Wilson coefficients.
+The coefficient $\eta$ is expressed as $\eta=\alpha_s(M_W)/\alpha_s(\mu)$, whereas $h_i$ and $a_i$ are the eigenvalues of the scheme-independent anomalous dimension matrix $\gamma^{(0)\mathrm{eff}}$, which can be found defined in the Appendix A of Ref. \cite{Buras:1993xp}.
+The matrix $\gamma^{(0)\mathrm{eff}}$ governs the leading order QCD corrections to $\b\ra\s\g$ and its elements appear in the renormalisation group equation of the effective Wilson coefficients.
+
+Here it is interesting to look at the \Cref{eq:effective_c7} in more detail. 
+In the absence of QCD effects one has $\eta=1$, therefore the \BtoXsgamma decay would be governed solely by the photonic dipole exchange.
+However, in the Standard Model, the additional terms lead to a QCD-enhancment of the decay.
+To illustrate, when \Cref{eq:effective_c7} is evaluated explicitly:
+
+\todo[inline]{I have to correct these coefficients, probably best according to page 186 of \cite{Buras:1998raa}}
+
+\begin{align}
+    \begin{split}
+        C_7^{(0)\mathrm{eff}}(M_W) &= 0.689 \cdot C_7^{(0)}(M_W) + 0.087 \cdot C_8^{(0)}(M_W) - 0.161 \cdot C_2^{(0)}(M_W)  \\ 
+                          &= 0.689 \cdot (-0.161) + 0.087 \cdot (-0.086) - 0.161\\
+                          &= -0.280, \\
+    \end{split}
+\end{align}
+it is clear that the additive QCD two-loop contributions enhance the rate significantly.
+Also notable is the fact that the multiplicative QCD correction in the first term suppresses the decay rate, but at a smaller scale than the additive corrections.
+
 
 \todo[inline]{I could change $M_W$ to $\mu_0$ because it doesnt matter what scale is there I think idk}
 
+To go beyond the leading-order approximation, one has to take into account the full form of \Cref{eq:normalised_br}.
+Marking the top contributions as $K_t$, as well as other contributions (dominated by charm) $K_c$, and the electroweak corections $K_{\mathrm{ew}}$ one arrives at \cite{Gambino:2001ew}:
+\begin{equation}\label{eq:perturbative_entry}
+    P(E_0) = \left| K_c + \left(1+\frac{\alpha_s(M_W)}{\pi} \ln\frac{M_W^2}{m_t^2}r(\mu_0)K_t+K_{\mathrm{ew}}\right)\right| +B(E_0).
+\end{equation}
+The additional term $B(E_0)$ is the bremmstrahlung function encodes the effects of $b\ra s\g g$ and $b\ra s\g \qqbar$ transitions.
+It is the only part of \Cref{eq:perturbative_entry} that depends on the chosen \Egamma threshold.
+The ratio $r(\mu_0)$ is introduced to account for differences in the choice of the renormalisation scale for $m_b$-related kinematic parameters.
 
+Finally, estimations of the non-perturbative corrections are always done separately.
+\todo[inline]{add here about N(E0) if/when Ivan replies}
+
+A higher-order calculation of \BtoXsgamma decay rate is beyond the scope of this thesis, but such calculations can be followed up in the references already introduced in this chapter, e.g. \cite{Misiak:2020vlo} and references therein.
+
+The above mentioned reference also includes the most up-to-date estimation of the total decay rate of \BtoXsgamma in the Standard Model:
+\begin{equation}
+    \mathcal{B}(\BtoXsgamma) = (3.40\pm 0.17) \times 10^{-4}.
+\end{equation}
+The uncertainties going into the value arise from unevaluated higher-order effects, the necessity to perform an interpolation in $m_c$, and a parametric uncertainty that also encodes the non-perturbative effects.
+The first two amount to $3\%$ each, whereas the last is considered at $2.5\%$. 
+This amounts to a total uncertainty of, approximately, 4.9\%.
+For future improvements, higher-order calculations will not be sufficient alone.
+It is necessary to remove the dependance on $m_c$ interpolation and improve the treatment of the parametric uncertainties to go below the $\sqrt{3^2+2.5^2}\approx3.9\%$ uncertainty.
+
+While this value is sufficient to compare the current experimental and theoretical predictions (see Chapter XX), the input from Belle II will reduce the experimental uncertainty below that of the theoretical prediction.
+\todo[inline]{experimental status add here}
+
+
+\section{The photon energy spectrum of \texorpdfstring{\BtoXsdgamma}{B->Xsg}}\label{eq:btosgamma_spectrum_theory}
+
+Spectrum will be described here
 
 At lowest order, $b\ra\s(\d) \g$ is a two-body decay, which means that the decay rate peaks very close to the kinematic limit equal to half the \B-meson mass, $\lsim E_{\g}$.
