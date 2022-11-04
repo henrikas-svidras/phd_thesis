@@ -122,9 +122,10 @@ At leading order, where non-perturbative effects are disregarded, effects from $
 \begin{equation}
     \frac{\mathcal{B}(\BtoXsgamma)}{\mathcal{B}(\B\to X_c\ell\nu_\ell)} = \left|\frac{V_{ts}^*V_{tb}}{V_{cb}}\right|^2\frac{6\alpha_{\mathrm{em}}}{\pi C}|C_{7}^{(0)\mathrm{eff}}(\mu)|^2.
 \end{equation}
-Here $C_{7}^{(0)\mathrm{eff}}(\mu)$ is the effective Wilson coefficient which was briefly introduced before, defined as:
+Here $C_{7}^{(0)\mathrm{eff}}(\mu)$ is the effective leading-order Wilson coefficient which was briefly introduced before.
+At leading-order calculation it takes the form:
 \begin{equation}\label{eq:effective_c7}
-    C_{7}^{(0)\mathrm{eff}}(\mu) = \eta^{16/23}\mathcal{C}^{(0)}_7(M_W) + \frac{8}{3} \left(\eta^{14/23}-\eta^{16/23}\right)\mathcal{C}^{(0)}_8(M_W) + \mathcal{C}^{(0)}_2(M_W) \sum_i^8h_i\eta^{a_i}.
+    C_{7}^{(0)\mathrm{eff}}(\mu) = \eta^{16/23}\mathcal{C}^{(0)}_7(\mu) + \frac{8}{3} \left(\eta^{14/23}-\eta^{16/23}\right)\mathcal{C}^{(0)}_8(\mu) + \mathcal{C}^{(0)}_2(\mu \sum_i^8h_i\eta^{a_i}.
 \end{equation}
 The Standard Model coefficients $C_{2,7,8}^{(0)}$ are expressed in terms of $x=(m_t/M_W)^2$:
 \begin{align}
@@ -170,7 +171,7 @@ The ratio $r(\mu_0)$ is introduced to account for differences in the choice of t
 Finally, estimations of the non-perturbative corrections are always done separately.
 \todo[inline]{add here about N(E0) if/when Ivan replies}
 
-A higher-order calculation of \BtoXsgamma decay rate is beyond the scope of this thesis, but such calculations can be followed up in the references already introduced in this chapter, e.g. \cite{Misiak:2020vlo} and references therein.
+A detailed look of the higher-order calculation of the total \BtoXsgamma decay rate is beyond the scope of this thesis, but such calculations can be followed up in the references already introduced in this chapter, e.g. \cite{Misiak:2020vlo} and references therein.
 
 The above mentioned reference also includes the most up-to-date estimation of the total decay rate of \BtoXsgamma in the Standard Model:
 \begin{equation}
@@ -180,10 +181,10 @@ The uncertainties going into the value arise from unevaluated higher-order effec
 The first two amount to $3\%$ each, whereas the last is considered at $2.5\%$. 
 This amounts to a total uncertainty of, approximately, 4.9\%.
 For significant accuracy improvements in the future, higher-order calculations will not be sufficient alone.
-It is necessary to remove the dependance on $m_c$ interpolation and improve the treatment of the parametric uncertainties to go below the $\sqrt{3^2+2.5^2}\approx3.9\%$ uncertainty.
+It is necessary to remove the dependance on $m_c$ interpolation and improve the treatment of the parametric uncertainties (non-perturbative effects) to go below the $\sqrt{3^2+2.5^2}\approx3.9\%$ uncertainty.
 
 While this value is sufficient to compare the current experimental and theoretical predictions (see Chapter XX), the input from Belle II will reduce the experimental uncertainty below that of the theoretical prediction.
-\todo[inline]{experimental status add here}
+\todo[inline]{experimental status add here or maybe just snowmass citation}
 
 \section{The photon energy spectrum of \texorpdfstring{\BtoXsdgamma}{B->Xsg}}\label{eq:btosgamma_spectrum_theory}
 
@@ -196,7 +197,7 @@ It allows to factorise different contributions to the decay rate, $d\Gamma$, int
     d\Gamma \propto \mathcal{H} \times \mathcal{J} \otimes \mathcal{S}.
 \end{equation}
 The $\mathcal{H}$, $\mathcal{J}$, $\mathcal{S}$ represent the hard, jet and hadronic-soft functions, respectively, with $\otimes$ symbolising convolution between the two terms.
-Interestingly, the $\mathcal{S}$ can be further factorised into a partonic soft-function, $\mathcal{P}$ and a non-perturbative \textit{shape-function}, $\mathcal{F}$:
+Interestingly, the $\mathcal{S}$ can be further factorised into a partonic soft-function, $\mathcal{S}_{\mathrm{partonic}}$, and a non-perturbative \textit{shape-function}, $\mathcal{F}$:
 
 \begin{equation}\label{eq:factorisation}
     \mathcal{S} = \mathcal{S}_{\mathrm{partonic}} \otimes \mathcal{F},
@@ -219,9 +220,10 @@ Let's consider \Cref{eq:differential_decay_rate_SCET,eq:factorisation} in a bit 
 Following the treatment of Ref.~\cite{Ligeti:2008ac}, the differential decay rate takes the form:
 
 \begin{equation}\label{eq:differential_decay_simba}
-    \frac{d\Gamma}{dE_{\gamma}} = 2\frac{G_F^2\alpha_{\mathrm{em}} m_b^5}{32\pi^4}|V_{ts}V_{tb}^*|^2 \mathcal{H}(x, \mu) \times \int dk \mathcal{P}(m_b, x - k, \mu_i) \mathcal{F}(k),
+    \frac{d\Gamma}{dE_{\gamma}} = 2\frac{G_F^2\alpha_{\mathrm{em}} m_b^5}{32\pi^4}|V_{ts}V_{tb}^*|^2 \mathcal{H}(x, \mu) \times \int dk \mathcal{P}(m_b, x - k, \mu_i) \mathcal{F}(k) + \mathrm{corrections},
 \end{equation}
 where $x=m_B-2\Egamma$, $\mathcal{P}$ is used to denote the perturbatively calculable $\mathcal{J}\times\mathcal{S_{\mathrm{partonic}}}$ and the symbolic convolution has now been replaced by an integration over a dummy-momentum $k$.
+The higher order corrections introduce additional shape-functions, but are suppressed by a factor of $1/m_b$ \cite{Ligeti:2008ac,Bernlochner:2020jlt}.
 Generally, $\mathcal{H}$ and $\mathcal{P}$ is calculable in perturbation theory (see Appendix A of \cite{Ligeti:2008ac}).
 $\mathcal{H}$ is directly expressed in terms of the effecive Wilson coefficient $\mathcal{C}_7^{\mathrm{eff}}$. 
 Moreover, at lowest-order in perturbation theory $\mathcal{P}$ can be expressed as a delta function:
@@ -230,22 +232,28 @@ Moreover, at lowest-order in perturbation theory $\mathcal{P}$ can be expressed 
     \mathcal{P}(m_B,k,\mu) = \delta(k) + \mathcal{O}(\alpha_s),
 \end{equation}
 and therefore integrating out the momentum $k$:
-\begin{equation}
-    \frac{d\Gamma}{d\Egamma} \propto |C_7^{\mathrm{eff}}|^2 \mathcal{F}(m_B-2\Egamma).
+\begin{equation}\label{eq:integrated_egamma}
+    \frac{d\Gamma}{d\Egamma} \propto |C_7^{\mathrm{eff}}|^2 \mathcal{F}(x).
 \end{equation}
+It is clear that the peak region (close to $m_B/2$) is governed strongly by the shape-function.
 
 Conversely to the Wilson coefficients, the shape function is not well-known and non-perturbative.
 Therefore, theoretical and experimental comparisons always lead to modelling-related uncertainties.
-An interesting analysis by the SIMBA collaboration \cite{Bernlochner:2020jlt} describes a model-independent treatment of the shape function, based on the treatment sketched out here.
+There are a number of different works which propose ways to describe it \cite{Benson:2004sg,Lange:2005yw,Andersen:2005mj,Gambino:2007rp,Aglietti:2007ik,Bernlochner:2020jlt}.
+For example, Ref. \cite{Andersen:2005mj} describe it based on a technique called dressed gluon exponentiation.
+The result of Ref. \cite{Lange:2005yw} provides several functional forms of the shape function, based on the leading-order shape-function that can be extracted from \BtoXsgamma decays.
+An interesting analysis by the SIMBA collaboration \cite{Bernlochner:2020jlt} describes a model-independent treatment of the shape function, embodying the idea sketched out here.
 In particular, any chosen shape function is expanded in a complete set of orthonormal basis functions, and can therefore be extracted, together with the normalisation, from a global-fit of available experimental results.
 The strength of this approach is a consistent method to combine several measurements for the extraction of the shape function and its moments.
 
-\todo[inline]{I need to connect this to the integrated spectrum. Talk a bit more about Kagan Neubert parameters and thats it! Finish tomorrow Henrikas PLEASSEEEE}
-
 One of the most commonly chosen inclusive \BtoXsgamma models for experimental analyses is known as the Kagan-Neubert model \cite{Kagan:1998ym}.
-This model has also been used in the analysis described in this thesis.
+The idea of the model is to model the shape function using a simple form:
+\begin{equation}
+    \mathcal{F}(x) = N\left(1-\frac{x}{m_B-m_b}\right)^a\exp{(1+a)\frac{x}{m_B-m_b}}
+\end{equation}
 One of the main advantages of the Kagan-Neubert model is the fact that it is readily available in \texttt{EvtGen} Monte Carlo generator, commonly used by $B$-factories \cite{Ryd:2005zz}.
 The \BtoXsgamma inclusive decay is implemented as the \texttt{BTOXSGAMMA} model within the generator. 
+This model has also been used in the analysis described in this thesis.
 
 It should be noted that Kagan-Neubert shouldn't be considered `state-of-the-art' model for \BtoXsgamma. 
 Different, and more recent, approaches exist for the description of the shape-function and, consequentially, \BtoXsgamma spectrum \cite{Benson:2004sg,Lange:2005yw,Andersen:2005mj,Gambino:2007rp,Aglietti:2007ik}.
