@@ -89,13 +89,14 @@ However, recent developments in understanding the non-perturbative effects \cite
 The origin of this contribution will be further discussed with the differential decay rate in \Cref{sec:btosgamma_spectrum_theory}.
 It will also be seen that the threshold for \EB is motivated also from the experimental side, as large background-process contamination is present in the low-\EB region.
 
-Using operator product expansion, one can calculate $|<\s\g|\mathcal{L}_{\mathrm{eff}}|b>|^2$ and then the perturbative decay rate can be written as \cite{Misiak:2020vlo}:
+Using operator product expansion, one can calculate the matrix element $|\mel*{s\g}{\mathcal{L}_{\mathrm{eff}}}{b}|^2$ and integrate it from chosen energy threshold, $\Egamma>E_0$. 
+Then the perturbative decay rate can be written as \cite{Misiak:2020vlo}:
 \begin{equation}\label{eq:theory_decay_rate}
     \Gamma(b\ra\s\g) = \frac{G^2_F m_{\mathrm{b}}^5 \alpha_{\mathrm{em}}}{32\pi^4}|V_{ts}^*V_{tb}|^2\sum_{i,j}^8C^{\mathrm{eff}}_{i}(\mu_b)C^{\mathrm{eff}}_{j}(\mu_b)\hat{G}_{ij}(E_0,\mu_b),
 \end{equation}
 where $m_{\mathrm{b}}$ is the $b$-quark pole mass, $\alpha_{\mathrm{em}}$ is the fine-structure constant.
 The $C_{i}^{\mathrm{eff}}(\mu_b)$ coefficients represent effective Wilson coefficients \cite{Buras:1993xp} that are renormalisation-scheme independent and defined through linear combinations of the Wilson coefficients of \Cref{eq:effective_lagrangian}.
-Finally, the functions $\hat{G}_{ij}$ encapsulate the terms describing the interference between operators $\mathcal{O}_{i,j}$.
+Finally, the functions $\hat{G}_{ij}$ encapsulate the terms describing the interference between operators $\mathcal{O}_{i,j}$, which arise in the squared matrix element.
 As already mentioned before, the dominant terms arise from a handful of local operators and the combined efforts to calculate this have brought \BtoXsgamma theoretical estimates to the next-to-next-to-leading order precision.
 The dominant functions $\hat{G}_{77}$ \cite{Asatrian:2006rq}, $\hat{G}_{78}$ \cite{Asatrian:2010rq}, $\hat{G}_{(1,2)7}$ \cite{Boughezal:2007ny,Misiak:2020vlo} have been evaluated.
 Contributions from $\hat{G}_{(1,2,8)8}$ \cite{Ferroglia:2010xe,Misiak:2010tk} have also been calculated.
@@ -104,31 +105,37 @@ The mixing of $\mathcal{O}_{1-6}\to\mathcal{O}_8$ has been also described \cite{
 Some of the next-to-next-to-leading order corrections depend on the mass of the charm quark.
 However, as the evaluation of such corrections at the physical mass of the charm quark is complicated, the mass is interpolated between $m_c=0$ and $m_c\gg m_b$ \cite{Misiak:2019ccp}.
 
-In order to minimise the uncertainties arising from the CKM matrix element determination and 5th power dependance on the ill-defined pole-mass of the $b$ quark in \Cref{eq:theory_decay_rate}, the calculation of \BtoXsgamma decay rate is usually normalised to the semi-leptonic decay rate of $\B\to\X_c\ell\nu_{\ell}$.
-In doing so, the decay rate is expressed as \cite{Misiak:2020vlo}:
-\begin{equation}\label{eq:normalised_br}
-    \frac{\Gamma(\BtoXsgamma)_{\Egamma>E_0}}{\Gamma(\B\to X_c\ell\nu_\ell)} = \frac{\mathcal{B}(\BtoXsgamma)}{\mathcal{B}(\B\to X_c\ell\nu_\ell)} = \left|\frac{V_{ts}^*V_{tb}}{V_{cb}}\right|^2\frac{6\alpha_{\mathrm{em}}}{\pi C}[P(E_0)+N(E_0)].
+\Cref{eq:theory_decay_rate} contains a 5th power dependance on the ill-defined pole-mass of the $b$~quark.
+Furthermore, uncertainties arising from the CKM matrix element determination also directly enter the calculation.
+In order to minimise the uncertainties related to these values, the calculation of \btosgamma decay rate is usually normalised to the semi-leptonic decay rate $b\rightarrow u\ell\nu$.
+An alternative choice would be the experimentally more attainable $b\rightarrow c\ell\bar{\nu}$. 
+However using the charmless decay rate, allows to separate the $m_c$ determination problem from the problem of calculating higher-order corrections.
+In doing so, the decay rate ratio is expressed as \cite{Gambino:2001ew}:
+\begin{equation}
+    \frac{\Gamma(\b\to\s\g)_{\Egamma>E_0}}{|V_{cb}/V_{ub}|^2 \Gamma(\b\to\u e\nub)} = \left|\frac{V_{ts}^*V_{tb}}{V_{cb}}\right|^2 \frac{6\alpha_{\mathrm{em}}}{\pi}P(E_0).
 \end{equation}
-Here, $P(E_0)$ denotes the perturbatively calculable contribution, and $N(E_0)$ the non-perturbative correction, both of which have been briefly discussed earlier.
+Here $P(E_0)$ denotes the perturbatively calculable contribution. 
+Replacing $b\ra B$, as seen with \Cref{eq:btosgammarate_nonp}, required the introduction of a non-perturbative correction, $N(E_0)$:
+
+\begin{equation}\label{eq:normalised_br}
+    \frac{\Gamma(\BtoXsgamma)_{\Egamma>E_0}}{\Gamma(\B\to X_c\ell\nu_\ell)} = \frac{\mathcal{B}(\BtoXsgamma)_{\Egamma>E_0}}{\mathcal{B}(\B\to X_c\ell\nu_\ell)} = \left|\frac{V_{ts}^*V_{tb}}{V_{cb}}\right|^2\frac{6\alpha_{\mathrm{em}}}{\pi C}[P(E_0)+N(E_0)].
+\end{equation}
 The additional semileptonic phase-space factor:
 \begin{equation}
     C = \left|\frac{V_{ub}}{V_{cb}}\right|^2 \frac{\Gamma(\B\to X_ce\bar{\nu})}{\Gamma(\B\to X_ue\bar{\nu})},
 \end{equation}  
-accounts for the fact that the charmless semileptonic decay rate is used in $P(E_0)$ determination:
-\begin{equation}
-    \frac{\Gamma(\b\to\s\g)_{\Egamma>E_0}}{|V_{cb}/V_{ub}|^2 \Gamma(\b\to\u e\nub)} = \left|\frac{V_{ts}^*V_{tb}}{V_{cb}}\right|^2 \frac{6\alpha_{\mathrm{em}}}{\pi}P(E_0).
-\end{equation}
-The factor $C$ is determined using the experimental value of $\B\to X_c \ell\bar{\nu}$ \cite{Alberti:2014yda}.
-The decay channel $\B\to X_c \ell\bar{\nu}$ has a large branching fraction and is known precisely experimentally \cite{Workman:2022ynf}, therefore this requirement does not pose a problem.
+accounts for the choice to use the $B\rightarrow X_c\ell\bar{\nu}$ as a normalisation channel for the total-decay rate. 
+It is determined using the experimental value of $\B\to X_c \ell\bar{\nu}$, which has a large branching fraction and is known precisely experimentally \cite{Alberti:2014yda,Workman:2022ynf}.
+This choice is preferrable compared to the $|V_{ub}|$-supressed and more model-dependant $\B\to X_u\ell\bar{\nu}$.
 
 At leading order, where non-perturbative effects are disregarded, effects from $\mathcal{C}_{2,7,8}$ are most important and this can be expressed in a compact form \cite{Buras:1993xp}:
 \begin{equation}\label{eq:total_decay_rate_leading_order}
     \frac{\mathcal{B}(\BtoXsgamma)}{\mathcal{B}(\B\to X_c\ell\nu_\ell)} = \left|\frac{V_{ts}^*V_{tb}}{V_{cb}}\right|^2\frac{6\alpha_{\mathrm{em}}}{\pi C}|C_{7}^{(0)\mathrm{eff}}(\mu)|^2.
 \end{equation}
 Here $C_{7}^{(0)\mathrm{eff}}(\mu)$ is the effective leading-order Wilson coefficient which was briefly introduced before.
-At leading-order calculation it takes the form:
+At leading-order, it takes the form:
 \begin{equation}\label{eq:effective_c7}
-    C_{7}^{(0)\mathrm{eff}}(\mu) = \eta^{16/23}\mathcal{C}^{(0)}_7(\mu) + \frac{8}{3} \left(\eta^{14/23}-\eta^{16/23}\right)\mathcal{C}^{(0)}_8(\mu) + \mathcal{C}^{(0)}_2(\mu \sum_i^8h_i\eta^{a_i}.
+    C_{7}^{(0)\mathrm{eff}}(\mu) = \eta^{16/23}\mathcal{C}^{(0)}_7(\mu) + \frac{8}{3} \left(\eta^{14/23}-\eta^{16/23}\right)\mathcal{C}^{(0)}_8(\mu) + \mathcal{C}^{(0)}_2(\mu) \sum_i^8h_i\eta^{a_i}.
 \end{equation}
 The Standard Model coefficients $C_{2,7,8}^{(0)}$ are expressed in terms of $x=(m_t/M_W)^2$:
 \begin{align}
@@ -138,7 +145,6 @@ The Standard Model coefficients $C_{2,7,8}^{(0)}$ are expressed in terms of $x=(
     C_8^{(0)}(M_W) &= \frac{-3x^2}{4(x-1)^4}\ln x + \frac{-x^3+5x^2+2x}{8(x-1)^3}\\
     \end{split}
 \end{align}
-
 The coefficient $\eta$ is expressed as $\eta=\alpha_s(M_W)/\alpha_s(\mu)$, whereas $h_i$ and $a_i$ are the eigenvalues of the scheme-independent anomalous dimension matrix $\gamma^{(0)\mathrm{eff}}$, which can be found defined in the Appendix A of Ref. \cite{Buras:1993xp}.
 The matrix $\gamma^{(0)\mathrm{eff}}$ governs the leading order QCD corrections to $\b\ra\s\g$ and its elements appear in the renormalisation group equation of the effective Wilson coefficients.
 
@@ -161,22 +167,12 @@ Also notable is the fact that the multiplicative QCD correction in the first ter
 
 
 \todo[inline]{I could change $M_W$ to $\mu_0$ because it doesnt matter what scale is there I think idk}
+% \todo[inline]{I hate this part, need to rethink}
 
 To go beyond the leading-order approximation, one has to take into account the full form of \Cref{eq:normalised_br}.
-Marking the top contributions as $K_t$, as well as other contributions (dominated by charm) $K_c$, and the electroweak corections $K_{\mathrm{ew}}$ one arrives at \cite{Gambino:2001ew}:
-\begin{equation}\label{eq:perturbative_entry}
-    P(E_0) = \left| K_c + \left(1+\frac{\alpha_s(M_W)}{\pi} \ln\frac{M_W^2}{m_t^2}r(\mu_0)K_t+K_{\mathrm{ew}}\right)\right| +B(E_0).
-\end{equation}
-The additional term $B(E_0)$ is the bremmstrahlung function encodes the effects of $b\ra s\g g$ and $b\ra s\g \qqbar$ transitions.
-It is the only part of \Cref{eq:perturbative_entry} that depends on the chosen \Egamma threshold.
-The ratio $r(\mu_0)$ is introduced to account for differences in the choice of the renormalisation scale for $m_b$-related kinematic parameters.
-
-Finally, estimations of the non-perturbative corrections are always done separately.
-\todo[inline]{add here about N(E0) if/when Ivan replies}
-
-A detailed look of the higher-order calculation of the total \BtoXsgamma decay rate is beyond the scope of this thesis, but such calculations can be followed up in the references already introduced in this chapter, e.g. \cite{Misiak:2020vlo} and references therein.
-
-The above mentioned reference also includes the most up-to-date estimation of the total decay rate of \BtoXsgamma in the Standard Model:
+A sketch of the next-to-leading order can be found in Ref.\cite{Gambino:2001ew}, whereas the most up-to-date total decay rate calculation is describes in Ref.\cite{Misiak:2020vlo} and references therein.
+A detailed look of the higher-order calculation of the total \BtoXsgamma decay rate is beyond the scope of this thesis, but such calculations can be followed up in the references already introduced in this chapter and references therein. 
+Ref.\cite{Misiak:2020vlo} also includes the most up-to-date estimation of the total decay rate of \BtoXsgamma in the Standard Model:
 \begin{equation}
     \mathcal{B}(\BtoXsgamma) = (3.40\pm 0.17) \times 10^{-4}.
 \end{equation}
@@ -189,23 +185,28 @@ It is necessary to remove the dependance on $m_c$ interpolation and improve the 
 While this value is sufficient to compare the current experimental and theoretical predictions (see Chapter XX), the input from Belle II will reduce the experimental uncertainty below that of the theoretical prediction.
 \todo[inline]{experimental status add here or maybe just snowmass citation}
 
-\section{The photon energy spectrum of \texorpdfstring{\BtoXsdgamma}{B->Xsg}}\label{eq:btosgamma_spectrum_theory}
+\section{The photon energy spectrum of \texorpdfstring{\BtoXsdgamma}{B->Xsg}}\label{sec:btosgamma_spectrum_theory}
 
-It was already briefly discussed when introducing \Cref{eq:btosgammarate_nonp} that theoretical and experimental evaluations of the \BtoXsgamma decay rate employ a photon-energy threshold.
+It was already briefly discussed (when introducing \Cref{eq:btosgammarate_nonp}) that theoretical and experimental evaluations of the total \BtoXsgamma decay rate employ a photon-energy threshold.
+The non-perturbatve effects that occur at different energy scales compared to the effective $b\ra\s\g$ transition can be integrated out in a treatment of the total decay rate.
+However, the choice of a lower-threshold spoils this approximation and introduces non-perturbative corrections.
+When considering the photon-energy spectrum, these effects directly manifest as differences in the shape of the spectrum.
+
 At lowest order, $b\ra\s(\d) \g$ is a two-body decay, which means that the decay rate peaks near to the kinematic limit equal to half the \B-meson mass, $m_B/2\gsim E_{\g}$.
-Higher-order effects, such as gluonstrahlung, and the Fermi motion of the $b$ quark within the $B$ meson smear the distribution.
+Higher-order effects, such as gluonstrahlung, and the Fermi motion of the $b$ quark within the $B$ meson, smear the distribution.
 The necessity to account for all of these effects occuring at different energy-scales motivates the use of soft-collinear effective-theory to describe \BtoXsgamma photon-energy spectrum \cite{Neubert:2004qw,Ligeti:2008ac}.
 It allows to factorise different contributions to the decay rate, $d\Gamma$, into terms originating from effective hard-interaction vertices, collinear particles and soft particle:
 \begin{equation}\label{eq:differential_decay_rate_SCET}
     d\Gamma \propto \mathcal{H} \times \mathcal{J} \otimes \mathcal{S}.
 \end{equation}
 The $\mathcal{H}$, $\mathcal{J}$, $\mathcal{S}$ represent the hard, jet and hadronic-soft functions, respectively, with $\otimes$ symbolising convolution between the two terms.
-Interestingly, the $\mathcal{S}$ can be further factorised into a partonic soft-function, $\mathcal{S}_{\mathrm{partonic}}$, and a non-perturbative \textit{shape-function}, $\mathcal{F}$:
+Importantly, the $\mathcal{S}$ can be further factorised into a partonic soft-function, $\mathcal{S}_{\mathrm{partonic}}$, and a non-perturbative \textit{shape-function}, $\mathcal{F}$:
 
 \begin{equation}\label{eq:factorisation}
     \mathcal{S} = \mathcal{S}_{\mathrm{partonic}} \otimes \mathcal{F},
 \end{equation}
 which means that the application of SCET is fully capable to separate perturbative and non-perturbative contributions in the differential decay-rate of \BtoXsgamma.
+This is shown graphically in \Cref{fig:xsgamma_theory_sketches}, which sketch out the leading-order, perturbative and non-perturbative effects in describing the \BtoXsgamma spectrum.
 
 Due to the larger \BtoXsgamma decay rate and overall smaller background-process rate, experimental values have the highest precision around the peak region.
 However, from the theory side, the peak part is mostly governed by the non-perturbative effects, encoded within the shape function \cite{Ligeti:2008ac}.
@@ -219,7 +220,13 @@ Therefore, reliable theoretical description of the shape-function is critical to
     \subcaptionbox{\label{fig:theory_ingredients_schematic}}{
         \includegraphics[width=0.5\textwidth]{figures/theory/xsgamma_theory_components.png}
     }
-    \caption{\label{fig:xsgamma_theory_sketches} \todo[inline]{Fill}. Credit to Frank Tackmann.}
+    \caption{\label{fig:xsgamma_theory_sketches} 
+    The schematic representation of the theoretical \BtoXsgamma spectrum components and the comparison of them in data.
+    Note that the figures are presented only for illustration purposes and do not represent a highly-accurate depiction.
+    \Cref{fig:theory_to_experiment} represent the leading-order $\delta$ function spectrum, the non-perturbative shape-function effects, and the convolution of these effects with the perturbatively calculable ones.
+    It also includes the experimental effects, such as finite detector resolution.
+    \Cref{fig:theory_ingredients_schematic} illustrates the origin of perturbative and non-perturbative effects in a \BtoXsgamma decay.
+    Credit to Dr.Frank Tackmann.}
 \end{figure}
 
 An additional motivation to study the shape function is the fact that such function is a universal property of the $B$ meson at leading order in $1/m_b$ \cite{Neubert:1993um,Bigi:1993ex}.
@@ -248,8 +255,8 @@ and therefore integrating out the momentum $k$:
 \begin{equation}\label{eq:integrated_egamma}
     \frac{d\Gamma}{d\Egamma} \propto |C_7^{\mathrm{eff}}|^2 \mathcal{F}(x).
 \end{equation}
-As the leading order \BtoXsgamma is closely approximated as a two-body decay, it is clear that the peak region (close to $m_b/2$) is governed strongly by the shape-function.
-In that case $|C_7|$ just governs the normalisation of the spectrum.
+This shows, as stated before, that the peak region (close to $m_b/2$) is governed by the shape-function.
+In that case $|C_7|$ is the normalisation of the spectrum.
 The shape function can be formally expanded in its moments as \cite{PhysRevD.50.2037,Ligeti:2008ac}:
 \begin{equation}
     \mathcal{F}(x) = \sum_n \frac{1}{n!} A_n \dv[n]{\delta(x)}{x},
@@ -258,10 +265,14 @@ where
 \begin{equation}\label{eq:moments_of_shape_function}
     A_n = \int dk k^n \mathcal{F}(k).
 \end{equation}
-\Cref{eq:moments_of_shape_function} are the equations for the $n$th moments of the shape function.
+The \Cref{eq:moments_of_shape_function} is the expression for the $n$-th moment of the shape function.
 In all shape-function based calculations $A_0=1$ is fixed, because the shape-function is normalised.
 Note that if one naively neglects $n>1$ terms, the integral over total $\Egamma$ of \Cref{eq:integrated_egamma} would take the form $\Gamma\sim|C_7^{\mathrm{eff}}|^2$, which is consistent with \Cref{eq:total_decay_rate_leading_order}.
-Therefore, for total decay-rate calculations (such as the ones sketched in \Cref{sec:btosgamma_totalrate_theory}) it is enough to know the first several moments of the shape function, as the more delicate $\mathcal{F}(k)$ dependance is integrated.
+Therefore, for total decay-rate calculations (such as the ones sketched in \Cref{sec:btosgamma_totalrate_theory}) it is enough to know the first several moments of the shape function, as the more delicate $\mathcal{F}(k)$ dependance is suppressed by the factorial $n!$ terms.
+
+\begin{equation}
+    \expval{\Egamma} = \frac{\int d\Egamma \Egamma \dv{\mathcal{B}}{\Egamma}}{\int d\Egamma \dv{\mathcal{B}}{\Egamma}}
+\end{equation}
 
 Conversely to the Wilson coefficients, the form of the shape function is not well-known and non-perturbative.
 Therefore, theoretical and experimental comparisons always lead to modelling-related uncertainties.
@@ -270,27 +281,37 @@ For example, Ref. \cite{Andersen:2005mj} describe it based on a technique called
 The result of Ref. \cite{Lange:2005yw} provides several functional forms of the shape function, based on the leading-order shape-function that can be extracted from \BtoXsgamma decays.
 An interesting analysis by the SIMBA collaboration \cite{Bernlochner:2020jlt} describes a model-independent treatment of the shape function based on \Cref{eq:differential_decay_simba}.
 In particular, any chosen shape function is expanded in a complete set of orthonormal basis functions, and can therefore be extracted, together with the normalisation, from a global-fit of available experimental results.
-The strength of this approach is a consistent method to combine several measurements for the extraction of the shape function and its moments.
+The strength of this approach is a consistent method to combine several experimental inputs for the extraction of the shape function and its moments.
 
 One of the most commonly chosen inclusive \BtoXsgamma models for experimental analyses is known as the Kagan-Neubert model \cite{Kagan:1998ym}.
 It provides a next-to-leading order description of the inclusive \BtoXsgamma spectrum. 
-The shape function is modelled using a simple form:
+In this model, the shape function takes a simple form:
 \begin{equation}
     \mathcal{F}(x) = N\left(1-\frac{x}{m_B-m_b}\right)^a\exp{(1+a)\frac{x}{m_B-m_b}}.
 \end{equation}
-The shape function satisfies the necessary moment constraints through these relations: $A_0=1,A_1 = 0, A_2=-\lambda_1/3$.
-The parameter $a$ is also related to $A_2 = (m_B-m_b)/(1+a)$.
+The shape function satisfies the necessary moment constraints through these relations: $A_0=1,A_1 = 0,A_2=-\lambda_1/3$.
+The parameter $a$ is also related to $A_2=(m_B-m_b)/(1+a)$.
 Therefore, the shape-function can be fully described by two free parameters: the $b$-quark pole-mass $m_b$ and the residual-momentum of the $b$-quark in the $B$ meson, $\lambda_1$.
-This relatively straightforward relation and the fact that the Kagan-Neubert model is readily available in \texttt{EvtGen} Monte Carlo generator, commonly used by $B$-factories \cite{Ryd:2005zz}, made it the most common choice for experimental description of the \Egamma spectrum.
+This relatively straightforward relation makes it easy to implement and interpret.
+Furthermore, the Kagan-Neubert model is readily available in \texttt{EvtGen} Monte Carlo generator, commonly used by $B$-factories \cite{Ryd:2005zz}.
 The \BtoXsgamma inclusive decay is implemented as the \texttt{BTOXSGAMMA} model within the generator. 
-This model has also been used in the analysis described in this thesis.
-We generate the spectrum for the experimental analysis using the evualuated values of $m_b$ and $\lambda_1$ by the SIMBA collaboration \cite{Bernlochner:2020jlt}:
+These points made it the conventional choice for experimental description of the inclusive-\Egamma spectrum in many of past measurements.
+
+The previous argument may also be used inversely: an accurate experimental measurement of the \BtoXsgamma spectrum, can be used to precisely determine the parameters $m_b$ and $\lambda_1$ (and also higher moments of the shape function).
+One such example is the aforementioned SIMBA collaboration result \cite{Bernlochner:2020jlt}.
+The evaluated values of $m_b$ and $\lambda_1$ by the SIMBA collaboration from fitting available \BtoXsgamma experimental results are:
 
 \begin{equation}
-    values.
+    m_b^{1S} =4.750~\gev \pm 0.043;  \quad \lambda^{\mathrm{inv}}_1 = -0.210\pm0.083,~\gev^2, 
 \end{equation}
+where uncertainties are combined fitting, theoretical and parametric.
+These results originate directly from experimental-data fits and have slightly-larger than world-average uncertainties.
+The superscript $1S$ and the hat on the operator $\lambda$ indicate a renormalisation-scheme that is chosen by the authors.
 
-\todo[inline]{Need to tie in renormalisation scheme somehow and say that we convert values from SIMBA}
+The works presented in this thesis will use the Kagan-Neubert model to generate the inclusive photon-energy spectrum.
+I will use the $m_b$ and $\lambda_1$ values measured by the SIMBA collaboration, as they are extracted from all available experimental evidence, and contain slightly-larger uncertainties making it a safer conservative estimate.
+The relations provided in \cite{Ligeti:2008ac} will be used to transform the `$1S$/invisible' scheme to the kinetic-scheme at precision of $\order(\alpha_s^2)$, that can be used in the Kagan-Neubert model.
 
-\section{New-physics opportunities in \BtoXsgamma}
+
+\section{New-physics opportunities in \texorpdfstring{\BtoXsdgamma}{B->Xsg}}
 
