@@ -240,7 +240,7 @@ Let's consider \Cref{eq:differential_decay_rate_SCET,eq:factorisation} in a bit 
 Following the treatment of Ref.~\cite{Ligeti:2008ac}, the differential decay rate takes the form:
 
 \begin{equation}\label{eq:differential_decay_simba}
-    \frac{d\Gamma}{dE_{\gamma}} = 2\frac{G_F^2\alpha_{\mathrm{em}} m_b^5}{32\pi^4}|V_{ts}V_{tb}^*|^2 \mathcal{H}(x, \mu) \times \int dk \mathcal{P}(m_b, x - k, \mu_i) \mathcal{F}(k) + \mathrm{corrections},
+    \frac{d\Gamma}{dE_{\gamma}} = 2\frac{G_F^2\alpha_{\mathrm{em}} m_b^5}{32\pi^4}|V_{ts}V_{tb}^*|^2 \mathcal{H}(x, \mu) \times \int dk \mathcal{P}(m_b, x - k, \mu_i) \mathcal{F}(k) + \order\left(\frac{\Lambda_{\mathrm{QCD}}}{m_b}\right),
 \end{equation}
 where $x=m_B-2\Egamma$, $\mathcal{P}$ is used to denote the perturbatively calculable $\mathcal{J}\times\mathcal{S_{\mathrm{partonic}}}$ and the symbolic convolution has now been replaced by an integration over a dummy-momentum $k$.
 The higher order corrections introduce additional shape-functions, but are suppressed by a factor of $1/m_b$ \cite{Neubert:2002yx}.
@@ -258,7 +258,7 @@ and therefore integrating out the momentum $k$:
 This shows, as stated before, that the peak region (close to $m_b/2$) is governed by the shape-function.
 In that case $|C_7|$ is the normalisation of the spectrum.
 The shape function can be formally expanded in its moments as \cite{PhysRevD.50.2037,Ligeti:2008ac}:
-\begin{equation}
+\begin{equation}\label{eq:shape_function_expansion}
     \mathcal{F}(x) = \sum_n \frac{1}{n!} A_n \dv[n]{\delta(x)}{x},
 \end{equation}
 where 
@@ -270,11 +270,20 @@ In all shape-function based calculations $A_0=1$ is fixed, because the shape-fun
 Note that if one naively neglects $n>1$ terms, the integral over total $\Egamma$ of \Cref{eq:integrated_egamma} would take the form $\Gamma\sim|C_7^{\mathrm{eff}}|^2$, which is consistent with \Cref{eq:total_decay_rate_leading_order}.
 Therefore, for total decay-rate calculations (such as the ones sketched in \Cref{sec:btosgamma_totalrate_theory}) it is enough to know the first several moments of the shape function, as the more delicate $\mathcal{F}(k)$ dependance is suppressed by the factorial $n!$ terms.
 
+For example, consider taking only terms up to first order.
+In such case, using the definition of an average,
 \begin{equation}
-    \expval{\Egamma} = \frac{\int d\Egamma \Egamma \dv{\mathcal{B}}{\Egamma}}{\int d\Egamma \dv{\mathcal{B}}{\Egamma}}
+    \expval{\Egamma} = \frac{\int d\Egamma \Egamma \dv{\Gamma}{\Egamma}}{\int d\Egamma \dv{\Gamma}{\Egamma}},
 \end{equation}
+the shape function is directly related to the average of the photon-energy spectrum.
+Similarly, the variance (and higher-order moments) contribute if more terms from \Cref{eq:shape_function_expansion} are considered.
+As shown in Refs.\cite{Bauer:1997fe,Kapustin:1995fk} (and others) two important relations can be shown to emerge:
+\begin{equation}
+    \expval{\Egamma} \sim m_b/2+\order(m_b^2); \quad \expval{\Egamma^2}-\expval{\Egamma}^2 \sim \lambda_1/3+\order(m_b^2),
+\end{equation}
+with the $b$-quark pole-mass, $m_b$, and the residual-momentum caried by the $b$-quark within the $B$ meson, $\lambda_1$.
 
-Conversely to the Wilson coefficients, the form of the shape function is not well-known and non-perturbative.
+The form of the shape function is not well-known and non-perturbative, unlike the Wilson coefficients.
 Therefore, theoretical and experimental comparisons always lead to modelling-related uncertainties.
 There are a number of different works which propose ways to describe it \cite{Benson:2004sg,Lange:2005yw,Andersen:2005mj,Gambino:2007rp,Aglietti:2007ik,Bernlochner:2020jlt}.
 For example, Ref. \cite{Andersen:2005mj} describe it based on a technique called dressed gluon exponentiation.
@@ -291,7 +300,7 @@ In this model, the shape function takes a simple form:
 \end{equation}
 The shape function satisfies the necessary moment constraints through these relations: $A_0=1,A_1 = 0,A_2=-\lambda_1/3$.
 The parameter $a$ is also related to $A_2=(m_B-m_b)/(1+a)$.
-Therefore, the shape-function can be fully described by two free parameters: the $b$-quark pole-mass $m_b$ and the residual-momentum of the $b$-quark in the $B$ meson, $\lambda_1$.
+Therefore, the shape-function can be fully described by two free parameters $m_b$ and $\lambda_1$.
 This relatively straightforward relation makes it easy to implement and interpret.
 Furthermore, the Kagan-Neubert model is readily available in \texttt{EvtGen} Monte Carlo generator, commonly used by $B$-factories \cite{Ryd:2005zz}.
 The \BtoXsgamma inclusive decay is implemented as the \texttt{BTOXSGAMMA} model within the generator. 
