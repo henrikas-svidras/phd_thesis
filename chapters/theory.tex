@@ -25,8 +25,6 @@ One of the decay processes used to study these transitions are the so-called rar
 Due to colour confinement of the quarks, in reality they manifest as \BtoXsgamma or \BtoXdgamma, where $X_s$ and $X_d$ denote any meson state originating from the $s$ quark hadronisation.
 The leading Standard Model diagrams for \BtoXsdgamma (used to collectively identify $X_s$ and $X_d$ states) processes are shown in \Cref{fig:sm_diagrams}.
 
-\todo[inline]{citations here are needed, but I don't know how I want to proceed yet. Maybe this is common knowledge}
-
 \begin{figure}[htbp!]
 \resizebox{0.66\textwidth}{!}{
     \subcaptionbox{\label{fig:sm_diagrams}}{
@@ -138,11 +136,11 @@ At leading-order, it takes the form:
     C_{7}^{(0)\mathrm{eff}}(\mu) = \eta^{16/23}\mathcal{C}^{(0)}_7(\mu) + \frac{8}{3} \left(\eta^{14/23}-\eta^{16/23}\right)\mathcal{C}^{(0)}_8(\mu) + \mathcal{C}^{(0)}_2(\mu) \sum_i^8h_i\eta^{a_i}.
 \end{equation}
 The Standard Model coefficients $C_{2,7,8}^{(0)}$ are expressed in terms of $x=(m_t/M_W)^2$:
-\begin{align}
+\begin{align}\label{eq:leading_order_wilson_coeffs}
     \begin{split}
-    C_2^{(0)}(M_W) &= 1\\
-    C_7^{(0)}(M_W) &= \frac{3x^3-2x^2}{4(x-1)^4}\ln x + \frac{-8x^3-5x^2+7x}{24(x-1)^3}\\
-    C_8^{(0)}(M_W) &= \frac{-3x^2}{4(x-1)^4}\ln x + \frac{-x^3+5x^2+2x}{8(x-1)^3}\\
+    C_2^{(0)}(\mu) &= 1;\\
+    C_7^{(0)}(\mu) &= F_7^{(1)}(x) \equiv \frac{3x^3-2x^2}{4(x-1)^4}\ln x + \frac{-8x^3-5x^2+7x}{24(x-1)^3};\\
+    C_8^{(0)}(\mu) &= F_8^{(1)}(x) \equiv \frac{-3x^2}{4(x-1)^4}\ln x + \frac{-x^3+5x^2+2x}{8(x-1)^3}.\\
     \end{split}
 \end{align}
 The coefficient $\eta$ is expressed as $\eta=\alpha_s(M_W)/\alpha_s(\mu)$, whereas $h_i$ and $a_i$ are the eigenvalues of the scheme-independent anomalous dimension matrix $\gamma^{(0)\mathrm{eff}}$, which can be found defined in the Appendix A of Ref. \cite{Buras:1993xp}.
@@ -165,10 +163,6 @@ To illustrate, when \Cref{eq:effective_c7} is evaluated explicitly:
 it is clear that the additive QCD two-loop contributions enhance the rate significantly.
 Also notable is the fact that the multiplicative QCD correction in the first term suppresses the decay rate, but at a smaller scale than the additive corrections.
 
-
-\todo[inline]{I could change $M_W$ to $\mu_0$ because it doesnt matter what scale is there I think idk}
-% \todo[inline]{I hate this part, need to rethink}
-
 To go beyond the leading-order approximation, one has to take into account the full form of \Cref{eq:normalised_br}.
 A sketch of the next-to-leading order can be found in Ref.\cite{Gambino:2001ew}, whereas the most up-to-date total decay rate calculation is describes in Ref.\cite{Misiak:2020vlo} and references therein.
 A detailed look of the higher-order calculation of the total \BtoXsgamma decay rate is beyond the scope of this thesis, but such calculations can be followed up in the references already introduced in this chapter and references therein. 
@@ -181,9 +175,6 @@ The first two amount to $3\%$ each, whereas the last is considered at $2.5\%$.
 This amounts to a total uncertainty of, approximately, 4.9\%.
 For significant accuracy improvements in the future, higher-order calculations will not be sufficient alone.
 It is necessary to remove the dependance on $m_c$ interpolation and improve the treatment of the parametric uncertainties (non-perturbative effects) to go below the $\sqrt{3^2+2.5^2}\approx3.9\%$ uncertainty.
-
-While this value is sufficient to compare the current experimental and theoretical predictions (see Chapter XX), the input from Belle II will reduce the experimental uncertainty below that of the theoretical prediction.
-\todo[inline]{experimental status add here or maybe just snowmass citation}
 
 \section{The photon energy spectrum of \texorpdfstring{\BtoXsdgamma}{B->Xsg}}\label{sec:btosgamma_spectrum_theory}
 
@@ -330,7 +321,7 @@ Considering the Standard-Model diagrams in \Cref{fig:b_to_s_gamma_diagrams}, any
 If light particles that couple to quarks would exist, they are generally expected to have been observed by now.
 Therefore the new degrees-of-freedom introduced by \BSM models are expected to be heavy.
 In effective field-theory terms:
-\begin{equation}
+\begin{equation}\label{eq:corr_wilson}
     \mathcal{C}_i^{\mathrm{SM}} \ra \mathcal{C}_i^{\mathrm{SM}} + \mathcal{C}_i^{\mathrm{\BSM}}.
 \end{equation}
 That is, \BSM physics can manifest by modifying any Wilson coefficient contributing to \btosgamma Lagrangian (\Cref{eq:effective_lagrangian}).
@@ -353,7 +344,79 @@ Furthermore, having a second Higgs doublet could allow to solve the strong-CP pr
 Finally, it may also provide answers to the baryon asymmetry observed in the Universe.
 An example of a charged Higgs-boson, a prediction of (but not exclusively) \TwoHDM models, contributing to the \btosgamma transition is shown in \Cref{fig:bsm_diagrams}.
 
-There are two main types of \TwoHDM models that contribute in the quark sector via these loops:
+There are two main types of \TwoHDM models that contribute in the quark sector with vanishing tree-level FCNC contributions:
 so-called type-I \TwoHDM where all quarks can couple to only one of the Higgs doublets, or
 type-II \TwoHDM where $u$-type quarks couple to one doublet and $d$-type couple to another.
+In the Standard model, a Lagrangian for a charged Higgs-boson interaction with quarks, following these requirements, is \cite{Hermann:2012fc}:
+\begin{equation}
+    \mathcal{L}_{H^+} = \frac{1}{\sqrt{\sqrt8G_F}} \sum_{i,j}^3 \bar{u}_i (A_u m_{u_i}V_{ij}P_L - A_d m_{d_j}V_{ij}P_R)d_jH^+ + \mathrm{h.c}.
+\end{equation}
+Here, $A_q$ are couplings, related to either $u$- or $d$-type quarks, with masses $m_u$ and $m_d$.
+The sum over $i$, $j$ sums over the quark flavours and $V_{ij}$ is the appropriate element of the CKM matrix.
+In the type-I \TwoHDM, the couplings to different $u$- and $d$-type quarks are:
+\begin{equation}\label{eq:type1_hdm_couplings}
+A_u = A_d = \frac{1}{\tan\beta},
+\end{equation}
+whereas for type-II \TwoHDM:
+\begin{equation}\label{eq:type2_hdm_couplings}
+    A_u = - \frac{1}{A_d} = \frac{1}{\tan\beta}.
+\end{equation}
+These couplings are expressed in terms of $\tan\beta$, which is the ratio of Higgs vacuum expectation values of the two doublets in these theories.
+At leading-order, the interactions are fully described by $\tan\beta$ and an additional parameter -- the mass of the charged Higgs, $m_{H^+}$, but these receive corrections at higher orders related to more parameters in \TwoHDM or SUSY theories \cite{Feng:1996xv}.
+
+The decay-rate calculation for the \TwoHDM model, with the above described procedure can then proceed in a similar manner as described in \Cref{sec:btosgamma_totalrate_theory}, by modifying the effective Wilson coefficients based on \Cref{eq:corr_wilson} and calculating appropriate corrections \cite{Ciuchini:1997xe}:
+\begin{equation}\label{eq:delta_wilson_2hdm}
+    \Delta C_i = 
+    \begin{cases}
+        0, & i=1,...,6;\\
+        \frac{A_u^2}{3}F_i^{(1)}(y) - A_uA_dF_i^{(2)}(y), & i=7,8;\\
+    \end{cases}
+\end{equation}
+where $F_i^{(1)}(y)$ have already been defined in \Cref{eq:leading_order_wilson_coeffs}, and
+\begin{align}
+    \begin{split}
+    F_7^{(2)}(y) &= \frac{3y^2-2y}{6(y-1)^3}\ln y + \frac{-5y^2+3y}{12(y-1)^2},\\
+    F_8^{(2)}(y) &= \frac{-y}{2(y-1)^3}\ln y + \frac{-y^2+3y}{4(y-1^2)},\\
+    \end{split}
+\end{align}
+and $y = m_t^2/m_{H^+}^2$.
+Using \Cref{eq:type1_hdm_couplings}, in the case of type-I \TwoHDM, the charged Higgs contribution takes the form $A\cot^2\beta-B\cot^2\beta$ which interferes with the Standard Model value in a destructive manner.
+On the other hand, type-II \TwoHDM (\Cref{eq:type1_hdm_couplings}) will take the form $A\cot^2\beta+B$ which is always constructive \cite{Misiak:2017bgg}.
+
+Higher-order corrections for \TwoHDM are provided in \cite{Ciuchini:1997xe,Hermann:2012fc} and have reached the next-to-next-to-leading order.
+Based on \Cref{eq:delta_wilson_2hdm} and higher-order corrections one can quantify the effect such models would have on the \BtoXsgamma branching fraction.
+The dependance of the \BtoXsgamma decay rate on $m_{H^+}$ is shown in \Cref{fig:xsgamma_br_2hdm} for two particular cases of $\tan\beta$ (see later \Cref{fig:2hdm_limits}).
+
+\begin{figure}[htbp!]
+    \centering
+    \subcaptionbox{\label{fig:xsgamma_2hdm_type1}}{
+        \includegraphics[width=0.48\textwidth]{figures/theory/xsgamma_2hdm_type1.png}
+    }
+    \subcaptionbox{\label{fig:xsgamma_2hdm_type2}}{
+        \includegraphics[width=0.48\textwidth]{figures/theory/xsgamma_2hdm_type2.png}
+    }
+    \caption{\label{fig:xsgamma_br_2hdm} 
+    Taken from \cite{Misiak:2017bgg}.}
+\end{figure}
+
+The destructive (constructive) interference predicted by the type-I (type-II) \TwoHDM{s} is clearly visible in \Cref{fig:xsgamma_br_2hdm}.
+Comparing the experimental and theoretical results seen in the figures, allowed $\tan\beta-m_{H^+}$ parameter-space ranges can be determined.
+The figures showing next-to-next-to-leading order results are shown in \Cref{fig:2hdm_limits}.
+
+\begin{figure}[htbp!]
+    \centering
+        \includegraphics[width=0.5\textwidth]{figures/theory/xsgamma_2hdm_both_types.png}
+    \caption{\label{fig:2hdm_limits} 
+    Figure is taken from \cite{Misiak:2017bgg}.}
+\end{figure}
+
+It can be seen that $\tan\beta-m_{H^+}$ space is well bounded from type-I and type-II \TwoHDM results.
+The strongest bounds arise for type-I \TwoHDM results in the range of $\tan\beta\in(0.4,2)$.
+On the other hand, type-II \TwoHDM satureates at high $\tan\beta$ limit.
+For values outside these ranges other experimental bounds are necessary \cite{Misiak:2017bgg}.
+
+Using the methods laid out in this section, Ref.\cite{Misiak:2020vlo} rules out type-II \TwoHDM model with a charged Higgs lighter than $800~\gev$ at $2\sigma$.
+A compatible result is also obtained in Ref.\cite{Atkinson:2021eox}.
+
+
 
