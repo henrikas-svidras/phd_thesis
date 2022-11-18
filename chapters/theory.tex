@@ -314,7 +314,7 @@ The spectra, generated with varied values of $\lambda_1$ and $m_b$ are shown in 
     \Cref{fig:knmodel_lambda_variation} depicts the inverse scenario.
     The generated spectra correspond to $10^6$ events of both $B^+$ and $B^0$ decay modes.
     The full-line curves correspond to the default setup used by \texttt{BTOXSGAMMA}.
-    A sharp cut at $\Egamma\approx2.55~\gev$ is due to the fact that }
+    The model generates $\Egamma$ spectrum for $m_{X_s}>1.1~\gevcc$, which corresponds to $\Egamma\approx2.52$.}
 \end{figure}
 
 
@@ -332,6 +332,19 @@ The superscript $1S$ and the hat on the operator $\lambda$ indicate a renormalis
 The works presented in this thesis will use the Kagan-Neubert model to generate the inclusive photon-energy spectrum.
 I will use the $m_b$ and $\lambda_1$ values measured by the SIMBA collaboration, as they are extracted from all available experimental evidence, and contain slightly-larger uncertainties making it a safer conservative estimate.
 The relations provided in \cite{Ligeti:2008ac} will be used to transform the `$1S$/invisible' scheme to the kinetic-scheme at precision of $\order(\alpha_s^2)$, that can be used in the Kagan-Neubert model.
+
+Lastly, it is also important to stress that the Kagan-Neubert (or any inclusive) model cannot generate resonant structures that the $m_{X_s}$ exhibits.
+As a two body decay, $m_{X_s}$ and $\Egamma$ are directly related:
+\begin{equation}
+    m_{X_s}**2 = m_B**2 - 2m_B\Egamma.
+\end{equation}
+Therefore the inclusive-model spectrum must always be interpreted in the picture of quark-hadron duality.
+In the low-\Egamma region non-resonant and resonant decays are effectively indistinguishable as there is a large number of available kinematic states.
+The inclusive model describes the spectrum as an average of all the states, and this is further enhanced by resolution effects in experimental data (see \Cref{sec:unfolding}).
+In the high-\Egamma region, however, the spectra is dominated by several resonances, most notably the well-separated $B\rightarrow\Kstar(892)\gamma$.
+A study by the authors of the Kagan-Neubert model \cite{Kagan:1998ym} show that the inclusive model for $m_{X_s}\gtrsim 1.1~\gevcc$ should be supplemented by the resonant decays.
+We will follow this approach when implementing a model for the analysis (ref later)
+\todo[inline]{reference here later, note to self}
 
 \section{New-physics opportunities in \texorpdfstring{\BtoXsdgamma}{B->Xsg}}
 
