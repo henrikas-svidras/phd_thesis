@@ -3,6 +3,7 @@
 In this Chapter, the theoretical overview of the Standard Model, flavour physics and \BtoXsgamma will be presented.
 It will introduce the main theoretical concepts that are featured in this thesis and provide a theoretical grounding for the experimental analyses performed.
 \todo[inline]{section listing here once they are finished}
+\todo[inline]{2.1 and 2.2 are ongoing and will be finished towards the end}
 
 \section{The Standard Model}
 
@@ -53,7 +54,6 @@ The decay rate of \BtoXsdgamma is affected by the contributions from weak and st
 Weak contributions can be calculated perturbatively, however the strong contributions are usually described by effective point-like theories.
 In weak decays, including \BtoXsgamma, \textit{Operator Product Expansion} \cite{Peskin:1995ev,Buras:1998raa} is used to derive the effective theory.
 It replaces the hadron-binding strong quark interactions and the weak quark interactions mediating $\b\ra\s$ by a single effective vertex.
-\todo[inline]{consider adding here sketches}
 An effective Lagrangian describing the $\b\to\s\g$ can be written as~\cite{Kaminski:2012eb,Misiak:2015xwa}:
 \begin{equation}\label{eq:effective_lagrangian}
     \mathcal{L}_{\mathrm{eff}} = \frac{4G_F}{\sqrt{2}}V_{ts}^*V_{tb}\left[\sum^{8}_{i=1}\mathcal{C}_i(\mu)\mathcal{O}_i(\mu)
@@ -65,7 +65,15 @@ The other set of operators, $\mathcal{O}_i$ contain the contributions from the s
 The renormalisation scale, $\mu$, is chosen such that strong and weak contributions are separated.
 Conventionally, it is set to be of order of the $b$ quark mass $\mu\sim m_b$.
 
-The exact expressions of operators $\mathcal{O}_i$ are given in \Cref{sec:appendix_local_opperators}. 
+The exact expressions of operators $\mathcal{O}_i$ are given in \Cref{sec:appendix_local_opperators}, while the sketches of effective-processes that they represent ar given in \Cref{fig:b_to_s_gamma_effective}.
+\begin{figure}[htbp!]
+    \input{tikz_diagrams/b_to_s_gamma_effective.tex}
+\caption{\label{fig:b_to_s_gamma_effective}
+Schematic representation of the Standard Model effective $\mathcal{L}$ governing to \BtoXsgamma. 
+The effective interactions are normalised by the Wilson coefficients, $C_j$, and described by operators, $O_j$ (see \Cref{sec:appendix_local_opperators}) whose sketches are shown here.
+They correspond to the effective Lagrangian in \Cref{eq:effective_lagrangian}.
+}
+\end{figure}
 Coefficients $\mathcal{C}_{3-6}$ have been calculated and shown to be small, therefore the most important contributions arise from $\mathcal{O}_{1,2,7,8}$ \cite{Chetyrkin:1996vx,Misiak:2020vlo}.
 Furthermore, the ratio $V^*_{uq}V_{ub}/V^*_{tq}V_{tb}$ is small for the case of $q=s$ \cite{Charles:2015gya}, and the terms including $\mathcal{O}^u_i$ are irrelevant at leading-order calculation of the total decay rate \cite{Misiak:2015xwa}.
 Interestingly, the latter point does not hold for $\b\to\d$ case, where additional effects need to be considered due to the contributions from these terms.
@@ -146,21 +154,18 @@ The Standard Model coefficients $C_{2,7,8}^{(0)}$ are expressed in terms of $x=(
 The coefficient $\eta$ is expressed as $\eta=\alpha_s(M_W)/\alpha_s(\mu)$, whereas $h_i$ and $a_i$ are the eigenvalues of the scheme-independent anomalous dimension matrix $\gamma^{(0)\mathrm{eff}}$, which can be found defined in the Appendix A of Ref. \cite{Buras:1993xp}.
 The matrix $\gamma^{(0)\mathrm{eff}}$ governs the leading order QCD corrections to $\b\ra\s\g$ and its elements appear in the renormalisation group equation of the effective Wilson coefficients.
 
-Here it is interesting to look at the \Cref{eq:effective_c7} in more detail. 
-In the absence of QCD effects one has $\eta=1$, therefore the \BtoXsgamma decay would be governed solely by the photonic dipole exchange.
-However, in the Standard Model, the additional terms lead to a QCD-enhancment of the decay.
-To illustrate, when \Cref{eq:effective_c7} is evaluated explicitly:
-
-\todo[inline]{I have to correct these coefficients, probably best according to page 186 of \cite{Buras:1998raa}}
-
+Considering the effective interactions in \Cref{fig:b_to_s_gamma_effective}, it may seem peculiar that $\mathcal{O}_{2,8}$ are important at leading-order.
+However, because \BtoXsgamma is affected by Glashow-Iliopoulos-Maiani suppression terms $(\sim m_q^2/m_W^2)$, two-loop contributions involving a gluon exchange $(\sim\ln m_t^2/m_b^2)$ are important \cite{Bertolini:1986th}.
+In the absence of QCD effects one has $\eta=1$ and \BtoXsgamma decay governed solely by the photonic dipole exchange.
+When evaluating \Cref{eq:effective_c7} explicitly for $m_t=170~\gev$, $\mu_b=5~\gev$, $\alpha_s(M_Z)=0.118$\cite{Buras:1998raa}:
 \begin{align}
     \begin{split}
-        C_7^{(0)\mathrm{eff}}(M_W) &= 0.689 \cdot C_7^{(0)}(M_W) + 0.087 \cdot C_8^{(0)}(M_W) - 0.161 \cdot C_2^{(0)}(M_W)  \\ 
-                          &= 0.689 \cdot (-0.161) + 0.087 \cdot (-0.086) - 0.161\\
-                          &= -0.280, \\
+        C_7^{(0)\mathrm{eff}}(\mu_b) &= 0.695 \cdot C_7^{(0)}(\mu_b) + 0.085 \cdot C_8^{(0)}(\mu_b) - 0.158 \cdot C_2^{(0)}(\mu_b)  \\ 
+                          &= 0.695 \cdot (-0.193) + 0.085 \cdot (-0.096) - 0.158\\
+                          &= -0.300, \\
     \end{split}
 \end{align}
-it is clear that the additive QCD two-loop contributions enhance the rate significantly.
+it is clear that the additive QCD two-loop contributions enhance the decay rate by nearly 40\%.
 Also notable is the fact that the multiplicative QCD correction in the first term suppresses the decay rate, but at a smaller scale than the additive corrections.
 
 To go beyond the leading-order approximation, one has to take into account the full form of \Cref{eq:normalised_br}.
@@ -296,6 +301,22 @@ This relatively straightforward relation makes it easy to implement and interpre
 Furthermore, the Kagan-Neubert model is readily available in \texttt{EvtGen} Monte Carlo generator, commonly used by $B$-factories \cite{Ryd:2005zz}.
 The \BtoXsgamma inclusive decay is implemented as the \texttt{BTOXSGAMMA} model within the generator. 
 These points made it the conventional choice for experimental description of the inclusive-\Egamma spectrum in many of past measurements.
+The spectra, generated with varied values of $\lambda_1$ and $m_b$ are shown in \Cref{fig:knmodel_variation}, otherwise using the default \texttt{BTOXSGAMMA} setup.
+\begin{figure}[htbp!]
+    \subcaptionbox{\label{fig:knmodel_mb_variation}}{
+        \includegraphics[width=0.5\textwidth]{figures/theory/xsgamma_spectrum_mb_variation.pdf}
+    }
+    \subcaptionbox{\label{fig:knmodel_lambda_variation}}{
+        \includegraphics[width=0.5\textwidth]{figures/theory/xsgamma_spectrum_lambda_variation.pdf}
+    }
+    \caption{\label{fig:knmodel_variation}The \BtoXsgamma spectrum predicted by the Kagan-Neubert model, generated using the \texttt{EvtGen} generator's \texttt{BTOXSGAMMA} model.
+    \Cref{fig:knmodel_mb_variation} shows how variations of $m_b$ affects the spectrum, while keeping $\lambda_1$ constant.
+    \Cref{fig:knmodel_lambda_variation} depicts the inverse scenario.
+    The generated spectra correspond to $10^6$ events of both $B^+$ and $B^0$ decay modes.
+    The full-line curves correspond to the default setup used by \texttt{BTOXSGAMMA}.
+    A sharp cut at $\Egamma\approx2.55~\gev$ is due to the fact that }
+\end{figure}
+
 
 The previous argument may also be used inversely: an accurate experimental measurement of the \BtoXsgamma spectrum, can be used to precisely determine the parameters $m_b$ and $\lambda_1$ (and also higher moments of the shape function).
 One such example is the aforementioned SIMBA collaboration result \cite{Bernlochner:2020jlt}.
@@ -322,7 +343,7 @@ If light particles that couple to quarks would exist, they are generally expecte
 Therefore the new degrees-of-freedom introduced by \BSM models are expected to be heavy.
 In effective field-theory terms:
 \begin{equation}\label{eq:corr_wilson}
-    \mathcal{C}_i^{\mathrm{SM}} \ra \mathcal{C}_i^{\mathrm{SM}} + \mathcal{C}_i^{\mathrm{\BSM}}.
+    \mathcal{C}_i^{\mathrm{SM}} \ra \mathcal{C}_i^{\mathrm{SM}} + \Delta\mathcal{C}_i^{\mathrm{\BSM}}.
 \end{equation}
 That is, \BSM physics can manifest by modifying any Wilson coefficient contributing to \btosgamma Lagrangian (\Cref{eq:effective_lagrangian}).
 New Wilson coefficients may also be introduced by certain theories.
@@ -366,7 +387,7 @@ At leading-order, the interactions are fully described by $\tan\beta$ and an add
 
 The decay-rate calculation for the \TwoHDM model, with the above described procedure can then proceed in a similar manner as described in \Cref{sec:btosgamma_totalrate_theory}, by modifying the effective Wilson coefficients based on \Cref{eq:corr_wilson} and calculating appropriate corrections \cite{Ciuchini:1997xe}:
 \begin{equation}\label{eq:delta_wilson_2hdm}
-    \Delta C_i = 
+    \Delta C_i^{(0)\TwoHDM} = 
     \begin{cases}
         0, & i=1,...,6;\\
         \frac{A_u^2}{3}F_i^{(1)}(y) - A_uA_dF_i^{(2)}(y), & i=7,8;\\
@@ -396,23 +417,31 @@ The dependance of the \BtoXsgamma decay rate on $m_{H^+}$ is shown in \Cref{fig:
         \includegraphics[width=0.48\textwidth]{figures/theory/xsgamma_2hdm_type2.png}
     }
     \caption{\label{fig:xsgamma_br_2hdm} 
+    Variations of the \BtoXsgamma total decay rate (normalised by $B\rightarrow X_c \ell\bar{\nu}$ decay rate) as a function of the mass of the charged Higgs boson.
+    \Cref{fig:xsgamma_2hdm_type1} shows the dependance for a type-I \TwoHDM model, whereas \Cref{fig:xsgamma_2hdm_type2} shows that for type-II \TwoHDM.
+    The predictions are made assuming $\tan\beta=1$ and $\tan\beta=50$ for both types,respectively.
+    The experimental bounds, as well as theoretical ones (not the most up-to-date) are shown as well.
     Taken from \cite{Misiak:2017bgg}.}
 \end{figure}
 
 The destructive (constructive) interference predicted by the type-I (type-II) \TwoHDM{s} is clearly visible in \Cref{fig:xsgamma_br_2hdm}.
 Comparing the experimental and theoretical results seen in the figures, allowed $\tan\beta-m_{H^+}$ parameter-space ranges can be determined.
-The figures showing next-to-next-to-leading order results are shown in \Cref{fig:2hdm_limits}.
+In both cases, as the charged-Higgs mass increases the predicted total decay rate approaches the Standard Model values.
+This is because in tn the $m_H^+\rightarrow\inf$ regime, the charged-Higgs is effectively decoupled from the Standard Model.
+The figures showing next-to-next-to-leading order results in the parameter phase-space are shown in \Cref{fig:2hdm_limits}.
 
 \begin{figure}[htbp!]
     \centering
         \includegraphics[width=0.5\textwidth]{figures/theory/xsgamma_2hdm_both_types.png}
     \caption{\label{fig:2hdm_limits} 
+    Excluded (lower bound) for type-I and type-II \TwoHDM models in the $\tan\beta-m_{H^+}$ parameter-space.
+    The figure begins at $\tan\beta>0.4$ as better alternative bounds exist in below that range.
     Figure is taken from \cite{Misiak:2017bgg}.}
 \end{figure}
 
-It can be seen that $\tan\beta-m_{H^+}$ space is well bounded from type-I and type-II \TwoHDM results.
+It can be seen that $\tan\beta-m_{H^+}$ space is well bounded for type-I and type-II \TwoHDM results.
 The strongest bounds arise for type-I \TwoHDM results in the range of $\tan\beta\in(0.4,2)$.
-On the other hand, type-II \TwoHDM satureates at high $\tan\beta$ limit.
+On the other hand, type-II \TwoHDM saturates at high $\tan\beta$ limit.
 For values outside these ranges other experimental bounds are necessary \cite{Misiak:2017bgg}.
 
 Using the methods laid out in this section, Ref.\cite{Misiak:2020vlo} rules out type-II \TwoHDM model with a charged Higgs lighter than $800~\gev$ at $2\sigma$.
