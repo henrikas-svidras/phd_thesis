@@ -255,6 +255,7 @@ The final output is a weighted `majority-vote' of all these classifiers:
     G(x) = \sum_{m=1}^M\alpha_mg_m(x),
 \end{equation}
 with $\alpha_m$ being the weight of the $m$-th weak classifier.
+Conventionally, the output of the classifier is transformed, such that $G(x)\ra G'(x)\in[0,1]$.
 
 The exact procedure to assign weights to misclassified events between training iterations and the computation of $\alpha_m$ depends on the boosting technique used.
 Consider an initial guess $G_1$, which corresponds to $M=1$ case in \Cref{eq:boosted_classifier}.
@@ -311,7 +312,7 @@ The main method in high-energy physics is to extract an implicit form of this fu
 \includegraphics[width=0.45\textwidth]{figures/analysis_techniques/experimental_smearing.pdf}
 \caption{\label{fig:smearing_illustration} A visual illustration of smearing of an arbitrary observable.
 Considering some `true' distribution (blue, full line), depicted by a sharp Lorentzian, the experimentally observed result (gray, full line) will be affected by, usually, unknown detector-response and resolution effects.
-In this case, the unknown-experimental effects are illustrate by a Gaussian (dotted) and Crystal Ball (dashed) functions.}
+In this case, the unknown-experimental effects are illustrated by a Gaussian (dotted) and Crystal Ball (dashed) functions.}
 \end{figure}
 
 In science, experimental data are often presented in the form of a histogram. 
@@ -363,8 +364,9 @@ In this case the \Cref{eq:unfolding_linear_equation} is solved by inverting the 
     \vec{x} = \hat{A}^{-1}\vec{y}.
 \end{equation}
 The number of bins of the true and the measured distribution must be the same, as only square matrices may be inverted.
-While the result is statistically correct, it tends to introduce large negative correlations between neighbouring bins in the unfolded distribution $\vec{x}$.
-This is often undesirable as smooth distributions are expected in nature.
+While the result is statistically fully correct, it tends to introduce large negative correlations between neighbouring bins in the unfolded distribution $\vec{x}$ \cite{Schmitt:2016orm}.
+The simple reasoning for this is the fact that poissonian fluctuations in neighbouring bins will get amplified/suppressed by the matrix multiplication, creating an``oscillatory'' pattern.
+This effect is undesirable and goes against the common sense as smooth distributions are expected in nature.
 The correction of such correlations is called \textit{regularisation}.
 
 \subsection{Regularisation and other unfolding methods}
@@ -379,6 +381,7 @@ Although an in-depth discussion is irrelevant for the purpose of the works prese
     \item Singular value decomposition method \cite{Hocker:1995kb}: solves \Cref{eq:unfolding_linear_equation} by decomposing the response matrix into its singular values, adds a weighted prior condition to the solution.
 \end{itemize}
 In particle physics, unfolding is often implemented using the \texttt{RooUnfold} package \cite{Brenner:2019lmf}, which can perform all the methods described in \Cref{sec:unfolding}.
+In the analyses present in this thesis, regularisation was no applied.
 
 \section{Blinded analysis}\label{sec:blinding}
 
