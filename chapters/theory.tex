@@ -45,21 +45,21 @@ A beyond-Standard Model scenario where this transition is mediated by a charged-
 }
 \end{figure}
 
-Since \BtoXsdgamma decays proceed via $b\ra s\g$ transitions, they are interesting probes for beyond-Standard-Model (\BSM) particles. 
-The leading contributions to these transitions only happen via one-loop diagrams, as seen in \Cref{fig:b_to_s_gamma_diagrams}.
+Since \BtoXsdgamma decays proceed via $b\ra s(d)\g$ transitions, they are sensitive probes for beyond-Standard-Model (\BSM) particles. 
+The leading contributions in the Standard Model only happen via one-loop diagrams, as seen in \Cref{fig:b_to_s_gamma_diagrams}.
 The electroweak loop can get contributions from all the quarks, but is dominated by the much heavier top quark \cite{Mannel:2001vn} as followed by the Glashow-Iliopoulos-Maiani mechanism~\cite{Glashow:1970gm}. 
-Furthermore, the masses of possible \BSM weakly-interacting particles that can appear in the loops may be as high as \order{(100~\tev)} \cite{Misiak:2020vlo} which makes studying these decays incredibly appealing.
+The masses of possible \BSM weakly-interacting particles that can appear in the loops may be as high as \order{(100~\tev)} \cite{Misiak:2020vlo} which makes studying these decays incredibly appealing.
 
 The decay rate of \BtoXsdgamma is affected by the contributions from weak and strong interactions.
 Weak contributions can be calculated perturbatively, however the strong contributions are usually described by effective point-like theories.
-In weak decays, including \BtoXsgamma, \textit{Operator Product Expansion} \cite{Peskin:1995ev,Buras:1998raa} is used to derive the effective theory.
-It replaces the hadron-binding strong quark interactions and the weak quark interactions mediating $\b\ra\s$ by a single effective vertex.
-An effective Lagrangian describing the $\b\to\s\g$ can be written as~\cite{Kaminski:2012eb,Misiak:2015xwa}:
+In weak decays, including \BtoXsdgamma, \textit{Operator Product Expansion} \cite{Peskin:1995ev,Buras:1998raa} is used to derive the effective theory.
+It replaces the hadron-binding strong quark interactions and the weak quark interactions mediating $\b\ra\s(d)$ by a single effective vertex.
+An effective Lagrangian describing the $\b\to\s(d)\g$ can be written as~\cite{Kaminski:2012eb,Misiak:2015xwa}:
 \begin{equation}\label{eq:effective_lagrangian}
-    \mathcal{L}_{\mathrm{eff}} = \frac{4G_F}{\sqrt{2}}V_{ts}^*V_{tb}\left[\sum^{8}_{i=1}\mathcal{C}_i(\mu)\mathcal{O}_i(\mu)
+    \mathcal{L}_{\mathrm{eff}} = \frac{4G_F}{\sqrt{2}}V_{tq}^*V_{tb}\left[\sum^{8}_{i=1}\mathcal{C}_i(\mu)\mathcal{O}_i(\mu)
                                                 + \frac{V^*_{uq}V_{ub}}{V^*_{tq}V_{tb}}\sum^{2}_{i=1}\mathcal{C}_i(\mu)(\mathcal{O}_i(\mu)-\mathcal{O}_i^u(\mu))\right],
 \end{equation}
-where $G_F$ is the Fermi constant.
+where $G_F$ is the Fermi constant and $q\in\{s,d\}$.
 The factors $\mathcal{C}_i$, known as \textit{Wilson coefficients}, encode the weak interactions and can be calculated perturbatively.
 The other set of operators, $\mathcal{O}_i$ contain the contributions from the strong interactions and are calculated using non-perturbative methods.
 The renormalisation scale, $\mu$, is chosen such that strong and weak contributions are separated.
@@ -75,7 +75,7 @@ They correspond to the effective Lagrangian in \Cref{eq:effective_lagrangian}.
 }
 \end{figure}
 Coefficients $\mathcal{C}_{3-6}$ have been calculated and shown to be small, therefore the most important contributions arise from $\mathcal{O}_{1,2,7,8}$ \cite{Chetyrkin:1996vx,Misiak:2020vlo}.
-Furthermore, the ratio $V^*_{uq}V_{ub}/V^*_{tq}V_{tb}$ is small for the case of $q=s$ \cite{Charles:2015gya}, and the terms including $\mathcal{O}^u_i$ are irrelevant at leading-order calculation of the total decay rate \cite{Misiak:2015xwa}.
+Furthermore, the ratio $V^*_{uq}V_{ub}/V^*_{tq}V_{tb}$ is small for the case of $q=s$ \cite{Charles:2015gya}, and the terms including $\mathcal{O}^u_i$ are relevant only as higher-order corrections of the total decay rate~\cite{Misiak:2015xwa}.
 Interestingly, the latter point does not hold for $\b\to\d$ case, where additional effects need to be considered due to the contributions from these terms.
 In particular, additional non-perturbative uncertainties need to be considered for the Standard Model calculation of the decay rate \cite{Misiak:2015xwa}.
 However, for the rest of \Cref{sec:btosgamma_totalrate_theory}, $\b\to\s\g$ decays will be implied unless explicitly stated, as this is the main analysis of the thesis.
@@ -172,10 +172,16 @@ To go beyond the leading-order approximation, one has to take into account the f
 A sketch of the next-to-leading order can be found in Ref.\cite{Gambino:2001ew}, whereas the most up-to-date total decay rate calculation is describes in Ref.\cite{Misiak:2020vlo} and references therein.
 A detailed look of the higher-order calculation of the total \BtoXsgamma decay rate is beyond the scope of this thesis, but such calculations can be followed up in the references already introduced in this chapter and references therein. 
 Ref.\cite{Misiak:2020vlo} also includes the most up-to-date estimation of the total decay rate of \BtoXsgamma in the Standard Model:
-\begin{equation}
+\begin{equation}\label{eq:btosgamma_theoretical}
     \mathcal{B}(\BtoXsgamma) = (3.40\pm 0.17) \times 10^{-4}.
 \end{equation}
-The uncertainties going into the value arise from unevaluated higher-order effects, the necessity to perform an interpolation in $m_c$, and a parametric uncertainty that also encodes the non-perturbative effects.
+For $\BtoXdgamma$, as evident from \Cref{eq:effective_lagrangian}, the result is suppressed by a factor $|V_{td}/V_{ts}|^2\approx 4.2\%$ with respect to the \BtoXsgamma result.
+Evaluating the decay with the exchanged CKM factors and other previously discussed caveats \cite{Misiak:2015xwa}:
+\begin{equation}\label{eq:btodgamma_theoretical}
+    \mathcal{B}(\BtoXdgamma) = (0.173\pm{0.12}_{0.22}) \times 10^{-4}.
+\end{equation}
+
+For \BtoXsgamma, the uncertainties in \Cref{eq:btosgamma_theoretical} arise from unevaluated higher-order effects, the necessity to perform an interpolation in $m_c$, and a parametric uncertainty that also encodes the non-perturbative effects.
 The first two amount to $3\%$ each, whereas the last is considered at $2.5\%$. 
 This amounts to a total uncertainty of, approximately, 4.9\%.
 For significant accuracy improvements in the future, higher-order calculations will not be sufficient alone.

@@ -1,14 +1,49 @@
-\chapter{Experimental overview of inclusive radiative decays}
+\chapter{Experimental overview of inclusive rare radiative decays}
 
 There are two main types of analyses which inherit the meaning from their theoretical description presented in \Cref{ch:theory}: \textit{inclusive} analyses and \textit{exclusive} analyses.
-Another method, which is a mixture of the two methodsm, is known as \textit{sum-of-exclusive} method.
+Another method, which is a mixture of the two methods, is known as \textit{sum-of-exclusive} method.
+Theoeretical motivations for inclusive measurements in terms of \BtoXsgamma have already been discussed in \Cref{sec:btosgamma_totalrate_theory,sec:btosgamma_spectrum_theory}.
+Similar motivations hold true for other electroweak decay channels such as, $B\to X_s\ell\bar{\ell}$ ($\ell\in\{\mu^-,e^-,\nu\}$).
+However, compared to the latter, $B\rightarrow X_s\gamma$ contains one less interaction vertex and therefore is enhanced by $\sim\alpha_{\mathrm{em}}$, which makes it experimentally acessible with smaller datasets.
+In this chapter, I will introduce the main methods of performing an inclusive measurement, while focusing solely on \BtoXsgamma, although, generally, these methods are applicable for other decay channels as well.
 
-The inclusive measurements target to measure a wide selection of final states; in the case of $X_{sd}$, any states that originate in $b\to s$ or $b\to d$ transitions.
-In principle, such final states include resonant and non-resonant decays, e.g., $B\rightarrow \Kstar(892)\gamma$.
+\section{Past measurements of \safeBtoXsgamma decays}
+
+Inclusive measurements target to measure a wide selection of decay products; in the case of $X_{sd}$, the sum of all states that originate in $b\to s$ or $b\to d$ transitions.
+In principle, such states include resonant and non-resonant states.
+A notable resonant state is $B\rightarrow \Kstar(892)\gamma$.
 Experimentally it is highly-accessible due to its narrow and isolated peak near the $b\to s\g$ two-body decay kinematic limit.
-A similar state for $b\rightarrow d\g$ is the $B\rightarrow \rho\gamma$.
-Non-resonant states include combinations of multiple pions and, in case of $b\rightarrow s$, kaon.
+A similar state for $b\rightarrow d\g$ is the $B\rightarrow \rho(770)\gamma$.
+Non-resonant states include combinations of one or more pions and, in case of $b\rightarrow s$, kaon.
 While the goal of an inclusive measurement is to measure the energy of photons from all these decays simultaneously, an exclusive measurement attempts to select one or several particular states from the spectrum.
+
+The world-average values of inclusive radiative $B$ decay measurements are~\cite{Amhis:2022mac,Workman:2022ynf}:
+\begin{align}\label{eq:btosgamma_experimental}
+    \begin{split}
+    \mathcal{B}(\BtoXsgamma)=(3.49\pm 0.19)\times10^{-4}\\
+    \mathcal{B}(\BtoXdgamma)=(0.09\pm 0.03)\times10^{-4}.
+    \end{split}
+\end{align}
+The values of \Cref{eq:btosgamma_experimental} can be compared to the theoretical prediction in \Cref{eq:btosgamma_theoretical,eq:btodgamma_theoretical}.
+\BtoXsgamma results show an excellent agreement between the theory and experiment.
+For \BtoXdgamma, values agree within $2\sigma$, however, the experimental uncertainty is dominated statistically and performed using the \textit{sum-of-exclusive} approach, which may explain the lower value due to unaccounted $b\rightarrow d\gamma$ modes.
+
+\Cref{tab:btosgamma_bfs} provides the experimental status of observed most prominent \BtoXsdgamma decay channels as of December 2022.
+Due to final-state similarity and overlap between various resonant and non-resonant decay modes, only the most prominent resonant decays have been measured.
+However, even in the case of a relatively islolated decay channel such as \BtoKstargamma, the overall precision of inclusive measurements is higher (compare to \Cref{eq:btosgamma_experimental}).
+
+{\renewcommand{\arraystretch}{1.2}
+\begin{table}[!htbp]
+    \centering
+    \caption{\label{tab:btosgamma_bfs} 
+    Branching fractions of \BtoXsgamma modes for charged and neutral modes.
+    The table only includes decay modes that have been observed and (for $\BtoXsgamma$ only) have a branching fraction $\gtrsim10^{-5}$.
+    The \Bp decays are ordered in terms of the experimental precision $\mathcal{B}/\Delta\mathcal{B}$, whereas \Bz are ordered in relation to \Bp, where applicable.
+    The values correspond to the averages of experimental measurements given in Refs. \cite{Amhis:2022mac,Workman:2022ynf}.
+    }
+    \input{tables/exclusive_decays.tex}
+\end{table}
+}
 
 Currently, inclusive measurements are only attainable at $B$ factories.
 The relatively low-background environment offered by an $\epem$ collision allows to treat the $X_{sd}$ system as a `missing-energy' system with no explicit requirements.
@@ -18,16 +53,24 @@ This makes it complicated to select an unbiased and model independent inclusive 
 at the time of writing this, no inclusive $B$ measurement has been performed outside of a $B$-factory experiment.
 
 Even in the case of exclusive radiative measurements, such as $B\rightarrow \Kstar\gamma$, $B$-factory have historically outperformed hadron collider experiments (such as LHCb) due to a higher-degree of control of combinatorial background.
-Due to their superior particle identification subsystems, LHCb had an edge in channels where precise particle information is otherwise a leading source of uncertainty, for example states with many charged particles
-The table XX provides the experimental status of \BtoXsgamma decays as of November 2022.
-\todo[inline]{table experimental results here}
+Final states that include neutral particles and photons are problematic to measure accurately in high pileup conditions.
+Therefore, with several exceptions (e.g. \cite{Bellee:2019qbt}), the field of rare radiative $B$ decay measurements is dominantly probed by $B$-factory experiments.
 
-In this chapter, I will introduce the main methods of performing an inclusive measurement, while focusing solely on \BtoXsgamma.
-Other decay channels, such as, $b\to s\ell\ell$ ($\ell=\{\ell^-,\nu\}$)
 
-\section{Experimental methods for inclusive measurements}
-test
 
-\section{Status of experimental measurements}
-Currently, inclusive measurements are only attainable at $B$ factories.
-At hadron colliders, large probability for multiple proton-collisions
+\section{Techniques for inclusive \safeBtoXsgamma measurements}
+ Historically, three different techniques were applied for inclusive \BtoXsgamma analyses at $B$ factories: 
+ sum-of-exclusive measurements,
+ untagged-inclusive measurements,
+ tagged-inclusive measurements.
+ The summary of the most-precise measurements that are used in experimental average in \Cref{eq:btosgamma_experimental} is given in \Cref{tab:btosgamma_inclusive_summary}.
+
+ {\renewcommand{\arraystretch}{1.2}
+ \begin{table}[!htbp]
+     \centering
+     \caption{\label{tab:btosgamma_inclusive_summary} 
+     \todo[inline]{updated branching fraction}
+     }
+     \input{tables/inclusive_measurements.tex}
+ \end{table}
+ }
