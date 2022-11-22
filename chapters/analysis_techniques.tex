@@ -277,7 +277,6 @@ The fraction of data used at every training iteration is called the \textit{samp
 
 In the analyses present in this thesis, \texttt{FastBDT} \cite{Keck:2017gsv} is used as the \MVA for training stochastic gradient-\BDT{s}.
 For the training of the classifier, \texttt{FastBDT} employs 4 parameters that were described in this chapter: number of trees ($M$), maximum depth of each tree, shrinkage and sampling rate. 
-\todo[inline]{Say that output is transformed to 0,1 to better correspond to probability}
 
 \section{Unfolding}\label{sec:unfolding}
 
@@ -368,6 +367,7 @@ While the result is statistically fully correct, it tends to introduce large neg
 The simple reasoning for this is the fact that poissonian fluctuations in neighbouring bins will get amplified/suppressed by the matrix multiplication, creating an``oscillatory'' pattern.
 This effect is undesirable and goes against the common sense as smooth distributions are expected in nature.
 The correction of such correlations is called \textit{regularisation}.
+The effect of regularisation is shown in XX
 
 \subsection{Regularisation and other unfolding methods}
 As discussed in the last subsection, unfolding introduces large correlations, leading to `non-physical' shapes of unfolded distributions.
