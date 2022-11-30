@@ -18,6 +18,10 @@ The latter sets the confidence interval on each parameter estimate in the set.
 The overview here presents only a brief overview of the most relevant method that was used in the work presented in this thesis. 
 For a more in-depth consideration of statistical methods in data science and physics, I refer the readers to Refs. \cite{Behnke:2013pga,Blobel_Lohrmann_1998} and for rigorous proofs of the underlying statistical concepts, Refs. \cite{Bohm:2014vmk,James_2006,Barlow:1990vc}. 
 The material presented here only summarises the details in these books and articles.
+
+\todo[inline]{Here I also need to have another look to see what I define and where I define it etc.}
+\todo[inline]{In general, I don't know, maybe this needs to go after chapter 4? But it gives important stuff like efficiency, purity etc. Dunno.}
+
 \subsection{Maximum-likelihood method}\label{sec:mle}
 
 One of the most common and popular methods for fitting is the maximum-likelihood method. It is also used here widely in Chapter \todo[inline]{give chapter name}
@@ -149,7 +153,6 @@ It provides a Python-based library that is developed to fulfill particle physics
 The \texttt{zfit} framework implements minimisation using the \texttt{iminuit} minimiser \cite{iminuit} which is a Python-friendly implementation of \texttt{Minuit}.
 
 \section{Classification}\label{sec:classification}
-\todo[inline]{This section needs to be called differently, maybe Decision Theory, let's see}
 When collecting data in measurements, many independent observations (\textit{events}) are usually performed in order to get a statistically significant sample.
 Resulting datasets generally contain a component of interest, often referred to as \textit{signal}, and many components which might show similar behaviour as the signal in certain distributions. 
 The latter is commonly referred to as \textit{background}. Disentangling the signal and background contributions in a given dataset is an extremely important task in Big-Data fields, where there may be hundreds or thousands of sub-components contributing to background that may be misclassified as signal.
@@ -163,16 +166,16 @@ However, as the number of observables used in a selection grows, the tuning of s
 
 
 This sections introduces some relevant techniques to combine the informational of all observables of an event. 
-Particularly, it overviews multivariate classification algorithms (\MVA{s}) concepts and boosted decision trees (\BDT{s}). 
+Particularly, it overviews multivariate classification algorithm (\MVA) concepts and boosted decision trees (\BDT{s}). 
 The material presented here is only a summary detailing techniques used in the analyses presented in the thesis.
 For detailed overview of multivariate-classification techniques I refer the reader to Ref.\cite{Behnke:2013pga} and for their underlying statistical framework to \cite{Hastie_Tibshirani_Friedman_2001,bishop_2016}.
-\todo[inline]{This section might need to have more subsections}
+
 \subsection{Multivariate classification}
 
 In this subsection, binary classification is implied, as this is the most relevant for the work presented in this thesis. 
 In general, a multi-class \MVA classifier can be broken down into a series of binary \MVA classifiers.
 
-Let us assume, an event is described by $N$ observables, $X=\{x_1,x_2,...,x_N\}$. This is also known as a \textit{feature~vecture}.
+Let us assume an event is described by $N$ observables, $X=\{x_1,x_2,...,x_N\}$. This is also known as a \textit{feature~vecture}.
 Formally, an \MVA classifier is a mapping function, $f$, that maps the $N$-dimenstional feature vector, $x$, to a single real number, $y$:
 \begin{equation}
     \mathbb{R}^N \ra \mathbb{R}: y = f(x).
@@ -188,11 +191,11 @@ The methods used for data analysis in this thesis are \textit{supervised} and pr
 
 Mathematically, a \textit{loss function} is desired which returns the discrepancy between training targets, $y$ and the prediction, $\hat{y}$, corresponding to the input data, $\vec{x}$:
 \begin{equation}\label{eq:loss_function}
-    \mathcal{L}(y, \hat{y} = f(\vec{x};\vec{a})),
+    \mathcal{L}(y, \hat{y}) = f(\vec{x};\vec{a}),
 \end{equation}
 where $\vec{a}$ is a set of internal degrees of freedom, describing the model. 
 In this formalism, one can minimize the loss to extract a set of parameters that provide the smallest difference between $y$ and $\hat{y}$.
-This problem is then equivalent as described in \Cref{sec:mle}, with a different likelihood function.
+This problem is then equivalent as described in \Cref{sec:mle}, with a different choice of likelihood function.
 
 Classifiers with a smaller number of degrees of freedom tend to be more robust against statistical fluctuations of a sample (smaller variance).
 However, this might make the model unable to learn the more intricate details in the training sample, and lead to bias when applied on a statistically-independent sample.
@@ -201,19 +204,44 @@ Usually, one uses a \textit{validation} sample, which is equivalent but statisti
 An optimally-trained classifier will perform the same on the validation and training samples. 
 After the optimal training point of the classifier is reached, further training will only degrade the performance of the classifier on the validation sample.
 This regime is called \textit{overtraining} and needs to be avoided.
-
-\begin{figure}[htbp!]
-    \missingfigure{ROC curve here, AUC + classifier separation}
-\end{figure}
-
 There are many different ways to test for overtraining, but all of them usually rely on comparing the classifier performance between the training sample and an additional, independent \textit{testing sample}.
 In particle physics, it is common to use the validation sample also as a testing sample, which is acceptable in the case of large training samples.
-To compare the performance on training sample versus testing sample a receiver operating characteristic (\ROC) is often used.
-A \ROC curve represents the true-positive rate as a function of the false-positive rate and is calculated by iterating over all possible \MVA classifier outputs.
 
-Furthermore, an area-under-curve (\AUC) score can be defined which is computed by integrating the \ROC curve.
-An $\mathrm{\AUC}=1$ would represent false-positive rate of 0, and a true-positive rate of 1. 
+\begin{figure}[htbp!]
+    \centering
+    \subcaptionbox{\label{fig:distributions_separation}}{
+        \includegraphics[width=0.45\textwidth]{figures/analysis_techniques/separation_boundary.pdf}
+        }
+    \subcaptionbox{\label{fig:roc_curves}}{
+    \includegraphics[width=0.45\textwidth]{figures/analysis_techniques/roc_curve.pdf}
+    }
+    \caption{\label{fig:rocs_examples}
+    Two-dimensional distributions (red/green) in two-feature space are shown in \Cref{fig:distributions_separation} for four different examples (0-3).
+    Each distribution is represented by a contour-plot of 20\% isoproportion lines.
+    Dashed lines show the examples for different selection thresholds for an example \MVA model.
+    \Cref{fig:roc_curves} shows corresponding \ROC curves, calculated for examples 0-3.
+    The working points that represent the dashed lines of \Cref{fig:distributions_separation} are shown in the same color, for each of the four curves.
+    A perfect classifier would be able to perfectly separate green and red distributions, similar to example~3.
+    On the other hand, a poor classifier would only be able to perform marginally better than random-guessing, similar to example~0.    
+    }
+\end{figure}
+
+
+To assess the performance of a binary classifier, a receiver operating characteristic (\ROC) is often used.
+A \ROC curve represents the true-positive rate as a function of the false-positive rate and is calculated by iterating over different \MVA classifier selections.
+A visual representation of the meaning of \ROC curves is shown in \Cref{fig:rocs_examples}.
+Given an optimal training, one expects the \ROC curve calculated on training and testing data to be highly similar.
+This can be qualitatively by visually inspecting the corresponding curves, or, quantitatively, by defining an area-under-curve (\AUC) score which is computed by integrating the \ROC curve.
+An $\mathrm{\AUC}=1$ would represent false-positive rate of 0, and a true-positive rate of 1 (see \Cref{fig:roc_curves})
 The least-optimal classifier would provide a random guess and have a false-positive and true-positive rate of 0.5, and $\mathrm{\AUC}=0.5$.
+
+In high-energy physics, we often use alternative forms of false-positive and true-positive rates.
+Namely, we tend to express our results in terms of 
+\begin{itemize}
+    \item \textit{efficiency}: equivalent to the true-positive rate;
+    \item \textit{background rejection}: equivalent to $1 - \mathrm{false-positive~rate}$;
+    \item \textit{purity}: amount of signal, with respect to the total sample size (signal+background); equivalent to positive-predictive value.
+\end{itemize}
 
 \subsection{(Boosted) decision trees}
 
@@ -290,7 +318,6 @@ In this way, it can be considered the `opposite' of measurement.
 This section provides a brief overview of the main concepts that feature in the results presenting this thesis.
 A thorough summary of the theory behind unfolding methods can be found in \cite{Behnke:2013pga,Blobel_Lohrmann_1998} and a comparison of different methodologies common in particle physics in \cite{Schmitt:2016orm,Cowan:2002in,Brenner:2019lmf}.
 
-\todo[inline]{Somewhere in this section include some plots}
 \subsection{Mathematical basis}
 
 Consider a true distribution $f(x)$ of observable $x$ being measured in some space $a<x<b$.

@@ -1,4 +1,4 @@
-\chapter{Experimental overview of inclusive rare radiative decays}
+\chapter{Experimental overview of rare radiative decays}
 
 There are two main types of analyses which inherit the meaning from their theoretical description presented in \Cref{ch:theory}: \textit{inclusive} analyses and \textit{exclusive} analyses.
 Another method, which is a mixture of the two methods, is known as \textit{sum-of-exclusive} method.
@@ -89,10 +89,12 @@ In practice, this is, of course, impossible and previous BaBar and Belle analyse
 The exclusive final states include various combinations of one or multiple $K^{\pm}$, $K_S^0$, $\pi^{\pm}$, $\piz$, $\eta$.
 Modes with up to two three kaons, four pions and one $\eta$-meson are considered.
 
+
 Evidently, a significant challenge following from this treatment is the proper treatment of \BtoXsgamma events that have been incorrectly reconstructed in one of the 38 final states.
 Photons originating in non-\BtoXsgamma decay chains, particularly decays of type $B\to D^(*)\rho^+$ and non-$B$ events, also contribute significantly as background.
 Much more than in the case of `inclusive' measurements, this technique depends strongly on the $X_s$ fragmentation modelling, which has to be be carefully tuned and calibrated to best represent experimental data.
 Finally, a measurement performed this way is only `pseudo-inclusive', meaning that additional uncertainties for unaccounted decay phase-space are incurred.
+
 
 The main advantages are due to precise knowledge of the $X_s$ system, which gives additional information about the $B$-meson, and a higher-degree of control of background.
 The knowledge of the charge and flavour of the decaying $B$-meson enables the measurement of the CP and isospin asymmetries \cite{BaBar:2014czi}.
@@ -101,8 +103,7 @@ Direct reconstruction of the mass of the $X_s$ system, $M_{X_s}$, and decaying $
 \begin{equation}
     \EB = \frac{M_B^2 - M_{X_s}}{2M_B},
 \end{equation}
-which is otherwise only directly obtainable by hadronic-tagged inclusive measurements.
-\todo[inline]{see section XX}
+which is otherwise only directly obtainable by hadronic-tagged inclusive measurements (see \Cref{sec:had_tagged_overview}).
 Furthermore, the full reconstruction of the candidate $B$-meson allows to utilise the well-defined initial state of the \epem collision in additional background suppression.
 Two observables can be defined:
 \begin{equation}\label{eq:deltae_inclusive}
@@ -116,6 +117,7 @@ known as the beam-constrained mass, expressed in terms of the momentum of the $B
 From \Cref{eq:deltae_inclusive,eq:mbc_exclusive} it is clear that $B$ candidates which are reconstructed correctly tend to have a resonant behaviour in \Mbc and \DeltaE, with their distributions peaking at nominal $B$ mass $\approx5.28~\gevcc$ and $0$, respectively.
 The backgrounds tend to have broader or even non-peaking shapes. 
 The \Mbc distribution, as seen by the Belle sum-of-exclusive measurement \cite{Belle:2014nmp}, in \Cref{fig:mbc_sum_of_exclusive}.
+In the past, these analysis techniques achieved an average signal efficiency of 3.5\%~ (larger for greater values of \EB), after correcting for missing $X_s$ modes \cite{Belle:2014nmp}.
 
 \begin{figure}[htbp!]
     \centering
@@ -156,7 +158,8 @@ Data samples, collected below the \FourS resonance, which contain only $\epem\ra
 whereas the \BB contribution is usually removed using simulation.
 An example result of extracted \BtoXsgamma spectrum from Belle~II data using $63.1~\invfb$, which is a work that I was involved during my PhD studies, is shown in \Cref{fig:untagged_btosgamma_measured} \cite{Collaboration:2302}.
 
-The strength of the untagged technique is the `truly' inclusive approach, which ensures that all $X_s$ states are selected, as well as a large selection efficiency (as high as 100\%).
+The strength of the untagged technique is the `truly' inclusive approach, which ensures that all $X_s$ states are selected, as well as a large selection efficiency.
+Previous analyses (e.g. \cite{Belle:2009nth}) report an average selection efficiency in their final sample of $\sim 10\%$ (increasing with photon energy), which is several times higher even than the sum-of-exclusive approach.
 On the other hand, the missing kinematic information of the $X_s$ system yields a complicated and inefficient background suppression process, which means that such measurements have a small signal-to-background ratio.
 Moreover, the kinematic information of the $B$-decay cannot be accessed, which only allows a mesurement of the photon energy in the \epem collision frame.
 To reach the theoretically more desirable $B$-meson decay frame, additional modelling uncertainties have to be attached.
@@ -177,7 +180,7 @@ To reach the theoretically more desirable $B$-meson decay frame, additional mode
     }
 \end{figure}
 
-\subsection{Tagged techniques}
+\subsection{Tagged techniques}\label{sec:had_tagged_overview}
 
 To overcome multiple of the issues that come with the untagged measurements presented in \Cref{sec:untagged}, while still selecting an inclusive $X_s$ sample (opposed to \Cref{sec:sum_of_exclusive}), 
 additional information pertaining to the second $B$ meson from the \FourS decay can be utilised.
@@ -213,12 +216,13 @@ The main advantages of these techniques are summarised in \Cref{fig:tagging_adva
 \end{figure}
 
 Leptonic tagging has been used as a `successor' method for \BtoXsgamma untagged analysis by BaBar and Belle \cite{Belle:2009nth,BaBar:2012fqh,Belle:2016ufb}, providing a higher-degree of background control while still retaining a larger efficiency.
-Going a step further and reconstructing the charm-meson from the semileptonic $B$ decay as well as the gives an even higher degree of background control.
+In the past, lepton-tagged analyses achieved an average signal efficiency of up to $3\%$ (increasing with photon energy).
+Going a step further and reconstructing the charm-meson and the lepton from the semileptonic $B$ decay gives an even higher degree of background control.
 Measuring the angle between reconstructed $D\ell$ system and the decaying $B$ meson, for example, provides excellent background suppression \cite{BaBar:2014omp}.
 A major complication is the fact that reconstruction of the semileptonic decay chain necessarily reduces efficiency.
 Although, $B$ mesons have a large semileptonic decay-width, meaning that the lower efficiency due to $D$ reconstruction is partially offset by the large statistical samples of semileptonic decays available,
 the presence of a neutrino in the final state complicates the technique further.
-On average, this technique is at least an order of magnitude less efficient than the untagged approach \cite{Belle-II:2018jsg}
+On average, this technique is at least an order of magnitude less efficient than the untagged approach and several times less efficiency than the lepton-tagged method \cite{Belle-II:2018jsg}.
 Despite successful application for missing energy modes, e.g., $B\rightarrow K^+\nu\nu$ \cite{BaBar:2009qvi}, semileptonic tagging was never used for \BtoXsgamma.
 
 
@@ -230,6 +234,8 @@ Because both $B$ mesons at $B$-factories are created from a \FourS decay, the fu
 Therefore, one regains all the benefits that the sum-of-exclusive technique offers, while still ensuring that no selection requirements are imposed on the $X_s$ system.
 However, a complication that follows is the fact that hadrons can have thousands of decay chains and an efficient reconstruction of a statistically significant tag-$B$ sample is highly complicated.
 Compared to semileptonic tagging, the hadronic tagging technique has a several times lower efficiency, although this is compensated by a very high purity of the tagged data sample \cite{Belle-II:2018jsg}.
+The BaBar analysis achieved a signal efficiency of $\mbox{\sim 0.2\%}$ depending on the \EB interval (increasing with photon energy).
+
 
 Hadronic tagged measurement of \BtoXsgamma has uncertainties that are mainly related to the modelling of \BB background, \Mbc fitting and correlation between tag-side decays and signal-side reconstruction.
 The past hadronic-tagged BaBar measurement \cite{BaBar:2007yhb} achieves a $16\%$ systematic uncertainty and a $23\%$ statistical uncertainty.
@@ -239,11 +245,10 @@ The uncertainty of the hadronic-tagged measurement is higher but comparable to t
 The hadronic-tagged technique can therefore provide one of the world's most accurate measurements with an increased data sample \cite{Belle-II:2022cgf}.
 
 Moreover, because the hadronic-tagged analysis incurs different systematic uncertainties and relies less on simulation, it is a powerful cross-check of the other tagged-analyses.
-It is also important to note that these techniques produce samples that are not highly correlated due different backgrounds specific to the analysis procedure (see e.g. \cite{Belle:2009nth}).
+It is also important to note that these techniques produce samples that are not highly correlated due different backgrounds specific to the analysis procedure (see e.g. Ref.\cite{Belle:2009nth}).
 Therefore, different tagging techniques \textit{complement} but not \textit{compete} each other.
 
 
-\todo[inline]{list efficiencies that are obtainable here!}
-\todo[inline]{also uncertainties from $\Delta E$ and Untagged in their sections}
+
 
 
