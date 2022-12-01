@@ -1,0 +1,37 @@
+This chapter serves as an overview of the analysis
+and is intended to guide the reader through different analysis steps in extracting \BtoXsgamma photon-energy spectrum.
+It also introduces key terminology that will be used throughout the entire text, without further clarification.
+In this entire chapter, superscripts are used to denote observables in a particular frame of reference.
+Given an observable $\mathcal{X}$ (laboratory frame), the same value in the frame of colliding electrons (center-of-mass) will be denoted as $\mathcal{X}^*$.
+Observables in the rest-frame of the decaying $B$ meson adopt the notation $\mathcal{X}^B$.
+
+First, the analysed data sets are introduced in XXXX.
+We use a simulated data set, based on the expectations on the Standard Model to prepare the analysis procedure.
+After the full analysis procedure is set up, I unblind (see \Cref{sec:blinding}) experimental data, collected by the Belle II experiment.
+
+XXXX introduces the reconstruction of Belle II experimental and simulated \BtoXsgamma samples.
+It also discusses the main processes which mimic \BtoXsgamma signal (backgrounds) and the strategies to suppress them.
+In general, background for \BtoXsgamma can be divided as:
+\begin{itemize}
+    \item \textit{Signal-side background}: where a photon candidate is originating in a non-\BtoXsgamma decay.
+    In particular, either \epem\ra\qqbar ($\q\in\{\u,\d,\s,\c\}$), henceforth -- \textit{continuum}, or from a different \B decay, e.g. where a $\piz$ is created in the decay chain that decays into 2 photons, henceforth -- \textit{generic} $B$ background.
+    \item \textit{Tag-side background}: where the $B$, recoiling against the candidate \BtoXsgamma, is reconstructed incorrectly, or \epem\ra\qqbar collision products are combined to resemble a \B decay.
+    I will refer to such decays as \textit{combinatorial} $B$ or continuum background, respectively.
+    \item \BtoXdgamma component: which is an irreducible background at the current analysis setup. 
+\end{itemize}
+
+The efficiencies and optimisation of selections for signal and tag-side backgrounds is described in XXX.
+It will rely on selections suppress the signal-side background to and a dedicated \BDT training, which aims to suppress tag-side backgrounds.
+
+After the full background suppression procedure, a thorough setup and validation of the fitting model will be described.
+The fitting procedure is aimed at removing the combinatorial tag-side backgrounds, and hence the fit of \Mbc variable is performed (\Cref{eq:mbc_exclusive}).
+
+Lastly, an irreducible signal-side background component still remains, particularly from generic signal-side $B$ decays.
+The \EB spectrum is extracted by the simulation-dependant subtraction of remaining background processes.
+
+XXX will describe the in-depth validation procedure of the analysis technique on data samples.
+The two data samples used for validation are the continuum samples and $B$ decay datasets, where selections from section XX are inverted.
+
+The final extraction of results, unfolding is presented in XXXX.
+\todo[inline]{fix all the XXXX}
+

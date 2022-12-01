@@ -1,0 +1,52 @@
+
+\subsection{Experimental data sets}\label{sec:data}
+
+This measurement uses data sets of \epem collisions produced by the SuperKEKB accelerator and collected by the Belle II detector in 2019-2021.
+There are two data-collection modes in Belle II:
+\begin{itemize}
+    \item \textit{on-resonance data}: data sets collected at the collision energy $\sqrt{s}\approx=10.58~\gev$, corresponding to the mass of \FourS meson;
+    \item \textit{off-resonance data}: data sets collected 60~\mev below the on-resonance threshold. 
+    Such data, by definition, does not contain $\BB$ events and is an excellent testing and validation sample to understand continuum processes.
+\end{itemize}
+The integrated luminosity, henceforth denoted as $\int~\hspace{-7pt}~\mathcal{L}$, corresponding to the on(off)-resonance sample is 189(18)~\invfb.
+The on-resonance data set contains approximately $198$ million \BB pairs.
+
+\subsection{Simulated data sets}\label{sec:MC}
+
+In order to prepare the analysis procedure, calculate the signal-selection efficiencies and perform a validation adhering to the principles of a blinded-analysis, 
+large simulated samples are utilised.
+These samples are significantly larger than the data sets that were anticipated to be analysed by this analysis to ensure that uncertainties due to limited simulation samples are minimal.
+The overview of the samples is discussed in this subsection, but a quick overview is provided in \Cref{tab:simulated_samples}
+
+\begin{table}[htbp!]
+    \centering
+\caption{\label{tab:simulated_samples}The overview of simulated samples used in the measurement described by this thesis.
+More in-depth discussion for each sample is present in the text.}
+\input{tables/simulated_samples.tex}
+\end{table}
+
+All the simulated samples correspond to the 14th official Belle II simulation production campaign, and are based on Monte-Carlo methods.
+Therefore, I will henceforth refer to the simulated samples as \MC.
+For the analysis I use:
+\begin{itemize}
+    \item four \epem\ra\qqbar ($\q\in\{\u,\d,\s,\c\}$) simulated sample categories, referred to as continuum \MC,
+    \item two \FourS\ra\BB categories for charged and neutral \B modes, referred to as generic-$B$ \MC.
+\end{itemize}
+Altogether, the above to categories are referred to as \textit{generic} \MC.
+The analysis will be performed on 1~\invab of simulation, which is more than 5 times larger than the on-resonance data set for this analysis.
+Furthermore, for the background subtraction step described in XXXX, which has the strongest dependance on limited-\MC sample size, I use an even larger 1.7~\invab dataset, utilising the total available Belle~II \MC dataset.
+\todo[inline]{described where?}
+
+The generic-\B \MC includes \BtoXsgamma decays, however the number of such events is expected to be small, further diminished by the efficiency of the hadronic-tagged analysis procedure, as discussed in \Cref{sec:had_tagged_overview}.
+For this reason we utilise additional samples:
+\begin{itemize}
+    \item 100 million \BpBm sample, where at least one $B$ is guaranteed to decay as \BptoXsgamma based on the Kagan-Neubert model \cite{Kagan:1998ym} (see \Cref{sec:btosgamma_spectrum_theory});
+    \item 100 million \BzBzb sample, where at least one $B$ is guaranteed to decay as \BztoXsgamma based on the Kagan-Neubert model \cite{Kagan:1998ym} (see \Cref{sec:btosgamma_spectrum_theory});
+    \item 10 million \BpBm sample, where at least one $B$ is guaranteed to decay as \Bpm\ra\Kstarpm\gamma~based on the \texttt{EvtGen SVP\_HELAMP} model \cite{Ryd:2005zz};
+    \item 10 million \BzBzb sample, where at least one $B$ is guaranteed to decay as \Bz\ra\Kstarz\gamma~based on the \texttt{EvtGen HELAMP} model \cite{Ryd:2005zz}.
+\end{itemize}
+The first two are used for general analysis setup in sections XXXX.
+The two latter will be combined in with \BtoXsgamma in a hybrid-model approach \cite{Ramirez:1989yk} discussed in XXX.
+\todo[inline]{discussed where? I need to decide myself where this goes. Maybe even here, right now.}
+
+In all cases, the detector response and readout is simulated using Geant 4 \cite{GEANT4:2002zbu}.
