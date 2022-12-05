@@ -63,7 +63,7 @@ To focus only on the candidates that have been correctly reconstructed, selectio
 
 As discussed, besides the tag-side reconstruction in $B$-hadronic modes, only the photon from \BtoXsgamma can be reconstructed while ensuring a model-independent inclusive measurement.
 In order to reduce the quickly growing number of background-photon candidates, only events where there is at least photon with $\Estar>1.2~\gev$ are considered.
-The photons must also be within the CDC acceptance ($17--150~\degrees$).
+The photons must also be within the CDC acceptance ($17-150~\degrees$).
 These requirements are summarised in \Cref{tab:photon_requirements}.
 \begin{table}[htbp!]
     \centering
@@ -82,15 +82,13 @@ Reconstructed photon energy is transformed, based on XXX.
 
 \subsection{Overview of the selected sample}
 
-After reconstruction, based on \MC samples, there can be up to 20 tag-$B$ candidates and up to 2 signal-photon candidates, although having 2 photon candidates is highly unlikely.
-By ranking each candidate based on \EB and \feiProb, a two-dimensional grid of relative fraction of combinations of tag-$B$ candidates and photons is made.
-This is shown in \Cref{tab:grid_photon_fei}.
+After reconstruction, based on \MC samples, there can be up to 20 tag-$B$ candidates.
 The sample is broken down to show the relative fraction of total number of tag-side $B$ meson candidates in \Cref{fig:fei_tag_reco_candidates}.
 
-\begin{table}[htbp!]
-    \caption{\label{tab:grid_photon_fei} Grid.}
-    \input{tables/selected_photons_tags.tex}
-\end{table}
+% \begin{table}[htbp!]
+%     \caption{\label{tab:grid_photon_fei} Fraction of events where the $i$th ranked tag-side candidate.}
+%     \input{tables/selected_photons_tags.tex}
+% \end{table}
 
 \begin{figure}[htbp!]
     \centering
@@ -103,16 +101,27 @@ The sample is broken down to show the relative fraction of total number of tag-s
     \caption{\label{fig:fei_tag_reco_candidates} Relative fractions of events for the number of reconstructed \B meson candidates.
     }
 \end{figure}
+\begin{figure}[htbp!]
+    \centering
+    \subcaptionbox{\label{fig:photon_reco_candidates_bplus}}{
+        \includegraphics[width=0.45\textwidth]{figures/event_reconstruction/Bp_total_photon_candidates.pdf}
+        }
+    \subcaptionbox{\label{fig:photon_reco_candidates_bzero}}{
+    \includegraphics[width=0.45\textwidth]{figures/event_reconstruction/Bz_total_photon_candidates.pdf}
+    }
+    \caption{\label{fig:photon_reco_candidates} Relative fractions of events for the number of reconstructed \B meson candidates.
+    }
+\end{figure}
 
 \begin{figure}[htbp!]
     \centering
-    \subcaptionbox{\label{fig:spectum_after_reco_bplus}}{
+    \subcaptionbox{\label{fig:spectrum_after_reco_bplus}}{
         \includegraphics[width=0.45\textwidth]{figures/event_reconstruction/Bp_tagged_background.pdf}
         }
-    \subcaptionbox{\label{fig:spectum_after_reco_bzero}}{
+    \subcaptionbox{\label{fig:spectrum_after_reco_bzero}}{
     \includegraphics[width=0.45\textwidth]{figures/event_reconstruction/Bz_tagged_background.pdf}
     }
-    \caption{\label{fig:spectum_after_reco_bplus} \BtoXsgamma after reco.
+    \caption{\label{fig:spectrum_after_reco} \BtoXsgamma after reco.
     }
 \end{figure}
 \todo[inline]{Do I want to say on the plot that is feihadronicbplus vs bzero? Maybe ok as it is}
