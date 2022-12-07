@@ -80,15 +80,17 @@ These requirements are summarised in \Cref{tab:photon_requirements}.
 
 Reconstructed photon energy is transformed, based on XXX.
 
-\subsection{Overview of the selected sample}
+\subsection{Overview of the selected sample}\label{sec:reconstruction_overview}
 
 After reconstruction, based on \MC samples, there can be up to 20 tag-$B$ candidates.
 The sample is broken down to show the relative fraction of total number of tag-side $B$ meson candidates in \Cref{fig:fei_tag_reco_candidates}.
+The overall volume of candidates is similar or \Bp and \Bz modes of \FEI, with roughly 50\% of events only having a single candidate per event.
 
-% \begin{table}[htbp!]
-%     \caption{\label{tab:grid_photon_fei} Fraction of events where the $i$th ranked tag-side candidate.}
-%     \input{tables/selected_photons_tags.tex}
-% \end{table}
+A similar distribution for number of signal-side photon candidates is shown in \Cref{fig:photon_reco_candidates}.
+Contrary to the tag-side, here more than 96\% of time the highest-energy photon is the sole candidate in the event.
+In fact, studies on signal \MC, where a \BtoXsgamma event decay is always present, with a photon energy $\EB>1.4~\gev$, this is true more than  99.7\% of time.
+The $\EB>1.4~\gev$ selection is chosen pragmatically to maintain a reasonable data set size in memory without losing signal events.
+As the number of photon candidates grows swiftly with decreasing energy, this selection still contains the majority of \BtoXsgamma decay phase space.
 
 \begin{figure}[htbp!]
     \centering
@@ -98,7 +100,11 @@ The sample is broken down to show the relative fraction of total number of tag-s
     \subcaptionbox{\label{fig:fei_tag_reco_candidates_bzero}}{
     \includegraphics[width=0.45\textwidth]{figures/event_reconstruction/Bz_total_tag_candidates.pdf}
     }
-    \caption{\label{fig:fei_tag_reco_candidates} Relative fractions of events for the number of reconstructed \B meson candidates.
+    \caption{\label{fig:fei_tag_reco_candidates} Relative fractions of events for the number of reconstructed \B meson candidates in the generic \MC dataset.
+    About 50\%(65\%) of events for \Bp and \Bz \FEI modes have only 1 tag-side candidate.
+    About 22\%(20\%) of events for \Bp and \Bz \FEI modes have two tag-side candidates and 6\%(3\%) has 3.
+    The number of candidates per event reduces quickly, but faster for \Bz modes, with roughly 5\%(2\%) of events having more than 5 candidates for \Bp and \Bz.
+    Note that the same event can have a \Bp and \Bz event reconstructed.
     }
 \end{figure}
 \begin{figure}[htbp!]
@@ -109,9 +115,20 @@ The sample is broken down to show the relative fraction of total number of tag-s
     \subcaptionbox{\label{fig:photon_reco_candidates_bzero}}{
     \includegraphics[width=0.45\textwidth]{figures/event_reconstruction/Bz_total_photon_candidates.pdf}
     }
-    \caption{\label{fig:photon_reco_candidates} Relative fractions of events for the number of reconstructed \B meson candidates.
+    \caption{\label{fig:photon_reco_candidates} Relative fractions of events for the number of reconstructed photon candidates in the generic \MC sample.
+    The vast majority of events contain only a single signal photon with \EB>1.4~\gev.
+    2 or more photon candidates are present 3 \% of time.
+    For events which contain true \BtoXsgamma decay (not shown here) this number is an order of magnitude smaller, at approximately 0.3\%.
     }
 \end{figure}
+
+The reconstructed \BtoXsgamma spectra on generic \MC, with the previously laid-out requirements are shown in \Cref{fig:spectrum_after_reco}.
+Note that these events in general can contain multiple combinations of a photon and tag-side candidate per event.
+Overall, it may appear that the \FEI \Bz mode has a higher signal-to-background ratio compared to \FEI \Bp.
+However, one has to take into account that in general, \FEI \Bp and \FEI \Bz modes are resulting from different reconstruction chains and, furthermore, \FEI \Bz has fewer modes being reconstructed than \FEI \Bp.
+Therefore without additional studies that fill follow in section XXX drawing such a conclusion may be premature. 
+\todo[inline]{will follow}
+On the other hand comparing \Cref{fig:untagged_btosgamma_background,fig:untagged_btosgamma_background} it is clear that a better signal-to-background ratio can already be observed without any following treatment.
 
 \begin{figure}[htbp!]
     \centering
@@ -121,11 +138,34 @@ The sample is broken down to show the relative fraction of total number of tag-s
     \subcaptionbox{\label{fig:spectrum_after_reco_bzero}}{
     \includegraphics[width=0.45\textwidth]{figures/event_reconstruction/Bz_tagged_background.pdf}
     }
-    \caption{\label{fig:spectrum_after_reco} \BtoXsgamma after reco.
+    \caption{\label{fig:spectrum_after_reco} \BtoXsgamma spectrum in generic \MC after event reconstruction.
+    Overlaid are events from signal \MC where the photon comes from \BtoXsgamma, multiplied by a scaling factor.
+    These figures may include multiple tag and photon entries per event and can be compared with \Cref{fig:untagged_btosgamma_background}.
     }
 \end{figure}
-\todo[inline]{Do I want to say on the plot that is feihadronicbplus vs bzero? Maybe ok as it is}
 
+The tag-side probability plots provided by the \FEI classifier are shown in \Cref{fig:sigprob_after_reco}.
+These further emphasise the differences between tag candidates reconstructed in \FEI \Bp and \FEI \Bz modes.
+Selecting on \feiProb variable is not trivial, 
+because even disregarding the differences between distributions for \FEI \Bp and \Bz modes, 
+they are also different for reconstruction for specific decay channels reconstructed for the same-charge $B$ mode.
+This is shown and discussed in \Cref{sec:appendix_fei_signal_probabilities} .
+Any direct selections, as seen in \Cref{fig:feisigprobs1,fig:feisigprobs2,fig:feisigprobs3,fig:feisigprobs4}, will result in a bias for selected tag-side modes.
+Therefore, \feiProb is used in a `consultational' capacity in this analysis, with no direct selections applied on it.
+
+\begin{figure}[htbp!]
+    \centering
+    \subcaptionbox{\label{fig:sigprob_after_reco_bplus}}{
+        \includegraphics[width=0.45\textwidth]{figures/event_reconstruction/Bp_tagged_background_feiSigProb.pdf}
+        }
+    \subcaptionbox{\label{fig:sigprob_after_reco_bzero}}{
+    \includegraphics[width=0.45\textwidth]{figures/event_reconstruction/Bz_tagged_background_feiSigProb.pdf}
+    }
+    \caption{\label{fig:sigprob_after_reco} Tag-side \feiProb after reconstructing \BtoXsgamma events in generic \MC.
+    Overlaid are events from signal \MC where the photon comes from \BtoXsgamma, multiplied by a scaling factor.
+    These figures may include multiple tag and photon entries per event.
+    }
+\end{figure}
 
 % \subsection{Event topology reconstrunction}
 % Many quantities that parametrise the \epem collision product topology in terms of tracks and neutral clusters in the event will be used.
