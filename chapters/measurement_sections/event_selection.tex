@@ -21,7 +21,7 @@ Photon candidates, broken down by their mother-particle, are shown in \Cref{fig:
 Other sources, such as initial-state radiation, neutron annihilation, parton-shower final-state radation, $\omega(782)$, $\eta'$ decays (in decreasing order) individually make up between 0.5\%-3\% of sample.
 All other sources individually make up less than 0.5\% and include various hadron decays that are produced in continuum or \B events.
 The backgrounds are similar for both \FEI \Bp and \Bz modes.
-Note that some photon candidates can be misidentified, in particular XXXXX.
+Note that some photon candidates can be misidentified, in particular neutrons (discussed further in \Cref{sec:selection_clusZMVA}).
 
 The reason why $\piz\ra\g\g$ and $\eta\ra\g\g$ decays are such a prominent background is related to the fact that they can often be produced in hadronic decays and tend to decay asymmetrically -- where one photon has a much larger energy than the other.
 The hadronic decay, overall, mimics the hadronised $X_s$ system, whereas the high-energy photon is taken as the high-energy photon candidate, therefore resulting is similar kinematics.
@@ -57,3 +57,63 @@ To reduce the discussed background components the following strategy is adopted:
 
 \subsection{Misidentified photon suppression}\label{sec:selection_clusZMVA}
 
+Neutrons, $K_L^0$, protons, electrons where tracking for the particle did not succeed and, less commonly, other charged hadrons, can leave clusters in the \ECL which are misidentified as photons.
+The photon misidentification rate is given in \Cref{tab:misidentified_photons}.
+The main misidentified photon candidates originate from neutrons, with small contribution from electron and $K_L^0$ showers.
+
+\begin{table}[htbp!]
+    \centering
+    \caption{\label{tab:misidentified_photons} Photon misidentification rates after reconstruction.
+    The majority of photons are identified correctly, with the largest component coming from misidentified neutron showers and $K_L^0$ deposits.
+    The rates are similar for \FEI \Bp and \Bz modes which is consistent with the fact that this property is independent on the decayin $B$ charge.}
+    \input{tables/misidentification.tex}
+\end{table}
+
+The interactions of these particle species in the \ECL \textit{shower} -- produce a cascade of secondary particles which may produce tertiary particles etc.
+Generally, the total energy deposit and distribution between \ECL crystals, also known as \textit{shower-shape}, is different depending on the particle-species due to their different radiation lengths.
+This can be used to distinguish photon clusters using \MVA methods.
+A technique achieving this, which uses the moments of Zernike polynomials, is documented in Ref.\cite{Hershenhorn:2468}.
+This approach is implemented in Belle II analysis software and used in this analysis.
+Here, I provide a condensed overview of the approach.
+
+A complete set of complex two-dimensional polynomial is defined as:
+\begin{equation}
+    V_nm(\rho\cos\alpha,\rho\sin\alpha) = R_{nm}(\rho)\exp{im\alpha},
+\end{equation}
+where ${x=\rho\cos\alpha, y=\rho\sin\alpha}$ are polar coordinates, $m$ is an integer and $R_{nm}(\rho)=V(\rho,0)$ is a polynomial of degree $n$.
+The expression for Zernike polynomial is given as:
+\begin{equation}
+    R_{nm}(\rho) = \sum^{\frac{n-|m|}{2}}_{s=0}(-1)^s \frac{(n-s)!}{ s! \left(\frac{n+|m|}{2}-s \right) ! \left( \frac{n-|m|}{2}-s\right) !}\rho^{n-2s}.
+\end{equation}
+
+The moments of a function $f(\rho\cos\alpha,\rho\sin\alpha)$ is expressed in terms of $V_{nm}$ as:
+\begin{equation}
+    Z_{nm} = \frac{n+1}{\pi} \int_0^{2\pi}\int^1_0 V^*_{nm}(\rho\cos\alpha,\rho\sin\alpha)f(\rho\cos\alpha, \rho\sin\alpha)\rho d\rho d\alpha.
+\end{equation}
+$Z_{nm}$ are called Zernike moments.
+They have many useful properties that make them usable in image recognition, field of optics, and more importantly, particle physics particle identification algorithms (see. Ref.\cite{Hershenhorn:2468} and references therein).
+
+A Dirac comb function is defined to parametrise a particle-shower in the \ECL as:
+\begin{equation}
+    f(\vec{x}) = \sum_i \delta(\vec{x}-\vec{x}_i)\frac{w_iE_i}{\sum w_iE_i},
+\end{equation}
+where $x$ is a dimensionless crystal position in the perpendicular plane, $i$ is the sum over all crystals in a given particle shower, $E_i$ is the energy of the $i$-th crystal.
+As showers can overlap, $w_i$ is the fraction of energy that is associated with the currently investigated shower.
+It can be shown, that Zernike moments for \ECL showers can then be expressed as:
+\begin{equation}
+    |Z_{nm}| = \frac{n+1}{\pi}\frac{1}{\sum_iw_iE_i}\left|\sum_iR_{nm}(\rho_i)\exp{-im\alpha_i}w_iE_i\right|.
+\end{equation}
+
+The work in Ref.\cite{Hershenhorn:2468} selects the best combination of eleven $|Z_{nm}|$ which provides a strongest separation between hadronic showers and electromagnetic showers.
+The chosen combination of $|Z_{nm}|$ is combined using a \BDT and produces a single output, hereafter referred to as $\texttt{zernikeMVA}\in(0,1)$.
+The \texttt{zernikeMVA} distribution for \BtoXsgamma candidates in \Cref{fig:photon_sources} is shown in \Cref{fig:zmva_distribution}.
+\begin{figure}[htbp!]
+    \centering
+    \subcaptionbox{\label{fig:bp_zmva_distribution}}{
+        \includegraphics[width=0.395\textwidth]{figures/event_selection/Bp_zernikeMVA.pdf}
+    }
+    \subcaptionbox{\label{fig:bz_zmva_distribution}}{
+        \includegraphics[width=0.395\textwidth]{figures/event_selection/Bz_zernikeMVA.pdf}
+        }
+    \caption{\label{fig:zmva_distribution}}
+\end{figure}
