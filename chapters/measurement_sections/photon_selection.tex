@@ -233,5 +233,51 @@ Removing $\piz\ra\g\g$ decays from the sample, a clear separation of photon cand
 
 Even though no direct selection is applied on the $X_s$ system, through direct or higher-order correlations with \EB, a bias may be introduced to the photon energy.
 To ensure that no such correlation is introduced, a correlation study is performed for \piVeto, \etaVeto and \ZMVA observables.
+In principle, it is not important if the selection introduces a bias to the background -- as long as this bias is well reproduced in simulation.
+The latter will be validated in 
+\todo[inline]{ref to validation here}
+Therefore the study is performed exclusively for signal \MC, only focusing on \BtoXsgamma events, as it was aimed to ensure that the photon energy spectrum itself is minimally biased.
 
+\begin{figure}[htbp!]
+    \centering
+    \subcaptionbox{\label{fig:bp_zmva_correlation}}{
+            \includegraphics[width=0.3\textwidth]{figures/event_selection/Bp_zernikeMVA_correlation.pdf}
+        }
+    \subcaptionbox{\label{fig:bp_piveto_correlation}}{
+            \includegraphics[width=0.3\textwidth]{figures/event_selection/Bp_piVeto_correlation.pdf}
+        }
+    \subcaptionbox{\label{fig:bp_etaveto_correlation}}{
+            \includegraphics[width=0.3\textwidth]{figures/event_selection/Bp_etaVeto_correlation.pdf}
+        }
+    \subcaptionbox{\label{fig:bz_zmva_correlation}}{
+            \includegraphics[width=0.3\textwidth]{figures/event_selection/Bz_zernikeMVA_correlation.pdf}
+        }
+    \subcaptionbox{\label{fig:bz_piveto_correlation}}{
+            \includegraphics[width=0.3\textwidth]{figures/event_selection/Bz_piVeto_correlation.pdf}
+        }
+    \subcaptionbox{\label{fig:bz_etaveto_correlation}}{
+            \includegraphics[width=0.3\textwidth]{figures/event_selection/Bz_etaVeto_correlation.pdf}
+        }
+    \caption{\label{fig:selection_correlations} Correlation tests for background suppression observables described in \Cref{sec:photon_selection}, depicted as a 2D histogram.
+    Each row is normalised, such that all bins within that row add up to 1.
+    For signal \MC \BptoXsgamma events the tests are shown
+    in \Cref{fig:bp_zmva_correlation,fig:bp_piveto_correlation,fig:bp_etaveto_correlation},
+    and for \BztoXsgamma in \Cref{fig:bz_zmva_correlation,fig:bz_piveto_correlation,fig:bz_etaveto_correlation}.
+    All figures share the same legend provided in \Cref{fig:bp_zmva_correlation}.
+    In red line, the average photon energy, $\expval{\EB}$, is shown as a function of the tested observable.
+    In black and black-dotted lines -- median and $\pm 1 \sigma$ percentile values of \EB, respectively.
+    No strong dependance can be observed in any of the quantities or the 2D maps.
+    }
+\end{figure}
 
+A two dimensional map of ${\piVeto,\etaVeto,\ZMVA}$ versus \EB is given in \Cref{fig:selection_correlations}.
+Because the distributions of the three variables used for background suppression are not uniform, each row is normalised, such that the sum of each row is equal to unity.
+This makes the comparison between different number of entries in different bins simpler.
+The figure also denotes the average, the median and $\pm 1\sigma$ percentiles of \EB.
+It is clear that no strong bias is introduced by any of the observables to any of these quantities.
+Furthermore, the structure itself remains constant across all bins and no clear dependance on \EB can be seen.
+No significant differences between different \Bp or \Bz samples is observed.
+It is therefore concluded that the selections are unbiasing and suitable for signal-side photon background suppression.
+The exact selections on these observables will be optimised simultaneously with continuum event suppression in XXXX.
+
+\todo[inline]{give chapter name here once done}.
