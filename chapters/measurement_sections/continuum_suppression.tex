@@ -31,13 +31,72 @@ The classifier will then be trained on the reduced dataset
 In order to find optimal selections, a figure-of-merit study is performed for each observable.
 Two figure of merit options were considered for this analysis, a more standard figure-of-merit $\mathrm{FOM}_1$:
 \begin{equation}\label{eq:soversqrtsplusb}
-    \mathrm{FOM}_1 = \frac{S}{\sqrt{S+B}},
+    \mathrm{FOM}_1 = \frac{\mathsf{S}}{\sqrt{\mathsf{S}+\mathsf{B}}},
 \end{equation}
-and $\mathrm{FOM}_2$ defined in Ref.\cite{Punzi:2003bu}, (sometimes referred to as `Punzi' figure-of-merit):
+and $\mathrm{FOM}_2$ defined in Ref.\cite{Punzi:2003bu} (often referred to as `Punzi' figure-of-merit):
 \begin{equation}\label{eq:punzi_fom}
-    \mathrm{FOM}_2 = \frac{S}{S_0} \frac{1}{\frac{3}{2}+\sqrt{B}}.
+    \mathrm{FOM}_2 = \frac{\mathsf{S}}{\mathsf{S}_0} \frac{1}{\frac{3}{2}+\sqrt{\mathsf{B}}}.
 \end{equation}
-In both equations, $S$ is the number of signal events after selection, 
-$B$ is the number of background events after selection, 
-and $S_0$ is the number of signal events before selection.
+In both equations, $\mathsf{S}$ is the number of signal events after selection, 
+$\mathsf{B}$ is the number of background events after selection, 
+and $\mathsf{S}_0$ is the number of signal events before selection.
+Although \Cref{eq:punzi_fom} was derived with search-like analyses in mind, 
+it is utilised in this analysis to minimise signal model dependancy: the ratio $\mathsf{S}/\mathsf{S}_0$ present in the definition reduces out many model-dependant effects.
+
+For each figure of merit calculation, background events ($\mathsf{B}$) are calculated based on generic \MC,
+whereas signal events, $\mathsf{S}$, are calculated based on signal \MC, to ensure a high statistics sample.
+In the case of \Cref{eq:soversqrtsplusb}, an appropriate scaling for $\mathsf{S}$ is also used.
+Each dataset has duplicate tag-candidate events randomly removed, by picking a random tag-side candidate.
+Each figure of merit is then calculated for 200 equally spaced selections in the target observable.
+The maximum figure-of-merit point is taken as the optimal pre-selection for each of the variables.
+This procedure is shown for $\mathrm{FOM}_2$ in \Cref{fig:selection_optimisations}.
+Results for $\mathrm{FOM}_1$ are used as a cross-check for $\mathrm{FOM_2}$ but turn out to be consistent.
+Equivalent procedure for $\mathrm{FOM}_1$ is shown in \Cref{sec:appendix_sqrtsplusb_optimisation}.
+The resulting optimal selections are also shown in the Figures.
+
+\begin{figure}[htbp!]
+    \centering
+    \subcaptionbox{\label{fig:bp_zmva_optimisation}}{
+            \includegraphics[width=0.3\textwidth]{figures/continuum_suppression/Bp_zernikeMVA_optimisation_punzi.pdf}
+        }
+    \subcaptionbox{\label{fig:bp_piveto_optimisation}}{
+            \includegraphics[width=0.3\textwidth]{figures/continuum_suppression/Bp_piVeto_optimisation_punzi.pdf}
+        }
+    \subcaptionbox{\label{fig:bp_etaveto_optimisation}}{
+            \includegraphics[width=0.3\textwidth]{figures/continuum_suppression/Bp_etaVeto_optimisation_punzi.pdf}
+        }
+    \subcaptionbox{\label{fig:bz_zmva_optimisation}}{
+            \includegraphics[width=0.3\textwidth]{figures/continuum_suppression/Bz_zernikeMVA_optimisation_punzi.pdf}
+        }
+    \subcaptionbox{\label{fig:bz_piveto_optimisation}}{
+            \includegraphics[width=0.3\textwidth]{figures/continuum_suppression/Bz_piVeto_optimisation_punzi.pdf}
+        }
+    \subcaptionbox{\label{fig:bz_etaveto_optimisation}}{
+            \includegraphics[width=0.3\textwidth]{figures/continuum_suppression/Bz_etaVeto_optimisation_punzi.pdf}
+        }
+    \caption{\label{fig:selection_optimisations} Optimal selection calculation for observables
+    described in \Cref{sec:photon_selection} based on $\mathrm{FOM}_2$ (see \Cref{eq:punzi_fom}).
+    For \BptoXsgamma events the tests are shown
+    in \Cref{fig:bp_zmva_optimisation,fig:bp_piveto_optimisation,fig:bp_etaveto_optimisation},
+    and for \BztoXsgamma in \Cref{fig:bz_zmva_optimisation,fig:bz_piveto_optimisation,fig:bz_etaveto_optimisation}.
+    The figures show efficiency and $\mathrm{FOM}_2$ score calculated for 200 selections of \piVeto, \etaVeto and \ZMVA.
+    The maximum value of $\mathrm{FOM}_2$, the corresponding selection and efficiency are shown as well.
+    }
+\end{figure}
+
+The results between \Bp and \Bz modes, as well as using $\mathrm{FOM}_1$ and $\mathrm{FOM}_2$ are consistent, with only marginal differences.
+Therefore, due to the model-independance of $\mathrm{FOM}_2$, this figure-of-merit will be the only one discussed henceforth.
+At this stage, it is unnecessary to choose the `best' selection, as another simultaneous optimisation will be performed later, together with continuum suppression \BDT output.
+\todo[inline]{(see XXX when I optimise)}. 
+The main goal is to reduce the sample size to include only relevant data, such that the trained \BDT can make decisions for difficult cases that are not easily distinguishable using simple selection.
+Based on \Cref{fig:selection_optimisations}, pre-selections are chosen, which suppress background but retain most of the signal.
+The requirement for a loose selection are tailored such that more than 75\% of \BtoXsgamma candidates are retained and are shown in \Cref{tab:preselections}.
+
+\begin{table}[htbp!]
+    \centering
+    \caption{\label{tab:preselections} \todo[inline]{add caption}}
+    \input{tables/loose_selections.tex}
+\end{table}
+
+\subsection{Continuum suppression observables}\label{sec:continuum_features}
 
