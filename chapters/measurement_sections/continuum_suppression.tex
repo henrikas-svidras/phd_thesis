@@ -90,7 +90,8 @@ At this stage, it is unnecessary to choose the `best' selection, as another simu
 \todo[inline]{(see XXX when I optimise)}. 
 The main goal is to reduce the sample size to include only relevant data, such that the trained \BDT can make decisions for difficult cases that are not easily distinguishable using simple selection.
 Based on \Cref{fig:selection_optimisations}, pre-selections are chosen, which suppress background but retain most of the signal.
-The requirement for a loose selection are tailored such that more than 75\% of \BtoXsgamma candidates are retained and are shown in \Cref{tab:preselections}.
+The requirement for a loose selection are tailored such that more roughly 75\% of \BtoXsgamma candidates are retained and are shown in \Cref{tab:preselections}.
+They are chosen to be no tighter than their optimal selection and preferrably considerably looser.
 
 \begin{table}[htbp!]
     \centering
@@ -98,5 +99,98 @@ The requirement for a loose selection are tailored such that more than 75\% of \
     \input{tables/loose_selections.tex}
 \end{table}
 
-\subsection{Continuum suppression observables}\label{sec:continuum_features}
+The pre-selections improve the signal-to-background ratio by roughly an order of magnitude.
+This can be clearly seen by comparing \Cref{fig:preselected_photons} with \Cref{fig:spectrum_after_reco}.
+The scale at which \BtoXsgamma signal \MC scaled differs at about a factor of 10, meaning that the background reduced by approximately that amount due to these selections.
 
+
+\begin{figure}[htbp!]
+    \centering
+    \subcaptionbox{\label{fig:bp_preselected_photons}}{
+        \includegraphics[width=0.395\textwidth]{figures/continuum_suppression/Bp_tagged_background_preselection.pdf}
+    }
+    \subcaptionbox{\label{fig:bz_preselected_photons}}{
+        \includegraphics[width=0.395\textwidth]{figures/continuum_suppression/Bz_tagged_background_preselection.pdf}
+        }
+    \caption{\label{fig:preselected_photons} \BtoXsgamma spectrum in generic \MC after pre-selection for training the continuum suppression \BDT classifier.
+    Overlaid are events from signal \MC where the photon comes from \BtoXsgamma, multiplied by a scaling factor.
+    Compared to \Cref{fig:spectrum_after_reco}, the effectiveness of background suppression so far is apparent.
+    These figures may include multiple tag entries per event.
+    }
+\end{figure}
+
+Finally, many combinatorial tag-side candidates in \BB events may still appear contribute to the analysis at this stage.
+A more detailed definition for a `well-reconstructed' tag will be explored later 
+\todo[inline]{add later}.
+At this stage, it is sufficient to acknowledge the fact that the vast majority of correctly reconstructed tag-side candidates is expected to lie $\Mbc>5.27~\gevcc$.
+Therefore, this requirement is also adopted for studies and training in \Cref{sec:continuum_features}--XXX
+\todo[inline]{add X}.
+
+\subsection{Continuum suppression strategy}\label{sec:continuum_features}
+
+$B$ factory experiments and Belle II have a large selection of observables that can be utilised for continuum suppression and are suitable to be input as variables to a \BDT.
+These observables combine describe the event-topology or particles in the event and are optimised to provide separation between \BB and \qqbar events.
+There are two caveats that have to be kept in mind for the \BtoXsgamma analysis:
+\begin{itemize}
+    \item Generally, \BtoXsgamma event-topology may be different compared to \BB events. 
+    \BtoXsgamma decays have a single jet-like $X_s$ system (while the other $B$ meson decays hadronically).
+    This leads to a somewhat middle-case between a generic-\BB event and a \epem\ra\qqbar event, as it was illustrated in \Cref{fig:continuum_schematic}.
+    \item Many of these observables contain momenta, angles or other parameters of some (or even all) particles in the event -- including the $X_s$ system and the photon.
+    This may lead to a bias to the spectrum of $X_s$ system.
+    Furthermore, even relatively small biases, over many different different training features used, may be learnt by the \BDT and introduced to the spectrum.
+    \item Some of the features may perform differently in real-data compared to simulation, due to unexpected differences in alignment, calibration or background distributions.
+    As we use simulated data sets to train a \BDT in this analysis, such a comparison is crucial.
+\end{itemize}
+Given the mentioned points, it is important to test that observables used for the training provide adequate separation between \BtoXsgamma and \qqbar, while no bias is introduced to the photon energy spectrum.
+Furthermore, this has to be well-represented in data.
+
+In this analysis, the following observable categories are considered for separation between \epem\ra\qqbar and \BtoXsgamma:
+\begin{itemize}
+    \item Various thrust-based observables (\Cref{sec:thrusts});
+    \item Flavour tagger output for the tag-$B$ meson;
+    \item Fox-Wolfram moments;
+    \item Kakuno-Super-Fox-Wolfram moments;
+    \item CLEO cones;
+    \item Vertex locations from the tag-$B$ kinematic vertex fit.
+\end{itemize}
+
+In total, this provides 72 potential training features that are tested to be unbiased and adequately described in simulation.
+The tests use a metric of \textit{total divergence to the average} (often called \textit{Jensen-Shannon distance}) \cite{Lin:1991abc},
+which is used to quantitatively evaluate the similarity between two distributions.
+The Jensen-Shannon distance is bounded by 1 for two given probability distributions, $\mathbb{X}_1$ and $\mathbb{X}_2$:
+\begin{equation}\label{eq:js_distance}
+    0\leq\mathrm{JSD}(\mathbb{X}_1||\mathbb{X}_2) \leq1,
+\end{equation}
+where exactly similar distributions have a score of 0, and the score tends towards 1 when the distributions are highly-different.
+
+Two tests are performed:
+\begin{itemize}
+    \item \textbf{Test 1}: $\mathbf{\EB,~\Estar~and~tag\mbox{-}side~\Mbc~bias~test}$:
+    to ensure that the classifier does not indirectly select particular $X_s$ or tag-side $B$ channels,
+    each tested potential training feature is separated into 5 equally populated regions (\texorpdfstring{slices}) of \BtoXsgamma events in signal \MC.
+    For this test, \BptoXsgamma and \BztoXsgamma are merged.
+    In each of these regions, the distribution of \EB, \Estar and \Mbc is compared.
+    The Jensen-Shannon distance is required to not be larger than 6\% between any two given slices of a training feature.
+    The requirement to pass \textbf{Test 1} has been chosen by observing the typical values of the agreement shown by the tested unbiased distributions.
+    If this requirement is not passed by at least one of the distributions (\EB, \Estar or \Mbc), the feature is excluded from the list of final \BDT training features.
+    \item \textbf{Test 2}: $\mathbf{\epem\ra\qqbar~data\mbox{-}simulation~similarity~test}$:
+    to ensure that simulations adequatly describe the data sets that we aim to suppress.
+    This test is only performed if \textbf{Test~1} is passed.
+    As this is a blinded analysis, off-resonance data samples are used, which only contain \epem\ra\qqbar events.
+    In this case, the Jensen-Shannon distance is calculated between 
+    the area-normalised distribution of a training feature in off-resonance data set,
+    and the area-normalised distribution of a training feature in \epem\ra\qqbar simulation.
+    The metric is required to be no more than 15\%.
+    The looser requirement is adopted here, due to the fact that some difference is expected between the distributions,
+    as the collision energy in off-resonance data set is different to the one in on-resonance simulation that is used in this analysis.
+    Furthermore, an overall smaller off-resonance data set ($\sim19~\invfb$, see \Cref{sec:data_samples}) may have certain difference due to poissonian fluctuations.
+\end{itemize}
+
+Each of these tests is performed for every variable in the above-mentioned categories in the following subsections.
+The tested distributions have the selections from \Cref{sec:preselection} included, except for the case of off-resonance dataset, where the $\Mbc>5.27~\gevcc$ requirement is lifted.
+For every event, when more than one tag-side candidate $B$ candidate exists, a random one is picked.
+The sections also contain the mathematical definitions for the sevent observable categories mentioned in this section.
+
+
+\subsubsection{Thrust-based observables}\label{sec:thrusts}
+\input{chapters/measurement_sections/continuum_suppression_features/thrusts.tex}
