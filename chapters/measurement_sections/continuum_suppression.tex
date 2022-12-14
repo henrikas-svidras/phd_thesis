@@ -147,14 +147,17 @@ Furthermore, this has to be well-represented in data.
 In this analysis, the following observable categories are considered for separation between \epem\ra\qqbar and \BtoXsgamma:
 \begin{itemize}
     \item Various thrust-based observables (\Cref{sec:thrusts});
-    \item Flavour tagger output for the tag-$B$ meson;
-    \item Fox-Wolfram moments;
-    \item Kakuno-Super-Fox-Wolfram moments;
-    \item CLEO cones;
-    \item Vertex locations from the tag-$B$ kinematic vertex fit.
+    \item Sphericity and aplanarity (\Cref{sec:sphericity_aplanarity});
+    \item Harmonic moments (\Cref{sec:harmonic_moments});
+    \item Fox-Wolfram moments (\Cref{sec:fox_wolfram_moments});
+    \item Modified Fox-Wolfram moments (\Cref{sec:modified_fox_wolfram_moments});
+    \item CLEO cones (\Cref{sec:cleo_cones});
+    \item Angular tag-$B$ meson observables (\Cref{sec:angular_features});
+    \item Tag-$B$ meson vertex observables (\Cref{sec:vertex_features});
+    \item Flavour tagger output for the tag-$B$ meson(\Cref{sec:flavour_tagger_outputs});
 \end{itemize}
 
-In total, this provides 72 potential training features that are tested to be unbiased and adequately described in simulation.
+In total, this provides 82 potential training features that are tested to be unbiased and adequately described in simulation.
 The tests use a metric of \textit{total divergence to the average} (often called \textit{Jensen-Shannon distance}) \cite{Lin:1991abc},
 which is used to quantitatively evaluate the similarity between two distributions.
 The Jensen-Shannon distance is bounded by 1 for two given probability distributions, $\mathbb{X}_1$ and $\mathbb{X}_2$:
@@ -186,11 +189,9 @@ Two tests are performed:
     Furthermore, an overall smaller off-resonance data set ($\sim19~\invfb$, see \Cref{sec:data_samples}) may have certain difference due to poissonian fluctuations.
 \end{itemize}
 
-Each of these tests is performed for every variable in the above-mentioned categories in the following subsections.
 The tested distributions have the selections from \Cref{sec:preselection} included, except for the case of off-resonance dataset, where the $\Mbc>5.27~\gevcc$ requirement is lifted.
 For every event, when more than one tag-side candidate $B$ candidate exists, a random one is picked.
-The sections also contain the mathematical definitions for the sevent observable categories mentioned in this section.
+\textbf{Test~1} with exact definitions for the tested variable categories are shown in \Cref{sec:appendix_continuum_features}.
 
 
-\subsubsection{Thrust-based observables}\label{sec:thrusts}
-\input{chapters/measurement_sections/continuum_suppression_features/thrusts.tex}
+
