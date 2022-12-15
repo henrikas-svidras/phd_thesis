@@ -95,7 +95,11 @@ They are chosen to be no tighter than their optimal selection and preferrably co
 
 \begin{table}[htbp!]
     \centering
-    \caption{\label{tab:preselections} \todo[inline]{add caption}}
+    \caption{\label{tab:preselections} Selections that remove background and misreconstructed candidates,
+    preparing the reconstructed datasets \Cref{sec:reconstruction_overview} for continuum \BDT training (\Cref{sec:continuum_training}).
+    A later optimisation will be used for a final candidate selection XXXX
+    \todo[inline]{add here later}
+    }
     \input{tables/loose_selections.tex}
 \end{table}
 
@@ -126,7 +130,7 @@ At this stage, it is sufficient to acknowledge the fact that the vast majority o
 Therefore, this requirement is also adopted for studies and training in \Cref{sec:continuum_features}--XXX
 \todo[inline]{add X}.
 
-\subsection{Continuum suppression strategy}\label{sec:continuum_features}
+\subsection{Continuum suppression feature selection}\label{sec:continuum_features}
 
 $B$ factory experiments and Belle II have a large selection of observables that can be utilised for continuum suppression and are suitable to be input as variables to a \BDT.
 These observables combine describe the event-topology or particles in the event and are optimised to provide separation between \BB and \qqbar events.
@@ -152,12 +156,12 @@ In this analysis, the following observable categories are considered for separat
     \item Fox-Wolfram moments (\Cref{sec:fox_wolfram_moments});
     \item Modified Fox-Wolfram moments (\Cref{sec:modified_fox_wolfram_moments});
     \item CLEO cones (\Cref{sec:cleo_cones});
-    \item Angular tag-$B$ meson observables (\Cref{sec:angular_features});
+    % \item Angular tag-$B$ meson observables (\Cref{sec:angular_features});
     \item Tag-$B$ meson vertex observables (\Cref{sec:vertex_features});
     \item Flavour tagger output for the tag-$B$ meson(\Cref{sec:flavour_tagger_outputs});
 \end{itemize}
 
-In total, this provides 81 potential training features that are tested to be unbiased and adequately described in simulation.
+In total, this provides 75 potential training features that are tested to be uncorrelated to the photon energy spectrum and adequately described in simulation.
 The tests use a metric of \textit{total divergence to the average} (often called \textit{Jensen-Shannon distance}) \cite{Lin:1991abc},
 which is used to quantitatively evaluate the similarity between two distributions.
 The Jensen-Shannon distance is bounded by 1 for two given probability distributions, $\mathbb{X}_1$ and $\mathbb{X}_2$:
@@ -170,7 +174,7 @@ Two tests are performed:
 \begin{itemize}
     \item \textbf{Test 1}: $\mathbf{\EB,~\Estar~and~tag\mbox{-}side~\Mbc~bias~test}$:
     to ensure that the classifier does not indirectly select particular $X_s$ or tag-side $B$ channels,
-    each tested potential training feature is separated into 5 equally populated regions (\texorpdfstring{slices}) of \BtoXsgamma events in signal \MC.
+    each tested potential training feature is separated into 5 equally populated regions (\textit{slices}) of \BtoXsgamma events in signal \MC.
     For this test, \BptoXsgamma and \BztoXsgamma are merged.
     In each of these regions, the distribution of \EB, \Estar and \Mbc is compared.
     The Jensen-Shannon distance is required to not be larger than 6\% between any two given slices of a training feature.
@@ -183,7 +187,7 @@ Two tests are performed:
     In this case, the Jensen-Shannon distance is calculated between 
     the area-normalised distribution of a training feature in off-resonance data set,
     and the area-normalised distribution of a training feature in \epem\ra\qqbar simulation.
-    The metric is required to be no more than 15\%.
+    The metric is required to be no more than 10\%.
     The looser requirement is adopted here, due to the fact that some difference is expected between the distributions,
     as the collision energy in off-resonance data set is different to the one in on-resonance simulation that is used in this analysis.
     Furthermore, an overall smaller off-resonance data set ($\sim19~\invfb$, see \Cref{sec:data_samples}) may have certain difference due to poissonian fluctuations.
@@ -191,7 +195,108 @@ Two tests are performed:
 
 The tested distributions have the selections from \Cref{sec:preselection} included, except for the case of off-resonance dataset, where the $\Mbc>5.27~\gevcc$ requirement is lifted.
 For every event, when more than one tag-side candidate $B$ candidate exists, a random one is picked.
-\textbf{Test~1} with exact definitions for the tested variable categories are shown in \Cref{sec:appendix_continuum_features}.
+The application of \textbf{Test~1} with exact definitions for the 81 observables are shown in \Cref{sec:appendix_continuum_features}.
 
+Out of 75 potential training features, 27 pass through the requirements of \textbf{Test~1}.
+These are passed to \textbf{Test~2}
+\textbf{Test~2}, owing to excellent calibration and simulation quality of Belle II, removes a single feature.
+The results for the 26 final observables that pass both test requirements and will be used as features in the \BDT training
+are shown in \Cref{tab:passing_test1}.
 
+\begin{table}[htbp!]
+    \centering
+    \caption{\label{tab:passing_test1}The training features for the \epem\ra\qqbar suppression
+    that pass the requirements of \textbf{Test~1} (see \Cref{sec:appendix_continuum_features}) and \textbf{Test~2} (see \Cref{sec:appendix_continuum_features_datamc}).
+    The table also shows the value of the Jensen-Shannon distances for each observable for the different requirements of both tests.
+    Exact definitions of these quantities is provided in \Cref{sec:appendix_continuum_features}.
+    Observable groups follow those introduced in the text.
+    }   
+    \input{tables/test1_passes.tex}
+\end{table}
 
+\subsection{Continuum suppression training}\label{sec:continuum_training}
+
+As it was argued in \Cref{sec:continuum_features}, events containing \BtoXsgamma decays may have slightly different kinematic properties compared to a generic-\BB.
+Although these differences, as seen in \Cref{sec:appendix_continuum_features_datamc} are not large, training a classifier to separate generic $\FourS\ra\BB$ and \epem\ra\qqbar events may lead to a suboptimal separation of \BtoXsgamma.
+
+A more effective setup is to remove \BB events from generic \MC and supplement the leftover events with \BtoXsgamma events from signal \MC. 
+In such a scenario, the classifier learns to distinguish between the signal decays and continuum events, without the additional ambiguity of including generic \BB decays.
+All selections from \Cref{tab:preselections} are employed for the training datasets.
+
+The training samples are prepared by creating a mixture of $100000$ \epem\ra\qqbar events and 100000 \BtoXsgamma events from the signal MC sample.
+In each event, one $\gamma$ and $\B_{\mathrm{tag}}$ candidate combination is randomly chosen.
+This requirement ensures that the same event cannot contribute multiple training entries.
+The target variable for the training is defined as a $\mathtt{flag}$, which folows
+\begin{equation}
+    \mathtt{flag}=\begin{cases}
+      0,\quad \mathrm{for} \epem\ra\qqbar events,\\ 
+      1,\quad \mathrm{for} \BtoXsgamma events.
+      \end{cases}
+\end{equation}
+Half of the \epem\ra\qqbar training sample is taken \feiBp mode, and the other half is from \feiBz modes. 
+For signal, half is taken from $\BptoXsgamma$ signal mode, the other half from $B^0$, irrespective of the \FEI mode.
+Equivalent sample is prepared as the testing sample for the training.
+
+The training is performed using a \texttt{FastBDT} algorithm, introduced in \Cref{sec:BDTs_theory}.
+Four hyper-parameters within \texttt{FastBDT} framework have to be chosen.
+Hyper parameter optimisation is performed in a grid-like search, based on two quantities:
+\begin{align}\label{eq:optimisation_criteria}
+    \begin{split}
+    \mathtt{AUC}_{\mathrm{test}}&;\\
+    \Delta \mathtt{AUC} \equiv |\mathtt{AUC}_{\mathrm{train}}& - \mathtt{AUC}_{\mathrm{test}}|,\\
+    \end{split}
+\end{align}
+where $\mathtt{AUC}_{\mathrm{test}}$ is the \AUC score for training or testing samples.
+A set of hyper-parameters is sought, such that $ \mathtt{AUC}_{\mathrm{test}}$ is maximised, while $\Delta \mathtt{AUC}$ is minimised.
+The results of hyper-parameter optimisation are summarised in \Cref{tab:grid_search}.
+Larger depths, number of trees values are not explored, to avoid non-linear correlations which may be learnt by the classifier and would require additional studies to pinpoint.
+Large shrinkage values are undesired, to ensure a slower learning rate of the classifier.
+
+\begin{table}[htbp!]
+    \centering
+    \caption{\label{tab:grid_search}Hyper-parameter optimisation based on a grid-search method.
+    The four hyperparameters for the \texttt{FastBDT} algorithm are defined in \Cref{sec:BDTs_theory}.
+    The optimal values are chosen based on criteria defined in \Cref{eq:optimisation_criteria}.
+    They are shown in the right most column are taken as the parameters for the training.
+    }
+    \input{tables/hyperparameter_optimisation.tex}
+\end{table}
+
+The training, with features from \Cref{tab:passing_test1} and hyper parameters from \Cref{tab:grid_search} is performed.
+The normalised classifier output for test and train samples is shown in.
+It is clearly seen that the classifier shows almost no bias, as the train and test samples agree very well.
+This is further aluded by inspecting the ROC curve in.
+The \AUC score is higher for the training sample (as expected in the case of a good training) but only by a minor amount.
+Furthermore, the ROC curves themselves are practically indistinguishable.
+
+\begin{figure}[htbp!]
+    \subcaptionbox{\label{fig:separation_curve}}{
+    \includegraphics[width=0.45\textwidth]{figures/continuum_suppression/separation_curves.pdf}
+    }
+    \subcaptionbox{\label{fig:roc_curve}}{
+        \includegraphics[width=0.45\textwidth]{figures/continuum_suppression/roc_curve.png}
+    }
+    \caption{\label{fig:training_evaluation} The training evaluation for this analysis.
+    \Cref{fig:separation_curve} shows excellent separation between \epem\ra\qqbar and \BtoXsgamma samples, and excellent agreement between corresponding test and train samples.
+    \Cref{fig:roc_curve} shows the \ROC curve of the training. 
+    The test and train sample \AUC scores are close to unity and similar, alluding to a high-separation power that is observed, and no evidence of overtraining.
+    }
+\end{figure}
+
+Using the tools provided by the \texttt{FastBDT} algorithm, a \textit{relative feature importance} is computed.
+Particularly for \texttt{FastBDT}, it is computed by evaluating the decrease of the \AUC score if the feature is not included in the training dataset (for more details see Ref.\cite{Keck:2017gsv}.)
+Therefore, it can be considered a quantitative measure of the impact of a feature on the final classifier output.
+The figure depicting relative training observable importances is shown in \Cref{fig:feature_importance}. 
+It is clearly seen that cosTBTO and XX by far dominate, which is not surprising after inspecting their individual separation power for the current problem in \Cref{sec:appendix_continuum_features_datamc}.
+
+\todo[inline]{wrap up here}
+
+\begin{figure}[htbp!]
+    \includegraphics[width=0.45\textwidth]{figures/continuum_suppression/feature_importance.pdf}
+    \caption{\label{fig:feature_importance} The relative feature importances of different observables used in the training.
+    The definitions of these observables are provided in \Cref{sec:appendix_continuum_features}.
+    The feature importance highlights a relative change in \AUC score when the observable is not included in the training.
+    }
+\end{figure}
+
+Finally, the effect of the same \textbf{Tests~1\&2} are performed for the photon energy spectrum to further test the validity of the training.
