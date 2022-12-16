@@ -248,7 +248,7 @@ Hyper parameter optimisation is performed in a grid-like search, based on two qu
 \end{align}
 where $\mathtt{AUC}_{\mathrm{test}}$ is the \AUC score for training or testing samples.
 A set of hyper-parameters is sought, such that $ \mathtt{AUC}_{\mathrm{test}}$ is maximised, while $\Delta \mathtt{AUC}$ is minimised.
-The results of hyper-parameter optimisation are summarised in \Cref{tab:grid_search}.
+The results of hyper-parameter optimisation are summarised in \Cref{tab:grid_search} and shown in \Cref{fig:hyper_param}
 Larger depths, number of trees values are not explored, to avoid non-linear correlations which may be learnt by the classifier and would require additional studies to pinpoint.
 Large shrinkage values are undesired, to ensure a slower learning rate of the classifier.
 
@@ -258,9 +258,20 @@ Large shrinkage values are undesired, to ensure a slower learning rate of the cl
     The four hyperparameters for the \texttt{FastBDT} algorithm are defined in \Cref{sec:BDTs_theory}.
     The optimal values are chosen based on criteria defined in \Cref{eq:optimisation_criteria}.
     They are shown in the right most column are taken as the parameters for the training.
+    The corresponding $\mathtt{AUC}_{\mathrm{test}}$ and $\Delta \mathtt{AUC}$ are shown in \Cref{fig:hyper_param} and \Cref{fig:roc_curve}.
     }
     \input{tables/hyperparameter_optimisation.tex}
 \end{table}
+
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/continuum_suppression/hyperpar_optimisation.png}
+    \caption{\label{fig:hyper_param}Hyper-parameter optimisation as a function of quantities defined in \Cref{eq:optimisation_criteria}.
+    In total 375 working points are tested.
+    The choice of parameters, shown in \Cref{tab:grid_search}, is represented by the enlargened green point.
+    It is chosen in the threshold area, where $\mathtt{AUC}_{\mathrm{test}}$ gain saturates and $\Delta \mathtt{AUC}$ gain accelerates.
+    }
+\end{figure}
 
 The training, with features from \Cref{tab:passing_test1} and hyper parameters from \Cref{tab:grid_search} is performed.
 The normalised classifier output for test and train samples is shown in.
@@ -288,9 +299,12 @@ Using the tools provided by the \texttt{FastBDT} algorithm, a \textit{relative f
 Particularly for \texttt{FastBDT}, it is computed by evaluating the decrease of the \AUC score if the feature is not included in the training dataset (for more details see Ref.\cite{Keck:2017gsv}.)
 Therefore, it can be considered a quantitative measure of the impact of a feature on the final classifier output.
 The figure depicting relative training observable importances is shown in \Cref{fig:feature_importance}. 
-It is clearly seen that cosTBTO and XX by far dominate, which is not surprising after inspecting their individual separation power for the current problem in \Cref{sec:appendix_continuum_features_datamc}.
-
-\todo[inline]{wrap up here}
+It is clearly seen that $\cos\theta_{\mathrm{TB}\wedge\mathrm{TO}}$ -- angle between thrust axis of the tag-$B$ candidate and everything else in the event. 
+-- has by far the largest impact on the classifier.
+This is not surprising after inspecting the individual separation power for the current problem in \Cref{sec:appendix_continuum_features_datamc}.
+Other important separation features come from  $\Delta z_B$ \&  $\Delta z_B$, related to the longitudinal distance between the decay vertices,
+thrust of the tag-$B$ meson, $T_B$ and CLEO cone variables $\mathtt{CC}_i$. 
+For consistency, the events used in the training are removed from further analysis, although their impact is negligible.
 
 \begin{figure}[htbp!]
     \centering
@@ -301,4 +315,33 @@ It is clearly seen that cosTBTO and XX by far dominate, which is not surprising 
     }
 \end{figure}
 
-Finally, the effect of the same \textbf{Tests~1\&2} are performed for the photon energy spectrum to further test the validity of the training.
+\subsection{Continuum suppression validation}\label{sec:continuum_validation}
+
+The resulting $\mathtt{BDT~output}$ is tested photon energy spectrum to further ensure the validity of the training.
+Following the tests for bias of the average, median and $1\sigma$ percentiles in \Cref{sec:signal_photon_correlation},
+the same study is performed for the training classifier output.
+The result is shown in \Cref{fig:bdt_output_correlation} for the \BtoXsgamma admixture sample with the same requirements as the training sample.
+No significant bias to any of the photon-energy spectrum quantities is observed in any of the bin.
+In \Cref{fig:bdt_data_shape} the trained classifier output is also applied on off-resonance data to compare the shapes of off-resonance data and simulation.
+Adequate agreement is observed, particularly in the high-$\mathtt{BDT~output}$ region where most signal lies.
+The results seen in \Cref{fig:bdt_validation} validate the fact that the \BDT is prepared in an unbiased way and strongly suppresses the continuum events.
+
+\begin{figure}[htbp!]
+    \centering
+    \subcaptionbox{\label{fig:bdt_output_correlation}}{
+    \includegraphics[width=0.4\textwidth]{figures/continuum_suppression/BDT_output_correlation.pdf}
+    }
+    \subcaptionbox{\label{fig:bdt_data_shape}}{
+        \includegraphics[width=0.4\textwidth]{figures/continuum_suppression/trained_bdtBDT_output_test.pdf}
+        }
+    \caption{\label{fig:bdt_validation} 
+    Validation of the training described in \Cref{sec:continuum_training}.
+    In \Cref{fig:bdt_output_correlation}, correlation tests for the trained classifier output described in \Cref{sec:continuum_training}, depicted as a 2D histogram.
+    Each row is normalised, such that all bins within that row add up to 1.
+    In red line, the average photon energy, $\expval{\EB}$, is shown as a function of the tested observable.
+    In black and black-dotted lines -- median and $\pm 1 \sigma$ percentile values of \EB, respectively.
+    No strong dependance can be observed in any of the quantities or the 2D maps.
+    In \Cref{fig:bdt_data_shape}, the shape of \epem\ra\qqbar and off-resonance data is compared.
+    It is seen that both simulated and off-resonance data sets are well separated from \BB and \BtoXsgamma simulation.
+    }
+\end{figure}
