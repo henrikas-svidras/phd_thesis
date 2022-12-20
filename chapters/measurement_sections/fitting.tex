@@ -7,3 +7,37 @@ In this section, a thorough overview of the \Mbc fit will be presented which wil
 
 \subsection{Components in the dataset}\label{sec:fitting_components}
 
+There are three types of events in \epem collision dataset following all the selections described so far:
+\begin{itemize}
+    \item Generic-\BB (including \BtoXsgamma) that are tagged with a good tag-$B$;
+    \item Generic-\BB (including \BtoXsgamma) that are tagged with a misreconstructed tag-$B$;
+    \item Photons candidates originating in \epem\ra\qqbar.
+\end{itemize}
+These three components are referred to as `peaking', `combinatorial \BB' and `continuum'.
+The fitting model is prepared to describe these components and extract the number of tag-$B$ candidates that corresponds to the `peaking' component.
+
+Conventionally, \Mbc distributions are often fitted using a Crystal Ball, and ARGUS distribution. 
+The former is a Gaussian central part, that has a low end tail replaced with a polynomial. 
+The latter, is a probability distribution specifically defined to describe continuum background particle distributions in B factory experiments.
+
+\todo[inline]{need equations here, crystal ball, argus, chebyshev and define pull and also in the caption below.}
+
+\begin{figure}[htbp!]
+    \subcaptionbox{\label{fig:good_tags_fit}}{
+        \includegraphics[width=0.3\textwidth]{figures/fitting/mbc_good_tags_fit.pdf}
+    }
+    \subcaptionbox{\label{fig:combinatorial_tags_fit}}{
+        \includegraphics[width=0.3\textwidth]{figures/fitting/mbc_combinatorial_tags_fit.pdf}
+
+    }
+    \subcaptionbox{\label{fig:argus_tags_fit}}{
+        \includegraphics[width=0.3\textwidth]{figures/fitting/mbc_continuum_tags_fit.pdf}
+    }
+    \caption{\label{fig:tag_component_fits} Separate components that are present in generic \MC after selections that suppress background (\Cref{tab:cutflow}).
+    The individual components are defined in \Cref{sec:fitting_components} text.
+    Each distribution contains an unbinned illustrative fit to the data points, and the subpanels show the pull (XXXX) in each case.
+    The fitting function for peaking tag \B mesons (\Cref{fig:good_tags_fit}) is chosen as the Crystal Ball function;
+    for combinatorial tag \B mesons (\Cref{fig:combinatorial_tags_fit}) it is chosen as the 5th order Chebyshev;
+    for continuum \epem\ra\qqbar events (\Cref{fig:argus_tags_fit}) it is chosen as the ARGUS function.
+    }
+\end{figure}
