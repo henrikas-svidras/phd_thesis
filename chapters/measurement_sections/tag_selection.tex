@@ -38,6 +38,7 @@ The latter result for \BtoXsgamma is shown in \Cref{fig:same_mbc_best_tag_select
 The figure also includes a similar \Mbc test for the continuum events.
 
 \begin{figure}[htbp!]
+    \centering
     \subcaptionbox{\label{fig:bp_same_mode_best_tag_selection}}{
         \includegraphics[width=0.4\textwidth]{figures/best_tag_selection/bp_spectrum_with_random_best_tag_selection.pdf}
     }
@@ -127,6 +128,97 @@ Furthermore, the fact that $\Delta(\Mbc)$ tends to be higher can simply be under
 Based on the observations discussed in this sections, it can be concluded that it is appropriate to select the \FEI candidate with the highest signal probability even when selecting between different \feiBp and \feiBz modes.
 This selections finalises the best-candidate selection in this analysis as now it is ensured that every photon candidate corresponds to a single, unique tag-side $B$ meson candidate.
 
-\subsection{Estimation of kinematically-consistent \texorpdfstring{$B$}{B}-meson}\label{sec:good_tag_definition}
+\subsection{Truth-level tag \texorpdfstring{\B}{B} mesons}\label{sec:good_tag_definition}
 
-Test test
+In particle physics simulation it is possible to rely on the information, provided by the simulation generators to trace back the measured and reconstructed particles all the way to the generated particles.
+This procedure is called \textit{truth-matching} and is the usual way to associate `measured-objects' and `generated-objects'.
+In particular, the truth-matching requirements ensure that all the particles have correct particle species, momenta, energy determined and, if unstable, the same should be true for their entire decay chain.
+This is crucial when performing analysis setup on simulated samples in order to ensure that conclusions, such as efficiency are only drawn from the signal mode samples.
+However, in the case of tag $B$ meson reconstruction it is not particularly important to know that the $B$ meson and its entire decay chain is reconstructed fully correctly.
+The most important and crucial requirement for a tag is its consistent kinematic constrain that can be provided.
+In this analysis a good kinematic constraint manifests as resonant behaviour in \Mbc for the tag-$B$ meson distribution.
+
+Using \texttt{basf2} truth-level information the reconstructed tag-$B$ mesons are subdivided into 11 categories and one or more combinations of the categories based on the differences from the generated decay chains.
+The categories are as follows:
+\begin{enumerate}
+    \setcounter{enumi}{0}
+    \item The tag-$B$ and all its daughters are correctly identified and associated;
+    \item A final-state radiation photon is not reconstructed;
+    \item The tag-$B$ contains more non-final state particles (i.e. resonances) that were not reconstructed;
+    \item The tag-$B$ was reconstructed from the secondary decay product which implies that a wrong mass-hypothesis was used;
+    \item The tag-$B$ has a missing neutrino;
+    \item The tag-$B$ has a photon missing;
+    \item The tag-$B$ has a massive final-state particle missing;
+    \item The tag-$B$ has a $K_L$ missing (special category compared to 6);
+    \item The tag-$B$ has a final state particle associated that has a wrong-signed charged;
+    \item The tag-$B$ has a (n-th) daughter non-final-state particle which belongs to a different particle;
+    \item Different error in the truth-matching procedure.
+\end{enumerate}
+Furthermore, all possible combinations between these are created (e.g. The tag-$B$ has a photon \textbf{and} a massive final-state particle missing.)
+In total 108 combined categories are observed in the admixture of \BtoXsgamma signal \MC samples for $B$ meson candidates.
+Most categories, particularly higher-order combinations, do not have any entries in simulated data samples due to their rareness or kinematic inconsistency.
+
+For every tag-$B$ meson candidate in each signal \MC event, an \Mbc distribution is produced 
+and the Jensen-Shannon distance is calculated with respect to category 0 (attributed to perfect reconstruction).
+As category 0 (by definition) provides the \textit{best possible kinematic constraint}, the Jensen-Shannon distance is sought to be as close to 0 as possible.
+Such a result would imply that the difference of the reconstructed tag-$B$ meson is inconsequential to the quality of the constraint.
+As an additional metric, for each category, the fraction of $B$-meson candidates with $\Mbc<5.27~\gevcc$ is evaluated.
+In a perfect reconstruction case, this number is practically 0.
+
+The two-dimensional distribution of Jensen-Shannon distances and the fraction of $B$-meson candidates with $\Mbc<5.27~\gevcc$
+for all 108 combined categories is shown in \Cref{fig:good_tags_jsdists}.
+The figures clearly show that for charged, neutral and admixture of the two, the fraction of $B$-meson candidates with $\Mbc<5.27~\gevcc$ begins to swift;y grow at Jensen-Shannon distance$approx0.3$.
+The requirement of Jensen-Shannon distance$<0.3$ is adopted as the threshold to consider a $B$ meson reconstruction category as providing a `good'-kinematic constraint.
+Note that the results between different categories are consistent: the same modes are extracted for \Bp, \Bz and the mixture of two.
+The modes chosen in this analysis as ones that provide good-kinematic constraint are summarised in \Cref{tab:error_codes}.
+
+\begin{table}[htbp!]
+    \centering
+    \caption{\label{tab:error_codes}Categories of tag-$B$ reconstruction that provide a 'good' kinematic constraint.
+    These categories correspond to the blue points in \Cref{fig:Bboth_good_tags_jsdists}.
+    The definitions of each category are provided in \Cref{sec:good_tag_definition}'s text.
+    }
+    \input{tables/error_codes.tex}
+\end{table}
+
+\begin{figure}[htbp!]
+    \centering
+    \subcaptionbox{\label{fig:Bp_good_tags_jsdists}}{
+        \includegraphics[width=0.3\textwidth]{figures/best_tag_selection/Bp_good_tags_definition.pdf}
+    }
+    \subcaptionbox{\label{fig:Bz_good_tags_jsdists}}{
+        \includegraphics[width=0.3\textwidth]{figures/best_tag_selection/Bz_good_tags_definition.pdf}
+    }
+    \subcaptionbox{\label{fig:Bboth_good_tags_jsdists}}{
+        \includegraphics[width=0.3\textwidth]{figures/best_tag_selection/Bboth_good_tags_definition.pdf}
+    }
+    \caption{\label{fig:good_tags_jsdists} The two-dimensional distribution of Jensen-Shannon distances and the fraction of $B$-meson candidates with $\Mbc<5.27~\gevcc$
+    shown for \BptoXsgamma (\Cref{fig:Bp_good_tags_jsdists}), \BztoXsgamma (\Cref{fig:Bz_good_tags_jsdists}), and the mixture of the two (\Cref{fig:Bboth_good_tags_jsdists})
+    There are 108 categories in total that have their \Mbc distributions evaluated.
+    The legend is shared between the figures.
+    The blue dots are chosen as the definition of tags providing a good kinematic constraint (`good' tags).
+    The choice is based on a threshold of Jensen-Shannon distance$>0.3$, where it can be seen that fraction of $B$-meson candidates with $\Mbc<5.27~\gevcc$ begins to swiftly grow.
+    }
+\end{figure}
+
+The \Mbc distribution for \BtoXsgamma admixture with categories providing a `good' kinematic constraint and a `bad' one are shown in \Cref{fig:goodbad_comparison}.
+The same figure also highlights the difference if no procedure such as the one described in this section would be introduced.
+One can see a large resonant behaviour of non-perfectly reconstructed tags in \Cref{fig:isSig_comparison}, which is mostly absorbed into the definition of a `good' tag provided in this section.
+This highlights the importance of the study presented in this chapter -- it would be difficult to separate the non-perfectly reconstructed tag-$B$ meson distribution from the perfectly reconstructed one in an \Mbc fit that will follow (see XXX), due to a large correlation between their shapes.
+\todo[inline]{se XXXX}
+For the rest of this thesis a tag $B$ meson that provides a `good' kinematic constraint will simply be referred to as a \textit{good} tag.
+
+\begin{figure}[htbp!]
+    \centering
+    \subcaptionbox{\label{fig:goodbad_comparison}}{
+        \includegraphics[width=0.4\textwidth]{figures/best_tag_selection/goodbad_tag_comparison.pdf}
+    }
+    \subcaptionbox{\label{fig:isSig_comparison}}{
+        \includegraphics[width=0.4\textwidth]{figures/best_tag_selection/isSig_tag_comparison.pdf}
+    }
+    \caption{\label{fig:good_tag_definitions} \Mbc distribution of \BtoXsgamma admixture with split by "good"/"bad" kinematic constrain criterion (\Cref{fig:goodbad_comparison})
+    and the conventional perfect/non-perfect reconstruction criterion (\Cref{fig:isSig_comparison}).
+    The definition of a tag-$B$ meson that provides a good kinematic constraint described in \Cref{sec:good_tag_definition} is clearly able to describe the resonant-\Mbc structure better.
+    \todo[inline]{why are they differently normalised????}
+    }
+\end{figure}
