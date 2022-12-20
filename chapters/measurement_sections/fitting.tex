@@ -14,15 +14,10 @@ There are three types of events in \epem collision dataset following all the sel
     \item Photons candidates originating in \epem\ra\qqbar.
 \end{itemize}
 These three components are referred to as `peaking', `combinatorial \BB' and `continuum' throughout this \Cref{sec:fitting_mbc}.
-The fitting model is prepared to describe these components and extract the number of tag-$B$ candidates that corresponds to the `peaking' component.
-
-Conventionally, \Mbc distributions are often fitted using a Crystal Ball, and ARGUS distribution. 
-The former is a Gaussian central part, that has a low end tail replaced with a polynomial. 
-The latter, is a probability distribution specifically defined to describe continuum background particle distributions in B factory experiments.
-
-\todo[inline]{need equations here, crystal ball, argus, chebyshev and define pull and also in the caption below.}
+These components, extracted from generic \MC, are visualised in \Cref{fig:tag_component_fits}.
 
 \begin{figure}[htbp!]
+    \centering
     \subcaptionbox{\label{fig:good_tags_fit}}{
         \includegraphics[width=0.3\textwidth]{figures/fitting/mbc_good_tags_fit.pdf}
     }
@@ -41,3 +36,11 @@ The latter, is a probability distribution specifically defined to describe conti
     for continuum \epem\ra\qqbar events (\Cref{fig:argus_tags_fit}) it is chosen as the ARGUS function.
     }
 \end{figure}
+
+The fitting model is prepared to describe the three components and, particularly, to extract the number of tag-$B$ candidates that corresponds to the `peaking' component.
+Conventionally, \Mbc distributions are often fitted using a Crystal Ball, and ARGUS distribution. 
+The former is a Gaussian central part, that has a low end tail replaced with a polynomial. 
+The latter, is a probability distribution specifically defined to describe continuum background particle distributions in B factory experiments.
+
+\todo[inline]{need equations here, crystal ball, argus, chebyshev and define pull and also in the caption below.}
+
