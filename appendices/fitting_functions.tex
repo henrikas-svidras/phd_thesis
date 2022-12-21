@@ -1,0 +1,54 @@
+\chapter{Probability density functions for the \Mbc fit}\label{sec:fitting_functions}
+In this analysis three probability density functions (\PDF{s}) are used for the description of the \Mbc distributions.
+The exact use of the \PDF{s} is discussed broadly in \Cref{sec:fitting_components}.
+They are described in the subsections of this Appendix.
+
+\section{Crystal Ball function}\label{sec:crystal_Ball}
+
+The function used for peaking \Mbc distribution is the Crystal Ball function, named after the Crystal Ball collaboration, where it was used for calorimeter response and resolution modelling (see e.g. \cite{Skwarnicki:1986xj}).
+It is given in terms of four parameters $\mu$, $\sigma$, $\alpha$ and $n$:
+\begin{align}\label{eq:crystal_ball}
+    f(x;\mu, \sigma, \alpha, n) =  
+    \begin{cases} 
+    \exp(- \frac{(x - \mu)^2}{2 \sigma^2}), & \mbox{for}\frac{x - \mu}{\sigma} \geqslant -\alpha \\
+    A \cdot (B - \frac{x - \mu}{\sigma})^{-n}, & \mbox{for }\frac{x - \mu}{\sigma} < -\alpha 
+    \end{cases}
+\end{align}
+with
+\begin{align}
+    \begin{split}
+    A &= \left(\frac{n}{\left| \alpha \right|}\right)^n \cdot \exp\left(- \frac {\left|\alpha \right|^2}{2}\right)\\
+    B   &= \frac{n}{\left| \alpha \right|}  - \left| \alpha \right|.
+    \end{split}
+\end{align}
+
+The Crystal Ball function can be understood as a Gaussian peak with a mean $\mu$ and width $\sigma$, 
+and a polynomial tail of $n$-th order.
+The switch from Gaussian to polynomial behaviour occurs based on $\alpha$.
+
+\section{ARGUS function}\label{sec:argus_distribution}
+
+The function to model \epem\ra\qqbar distribution is the ARGUS function, introduced by the ARGUS collaboration to model continuum events.
+It has been ever since been adopted in most $B$-factory experiments and is widely-used by CLEO, BaBar, Belle, Belle II and others.
+The function is defined in terms of parameters $c$ and $m_0$ as \cite{ARGUS:1990hfq}:
+\begin{equation}\label{eq:argus_function}
+    f(m, m_0, c) = m \cdot \sqrt{ 1 - \left( \frac{m}{m_0} \right)^2}
+    \cdot \exp\left[ c \cdot \left(1 - \left(\frac{m}{m_0}\right)^2 \right) \right]
+\end{equation}
+The parameter $m_0$ can be interpreted as the cut-off -- the region where the ARGUS function is 0.
+It can be understood as the region where \Mbc distribution becomes kinematically forbidden.
+The parameters $c$ and $p$ are the curvature parameters and govern the shape of the ARGUS functions.
+
+\section{Chebyshev polynomials of the first kind}
+Chebyshev polynomialsof the first kind, named after Pafnuty Chebyshev, are a set of polynomials expressed in terms of cossine and sine functions.
+They are defined via the following recursive relation:
+\begin{equation}\label{eq:chebyshev_generator}
+    T_{n+1}(x) = 2xT_n(x) - T_{n-1}(x),
+\end{equation}
+with $T_0=1$ and $T_1=x$.
+Assuming $i\in{0,1,.., N}$ orders of the Chebyshev are considered, they can be used to approximate a function as:
+\begin{equation}\label{eq:chebyshev_pdf}
+    f(x, \vec{n}) = \sum_i^N n_i T_n(x),
+\end{equation}
+where $\vec{n}={n_0,n_1,n_2,...,n_i}$ are parameters of the fit, understood as scaling factors for the $i$-th order Chebyshev polynomial.
+The parameter $n_0$ is set to 1 and not scaled in this analysis. 

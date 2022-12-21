@@ -30,7 +30,7 @@ These components, extracted from generic \MC, are visualised in \Cref{fig:tag_co
     }
     \caption{\label{fig:tag_component_fits} Separate components that are present in generic \MC after selections that suppress background (\Cref{tab:cutflow}).
     The individual components are defined in \Cref{sec:fitting_components} text.
-    Each distribution contains an unbinned illustrative fit to the data points, and the subpanels show the pull (XXXX) in each case.
+    Each distribution contains an unbinned illustrative fit to the data points, and the subpanels show the pull (\Cref{eq:pull_distribution}) in each case.
     The fitting function for peaking tag \B mesons (\Cref{fig:good_tags_fit}) is chosen as the Crystal Ball function;
     for combinatorial tag \B mesons (\Cref{fig:combinatorial_tags_fit}) it is chosen as the 5th order Chebyshev;
     for continuum \epem\ra\qqbar events (\Cref{fig:argus_tags_fit}) it is chosen as the ARGUS function.
@@ -38,9 +38,21 @@ These components, extracted from generic \MC, are visualised in \Cref{fig:tag_co
 \end{figure}
 
 The fitting model is prepared to describe the three components and, particularly, to extract the number of tag-$B$ candidates that corresponds to the `peaking' component.
-Conventionally, \Mbc distributions are often fitted using a Crystal Ball, and ARGUS distribution. 
-The former is a Gaussian central part, that has a low end tail replaced with a polynomial. 
-The latter, is a probability distribution specifically defined to describe continuum background particle distributions in B factory experiments.
-
-\todo[inline]{need equations here, crystal ball, argus, chebyshev and define pull and also in the caption below.}
-
+The strategy to describe each component is as follows:
+\begin{itemize}
+    \item Peaking \Mbc distributions are often fitted using a Crystal Ball function.
+    It is defined in \Cref{sec:crystal_Ball}, but can be understood as Gaussia distribution with a polynomial tail.
+    \Cref{fig:good_tags_fit} illustrates the suitability to describe the peaking \Mbc distribution.
+    \item Continuum \Mbc distributions are conventionally described by the ARGUS function, which is named after the ARGUS collaboration and designed specifically for this purpose;
+    This function, utilised to describe \epem\ra\qqbar simulated backgrounds in this analysis is seen in \Cref{fig:argus_tags_fit}.
+    \item The particular shape of the combinatorial \BB background is generally dependant on the signal mode and do not have a conventional method of description.
+    In this analysis, the usage of \FEI and the fact that background events are conservatively suppressed to avoid signal-side biases leads to an wide but slightly peaking shape.
+    Several options were assessed in this ana;lysis, but it was found that it is suitably described by a Chebyshev polynomial, which can be adapted to a necessary functional shape.
+    This is illustrated in \Cref{fig:combinatorial_tags_fit}, where a 5th order polynomial describes the combinatorial \BB background distribution.
+\end{itemize}
+In \Cref{fig:tag_component_fits} the subpanels shown the pull distribution, which is defined as:
+\begin{equation}\label{eq:pull_distribution}
+    \mathrm{pull}(x) = \frac{x-\mu}{\sigma}. 
+\end{equation}
+Throughout this thesis it is used to evaluate the quality of the fit, as repeated measurements of a random variable $x$ should fluctuate around a mean value $\mu$ with a possonian width $\sigma$.
+Therefore any dependancies or strucutes observed in the pull distribution would be indicators of poor fit quality. 
