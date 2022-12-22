@@ -104,7 +104,7 @@ These considerations led to choosing the following eleven \EB bins for the analy
 \end{itemize}
 This choice provides a compromise between statistical significance, \EB spectrum resolution and complications in unfolding.
 The expected continuum, combinatorial, correctly-tagged non-\BtoXsgamma $BB$ and correctly-tagged \BtoXsgamma event count expectations for the chosen binning are provided in \Cref{tab:expected_events}.
-Note that the Table entry containing combinatorial \BB includes also \BtoXsgamma events, even if it is considered background in the \Mbc fits in XX.
+Note that the table entry containing combinatorial \BB includes also \BtoXsgamma events, even if it is considered background in the \Mbc fits in XX.
 On the other hand peaking-\BB background, which is not rejected by the \Mbc fit and will be treated in XXX, is separated from \BtoXsgamma.
 The table also highlights the importance of a correct binning, as it is obvious that several bins are able to achieve a comparable statistical significance to the one that could be achieved if just a single bin was used.
 
@@ -115,6 +115,19 @@ The table also highlights the importance of a correct binning, as it is obvious 
     \input{tables/expected_events.tex}
 \end{table}
 
+Because of the low expected statistical significance, the $\EB\in(1.4,1.8)$ and $\EB>2.7~\gev$ are chosen as validation regions.
+They will later be referred to as \textit{sidebands}.
+Consequentially, the signal region of the study is defined as $\EB\in(1.8,2.7)$.
+
 \todo[inline]{If there is time transform this to 189 invfb, otherwise include why I am not doing that, eg it was the size the analsys was thought to be applied on etc etc.}
 
 \subsection{Fitter parameters and setup}\label{sec:fitting_setup}
+
+The functions introduced in \Cref{sec:fitting_functions} are now considered in terms of the defined binning in \Cref{sec:binning}.
+Firstly, all the functions are fitted once, separately, on the subsets of the simulated that they aim to describe.
+This is done in order to estimate the starting parameters that will be used on the fit of the total (combined) dataset.
+The first fit is discussed separately for each component.
+
+\subsubsection{Crystal Ball function}\label{sec:crystal_ball_prefit}
+
+Test?
