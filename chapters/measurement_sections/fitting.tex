@@ -59,9 +59,20 @@ Therefore any dependancies or strucutes observed in the pull distribution would 
 
 \subsection{Photon energy intervals for the fit}\label{eq:binning}
 
-The final goal of the analysis is to extract he photon energy spectrum.
-Performing the \Mbc fit with \PDF{s} described in \Cref{sec:fitting_components} in different \EB bins can provide the number of good-tags in each \BB bin.
+It is clear from \Cref{fig:spectrum_after_optimisation} that signal-to-background ratio changes across all \EB range.
+In fact, even continuum-to-\BB event fractions are not constant.
+This is a result of the fact that photons related to \epem\ra\qqbar backgrounds are more likely to extend to high-\EB values, because they do not originate from a \B meson which is always produced with $\sqrt{s}/2$ at Belle II.
+The goal of the fit, as discussed in the introduction of this Section, is to remove combinatorial \BB and continuum events from further analysis.
+While an overall \Mbc fit could be performed, such an approach necessarily loses event-level information, such as the energy of each individual photon, and only provides the event-counts in the fitted \EB region.
+Furthermore, the fact that the background composition is expected to vary with \EB, such an overall-fit may generally be suboptimal.
 
-It is clear from \Cref{fig:spectrum_after_optimisation} that there are different signal-to-background ratios accross all \EB range.
-However, it can also be seen that generall signal-to-\BB-event ratios and signal-to-continuum ratios are also changing.
-In order to ensure appropriate signal extraction
+Instead, in this analysis the photon spectrum is divided into multiple \EB intervals, and the \Mbc distributions belonging to each interval are fitted using the functions described in \Cref{sec:fitting_components}.
+This approach will then reduce the existing dataset to multiple \EB intervals with known good tag-\B counts, completely removing continuum and combinatorial \BB events from the dataset.
+Such an approach means that the final photon-energy spectrum will be provided in the binning used for fitting.
+It is therefore important to optimise the chosen intervals for the fit with respect to expected \BtoXsgamma in each interval, despite the fact that the primary goal of the fit is not signal extraction.
+For the rest of the thesis, \EB intervals will be referred to as \EB bins.
+
+Three scenarios are tested for $\EB\in(1.4,2.8)~\gev$: 50~\mev, 100~\mev and 200~\mev wide bins.
+The test is performed by evaluating the statistical significance, with a definition equivalent to \Cref{eq:soversqrtsplusb}.
+In this case, the background is considered what is anticipated after the \Mbc fit: only correctly-tagged \BB events (no combinatorial or continuum background).
+The result of the study of statistical significance is shown in XXX.
