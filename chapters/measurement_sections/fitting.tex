@@ -57,7 +57,7 @@ In \Cref{fig:tag_component_fits} the subpanels shown the pull distribution, whic
 Throughout this thesis it is used to evaluate the quality of the fit, as repeated measurements of a random variable $x$ should fluctuate around a mean value $\mu$ with a possonian width $\sigma$.
 Therefore any dependancies or strucutes observed in the pull distribution would be indicators of poor fit quality. 
 
-\subsection{Photon energy intervals for the fit}\label{eq:binning}
+\subsection{Photon energy intervals for the fit}\label{sec:binning}
 
 It is clear from \Cref{fig:spectrum_after_optimisation} that signal-to-background ratio changes across all \EB range.
 In fact, even continuum-to-\BB event fractions are not constant.
@@ -73,6 +73,46 @@ It is therefore important to optimise the chosen intervals for the fit with resp
 For the rest of the thesis, \EB intervals will be referred to as \EB bins.
 
 Three scenarios are tested for $\EB\in(1.4,2.8)~\gev$: 50~\mev, 100~\mev and 200~\mev wide bins.
-The test is performed by evaluating the statistical significance, with a definition equivalent to \Cref{eq:soversqrtsplusb}.
+The test is performed by evaluating the statistical significance, with a definition equivalent to \Cref{eq:soversqrtsplusb}, on a dataset scaled to 200~\invfb.
 In this case, the background is considered what is anticipated after the \Mbc fit: only correctly-tagged \BB events (no combinatorial or continuum background).
-The result of the study of statistical significance is shown in XXX.
+The result of the study of statistical significance for the hybrid signal model (\Cref{sec:signal_model}) is shown in \Cref{fig:binning_significance}.
+
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/fitting/binning_significance.pdf}
+    \caption{\label{fig:binning_significance}The results of statistical significance, based on \Cref{eq:soversqrtsplusb}.
+    Here the $S$ is takes as number of \BtoXsgamma events after fitting and $B$ is taken as non-\BtoXsgamma events expected after fitting in each \EB interval.
+    Three scenarios are tested: 50~\mev, 100~\mev and 200~\mev wide bins.
+    The final binning chosen is a hybrid scenario described in \Cref{sec:binning} text.
+    The hybrid model described in \Cref{sec:signal_model} is used for this study.
+    }    
+\end{figure}
+
+In general, the highest statistical significance is observed with the widest bins, but this method, by definition, contains the least amount of information about the spectrum.
+Irrespective of the bin-width,  $\EB\in(1.4,1.8)$ and $\EB>2.6$ show a statistical significance lower than unity, therefore the selected binning should attempt to maximise it.
+In the case of $\EB\in(1.8,2.0)$ bin, it is observed that a similar statistical significance can be achieved a with $\EB\in(1.9,2.0)$ bin.
+This motivates to extend it, such that an \EB threshold of 1.8~\gev could be achieved, as opposed to the 1.9~\gev threshold in Ref.\cite{BaBar:2007yhb}.
+Later studies performed in XXX showed that the resolution of \EB is expected to be roughly 30~\mev.
+The similarity between resolution and \EB can lead to complications in the unfolding procedure.
+Due to the fact that bin-by-bin unfolding is employed in this analysis, the 50~\mev bins were not considered.
+
+These considerations led to choosing the following eleven \EB bins for the analysis:
+\begin{itemize}
+    \item Three 200~\mev bins for $\EB\in(1.4,2.0)$;
+    \item Seven 100~\mev bins for $\EB\in(2.0,2.7)$;
+    \item A single, inclusive overflow bin $\EB>2.7$.
+\end{itemize}
+This choice provides a compromise between statistical significance, \EB spectrum resolution and complications in unfolding.
+The expected continuum, combinatorial, correctly-tagged non-\BtoXsgamma $BB$ and correctly-tagged \BtoXsgamma event count expectations for the chosen binning are provided in \Cref{tab:expected_events}.
+Note that the Table entry containing combinatorial \BB includes also \BtoXsgamma events, even if it is considered background in the \Mbc fits in XX.
+On the other hand peaking-\BB background, which is not rejected by the \Mbc fit and will be treated in XXX, is separated from \BtoXsgamma.
+The table also highlights the importance of a correct binning, as it is obvious that several bins are able to achieve a comparable statistical significance to the one that could be achieved if just a single bin was used.
+
+\begin{table}[htbp!]
+    \caption{\label{tab:expected_events}Expected number of events as a fraction of the dataset after selections in \Cref{tab:cutflow}, for the binning chosen in \Cref{sec:binning}.
+    The table also shows corresponding statistical significance for a 200~\invfb sized dataset.
+    }
+    \input{tables/expected_events.tex}
+\end{table}
+
+\todo[inline]{If there is time transform this to 189 invfb, otherwise include why I am not doing that, eg it was the size the analsys was thought to be applied on etc etc.}
