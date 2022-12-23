@@ -121,13 +121,73 @@ Consequentially, the signal region of the study is defined as $\EB\in(1.8,2.7)$.
 
 \todo[inline]{If there is time transform this to 189 invfb, otherwise include why I am not doing that, eg it was the size the analsys was thought to be applied on etc etc.}
 
-\subsection{Fitter parameters and setup}\label{sec:fitting_setup}
+\subsection{Fit model building}\label{sec:fitting_setup}
 
 The functions introduced in \Cref{sec:fitting_functions} are now considered in terms of the defined binning in \Cref{sec:binning}.
+Using them an overall fit model build.
+However, the implementation of an $N$-th order Chebyshev polynomial, a Crystal Ball function and an ARGUS function for every \EB bin is unreasonable:
+this would result in $N+6$ model parameters and 3 normalisation parameters for each bin.
+Therefore, first, a fit model version, where some of the parameters can be pre-determined or shared amongst the bins is prpared.
+
 Firstly, all the functions are fitted once, separately, on the subsets of the simulated that they aim to describe.
 This is done in order to estimate the starting parameters that will be used on the fit of the total (combined) dataset.
 The first fit is discussed separately for each component.
 
+\todo[inline]{fill XXX in each to show a table of final parameters for each PDF}
+
 \subsubsection{Crystal Ball function}\label{sec:crystal_ball_prefit}
 
-Test?
+The Crystal Ball function, describes the distribution of `good' tag-\B mesons in \Mbc.
+In principle, the tag-\B meson is an independent object from the signal-\B meson decays -- which means that no strong \EB correlation is expected.
+This hypothesis is tested in \Cref{fig:crystal_ball_par_test}.
+It can be seen that strong correlations between \EB and parameters $\mu$ and $\sigma$ are absent.
+This test is not performed on parameters $\alpha$ and $n$, as they tend to be less-stable than $\mu$ and $sigma$ and depend more on fluctuations of the dataset.
+It is therefore concluded, that a single \Mbc shape for \EB bins will be used, with the parameters pre-determined in a total fit (\Cref{fig:good_tags_fit}).
+The values and uncertainties from the fitter, are shown in XXX.
+
+\begin{figure}[htbp!]
+    \subcaptionbox{\label{fig:crystal_ball_mus}}{
+        \includegraphics[width=0.4\textwidth]{figures/fitting/Crystal_Ball_PDF_test_mu.pdf}
+    }
+    \subcaptionbox{\label{fig:crystal_ball_sigmas}}{
+        \includegraphics[width=0.4\textwidth]{figures/fitting/Crystal_Ball_PDF_test_sigma.pdf}
+    }
+    \caption{\label{fig:crystal_ball_par_test}The parameters from \Mbc fits of `good' tag-\B mesons in generic-\BB simulation, using a Crystal Ball function.
+    The datapoints showcase the estimated parameters $\mu$ (\Cref{fig:crystal_ball_mus}) and $\sigma$ (\Cref{fig:crystal_ball_sigmas}) for different
+    \EB intervals.
+    This can be compared with the overall shape (blue band), that is determined if the entire $\EB\in(1.4,2.8)$ region is fitted.
+    The parameters of the blue band correspond to the fit in \Cref{fig:good_tags_fit}.
+    No strong dependance on \EB is observed.
+    }
+\end{figure}
+
+\subsubsection{Chebyshev polynomial function}\label{sec:chebyshev_prefit}
+
+The Chebyshev \PDF takes $N$ parameters as coefficients scaling each order of the polynomial that goes into the fitting function (\Cref{eq:chebyshev_pdf}).
+The $N$ is therefore referred to as the \textit{order} of the Chebyshev \PDF.
+3-rd, 4-th and 5-th order Chebyshev polynomials are tested for suitability to describe the combinatorial \BB background distribution.
+The 5-th order result is already introduced in \Cref{fig:combinatorial_tags_fit}.
+The results of the best fit for lower-order polynomials is presented in \Cref{fig:lower_order_chebyshev}.
+From the pull distributions in the subpanels and the general inspection of the fit, it is clear that using a polynomial of order lower than 5 is insufficient for an adequate description of combinatorial \BB events.
+
+\begin{figure}[htbp!]
+    \subcaptionbox{\label{fig:3rd_order_chebyshev}}{
+        \includegraphics[width=0.4\textwidth]{figures/fitting/3rd_order_chebyshev_polynomial.pdf}
+    }
+    \subcaptionbox{\label{fig:4th_order_chebyshev}}{
+        \includegraphics[width=0.4\textwidth]{figures/fitting/4th_order_chebyshev_polynomial.pdf}
+    }
+    \caption{\label{fig:lower_order_chebyshev}The \Mbc fits of combinatorial \BB events when a Chebyshev \PDF of order 3 (\Cref{fig:3rd_order_chebyshev}) or 4 (\Cref{fig:4th_order_chebyshev}) is used.
+    These figures can be compared to \Cref{fig:combinatorial_tags_fit}.
+    It is clear that lower order Chebyshev polynomials are unable to accurately describe the combinatorial-\BB data.
+    }
+\end{figure}
+
+
+The coefficients $c_{1-5}$ of the Chebyshev polynomial cannot be easily connected to physics observables,
+and therefore it is hard to evaluate their dependance on \EB.
+As such, 3 different PDFs are chosen: $\EB\in(1.4,1.6)$, $\EB\in(1.6,1.8)$, $\EB>1.8$ \gev.
+The reason why the last interval is not subdivided further is because of the dataset size -- each interval was optimised to have a roughly equal number of events, to minimize statistical fluctuations related to the shape determination.
+The Chebyshev \PDF parameters for each interval are determined in an \Mbc fit on the appropriate region and fixed for the fit of the total dataset later.
+
+\subsubsection{ARGUS function}\label{sec:argus_prefit}
