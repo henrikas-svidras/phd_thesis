@@ -123,7 +123,7 @@ Consequentially, the signal region of the study is defined as $\EB\in(1.8,2.7)$.
 
 \subsection{Fit model building}\label{sec:fitting_setup}
 
-The functions introduced in \Cref{sec:fitting_functions} are now considered in terms of the defined binning in \Cref{sec:binning}.
+The functions introduced in \Cref{sec:appendix_fitting_functions} are now considered in terms of the defined binning in \Cref{sec:binning}.
 Using them an overall fit model build.
 However, the implementation of an $N$-th order Chebyshev polynomial, a Crystal Ball function and an ARGUS function for every \EB bin is unreasonable:
 this would result in $N+6$ model parameters and 3 normalisation parameters for each bin.
@@ -137,12 +137,13 @@ The first fit is discussed separately for each component.
 
 \subsubsection{Crystal Ball function}\label{sec:crystal_ball_prefit}
 
-The Crystal Ball function, describes the distribution of `good' tag-\B mesons in \Mbc.
+The Crystal Ball function, describes the distribution of `good' tag-\B mesons in \Mbc in terms of parameters $\mu$, $\sigma$, $\alpha$ and $n$ and the normalisation of the \PDF $\mathcal{N}$ (see \Cref{eq:crystal_ball}).
 In principle, the tag-\B meson is an independent object from the signal-\B meson decays -- which means that no strong \EB correlation is expected.
 This hypothesis is tested in \Cref{fig:crystal_ball_par_test}.
 It can be seen that strong correlations between \EB and parameters $\mu$ and $\sigma$ are absent.
 This test is not performed on parameters $\alpha$ and $n$, as they tend to be less-stable than $\mu$ and $sigma$ and depend more on fluctuations of the dataset.
 It is therefore concluded, that a single \Mbc shape for \EB bins will be used, with the parameters pre-determined in a total fit (\Cref{fig:good_tags_fit}).
+The normalisations, on the other hand, will be determined for each \EB interval during the total fit.
 The values and uncertainties from the fitter, are shown in XXX.
 
 \begin{figure}[htbp!]
@@ -163,7 +164,7 @@ The values and uncertainties from the fitter, are shown in XXX.
 
 \subsubsection{Chebyshev polynomial function}\label{sec:chebyshev_prefit}
 
-The Chebyshev \PDF takes $N$ parameters as coefficients scaling each order of the polynomial that goes into the fitting function (\Cref{eq:chebyshev_pdf}).
+The Chebyshev \PDF takes $N$ parameters as coefficients scaling each order of the polynomial that goes into the fitting function, and a normalisation $\mathcal{N}$ (\Cref{eq:chebyshev_pdf}).
 The $N$ is therefore referred to as the \textit{order} of the Chebyshev \PDF.
 3-rd, 4-th and 5-th order Chebyshev polynomials are tested for suitability to describe the combinatorial \BB background distribution.
 The 5-th order result is already introduced in \Cref{fig:combinatorial_tags_fit}.
@@ -189,5 +190,17 @@ and therefore it is hard to evaluate their dependance on \EB.
 As such, 3 different Chebyshev PDFs are evaluated for the following intervals: $\EB\in(1.4,1.6)$, $\EB\in(1.6,1.8)$, $\EB>1.8$ \gev.
 The reason why the last interval is not subdivided further is because of the dataset size (see \Cref{tab:expected_events}) -- each interval was optimised to have a roughly equal number of events, to minimize statistical fluctuations related to the shape determination.
 The Chebyshev \PDF parameters for each interval are determined in an \Mbc fit on the appropriate region and fixed for the fit of the total dataset later.
+The normalisations will be determined for each \EB interval during the total fit.
 
 \subsubsection{ARGUS function}\label{sec:argus_prefit}
+
+Similarly to the previous cases, the ARGUS function has 2 parameters, $c$ and $m_0$, and a normalisation $\mathcal{N}$ (\Cref{eq:argus_function}).
+Unlike the coefficients of the Chebyshev, the $c$ and $m_0$ are easier to understand intuitively: with $m_0$ corresponding to max \Mbc values in the distribution and $c$ to the shape of continuum background.
+More generally, the variation of $c$ and $m_0$ can allow to account for possible background-shape differences between the simulation and data.
+It offers an additional layer of flexibility, through a variation of relative ARGUS and Chebyshev normalisation values.
+This means, that allowing a degree of variation in the ARGUS functions is beneficial to account for possible background shape differences.
+
+Following these considerations, a similar structure is adopted, with independent shapes for  $\EB\in(1.4,1.6)$, $\EB\in(1.6,1.8)$, $\EB>1.8$ \gev.
+Unlike for the previous two components, in each respective range one single shape parameter $c^{(1.4-1.6)}$, $c^{(1.6-1.8)}$, $c^{(>1.8)}$ is measured.
+To account for possible endpoint differences (differences between simulated and data $\sqrt{s}$), the $m_0$ is shared accross all bins.
+This leads to three prefits for the ARGUS functions shown in XXXX.
