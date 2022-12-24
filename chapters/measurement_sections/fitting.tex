@@ -4,6 +4,8 @@ However, as can be seen \Cref{fig:spectrum_after_optimisation}, even though cont
 there is still a significantly larger number of background processes than \BtoXsgamma signal events.
 Many of these, particularly continuum background, originate from incorrect tag-$B$ mesons (see \Cref{fig:good_tag_definitions}) and can therefore be estimated in data using an \Mbc fitting procedure.
 In this section, a thorough overview of the \Mbc fit will be presented which will extract the counts of good-$B$ tags in different \EB intervals.
+All shown in this chapter are unbinned extended negative-log likelihood fits, as presented in \Cref{sec:fitting_theory}.
+
 
 \subsection{Components in the dataset}\label{sec:fitting_components}
 
@@ -121,19 +123,32 @@ Consequentially, the signal region of the study is defined as $\EB\in(1.8,2.7)$.
 
 \todo[inline]{If there is time transform this to 189 invfb, otherwise include why I am not doing that, eg it was the size the analsys was thought to be applied on etc etc.}
 
-\subsection{Fit model building}\label{sec:fitting_setup}
+\subsection{\texorpdfstring{\Mbc}{Mbc} fit model building}\label{sec:fitting_setup}
 
 The functions introduced in \Cref{sec:appendix_fitting_functions} are now considered in terms of the defined binning in \Cref{sec:binning}.
-Using them an overall fit model build.
+Using them a \Mbc parameter estimation (fit) model for the total dataset build.
 However, the implementation of an $N$-th order Chebyshev polynomial, a Crystal Ball function and an ARGUS function for every \EB bin is unreasonable:
 this would result in $N+6$ model parameters and 3 normalisation parameters for each bin.
-Therefore, first, a fit model version, where some of the parameters can be pre-determined or shared amongst the bins is prpared.
-
-Firstly, all the functions are fitted once, separately, on the subsets of the simulated that they aim to describe.
+Therefore, first, a fit model version, where some of the parameters can be pre-determined or shared amongst the bins is prepared.
+This is discussed in \Cref{sec:crystal_ball_prefit,sec:chebyshev_prefit,sec:argus_prefit}.
+The key idea is that all the functions are fitted once, separately, on the subsets of the simulated data that they aim to describe.
 This is done in order to estimate the starting parameters that will be used on the fit of the total (combined) dataset.
-The first fit is discussed separately for each component.
+Then, some fitting parameters are grouped together, such that a simultaneous determination with some parameters shared across multiple bins is prepared.
 
-\todo[inline]{fill XXX in each to show a table of final parameters for each PDF}
+The key points of the aforementioned subsections and the final fitting model for the analysis is summarised in \Cref{tab:fitting_init_params}.
+This fitting model will then be applied on the total dataset in \Cref{sec:mbc_fit_full_mc} in order to estimate the main parameter of interest: normalisations of the Crystal Ball in every \EB bin (i.e. number of good tags in each \EB bin.)
+
+\begin{table}[htbp!]
+    \centering
+    \caption{\label{tab:fitting_init_params} The summary of the fitting model used in this analysis for the \Mbc fit.
+    The paramaters are initialised at the values that are listed, corresponding to the ones determined in the primary fitting steps, explained in \Cref{sec:crystal_ball_prefit,sec:chebyshev_prefit,sec:argus_prefit}.
+    The values that are bolded in the table are not estimated from the final \Mbc fit, but are kept at their initialised values.
+    On the other hand, all non-bolded values are estimated from the final fitter.
+    The uncertainties are those estimated using the \texttt{HESSE} method.
+    The table lists only the shape parameters and not the normalisation parameter $\mathcal{N}$, which is also determined for every shape and every \EB bin.
+    }
+\input{tables/fit_model.tex}
+\end{table}
 
 \subsubsection{Crystal Ball function}\label{sec:crystal_ball_prefit}
 
@@ -144,7 +159,7 @@ It can be seen that strong correlations between \EB and parameters $\mu$ and $\s
 This test is not performed on parameters $\alpha$ and $n$, as they tend to be less-stable than $\mu$ and $sigma$ and depend more on fluctuations of the dataset.
 It is therefore concluded, that a single \Mbc shape for \EB bins will be used, with the parameters pre-determined in a total fit (\Cref{fig:good_tags_fit}).
 The normalisations, on the other hand, will be determined for each \EB interval during the total fit.
-The values and uncertainties from the fitter, are shown in XXX.
+The values and uncertainties from the fitter, are shown in \Cref{tab:fitting_init_params}.
 
 \begin{figure}[htbp!]
     \subcaptionbox{\label{fig:crystal_ball_mus}}{
@@ -172,6 +187,7 @@ The results of the best fit for lower-order polynomials is presented in \Cref{fi
 From the pull distributions in the subpanels and the general inspection of the fit, it is clear that using a polynomial of order lower than 5 is insufficient for an adequate description of combinatorial \BB events.
 
 \begin{figure}[htbp!]
+    \centering
     \subcaptionbox{\label{fig:3rd_order_chebyshev}}{
         \includegraphics[width=0.4\textwidth]{figures/fitting/3rd_order_chebyshev_polynomial.pdf}
     }
@@ -185,12 +201,13 @@ From the pull distributions in the subpanels and the general inspection of the f
 \end{figure}
 
 
-The coefficients $c_{1-5}$ of the Chebyshev polynomial cannot be easily connected to physics observables,
+The coefficients $k_{1-5}$ of the Chebyshev polynomial cannot be easily connected to physics observables,
 and therefore it is hard to evaluate their dependance on \EB.
 As such, 3 different Chebyshev PDFs are evaluated for the following intervals: $\EB\in(1.4,1.6)$, $\EB\in(1.6,1.8)$, $\EB>1.8$ \gev.
 The reason why the last interval is not subdivided further is because of the dataset size (see \Cref{tab:expected_events}) -- each interval was optimised to have a roughly equal number of events, to minimize statistical fluctuations related to the shape determination.
 The Chebyshev \PDF parameters for each interval are determined in an \Mbc fit on the appropriate region and fixed for the fit of the total dataset later.
 The normalisations will be determined for each \EB interval during the total fit.
+The initial values for the total fitter, determined in an \Mbc fit on combinatorial \BB events in generic \MC, on the defined \EB binning and fitting intervals, is presented in \Cref{tab:fitting_init_params}.
 
 \subsubsection{ARGUS function}\label{sec:argus_prefit}
 
@@ -200,7 +217,13 @@ More generally, the variation of $c$ and $m_0$ can allow to account for possible
 It offers an additional layer of flexibility, through a variation of relative ARGUS and Chebyshev normalisation values.
 This means, that allowing a degree of variation in the ARGUS functions is beneficial to account for possible background shape differences.
 
-Following these considerations, a similar structure is adopted, with independent shapes for  $\EB\in(1.4,1.6)$, $\EB\in(1.6,1.8)$, $\EB>1.8$ \gev.
-Unlike for the previous two components, in each respective range one single shape parameter $c^{(1.4-1.6)}$, $c^{(1.6-1.8)}$, $c^{(>1.8)}$ is measured.
-To account for possible endpoint differences (differences between simulated and data $\sqrt{s}$), the $m_0$ is shared accross all bins.
-This leads to three prefits for the ARGUS functions shown in XXXX.
+Following these considerations, a similar setup is adopted, with independent shapes for  $\EB\in(1.4,1.6)$, $\EB\in(1.6,1.8)$, $\EB>1.8$ \gev.
+Unlike for the previous two components, in each respective range one single shape parameter $c^{(1.4-1.6)}$, $c^{(1.6-1.8)}$, $c^{(>1.8)}$ is determined from the total fit.
+To account for possible endpoint differences (differences between simulated and data $\sqrt{s}$), the $m_0$ parameter is shared accross all bins and is also determined from the fit of the combined dataset.
+The discussed fits are performed simultaneously on continuum \Mbc distributions in all \EB bins.
+The initial values for the total fitter, determined in an \Mbc fit on continuum events in generic \MC, on the defined \EB binning and fitting intervals, is presented in \Cref{tab:fitting_init_params}.
+
+
+\subsection{\texorpdfstring{\Mbc}{Mbc} fit on the total simulated dataset}\label{sec:mbc_fit_full_mc}
+
+The prepared fitter, discussed in \Cref{sec:fitting_setup}, is applied on the total generic \MC dataset.
