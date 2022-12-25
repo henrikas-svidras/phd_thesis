@@ -133,10 +133,11 @@ Therefore, first, a fit model version, where some of the parameters can be pre-d
 This is discussed in \Cref{sec:crystal_ball_prefit,sec:chebyshev_prefit,sec:argus_prefit}.
 The key idea is that all the functions are fitted once, separately, on the subsets of the simulated data that they aim to describe.
 This is done in order to estimate the starting parameters that will be used on the fit of the total (combined) dataset.
-Then, some fitting parameters are grouped together, such that a simultaneous determination with some parameters shared across multiple bins is prepared.
+Then, certain fitting parameters are grouped together, such that a simultaneous determination with some parameters shared across multiple bins is prepared.
 
 The key points of the aforementioned subsections and the final fitting model for the analysis is summarised in \Cref{tab:fitting_init_params}.
 This fitting model will then be applied on the total dataset in \Cref{sec:mbc_fit_full_mc} in order to estimate the main parameter of interest: normalisations of the Crystal Ball in every \EB bin (i.e. number of good tags in each \EB bin.)
+The primary \Mbc fits determining the parameters from \Cref{tab:fitting_init_params} on correspondign datasets are given in \Cref{sec:appendix_primary_fits}. 
 
 \begin{table}[htbp!]
     \centering
@@ -145,7 +146,6 @@ This fitting model will then be applied on the total dataset in \Cref{sec:mbc_fi
     The values that are bolded in the table are not estimated from the final \Mbc fit, but are kept at their initialised values.
     On the other hand, all non-bolded values are estimated from the final fitter.
     The uncertainties are those estimated using the \texttt{HESSE} method.
-    The table lists only the shape parameters and not the normalisation parameter $\mathcal{N}$, which is also determined for every shape and every \EB bin.
     }
 \input{tables/fit_model.tex}
 \end{table}
@@ -227,3 +227,86 @@ The initial values for the total fitter, determined in an \Mbc fit on continuum 
 \subsection{\texorpdfstring{\Mbc}{Mbc} fit on the total simulated dataset}\label{sec:mbc_fit_full_mc}
 
 The prepared fitter, discussed in \Cref{sec:fitting_setup}, is applied on the total generic \MC dataset.
+The initial values of the fit are given in \Cref{tab:fitting_init_params} and all bins are fitted simultaneously.
+The fit results are shown in \Cref{fig:primary_full_fits}.
+The overall \Mbc distributions are accurately described accross all \EB bins, irrespective of the overall number of data points that are being fitted.
+This is already an important achievement -- as a single fitting setup is adaptive enough to cover different signal-to-background ratios, statistical sample size, and overall shape of the distributions.
+
+\begin{figure}[htbp!]
+    \centering
+    \subcaptionbox{\label{fig:mbc_full_1p4}}{
+        \includegraphics[width=0.3\textwidth]{figures/fitting/fits/full_MbcFit_1p4to1p6ppdf.pdf}
+    }
+    \subcaptionbox{\label{fig:mbc_full_1p6}}{
+        \includegraphics[width=0.3\textwidth]{figures/fitting/fits/full_MbcFit_1p6to1p8ppdf.pdf}
+    }
+    \subcaptionbox{\label{fig:mbc_full_1p8}}{
+        \includegraphics[width=0.3\textwidth]{figures/fitting/fits/full_MbcFit_1p8to2p0ppdf.pdf}
+    }
+    \subcaptionbox{\label{fig:mbc_full_2p0}}{
+        \includegraphics[width=0.3\textwidth]{figures/fitting/fits/full_MbcFit_2p0to2p1ppdf.pdf}
+    }
+    \subcaptionbox{\label{fig:mbc_full_2p1}}{
+        \includegraphics[width=0.3\textwidth]{figures/fitting/fits/full_MbcFit_2p1to2p2ppdf.pdf}
+    }
+    \subcaptionbox{\label{fig:mbc_full_2p2}}{
+        \includegraphics[width=0.3\textwidth]{figures/fitting/fits/full_MbcFit_2p2to2p3ppdf.pdf}
+    }
+    \subcaptionbox{\label{fig:mbc_full_2p3}}{
+        \includegraphics[width=0.3\textwidth]{figures/fitting/fits/full_MbcFit_2p3to2p4ppdf.pdf}
+    }
+    \subcaptionbox{\label{fig:mbc_full_2p4}}{
+        \includegraphics[width=0.3\textwidth]{figures/fitting/fits/full_MbcFit_2p4to2p5ppdf.pdf}
+    }
+    \subcaptionbox{\label{fig:mbc_full_2p5}}{
+        \includegraphics[width=0.3\textwidth]{figures/fitting/fits/full_MbcFit_2p5to2p6ppdf.pdf}
+    }
+    \subcaptionbox{\label{fig:mbc_full_2p6}}{
+        \includegraphics[width=0.3\textwidth]{figures/fitting/fits/full_MbcFit_2p6to2p7ppdf.pdf}
+    }
+    \subcaptionbox{\label{fig:mbc_full_2p7}}{
+        \includegraphics[width=0.3\textwidth]{figures/fitting/fits/full_MbcFit_2p7to5p0ppdf.pdf}
+    }
+    \caption{\label{fig:primary_full_fits}The fits on the $1.6~\invab$ dataset of generic \MC, using the fitting model from \Cref{tab:fitting_init_params}.
+    Good description of the \Mbc distributions can be seen throughout the \EB bins.
+    This highlights that the fit setup is able to accurately describe the simulated dataset that was used to initialise it.
+    }
+\end{figure}
+
+As it was already mentioned, the main goal of the \Mbc fitter introduced in this section is to extract the good tag-\B counts in each \EB bin.
+This equivalent the the normalisation parameter of the Crystal Ball \PDF -- $\mathcal{N}_{\mathrm{CB}}$.
+These normalisations are shown, correspondingly to the number of good tag-\B mesons in the dataset, in \Cref{fig:generic_mc_fit_yield_comparisons}.
+
+In the case of the rest of the other parameters -- their exact values are not needed for further analysis as long as an unbiased and accurate description of good tag-\B counts is achieved through $\mathcal{N}_{\mathrm{CB}}$.
+Particularly, the main goal of including those parameters in the fitter as degrees of freedom is to ensure that the \Mbc background shape and yield estimations are sufficiently flexible to account for potential data-simulation discrepancies.
+Therefore, for the rest of the thesis, other parameters will not be explicitly mentioned, unless their values become relevant for the discussion.
+
+To ensure that the fit is receptive to changes of \BtoXsgamma signal, two simple tests are devised, where the fit is performed on generic \MC but
+\begin{itemize}
+    \item all \BtoXsgamma signal events are removed;
+    \item \BtoXsgamma signal shape in generic \MC is reweighted using the hybrid-model weights.
+\end{itemize}
+The results are shown in \Cref{fig:mc_fit_yield_comparisons}.
+It is clear, that if the \BtoXsgamma events are completely removed or reweighted, the \Mbc fitter presented in this Chapter responds appropriately.
+This hints, but will be further explored, that although a particular simulation model was used when preparing the sample, no particular bias towards any \BtoXsgamma model is introduced.
+
+\begin{figure}[htbp!]
+    \subcaptionbox{\label{fig:generic_mc_fit_yield_comparisons}}{
+        \includegraphics[width=0.3\textwidth]{figures/fitting/normal_full_fit.pdf}
+    }
+    \subcaptionbox{\label{fig:no_bxsgamma_mc_fit_yield_comparisons}}{
+        \includegraphics[width=0.3\textwidth]{figures/fitting/removed_xsgamma_full_fit.pdf}
+    }
+    \subcaptionbox{\label{fig:weighted_mc_fit_yield_comparisons}}{
+        \includegraphics[width=0.3\textwidth]{figures/fitting/hybrid_weighted_full_fit.pdf}
+    }
+    \caption{\label{fig:mc_fit_yield_comparisons}The comparisons of estimated good tag-\B counts in each \EB bin, $\mathcal{N}_{\mathrm{CB}}$,
+    for the total 1.6~\invab generic\MC dataset (\Cref{fig:generic_mc_fit_yield_comparisons}),
+    for the generic \MC dataset but with all \BtoXsgamma events removed (\Cref{fig:no_bxsgamma_mc_fit_yield_comparisons}),
+    and for generic \MC dataset but with hybrid-model reweighting introduced (\Cref{fig:weighted_mc_fit_yield_comparisons}).
+    In each case, the uncertainties are $\texttt{HESSE}$ uncertainties estimated by the fitter.
+    It can be clearly seen that the fit is receptive to the counts of the good tag-\B mesons.
+    Note that the larger uncertainties in \Cref{fig:weighted_mc_fit_yield_comparisons} are due to known issues in weighted error estimation,
+    and do not affect this analysis as weighted fits are not performed later.
+    }
+\end{figure}
