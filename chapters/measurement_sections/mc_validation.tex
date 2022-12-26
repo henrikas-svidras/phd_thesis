@@ -14,7 +14,7 @@ Indeed, a 190~\invfb dataset should correspond to roughly 160~\invfb in simulati
 The resulting 10 fits and the estimated $\mathcal{N}_{CB}$ corresponding to each \EB bin are shown in \Cref{fig:extracted_validation_mc}.
 The expected number of events in each fit is always equal to one tenth of that in the total generic \MC dataset.
 It can be observed that all data points, and their average, are statistically compatible with the expectation.
-These results indicate, that despite using a 10 times larger dataset to define the \PDF{s}, this \Mbc fit model produces reliable results.
+These results indicate, that despite using a 10 times larger dataset to define the \PDF{s}, this \Mbc fit model produces reliable and stable results.
 Further tests, particularly a test ensuring that the fitter is unbiased, are performed later.
 
 \begin{figure}[htbp!]
@@ -79,10 +79,105 @@ Tests of this type are known as \textit{closure tests} is statistics and allow t
 The closure test in this analysis is done on pseudodata sets of equivalent size as the Belle II collected data.
 First, 1000 pseudodata sets equivalent to $\mathrm{160~\invfb}$ are sampled from the \PDF that was fitted in \Cref{fig:primary_full_fits}.
 Since in all of the cases $\mathcal{N}_{\mathrm{CB}}$ and $\mathrm{fit~error}$ are known exactly, the \Mbc fitter is used on the pseudodata set, and a $\mathrm{pull}$ is calculated based on \Cref{eq:toy_pull}.
-The pull distribution for every \EB bin are shown in XXX.
+The pull distribution for every \EB bin are shown in \Cref{fig:pull_distributions}.
+
+\begin{figure}[htbp!]
+    \centering
+    \subcaptionbox{\label{fig:pulls_1p4to1p6}}{
+        \includegraphics[width=0.22\textwidth]{figures/mc_validation/toy_study/fits_of_pulls_1p4to1p6.pdf}
+    }
+    \subcaptionbox{\label{fig:pulls_1p6to1p8}}{
+        \includegraphics[width=0.22\textwidth]{figures/mc_validation/toy_study/fits_of_pulls_1p6to1p8.pdf}
+    }
+    \subcaptionbox{\label{fig:pulls_1p8to2p0}}{
+        \includegraphics[width=0.22\textwidth]{figures/mc_validation/toy_study/fits_of_pulls_1p8to2p0.pdf}
+    }
+    \subcaptionbox{\label{fig:pulls_2p0to2p1}}{
+        \includegraphics[width=0.22\textwidth]{figures/mc_validation/toy_study/fits_of_pulls_2p0to2p1.pdf}
+    }
+    \subcaptionbox{\label{fig:pulls_2p1to2p2}}{
+        \includegraphics[width=0.22\textwidth]{figures/mc_validation/toy_study/fits_of_pulls_2p1to2p2.pdf}
+    }
+    \subcaptionbox{\label{fig:pulls_2p2to2p3}}{
+        \includegraphics[width=0.22\textwidth]{figures/mc_validation/toy_study/fits_of_pulls_2p2to2p3.pdf}
+    }
+    \subcaptionbox{\label{fig:pulls_2p3to2p4}}{
+        \includegraphics[width=0.22\textwidth]{figures/mc_validation/toy_study/fits_of_pulls_2p3to2p4.pdf}
+    }
+    \subcaptionbox{\label{fig:pulls_2p4to2p5}}{
+        \includegraphics[width=0.22\textwidth]{figures/mc_validation/toy_study/fits_of_pulls_2p4to2p5.pdf}
+    }
+    \subcaptionbox{\label{fig:pulls_2p5to2p6}}{
+        \includegraphics[width=0.22\textwidth]{figures/mc_validation/toy_study/fits_of_pulls_2p5to2p6.pdf}
+    }
+    \subcaptionbox{\label{fig:pulls_2p6to2p7}}{
+        \includegraphics[width=0.22\textwidth]{figures/mc_validation/toy_study/fits_of_pulls_2p6to2p7.pdf}
+    }
+    \subcaptionbox{\label{fig:pulls_2p7to5p0}}{
+        \includegraphics[width=0.22\textwidth]{figures/mc_validation/toy_study/fits_of_pulls_2p7to5p0.pdf}
+    }
+    \caption{\label{fig:pull_distributions}The pull distributions used in the \Mbc fitter closure test, 
+    corresponding to results of 1000 pseudodata sets generated based on the \PDF fitted on the total generic \MC dataset.
+    The definition of the pull, specifically for this test, is given in \Cref{eq:toy_pull}.
+    The data points show the counts of values in the given pull intervals, and the uncertainty of each point is of statistical origin.
+    The pulls are also fitted with a Gaussian distribution and the mean value, $\mu$, as well as the width, $sigma$, is also extracted.
+    The fit is shown as a solid line, and is an unbinned fit (i.e. not the fit to the shown data points).
+    }
+\end{figure}
+
 To test the statistical validity of \Mbc fits on each bin, a Gaussian \PDF is fitted on the distributions, with parameters $\mu$ and $\sigma$ being estimated.
 The parameters correspond to the mean value, and the width of the Gaussian distribution, respectively.
 The parameter estimation is performed as an unbinned negative log-likelihood fit.
-The corresponding Gaussian fit result, and the parameters are also shown in XXX.
+The corresponding Gaussian fit results, and the parameters are shown in \Cref{fig:pull_distributions}, but also summarised neatly in \Cref{fig:mean_sigma_pulls}.
+
+\begin{figure}[htbp!]
+    \centering
+    \subcaptionbox{\label{fig:mean_pulls}}{
+        \includegraphics[width=0.4\textwidth]{figures/mc_validation/toy_study/mean_pull_toys.pdf}
+    }
+    \subcaptionbox{\label{fig:sigma_pulls}}{
+        \includegraphics[width=0.4\textwidth]{figures/mc_validation/toy_study/sigma_pull_toys.pdf}
+    }
+    \caption{\label{fig:mean_sigma_pulls}Summarised means and widths ($\mu$ and $\sigma$, respectively) of the Gaussian fits of
+    the pull distributions in each \EB bin.
+    The fits for evaluation of $\mu$ and $\sigma$ are shown in \Cref{fig:pull_distributions}.
+    The results are compatible with a unit Gaussian except in the case of parameter $\mu$ for $\EB>2.7~\gev$, where statistical effects play a large role.
+    }
+\end{figure}
+
+The pulls are distributed as a Gaussian -- in all cases -- meaning that the central-limit theorem regime is reached.
+It can also be seen that in all cases the results are compatible within up to 2 $\sigma$ with a unit Gaussian.
+The only \EB bin where this is not true is the $\mu$ parameter in $\EB>2.7$.
+Here, the central value of the pulls appear to be biased towards lower values.
+This is attributed to statistical effects, as that bin has only a handful of entries (even at 1.6~\invab) therefore strongly affected by statistical background fluctuations.
+As it is not expected to observe any statistically-significant signal events in that region, it is chosen to not define any correction based on the observed bias.
+
+These results allow to conclude that the \Mbc fitter is an unbiased estimator.
+In other words, the central values are unbiased and the uncertainties adequatly cover the Poissonian fluctuations of the results.
 
 \subsection{Linearity test of the \texorpdfstring{\Mbc}{Mbc} fitter}\label{sec:linearity_test}
+
+The fitter is further validated using the so-called \textit{linearity} test.
+Any valid extended fit model ought to provide a behaviour such that the estimated normalisation, $\mathcal{N}$, grows linearly with the increase of the corresponding component in the fitted dataset.
+To perform such a test in this analysis, up to 25000 \BtoXsgamma signal-\MC events where a good tag-\B meson has been identified are combined with the generic-\MC dataset.
+For a valid fitting setup, $N$ events `injected' in the fitted dataset should yield approximately an increase of $N$ in the estimation $\mathcal{N}_{\mathrm{CB}}$.
+Such test of the expected linear behaviour is summarised in \Cref{fig:linearity_test}.
+
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/mc_validation/linearity_check_longer.pdf}
+    \caption{\label{fig:linearity_test}The figure summarising the linearity test for the \Mbc fitter of this analysis.
+    As the number of events, corresponding to the peaking tag-\B mesons increases, the extracted sum of normalisations across all bins, $\mathcal{N}_{\mathrm{CB}}$ also increases.
+    The increase is compatible with a linear increase with a slope of 1.
+    }
+\end{figure}
+
+As the number of `injected' good tag-\B events, the sum of the normalisations for all \EB bins should increase linearly.
+This behaviour is clearly reproduced, as $\sum \mathcal{N}_{\mathrm{CB}}$ grows linearly with the increase of the dataset.
+It can therefore be concluded that the behaviour of the \Mbc fitter is linear.
+
+\subsection{Correlation matrix of the parameters of the \texorpdfstring{\Mbc}{Mbc} fitter}\label{sec:correlation_matrix}
+
+Using the pseudodata sets generated in \Cref{sec:closure_test}, relationships between all parameters estimated by the \Mbc fitter can be calculated.
+For each two parameters a 2-dimensional figure is created and a correlation coefficient is evaluated.
+This results in a 36-by-36 matrix, corresponding to all parameters estimated by the \Mbc fitter in this analysis.
