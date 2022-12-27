@@ -179,5 +179,50 @@ It can therefore be concluded that the behaviour of the \Mbc fitter is linear.
 \subsection{Correlation matrix of the parameters of the \texorpdfstring{\Mbc}{Mbc} fitter}\label{sec:correlation_matrix}
 
 Using the pseudodata sets generated in \Cref{sec:closure_test}, relationships between all parameters estimated by the \Mbc fitter can be calculated.
-For each two parameters a 2-dimensional figure is created and a correlation coefficient is evaluated.
-This results in a 36-by-36 matrix, corresponding to all parameters estimated by the \Mbc fitter in this analysis.
+In particular, a correlation coefficient for some collection of paired values ${(x_1,y_1),(x_2,y_2,)...,(x_n,y_n)}$:
+\begin{equation}\label{eq:pearson_r}
+    R_{x,y}=\frac{\sum_{i=1}^n\left(x_i-\bar{x}\right)\left(y_i-\bar{y}\right)}{\sqrt{\sum_{i=1}^n\left(x_i-\bar{x}\right)^2} \sqrt{\sum_{i=1}^n\left(y_i-\bar{y}\right)^2}},
+\end{equation}
+which is called the Pearson-R coefficient.
+
+For each two parameters estimated by the \Mbc fitter the Pearson-R value is evluated.
+This results in a 36-by-36 matrix, corresponding to all parameters estimated by the \Mbc fitter in this analysis, and shown in \Cref{fig:correlation_matrix}.
+The 37th parameter, $m_0$, is not included, because no significant correlations to that parameter are observed in the fitter.
+\begin{figure}[htbp!]
+    \includegraphics[width=1\textwidth]{figures/mc_validation/correlation_matrix.pdf}
+    \caption{\label{fig:correlation_matrix}The correlation matrix of the \Mbc fitter, generated using a 1000 pseudodata set.
+    Every pair of parameters has their correlation evaluates as the Pearson-R coefficient (\Cref{eq:pearson_r}).
+    Parameter names correspond to those in \Cref{tab:fitting_init_params} and numbers $0-10$ correspond to the bin number, starting from $1.4-1.6~\gev$.
+    }
+\end{figure}
+
+Several important insights into the fitter can be understood by observing the correlation matrix:
+\begin{itemize}
+\item
+Firstly, consider the correlation of ${\mathcal{N}_{\mathrm{CB}}}_i$ with ${\mathcal{N}_{\mathrm{CB}}}_j$.
+Clearly, the correlations are low -- implying that increases in one bin do not induce strong differences in other bins, as is to be expected.
+Small correlations that can be observed are likely a combination of correlations through other parametrs (see later) and statistical fluctuations.
+In general, most of the values are correlated by less than 10\%.
+\item Secondly, consider the correlation of ${\mathcal{N}_{\mathrm{CB}}}_i$ with ${\mathcal{N}_{\mathrm{CHEB}}}_i$.
+It can clearly be seen that the diagonal elements are strongly anti-correlated.
+This is understood as a consequence of the fact that both Chebyshev and Crystal Ball \PDF{s} contain a degree of `peaking' behaviour in \Mbc.
+Therefore, larger $\mathcal{N}_{\mathrm{CHEB}}$ values lead to lower ${\mathcal{N}_{\mathrm{CB}}}$, simply because the peaking behaviour of one parameter diminshed the other's.
+\item Thirdly, consider the correlation of ${\mathcal{N}_{\mathrm{CB}}}_i$ with ${\mathcal{N}_{\mathrm{ARGUS}}}_i$.
+This correlation is positive -- and understood as a direct result of the second point.
+If the $\mathcal{N}_{\mathrm{CB}}$ is evaluated as larger, the Chebyshev polynomial, which is suppressed as a result, can also less adequatly describe the low-en of \Mbc.
+That region must therefore be described by the $\mathcal{N}_{\mathrm{ARGUS}}$, inducing a chain of correlation: $\mathcal{N}_{\mathrm{CB}}\uparrow\rightarrow{\mathcal{N}_{\mathrm{CHEB}}}\downarrow\rightarrow\mathcal{N}_{\mathrm{ARGUS}}\uparrow$.
+\item Fourthly, correlations of ${\mathcal{N}_{\mathrm{CB}}}_i$ with $c_j$.
+This can be understood in a similar way as the correlation with ${\mathcal{N}_{\mathrm{CHEB}}}_i$.
+The parameter $c$ controls the shape of the ARGUS \PDF{s}.
+Notably, larger and positive values of $c$ tend to produce a \PDF that has more area at high-\Mbc than at low-\Mbc, producing, mimicking `peaking' behaviour.
+Therefore largely negative values of $c$ introduce larger values of $\mathcal{N}_{\mathrm{CB}}$.
+\item Finally, $\mathcal{N}_{\mathrm{CB}}$ correlations with off-diagonal elements of other parameters.
+In these cases, the correlations are very small, similar like the ${\mathcal{N}_{\mathrm{CB}}}_{i,j}$ correlations, but they follow the trends of the diagonal elements.
+This behaviour is interpreted through the effects of the shared parameter $c$.
+As the parameter modified the shape of the total \PDF, these changes induce differences to $\mathcal{N}_{\mathrm{ARGUS}}$ which propagate as differences to other normalisation parameters, through discussed relations.
+Particularly, because the variations of $c$ cause an increase to several bins simultaneously, correlations between off-diagonal elements ${\mathcal{N}_{\mathrm{CB}}}_{i,j}$ are also observed.
+\end{itemize}
+
+A study with more than 1000 pseudodata sets may be necessary in the future to better understand the indirect off-bin correlations present in this analysis.
+As correlations for ${\mathcal{N}_{\mathrm{CB}}}_{i,j}$ are observed as small and indirect, they are not considered to significantly affect the result in this analysis.
+Therefore, it is concluded that no unexpected behaviour of the fitter is observed, with correlations between different parameters explainable through the differences in the \PDF shape they introduce.
