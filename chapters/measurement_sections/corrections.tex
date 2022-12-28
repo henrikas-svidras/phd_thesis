@@ -140,5 +140,46 @@ This value is consistent with all other correction factors.
     }
 \end{figure}
 
-\subsection{Belle II calorimeter photon detection efficieny}\label{sec:photon_efficiency}
+\subsection{Belle II calorimeter photon detection efficiency}\label{sec:photon_efficiency}
+
+One of the main necessities of a measurement involving photons in the final state, is, of course, a precise and accurate simulation of the electromagnetic calorimeter -- the main tool of neutral particle detection.
+In Belle~II, the \ECL provide this function.
+Although it is known that its precision and resolution are excellent suited for flavour physics studies, exact data/simulation differences have to be known.
+As part of the original work presented in this thesis, a Belle~II calorimeter photon detection efficiency study has been performed.
+The initial setup of the analysis has been prepared by Dr. Natalia Kovalchuk and Dr. Torben Ferber, but I have updated the procedure, reworked the covered
+and performed the full systematic uncertainty evaluation during my doctoral studies.
+It is a critical study for the \BtoXsgamma analysis, however, the results of this study are also routinely used in other analyses that utilise photons in their final states.
+The study is summarised in a Belle II public note \cite{Henrikas:2604}.
+Here, the main measurement concepts and the results relevant to the measurement of \BtoXsgamma are presented.
+
+To measure the photon detection efficiency, one must first have the knowledge that a photon has been created in an event, and then search for it within the calorimeter.
+In this efficiency study $\epem\ra\mumu$ scattering events are employed.
+In particular, collision events where a high energy photon is radiated in the initial state are sought.
+The concept of the efficiency measurement is sketched in \Cref{fig:photon_efficiency_measurement}.
+\begin{figure}[htbp!]
+    \centering
+    \subcaptionbox{\label{fig:eemumugamma_feynman}}{
+    \includegraphics[width=0.4\textwidth]{figures/data_sim_corrections/eemumugamma.png}
+    }
+    \subcaptionbox{\label{fig:measurement_principle_gammaeff}}{
+        \includegraphics[width=0.4\textwidth]{figures/data_sim_corrections/measurement_principle.png}
+        }
+    \caption{\label{fig:photon_efficiency_measurement} The main concepts of the measurement of the Belle II photon detection efficiency.
+    The \Cref{fig:eemumugamma_feynman} shows the Feynman diagram of the $\epem\ra\mumu$ events, where an photon is radiated in the initial collision state.
+    Due to the radiated photon, the resulting dimuon system will have missing momentum with respect to the usual collision energy $\sqrt{s}\approx10.58~\gev$.
+    The direction of the missing momentum can be extrapolated to search for photon clusters in the calorimeter, as sketched in \Cref{fig:measurement_principle_gammaeff}.
+    \Cref{fig:measurement_principle_gammaeff}
+    }
+\end{figure}
+
+The main goal is to reconstruct two muon tracks in each event and evaluate their total momentum and energy.
+Because the high-energy photon (further called initial-state radiation or \ISR) is created before the collision, the energy of the dimuon system will have a certain degree of missing-momentum, whose direction will coincide with that of the emitted photon.
+This missing momentum direction is called \textit{recoil}, and is charactarised by the magnitude, polar angle and the azimuthal angle.
+Therefore, by selecting events where such recoil are present, one is able to look for photon clusters corresponding to the angle and the energy within the calorimeter.
+This gives a good efficiency estimate through a simple counting relation:
+\begin{equation}\label{eq:photon_efficiency}
+    \varepsilon_{\gamma}(|\vec{p}_{\mathrm{recoil}}|, \theta_{\mathrm{recoil}}, \phi_{\mathrm{recoil}}) = \frac{N(\mathrm{photon~found} \& \mathrm{recoil~found})}{N(\mathrm{recoil~found})},
+\end{equation}
+which can be evaluated as a function of missing momentum, with a magnitude $|\vec{p}_{\mathrm{recoil}}|$ and corresponding angles $\theta$ and $\phi$.
+
 
