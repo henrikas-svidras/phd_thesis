@@ -300,13 +300,19 @@ In each \EB interval, all (non-\BtoXsgamma) $B$ decay modes that produce high-en
 The modes are ranked by their relative abundance (fraction) within that \EB interval.
 Particularly in low-\EB region there are hundreds of different $B$ meson decay channels that can contribute to the background.
 Pragmatically, only background $B$ decays that contribute at least 1\% to the background in at least one \EB interval are further considered.
-These requirements encompass 71 \Bp modes and 54 \Bz decay modes. 
+These requirements encompass 53 \Bp modes and 39 \Bz decay modes. 
 They are listed in \Cref{tab:leftover_bp} and \Cref{tab:leftover_bz}, respectively.
 The table also contain their relative fraction in every given bin.
 As there are hundreds of $B$ decay modes that contribute at $\order{<1\%}$ relative fraction, these requirements may not cover all background in low-\EB regions. 
 However, it is assumed that the corrections for such `rare'-background modes should on average be 1, as large branching fraction differences in Belle~II simulation are not expected.
 
-These selected background $B$ decay modes have their branching fraction in the Belle~II simulation files compared with that reported on the PDG \cite{Workman:2022ynf}.
+Main source of background photon is various $B\to D$ transitions where photons originate from either subsequent $D$ decays or the accompanying particle, e.g. $B\to D\rho$.
+Semileptonic $B$ decays are also a major source of background.
+In general, $B\to D$ transitions are abundant only up to $2.2--2.3~\gev$.
+At higher \EB other types of decays become prominent, but much more sporadic, without clearly dominating modes.
+In particular, various rare decays $B$ decays, such as $B\to K$, $B\to\pi$ and $B\to\eta$ transitions become more prominent.
+
+The selected background $B$ decay modes have their branching fraction in the Belle~II simulation files compared with that reported on the PDG \cite{Workman:2022ynf}.
 Based on the findings, a following correction, for every mode in every \EB bin is derived:
 \begin{equation}\label{eq:background_bf_correction}
     R^{B\ra X}_{\mathrm{BB}}(\EB) =  f(\EB) \times \frac{\mathcal{B}_{\mathrm{PDG}}}{\mathcal{B}_{\mathrm{Belle~II}}},
@@ -314,24 +320,31 @@ Based on the findings, a following correction, for every mode in every \EB bin i
 where $f(\EB)$ is the relative fraction of a background mode $B\to X$ in a given \EB interval,
 and $\mathcal{B}_{\mathrm{PDG}}$, $\mathcal{B}_{\mathrm{Belle~II}}$ denote the branching fractions found in the Particle Data Group summary (\cite{Workman:2022ynf}) and Belle~II simulation, respectively.
 If available, the $\mathcal{B}_{\mathrm{PDG}}$ is varied according to the provided uncertainty, otherwise a 100\% variation is taken, and the central value shifts calculated with appropriate variations are assigned as uncertainties for $R^{B\ra X}_{\mathrm{BB}}(\EB)$.
-The results are summed together and their uncertainties are propagated, taking into account that the same decay mode may contribute in multiple \EB bins.
-The results, separated for \Bp and \Bz background modes are shown in \Cref{tab:background_modelling_uncertainties}.
-The provides correlation matrix used to propagate the uncertainties is shown in XXXX.
+The results are summed together and their uncertainties are propagated, taking the correlations, resulting from the fact that same decay mode may contribute in multiple \EB bins.
+The correction factors from \Bp and \Bz background modes are averaged, assuming no correlation between different $B$ charges.
+The final correction factors and their uncertainties are shown in \Cref{tab:correction_table}.
+The values are (nearly) all consistent with 1 in most cases, as expected considering high-quality of the Belle~II simulation.
 
-\begin{table}[htbp!]
+The correlation matrix of the correction factors arising from the fact that similar decay modes occur across many bins is shown in \Cref{fig:bbar_correlation_matrix}.
+\begin{figure}[htbp!]
     \centering
-    \caption{ \label{tab:background_modelling_uncertainties} 
-    Expected relative background modelling corrections and their uncertainties 
-    as a fraction of leftover peaking background yield in each bin.}
-    \resizebox{1\textwidth}{!}{
-        \begin{tabular}{llllllllllll}
-        \hline
-        {} &    1.4-1.6 GeV &    1.6-1.8 GeV &  1.8-2.0 GeV &  2.0-2.1 GeV &  2.1-2.2 GeV &  2.2-2.3 GeV &    2.3-2.4 GeV &    2.4-2.5 GeV &    2.5-2.6 GeV &    2.6-2.7 GeV & 2.7-5.0 GeV \\
-        \hline
-        \Bp background &  $1.007\pm0.026$ &  $1.008\pm0.031$ &  $1.00\pm0.05$ &  $1.00\pm0.07$ &  $.00\pm0.08$ &  $1.00\pm0.06$ &    $0.99\pm0.04$ &  $1.50\pm0.07$ &    $0.99\pm0.04$ &    $1.00\pm0.04$ &     $1.0\pm0 $\\
-        \Bz background &    $1.04\pm0.04$ &    $1.07\pm0.06$ &  $1.09\pm0.07$ &  $1.06\pm0.06$ &  $1.03\pm0.06$ &  $1.00\pm0.04$ &  $1.084\pm0.032$ &  $1.00\pm0.04$ &    $1.00\pm0.05$ &    $1.00\pm0.05$ &     $1.0\pm0$ \\
-        Average        &  $1.021\pm0.022$ &  $1.039\pm0.032$ &  $1.05\pm0.04$ &  $1.03\pm0.05$ &  $1.02\pm0.05$ &  $1.00\pm0.04$ &  $1.036\pm0.024$ &  $1.25\pm0.04$ &  $0.994\pm0.033$ &  $1.000\pm0.032$ &     $1.0\pm0$ \\
-        \hline
-        \end{tabular}
+    \includegraphics[width=0.5\textwidth]{figures/data_sim_corrections/bbar_correlation_matrix.pdf}
+    \caption{\label{fig:bbar_correlation_matrix} The correlation matrix of \BB corrections.
+    Particularly low-\EB bins are largely correlated due to the fact that similar background modes contribute in these regions.
+    On the other hand, high-\EB background photons originate more sporadically and from fewer sources, thereby reducing the correlation.
     }
-\end{table}
+\end{figure}
+It can be seen that mostly low-\EB bins are correlated, whereas high-\EB bins show smaller correlations.
+This is attributed to the fact that abundant background processes fall off quickly with increasing \EB.
+In the high-\EB background photons are much fewer and often originate as outliers from various CKM-suppressed decays, which decorrelates the bins.
+
+\subsection{Out-of-time photon suppression}\label{sec:out_of_time_photon_suppression}
+
+Although no special corrections are calculated, an additional selection is added to ensure that photons from beam background and previous collision events are not included in the analysis.
+It is known that these effects are not well captured by the Belle~II run-period independent simulation.
+Therefore, a timing selection, requiring the photon to be registered in a window $|\tau_{\gamma}|<200~\ns$ around the collision time.
+Furthermore, to reject poorly reconstructed photons, a $|\tau_{\gamma}|/\Delta\tau_{\gamma}<2$ requirement is added, which suppresses photons with low-quality or failed cluster fits.
+Using a technique analogous to $\epem\ra\mumu$ recoil study, it is observed that it affects the photon detection efficiency by less than 2\%.
+Therefore these selections are employed with no data-to-simulation correction.
+
+\todo[inline]{review this, because this is nonsense.Maybe add beam background plots.}
