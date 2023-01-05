@@ -77,5 +77,86 @@ These results, summarised in \Cref{fig:epsilon} allow to evaluate the simulated 
 
 \subsection{Validation of \texorpdfstring{\BtoXsgamma}{B->Xs gamma} efficiency}\label{sec:validation_efficiency}
 
+The results of \Cref{sec:signal_efficiency} are based on Belle~II simulation only, 
+and therefore have to be validated on data.
+Some selections, such as \piz and $\eta$ suppression tools, as well as photon-detection efficiency and \FEI are validated in external and independent studies.
+However, the selection on \texttt{BDT~output} and \ZMVA do not have such dedicated studies (and with the latter some hints of performance differences were already observed).
+To perform the validation for these quantities, yet maintain the analysis blinded, ratio-based efficiency tests are used on data:
+\begin{equation}\label{eq:signal_validation}
+    \varepsilon' = \frac{N_{\mathrm{with~selection}}(\Mbc>5.27)}{N_{\mathrm{with~looser~selection}} (\Mbc>5.27)},
+\end{equation}
+where $N_{\mathrm{with~selection}}$ is the number of events, in Belle~II data, given some selection,
+and $N_{\mathrm{with~looser~selection}}$ is that but with a selection that is looser, compared to the former.
+In both cases this is evaluated with an $M_{bc}>5.27~\gev$ requirement to ensure that the focus is mainly on good tag-\B mesons.
+Finally, in order to maximise the number of \BtoXsgamma events, the $2.5<\EB<2.6~\gev$ interval is used, as it contains primarily \BtoXsgamma events and very low background expectations (see \Cref{tab:expected_events})
 
+Three selections are tested:
+\begin{itemize}
+    \item regular: where $\ZMVA>0.6$ or $\texttt{BDT~output}>0.8$ are maintained at their optimal slection values.
+    \item looser: where $\ZMVA>0.4$ or $\texttt{BDT~output}>0.6$ are loosened to include more background.
+    \item tighter: where $\ZMVA>0.8$ or $\texttt{BDT~output}>0.9$ are tightened to suppress more background.
+    \item none: no selection on $\ZMVA$ or $\texttt{BDT~output}$.
+\end{itemize}
+These selection modes are then used to compute efficiencies and the binomial uncertainties based on \Cref{eq:signal_validation}.
+The results are shown in \Cref{tab:blinded_efficiency}.
+\begin{table}[htbp!]
+    \centering
+    \caption{\label{tab:blinded_efficiency} 
+    Resulting efficiencies in simulation, $\varepsilon_{\mathrm{SIM}}$ and data, $\varepsilon_{\mathrm{DATA}}$,
+    after applying selection variations based on 
+    \Cref{eq:signal_validation} in simulation and data. 
+    The modes are defined in \Cref{sec:validation_efficiency}.
+    The uncertainties that are calculated as Clopper-Pearson intervals for a binomial ratio. 
+    }
+    \input{tables/blinded_efficiency.tex}
+\end{table}
 
+Overall, the patterns of variations in efficiencies in simulation, $\varepsilon_{\mathrm{SIM}}$ and data, $\varepsilon_{\mathrm{DATA}}$, show similar behaviour.
+The central values are generally compatible within $1\sigma-2\sigma$.
+The largest $\varepsilon_{\mathrm{SIM}}-\varepsilon_{\mathrm{DATA}}$ for \ZMVA is observed in tighter/regular variation, which is consistent with observations of \Cref{fig:zmva_discrepancy}.
+Tightening the selection retains more background in data but not in simulation, causing different efficiency behaviour.
+Based on these observations, a variation $\Delta\varepsilon\approx0.069\pm0.039$ is observed
+( the asymmetric binomial uncertainty has been symmetrised here).
+For a conservative approach, this analysis therefore adopts a 10\% efficiency uncertainty based on \ZMVA modelling.
+
+The \texttt{BDT~output} variations are smaller, with the largest variation observed in `regular/looser' mode.
+The variation is evaluated at $\Delta\varepsilon\approx0.024\pm0.043$ is observed.
+For a conservative approach, this analysis therefore adopts a 3\% efficiency uncertainty based on \texttt{BDT~output} modelling.
+
+The results of this Section, \Cref{sec:signal_efficiency} and corrections from \Cref{sec:corrections},
+are combined in \Cref{eq:signal_efficiency} to calculate the efficiency of selection on \BtoXsgamma as a function of \EB.
+The results are visualised in \Cref{fig:corrected_signal_efficiency}.
+Combined with hte average \FEI tagging efficiency (given in \Cref{eq:avg_efficiency_fei}) using the factorised relation in \Cref{eq:factorisable_signal_efficiency}, these values form the final
+efficiency of tagging and \BtoXsgamma selection in this analysis.
+
+\begin{figure}[htbp!]  
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/signal_validation/corrected_selection_efficiency.pdf}
+    \caption{\label{fig:corrected_signal_efficiency} \BtoXsgamma signal selection efficiency, evaluated using \Cref{eq:signal_efficiency}.
+    The central values represent the efficiency of the hybrid signal mode and include corrections and a full systematic uncertainty,
+    based on independent studies in \Cref{sec:corrections} and blinded data efficiency studies in \Cref{sec:validation_efficiency}.
+    Multiplied by the \FEI tagging efficiency in \Cref{eq:avg_efficiency_fei}, this yields the full efficiency of this analysis for \BtoXsgamma.
+    }
+\end{figure}
+
+\subsection{Resolution studies of \texorpdfstring{\BtoXsgamma}{B->Xs gamma} events}\label{sec:resolution_studies}
+
+The resolution of \EB is related to both photon-detection resolution and tag-side \B meson reconstruction.
+Therefore, it can depend on the choice of a good tag-\B meson definition.
+
+The resolution is modelled as the width of the distribution related to
+\begin{equation}\label{eq:resolution}
+    $\tilde{E}_{\gamma}^{B} - E_{\gamma}^{B}$
+\end{equation}
+where $\tilde{E}_{\gamma}^{B}$ is the generated (`true') energy of a photon in the signal-\B meson rest frame,
+and $E_{\gamma}^{B}$ is the measured photon energy in the signal \B meson rest frame.
+To extract the width of the distribution, a double-sided Crystal Ball function is fitted.
+The double-sided Crystal Ball function follows the same definition as previously discussed in \Cref{sec:crystal_Ball},
+however, it includes two additional parameters $alpha_2$ and $n_2$, which introduce a polynomial behaviour to both sides of the central Gaussian.
+The width, as usual, is represented by the Gaussian width parameter $\sigma$.
+
+The fits on the hybrid signal-model sample with a full selection used in this analysis are shown in.
+Each fit is performed in true photon energy windows.
+Each fit also displays the estimated parameter $\sigma$ and its uncertainty.
+
+\todo[inline]{get plots and save them}
