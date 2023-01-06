@@ -146,7 +146,7 @@ Therefore, it can depend on the choice of a good tag-\B meson definition.
 
 The resolution is modelled as the width of the distribution related to
 \begin{equation}\label{eq:resolution}
-    $\tilde{E}_{\gamma}^{B} - E_{\gamma}^{B}$
+    \tilde{E}_{\gamma}^{B} - E_{\gamma}^{B}
 \end{equation}
 where $\tilde{E}_{\gamma}^{B}$ is the generated (`true') energy of a photon in the signal-\B meson rest frame,
 and $E_{\gamma}^{B}$ is the measured photon energy in the signal \B meson rest frame.
@@ -155,8 +155,102 @@ The double-sided Crystal Ball function follows the same definition as previously
 however, it includes two additional parameters $alpha_2$ and $n_2$, which introduce a polynomial behaviour to both sides of the central Gaussian.
 The width, as usual, is represented by the Gaussian width parameter $\sigma$.
 
-The fits on the hybrid signal-model sample with a full selection used in this analysis are shown in.
-Each fit is performed in true photon energy windows.
-Each fit also displays the estimated parameter $\sigma$ and its uncertainty.
+The fitting strategy on the hybrid signal-model sample with a full selection used in this analysis is presented in \Cref{sec:appendix_resolution_fits}.
+Each fit is performed in $\tilde{E}_{\gamma}^{B}$ intervals and estimates the parameter $\sigma$ and its uncertainty.
+The summary of the results is given in \Cref{fig:resolution_sigmas}.
+The fits are with two choices of tag-\B mesons: firstly, with the good tag-\B mesons as defined in \Cref{sec:good_tag_definition},
+secondly, for comparison, with tag-\B mesons that have been reconstructed perfectly.
+The photon energy resolution grows with \EB from $25~\mev$ to $40~\mev$
+but the ratio $\sigma/\tilde{E}_{\gamma}^{B}$ stays approximately constant.
+The use of good tag-\B mesons degrades the efficiency by approximately $10\%$.
+As the evaluated resolution is $<50~\mev$, this (retroactively) justifies the selection of 100~\mev wide bins in \Cref{sec:binning}, which are more than twice as wide.
 
-\todo[inline]{get plots and save them}
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/signal_validation/resolution_bin_by_bin_withkstar.pdf}
+    \caption{\label{fig:resolution_sigmas} The resolution of $\tilde{E}_{\gamma}^{B}$, 
+    as estimated from the fits in \Cref{fig:resolution_fits} and \Cref{fig:issignal_resolution_fits}.
+    Comparing the resolution of \EB using the good tag-\B meson definition, and using only perfectly reconstructed tag-\B mesons a $\sim 10\%$ difference is seen.
+    The resolution grows linearly with $\tilde{E}_{\gamma}^{B}$.
+    The ratio $\sigma/\tilde{E}_{\gamma}^{B}$ stays approximately constant at $\mathcal{O}(1\%)$.
+    }
+\end{figure}
+
+\subsection{Tag-side and signal-side correlation study}\label{sec:inclusivity_study}
+
+The main goal and purpose of this analysis is the inclusive measurement of the \BtoXsgamma decays, i.e.,
+an unbiased $X_s$ sample.
+Although careful validation checks for any potential biases to the photon-energy spectrum are performed at all stages,
+the correlation of the tag-\B and signal-\B has so far not been investigated in depth.
+This is tested by counting \BtoXsgamma events in an untagged sample and one with \FEI tagging applied, similar to \Cref{sec:validation_efficiency}.
+The number of daughter particles of events that the $X_s$ system hadronises to is then evaluated in the inclusive \BtoXsgamma signal model.
+The results are shown in \Cref{tab:xs_multiplicity}.
+
+\begin{table}[htbp!]
+    \centering
+        \caption{\label{tab:xs_multiplicity} 
+        Fraction of events with a given $X_s$ multiplicity in \FEI tagged and untagged sample. 
+        Although \FEI tagging slightly prefers lower multiplicities, the overall inclusivity is retained with no strong biases.
+        }
+    \begin{tabular}{c|c|c}
+        \hline
+            \multirow{2}{*}{$X_s$ multiplicity} & \multicolumn{2}{c|}{Fraction of sample}  \\
+                                                & \FEI tagged & Untagged  \\
+            \hline
+        2 &         0.621 &         0.594 \\
+        3 &         0.236 &         0.242 \\
+        4 &         0.090 &         0.099 \\
+        5 or more &         0.053 &         0.065 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+It can be seen that although \BtoXsgamma decay channels where $X_s$ hadronises to two particles are slightly preferred over others,
+the overall composition of the sample is not strongly affected.
+Indeed, such a behaviour seems expected: the more neutral and charged final-state particles that are produced in the detector, the more (incorrect) combinations to reconstruct a tag-\B meson become available for the \FEI chain of classifiers.
+
+Although this study is performed in simulated samples only, this results generalise well to Belle~II data: 
+the number-of-track dependance will affect the classifiers in the same way, as it only related to the `combination' of the decay products to good tag-\B mesons.
+The other differences that are related to tag-side efficiency mismodelling would be captured by the \FEI correction factors in \Cref{eq:fei_calibration}.
+
+
+\subsection{Modelling of \texorpdfstring{\BtoXdgamma}{B->Xd gamma} component}\label{sec:xdgamma_modelling}
+
+The goal of the analysis is an extraction of the \BtoXsgamma spectrum:
+nevertheless, as part of the inclusive analysis, a separation between $X_s$ and $X_d$ is challenging.
+Up until now, the $X_d$ component has been neglected and not included in the simulation.
+However, when extracting the photon-energy spectrum in Belle~II data, the presence of the $X_d$ component will be unavoidable,
+and without additional consideration the measured result could only be interpreted as \BtoXsdgamma.
+
+The measured branching fraction of \BtoXdgamma, 
+as seen in \Cref{eq:btosgamma_experimental} and \Cref{eq:btosgamma_theoretical}, is at least an order of magnitude smaller than \BtoXsgamma,
+although the uncertainties for the measurement are large.
+Based on \Cref{eq:effective_lagrangian}, neglecting corrections, the $\BtoXdgamma$ branching fraction
+is suppressed by \cite{Workman:2022ynf}:
+\todo[inline]{not pdg here cite smth else}
+\begin{equation}\label{eq:btodgamma_suppression}
+    \left|\frac{V_{td}}{V_{ts}}\right|^2 \approx 0.042.
+\end{equation}
+
+Two assumptions are made in this analysis:
+\begin{itemize}
+    \item \BtoXdgamma photon energy spectrum shape is the same as the \BtoXsgamma shape,
+    \item \BtoXdgamma event selection efficiency is the same as \BtoXsgamma event selection efficiency.
+\end{itemize}
+These assumptions, at leading order, are valid because the same underlying processes (electroweak radiative transitions) govern the decays.
+While the endpoints for the spectra would be different $\EB\gtrsim2.6$ ($X_d$ is dominated by $\rho(770)$ 
+which is wider than $K^*(982)$), the differences is not expected to be statistically significant.
+
+Therefore, the measured \BtoXsdgamma branching fractions will be lowered by an amount equivalent to \Cref{eq:btodgamma_suppression}:
+\begin{align}
+    \begin{split}
+    N_{\BtoXsgamma} &= N_{\BtoXsdgamma} - N_{\BtoXdgamma}\\
+                    &=\frac{1}{1.042} N_{\BtoXsdgamma}.
+    \end{split}
+\end{align}
+The full value of the correction, i.e. $(1-1/1.042) \cdot N_{\BtoXsdgamma}$, will be assigned as a systematic uncertainty related to the modelling of \BtoXdgamma.
+
+\subsection{Unfolding of the measured photon-energy spectrum} \label{sec:signal_unfolding}
+
+The measured \EB spectrum will be smeared due to resolution effects.
+The strategy of unfolding of the \EB spectrum to the `true' energy $\tilde{E}_{\gamma}^B$ is presented in this section.
