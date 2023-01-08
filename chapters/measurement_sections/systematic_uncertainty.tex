@@ -1,0 +1,63 @@
+Most systematic uncertainties, or the grounds for introducing them, have already been introduced in this analysis.
+The main systematic uncertainties arise from selection, background modelling and efficiency corrections.
+Additional, subleading uncertainties that arise from unfolding and \BtoXdgamma component subtraction are included.
+At the moment, the systematic uncertainties (except for the low-\EB) are sub-dominant compared to the much larger statistical component.
+Many systematic uncertainties are set to their conservative estimates, 
+which highlights that the analysis can be further optimised for future versions, as the Belle~II data set increases.
+
+In this section the already presented information about systematic uncertainties will be condensed and finalised.
+
+\todo[inline]{I need to make a table with all corrections here}
+
+\subsection{Uncertainties due to background normalisation}\label{sec:background_normalisation_systematic}
+
+\Cref{sec:sidebands_validation} introduced that the average number of 
+good tag-\B mesons in $\EB\in(1.4,1.8)$ in data and simulation differs by $8.7\%$.
+This difference is illustrated in \Cref{fig:sidebands_subtracted_figures}.
+This difference of 8.7\% may be partially correlated to the differences in the \Mbc endpoint (discussed broadly in \Cref{sec:bb_background_validation}).
+It could also partially be related to \ZMVA discrepancy, that is illustrated in \Cref{fig:zmva_discrepancy}.
+As these effects are difficult to disentangle without additional, independent studies of the, the full 8.7\% correction is assigned as a systematic uncertainty.
+Therefore the background expectations are varied by $\pm 8.7\%$, then subtracted from data, and the full extent of the variation is assigned as a systematic uncertainty to the measured \BtoXsgamma yields.
+The uncertainties are not considered correlated to account for the fact that the background shape can vary from that of simulation as a function of \EB.
+
+\subsection{Uncertainties due to \texorpdfstring{\Mbc}{Mbc} endpoint variations}\label{sec:fit_endpoint_systematic}
+
+As discussed in \Cref{sec:bb_background_validation}, the fit model is modified to account for $\sqrt{s}$ in Belle~II data manifesting as a shift in \Mbc.
+To account for an imperfect correction to the fit model, a systematic uncertainty is calculated here.
+The fit on data is performed with and without the \Mbc correction introduced.
+The full variation $\Delta\mathcal{N}_{\mathrm{CB}}$ between the estimated $\mathcal{N}_{\mathrm{CB}}$ in the two scenarios is assigned as a systematic uncertainty.
+The uncertainties are not considered correlated to account for possible changed in the model variations as a function of \EB.
+
+The evaluation of theses uncertainties is performed in a blinded way (that is only $\Delta\mathcal{N}_{\mathrm{CB}}$  is evaluated).
+This also serves as a test ensuring that the fit converges on the full data set.
+
+\subsection{Uncertainties due to selection modelling}\label{sec:correction_systematic}
+
+The selection modelling affects the final result through background modelling (when it is subtracted from the \Mbc fit on Belle~II data),
+and through \BtoXsgamma efficiency calculations.
+The available corrections based on results from independent studies are summarised in \Cref{sec:corrections}.
+The corresponding uncertainties from the corrections are propagated as systematic uncertainties.
+The background yields attain uncertainties from \FEI calibration factors, \piVeto and \etaVeto modelling, photon-detection efficiency, background modelling. 
+The \BtoXsgamma efficiency obtains uncertainties from the same sources, with the exception of background modelling, which is not applicable.
+
+All the different ucnertainties are considered as correlated between different \EB intervals.
+The background modelling ucnertainties follow the correlations depicted in \Cref{fig:bbar_correlation_matrix}.
+The uncertainties related to other corrections are considered fully correlated across different \EB intervals.
+
+\subsection{Uncertainties due to \texorpdfstring{\BtoXdgamma}{B->Xd gamma}}\label{sec:xdgamma_systematic}
+
+The uncertainty due to \BtoXdgamma component modelling has the strategy largely discussed in \Cref{sec:xdgamma_modelling}.
+The measured number of $\BtoXsdgamma$ events is corrected based on the theoretical \BtoXdgamma expectation, which amounts to roughly 4\% of the value.
+The full difference $N(\BtoXdgamma) \equiv N(\BtoXsdgamma)-N(\BtoXsgamma)$ is assigned as a systematic uncertainty.
+The systematic uncertainty is considered as uncorrelated between different \EB bins to account for possible spectrum shape variations.
+
+\subsection{\texorpdfstring{\EB}{EB} spectrum unfolding uncertainties}\label{sec:unfolding_systematic}
+
+The unfolding uncertainties are calculated for every unfolding factor calculated in \Cref{sec:signal_unfolding}.
+Each correction factor obtains an uncertainty based on the hybrid signal-model, shown in \Cref{fig:hybrid_uncertainty}.
+The unfolding factor uncertainties are propagated appropriatiely for the number of $\BtoXsdgamma$ events measured in the appropriate \EB interval.
+The unfolding uncertainties are considered as correlated based on the correlation matrix evaluates when building the hybrid signal-model.
+
+\subsection{Uncertainty on the number of \texorpdfstring{\B}{B} mesons in the sample}\label{sec:b_meson_uncertainty}
+
+The number of \B mesons 

@@ -255,8 +255,9 @@ The full value of the correction, i.e. $(1-1/1.042) \cdot N_{\BtoXsdgamma}$, wil
 The measured \EB spectrum is smeared due to resolution effects.
 This can be see in \Cref{fig:btosgamma_resolution}, where the reconstructed and measured photon energies are compared.
 In both cases, the hybrid signal-model used.
-Clearly, the overall shape of the spectrum shifts towards lower-\EB energies after measuring.
-Therefore, the measured result on Belle~II data, where the `true' values is by definition unknown, has to be unfolded.
+Clearly, the overall shape of the spectrum shifts towards lower-\EB after a measurement.
+Therefore, the measured result on Belle~II data (where the `true' values is by definition unknown) has to be unfolded.
+Unfolding was already introduced in \Cref{sec:unfolding}.
 The strategy of unfolding of the \EB spectrum to the `true' energy $\tilde{E}_{\gamma}^B$ is presented in this section.
 
 Firstly, a response matrix (see \Cref{eq:response_matrix_element}) is calculated.
@@ -272,21 +273,42 @@ The response matrix is shown in \Cref{fig:migration_matrix}.
         \includegraphics[width=0.45\textwidth]{figures/signal_validation/migration_matrix.pdf}
     }
     \caption{\label{fig:unfolding_setup} The comparison of true photon energy ($\tilde{E}_{\gamma}^B$),
-    and the measured photon energy, \EB is seen in \Cref{fig:btosgamma_resolution}.
+    and the measured photon energy (\EB) is seen in \Cref{fig:btosgamma_resolution}.
     The spectrum is slightly shifted to lower energies after the measurement.
     A corresponding response matrix is built for these distributions and shown in \Cref{fig:migration_matrix}.
-    Most elements are on the diagonal, meaning that resolution effects are not larger than the photon-energy interval size.
+    Largest \BtoXsgamma event fractions reside on the diagonal, meaning that resolution effects are not larger than the photon-energy interval size.
     }
 \end{figure}
 
 As it was discussed in \Cref{sec:unfolding}, in this analysis the bin-by-bin correction method is used for unfolding.
-It was chosen after testing several more sophisticated unfolding techniques, including those that involve a regularisation of the unfolded result.
+It was chosen after testing several unfolding techniques, including those that involve a regularisation of the unfolded result.
 An exemplary comparison of the singular value decomposition, matrix inversion and bin-by-bin unfolding techniques is shown in \Cref{fig:unfolding_comparison}.
- 
+The singular value decomposition method also includes a regularisation strength parameter, $k=7$.
+The figure shows the expected \BtoXsgamma photon-energy spectrum (based on hybrid signal-model) before and after measuring.
+The unfolded points follow the `true' distribution perfectly in this case, as the hybrid signal-model is also what is used for the calculation of the response matrix.
+
+The measurement uncerainties are evaluated as the average uncertainty from toy fits in \Cref{sec:background_subtraction_validation_mc}, scaled for lower luminosity, and corrected for background and signal modelling based on discussions in \Cref{sec:corrections,sec:signal_modelling}.
+They are then propagated through the full unfolding result.
+For bin-by-bin unfolding the propagation is governed by \Cref{eq:bin_by_bin_unfolding,eq:bin_by_bin_unfolding_error}.
+The resulting uncertainties due to matrix inversion method are larger by more than a factor of two compared to bin-by-bin unfolding method in many photon energy intervals.
+This increase in uncertainties is reduced by introducing a weak regularisation requirement with the singular value decomposition method.
+However, clearly, the uncertainties are genreally larger than those offered by bin-by-bin method.
+As the analysis results are clearly statistically limited, the correlation of expected number of events between different \EB intervals is small.
+Therefore, it is concluded that for this analysis bin-by-bin unfolding method is sufficient, as it does not inflate the uncertainties and does not introduce correlations between bins due to regularisation.
 
 \begin{figure}[htbp!]
     \centering
     \includegraphics[width=0.45\textwidth]{figures/signal_validation/bin_by_bin_svd_comparison_cov_mtx.pdf}
-    \caption{\label{fig:unfolding_comparison}}
+    \caption{\label{fig:unfolding_comparison}
+    Comparison of the singular value decomposition, bin-by-bin correction and matrix inversion method unfolding strategies
+    for the photon energy spectrum.
+    The solid lines represent the true and measured expected photon energy spectra, based on the hybrid-signal model.
+    As this model is also used to build the response matrix (see \Cref{fig:migration_matrix}), the data points, corresponding to different unfolding methods 
+    line up exactly on the true result.
+    The shaded area represenets the expected measurement uncertainties, based on the toy study in \Cref{sec:background_subtraction_validation_mc}.
+    The statistical uncertainty corresponds to components that can be decreased with larger Belle~II data or simulation samples.
+    The systematic uncertainty involves corrections for background and signal simulation discussed in \Cref{sec:corrections,sec:signal_modelling}.
+    The large statistical uncertainties motivate the choice for bin-by-bin unfolding method.
+    }
 \end{figure}
 
