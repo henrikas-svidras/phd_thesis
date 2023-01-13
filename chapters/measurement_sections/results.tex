@@ -175,7 +175,7 @@ The efficiency used for the calculations is provided in \Cref{sec:signal_selecti
 whereas the unfolding factors and strategy are described in \Cref{sec:unfolding_systematic}.
 Note that up until now \EB and $\tilde{E}_{\gamma}^B$ was used to explicitly differentiate
 the measured and the `true' (unfolded) photon-energy, respectively.
-\textit{In this section only} the \EB notation is used to denote the unfolded photon-energy (i.e. the tilde notation is omitted).
+\textit{In the following two sections only} the \EB notation is used to denote the unfolded photon-energy (i.e. the tilde notation is omitted).
 
 Combining all the results presented in this thesis leads to the following equation for the partial branching fraction:
 \begin{equation}\label{eq:branching_fraction}
@@ -234,9 +234,23 @@ As the results have a large statistical uncertainty component, the correlation o
 
 \begin{figure}[htbp!]
     \centering
-    \includegraphics[width=0.45\textwidth]{figures/final_results/correlation_matrix_uncertainties.pdf}
-    \caption{\label{fig:correlation_uncertainty_matrix} 
-    The correlation matrix of the partial branching fraction uncertainties of \Cref{tab:partial_branching_fractions}.
+    \subcaptionbox{\label{fig:partial_branching_fraction}}{
+        \includegraphics[width=0.45\textwidth]{figures/final_results/partial_bfs.pdf}
+    }
+    \subcaptionbox{\label{fig:correlation_uncertainty_matrix}}{
+        \includegraphics[width=0.45\textwidth]{figures/final_results/correlation_matrix_uncertainties.pdf}
+    }
+
+
+    \caption{\label{fig:partial_and_correlation} 
+    The visualisation of results in  \Cref{tab:partial_branching_fractions}.
+    \Cref{fig:partial_branching_fraction} shows th epartial branching fractions of \BtoXsgamma 
+    as a function of \EB, measured in 189~\invfb Belle~II data.
+    The inner error bars correspond to the statistical uncertainty, whereas the outer ones to the total.
+    The measurement results are overlaid with the expectations for the hybrid signal-model, and the associated uncertainty to it, evaluated in \Cref{sec:signal_model}.
+    The data results show excellent agreement with the model.
+    \Cref{fig:correlation_uncertainty_matrix} shows 
+    the correlation matrix of the partial branching fraction uncertainties.
     The systematic and statistical correlation is combined.
     As the results are statistically dominated, the correlations between different \EB bins are low.
     }
@@ -248,9 +262,13 @@ As the measurement employs a selection of $\EB>1.4~\gev$, a full $\mathcal{B}(\B
 Furthermore, the $\EB\in(1.4,1.8)~\gev$ range has a low precision, with a large systematic and statistical uncertainty component.
 Therefore, only an evaluation in the $\EB\in(1.8,2.6)~\gev$ interval from experimental data is feasible.
 The results for thresholds of $1.8~\gev$, $2.0~\gev$ and $2.1~\gev$ are given in \Cref{tab:integrated_branching_fractions}.
-Because of correlation of systematic uncertainties, they become dominant at the lowest-\EB threshold, but remain comparaable to the statistical uncertainty.
+Because of correlation of systematic uncertainties, they become dominant at the lowest-\EB threshold, but remain comparable to the statistical uncertainty.
 
-Extrapolate using \cite{Buchmuller:2005zv}
+To compare with the results of other experiments and theoretical values,
+one can use the theoretical extrapolation factors provided in Ref. \cite{Buchmuller:2005zv},
+to evaluate the branching fraction at the threshold of $\EB>1.6~\gev$.
+As it was discussed in \Cref{sec:btosgamma_totalrate_theory}, for \BtoXsgamma total rate evaluation, $\EB>1.6~\gev$ is a conventionally chosen threshold.
+The extrapolated results are also provided in the last column on \Cref{tab:integrated_branching_fractions}.
 
 \begin{table}[htbp!]
     \centering
@@ -259,18 +277,28 @@ Extrapolate using \cite{Buchmuller:2005zv}
     They are evaluated by summing the partial branching fractions in \Cref{tab:partial_branching_fractions}.
     The systematic and statistical uncertainties are denoted in the brackets.
     }
-    \resizebox{0.9\textwidth}{!}{
-        \begin{tabular}{ccc}
+    \resizebox{1\textwidth}{!}{
+        \begin{tabular}{ccl}
         \hline
             \EB lower threshold [\hspace{-1pt}$\gev$] & 
             $\mathcal{B}(B\rightarrow X_s \gamma)~[10^{-4}]$ & 
             \makecell{$\mathcal{B}(B\rightarrow X_s \gamma)~[10^{-4}]$\\(extrapolated to $1.6~\gev)$} \\
             \hline
-                $1.8<$  & $3.54 \pm 0.78$ (stat.) $\pm~0.83$ (syst.) & $3.65 \pm 0.80$ (stat.) $\pm 0.86$ (syst.) $\pm 0.02$ (extrap.)\\ 
-                $2.0<$  & $3.06 \pm 0.56$ (stat.) $\pm~0.47$ (syst.) & $3.42 \pm 0.62$ (stat.) $\pm 0.52$ (syst.) $\pm 0.06$ (extrap.)\\
-                $2.1<$  & $2.49 \pm 0.46$ (stat.) $\pm~0.35$ (syst.) & n/a\\
+                $1.8$  & $3.54 \pm 0.78$ (stat.) $\pm~0.83$ (syst.) & $3.65 \pm 0.80$ (stat.) $\pm 0.86$ (syst.) $\pm 0.02$ (extrap.)\\ 
+                $2.0$  & $3.06 \pm 0.56$ (stat.) $\pm~0.47$ (syst.) & $3.42 \pm 0.62$ (stat.) $\pm 0.52$ (syst.) $\pm 0.06$ (extrap.)\\
+                $2.1$  & $2.49 \pm 0.46$ (stat.) $\pm~0.35$ (syst.) & $2.86 \pm 0.53$ (stat.) $\pm 0.40$ (syst.) $\pm 0.08$ (extrap.)
+                \textsuperscript{1} \\
             \hline
         \end{tabular}
 
     }
 \end{table}
+
+The results presented in \Cref{sec:results} are the main goal of the analysis.
+The discussion related to them, their interpretation and future prospects for \BtoXsgamma will be discussed in \Cref{ch:overview}.
+
+\footnotetext[1]{The extrapolation factor is not provided for $\EB=2.1~\gev$ threshold in \cite{Buchmuller:2005zv}.
+                This result is evaluated by extrapolating linearly and assuming a monotonic increase in uncertainty.
+                This results in an extrapolation factor $0.870\pm0.024$. 
+                The number should be interpreted with the aforementioned caveats in mind only.}
+
