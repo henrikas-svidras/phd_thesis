@@ -154,8 +154,12 @@ the second -- of 10 ladders with 3 sensors,
 the third -- of 12 ladders with 4 sensors,
 and the final of 16 ladders with 5 sensors.
 The 172 double-sided silicon strip sensors are composed, in total, of 224 thousand strips.
-Each sensor is based on an $n$-type bulk implanted with $p$ and $n$-doped sensitive strips on opposite sides.
+Each sensor is based on an $n$-type bulk implanted with $p$ and $n$-doped sensitive strips.
+The $p$ and $n$ strips are aligned perpendicularly and on opposite sides of the sensor.
 The schematic representation of \SVD is shown in \Cref{fig:svd}, whereas its schematic location in the Belle~II detector are shown in \Cref{fig:vxd}.
+
+As charged particles pass through the \SVD sensors, the electrons and holes created through ionisation drift to $p$ and $n$ strips, respectively.
+The perpendicularity of the strips ensures that the spatial coordinates of the passing particle can be inferred.
 
 \begin{figure}[htbp!]
     \centering
@@ -185,8 +189,8 @@ some layers in the \CDC are skewed.
 The first 8 layers are axial, whereas the rest alternate between axial and skewed every 6 layers.
 The grouping of layers is shown in \Cref{fig:cdc_quadrant}, whereas \Cref{fig:cdc_wires} illustrate the difference between axial ad skewed layers.
 
-The \CDC provides a highly accurate measurement of charged particle trajectories with a $0.1-0.2~\cm$ spatial resolution 
-and a $~\sim0.5\%$ momentum resolution for the majority of particles resulting in \B meson decays \cite{Kandra:2019qlz}.
+The \CDC covers $\theta\in(17\deg,150\deg)$ range, and provides a highly accurate measurement of charged particle trajectories with a $0.1-0.2~\cm$ spatial resolution 
+and a $\sim0.5\%$ momentum resolution for the majority of particles resulting in \B meson decays \cite{Kandra:2019qlz}.
 
 \begin{figure}[htbp!]
     \centering
@@ -208,11 +212,160 @@ and a $~\sim0.5\%$ momentum resolution for the majority of particles resulting i
 
 \subsection{Particle identification systems}\label{sec:pid}
 
-\subsection{Electromagnetinc Calorimeter}\label{sec:ecl}
+Belle~II particle identification is performed using two systems: aerogel ring imaging Cherenkov counter (\ARICH) in the forward endcap region
+and a time-of-propagation (\TOP) chamber in the barrel region: both detectors being located outside of the \CDC.
+Both of these detectors are tasked with the distinction of different charged particle species.
 
-\subsection{Magnet}\label{sec:magnet}
+The \ARICH detector \cite{Yusa:2014tua} consists of an array of silica aerogel used as a radiator.
+As charged particles pass through the material, it emits Cherenkov photons, which are detected by a subsequent photon sensor.
+This working principle is depicted in \Cref{fig:arich}.
+The angle of the emitted Cherenkov light, $\theta_C$ can be used to calculate its velocity, $\beta$, given the refractive index of the radiator material,$n$:
+\begin{equation}
+    \beta = \frac{1}{n\cdot\theta_C}.
+\end{equation}
+The velocity information, combined the with the knowledge of particle's momentum from the \CDC, \SVD and \PXD allows to identify the species of a particle (through its mass).
+\ARICH is designed to provide separation information for $\pi^{\pm}$ and $K^{\pm}$ in $(0.4,4)~\gevc$ momentum range, and for $\pi^{\pm},\mu^{\pm},e^{\pm}$ below 1~\gevc.
+
+\begin{figure}[htbp!]
+    \centering
+    \subcaptionbox{\label{fig:arich}}{
+        \includegraphics[width=0.4\textwidth]{figures/experimental_setup/arich.png}
+    }
+    \subcaptionbox{\label{fig:top}}{
+        \includegraphics[width=0.45\textwidth]{figures/experimental_setup/top.png}
+    }
+    \caption{\label{fig:pid}
+    The schematic working principle of the Belle~II particle identification detectors: aerogel ring-imaging Cherenkov counter (\Cref{fig:arich}) and a time-of-propagation chamber.
+    \ARICH covers the forward endcap region, whereas \TOP covers the barrel.
+    Credit to \cite{Yusa:2014tua} and \cite{Fast:2017pff}, respectively.
+    }
+\end{figure}
+
+The \TOP detector \cite{Fast:2017pff} consists of sixteen $270 \times 45 \times 2$~\cm quartz radiator bars.
+The working principle is illustrated in \Cref{fig:top}.
+One end of the quartz crystal contains a spherical mirror that reflects the light to the opposite end containing photomultiplier tube arrays.
+Due to a high refractive index of quartz, the Cherenkov light emitted by passing particles undergoes a total internal reflection and propagates to the photo-multiplier tubes.
+Given a precisely known angle of the incoming particle, the time-of-propagation inside the chamber is a function of $\theta_C$.
+The time of arrival of the photons is compared to the expectated distributions for different particle hypotheses ($e^{\pm},\mu^{\pm},\pi^{\pm},K^{\pm},p^{\pm}$) and corresponding likelihood values are computed for each (see \cite{Yonenaga:2020eby} for details).
+
+\TOP provides an 85\% identification efficiency for $K^{\pm}$ at a 10\% $\pi^{\pm}$ misidentification rate \cite{Kojima:2022qcl}, whereas
+\ARICH has a 94\% efficiency for $K^{\pm}$ identification with an 11\% $\pi^{\pm}$ misidentification rate \cite{Yonenaga:2020eby}.
+
+\subsection{Electromagnetic calorimeter}\label{sec:ecl}
+
+Belle~II reuses the calorimeter of Belle, with an upgraded readout electronics \cite{Belle-II:2010dht}.
+The electromagnetic calorimeter (\ECL) surrounds the aforementioned detector systems and covers the barrel region and both endcap regions.
+It is the main subdetector for photon detection and energy measurements.
+Furthermore, \ECL is able to provide information necessary to differentiate electrons from hadrons, participates in $K_L$ detection (together with \KLM),
+supplies triggering information, and measures the luminosity collected by the detector.
+
+The \ECL covers $\theta\in(12.4,155.1)~\deg$ region and is composed of 8736 cesium iodide crystals \cite{Miyabayashi:2020xzp}.
+Each crystal is aproximately 16 radiation lengths long \cite{Aulchenko:2015nvy}.
+The rear surface of the crystal contain glued photodiodes with preamplifiers.
+As electromagnetically interacting particles pass through the calorimeter they induce cascades of particle through interaction with the dense detector material (electromagnetic showers).
+The photodiodes read out the final products of the shower and convert it to a signal that is digitised.
+The sketch of a single \ECL crystal is given in \Cref{fig:ecl}.
+
+\ECL has an excellent performance: photon-energy resolution which varies from 4~\% at 100~\mev \cite{Miyabayashi:2020xzp} to 2~\% at 5~\gev \cite{Aulchenko:2015nvy},
+a position resolution of $5-10~\mm$ \cite{Miyabayashi:2020xzp}, and a mass-resolution of 5~\mevcc(12~\mevcc) of for the composite \piz ($\eta$) meson \cite{Miyabayashi:2020xzp}.
+
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/experimental_setup/ecl.png}
+    \caption{\label{fig:ecl}
+    A schematic depiction of one of the crystals that comprise the Belle~II electromagnetic calorimeter.
+    A signal resulting from the shower of an electromagnetically interacting particle reaches the photodiode and is amplified by the preamplifier.
+    Credit to \cite{Miyabayashi:2020xzp}.
+    }
+\end{figure}
+
+\subsection{Superconducting magnet}\label{sec:magnet}
+
+A superconducting solenoid surrounds the \ECL \cite{Belle-II:2010dht}.
+The coil is made from a niobium-titanium-copper alloy and is wound around an aluminium support cylinder.
+The cooling is performed using a liquid helium cryogenic system.
+It generates a $1.5~\mathrm{T}$ magnetic field, which is crucial to bend the charged particle trajectories, enabling a transverse momentum measurement and charge separation.
+The magnetic field is directed along the $z$ direction, and is measured to be homogeneous and vary less at $\order(1\%)$ in the entire volume \cite{BelleIITrackingGroup:2020hpx}.
 
 \subsection{\texorpdfstring{$K_L$}{KL} and \texorpdfstring{\mu}{mu} detector}\label{sec:klm}
 
+The $K_L$ and $\mu$ detectors (\KLM) \cite{Aushev:2014spa} are the outermost subsystem of Belle~II.
+\KLM is composed of alternating layers of up to $4.7~\cm$ thick iron plates and detector active parts.
+The iron plates decelerate the traversing particles and also act as a return yoke for the magnet.
 
+The barrel and endcap regions differ by design \cite{Krohn:317929}.
+The barrel region contains 14 iron layers and 15 detector layers, which are aligned parallel to the $z$ axis.
+Here, two innermost detector layers are instrumented with scintillators, whereas the remaining use resisitve plate chambers.
+The endcap region contains 14 iron and detector layers each, which are aligned perpendicular to the $z$ axis.
+Conversely, all 14 detectors layers use plastic silicon strips with silicon photomultipliers.
 
+The $K_L^0$ interact with the nuclei in the iron plates and cause hadronic showers, 
+which are read out by the silicon strip detectors or the resistive plate chambers.
+This process may already occur in the \ECL, which is why it is also a part of $K_L^0$ detection.
+Non-showering particles, such as $\mu$ with momentum larger than 0.6~\gevc, traverse the detector in a straight line, 
+depositing only small amounts of energy in the system.
+
+\begin{figure}[htbp!]
+    \subcaptionbox{\label{fig:rpc_klm}}{
+        \includegraphics[width=0.45\textwidth]{figures/experimental_setup/rpc_klm.png}
+    }
+    \subcaptionbox{\label{fig:scintilator_klm}}{
+        \includegraphics[width=0.45\textwidth]{figures/experimental_setup/scintilator_klm.png}
+    }
+    \caption{\label{fig:klm}
+        The Belle~II $K_L^0$ and $\mu$ detector active detector layers in the barrel (\Cref{fig:rpc_klm}) and the endcap regions (\Cref{fig:scintilator_klm}).
+        Iron plates between are sandwiched between the detector layers.
+        Credit to \cite{Krohn:317929} and \cite{Aushev:2014spa}, respectively.
+    }
+\end{figure}
+
+\section{The Belle II software}\label{sec:belle2_software}
+
+The Belle~II analysis software (\basftwo) \cite{Kuhr:2018lps} is an open-source collection of tools developed to utilise in collision event reconstruction, analysis 
+and any other tasks necessary for the physical interpretation of the data recorded by the Belle~II detector.
+It is primarily based on \texttt{Python} and \texttt{C++} programming languages.
+This section briefly introduces the charged and neutral particle reconstruction strategies, which are managed by \basftwo.
+
+\subsection{Charged particle reconstruction}\label{sec:tracking}
+
+Tracking is used to refer to the charged particle trajectory reconstruction.
+The naming is used widely in high-energy physics and stems from the \textit{tracks} that particles leave in the detectors.
+
+The tracking process in Belle~II is discussed broadly in Ref.\cite{BelleIITrackingGroup:2020hpx}.
+Each particle trajectory (henceforth -- track) is modelled as a helix with 5 parameters:
+\begin{itemize}
+    \item $d_0$: the distance of the point of closest approach to the $z$ axis;
+    \item $\phi_0$: the angle between the transverse momentum and the $x$ axis at the point of closest approach;
+    \item $\omega$: the track curvature signed with the particle charge;
+    \item $z_0$: the $z$ coordinate at $d_0$;
+    \item $\tan\lambda$: the tangent of the dip angle.
+\end{itemize}
+
+The tracks are reconstructed by combinining the information from \CDC and/or \SVD with information from \PXD, if present.
+
+\subsection{Photon reconstruction}\label{sec:neutrals}
+
+Each particle interacting in the \ECL deposits energy into the crystal it interacts with.
+This deposited energy, and the time of each energy deposit, is recorded by the calorimeter.
+Clusters are sets energy deposits in the \ECL from the interaction of a single particle that traversed the detector.
+A graphical illustration of the reconstruction of a cluster in an experimental environment is shown in \Cref{fig:clustering}.
+\begin{figure}[htbp!]
+    \subcaptionbox{\label{fig:clustering1}}{
+    \includegraphics[width=0.45\textwidth]{figures/experimental_setup/clustering1.png}
+    }
+    \subcaptionbox{\label{fig:clustering2}}{
+        \includegraphics[width=0.45\textwidth]{figures/experimental_setup/clustering2.png}
+    }
+    \caption{\label{fig:clustering}
+    The Belle~II calorimeter, shown in the $\theta-\phi$ plane, 
+    showcasing energy deposits (each point corresponds to a single \ECL crystal) in a single simulated photon event in the center of the image.
+    The low-energy deposits resulting from background radiation are included in \Cref{fig:clustering1}.
+    The cluster reconstruction algorithm of \basftwo singles out the cluster from the single photon, rejecting background as seen in \Cref{fig:clustering2}.
+    Credit to Belle~II neutrals group.
+    }
+\end{figure}
+
+The identification of photons exploits the fact that the energy deposited in the cluster
+by an incident photon has a cylindrical symmetry in the lateral direction with an exponentially decreasing energy deposition away from the incident axis.
+On the other hand, neutral or charged hadrons interactions tend to produce more asymmetric shower shapes.
+To distinguish photons from charged particles, particularly electrons, tracks are extrapolated to the \ECL and compared for consistency with reconstructed clusters.
