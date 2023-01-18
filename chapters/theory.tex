@@ -6,20 +6,100 @@ a theoretical grounding for the experimental analyses performed.
 \todo[inline]{section listing here once they are finished}
 \todo[inline]{2.1 and 2.2 are ongoing and will be finished towards the end}
 
+Synthesis of information about the Standard Model which can be found detailed in \cite{Peskin:1995ev,Thomson:2013zua,Griffiths:2008zz}.
+
 \section{The Standard Model}
 
-The Standard Model is a $SU(3)\times SU(2)\times U(1)$ quantum field theory \cite{Peskin:1995ev}.
-Its theoretical framework describes the electroweak and strong force interactions between elementary particles that constitute the world as we know it.
+The Standard Model is a $SU_c(3)\times SU_L(2)\times U_Y(1)$ quantum field theory, 
+where the groups describe the colour-charge, weak-isospin and hyper-charge symmetries.
+In quantum field theory all particles are described as excitations of fields, $\psi(x)$, 
+where $x=\{\vec{x},t\}$ is a space-time coordinate.
+The Lagrangian, $\mathcal{L}=\mathcal{L}(\phi,\delta_{mu}\phi)$, describes the dynamics of particles originating from the excitations of field $\phi$,
+where $\delta_{\mu}=\{\frac{\delta}{\delta \vec{x}},\frac{\delta}{\delta t}\}$.
+In particular, it encodes the interactions and the free-propagation of particles which are visually represented using Feynman diagrams.
+% The Lagrangian follows the principle of the least action, which results in Euler-Lagrange equations describing the evolution of the physical system:
+% \begin{equation}
+%     \delta_{\mu} \left(\frac{\delta\mathcal{L}}{\delta(\delta_{\mu}\phi)}\right) - \frac{\delta\mathcal{L}}{\delta\phi}.
+% \end{equation}
+
+The theoretical framework of \SM describes the electroweak and strong force interactions between elementary particles that constitute the world as we know it.
 The elementary particles included in the Standard Model can have a half-integer spin (fermions) or integer spin (bosons).
-The spin-1 bosons are the mediators of the electromagnetic (photon), weak ($\Wpm$ and $\Z$) and strong interactions (gluon) in the SM.
+The strong interaction between particles of \SM is described by quantum chromodynamics, 
+whereas electromagnetic and weak interaction are described by a unified electroweak theory.
+The spin-1 bosons are the mediators of the electromagnetic (photon), weak ($\Wpm$ and $\Z$) and strong interactions (gluons) in the SM.
 The spin-0 Higgs boson couples to all massive particles of the Standard Model via the Higgs mechanism \cite{PhysRevLett.13.508}.
 The fermions are subsplit into two additional groups, quarks and leptons, which, respectively, can and cannot interact through the strong force.
+The particles, their spin, charge, mass and known interactions are summarised in \Cref{tab:standard_model}.
 
-As discussed in \Cref{sec:introduction}, the Standard Model is strongly motivated by the experimental observations.
+\begin{table}[htbp!]
+    \centering
+    \caption{\label{tab:standard_model}
+    The particles of the Standard Model, split into bosons and fermions.
+    The masses are approximate even if more procesie measurements are available
+    They are based on the current knowledge of particle physics, as summarised in Ref.\cite{Workman:2022ynf}.
+    Note that quark masses are not well-defined as they cannot be observed in Nature independently.
+    Therefore, quark mass values corresponds to the pole mass of the particle.
+    }.
+\input{tables/bosons.tex}
+
+
+\input{tables/fermion.tex}
+\end{table}
+
+
+Quarks and leptons are organised in three \textit{generations}, 
+where each generation contains a charged lepton, a lepton-neutrino, an up-type quark, and a down-type quark.
+Furthermore, each lepton and each quark is conventionally paramterised to have its own \textit{flavour}, resulting in six quark and six lepton flavours in \SM.
+The generations mainly differ by their masses, where a mass-hierarchy is observed: 
+\begin{equation}
+    m(\mathrm{lepton~neutrino})\ll m(\mathrm{charged~lepton})\lessapprox m(\mathrm{down~type~quark})<m(\mathrm{up~type~quark}).
+\end{equation}
+For quarks and charged leptons, only the first generation is stable and constitutes the absolute majority of the stable matter observed in the universe.
+On the other hand, all three generations of neutrinos appear to be stable.
+While leptons exist as free particles in Nature, quarks, due to color-confinement, 
+quarks only exist as combinations of a quark and antiquark pair (see next paragraph), or a combination of three (anti-)quarks.
+Finally, it is interesting to note that in \SM, the masses of the fermions are not predictions but parameters of the Standard Model and have to be measured.
+
+In \SM, each particle has a partner particle, which is called an \textit{anti-particle}.
+For a particle $\psi$, an anti-particle can be found by performing the charge-conjugation operation ($\mathcal{C}$):
+\begin{equation}
+    \mathcal{C}\ket{\psi}\ra\ket{\bar{\psi}}.
+\end{equation}
+which inverts the sign of all charges, lepton and baryon numbers corresponding to $\psi$.
+As a result, neutral bosons are their own anti-particle.
+Therefore all quarks ($\u,\d,\c,\s,\b,\t$) have a corresponding oppositely-charged anti-quark ($\ubar,\dbar,\cbar,\sbar,\bbar,\tbar$).
+Likewise, each charged lepton ($\en,\mu^{-},\taum$) has a positively charged particle ($\ep,\mup,\taup$).
+Although neutrinos ($\nu_{e},\nu_{\mu},\nu_{\tau}$) are not electromagnetically charged, 
+($\bar{\nu}_{e},\bar{\nu}_{\mu},\bar{\nu}_{\tau}$) exist due to an inversion of their lepton number and weak-isospin charge.
+
+Consider a parity operation $\mathcal{P}$, which transforms a left-handed component into a right-handed component:
+\begin{equation}
+    \mathcal{P}\ket{\psi(\vec{x},t)} = \ket{\psi(-\vec{x},t)}.
+\end{equation}
+It has been experimentally observed that the weak interactions violates $\mathcal{P}$ symmetry maximally (but note electromagnetic or strong).
+To this end it is convenient to express the fermion fields, which interact weakly, as Dirac spinors composed of a left and a right-handed component $\phi=\phi_L+\phi_R$,
+such that the weak interaction only couples to the left-handed components of the fields.
+The chiral projection operator :
+\begin{equation}
+    P_{L,R} = \frac{1}{2} (1\mp\gamma^5), 
+\end{equation}
+projects the left/right handed part of a field $\phi$, such that:
+\begin{align}
+    \begin{split}
+        \psi_L &= p_L\psi,\\
+        \psi_R &= p_R\psi,\\
+        \bar{\psi}_L &= \bar{\psi}p_L,\\
+        \bar{\psi}_R &= \bar{\psi}p_R.
+    \end{split}
+\end{align}
+The $gamma^5$ matrix is defined as a product of the four Dirac matrices $i\gamma^0\gamma^1\gamma^2\gamma^3\gamma^4$.
+
+Although it has been long known that particles violate charge ($\mathcal{C}$) and parity ($\mathcal{P}$) symmetries,
+it was long thought that their combination, $\mathcal{CP}$ symmetry is conserved.
 
 \section{Flavour physics}
 
-Ongoing...
+
 
 \section{The decay rate of \texorpdfstring{\BtoXsdgamma}{B->Xsg}}\label{sec:btosgamma_totalrate_theory}
 
