@@ -7,8 +7,44 @@ Therefore, the \Xs system is treated in a completely `missing-momentum' approach
 The reconstruction requirements are only applied on the candidate tag-side $B$ meson and the candidate high-energy photons from \BtoXsgamma.
 \subsection{Tag-side \texorpdfstring{$B$}{B}-meson candidate reconstruction}\label{sec:tag_reconstruction}
 
-The analysis begins with a reconstruction of a $B$ meson candidate in each event using the Belle II Full Event Intepretation (\FEI) algorithm \cite{Keck:2017mui,Keck:2018lcd}.
-\todo[inline]{Do I describe FEI here or in software section? not sure yet}
+The analysis begins with a reconstruction of a tag-$B$ meson candidate in each event
+using the Belle II Full Event Intepretation (\FEI) algorithm \cite{Keck:2017mui,Keck:2018lcd}, which is part of \basftwo.
+It is a hierarchical six-stage reconstruction sequence, which begins with the identification of all tracks, displaced vertices (tracks that do not begin near the interaction point) and \ECL clusters.
+The algorithm begins by combining track and ECL cluster information to reconstruct final-state candidate particles,
+such as $\epm$, $\mupm$, $\gamma$,  $\pi^{\pm}$, $K^{\pm}$ and $K_L^0$.
+In the next stage, the final state particles are combined to form intermediate particles, such as $\piz,K_S^0,D^(*)$, or $B$ mesons.
+In later stages intermediate and final-state particles are combined into $B$ mesons.
+At every stage of the procedure, the probability for the combined particle to be correct is evaluated by a \BDT,
+which maps input features related to the particle (four-momentum, vertex position, angles between daughter particles etc.) to a single classifier
+output score. The final output score related to the quality of reconstruction of the $B$ meson is denoted as \feiProb. 
+The schematic visualisation of the reconstruction process is shown in \Cref{fig:fei_schematic}
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/event_reconstruction/FEI_tagging.png}
+    \caption{\label{fig:fei_schematic} 
+    The schematic overview of \FEI.
+    The algorithm reconstructs $B^+$ and $B^0$ candidates in 36 and 32, respectively, decay chains
+    in six reconstruction stages that combine final-state and intermediate particles.
+    Credit to \cite{Keck:2018lcd}.
+    }
+\end{figure}
+
+In total, \FEI reconstructs $\order(10000)$ distinct decay chains and provides $B^+$ meson candidates in 36 decay modes, and $B^0$ candidates in 32 decay modes.
+As a result two \FEI modes are differentiated: 
+\feiBp, which combines \Bpm meson candidates,
+\feiBz, which combines \Bz meson candidates.
+Each event may have more than one candidate reconstructed in the same and/or different decay channels and/or \FEI modes.
+The reconstructed decay channels for \feiBp and \feiBz modes are shown in \Cref{tab:fei_modes}.
+
+\begin{table}
+    \centering
+    \caption{\label{tab:fei_modes}
+    The $B$ meson decay modes reconstructed by the \FEI algorithm.
+    \FEI modes reconstructed as \feiBp and \feiBz are separated.
+    }
+    \input{tables/fei_modes.tex}
+\end{table}
+
 
 This thesis uses data and simulation samples following the standard Belle II approach, where sub-samples of data and \MC with FEI algorithm applied are produced centrally, referred to as \textit{\FEI skims}.
 In order to make the \FEI algorithm run-time and computation more efficient, event selections are made which reject events highly incompatible with one of the $B$ mesons decaying hadronically.
@@ -18,13 +54,17 @@ and to minimise the impact of beam-background clusters, or clusters where no tra
 
 \begin{table}[htbp!]
     \centering
-     \caption{\label{tab:fei_objects} Definitions for \FEI event pre-selection.}
+     \caption{\label{tab:fei_objects} Definitions for objects used in \FEI selections.}
      \resizebox{0.75\textwidth}{!}{
-     \begin{tabular}{lcc} 
+     \begin{tabular}{|l|c|c|} 
+        \hline
+
      Selection description & Selection\\
      \hline
      Cleaned tracks & $  |d_0|<0.5~\cm,\quad z_0<2~\cm,\quad p_T>0.1~\gev $\\
      Cleaned \ECL clusters & $17~\degrees<\theta<150~\degrees,\quad E>0.1~\gev$\\
+     \hline
+
      \end{tabular}
      }
 \end{table}
@@ -34,9 +74,12 @@ The requirements are summarised in \Cref{tab:fei_precuts}.
 
 \begin{table}[htbp!]
     \centering
-     \caption{\label{tab:fei_precuts} \FEI pre-selections.}
+     \caption{\label{tab:fei_precuts} Selections before running the \FEI algorithm.
+     Cleaned tracks and clusters are defined in \Cref{tab:fei_objects}.
+     }
      \resizebox{0.75\textwidth}{!}{
-     \begin{tabular}{lcc} 
+     \begin{tabular}{|l|c|} 
+    \hline
      Selection description & Selection\\
      \hline
      Number of cleaned tracks in event \quad & $\geq 3$\\
@@ -44,6 +87,7 @@ The requirements are summarised in \Cref{tab:fei_precuts}.
      Total measured center-of-mass energy in the event \quad & $> 4~\gev$\\
      Total energy of cleaned \ECL clusters \quad &\multirow{2}{*}{$2~\gev<E<7~\gev$}\\
      and deposits associated with with cleaned track \quad & \\
+     \hline
     \end{tabular}
      }
 \end{table}

@@ -9,9 +9,9 @@ information of well-established concepts about the Standard Model which can be f
 Finally, the rest of the chapter in \Cref{sec:btosgamma_totalrate_theory,sec:btosgamma_spectrum_theory,sec:btosgamma_bsm} will provide an introduction to the reader of the theoretical foundation and status of inclusive radiative decays.
 
 
-\section{The Standard Model overview} \label{sec:standard_model}
+\section{The Standard Model of Particle Physics} \label{sec:standard_model}
 
-The Standard Model (\SM) is a quantum field theory based on a symmetry group $SU_c(3)\times SU_L(2)\times U_Y(1)$.
+The Standard Model (\SM) is a quantum field theory based on a symmetry group \mbox{$SU_c(3)\times SU_L(2)\times U_Y(1)$}.
 In quantum field theory all particles are described as excitations of fields, $\psi(x)$, 
 where $x=\{\vec{x},t\}$ is a space-time coordinate.
 The Lagrangian, $\mathcal{L}=\mathcal{L}(\phi,\partial_{\mu}\phi)$, describes the dynamics of particles originating from the excitations of field $\phi$,
@@ -29,33 +29,24 @@ The elementary particles included in the \SM can have a half-integer spin (fermi
 
 The spin-1 bosons are the mediators of the electromagnetic (photon), weak ($\Wpm$ and $\Z$) and strong interactions (gluons) in the SM.
 The spin-0 Higgs boson couples to all massive particles of the \SM via the Higgs mechanism \cite{PhysRevLett.13.508}.
-The bosons of the \SM are summarised in \Cref{tab:standard_model_bosons}.
-
 The fermions are subsplit into two additional groups: quarks and leptons, which, respectively, can and cannot interact through the strong force.
 With the possible exception of neutrinos, all fermion fields have a left- and right-handed component, as the weak-interaction only interacts with
 left-handed particles or right-handed anti-particles.
-The particles, their spin, charge, mass and known interactions are summarised in \Cref{tab:standard_model_fermions}.
-
-\begin{table}[htbp!]
+Their spin, charge, mass and notation are summarised in \Cref{fig:standard_model}.
+\begin{figure}[htbp!]
     \centering
-    \caption{\label{tab:standard_model_bosons}
-    The bosons of the \SM.
-    The masses are approximate even if more precise measurements are available.
-    They are based on the current knowledge of particle physics, as summarised in Ref.\cite{Workman:2022ynf}.
-    }
-\input{tables/bosons.tex}
-\end{table}
-\begin{table}[htbp!]
-    \centering
-    \caption{\label{tab:standard_model_fermions}
-    The fermions of the \SM.
-    The masses are approximate even if more precise measurements are available.
+    \input{tikz_diagrams/standard_model.tex}
+    \caption{\label{fig:standard_model} All the particles of the Standard Model of Particle Physics.
+    Their mass, charge, spin, weak isospin and colours are listed.
+    The gauge boson interactions are colour coded.
+    The anti-particles can be obtained by inverting the signs of the weak isospin and charge, and swapping the left/right-handed chirality values.
+    All the masses are approximate even if more precise measurements are available.
     They are based on the current knowledge of particle physics, as summarised in Ref.\cite{Workman:2022ynf}.
     Note that quark masses are not well-defined as they cannot be observed in Nature independently.
-    Quark mass values corresponds to the pole (freely propagating) mass of the particle.
+    See in \cite{Workman:2022ynf} for more information on the values.
+    This is a modified version of \cite{sm_diagram}.
     }
-\input{tables/fermion.tex}
-\end{table}
+\end{figure}
 
 Quarks and leptons are organised in three \textit{generations}, 
 where each generation contains a charged lepton, a lepton-neutrino, an up-type quark, and a down-type quark.
@@ -256,13 +247,14 @@ As can be seen in \Cref{fig:unitarity_triangle} experimental results show incred
 \section{The case for \texorpdfstring{$B$}{B} physics}\label{sec:bphysics_case}
 
 The $B$ meson is the lightest hadron that contains a $b$ quark.
-As the $b$ quarks are not stable they can necessitate flavour changing processes via the weak interaction.
+As the $b$ quarks are not stable, their decays necessitate flavour changing processes via the weak interaction.
 Therefore, the study of its decays open the possibility to measure a wide range of parameters of \SM, including the \CKM matrix, $\mathcal{CP}$ violation measurements, lepton-mass measurements etc.
-Furthermore, significant inconsistencies from the theory may lead to breakthroughs in the further theoretical understanding of Nature.
-Some of the main questions that are pursued through the study of $B$ mesons ($B$-physics) are \cite{Belle-II:2018jsg}:
+Furthermore, significant inconsistencies from theoretical expectations may lead to breakthroughs in the theoretical understanding of Nature.
+Some (but not all) of the questions that are pursued through the study of $B$ mesons ($B$ physics) are \cite{Belle-II:2018jsg}:
 \begin{itemize}
-    \item Additional sources of $\mathcal{CP}$ violation?
+    \item What are additional sources of $\mathcal{CP}$ violation?
     \item Can there be additional Higgs bosons in Nature?
+    \item How does dark matter fit in the Standard Model?
     \item Can the left-right symmetry of Nature, broken in weak interactions, be restored?
     \item Can lepton flavour changing processes exist in Nature?
 \end{itemize}
@@ -273,7 +265,7 @@ They will be introduced in \Cref{chap:belle2}.
 \section{The decay rate of \texorpdfstring{\BtoXsdgamma}{B->Xsg}}\label{sec:btosgamma_totalrate_theory}
 
 In the \SM, $b\ra s$ transitions are mediated by so-called flavour-changing neutral currents.
-These processes can only occur through loops mediated by heavy particles.
+These processes cannot occur directly and only happen through loops mediated by heavy particles.
 One of the decay processes used to study these transitions are the so-called rare radiative $b\ra s\g$ and $b\ra d\g$ decays.
 Due to colour confinement of the quarks, in reality they manifest as \BtoXsgamma or \BtoXdgamma, where $X_s$ and $X_d$ denote any meson state originating from the $s$ quark hadronisation.
 The leading \SM diagrams for \BtoXsdgamma (used to collectively identify $X_s$ and $X_d$ states) processes are shown in \Cref{fig:sm_diagrams}.
