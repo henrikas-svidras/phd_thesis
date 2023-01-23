@@ -5,33 +5,46 @@ In this entire chapter, superscripts are used to denote observables in a particu
 Given an observable $\mathcal{X}$ (laboratory frame), the same value in the frame of colliding electrons (center-of-mass) will be denoted as $\mathcal{X}^*$.
 Observables in the rest-frame of the decaying $B$ meson adopt the notation $\mathcal{X}^B$.
 
-First, the analysed data sets are introduced in XXXX.
-We use a simulated data set, based on the expectations on the Standard Model to prepare the analysis procedure.
+The final goal of the analysis is to measure the partial branching fractions (see \Cref{eq:branching_fraction_definition})
+as a function of \EB (i.e. the photon energy spectrum in the signal $B$ meson rest frame):
+\begin{equation}\label{eq:branching_fraction_recipe}
+    \left.\frac{d\mathcal{B}(\BtoXsgamma)}{d\EB}\right|_i = \mathcal{U}_i \times \frac{N_i(\BtoXsgamma)}{\varepsilon_i N_{B}},
+\end{equation}
+where $i$ is a given \EB interval,
+$N_i(\BtoXsgamma)$ is the number of $B$ mesons measured in the the interval $i$, 
+$\varepsilon_i$ is the average efficiency for selection and reconstruction of \BtoXsgamma decays in the interval $i$,
+$N_B$ is the total number of $B$ mesons in the analysed sample,
+and $\mathcal{U}_i$ are unfolding correction factors (bin-by-bin unfolding is implied here).
+The results of the integrated branching fraction, $\mathcal{B}(\BtoXsgamma)$, are evaluated by performing a sum over partial branching fractions computed in every interval $i$.
+
+First, the analysed data sets are introduced in \Cref{sec:data_samples}.
+A simulated data set, based on the expectations on the Standard Model, is used to prepare the analysis procedure.
 After the full analysis procedure is set up, I unblind (see \Cref{sec:blinding}) experimental data, collected by the Belle II experiment.
 
-XXXX introduces the reconstruction of Belle II experimental and simulated \BtoXsgamma samples.
+\Cref{sec:event_reconstruction} introduces the reconstruction of Belle II experimental and simulated \BtoXsgamma samples.
 It also discusses the main processes which mimic \BtoXsgamma signal (backgrounds) and the strategies to suppress them.
 In general, background for \BtoXsgamma can be divided as:
 \begin{itemize}
     \item \textit{Signal-side background}: where a photon candidate is originating in a non-\BtoXsgamma decay.
-    In particular, either \epem\ra\qqbar ($\q\in\{\u,\d,\s,\c\}$), henceforth -- \textit{continuum}, or from a different \B decay, e.g. where a $\piz$ is created in the decay chain that decays into 2 photons, henceforth -- \textit{generic} $B$ background.
+    In particular, either \epem\ra\qqbar ($\q\in\{\u,\d,\s,\c\}$), henceforth -- \textit{continuum}, or from a different \B decay, e.g. where a $\piz$ is created in the decay chain that decays into 2 photons, henceforth -- \textit{generic} $B$ background,
     \item \textit{Tag-side background}: where the $B$, recoiling against the candidate \BtoXsgamma, is reconstructed incorrectly, or \epem\ra\qqbar collision products are combined to resemble a \B decay.
-    I will refer to such decays as \textit{combinatorial} $B$ or continuum background, respectively.
+    I will refer to such decays as \textit{combinatorial} $B$ or continuum background, respectively,
     \item \BtoXdgamma component: which is an irreducible background at the current analysis setup. 
 \end{itemize}
 
-The efficiencies and optimisation of selections for signal and tag-side backgrounds is described in XXX.
-It will rely on selections suppress the signal-side background to and a dedicated \BDT training, which aims to suppress tag-side backgrounds.
+The
+multivariate optimisation strategies for signal and tag-$B$ meson background suppression are described in 
+\Cref{sec:photon_selection,sec:continuum_suppression,sec:final_optimisation,sec:tag_selection}.
+It will rely on selections to suppress the signal-side background to and a dedicated \BDT training, which aims to suppress tag-side backgrounds.
 
-After the full background suppression procedure, a thorough setup and validation of the fitting model will be described.
-The fitting procedure is aimed at removing the combinatorial tag-side backgrounds, and hence the fit of \Mbc variable is performed (\Cref{eq:mbc_exclusive}).
+After the full background suppression procedure, a thorough setup and validation of the fitting model will be described in \Cref{sec:fitting_mbc}.
+The fitting procedure is aimed at removing the combinatorial tag-$B$ meson backgrounds, and hence the fit of the \Mbc variable is performed (\Cref{eq:mbc_exclusive}).
 
-Lastly, an irreducible signal-side background component still remains, particularly from generic signal-side $B$ decays.
-The \EB spectrum is extracted by the simulation-dependant subtraction of remaining background processes.
+Lastly, an irreducible signal-side background component still remains, particularly from generic signal-$B$ meson decays.
+The \EB spectrum is extracted by the simulation-dependant subtraction of remaining background processes as described in \Cref{sec:background_subtraction}.
 
-XXX will describe the in-depth validation procedure of the analysis technique on data samples.
-The two data samples used for validation are the continuum samples and $B$ decay datasets, where selections from section XX are inverted.
+\Cref{sec:MC_validation} will describe the in-depth the validation procedure of the analysis technique on Belle~II simulated data samples,
+whereas \Cref{sec:corrections,sec:validation,sec:signal_modelling} will explore that on the Belle~II recorded data samples.
 
-The final extraction of results, unfolding is presented in XXXX.
-\todo[inline]{fix all the XXXX}
-
+The observations from the preceding sections will be overviewed, condensed in \Cref{sec:systematic_uncertainty} and quantitively assigned as systematic uncertainties.
+The final extraction of results and unfolding of Belle~II data is presented in \Cref{sec:results}.

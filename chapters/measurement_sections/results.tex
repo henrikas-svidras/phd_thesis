@@ -277,21 +277,7 @@ The extrapolated results are also provided in the last column on \Cref{tab:integ
     They are evaluated by summing the partial branching fractions in \Cref{tab:partial_branching_fractions}.
     The systematic and statistical uncertainties are denoted in the brackets.
     }
-    \resizebox{1\textwidth}{!}{
-        \begin{tabular}{ccl}
-        \hline
-            \EB lower threshold [\hspace{-1pt}$\gev$] & 
-            $\mathcal{B}(B\rightarrow X_s \gamma)~[10^{-4}]$ & 
-            \makecell{$\mathcal{B}(B\rightarrow X_s \gamma)~[10^{-4}]$\\(extrapolated to $1.6~\gev)$ \cite{Buchmuller:2005zv}} \\
-            \hline
-                $1.8$  & $3.54 \pm 0.78$ (stat.) $\pm~0.83$ (syst.) & $3.65 \pm 0.80$ (stat.) $\pm 0.86$ (syst.) $\pm 0.02$ (extrap.)\\ 
-                $2.0$  & $3.06 \pm 0.56$ (stat.) $\pm~0.47$ (syst.) & $3.42 \pm 0.62$ (stat.) $\pm 0.52$ (syst.) $\pm 0.06$ (extrap.)\\
-                $2.1$  & $2.49 \pm 0.46$ (stat.) $\pm~0.35$ (syst.) & $2.86 \pm 0.53$ (stat.) $\pm 0.40$ (syst.) $\pm 0.08$ (extrap.)
-                \textsuperscript{1} \\
-            \hline
-        \end{tabular}
-
-    }
+    \input{tables/total_branching_fractions.tex}
 \end{table}
 
 The results presented in \Cref{sec:results} are the main goal of the analysis.
@@ -302,3 +288,31 @@ The discussion related to them, their interpretation and future prospects for \B
                 This results in an extrapolation factor $0.870\pm0.024$. 
                 The number should be interpreted with the aforementioned caveats in mind only.}
 
+
+\subsection{Moments of the \safeBtoXsgamma photon-energy spectrum}\label{sec:spectrum_moments}
+
+As discussed in \Cref{sec:btosgamma_totalrate_theory,sec:btosgamma_spectrum_theory} the moments of the \BtoXsgamma
+spectrum are highly interesting.
+The first and second moment of the \BtoXsgamma spectrum are calculated based on the results in \Cref{tab:partial_branching_fractions}.
+They are calculated as a weighted sum of the center value of \EB intervals, $\mathrm{\Delta\EB}$,
+with weights corresponding to the partial branching fractions in that \EB interval:
+\begin{align}\label{eq:weighted_sum_moments}
+    \begin{split}
+        \expval{\EB} &= \frac{\sum_i f_c(\Delta\EB^{}_{,i})\times  
+                               \frac{\Delta\mathcal{B}(\BtoXsgamma)_i}
+                                    {\Delta {E^B_{\g}}_{,i}}}
+                             {\sum_i \frac{\Delta\mathcal{B}(\BtoXsgamma)_i}{\Delta {E^B_{\g}}_{,i}}},
+    \end{split}
+\end{align} 
+where $f_c$ is used as a loose notation of a function that returns the center point of an interval.
+The calculated values of the first and second moments of \EB for different lower thresholds are given in \Cref{tab:moments}.
+
+\begin{table}[htbp!]
+    \centering
+    \caption{\label{tab:moments}
+    The integrated \BtoXsgamma first and second moments for different lower-\EB threshold measured on $189~\invfb$ of Belle~II data.
+    They are evaluated by a weighted sum of the the partial branching fractions in \Cref{tab:partial_branching_fractions} according to \Cref{eq:weighted_sum_moments}.
+    The systematic and statistical uncertainties are denoted in the brackets.
+    }
+    \input{tables/moments.tex}
+\end{table}
