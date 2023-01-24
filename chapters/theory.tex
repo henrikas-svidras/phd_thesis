@@ -293,19 +293,20 @@ The electroweak loop can get contributions from all the quarks, but is dominated
 The masses of possible \BSM weakly-interacting particles that can appear in the loops may be as high as \order{(100~\tev)} \cite{Misiak:2020vlo} which makes studying these decays incredibly appealing.
 
 The decay rate of \BtoXsdgamma is affected by the contributions from weak and strong interactions.
-Weak contributions can be calculated perturbatively, however the strong contributions are usually described by effective point-like theories.
-In weak decays, including \BtoXsdgamma, \textit{Operator Product Expansion} \cite{Peskin:1995ev,Buras:1998raa} is used to derive the effective theory.
-It replaces the hadron-binding strong quark interactions and the weak quark interactions mediating $\b\ra\s(d)$ by a single effective vertex.
+The typical energy scale of quark interactions is $\order(1~\gev)$, lower than weak interactions occuring at $\order{M_W}$.
+This motivates the replacement the weak interaction with effective point-like vertices of strong quark interactions.
+In weak decays, including \BtoXsdgamma, the formal framework for such an effective field theory is called the \textit{operator product expansion} \cite{Peskin:1995ev,Buchalla:1995vs,Buras:1998raa}. 
+% It replaces the hadron-binding strong quark interactions and the weak quark interactions mediating $\b\ra\s(d)$ by a single effective vertex.
 An effective Lagrangian describing the $\b\to\s(d)\g$ can be written as~\cite{Kaminski:2012eb,Misiak:2015xwa}:
 \begin{equation}\label{eq:effective_lagrangian}
     \mathcal{L}_{\mathrm{eff}} = \frac{4G_F}{\sqrt{2}}V_{tq}^*V_{tb}\left[\sum^{8}_{i=1}\mathcal{C}_i(\mu)\mathcal{O}_i(\mu)
                                                 + \frac{V^*_{uq}V_{ub}}{V^*_{tq}V_{tb}}\sum^{2}_{i=1}\mathcal{C}_i(\mu)(\mathcal{O}_i(\mu)-\mathcal{O}_i^u(\mu))\right],
 \end{equation}
 where $G_F$ is the Fermi constant and $q\in\{s,d\}$.
-The factors $\mathcal{C}_i$, known as \textit{Wilson coefficients}, encode the weak interactions and can be calculated perturbatively.
-The other set of operators, $\mathcal{O}_i$ contain the contributions from the strong interactions and are calculated using non-perturbative methods.
-The renormalisation scale, $\mu$, is chosen such that strong and weak contributions are separated.
-Conventionally, it is set to be of order of the $b$ quark mass $\mu\sim m_b$.
+The factors $\mathcal{C}_i$, known as \textit{Wilson coefficients}, encode the weak contributions and can be calculated perturbatively.
+The other set of operators, $\mathcal{O}_i$ describe the quark interaction vertices in such an effective field theory.
+The renormalisation scale, $\mu$, are generally required to be chosen of a similar order as the studied process.
+Gor radiative $B$ meson decays, conventionally, it is often set to be of order of the $b$ quark mass $\mu\sim m_b$.
 
 The exact expressions of operators $\mathcal{O}_i$ are given in \Cref{sec:appendix_local_opperators}, while the sketches of effective-processes that they represent ar given in \Cref{fig:b_to_s_gamma_effective}.
 \begin{figure}[htbp!]
@@ -327,14 +328,15 @@ It is expressed as a sum of a perturbative contribution and non-perturbative cor
 \begin{equation}\label{eq:btosgammarate_nonp}
     \Gamma(\bar{B}\ra\X_s\g) = \Gamma(b\ra s\g) + \partial\Gamma_{\mathrm{non-p.}},
 \end{equation}
-$\Gamma(b\ra s\g)$ is the perturbatively calculable rate of $b$ quarks decaying into charmless partons, and $\partial\Gamma_{non-p.}$ is the non-perturbative contribution arising outside of local operator product expansion.
-The non-perturbative effects arise from the so-called resolved photon contributions.
-These contributions are a result of the photon coupling directly to partons instead of the effective weak interaction vertex.
+$\Gamma(b\ra s\g)$ is the perturbatively calculable rate of $b$ quarks decaying into charmless partons, 
+and $\partial\Gamma_{non-p.}$ is the non-perturbative contribution arising outside of local operator product expansion, when accounting for the fact that the $b$ quark is not stationary inside the bound $B$ meson state.
 As long as an appropriately low photon energy threshold (in the decaying $B$ meson frame), \EB, is chosen, the non-perturbative effects in \Cref{eq:btosgammarate_nonp} can be considered smaller as they `average out' over the spectrum.
-However, due to contributions from $\ccbar$ resonances at low-\Egamma, it is conventionally chosen at $\Egamma>1.6~\gev$ \cite{Misiak:2009nr}.
+Due to contributions from $\ccbar$ resonances at low-\Egamma, it is conventionally chosen at $\Egamma>1.6~\gev$ \cite{Misiak:2009nr}.
 Until recently, a 5\% uncertainty was attached to this assumption \cite{Benzke:2010js}. 
 However, recent developments in understanding the non-perturbative effects \cite{Gunawardana:2019gep} led to an improved treatment of the associated uncertainties \cite{Misiak:2020vlo}.
-The origin of this contribution will be further discussed with the differential decay rate in \Cref{sec:btosgamma_spectrum_theory}.
+One notable example of non-perturbative effects that are retained in total branching fraction calculations arise from the so-called resolved photon contributions.
+These contributions are a result of the photon coupling directly to partons instead of the effective weak interaction vertex.
+The origin of the non perturbative contribution will be further discussed with the differential decay rate in \Cref{sec:btosgamma_spectrum_theory}.
 It will also be seen that the threshold for \EB is motivated also from the experimental side, as large background-process contamination is present in the low-\EB region.
 
 Using operator product expansion, one can calculate the matrix element $|\mel*{s\g}{\mathcal{L}_{\mathrm{eff}}}{b}|^2$ and integrate it from chosen energy threshold, $\Egamma>E_0$. 
@@ -591,8 +593,7 @@ In the low-\Egamma region non-resonant and resonant decays are effectively indis
 The inclusive model describes the spectrum as an average of all the states, and this is further enhanced by resolution effects in experimental data (see \Cref{sec:unfolding}).
 In the high-\Egamma region, however, the spectra is dominated by several resonances, most notably the well-separated $B\rightarrow\Kstar(892)\gamma$.
 A study by the authors of the Kagan-Neubert model \cite{Kagan:1998ym} show that the inclusive model for $m_{X_s}\gtrsim 1.1~\gevcc$ should be supplemented by the resonant decays.
-We will follow this approach when implementing a model for the analysis (ref later)
-\todo[inline]{reference to a chapter that will be written later, note to self}
+We will follow this approach when implementing a model for the analysis in \Cref{sec:signal_model}
 
 \section{New-physics opportunities in \texorpdfstring{\BtoXsdgamma}{B->Xsg}}\label{sec:btosgamma_bsm}
 

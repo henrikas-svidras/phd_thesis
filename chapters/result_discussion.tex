@@ -64,11 +64,21 @@ Therefore, a meaningful comparison is only such where the \EB threshold is the s
 The value in \Cref{eq:babar_measurement} is evaluated with a threshold of $\EB>1.9~\gev$.
 Assuming a linear shift of uncertainty, the results of this analysis are averaged $0.5\cdot(0.52+0.86)\approx0.69$.
 Therefore, the systematic uncertainty is slightly higher but comparable.
-Furthermore, the uncertainty estimates at this stage can still be improved
-(see \todo{seee})
+Furthermore, the uncertainty estimates at this stage can still be improved as will be discussed in \Cref{sec:future_prospects}.
 
-Finally, the evaluated photon energy spectrum moments in \Cref{tab:moments} show consistent results with the world averages.
-Compare this to the values:
+Finally, the measurement of \EB distribution moments agrees well with the world average values \cite{Workman:2022ynf}:
+\begin{equation}
+    \expval{\EB} = 2.314 \pm 0.011 ~\gev; \quad \expval{\EB^2} - \expval{\B}^2 = 0.303 \pm 0.0025.
+\end{equation}
+The uncertainties of the measured moments in \Cref{tab:moments} are several times larger than the world-average values.
+They contain a comparable significant statistical and a systematic uncertainty component.
+
+Interestingly, at higher-\EB thresholds (e.g. 2.1~\gev), while still larger, the systematic uncertainty is comparable to the total uncertainty of the world average.
+Interpreting the uncertainties from the partial branching fraction measurement in \Cref{tab:partial_branching_fractions}, this indicates that background and fit modelling uncertainties are large contributors to the systematic uncertainty at lower-\EB thresholds.
+Therefore, for improved accuracies of the hadronic tagged measurement
+the upcoming larger Belle~II dataset will not be sufficient alone --
+parameter estimation, background subtraction and modelling uncertainties have to be further studied.
+The next section will discuss the anticipated prospects for this goal.
 
 \section{Future prospects for hadronic-tagged \safeBtoXsgamma analysis at Belle~II}\label{sec:future_prospects}
 
@@ -110,15 +120,48 @@ The uncertainties on signal selection efficiency will further reduce as the unde
 The \BtoXdgamma in the future will be accurately subtracted when precise \BtoXdgamma measurements with Belle~II are performed.
 
 
-Summarising, it is plausible to expect world-leading hadronic-tagged \BtoXsgamma measurements when Belle~II has collected $1-5~\invab$ of data.
-Indeed, other type of inclusive \BtoXsgamma analysis techniques are already systematically limited (see \Cref{tab:btosgamma_inclusive_summary}) with the Belle and BaBar datasets.
+Summarising, world-leading hadronic-tagged \BtoXsgamma measurements with Belle~II datasets of $1-5~\invab$ are possible if remaining background contributions are understood to a 5\% or higher precision.
+This is a remarkable achievement given the fact that other type of inclusive \BtoXsgamma analysis techniques are already systematically limited (see \Cref{tab:btosgamma_inclusive_summary}) with the Belle and BaBar datasets.
 Therefore, a different approach, one that will be provided by the hadronic-tagged analyses, is necessary for further insights in the radiative \BtoXsgamma transitions.
-In the short term, as Belle has not reported a hadronic-tagged \BtoXsgamma analysis, a joint Belle and Belle~II may provide a total dataset of approximately $1\invab$, making such results achievable in the next couple of years.
+In the shorter term, as Belle has not reported a hadronic-tagged \BtoXsgamma analysis, a joint Belle and Belle~II may provide a total dataset of approximately $1\invab$, making such results achievable in the next couple of years.
 
 \section{Input of the results to theoretical averages}\label{sec:input_to_theory}
 
-Collaborating with the SIMBA group, the results in \Cref{tab:partial_branching_fractions}
-have been used to evaluate the $m_b$ and $\lambda_1$ paramaeters by combining the Belle II experimental results
-with those of the previous experiments.
+In collaborative effort with the SIMBA collaboration, the results of \Cref{tab:partial_branching_fractions}
+have been used to evaluate the $m_b$ and $\lambda_1$ and the $\mathcal{C}_7^{incl}$ parameters (see \Cref{sec:btosgamma_spectrum_theory}). 
+A simultaneous parameter estimation fit of all available experimental results of the photon energy spectrum that include
+BaBar and Belle results of hadronic, sum-of-exclusive, lepton tagged measurement strategies is performed.
+In this case, the Belle II result is also included.
+
+The fit result, and the comparison of the effect on the total value of the evaluated parameters is shown in \Cref{fig:simba_c7}.
+Note that the $\EB\in(1.8,2.0)$ interval is excluded from the fit due to a large uncertainty and differences of the interval widths
+to compared to earlier \BtoXsgamma measurements.
+The results slightly shift the central values of the parameters but the overall result is consistent to the earlier determinations,
+with a similar uncertainty.
+\begin{figure}[htbp!]
+    \centering
+    \subcaptionbox{\label{fig:simba_fit}}{
+        \includegraphics[width=0.45\textwidth]{figures/results_discussion/simba_partial_bfs_expectation.pdf}
+    }
+    \subcaptionbox{\label{fig:c7}}{
+        \includegraphics[width=0.3\textwidth]{figures/results_discussion/C7incl_mb_la055_henrikas.pdf}
+    }
+    \caption{\label{fig:simba_c7}
+    The results of the \BtoXsgamma spectrum parameter determination by the SIMBA collaboration which includes the results of the work in this thesis
+    \cite{Bernlochner:2020jlt}.
+    \Cref{fig:simba_fit} shows the results of the fit superimposed on \Cref{fig:partial_branching_fraction}.
+    \Cref{fig:c7} show the corresponding $|C_7V_{tb}V^*_{ts}|$ and $m_b^{1S}$ values.
+    The dark line (default) corresponds to the result without the Belle II results, whereas the red curve demonstrates the result with Belle II results included.
+    As expected, due to the current low statistical precision of the \BtoXsgamma measurement the effect is small.
+    Credit to the SIMBA collaboration.
+    }
+\end{figure}
+
+
+With the new inputs from Belle II, the determined SIMBA values are:
+\begin{equation}\label{eq:new_simba_values}
+    m_b^{1S}= 4.XXX~\gev; \quad \lambda_1 = 0.XXXX.
+\end{equation}
+The results can be directly compared with the previous values from SIMBA given in \Cref{eq:simba_result}.
 
 \todo[inline]{Misiak, Kerstin results if I ever get them...}
