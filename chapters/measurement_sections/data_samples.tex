@@ -37,7 +37,6 @@ Normally, \epem\ra\tautau events are also considered as background, however when
 
 The analysis will be performed on 1.6~\invab of simulation, which is more than 6 times larger than the on-resonance data set for this analysis.
 For the background subtraction step described in \Cref{sec:background_subtraction}, which has the strongest dependance on limited-\MC sample size, a significantly larger dataset is crucial.
-\todo[inline]{described where?}
 
 The generic-\B \MC includes \BtoXsgamma decays, however the number of such events is expected to be small, further diminished by the efficiency of the hadronic-tagged analysis procedure, as discussed in \Cref{sec:had_tagged_overview}.
 For this reason we utilise additional samples:
@@ -47,12 +46,11 @@ For this reason we utilise additional samples:
     \item 10 million \BpBm sample, where at least one $B$ is guaranteed to decay as \Bpm\ra\Kstarpm\gamma~based on the \texttt{EvtGen SVP\_HELAMP} model \cite{Ryd:2005zz};
     \item 10 million \BzBzb sample, where at least one $B$ is guaranteed to decay as \Bz\ra\Kstarz\gamma~based on the \texttt{EvtGen HELAMP} model \cite{Ryd:2005zz}.
 \end{itemize}
-The first two are used for general analysis setup in sections XXXX.
-The latter two will be combined in with \BtoXsgamma in a hybrid-model approach \cite{Ramirez:1989yk} discussed in \Cref{sec:signal_model}.
+The first two are used for general analysis setup in 
+\Cref{sec:event_reconstruction,sec:photon_selection,sec:continuum_suppression,sec:final_optimisation,sec:tag_selection} and similar studies.
+The $B\to\Kstar\gamma$ samples will be combined in with \BtoXsgamma in a hybrid-model approach \cite{Ramirez:1989yk} discussed in \Cref{sec:signal_model}.
 
 In all cases, the detector response and readout is simulated using Geant 4 \cite{GEANT4:2002zbu}.
-
-\todo[inline]{fix up this to finish the section nicely}
 
 \subsection{Signal model}\label{sec:signal_model}
 
