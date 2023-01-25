@@ -94,9 +94,9 @@ In general, the highest statistical significance is observed with the widest bin
 Irrespective of the bin-width,  $\EB\in(1.4,1.8)$ and $\EB>2.6$ show a statistical significance lower than unity, therefore the selected binning should attempt to maximise it.
 In the case of $\EB\in(1.8,2.0)$ bin, it is observed that a similar statistical significance can be achieved a with $\EB\in(1.9,2.0)$ bin.
 This motivates to extend it, such that an \EB threshold of 1.8~\gev could be achieved, as opposed to the 1.9~\gev threshold in Ref.\cite{BaBar:2007yhb}.
-Later studies performed in XXX showed that the resolution of \EB is expected to be roughly 30~\mev.
-The similarity between resolution and \EB can lead to complications in the unfolding procedure.
-Due to the fact that bin-by-bin unfolding is employed in this analysis, the 50~\mev bins were not considered.
+Later studies performed in \Cref{sec:resolution_studies} showed that the resolution of \EB is expected to be roughly $30-40~\mev$.
+The coarse intervals of \EB compared to the resolution may lead to complications in the unfolding procedure.
+As the simpler bin-by-bin unfolding is employed in this analysis, the 50~\mev bins were not considered.
 
 These considerations led to choosing the following eleven \EB bins for the analysis:
 \begin{itemize}
@@ -106,13 +106,14 @@ These considerations led to choosing the following eleven \EB bins for the analy
 \end{itemize}
 This choice provides a compromise between statistical significance, \EB spectrum resolution and complications in unfolding.
 The expected continuum, combinatorial, correctly-tagged non-\BtoXsgamma $BB$ and correctly-tagged \BtoXsgamma event count expectations for the chosen binning are provided in \Cref{tab:expected_events}.
-Note that the table entry containing combinatorial \BB includes also \BtoXsgamma events, even if it is considered background in the \Mbc fits in XX.
-On the other hand peaking-\BB background, which is not rejected by the \Mbc fit and will be treated in XXX, is separated from \BtoXsgamma.
+Note that the table entry containing combinatorial tag-\B backgrounds, may include events where \BtoXsgamma events are present.
+However, it is  necessarily rejected as background in the \Mbc fits in \Cref{sec:fitting_mbc}.
+On the other hand peaking-\BB background, which is not rejected by the \Mbc fit and will be treated in \Cref{sec:background_subtraction}, is separated from \BtoXsgamma.
 The table also highlights the importance of a correct binning, as it is obvious that several bins are able to achieve a comparable statistical significance to the one that could be achieved if just a single bin was used.
 
 \begin{table}[htbp!]
     \caption{\label{tab:expected_events}Expected number of events as a fraction of the dataset after selections in \Cref{tab:cutflow}, for the binning chosen in \Cref{sec:binning}.
-    The table also shows corresponding statistical significance for a 200~\invfb sized dataset.
+    The table also shows corresponding statistical significance for a 189~\invfb sized dataset.
     }
     \input{tables/expected_events.tex}
 \end{table}
@@ -120,8 +121,6 @@ The table also highlights the importance of a correct binning, as it is obvious 
 Because of the low expected statistical significance, the $\EB\in(1.4,1.8)$ and $\EB>2.7~\gev$ are chosen as validation regions.
 They will later be referred to as \textit{sidebands}.
 Consequentially, the signal region of the study is defined as $\EB\in(1.8,2.7)$.
-
-\todo[inline]{If there is time transform this to 189 invfb, otherwise include why I am not doing that, eg it was the size the analsys was thought to be applied on etc etc.}
 
 \subsection{\texorpdfstring{\Mbc}{Mbc} fit model building}\label{sec:fitting_setup}
 

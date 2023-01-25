@@ -10,7 +10,12 @@ In this section, these definition for best-candidate selection are discussed mor
 
 The number of tag-side candidates for \feiBp and \feiBz modes, after the optimised selections in \Cref{tab:cutflow},
 is shown in \Cref{fig:fei_tag_reco_candidates_post_optimisation}.
-Overall, comparing to \Cref{fig:fei_tag_reco_candidates}, the candidate fractions are similar --
+Overall, comparing to \Cref{fig:fei_tag_reco_candidates}, the candidate fractions are similar:
+About 67\%(74\%) of events for \feiBp and \feiBz modes have only 1 tag-side candidate.
+About 19\%(17\%) of events for \feiBp and \feiBz modes have two tag-side candidates and 7\%(5\%) have 3.
+The number of candidates per event reduces quickly, but faster for \Bz modes, 
+with roughly 2\%(1\%) of events having more than 5 candidates for \Bp and \Bz.
+Note that the same event can have a \Bp and \Bz event reconstructed.
 which attests to the fact that background (and particularly continuum) suppression was done without introducing a bias in preferentially selecting events with large \feiProb in \Cref{sec:continuum_suppression,sec:photon_selection}.
 
 \begin{figure}[htbp!]
@@ -19,11 +24,7 @@ which attests to the fact that background (and particularly continuum) suppressi
     \caption{\label{fig:fei_tag_reco_candidates_post_optimisation} 
     Relative fractions of events for the number of \B meson candidates in the generic \MC dataset after the background suppression selections in \Cref{tab:cutflow}.
     This figure can be directly compared with \Cref{fig:fei_tag_reco_candidates}.
-    The overall fractions are similar.
-    About 67\%(74\%) of events for \Bp and \Bz \FEI modes have only 1 tag-side candidate.
-    About 19\%(17\%) of events for \Bp and \Bz \FEI modes have two tag-side candidates and 7\%(5\%) has 3.
-    The number of candidates per event reduces quickly, but faster for \Bz modes, with roughly 2\%(1\%) of events having more than 5 candidates for \Bp and \Bz.
-    Note that the same event can have a \Bp and \Bz event reconstructed.
+    The overall fractions are similar, which confirms a valid background-suppression procedure, which does not introduce a preference to specific tag-side modes.
     }
 \end{figure}
 
@@ -48,8 +49,7 @@ The figure also includes a similar \Mbc test for the continuum events.
     This is shown for \BptoXsgamma events in \Cref{fig:bp_same_mode_best_tag_selection} 
     and \BztoXsgamma in \Cref{fig:bz_same_mode_best_tag_selection}.
     The figures are normalised to their total integral value such that a shape comparison can be performed.
-    Overall, the difference in resolution is small and evaluated at about \order(0.1\%), which is at least an order of magnitude smaller than expected statistical precision of the analysis.
-    \todo[inline]{ref resolution chapter}.
+    The difference between the distributions is negligible.
     }
 \end{figure}
 
@@ -76,10 +76,9 @@ The figure also includes a similar \Mbc test for the continuum events.
     }    
 \end{figure}
 
-As it is desirable to emphasise the contrast between continuum and $B$ events for the fitting step that will follow (see XXX)
-\todo[inline]{XXX}
+As it is desirable to emphasise the contrast between continuum and $B$ events for the fitting step that will follow (see \Cref{sec:fitting_mbc})
 the highest \feiProb candidate in each event is chosen as the $B$ candidate with virtually no bias to the resolution.
-However, the study here, as of yet, does not address the cases when there is a candiate in the same event reconstructed in \feiBp and \feiBz.
+However, the study here, as of yet, does not address the cases when a candidate in the same event is reconstructed in \feiBp and \feiBz modes.
 Therefore, for now, both candidates are kept in such events and the study is continued in \Cref{sec:select_best_candidate}.
 
 \subsection{Selection between \texorpdfstring{\feiBp}{feiB+} and \texorpdfstring{\feiBz}{feiB0} mode}\label{sec:select_best_candidate}
@@ -153,7 +152,7 @@ The categories are as follows:
     \item The tag-$B$ has a (n-th) daughter non-final-state particle which belongs to a different particle;
     \item Different error in the truth-matching procedure.
 \end{enumerate}
-Furthermore, all possible combinations between these are created (e.g. The tag-$B$ has a photon \textbf{and} a massive final-state particle missing.)
+Furthermore, all possible combinations between these are created (e.g. The tag-$B$ has a photon \textit{and} a massive final-state particle missing.)
 In total 108 combined categories are observed in the admixture of \BtoXsgamma signal \MC samples for $B$ meson candidates.
 Most categories, particularly higher-order combinations, do not have any entries in simulated data samples due to their rareness or kinematic inconsistency.
 
@@ -214,9 +213,8 @@ For the rest of this thesis a tag $B$ meson that provides a `good' kinematic con
     \subcaptionbox{\label{fig:isSig_comparison}}{
         \includegraphics[width=0.4\textwidth]{figures/best_tag_selection/isSig_tag_comparison.pdf}
     }
-    \caption{\label{fig:good_tag_definitions} \Mbc distribution of \BtoXsgamma admixture with split by "good"/"bad" kinematic constrain criterion (\Cref{fig:goodbad_comparison})
+    \caption{\label{fig:good_tag_definitions} \Mbc distribution of \BtoXsgamma admixture with split by ``good''/``bad'' kinematic constrain criterion (\Cref{fig:goodbad_comparison})
     and the conventional perfect/non-perfect reconstruction criterion (\Cref{fig:isSig_comparison}).
     The definition of a tag-$B$ meson that provides a good kinematic constraint described in \Cref{sec:good_tag_definition} is clearly able to describe the resonant-\Mbc structure better.
-    \todo[inline]{why are they differently normalised????}
     }
 \end{figure}

@@ -49,22 +49,21 @@ Consider the hadronic-tagged measurement of BaBar \cite{BaBar:2007yhb} (extrapol
     \mathcal{B}(\BtoXsgamma) = 3.90 \pm 0.91 \mathrm{(syst.)} \pm 0.64 \mathrm{(stat.)}.
 \end{equation}
 It is possible to compare this to the results of the analysis presented here (\Cref{tab:integrated_branching_fractions})
-to see that the statisitcal uncertainty is ($0.91/0.80\approx=1.14$) times lower.
+to see that the statisitcal uncertainty is ($0.91/0.80\approx1.14$) times lower.
 The improvement of the statistical uncertainty is likely a combination of several reasons:
 \begin{itemize}
-    \item A higher tagging efficiency at Belle~II offered by the \FEI algorithm compared to the one used at BaBar;
+    \item A higher tagging efficiency at Belle~II offered by the \FEI algorithm compared to the one used at BaBar (compare \FEI efficiency in \Cref{eq:tag_efficiency_with_uncertainty} with the 0.3\% reported in Ref.~\cite{BaBar:2007yhb});
     \item Different continuum suppression strategy (the Belle~II analysis uses a \BDT, whereas BaBar utilised a Fischer discriminant);
     \item Different fitting setup (the Belle~II analysis uses three \PDF{s}, whereas BaBar perform the fit using a Crystal Ball and ARGUS \PDF combination);
 \end{itemize}
 and others.
-\todo[inline]{BaBar tagging efficiency}
 
-For the comparison of systematic uncertainty, it highly depends on the lower-\EB energy threshold.
+The systematic uncertainty highly depends on the lower-\EB energy threshold due to different components of the systematic uncertainty obtaining different importance.
 Therefore, a meaningful comparison is only such where the \EB threshold is the same.
 The value in \Cref{eq:babar_measurement} is evaluated with a threshold of $\EB>1.9~\gev$.
-Assuming a linear shift of uncertainty, the results of this analysis are averaged $0.5\cdot(0.52+0.86)\approx0.69$.
-Therefore, the systematic uncertainty is slightly higher but comparable.
-Furthermore, the uncertainty estimates at this stage can still be improved as will be discussed in \Cref{sec:future_prospects}.
+Assuming a linear shift of uncertainty, the result of the Belle II analysis presented here is averaged $0.5\cdot(0.52+0.86)\approx0.69$.
+Therefore, the systematic uncertainty is slightly higher but comparable, which is consistent with the lower-\EB threshold setting.
+Furthermore, the evaluated uncertainties leave room for improvement in the future as will be discussed in \Cref{sec:future_prospects}.
 
 Finally, the measurement of \EB distribution moments agrees well with the world average values \cite{Workman:2022ynf}:
 \begin{equation}
@@ -160,8 +159,10 @@ with a similar uncertainty.
 
 With the new inputs from Belle II, the determined SIMBA values are:
 \begin{equation}\label{eq:new_simba_values}
-    m_b^{1S}= 4.XXX~\gev; \quad \lambda_1 = 0.XXXX.
+    m_b^{1S}= 4.748\pm0.043~\gevcc; \quad \lambda_1 = -0.219\pm0.082~\gev^2/c^4,
 \end{equation}
 The results can be directly compared with the previous values from SIMBA given in \Cref{eq:simba_result}.
+The uncertainties for both values, as before, combine fitting, theoretical and parametric components.
+The latter two are assumed to not change when evaluating the total uncertainty.
 
-\todo[inline]{Misiak, Kerstin results if I ever get them...}
+\todo[inline]{Misiak results if I ever get them...}

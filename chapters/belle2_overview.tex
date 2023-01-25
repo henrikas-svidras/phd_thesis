@@ -4,10 +4,13 @@ A common strategy to study \B meson decays is by dedicated colliders, known as $
 $B$~factory experiments operate by producing large quantities of \BB pairs, through the creation of \FourS mesons that primarily decay to two \B meson pairs (\BB) \cite{Workman:2022ynf}.
 Historically, two $B$ factory experiments have operated:
 \begin{itemize}
-    \item BaBar with the PEP-II accelerator at SLAC, USA;
-    \item Belle with KEKB accelerator at KEK, Japan.
+    \item BaBar with the PEP-II accelerator at SLAC, USA \cite{BaBar:1995bns};
+    \item Belle with KEKB accelerator at KEK, Japan \cite{Belle:2000cnh}.
 \end{itemize}
-Although not a $B$ factory, another experiment, known as LHCb, with the LHC accelerator at CERN, collects data from $B$ mesons that are produced in proton-proton collisions.
+They are sometimes also referred to as first-generation asymmetric-energy $B$ factories, as they are the first that employed asymmetric beam collisions (see \Cref{sec:superkekb}).
+CLEO \cite{CLEO:1982pvq} and ARGUS \cite{ARGUS:1988bds} experiments also collected significant $B$ meson datasets at symetric \epem collision energy \FourS energies and are therefore sometimes considered as predecessors to $B$ factories. 
+
+Although not a $B$ factory, another experiment, known as LHCb \cite{LHCb:2008vvz}, with the LHC accelerator at CERN, collects data from $B$ mesons that are produced in proton-proton collisions.
 It has been running since 2008 and is still in operation.
 
 The two aforementioned $B$ factory experiments have since completed their operation.
@@ -16,9 +19,7 @@ Belle~II is a detector at the KEK laboratory in Tsukuba, Japan.
 Its main purpose is the collection of electron-positron (\epem) collision data 
 at the center of mass energies ($\sqrt{s}$) at or near the \FourS meson mass.
 The colliding beams are provided by the SuperKEKB \epem collider.
-This chapter provides an overview of Belle II and introduces the mains concepts of the SuperKEKB accelerator.
-
-\todo[inline]{add quotes.}
+This chapter provides an overview of Belle II and introduces the main concepts of the SuperKEKB accelerator.
 
 \section{The SuperKEKB accelerator}\label{sec:superkekb}
 
@@ -243,7 +244,8 @@ The velocity information, combined the with the knowledge of particle's momentum
 The \TOP detector \cite{Fast:2017pff} consists of sixteen $270 \times 45 \times 2$~\cm quartz radiator bars.
 The working principle is illustrated in \Cref{fig:top}.
 One end of the quartz crystal contains a spherical mirror that reflects the light to the opposite end containing photomultiplier tube arrays.
-Due to a high refractive index of quartz, the Cherenkov light emitted by passing particles undergoes a total internal reflection and propagates to the photo-multiplier tubes.
+Due to a high refractive index of quartz, the Cherenkov light emitted by passing particles undergoes a total internal reflection and propagates to the
+microchannel plate photo-multiplier tubes.
 Given a precisely known angle of the incoming particle, the time-of-propagation inside the chamber is a function of $\theta_C$.
 The time of arrival of the photons is compared to the expectated distributions for different particle hypotheses ($e^{\pm},\mu^{\pm},\pi^{\pm},K^{\pm},p^{\pm}$) and corresponding likelihood values are computed for each (see \cite{Yonenaga:2020eby} for details).
 
@@ -346,7 +348,7 @@ The tracks are reconstructed by combinining the information from \CDC and/or \SV
 
 Each particle interacting in the \ECL deposits energy into the crystal it interacts with.
 This deposited energy, and the time of each energy deposit, is recorded by the calorimeter.
-Clusters are sets energy deposits in the \ECL from the interaction of a single particle that traversed the detector.
+Clusters are sets of energy deposits in the \ECL from the interaction of a single particle that traversed the detector.
 A graphical illustration of the reconstruction of a cluster in an experimental environment is shown in \Cref{fig:clustering}.
 \begin{figure}[htbp!]
     \centering

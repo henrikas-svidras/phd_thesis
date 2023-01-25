@@ -86,8 +86,8 @@ The resulting optimal selections are also shown in the Figures.
 
 The results between \Bp and \Bz modes, as well as using $\mathrm{FOM}_1$ and $\mathrm{FOM}_2$ are consistent, with only marginal differences.
 Therefore, due to the model-independance of $\mathrm{FOM}_2$, this figure-of-merit will be the only one discussed henceforth.
-At this stage, it is unnecessary to choose the `best' selection, as another simultaneous optimisation will be performed later, together with continuum suppression \BDT output.
-\todo[inline]{(see XXX when I optimise)}. 
+At this stage, it is unnecessary to choose the `best' selection, 
+as another simultaneous optimisation will be performed later, together with continuum suppression \BDT output in \Cref{sec:final_optimisation}.
 The main goal is to reduce the sample size to include only relevant data, such that the trained \BDT can make decisions for difficult cases that are not easily distinguishable using simple selection.
 Based on \Cref{fig:selection_optimisations}, pre-selections are chosen, which suppress background but retain most of the signal.
 The requirement for a loose selection are tailored such that more roughly 75\% of \BtoXsgamma candidates are retained and are shown in \Cref{tab:preselections}.
@@ -97,8 +97,7 @@ They are chosen to be no tighter than their optimal selection and preferrably co
     \centering
     \caption{\label{tab:preselections} Selections that remove background and misreconstructed candidates,
     preparing the reconstructed datasets \Cref{sec:reconstruction_overview} for continuum \BDT training (\Cref{sec:continuum_training}).
-    A later optimisation will be used for a final candidate selection XXXX
-    \todo[inline]{add here later}
+    A later optimisation will be used for a final candidate selection in \Cref{sec:final_optimisation}.
     }
     \input{tables/loose_selections.tex}
 \end{table}
@@ -124,11 +123,9 @@ The scale at which \BtoXsgamma signal \MC scaled differs at about a factor of 10
 \end{figure}
 
 Finally, many combinatorial tag-side candidates in \BB events may still appear contribute to the analysis at this stage.
-A more detailed definition for a `well-reconstructed' tag will be explored later 
-\todo[inline]{add later}.
-At this stage, it is sufficient to acknowledge the fact that the vast majority of correctly reconstructed tag-side candidates is expected to lie $\Mbc>5.27~\gevcc$.
-Therefore, this requirement is also adopted for studies and training in \Cref{sec:continuum_features}--XXX
-\todo[inline]{add X}.
+A more detailed definition for a `well-reconstructed' tag will be explored later in \Cref{sec:good_tag_definition}.
+At this stage, it is sufficient to acknowledge the fact that the vast majority of correctly reconstructed tag-side candidates is expected to have $\Mbc>5.27~\gevcc$.
+Therefore, this requirement is also adopted for optimisation studies and training in \Cref{sec:continuum_features,sec:continuum_training,sec:continuum_validation}.
 
 \subsection{Continuum suppression feature selection}\label{sec:continuum_features}
 
@@ -246,7 +243,7 @@ Hyper parameter optimisation is performed in a grid-like search, based on two qu
     \Delta \mathtt{AUC} \equiv |\mathtt{AUC}_{\mathrm{train}}& - \mathtt{AUC}_{\mathrm{test}}|,\\
     \end{split}
 \end{align}
-where $\mathtt{AUC}_{\mathrm{test}}$ is the \AUC score for training or testing samples.
+where $\mathtt{AUC}_{\mathrm{train}/\mathrm{test}}$ is the \AUC score for training or testing samples.
 A set of hyper-parameters is sought, such that $ \mathtt{AUC}_{\mathrm{test}}$ is maximised, while $\Delta \mathtt{AUC}$ is minimised.
 The results of hyper-parameter optimisation are summarised in \Cref{tab:grid_search} and shown in \Cref{fig:hyper_param}
 Larger depths, number of trees values are not explored, to avoid non-linear correlations which may be learnt by the classifier and would require additional studies to pinpoint.

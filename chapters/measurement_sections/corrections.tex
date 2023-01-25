@@ -2,18 +2,19 @@ The fitter and background subtraction procedure, introduced in \Cref{sec:fitting
 have been thoroughly validated in \Cref{sec:MC_validation} -- in simulation.
 The real challenge, as usual, is ensuring that the conclusions and results observed in simulation will generalise correctly to real Belle II data.
 The key concept of a blinded analysis dictates that one must validate the analysis procedure in control samples or regions -- collections of data that are abundant, well-understood and provide insight to the behaviour of signal in the detector.
-In this Section, the discussion about \FEI validation, \piz and $\eta$ veto validation, photon detection efficiency and background modelling will be presented.
+In this Section, the discussion about \FEI validation, 
+\piz and $\eta$ veto validation, photon detection efficiency and background modelling will be presented.
+The combined results from all sections are shown in \Cref{tab:correction_table}.
 
 \begin{table}[htbp!]
     \centering
-    \caption{\label{tab:correction_table} The corrections for background (and later -- signal) efficiency in the hadronic-tagged \BtoXsgamma photon-energy spectrum measurement.
+    \caption{\label{tab:correction_table} The corrections for background (and signal in \Cref{sec:validation_efficiency}) efficiency in the hadronic-tagged \BtoXsgamma photon-energy spectrum measurement.
     \FEI calibration calculations are discussed in \Cref{sec:fei_calibration}.
-    Derivation of correction for the \piz and \eta veto are presented in \Cref{sec:piz_eta_calibration}.
+    Derivation of correction for the \piz and $\eta$ veto are presented in \Cref{sec:piz_eta_calibration}.
     The photon detection efficiency study is described in \Cref{sec:photon_efficiency}.
-    Background modelling corrections are calculated in XXXX.
-    The \FEI, \piz and \gamma corrections are averaged values corresponding to the respective \EB bin,
+    Background modelling corrections are calculated in \Cref{sec:remaining_bb_background_modelling}.
+    The \FEI, \piz and \g corrections are averaged values corresponding to the respective \EB bin,
     as the event-level information is lost after estimating good tag-\B counts using the \Mbc fit and performing the leftover-\BB background subtraction.
-    \todo[inline]{figure out where this table goes.}
     }
     \input{tables/correction_table.tex}
 \end{table}
@@ -159,7 +160,8 @@ This value is consistent with all other correction factors.
 
 One of the main necessities of a measurement involving photons in the final state, is, of course, a precise and accurate simulation of the electromagnetic calorimeter -- the main tool of neutral particle detection.
 In Belle~II, the \ECL provide this function.
-Although it is known that its precision and resolution are excellent suited for flavour physics studies, exact data/simulation differences have to be known.
+Although it is designed precision and resolution suitable for flavour physics studies, 
+exact data/simulation differences have to be studied.
 As part of the original work presented in this thesis, a Belle~II calorimeter photon detection efficiency study has been performed.
 The initial setup of the analysis has been prepared by Dr. Natalia Kovalchuk and Dr. Torben Ferber, but I have updated the procedure, reworked the covered
 and performed the full systematic uncertainty evaluation during my doctoral studies.
@@ -219,10 +221,11 @@ First, tracks consistent with $\epem\ra\mumu$ processes are selected by requirin
 \end{itemize}
 The two muon tracks passing these requirements are used to evaluate the missing energy and momentum of the event, requiring the recoil magnitude $p_{\mathrm{recoil}}>0.2~\gevc$.
 Backgrounds from various $\epem\ra\mathrm{hadrons}$ or $\epem\ra\tautau$ are strongly suppressed by the mass associated to the missing momentum requirement,
-$m^2_{\mathrm{Recoil}}<2~\gev/c^4$. 
+$m^2_{\mathrm{Recoil}}<2~\gev/c^4$.
+This requirement ensures that the particle associated with the missing momentum is consistent with a photon.
+Generally, this does not have to be true for non $\epem\ra\mumu(\gamma)$ events where more than two tracks are present.
 Additional checks, such as sufficient isolation of the muon tracks and recoil are required to ensure adequate separation between their energy deposits in the \ECL.
 If all the aforementioned requirements are passed, an event is considered to have a \textit{recoil found}.
-\todo[inline]{talk a bit why m2recoil is useful here}
 The distributions for events with a recoil found are shown in \Cref{fig:selected_photon_data_mc}.
 
 The photon candidates are selected by requiring them to have a center-of-mass energy of at least $75~\mev$ and a timing of the associated cluster at $\pm200~\ns$.
@@ -287,7 +290,7 @@ In the \BtoXsgamma analysis, the event-level information is lost after performin
 Therefore the average corrections are evaluated in \BtoXsgamma hybrid-signal model based on the \EB spectrum binning.
 These value are provided in \Cref{tab:correction_table}.
 
-\subsection{Modelling of remaining-\texorpdfstring{\BB}{BB} background processes}
+\subsection{Modelling of remaining-\texorpdfstring{\BB}{BB} background processes}\label{sec:remaining_bb_background_modelling}
 
 While the results of previous sections correct for the procedures used in the removal of photon and tag-side backgrounds, they do not account for any discrepancies that may be introduced when generating the simulated datasets.
 Although a full study of all possible background modes that may contribute to the leftover-\BB background is, likely, a subject for another full doctoral thesis, the adequacy of background simulation was studied for the purposes of the analysis presented here.
@@ -340,11 +343,13 @@ In the high-\EB region background photons are rarer and often originate as outli
 
 \subsection{Out-of-time photon suppression}\label{sec:out_of_time_photon_suppression}
 
-Although no special corrections are calculated, an additional selection is added to ensure that photons from beam background and previous collision events are not included in the analysis.
-It is known that these effects are not well captured by the Belle~II run-period independent simulation that was used in this analysis.
-Therefore, a timing selection requires the photon to be registered in a time-window $|\tau_{\gamma}|<200~\ns$ around the collision time.
-Furthermore, to reject poorly reconstructed photons, a $|\tau_{\gamma}|/\Delta\tau_{\gamma}<2$ requirement is added, which suppresses photons with low-quality or failed cluster fits.
+Although no special corrections are calculated, an additional selection is added to ensure that photons produced by beam background
+\footnote{particles that are not from the primary collision but are produced by the interactions of the accelerator beam 
+and residual gas in the beam pipe, or the material of the detector},
+and previous collision events are not included in the candidate photon selection.
+Such machine-related background vary based on the experimental conditions and it is known that these effects are not well captured by the Belle~II run-period independent simulation that was used in preparation for this analysis.
+Therefore, a timing selection, requires the photon to be registered in a time-window $|\tau_{\gamma}|<200~\ns$ around the collision time.
+Furthermore, to reject photons associated with low-quality waveform fits, a $|\tau_{\gamma}|/\Delta\tau_{\gamma}<2$ requirement is added, 
+where $\Delta\tau_{\gamma}$ is the uncertainty of the photon timing measurement.
 Using a technique analogous to $\epem\ra\mumu$ recoil study, it is observed that it degrades the photon finding efficiency by less than 2\%.
-Therefore these selections are employed with no data-to-simulation correction.
-
-\todo[inline]{review this, because this is nonsense.Maybe add beam background plots.}
+Therefore these selections are employed with no additional data-to-simulation correction.

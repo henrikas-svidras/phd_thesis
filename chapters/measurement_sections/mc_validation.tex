@@ -7,15 +7,15 @@ The studies in this Section will show such results.
 
 The results that were shown in \Cref{fig:mc_fit_yield_comparisons} only provided results for fitting 1.6~\invab -- a dataset about an order of magnitude larger than is expected in the case of this analysis.
 Therefore, the generic \MC dataset is pseudorandomly split into 10 smaller subsets, corresponding to 160~\invfb, and each of them are fitted independently.
-The choice of 160~\invfb, rather than 190~\invfb which is the sample size of the Belle~II data used in the analysis, is due to anticipated data-simulation differences.
-\todo[inline]{see XXX and next paragraph performed where?}
+The choice of 160~\invfb, rather than 190~\invfb which is the sample size of the Belle~II data used in the analysis, 
+is due to anticipated data-simulation differences (see discussion of data--simulation differences \Cref{sec:corrections}, particularly \FEI calibration in \Cref{sec:fei_calibration}).
 Indeed, a 190~\invfb dataset should correspond to roughly 160~\invfb in simulation due to differences in tag-\B reconstruction efficiency.
 
 The resulting 10 fits and the estimated $\mathcal{N}_{CB}$ corresponding to each \EB bin are shown in \Cref{fig:extracted_validation_mc}.
 The expected number of events in each fit is always equal to one tenth of that in the total generic \MC dataset.
 It can be observed that all data points, and their average, are statistically compatible with the expectation.
 These results indicate, that despite using a 10 times larger dataset to define the \PDF{s}, this \Mbc fit model produces reliable and stable results.
-Further tests, particularly a test ensuring that the fitter is unbiased, are performed later.
+Further tests, particularly a test ensuring that the fitter is unbiased, are performed in \Cref{sec:MC_validation}.
 
 \begin{figure}[htbp!]
     \includegraphics[width=0.9\textwidth]{figures/mc_validation/extracted_signal_generic_mc.pdf}
@@ -53,8 +53,7 @@ The results showcased in \Cref{fig:extracted_validation_mc,fig:subtracted_valida
 In this section so far, no particular modelling of \BtoXsgamma spectrm has been assumed.
 In fact, following the tests from \Cref{fig:mc_fit_yield_comparisons}, it is clear that the analysis is \textit{so far} signal-model independent, as no direct assumptions have been made thus far.
 On the other hand, following the setup that is taken to remove \BB backgrounds after the \Mbc fit, the analysis is heavily background-model dependent.
-For this reason, special emphasis will be put on testing the \textit{background} description validation, as opposed to signal validation in later chapters XXXX.
-\todo[inline]{later chapter xxxx}
+For this reason, special emphasis will be put on testing the \textit{background} description validation in \Cref{sec:corrections,sec:validation}.
 
 \subsection{Closure test of the \texorpdfstring{\Mbc}{Mbc} fitter}\label{sec:closure_test}
 
