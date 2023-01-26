@@ -1,0 +1,49 @@
+{"rule":"SOME_OF_THE","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q introduces the concept of flavour physics in Standard Model and some of the main challenges related to it.\\E$"}
+{"rule":"CD_NN","sentence":"^\\QEach species of fermion have a distinct flavour, resulting in six quark and six lepton flavours in .\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QEach species of fermion have a distinct flavour, resulting in six quark and six lepton flavours in .\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QOn the other hand, a transition between two generations is not possible for charged leptons .\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QIn , each particle has a partner particle, which is called an anti-particle.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QThe Majorana versus Dirac fermion problem is discussed widely in literature, e.g. Ref\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QThe anti particle of neutrinos (\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q) is denotes as (\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q) .\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QIn order to incorporate the \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q violation into , M. Kobayashi and T. Maskawa \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q built upon the predecessor work by N. Cabibo \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, introducing the quark-mixing model based on the Cabibo-Kobayashi-Maskawa () matrix.\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QPrecise measurements of the matrix elements have been performed to test the validity of .\\E$"}
+{"rule":"SENTENCE_WHITESPACE","sentence":"^\\QB. physics.\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QTherefore, the study of its decays open the possibility to measure a wide range of parameters of , including the matrix, \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q violation measurements, lepton-mass measurements etc.\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QThe decay rate of .\\E$"}
+{"rule":"SENTENCE_WHITESPACE","sentence":"^\\QB->Xsg.\\E$"}
+{"rule":"ARROWS","sentence":"^\\QB->Xsg.\\E$"}
+{"rule":"ARROWS","sentence":"^\\QB->Xsg.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QB->Xsg.\\E$"}
+{"rule":"THE_PUNCT","sentence":"^\\QIn the , \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q transitions are mediated by so-called flavour-changing neutral currents.\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QDue to colour confinement of the quarks, in reality they manifest as or , where \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q and \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q denote any meson state originating from the \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q quark hadronisation.\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QThe masses of possible weakly-interacting particles that can appear in the loops may be as high as (100 ) \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q which makes studying these decays incredibly appealing.\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QIn weak decays, including , the formal framework for such an effective field theory is called the operator product expansion \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QSchematic representation of the effective \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q governing to .\\E$"}
+{"rule":"DOUBLE_PUNCTUATION","sentence":"^\\QAs long as an appropriately low photon energy threshold (in the decaying \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q meson frame), , is chosen, the non-perturbative effects in \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q can be considered smaller as they `average out' over the spectrum.\\E$"}
+{"rule":"COMP_THAN","sentence":"^\\QAs long as an appropriately low photon energy threshold (in the decaying \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q meson frame), , is chosen, the non-perturbative effects in \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q can be considered smaller as they `average out' over the spectrum.\\E$"}
+{"rule":"SOME_OF_THE","sentence":"^\\QSome of the next-to-next-to-leading order corrections depend on the mass of the charm quark.\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QFor , the uncertainties in \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q arise from unevaluated higher-order effects, the necessity to perform an interpolation in \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, and a parametric uncertainty that also encodes the non-perturbative effects.\\E$"}
+{"rule":"CD_NN","sentence":"^\\QThe first two amount to %\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q each, whereas the last is considered at %\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QThe photon energy spectrum of .\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, which means that the application of soft-collinear effective-theory is fully capable to separate perturbative and non-perturbative contributions in the differential decay-rate of .\\E$"}
+{"rule":"WHITESPACE_RULE","sentence":"^\\QThe schematic representation of the theoretical spectrum components and the comparison of them in data.\\E$"}
+{"rule":"WHITESPACE_RULE","sentence":"^\\QThe spectrum predicted by the Kagan-Neubert model, generated using the EvtGen generator's BTOXSGAMMA model.\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QNew-physics opportunities in .\\E$"}
+{"rule":"FOR_VB","sentence":"^\\QSome of the models which could exhibit these effects for include two-Higgs-doublet models () \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, minimal supersymmetric models with minimal flavour violation \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q and left-right symmetric models \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"THE_SENT_END","sentence":"^\\QThe reason for the attractiveness of this model is the fact that it can be incorporated in many theories that provide to the long-standing issues of the .\\E$"}
+{"rule":"THE_PUNCT","sentence":"^\\QIn the , a Lagrangian for a charged Higgs-boson interaction with quarks, following these requirements, is \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q: \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QIn the type-I , the couplings to different \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q- and \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q-type quarks are: \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, whereas for type-II : \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QUsing \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, in the case of type-I , the charged Higgs contribution takes the form \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q which interferes with the value in a destructive manner.\\E$"}
+{"rule":"WHITESPACE_RULE","sentence":"^\\QVariations of the total decay rate (normalised by \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q decay rate) as a function of the mass of the charged Higgs boson.\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q shows the dependence for a type-I model, whereas \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q shows that for type-II .\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qif M.\\E$"}
+{"rule":"SENTENCE_WHITESPACE","sentence":"^\\QMisiak gets back to me maybe I can update these plots to have the most up to date value.\\E$"}
+{"rule":"UP_TO_DATE_HYPHEN","sentence":"^\\QMisiak gets back to me maybe I can update these plots to have the most up to date value.\\E$"}
+{"rule":"THE_SENT_END","sentence":"^\\QThis is because in the \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q regime, the charged-Higgs is effectively decoupled from the .\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QB X_s/d B X_s B X_d B^+ X_s B^0 X_s b s B (892)\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QzernikeMVA\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QfeiB^+ feiB^0\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\Q2basf2 mcError\\E$"}
+{"rule":"ARROWS","sentence":"^\\QB->Xsg\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QB->Xsg\\E$"}
+{"rule":"THE_SENT_END","sentence":"^\\QThe model is attractive because it can be incorporated in many theories that provide insight to the long-standing issues of the .\\E$"}
