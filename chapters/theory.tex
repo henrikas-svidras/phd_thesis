@@ -441,20 +441,20 @@ The non-perturbative effects that occur at different energy scales compared to t
 However, the choice of a lower threshold spoils this approximation and introduces non-perturbative corrections.
 These effects directly manifest as differences in the shape of the photon energy spectrum.
 
-At lowest order, $b\ra\s(\d) \g$ is a two-body decay, which means that the differential decay rate peaks near to the kinematic limit equal to half the \B-meson mass, $m_B/2\gsim E_{\g}$.
-Higher-order effects, such as gluonstrahlung, and the Fermi motion of the $b$ quark within the $B$ meson, smear the distribution.
+At lowest order, $b\ra\s(\d) \g$ is a two-body decay, which means that the differential decay rate peaks near the $b$ quark mass, $m_b/2\gsim E_{\g}$.
+Higher-order effects, such as gluonstrahlung and the Fermi motion of the $b$ quark within the $B$ meson smear the distribution.
 The necessity to account for all of these effects occurring at different energy-scales motivates the use of soft-collinear effective theory to describe the \BtoXsgamma photon energy spectrum \cite{Neubert:2004qw,Ligeti:2008ac}.
 It allows factorising different contributions to the decay rate, $d\Gamma$, into terms originating from effective hard-interaction vertices, collinear particles and soft particles:
 \begin{equation}\label{eq:differential_decay_rate_SCET}
     d\Gamma \propto \mathcal{H} \times \mathcal{J} \otimes \mathcal{S}.
 \end{equation}
 $\mathcal{H}$, $\mathcal{J}$, $\mathcal{S}$ represent the hard, jet and hadronic-soft functions, respectively, with $\otimes$ symbolising convolution between the two terms.
-Importantly, the $\mathcal{S}$ can be further factorised into a partonic soft-function, $\mathcal{S}_{\mathrm{partonic}}$, and a non-perturbative \textit{shape function}, $\mathcal{F}$:
+It is further assumed that the $\mathcal{S}$ can be factorised into a partonic soft-function, $\mathcal{S}_{\mathrm{partonic}}$, and a non-perturbative \textit{shape function}, $\mathcal{F}$:
 
 \begin{equation}\label{eq:factorisation}
     \mathcal{S} = \mathcal{S}_{\mathrm{partonic}} \otimes \mathcal{F},
 \end{equation}
-which means that the application of soft-collinear effective-theory is fully capable to separate perturbative and non-perturbative contributions in the differential decay rate of \BtoXsgamma.
+which means that the application of soft-collinear effective theory is fully capable to separate perturbative and non-perturbative contributions in the differential decay rate of \BtoXsgamma.
 This is shown graphically in \Cref{fig:xsgamma_theory_sketches}, which sketches out the leading-order perturbative and non-perturbative effects in describing the \BtoXsgamma spectrum.
 
 Due to the larger \BtoXsgamma decay rate and an overall smaller background process rate, experimental values have the highest precision around the peak region.
@@ -492,14 +492,14 @@ Following the treatment of Ref.~\cite{Ligeti:2008ac}, the differential decay rat
 \begin{equation}\label{eq:differential_decay_simba}
     \frac{d\Gamma}{dE_{\gamma}} = 2\frac{G_F^2\alpha_{\mathrm{em}} m_b^5}{32\pi^4}|V_{ts}V_{tb}^*|^2 \mathcal{H}(x, \mu) \times \int dk \mathcal{P}(m_b, x - k, \mu_i) \mathcal{F}(k) + \order\left(\frac{\Lambda_{\mathrm{QCD}}}{m_b}\right),
 \end{equation}
-where $x=m_B-2\Egamma$, $\mathcal{P}$ is used to denote the perturbatively calculable $\mathcal{J}\times\mathcal{S_{\mathrm{partonic}}}$ and the symbolic convolution has now been replaced by an integration over a dummy-momentum $k$.
+where $x=m_B-2\Egamma$, $\mathcal{P}$ is used to denote the perturbatively calculable $\mathcal{J}\otimes\mathcal{S_{\mathrm{partonic}}}$ and the symbolic convolution has now been replaced by an integration over a dummy-momentum $k$.
 The higher order corrections introduce additional shape functions, but are suppressed by a factor of $1/m_b$ \cite{Neubert:2002yx}.
 Generally, $\mathcal{H}$ and $\mathcal{P}$ are calculable in perturbation theory (see Appendix A of \cite{Ligeti:2008ac}).
-$\mathcal{H}$ is directly expressed in terms of the effective Wilson coefficient $\mathcal{C}_7^{\mathrm{eff}}$. 
+$\mathcal{H}$ is approximately expressed in terms of the effective Wilson coefficient $\mathcal{C}_7^{\mathrm{eff}}$. 
 Moreover, at lowest-order in perturbation theory $\mathcal{P}$ can be expressed as a partial function:
 
 \begin{equation}
-    \mathcal{P}(m_B,k,\mu) = \partial(k) + \mathcal{O}(\alpha_s),
+    \mathcal{P}(m_b,k,\mu) = \partial(k) + \mathcal{O}(\alpha_s),
 \end{equation}
 and therefore integrating out the momentum $k$:
 \begin{equation}\label{eq:integrated_egamma}
@@ -509,7 +509,7 @@ This shows, as stated before, that the peak region (close to $m_b/2$) is governe
 In this case $|C_7|$ is the normalisation of the spectrum.
 The shape function can be formally expanded in its moments as \cite{PhysRevD.50.2037,Ligeti:2008ac}:
 \begin{equation}\label{eq:shape_function_expansion}
-    \mathcal{F}(x) = \sum_n \frac{1}{n!} A_n \dv[n]{\partial(x)}{x},
+    \mathcal{F}(x) = \sum_n \frac{(-1)^n}{n!} A_n \dv[n]{\partial(x)}{x},
 \end{equation}
 where 
 \begin{equation}\label{eq:moments_of_shape_function}
@@ -518,7 +518,7 @@ where
 The \Cref{eq:moments_of_shape_function} is the expression for the $n$-th moment of the shape function, where 
 $A_0=1$ is fixed, because the shape function is chosen to be normalised.
 Note that if one naively neglects $n>1$ terms, the integral over the total $\Egamma$ of \Cref{eq:integrated_egamma} would take the form $\Gamma\sim|C_7^{\mathrm{eff}}|^2$, which is consistent with \Cref{eq:total_decay_rate_leading_order}.
-Therefore, for total decay rate calculations (such as the ones sketched in \Cref{sec:btosgamma_totalrate_theory}) it is enough to know the first several moments of the shape function, as the more delicate $\mathcal{F}(k)$ dependence is suppressed by the factorial $n!$ terms.
+Therefore, for total decay rate calculations (such as the ones sketched in \Cref{sec:btosgamma_totalrate_theory}) it is enough to know the first several moments of the shape function, as the more delicate $\mathcal{F}(k)$ dependence is suppressed at higher orders.
 
 For example, consider taking only terms up to first order.
 In such case, using the definition of an average,
@@ -529,11 +529,11 @@ the shape function is directly related to the average of the photon energy spect
 Similarly, the variance (and higher-order moments) contribute if more terms from \Cref{eq:shape_function_expansion} are considered.
 As shown in Refs.~\cite{Bauer:1997fe,Kapustin:1995fk} (and others) two important relations can be shown to emerge:
 \begin{equation}
-    \expval{\Egamma} \sim m_b/2+\order(m_b^2); \quad \expval{\Egamma^2}-\expval{\Egamma}^2 \sim \lambda_1/3+\order(m_b^2),
+    \expval{\Egamma} \sim m_b/2+\order(\Lambda_{\mathrm{QCD}}); \quad \expval{\Egamma^2}-\expval{\Egamma}^2 \sim \lambda_1/3+\order(\Lambda_{\mathrm{QCD}}),
 \end{equation}
-with the $b$-quark pole mass, $m_b$, and the residual momentum carried by the $b$-quark within the $B$ meson, $\lambda_1$.
+with the $b$-quark pole mass, $m_b$, and the $b$-quark kinetic energy parameter, $\lambda_1$.
 
-The form of the shape function is not well-known and non-perturbative, unlike the Wilson coefficients.
+The form of the shape function is not well-known and is non-perturbative, unlike the Wilson coefficients.
 Therefore, theoretical and experimental comparisons always lead to modelling-related uncertainties.
 There are a number of different works which propose ways to describe it \cite{Benson:2004sg,Lange:2005yw,Andersen:2005mj,Gambino:2007rp,Aglietti:2007ik,Bernlochner:2020jlt}.
 For example, Ref. \cite{Andersen:2005mj} describe it based on a technique called dressed gluon exponentiation.
