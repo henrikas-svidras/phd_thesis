@@ -16,3 +16,9 @@ Tackmann
 Kagan-Neubert
 EvtGen
 BTOXSGAMMA
+PXD
+ARICH
+DEPFET
+Tsukuba
+KEK
+SuperKEKB

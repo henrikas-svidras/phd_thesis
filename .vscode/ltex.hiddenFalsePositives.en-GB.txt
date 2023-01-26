@@ -47,3 +47,12 @@
 {"rule":"ARROWS","sentence":"^\\QB->Xsg\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QB->Xsg\\E$"}
 {"rule":"THE_SENT_END","sentence":"^\\QThe model is attractive because it can be incorporated in many theories that provide insight to the long-standing issues of the .\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QDue to the confinement effect of the quarks, in reality they manifest as or , where \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q and \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q denote any meson state originating from the \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q or \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q quark hadronisation.\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QThe masses of possible weakly-interacting particles that can appear in the loops may be as high as (100 ) \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q which makes studying these decays appealing.\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, which means that the application of soft-collinear effective theory is fully capable to separate perturbative and non-perturbative contributions in the differential decay rate of .\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QThere are two main types of models that contribute in the quark sector with vanishing tree-level FCNC contributions: so-called type-I , where all quarks can couple to only one of the Higgs doublets, or type-II , where \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q-type quarks couple to one doublet and \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q-type couple to another.\\E$"}
+{"rule":"THE_PUNCT","sentence":"^\\QIn the , a Lagrangian for a charged Higgs boson interaction with quarks, following these requirements, is \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q: \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"THE_SENT_END","sentence":"^\\QThis is because in the \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q regime, the charged Higgs is effectively decoupled from the .\\E$"}
+{"rule":"AS_OF_YET","sentence":"^\\QHowever, some experiments do show, as of yet, unexplained tensions with the Standard Model.\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QThe measurement will be performed by studying data of \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q mesons decaying into a meson system originating from an \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q quark, \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, and an energetic photon .\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QThe standard notation of the radiative \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q meson decay processes is adopted to label it as .\\E$"}
