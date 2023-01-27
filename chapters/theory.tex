@@ -10,26 +10,26 @@ Finally, the rest of the chapter in \Cref{sec:btosgamma_totalrate_theory,sec:bto
 
 
 \section{The Standard Model of Particle Physics} \label{sec:standard_model}
-\begin{sloppy}
-The Standard Model (\SM) is a quantum field theory based on a symmetry group $SU(3)~\times~SU(2)~\times~U(1)$.
+
+The Standard Model (\SM) is a quantum field theory based with a local gauge invariance given by the symmetry group $SU(3)\times~SU(2)\times~U(1)$.
 In quantum field theory all particles are described as excitations of fields, $\psi(x)$, 
 where $x=\{\vec{x},t\}$ is a space-time coordinate.
-The Lagrangian, $\mathcal{L}=\mathcal{L}(\phi,\partial_{\mu}\phi)$, describes the dynamics of particles originating from the excitations of field $\phi$,
+The Lagrangian, $\mathcal{L}=\mathcal{L}(\psi,\partial_{\mu}\psi)$, describes the dynamics originating from the excitations of field $\phi$,
 where $\partial_{\mu}=\{\frac{\partial}{\partial \vec{x}},\frac{\partial}{\partial t}\}$.
 In particular, it encodes the interactions and the free-propagation of particles which are visually represented using Feynman diagrams.
 % The Lagrangian follows the principle of the least action, which results in Euler-Lagrange equations describing the evolution of the physical system:
 % \begin{equation}
 %     \partial_{\mu} \left(\frac{\partial\mathcal{L}}{\partial(\partial_{\mu}\phi)}\right) - \frac{\partial\mathcal{L}}{\partial\phi}.
 % \end{equation}
-\end{sloppy}
 
-The theoretical framework of \SM describes the electroweak and strong force interactions between elementary particles that constitute the world as we know it.
-The strong interaction between particles of \SM is described by quantum chromodynamics (\QCD), 
+
+The theoretical framework of the \SM describes the electroweak and strong force interactions between elementary particles that constitute the world as we know it.
+The strong interaction between particles of the \SM is described by quantum chromodynamics (\QCD), 
 whereas electromagnetic and weak interaction are unified by the electroweak theory.
-The elementary particles included in the \SM have a half-integer spin (fermions) or integer spin (bosons).
+The elementary particles included in the \SM have half-integer spin (fermions) or integer spin (bosons).
 
-The spin-1 bosons are the mediators of the electromagnetic (photon), weak ($\Wpm$ and $\Z$) and strong interactions (gluons) in the SM.
-The spin-0 Higgs boson couples to all massive particles of the \SM via the Higgs mechanism \cite{PhysRevLett.13.508}.
+The spin-1 bosons are the mediators of the electromagnetic (photon), weak ($\Wpm$ and $\Z$) and strong interactions (gluons).
+The spin-0 Higgs boson couples to all massive gauge bosons of the \SM via the Higgs mechanism \cite{PhysRevLett.13.508} and to fermions via the Yukawa couplings~\cite{Weinberg:1967t}.
 The fermions are further split into two additional groups: quarks and leptons, which, respectively, can and cannot interact through the strong force.
 With the possible exception of neutrinos, all fermion fields have a left- and right-handed component, as the weak-interaction only interacts with
 left-handed particles or right-handed anti-particles.
@@ -44,20 +44,20 @@ Their spin, charge, mass and notation are summarised in \Cref{fig:standard_model
     All the masses are approximate even if more precise measurements are available.
     They are based on the current knowledge of particle physics, as summarised in Ref.~\cite{Workman:2022ynf}.
     Note that quark masses are not well-defined as they cannot be observed in Nature independently.
-    See in \cite{Workman:2022ynf} for more information on the values.
-    This is a modified version of \cite{sm_diagram}.
+    See in Ref.~\cite{Workman:2022ynf} for more information on the values.
+    This is a modified version of the diagram of Ref.~\cite{sm_diagram}.
     }
 \end{figure}
 
 Quarks and leptons are organised in three \textit{generations}, 
-where each generation contains a charged lepton, a lepton-neutrino, an up-type quark, and a down-type quark.
-Each species of fermion have a distinct \textit{flavour}, resulting in six quark and six lepton flavours in \SM.
-The strong and electromagnetic interaction does not change the flavour of particles, 
-however this can be done via the weak interaction.
+where each generation contains a charged lepton, a neutral lepton, an up-type quark, and a down-type quark.
+Each species of fermion has a distinct \textit{flavour}, resulting in six quark and six lepton flavours in \SM.
+The strong and electromagnetic interaction do not change the flavour of particles, 
+however this can be achieved via the weak interaction.
 On the other hand, a transition between two generations is not possible for charged leptons
-\footnote{It is possible for neutrinos only if \SM is extended to include massive neutrinos.}.
+\footnote{It is possible for neutrinos only if the \SM is extended to include massive neutrinos.}.
 
-The generations mainly differ by their masses, where a mass-hierarchy is observed: 
+The generations only differ by their masses, where a mass-hierarchy is observed: 
 \begin{align*}
     m(\mathrm{lepton~neutrino})\ll m(\mathrm{charged~lepton})\lessapprox m(\mathrm{down~type~quark})<m(\mathrm{up~type~quark}).
 \end{align*}
@@ -65,7 +65,7 @@ For quarks and charged leptons, only the first generation is stable and constitu
 On the other hand, all three generations of neutrinos appear to be stable.
 While leptons exist as free particles in Nature, quarks are not observed free, due to the confinement effect, 
 but as combinations of two or more quarks, collectively known as \textit{hadrons}.
-The combinations of a quark and anti-quark pair are called \textit{mesons}, while a combination of three (anti-)quarks are called \textit{baryons}.
+The combinations of a quark and an anti-quark pair are called \textit{mesons}, while a combination of three (anti-)quarks are called \textit{baryons}.
 Some hadrons that will be commonly mentioned in this thesis are shown in \Cref{tab:hadrons}.
 \begin{table}[htbp!]
     \centering
@@ -76,27 +76,27 @@ Some hadrons that will be commonly mentioned in this thesis are shown in \Cref{t
     \input{tables/hadron_examples.tex}
 \end{table}
 
-The decay of elementary and composite particles is described by their decay lifetime $\tau$ (the time after which $1/e$ of the original particles remain), 
+The decay of particles is described by their lifetime $\tau$ (the time after which $1/e$ of the original particles remain, on average), 
 which is the inverse of the total decay rate:
 \begin{equation}
     \Gamma = \frac{1}{\tau},
 \end{equation}
-which can be calculated by the Fermi's golden rule.
-The decays of unstable particles are a probabilistic process and, particularly for heavy particles, occur via multiple different modes, often called \textit{decay channels}.
-The total decay rate is a sum of individual decay rates:
+which can be calculated by Fermi's golden rule.
+The decays of unstable particles are probabilistic processes and, particularly for heavy particles, occur via multiple different modes, often called \textit{decay channels}.
+The total decay rate is the sum of individual decay rates:
 \begin{equation}
     \Gamma = \sum_j\Gamma_j,
 \end{equation}
-where $\Gamma_j$ corresponds to a decay rate of a specific decay channel, $j$.
-A normalised quantity, known as the \textit{branching ratio} characterises $\Gamma_j$ as a relative fraction of the total decay rate:
+where $\Gamma_j$ corresponds to the decay rate of a specific decay channel, $j$.
+The \textit{branching ratio} characterises $\Gamma_j$ as a relative fraction of the total decay rate:
 \begin{equation}\label{eq:branching_fraction_definition}
     \mathcal{B}(j) = \frac{\Gamma_j}{\Gamma}.
 \end{equation}
 
 \section{Flavour physics}\label{sec:flavour_physics}
 
-In \SM, each particle has a partner particle, which is called an \textit{anti-particle}.
-For a particle $\psi$, an anti-particle can be found by performing the charge-conjugation operation ($\mathcal{C}$):
+In the \SM, each particle has a partner particle, called an \textit{anti-particle}.
+For a particle $\psi$, an anti-particle can be obtained by performing the charge conjugation transformation:
 \begin{equation}
     \mathcal{C}\ket{\psi}\ra\ket{\bar{\psi}},
 \end{equation}
@@ -104,16 +104,16 @@ which inverts the sign of all charges, lepton and baryon numbers corresponding t
 As a result, neutral bosons are their own anti-particle.
 All quarks ($\u,\d,\c,\s,\b,\t$) have a corresponding oppositely-charged anti-quark ($\ubar,\dbar,\cbar,\sbar,\bbar,\tbar$).
 Likewise, each charged lepton ($\en,\mu^{-},\taum$) has a positively charged particle ($\ep,\mup,\taup$).
-The anti particle of neutrinos ($\nu_{e},\nu_{\mu},\nu_{\tau}$) is denotes as ($\bar{\nu}_{e},\bar{\nu}_{\mu},\bar{\nu}_{\tau}$)
+The anti-particles of neutrinos ($\nu_{e},\nu_{\mu},\nu_{\tau}$) are denoted as ($\bar{\nu}_{e},\bar{\nu}_{\mu},\bar{\nu}_{\tau}$)
 \footnote{Whether neutrinos are their own anti-particle is an unanswered question in neutrino physics. 
-The Majorana versus Dirac fermion problem is discussed widely in literature, e.g. Ref\cite{Bilenky:2020vjk}.
+The Majorana versus Dirac fermion problem is discussed widely in literature, e.g. Ref.~\cite{Bilenky:2020vjk}.
 }.
 
-Consider a parity operation $\mathcal{P}$, which transforms a left-handed component into a right-handed component:
+Consider a parity transformation, which transforms a left-handed component into a right-handed component:
 \begin{equation}
     \mathcal{P}\ket{\psi(\vec{x},t)} = \ket{\psi(-\vec{x},t)}.
 \end{equation}
-It has been experimentally observed that the weak interactions violates $\mathcal{P}$ symmetry maximally (but note electromagnetic or strong).
+It has been experimentally observed that the weak interactions violate the $\mathcal{P}$ symmetry maximally (but not electromagnetic or strong).
 % To this end it is convenient to express the fermion fields, which interact weakly, as Dirac spinors composed of a left and a right-handed component $\phi=\phi_L+\phi_R$,
 % such that the weak interaction only couples to the left-handed components of the fields.
 % The chiral projection operator :
@@ -131,14 +131,14 @@ It has been experimentally observed that the weak interactions violates $\mathca
 % \end{align}
 % The $\gamma^5$ matrix is defined as a product of the four Dirac matrices $i\gamma^0\gamma^1\gamma^2\gamma^3\gamma^4$.
 
-Although it has been long known that particles violate charge ($\mathcal{C}$) and parity ($\mathcal{P}$) symmetries,
-it was long thought that their combination, $\mathcal{CP}$ symmetry is conserved.
-In 1964, it was observed that the weak interaction can violate the combined charge-parity symmetry \cite{Christenson:1964fg}.
-In order to incorporate the $\mathcal{CP}$ violation into \SM, M. Kobayashi and T. Maskawa \cite{Kobayashi:1973fv} built upon the predecessor work by N. Cabibo \cite{Cabibbo:1963yz},
-introducing the quark-mixing model based on the Cabibo-Kobayashi-Maskawa (\CKM) matrix. 
+After the violation of charge ($\mathcal{C}$) and parity ($\mathcal{P}$) symmetries by the weak interaction became clear~\cite{Wu:1957my},
+it was initially assumed thought that their combination, $\mathcal{CP}$ symmetry is conserved.
+In 1964, it was observed that the weak interaction can violate the combined charge-parity symmetry~\cite{Christenson:1964fg}.
+In order to incorporate $\mathcal{CP}$ violation into the \SM, M. Kobayashi and T. Maskawa~\cite{Kobayashi:1973fv} built upon the predecessor work by N. Cabibo \cite{Cabibbo:1963yz},
+introducing the quark-mixing model based on the Cabibbo-Kobayashi-Maskawa (\CKM) matrix. 
 The model introduces a difference between the $\d,\s,\b$ quark states when they propagate freely (`mass'-eigenstate) and their $\d',\s',\b'$ states when they interact
 via the weak interaction (`weak'-eigenstate).
-Specifically, the weak-eigenstates of the quarks are linear combinations of the quark mass-eigenstates:
+Specifically, they show that weak-eigenstates of the quarks are linear combinations of the quark mass-eigenstates:
 \begin{equation}
     \begin{pmatrix}
         d'\\
@@ -160,11 +160,11 @@ Specifically, the weak-eigenstates of the quarks are linear combinations of the 
 where $V_{ij}$ are the elements of a $3\times3$ unitary matrix known as the \CKM matrix.
 Cabibo initially introduced a real and unitary $2\times2$ matrix in order to universally explain the weak interactions of
 the then-known two generations of leptons, up, down and strange quarks.
-Kobayashi's and Maskawa's work extended this and showed that a third generation of quarks is required 
+Kobayashi's and Maskawa's work extended this and showed that at least three generations of quarks is required 
 (the existence of $b$ and $t$ was not known at the time) in order to incorporate the observed $\mathcal{CP}$ violation.
 In such a way the $\mathcal{CP}$ violation is accounted through complex diagonal elements ($V_{ij}\neq V_{ji}^*$).
 
-The unitarity constraint ($VV^{*}=V^{*}V=I$ where $I$ is the identity matrix) implies:
+The unitarity constraint implies:
 \begin{align}\label{eq:unitarity}
     \begin{split}
     \sum_i V_{ij} V_{ik}^* &= \delta_{jk},\\
@@ -206,9 +206,9 @@ The standard representation of the \CKM matrix is:
 Here $s_{ij}=\sin\theta_{ij}$ and $c_{ij}=\cos\theta_{ij}$, with three mixing angles $\theta_{ij}$.
 The global phase responsible for $\mathcal{CP}$ in the flavour-changing processes is denoted by $\delta$.
 These parameters are unknown parameters of the \SM that have to be measured.
-As of writing this thesis, the experimental values (omitting uncertainties) of the \CKM matrix are \cite{Workman:2022ynf}:
+As of writing this thesis, the experimental magnitudes (omitting uncertainties) of the \CKM matrix are \cite{Workman:2022ynf}:
 \begin{equation}
-    V_{\mathrm{CKM}} \approx 
+    (|V_{\mathrm{CKM}}|) \approx 
     \begin{pmatrix}
         0.974 \quad 0.224 \quad 0.004\\
         0.218 \quad 0.997 \quad 0.042\\
@@ -223,23 +223,23 @@ One way to summarise the experimental status of flavour physics is through the s
 There are six vanishing unitarity conditions imposed through \Cref{eq:unitarity}, and they can be represented as triangles in the complex plane.
 The most common choice is taking
 \begin{equation}
-    V_{ud}V_{ub}^* + V_{cd}V^*_{cb} + V_{td}V_{tb}^* =0,
+    V^{}_{ud}V_{ub}^* + V^{}_{cd}V^*_{cb} + V^{}_{td}V_{tb}^* =0,
 \end{equation}
-and dividing it by a precisely known value of $V_{cd}V^*_{cb}$, which yields:
+and dividing it by a precisely known value of $V^{}_{cd}V^*_{cb}$, which yields:
 \begin{equation}
     1+\frac{V^{}_{ud}V_{ub}^*}{V^{}_{cd}V_{cb}^*}+\frac{V^{}_{td}V_{tb}^*}{V^{}_{cd}V_{cb}^*} = 0.
 \end{equation}
 The vertices of this unitarity triangle are at $(0,0)$ and $(1,0)$ in the plane of $(\bar{\rho},\bar{\eta})$, defined as $(\bar{\rho}+i\bar{\eta})=V^{}_{ud}V_{ub}^*/V^{}_{cd}V_{cb}^*$,
 where the other two sides are given by $|V^{}_{ud}V_{ub}^*/V^{}_{cd}V_{cb}^*|$ and $|V^{}_{td}V_{tb}^*/V^{}_{cd}V_{cb}^*|$.
-Many independent measurements evaluating the \CKM matrix elements can be combined to test the consistency of \SM with the experimental observations.
-As can be seen in \Cref{fig:unitarity_triangle} experimental results show incredible consistency with \SM prediction.
+Many independent measurements evaluating the \CKM matrix elements can be combined to test the consistency of the \SM with the experimental observations.
+As can be seen in \Cref{fig:unitarity_triangle}, experimental results show incredible consistency with the \SM prediction.
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.45\textwidth]{figures/sm_theory/unitarity_triangle.png}
+    \includegraphics[width=0.55\textwidth]{figures/sm_theory/unitarity_triangle.png}
     \caption{\label{fig:unitarity_triangle}The constraints on the unitarity triangle in the $\bar{\rho},\bar{\eta}$ plane.
     Shaded areas represent  95\% confidence limits from different measurements constraining various angles of the triangle.
-    Credit to \cite{Workman:2022ynf}.
+    Credit to Ref.~\cite{Workman:2022ynf}.
     }
 \end{figure}
 
@@ -247,26 +247,26 @@ As can be seen in \Cref{fig:unitarity_triangle} experimental results show incred
 
 The $B$ meson is the lightest hadron that contains a $b$ quark.
 As the $b$ quarks are not stable, their decays necessitate flavour changing processes via the weak interaction.
-Therefore, the study of its decays open the possibility to measure a wide range of parameters of \SM, including the \CKM matrix, $\mathcal{CP}$ violation measurements, lepton-mass measurements etc.
+Therefore, the study of their decays open the possibility to measure a wide range of parameters of the \SM, including the \CKM matrix, $\mathcal{CP}$ violation measurements, lepton mass measurements etc.
 Furthermore, significant inconsistencies from theoretical expectations may lead to breakthroughs in the theoretical understanding of Nature.
-Some (but not all) of the questions that are pursued through the study of $B$ mesons ($B$ physics) are \cite{Belle-II:2018jsg}:
+Some of the questions that are pursued through the study of $B$ mesons ($B$ physics) are \cite{Belle-II:2018jsg}:
 \begin{itemize}
     \item What are additional sources of $\mathcal{CP}$ violation?
     \item Can there be additional Higgs bosons in Nature?
     \item How does dark matter fit in the Standard Model?
     \item Can the left-right symmetry of Nature, broken in weak interactions, be restored?
-    \item Can lepton flavour changing processes exist in Nature?
+    \item Can charged-lepton flavour changing processes exist in Nature?
 \end{itemize}
 
-To exploit the properties of $B$ meson decays, special type of experiments, known as a $B$ factory, are designed to study $B$ mesons.
-They will be introduced in \Cref{chap:belle2}.
+To exploit the properties of $B$ meson decays, special type of experiments, known as \textit{$B$ factories}, are designed to study $B$ mesons.
+They will be introduced in \Cref{ch:belle2}.
 
 \section{The decay rate of \texorpdfstring{\BtoXsdgamma}{B->Xsg}}\label{sec:btosgamma_totalrate_theory}
 
 In the \SM, $b\ra s$ transitions are mediated by so-called flavour-changing neutral currents.
-These processes cannot occur directly and only happen through loops mediated by heavy particles.
-One of the decay processes used to study these transitions are the so-called rare radiative $b\ra s\g$ and $b\ra d\g$ decays.
-Due to the confinement effect of the quarks, in reality they manifest as \BtoXsgamma or \BtoXdgamma, where $X_s$ and $X_d$ denote any meson state originating from the $s$ or $d$ quark hadronisation.
+These processes cannot occur directly and only happen through loops mediated by virtual particles.
+One of the decay channels used to study these transitions are the so-called rare radiative $b\ra s\g$ and $b\ra d\g$ decays.
+Due to the confinement effect and the hadronisation of the quarks, in reality they manifest as \BtoXsgamma or \BtoXdgamma, where $X_s$ and $X_d$ denote any meson state originating from the $s$ or $d$ quark hadronisation.
 The leading \SM diagrams for \BtoXsdgamma (used to collectively identify $X_s$ and $X_d$ states) processes are shown in \Cref{fig:sm_diagrams}.
 
 \begin{figure}[htbp!]
@@ -318,21 +318,21 @@ They correspond to the effective Lagrangian in \Cref{eq:effective_lagrangian}.
 \end{figure}
 Coefficients $\mathcal{C}_{3-6}$ have been calculated and shown to be small, therefore the most important contributions arise from $\mathcal{O}_{1,2,7,8}$ \cite{Chetyrkin:1996vx,Misiak:2020vlo}.
 Furthermore, the ratio $V^*_{uq}V_{ub}/V^*_{tq}V_{tb}$ is small for the case of $q=s$ \cite{Charles:2015gya}, and the terms including $\mathcal{O}^u_i$ are relevant only as higher-order corrections of the total decay rate~\cite{Misiak:2015xwa}.
-Interestingly, the latter point does not hold for $\b\to\d$ case, where the $V^*_{uq}V_{ub}/V^*_{tq}V_{tb}$ multiplied term is not numerically small and contributes already at leading order.
+The latter point does not hold for $\b\to\d$ case, where the $V^*_{uq}V_{ub}/V^*_{tq}V_{tb}$ multiplied term is not numerically small and contributes already at leading order.
 However, for the rest of this Section, $\b\to\s\g$ is the main focus unless explicitly stated otherwise.
 
-The total decay rate of the inclusive \BtoXsgamma is modelled as the rate of its parton decay, 
+The total decay rate of the inclusive \BtoXsgamma is modelled as the rate of the parton decay, 
 taking advantage of the quark-hadron duality and \textit{local operator product expansion} \cite{Peskin:1995ev,Buchalla:1995vs,Buras:1998raa}.
 In particular, additional non-perturbative components need to be considered for the \SM calculation of the total decay rate \cite{Misiak:2015xwa}:
 \begin{equation}\label{eq:btosgammarate_nonp}
-    \Gamma(B\ra\X_s\g) = \Gamma(b\ra s\g) + \partial\Gamma_{\mathrm{non-p.}},
+    \Gamma(B\ra\X_s\g) = \Gamma(b\ra s\g) + \delta\Gamma_{\mathrm{non-p.}},
 \end{equation}
 $\Gamma(b\ra s\g)$ is the perturbatively calculable rate of $b$ quarks decaying into charmless partons, 
 and $\partial\Gamma_{non-p.}$ is the non-perturbative contribution arising outside of local operator product expansion, when accounting for the fact that the $b$ quark is not stationary inside the bound $B$ meson state.
-As long as an appropriately low photon energy threshold (in the decaying $B$ meson frame), \EB, is chosen, the non-perturbative effects in \Cref{eq:btosgammarate_nonp} can be considered smaller as they `average out' over the spectrum.
+As long as an appropriately low photon energy threshold (in the decaying $B$ meson rest frame), \EB, is chosen, the non-perturbative effects in \Cref{eq:btosgammarate_nonp} can be considered smaller as they `average out' over the spectrum.
 Due to contributions from $\ccbar$ resonances at low-\Egamma, the threshold is conventionally chosen at $\Egamma>1.6~\gev$ \cite{Misiak:2009nr}.
-Until recently, a 5\% uncertainty was attached to this assumption \cite{Benzke:2010js}. 
-However, recent developments in understanding the non-perturbative effects \cite{Gunawardana:2019gep} led to an improved treatment of the associated uncertainties \cite{Misiak:2020vlo}.
+Until recently, a 5\% uncertainty was associated with this assumption \cite{Benzke:2010js}. 
+However, recent developments in understanding the non-perturbative effects \cite{Gunawardana:2019gep} led to an improved treatment of these uncertainties \cite{Misiak:2020vlo}.
 One notable example of non-perturbative effects that are retained in total branching fraction calculations arise from the so-called resolved photon contributions.
 These contributions are a result of the photon coupling directly to partons instead of the effective weak interaction vertex.
 The origin of the non perturbative contribution will be further discussed with the differential decay rate in \Cref{sec:btosgamma_spectrum_theory}.
@@ -345,7 +345,7 @@ Then the perturbative decay rate can be written as \cite{Misiak:2020vlo}:
 \end{equation}
 where $m_{\mathrm{b}}$ is the $b$-quark pole mass, and $\alpha_{\mathrm{em}}$ is the fine-structure constant.
 The $C_{i}^{\mathrm{eff}}(\mu_b)$ coefficients represent effective Wilson coefficients \cite{Buras:1993xp} that are renormalisation scheme independent and defined through linear combinations of the Wilson coefficients of \Cref{eq:effective_lagrangian}.
-Finally, the functions $\hat{G}_{ij}$ encapsulate the terms describing the interference between operators $\mathcal{O}_{i,j}$, which arise in the squared matrix element.
+Finally, the functions $\hat{G}_{ij}$ encapsulate the terms describing the interference between the operators $\mathcal{O}_{i,j}$, which arise in the squared matrix element.
 As already mentioned before, the dominant terms arise from a handful of operators $\mathcal{O}_i$, and the combined efforts to calculate them have brought \BtoXsgamma theoretical estimates to the next-to-next-to-leading order precision.
 The dominant functions $\hat{G}_{77}$ \cite{Asatrian:2006rq}, $\hat{G}_{78}$ \cite{Asatrian:2010rq}, $\hat{G}_{(1,2)7}$ \cite{Boughezal:2007ny,Misiak:2020vlo} have been evaluated.
 Contributions from $\hat{G}_{(1,2,8)8}$ \cite{Ferroglia:2010xe,Misiak:2010tk} have also been calculated.
@@ -394,13 +394,13 @@ where the \SM coefficients $\mathcal{C}_{2,7,8}^{(0)}$ are expressed in terms of
         \mathcal{C}_8^{(0)}(\mu) &= F_8^{(1)}(x) \equiv \frac{-3x^2}{4(x-1)^4}\ln x + \frac{-x^3+5x^2+2x}{8(x-1)^3}.\\
     \end{split}
 \end{align}
-The coefficient $\eta$ is expressed as $\eta=\alpha_s(m_W)/\alpha_s(\mu)$, whereas $h_i$ and $a_i$ are the eigenvalues of a scheme-independent matrix $\gamma^{(0)\mathrm{eff}}$, 
-which can be found defined in the Appendix A of Ref.~\cite{Buras:1993xp}.
-The matrix $\gamma^{(0)\mathrm{eff}}$ governs the leading order \QCD corrections to $\b\ra\s\g$ and its elements appear in the renormalisation group equation of the effective Wilson coefficients.
+The coefficient $\eta$ is expressed as $\eta=\alpha_s(m_W)/\alpha_s(\mu)$, whereas $h_i$ and $a_i$ are the eigenvalues of a scheme independent matrix $\gamma^{(0)\mathrm{eff}}$, 
+which is defined in the Appendix A of Ref.~\cite{Buras:1993xp}.
+The matrix $\gamma^{(0)\mathrm{eff}}$ governs the leading order \QCD corrections to $\b\ra\s\g$, and its elements appear in the renormalisation group equation of the effective Wilson coefficients.
 
 Considering the effective interactions in \Cref{fig:b_to_s_gamma_effective}, it may seem peculiar that $\mathcal{O}_{2,8}$ are important at leading-order.
-However, because \BtoXsgamma is affected by Glashow-Iliopoulos-Maiani suppression terms $(\sim m_q^2/m_W^2)$, two-loop contributions involving a gluon exchange $(\sim\ln m_t^2/m_b^2)$ are important \cite{Bertolini:1986th}.
-In the absence of \QCD effects one has $\eta=1$ and \BtoXsgamma decay governed solely by the photonic dipole exchange.
+However, because \BtoXsgamma receives Glashow-Iliopoulos-Maiani suppression terms $(\sim m_q^2/m_W^2)$, two-loop contributions involving a gluon exchange $(\sim\ln m_t^2/m_b^2)$ are important \cite{Bertolini:1986th}.
+In the absence of \QCD effects, one has $\eta=1$ and \BtoXsgamma decays are governed solely by the photonic dipole exchange.
 When evaluating \Cref{eq:effective_c7} explicitly for $m_t=170~\gevcc$, $\mu=5~\gevcc$, $\alpha_s(M_Z)=0.118$~\cite{Buras:1998raa}:
 \begin{align}
     \begin{split}
@@ -412,21 +412,21 @@ When evaluating \Cref{eq:effective_c7} explicitly for $m_t=170~\gevcc$, $\mu=5~\
 it is clear that the additive \QCD two-loop contributions including terms with $\mathcal{C}_8$ and $\mathcal{C}_2$ enhance the decay rate significantly.
 On the other hand, multiplicative \QCD correction in the first term suppresses the decay rate.
 
-To go beyond the leading-order approximation, one has to take into account the full form of \Cref{eq:normalised_br}.
-A sketch of the next-to-leading order can be found in Ref.~\cite{Gambino:2001ew}, whereas the most up-to-date total decay rate calculation is described in Ref.~\cite{Misiak:2020vlo} and references therein.
-A detailed look of the higher-order calculation of the total \BtoXsgamma decay rate is beyond the scope of this thesis, but such calculations can be followed up in the references already introduced in this Chapter, such as Ref.~\cite{Misiak:2020vlo} that includes the most up-to-date estimation of the total decay rate of \BtoXsgamma in the \SM:
+Beyond the leading-order approximation, one has to take into account the full form of \Cref{eq:normalised_br}.
+A sketch of the next-to-leading order can be found in Ref.~\cite{Gambino:2001ew}, whereas the most up-to-date total decay rate calculation is described in Ref.~\cite{Misiak:2020vlo}, and references therein.
+A detailed description of the higher-order calculation of the total \BtoXsgamma decay rate is beyond the scope of this thesis, but such calculations can be followed up in the references introduced in this Chapter, such as Ref.~\cite{Misiak:2020vlo} that includes the most up-to-date estimation of the total decay rate of \BtoXsgamma in the \SM:
 \begin{equation}\label{eq:btosgamma_theoretical}
     \mathcal{B}(\BtoXsgamma) = (3.40\pm 0.17) \times 10^{-4}.
 \end{equation}
 For $\BtoXdgamma$, as evident from \Cref{eq:effective_lagrangian}, the result is suppressed by a factor $|V_{td}/V_{ts}|^2~\approx~4.2\%$ with respect to the \BtoXsgamma result.
-Evaluating the decay with the exchanged CKM factors and other previously discussed caveats \cite{Misiak:2015xwa}:
+Evaluating the decay with the exchanged CKM factors and other previously discussed caveats~\cite{Misiak:2015xwa}:
 \begin{equation}\label{eq:btodgamma_theoretical}
     \mathcal{B}(\BtoXdgamma) = (0.173\pm^{0.12}_{0.22}) \times 10^{-4}.
 \end{equation}
 
 For \BtoXsgamma, the uncertainties in \Cref{eq:btosgamma_theoretical} arise from unevaluated higher-order effects, the necessity to perform an interpolation in $m_c$, and a parametric uncertainty that also encodes the non-perturbative effects.
 The first two amount to $3\%$ each, whereas the last is considered at $2.5\%$. 
-This amounts to a total uncertainty of approximately 4.9\%.
+This amounts to a total uncertainty of approximately $5\%$.
 For significant accuracy improvements in the future, higher-order calculations will not be sufficient.
 It is necessary to remove the dependence on $m_c$ interpolation and improve the treatment of the parametric uncertainties (non-perturbative effects) to go below the $\sqrt{3^2+2.5^2}\approx3.9\%$ uncertainty.
 
