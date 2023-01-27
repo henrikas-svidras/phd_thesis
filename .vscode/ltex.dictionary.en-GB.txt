@@ -24,3 +24,5 @@ KEK
 SuperKEKB
 Yukawa
 Cabibbo-Kobayashi-Maskawa
+isoproportion
+poissonian
