@@ -56,3 +56,5 @@
 {"rule":"AS_OF_YET","sentence":"^\\QHowever, some experiments do show, as of yet, unexplained tensions with the Standard Model.\\E$"}
 {"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QThe measurement will be performed by studying data of \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q mesons decaying into a meson system originating from an \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q quark, \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, and an energetic photon .\\E$"}
 {"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QThe standard notation of the radiative \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q meson decay processes is adopted to label it as .\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QThe thesis is therefore split up into 7 chapters, which introduce the theoretical background, experimental machinery and status of , data analysis tools and discusses the measurement itself.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QAdditional information, which supports or further explains the information presented in this thesis is provided in the sec:appendix_local_opperators sec:appendix_resolution_fits.\\E$"}
