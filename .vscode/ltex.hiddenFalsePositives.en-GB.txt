@@ -58,3 +58,4 @@
 {"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QThe standard notation of the radiative \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q meson decay processes is adopted to label it as .\\E$"}
 {"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QThe thesis is therefore split up into 7 chapters, which introduce the theoretical background, experimental machinery and status of , data analysis tools and discusses the measurement itself.\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\QAdditional information, which supports or further explains the information presented in this thesis is provided in the sec:appendix_local_opperators sec:appendix_resolution_fits.\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QThe thesis is therefore split up into 8 chapters, which introduce the theoretical background, experimental machinery and status of , data analysis tools and discusses the measurement itself.\\E$"}
