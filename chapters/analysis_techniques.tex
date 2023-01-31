@@ -3,11 +3,11 @@
 \section{Parameter estimation}\label{sec:fitting_theory}
 
 The distributions of observables that are measured experimentally always contain a degree of statistical uncertainty.
-In Physics, observables are usually modelled with smooth distributions, which can be parametrised with a set of numbers. 
+In Physics, observables are often modelled with smooth distributions, which can be parametrised by a set of numbers. 
 Parameter estimation, henceforth referred to as \textit{fitting}, is a process of extraction of parameters from observed distributions. 
 It is one of the key tasks of statistical analyses and, consequentially, particle physics measurements. 
 Nearly every particle physics analysis features some kind of fitting for the result extraction. 
-It is also present in particle trajectory reconstruction algorithms, calorimeter cluster shape parametrisation, and calibration procedures.
+It is also present in particle trajectory reconstruction algorithms, calorimeter cluster shape parametrisation, calibration procedures, and others.
 One of the most common examples is the fitting of a particle species invariant mass distribution reconstructed from its decay products.
 It was, for example, used in some of the most precise of the Higgs boson mass measurements \cite{ATLAS:2018tdk,CMS:2020xrn}, in the $\H\ra\Z\Zstar\ra 4\ell$ and $\H\ra\g\g$ decay channels.
 
@@ -16,16 +16,16 @@ In the former, the best estimate for a set of parameters is derived, which descr
 The latter sets the confidence interval on each parameter estimate in the set. 
 
 This Section gives a brief overview of the most relevant method that was used in the work presented in this thesis. 
-For a more in-depth consideration of statistical methods in data science and physics, I refer the readers to Refs. \cite{Behnke:2013pga,Blobel_Lohrmann_1998} and for rigorous proofs of the underlying statistical concepts, Refs. \cite{Bohm:2014vmk,James_2006,Barlow:1990vc}. 
-The material presented here only summarises the details in these books and articles.
+For a more in-depth consideration of statistical methods in data science and physics, the readers are referred to Refs. \cite{Behnke:2013pga,Blobel_Lohrmann_1998} and for rigorous proofs of the underlying statistical concepts, Refs. \cite{Bohm:2014vmk,James_2006,Barlow:1990vc}. 
+The material presented here only summarises the details found in these books and articles.
 
 \subsection{Maximum-likelihood method}\label{sec:mle}
 
 One of the most common and popular methods for parameter estimation is the maximum likelihood method. 
 It is also used widely in this analysis, as described in \Cref{ch:analysis}.
 
-An observed dataset can be defined as $x = (x_1, x_2,...,x_N)$, with $x_i$ being the $i$-th result of $N$ independent measurement following an unknown probability density function (\PDF),~$f(x)$.
-The shape of $f(x)$ is often parametrised as $f(x; a)$, where $a=(a_1,...,a_M)$ is a dimension-$M$ vector of unknown-valued parameters. 
+A measured dataset can be defined as $x = (x_1, x_2,...,x_N)$, with $x_i$ being the $i$-th result of $N$ independent measurement following an unknown probability density function (\PDF),~$f(x)$.
+The shape of $f(x)$ is often parametrised as $f(x; a)$, where $a=(a_1,...,a_M)$ is an $M$-dimensional vector of unknown parameters. 
 For a fitting procedure, one has to construct an \textit{estimator}, which is a function of the observed data that can provide an estimated numerical value, $\hat{a}$, corresponding to the parameter vector $a$.
 % Any estimator should satisfy four main criterion:
 
@@ -72,11 +72,11 @@ The solutions of \Cref{eq:likelihood_derivative} are maximum likelihood estimate
 In practice, numerical procedures and dedicated software packages for optimisation are usually used.
 Many optimisers used in modern day computers tend to minimise functions, rather than maximise them, therefore a \textit{negative log-likelihood} function is often used.
 Maximum-likelihood method is unbiased and consistent as the number of measurements grows, i.e. $N\ra\infty$.
-However, it requires a good prior knowledge of the form of the \PDF $f(x;a)$, as otherwise the result might be incorrect.
+However, it requires a good knowledge of the form of the \PDF $f(x;a)$, as otherwise the result might be incorrect.
 
 \subsection{Variance of the maximum likelihood method}\label{sec:mle_variance}
 
-Assuming the requirement of \Cref{eq:likelihood_derivative}, the log-likelihood function can be expanded as a series at $a=\hat{a}$ and approximated as a following parabola:
+Assuming \Cref{eq:likelihood_derivative} is satisfied, the log-likelihood function can be expanded as a series at $a=\hat{a}$ and approximated as a following parabola:
 \begin{equation}
     l(x;a_1,a_2,...,a_N) = l(x;\hat{a}_1,\hat{a}_2,...,\hat{a}_N) + \frac{1}{2}\sum_{i,k} \pdv{l}{a_i}{a_k} (a_i-\hat{a}_i)(a_k-\hat{a}_k)+...
 \end{equation}
@@ -108,10 +108,10 @@ Given that $\lambda_{\mu}(a_k)$ is distributed according to a $\chi^2$ distribut
 one finds the minimum and maximum value of $a_k$ that correspond to $\lambda_{\mu}(a_k)<\chi^2_{1,1-\alpha}$, where $1-\alpha$ is the desired confidence interval.
 For example, for a 95\% confidence interval, $\lambda_{\mu}(a_k)\lesssim3.84$.
 
-In general, this leads to asymmetric uncertainty interval with respect to the central extremum value $\hat{a}_k$ and a different result than uncertainties estimated by the Hessian matrix inversion method.
+In general, this leads to an asymmetric uncertainty interval with respect to the central extremum value $\hat{a}_k$.
 Note that in the asymptotic limit, both the profiling and Hessian matrix inversion methods provide the same results.
 However, reevaluating the likelihood for every given value of $a_k$ requires a minimisation of all other parameters, 
-therefore the profiling method can be computationally intensive. 
+therefore the profiling method can become computationally intensive. 
 It is often sufficient to apply the Hessian matrix inversion method, 
 as long as additional evaluation is performed to ensure that the provided uncertainties are accurate.
 
@@ -123,7 +123,7 @@ In particle physics, it is common to not only parametrise the shape of an observ
 The standard setup for the maximum likelihood method does not allow to determine the absolute normalisation. 
 An additional term to the likelihood has to be introduced.
 In Nature, if a measurement is performed repeatedly, its rate will fluctuate according to Poissonian statistics.
-Hence, the \Cref{eq:likelihood_equation}, needs to have a Poissonian term included:
+Hence, the \Cref{eq:likelihood_equation}, needs to have a Poisson term included:
 \begin{equation}\label{eq:extended_likelihood}
     \mathcal{L}(x;a) = \frac{\nu^N}{N!}\exp(-\nu)\prod_{i=1}^N f(x_i;a),
 \end{equation}
