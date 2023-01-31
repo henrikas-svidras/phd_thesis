@@ -55,3 +55,14 @@ klm
 multijet
 Röhrken
 semileptonic-tagging
+Weinheim
+Statistische
+und
+numerische
+Methoden
+Datenanalyse
+Teubner
+Studienbücher
+Physik
+MINUIT
+SoftwareX
