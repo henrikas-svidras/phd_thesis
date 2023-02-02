@@ -1,9 +1,9 @@
-In \Cref{sec:reconstruction_overview} it was discussed that in about a half of all reconstructed events there exists more than one tag-side candidate.
+In \Cref{sec:reconstruction_overview} it was discussed that in about half of all reconstructed events, there exists more than one tag-side candidate.
 That does not take into account the overlap between \feiBp and \feiBz mode -- which further enhances this effect.
 Performing the best tag-side $B$ candidate selection is important, as multiple entries per event should not be included in the final sample.
 However, the interest in this analysis lies in the signal side which decays as \BtoXsgamma, which means that a standard Belle II `truth-matching' procedure is too strict.
-In principle, our requirement is to only reconstruct a sample of tag $B$ mesons that \textit{give provide good kinematic constraints to the signal side}.
-In this section, these definition for best-candidate selection are discussed more broadly and
+In principle, the requirement is to only reconstruct a sample of tag-$B$ mesons that \textit{provide good kinematic constraints to the signal side}.
+In this section, the best tag-side candidate selection and a
  a concrete definition for tag-$B$ mesons with correctly reconstructed kinematic properties is introduced.
 
 \subsection{Selection within the same \texorpdfstring{\FEI}{FEI} mode}\label{sec:select_tag_between_modes}
@@ -24,7 +24,7 @@ which attests to the fact that background (and particularly continuum) suppressi
     \caption{\label{fig:fei_tag_reco_candidates_post_optimisation} 
     Relative fractions of events for the number of \B meson candidates in the generic \MC dataset after the background suppression selections in \Cref{tab:cutflow}.
     This figure can be directly compared with \Cref{fig:fei_tag_reco_candidates}.
-    The overall fractions are similar, which confirms a valid background-suppression procedure, which does not introduce a preference to specific tag-side modes.
+    The overall fractions are similar, which confirms a valid background suppression procedure, which does not introduce a preference towards specific tag-side modes.
     }
 \end{figure}
 
@@ -45,7 +45,7 @@ The figure also includes a similar \Mbc test for the continuum events.
     \subcaptionbox{\label{fig:bz_same_mode_best_tag_selection}}{
         \includegraphics[width=0.4\textwidth]{figures/best_tag_selection/bp_spectrum_with_random_best_tag_selection.pdf}
     }
-    \caption{\label{fig:same_mode_best_tag_selection}Photon energy spectrum (\Cref{fig:bp_same_mode_best_tag_selection}) after selecting a single tag $B$ meson candidate per event either randomly or by requiring the largest \feiProb.
+    \caption{\label{fig:same_mode_best_tag_selection}Photon energy spectrum (\Cref{fig:bp_same_mode_best_tag_selection}) after selecting a single tag-$B$ meson candidate per event either randomly or by requiring the largest \feiProb.
     This is shown for \BptoXsgamma events in \Cref{fig:bp_same_mode_best_tag_selection} 
     and \BztoXsgamma in \Cref{fig:bz_same_mode_best_tag_selection}.
     The figures are normalised to their total integral value such that a shape comparison can be performed.
@@ -68,25 +68,25 @@ The figure also includes a similar \Mbc test for the continuum events.
         \includegraphics[width=0.4\textwidth]{figures/best_tag_selection/bz_continuum_Mbc_with_random_best_tag_selection.pdf}
     }
     \caption{\label{fig:same_mbc_best_tag_selection}\Mbc shapes for \BtoXsgamma signal \MC (\Cref{fig:bp_mbc_mode_best_tag_selection,fig:bz_mbc_mode_best_tag_selection}) 
-    and \mbox{\epem\ra\qqbar} events from generic-\MC (\Cref{fig:bp_continuum_mode_best_tag_selection,fig:bz_continuum_mode_best_tag_selection}) after selecting a single tag $B$ meson candidate per event either randomly or by requiring the large \feiProb.
+    and \mbox{\epem\ra\qqbar} events from generic-\MC (\Cref{fig:bp_continuum_mode_best_tag_selection,fig:bz_continuum_mode_best_tag_selection}) after selecting a single tag-$B$ meson candidate per event either randomly or by requiring the large \feiProb.
     \Cref{fig:bp_mbc_mode_best_tag_selection,fig:bp_continuum_mode_best_tag_selection} show that the difference in the \Mbc distribution for \BptoXsgamma and \BztoXsgamma mostly pronounced in the peak region.
-    On the other hand, \Cref{fig:bp_continuum_mode_best_tag_selection,fig:bz_continuum_mode_best_tag_selection} shows not strong dependance in shape irrespective of the way the tag-side candidate is chosen.
+    On the other hand, \Cref{fig:bp_continuum_mode_best_tag_selection,fig:bz_continuum_mode_best_tag_selection} shows no strong dependence in shape irrespective of the way the tag-side candidate is chosen.
     The figures are normalised to their total integral value such that a shape comparison can be performed.
-    This observation motivates to selected the highest-\feiProb candidate.
+    This observation motivates the selection of the highest-\feiProb candidate.
     }    
 \end{figure}
 
 As it is desirable to emphasise the contrast between continuum and $B$ events for the fitting step that will follow (see \Cref{sec:fitting_mbc})
 the highest \feiProb candidate in each event is chosen as the $B$ candidate with virtually no bias to the resolution.
-However, the study here, as of yet, does not address the cases when a candidate in the same event is reconstructed in \feiBp and \feiBz modes.
+However, the study here, as of yet, does not address the cases when a candidate in the same event is reconstructed in the \feiBp and \feiBz modes.
 Therefore, for now, both candidates are kept in such events and the study is continued in \Cref{sec:select_best_candidate}.
 
 \subsection{Selection between \texorpdfstring{\feiBp}{feiB+} and \texorpdfstring{\feiBz}{feiB0} mode}\label{sec:select_best_candidate}
 
 The last section showed that one can select the highest \feiProb candidate from \feiBp and \feiBz without a significant effect on the \EB resolution, and with an enhancement of the \Mbc distribution peak.
-As such it reduced each event to a signle tag-$B$ and photon combination in most events.
+As such it reduced each event to a single tag-$B$ and photon combination in most events.
 However, it did not address the case when there is a candidate reconstructed in both \feiBp and \feiBz modes: implying that events may still have up to two combinations.
-Such cases are evaluated to happen roughly 10.5\% of time. 
+Such cases are evaluated to happen roughly 10.5\% of the time. 
 For the sample where two $B$ candidates exist, two quantities are calculated
 \begin{equation}\label{eq:asymmetry_tag}
     \mathcal{A}_{\mathrm{tag}} = \frac{\mathcal{P}_{\mathrm{tag}}(\feiBp) - \mathcal{P}_{\mathrm{tag}}(\feiBz)}{\mathcal{P}_{\mathrm{tag}}(\feiBp) + \mathcal{P}_{\mathrm{tag}}(\feiBz)},
@@ -102,8 +102,8 @@ These quantities are visualised in a two-dimensional grid in \Cref{fig:selecting
 In the figure, the sample is split into two samples, where a real \Bp or \Bz hadronic decay is present on the tag-side, in \Cref{fig:bp_selecting_tag_mode} and \Cref{fig:bz_selecting_tag_mode}, respectively.
 If a $\Bp$ candidate is present $\mathcal{A}_{\mathrm{tag}}\approx1$ and $\Delta(\Mbc)\gtrsim 0$ for majority of the candidates.
 For $\Bz$ candidates the opposite is true: $\mathcal{A}_{\mathrm{tag}}\approx-1$ and $\Delta(\Mbc)\lesssim 0$ for majority of the candidates.
-This result implies that if the true candidate is a \Bp(\Bz), then the value of \feiProb will be higher from \feiBp (\feiBz) candidates the opposite \FEI mode.
-Furthermore, the fact that $\Delta(\Mbc)$ tends to be higher can simply be understood that the incorrect candidate is more likely to be present in the tail, rather than peak region of \Mbc.
+This result implies that if the true candidate is a \Bp(\Bz), then the value of \feiProb will be higher for \feiBp (\feiBz) candidates.
+The $\Delta(\Mbc)$ distribution is interpreted by acknowledging that the incorrect candidate is more likely to be present in the tail, rather than the peak region of \Mbc.
 
 \begin{figure}[htbp!]
     \centering
@@ -123,18 +123,19 @@ Furthermore, the fact that $\Delta(\Mbc)$ tends to be higher can simply be under
     }
 \end{figure}
 
-Based on the observations discussed in this sections, it can be concluded that it is appropriate to select the \FEI candidate with the highest signal probability even when selecting between different \feiBp and \feiBz modes.
-This selections finalises the best-candidate selection in this analysis as now it is ensured that every photon candidate corresponds to a single, unique tag-side $B$ meson candidate.
+Based on the observations discussed in this Section, it can be concluded that it is appropriate to select the \FEI candidate with the highest signal probability even when selecting between different \feiBp and \feiBz modes.
+This selection finalises the best-candidate selection in this analysis as now it is ensured that every photon candidate corresponds to a single, unique tag-side $B$ meson candidate.
 
 \subsection{Truth-level tag \texorpdfstring{\B}{B} mesons}\label{sec:good_tag_definition}
 
-In particle physics simulation it is possible to rely on the information, provided by the simulation generators to trace back the measured and reconstructed particles all the way to the generated particles.
+In particle physics simulation it is possible to rely on the information, provided by the simulation generators, to trace back the measured and reconstructed particles to the generated particles.
 This procedure is called \textit{truth-matching} and is the usual way to associate `measured-objects' and `generated-objects'.
-In particular, the truth-matching requirements ensure that all the particles have correct particle species, momenta, energy determined and, if unstable, the same should be true for their entire decay chain.
+In particular, the truth-matching requirements ensure that all the particles have the correct particle species hypothesis, momenta, and energy determined.
+Furthermore, if unstable, the same should be true for their entire decay chain.
 This is crucial when performing analysis setup on simulated samples in order to ensure that conclusions, such as efficiency are only drawn from the signal mode samples.
-However, in the case of tag $B$ meson reconstruction it is not particularly important to know that the $B$ meson and its entire decay chain is reconstructed fully correctly.
-The most important and crucial requirement for a tag is its consistent kinematic constrain that can be provided.
-In this analysis a good kinematic constraint manifests as resonant behaviour in \Mbc for the tag-$B$ meson distribution.
+However, in the case of tag-$B$ meson reconstruction, it is not particularly important to know that the $B$ meson and its entire decay chain are reconstructed fully correctly.
+The most crucial requirement for a tag-$B$ is the consistent kinematic constraint that can be provided.
+In this analysis, a good kinematic constraint manifests as resonant behaviour in \Mbc for the tag-$B$ meson distribution.
 
 Using \texttt{basf2} truth-level information the reconstructed tag-$B$ mesons are subdivided into 11 categories and one or more combinations of the categories based on the differences from the generated decay chains.
 The categories are as follows:
@@ -143,14 +144,14 @@ The categories are as follows:
     \item The tag-$B$ and all its daughters are correctly identified and associated;
     \item A final-state radiation photon is not reconstructed;
     \item The tag-$B$ contains more non-final state particles (i.e. resonances) that were not reconstructed;
-    \item The tag-$B$ was reconstructed from the secondary decay product which implies that a wrong mass-hypothesis was used;
+    \item The tag-$B$ was reconstructed from the secondary decay product which implies that a wrong species hypothesis was used;
     \item The tag-$B$ has a missing neutrino;
     \item The tag-$B$ has a photon missing;
     \item The tag-$B$ has a massive final-state particle missing;
     \item The tag-$B$ has a $K_L$ missing (special category compared to 6);
-    \item The tag-$B$ has a final state particle associated that has a wrong-signed charged;
+    \item The tag-$B$ has a final state particle associated that has a wrong-signed charge;
     \item The tag-$B$ has a (n-th) daughter non-final-state particle which belongs to a different particle;
-    \item Different error in the truth-matching procedure.
+    \item Different errors in the truth-matching procedure.
 \end{enumerate}
 Furthermore, all possible combinations between these are created (e.g. The tag-$B$ has a photon \textit{and} a massive final-state particle missing.)
 In total 108 combined categories are observed in the admixture of \BtoXsgamma signal \MC samples for $B$ meson candidates.
@@ -192,18 +193,18 @@ The modes chosen in this analysis as ones that provide good-kinematic constraint
     }
     \caption{\label{fig:good_tags_jsdists} The two-dimensional distribution of Jensen-Shannon distances and the fraction of $B$-meson candidates with $\Mbc<5.27~\gevcc$
     shown for \BptoXsgamma (\Cref{fig:Bp_good_tags_jsdists}), \BztoXsgamma (\Cref{fig:Bz_good_tags_jsdists}), and the mixture of the two (\Cref{fig:Bboth_good_tags_jsdists})
-    There are 108 categories in total that have their \Mbc distributions evaluated.
+    108 categories in total have their \Mbc distributions evaluated.
     The legend is shared between the figures.
     The blue dots are chosen as the definition of tags providing a good kinematic constraint (`good' tags).
-    The choice is based on a threshold of Jensen-Shannon distance$>0.3$, where it can be seen that fraction of $B$-meson candidates with $\Mbc<5.27~\gevcc$ begins to swiftly grow.
+    The choice is based on a threshold of Jensen-Shannon distance$>0.3$, where it can be seen that the fraction of $B$-meson candidates with $\Mbc<5.27~\gevcc$ begins to swiftly grow.
     }
 \end{figure}
 
-The \Mbc distribution for \BtoXsgamma admixture with categories providing a `good' kinematic constraint and a `bad' one are shown in \Cref{fig:goodbad_comparison}.
+The \Mbc distributions for \BtoXsgamma admixture with categories providing a `good' kinematic constraint and a `bad' one are shown in \Cref{fig:goodbad_comparison}.
 The same figure also highlights the difference if no procedure such as the one described in this section would be introduced.
 One can see a large resonant behaviour of non-perfectly reconstructed tags in \Cref{fig:isSig_comparison}, which is mostly absorbed into the definition of a `good' tag provided in this section.
 This highlights the importance of the study presented in this chapter -- it would be difficult to separate the non-perfectly reconstructed tag-$B$ meson distribution from the perfectly reconstructed one in an \Mbc fit that will follow (see \Cref{sec:fitting_mbc}), due to a large correlation between their shapes.
-For the rest of this thesis a tag $B$ meson that provides a `good' kinematic constraint will simply be referred to as a \textit{peaking} tag, referencing their behaviour in \Mbc.
+For the rest of this thesis, a tag-$B$ meson that provides a `good' kinematic constraint will simply be referred to as a \textit{peaking} tag, referencing their behaviour in \Mbc.
 
 \begin{figure}[htbp!]
     \centering
@@ -215,6 +216,7 @@ For the rest of this thesis a tag $B$ meson that provides a `good' kinematic con
     }
     \caption{\label{fig:good_tag_definitions} \Mbc distribution of \BtoXsgamma admixture with split by ``good''/``bad'' kinematic constrain criterion (\Cref{fig:goodbad_comparison})
     and the conventional perfect/non-perfect reconstruction criterion (\Cref{fig:isSig_comparison}).
-    The definition of a tag-$B$ meson that provides a good kinematic constraint described in \Cref{sec:good_tag_definition} is clearly able to describe the resonant-\Mbc structure better.
+    The definition of the tag-$B$ meson described in \Cref{sec:good_tag_definition}
+    accurately represents the resonant-\Mbc structure.
     }
 \end{figure}
