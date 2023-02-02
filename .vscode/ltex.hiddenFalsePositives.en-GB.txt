@@ -228,3 +228,7 @@
 {"rule":"THE_PUNCT","sentence":"^\\QTherefore, the study of their decays opens the possibility of measuring a wide range of parameters of the , including the matrix, \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q violation measurements, lepton mass measurements etc.\\E$"}
 {"rule":"MD_BASEFORM","sentence":"^\\QCan charged lepton flavour-changing processes exist in Nature?\\E$"}
 {"rule":"THE_SENT_END","sentence":"^\\QThe model is attractive because it can be incorporated into many theories that provide insight into the long-standing issues of the .\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QIn this chapter, the main methods of performing an inclusive measurement are introduced while focusing predominantly on , although, generally, these methods are applicable to other decay channels as well.\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QIn particular, \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q processes contribute strongly, since they tend to produce energetic or charm mesons (whose decay chains include ).\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QThe idea of tagging is using the tag-side \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q decay products to apply kinematic constraints on the signal-side \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q decay ( in the example).\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\QOf particular interest is hadronic tagging, which, in the context of , has been performed only once by BaBar \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, using roughly 50% of their total dataset.\\E$"}
