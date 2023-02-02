@@ -66,3 +66,5 @@ Studienbücher
 Physik
 MINUIT
 SoftwareX
+Pythia
+SVPHELAMP
