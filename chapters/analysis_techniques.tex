@@ -27,7 +27,7 @@ It is also used widely in this analysis, as described in \Cref{ch:analysis}.
 A measured dataset can be defined as $x = (x_1, x_2,...,x_N)$, with $x_i$ being the $i$-th result of $N$ independent measurement following an unknown probability density function (\PDF),~$f(x)$.
 The shape of $f(x)$ is often parametrised as $f(x; a)$, where $a=(a_1,...,a_M)$ is an $M$-dimensional vector of unknown parameters. 
 For a fitting procedure, one has to construct an \textit{estimator}, which is a function of the observed data that can provide an estimated numerical value, $\hat{a}$, corresponding to the parameter vector $a$.
-% Any estimator should satisfy four main criterion:
+% Any estimator should satisfy four main criteria:
 
 % \begin{itemize}
 %     \item \textbf{Consistency}: as the number of measurements increases, the precision of the estimator increases, i.e.:
@@ -46,7 +46,7 @@ For a fitting procedure, one has to construct an \textit{estimator}, which is a 
 %     \end{equation}
 %     \item \textbf{Robustness}: against wrong inputs or incorrect assumptions.
 % \end{itemize}
-%Usually, it is difficult to choose an estimator that can satisfy all of these criterion simultaneously. One common estimator is the maximum likelihood estimator.
+%Usually, it is difficult to choose an estimator that can satisfy all of these criteria simultaneously. One common estimator is the maximum likelihood estimator.
 
 A very common example is the maximum likelihood estimator, which uses the likelihood function.
 The likelihood function is built from one- or multidimensional \PDF $f(x;a)$ of the measured values $x$:
@@ -57,7 +57,7 @@ The likelihood function is built from one- or multidimensional \PDF $f(x;a)$ of 
 % \begin{equation}
 %     \int f(x;a)dx = 1 \quad \ra \quad \int \mathcal{L}(x;a)dx_1dx_2...dx_N = 1.
 % \end{equation}
-In this case, the maximum likelihood estimate of the parameters $a$ correspond to $\hat{a}$ for which $\mathcal{L}(x;a)$ is globally maximised.
+In this case, the maximum likelihood estimate of the parameters $a$ corresponds to $\hat{a}$ for which $\mathcal{L}(x;a)$ is globally maximised.
 Because the product of many components can vary over several orders of magnitude, in real-life applications it is more convenient to work with sums.
 Therefore, a log-likelihood function is used in practice:
 \begin{equation}
@@ -70,9 +70,9 @@ The maximum of the log-likelihood function satisfies the standard requirement fo
 \end{equation}
 The solutions of \Cref{eq:likelihood_derivative} are maximum likelihood estimates of $\hat{a}$. Generally, it is impossible to find an extremum in a large parameter space using analytical methods.
 In practice, numerical procedures and dedicated software packages for optimisation are usually used.
-Many optimisers used in modern day computers tend to minimise functions, rather than maximise them, therefore a \textit{negative log-likelihood} function is often used.
-Maximum-likelihood method is unbiased and consistent as the number of measurements grows, i.e. $N\ra\infty$.
-However, it requires a good knowledge of the form of the \PDF $f(x;a)$ that the data follows. 
+Many optimisers used in modern-day computers tend to minimise functions, rather than maximise them, therefore a \textit{negative log-likelihood} function is often used.
+The maximum-likelihood method is unbiased and consistent as the number of measurements grows, i.e. $N\ra\infty$.
+However, it requires a good assumption of the form of the \PDF $f(x;a)$ that the data follows. 
 If the assumed distribution is incorrect, the results can be unreliable.
 
 \subsection{Variance of the maximum likelihood method}\label{sec:mle_variance}
@@ -81,7 +81,7 @@ Assuming \Cref{eq:likelihood_derivative} is satisfied, the log-likelihood functi
 \begin{equation}
     l(x;a_1,a_2,...,a_N) = l(x;\hat{a}_1,\hat{a}_2,...,\hat{a}_N) + \frac{1}{2}\sum_{i,k} \pdv{l}{a_i}{a_k} (a_i-\hat{a}_i)(a_k-\hat{a}_k)+...
 \end{equation}
-The likelihood function generally has any non-Gaussian shape, however it can be shown~\cite{James_2006} that in the asymptotic limit, $N\ra\infty$, 
+The likelihood function generally has any non-Gaussian shape, however, it can be shown~\cite{James_2006} that in the asymptotic limit, $N\ra\infty$, 
 any given $f(x;a)$ can have its likelihood function approximated with a multivariate Gaussian distribution:
 \begin{equation}
     \mathcal{L} \propto \exp{-\frac{1}{2}(a-\hat{a})^T H(a-\hat{a})},
@@ -111,7 +111,7 @@ For example, for a 95\% confidence interval, $\lambda_{\mu}(a_k)\lesssim3.84$.
 
 In general, this leads to an asymmetric uncertainty interval with respect to the central extremum value $\hat{a}_k$.
 Note that in the asymptotic limit, both the profiling and Hessian matrix inversion methods provide the same results.
-However, reevaluating the likelihood for every given value of $a_k$ requires a minimisation of all other parameters, 
+However, reevaluating the likelihood for every given value of $a_k$ requires minimisation of all other parameters, 
 therefore the profiling method can become computationally intensive. 
 It is often sufficient to apply the Hessian matrix inversion method, 
 as long as additional evaluation is performed to ensure that the provided uncertainties are accurate.
@@ -120,8 +120,8 @@ In particle physics, a commonly used minimisation software is \texttt{Minuit} \c
 It implements the Hessian matrix inversion as the \texttt{HESSE} method and the likelihood-based uncertainty estimation method as \texttt{MINOS}.
 \subsection{Extended maximum likelihood}
 
-In particle physics, it is common to not only parametrise the shape of an observable's distribution, but also to measure its absolute rate (normalisation).
-The standard setup for the maximum likelihood method does not allow to determine the absolute normalisation. 
+In particle physics, it is common to not only parametrise the shape of an observable's distribution but also to measure its absolute rate (normalisation).
+The standard setup for the maximum likelihood method does not allow determining the absolute normalisation. 
 An additional term to the likelihood has to be introduced.
 In Nature, if a measurement is performed repeatedly, its rate will fluctuate according to Poissonian statistics.
 Hence, the \Cref{eq:likelihood_equation}, needs to have a Poisson term included:
@@ -149,7 +149,7 @@ There are two ways that data can be arranged for a fit:
 The intervals are often referred to as \textit{bins}. 
 Consequentially, the techniques are referred to as \textit{unbinned} and \textit{binned} fits, respectively.
 In this thesis, unbinned maximum likelihood fits are used. 
-They are computationally more intensive, but are a more general case of binned fits. 
+They are computationally more intensive but are a more general case of binned fits. 
 
 Throughout this thesis, fitting is implemented using the \texttt{zfit} framework \cite{ESCHLE2020100508}. 
 It provides a Python-based library that is developed to fulfil particle physics fitting requirements.
@@ -171,7 +171,7 @@ However, as the number of observables used in the selection grows, the tuning of
 This section introduces some relevant techniques to combine the information of many observables of an event. 
 Particularly, it overviews multivariate classification algorithm (\MVA) concepts and boosted decision trees (\BDT{s}). 
 The material presented here is only a summary detailing techniques used in the analyses presented in the thesis.
-For a detailed overview of multivariate classification techniques I refer the reader to Ref.\cite{Behnke:2013pga} and for their underlying statistical framework to \cite{Hastie_Tibshirani_Friedman_2001,bishop_2016}.
+For a detailed overview of multivariate classification techniques, the reader is referred to Ref.~\cite{Behnke:2013pga}, and for their underlying statistical framework to \cite{Hastie_Tibshirani_Friedman_2001,bishop_2016}.
 
 \subsection{Multivariate classification}
 
@@ -203,7 +203,7 @@ This problem is then equivalent to the one described in \Cref{sec:mle}, with a d
 
 Classifiers with a smaller number of degrees of freedom tend to be more
 robust against statistical fluctuations of a sample (smaller variance).
-However, this might make the model unable to learn the more intricate details in the training sample, and lead to bias when applied on a statistically-independent sample.
+However, this might make the model unable to learn the more intricate details in the training sample, and lead to bias when applied to a statistically-independent sample.
 The \textit{bias-variance trade-off} 
 is the balance between a model's ability to fit the training sample well
 and its ability to generalise to new unseen data. 
@@ -230,7 +230,7 @@ This is only acceptable in the case of large training samples, where statistical
     Dashed lines show the different selection thresholds for an example \MVA model.
     \Cref{fig:roc_curves} shows corresponding \ROC curves, calculated for examples 0-3.
     The working points that represent the dashed lines of \Cref{fig:distributions_separation} are shown in the same colour, for each of the four curves.
-    A perfect classifier is able to unambiguously separate green and red distributions, similar to example~3.
+    A perfect classifier unambiguously separates green and red distributions, similar to example~3.
     On the other hand, a poor classifier would only be able to perform marginally better than random guessing, similar to example~0.    
     }
 \end{figure}
@@ -241,7 +241,7 @@ A \ROC curve represents the true positive rate as a function of the false positi
 A visual representation of the meaning of \ROC curves is shown in \Cref{fig:rocs_examples}.
 Given an optimal classifier (no overtraining), one expects the \ROC curve calculated on training and testing data to be highly similar.
 This can be qualitatively by visually inspecting the corresponding curves, or, quantitatively, by defining an area-under-curve (\AUC) score which is computed by integrating the \ROC curve.
-An $\mathrm{\AUC}=1$ would represent false positive rate of 0, and a true positive rate of 1 (see \Cref{fig:roc_curves})
+An $\mathrm{\AUC}=1$ would represent a false positive rate of 0, and a true positive rate of 1 (see \Cref{fig:roc_curves})
 The least-optimal classifier would provide a random guess and have a false positive and true positive rate of 0.5, and $\mathrm{\AUC}=0.5$.
 
 In high-energy physics, we often use alternative forms of false positive and true positive rates.
@@ -249,19 +249,19 @@ Namely, we tend to express our results in terms of
 \begin{itemize}
     \item \textit{efficiency}: equivalent to the true positive rate;
     \item \textit{background rejection}: equivalent to $1 - \mathrm{false~positive~rate}$;
-    \item \textit{purity}: fraction of signal, with respect to the total sample size (signal$+$background); equivalent to positive predictive value.
+    \item \textit{purity}: fraction of signal with respect to the total sample size (signal$+$background); equivalent to positive predictive value.
 \end{itemize}
 
 \subsection{(Boosted) decision trees}\label{sec:BDTs_theory}
 
-When combining many features together, selecting an appropriately parametrised model (\Cref{eq:loss_function}) can be complicated and suboptimal.
-Therefore, non-parametric models are often desired, and a simple way to implement these are \textit{decision trees}.
+When combining many features, selecting an appropriately parametrised model (\Cref{eq:loss_function}) can be complicated and suboptimal.
+Therefore, non-parametric models are often desired, and a simple way to implement them is by using \textit{decision trees}.
 
 A decision tree is a classification technique where the $N$-dimensional feature space is divided based on a series of binary selections.
-A simple model divides the feature space in two regions, where the division depends on the value of a single feature with respect to a certain threshold. 
+A simple model divides the feature space into two regions, where the division depends on the value of a single feature with respect to a certain threshold. 
 The splitting process is then repeated in the two resulting regions.
 The exact value to split by is optimised in each region independently by evaluating a loss function.
-For classification problems cross-entropy is common to be used:
+For classification problems cross-entropy is commonly used:
 \begin{equation}
     \mathcal{L}(y,\hat{y})=-\sum_{j=1}^J y_j\log \hat{y}_j + (1-y_j)\log(1-\hat{y}_j),
 \end{equation}
@@ -269,16 +269,16 @@ where $y$ is a target and $\hat{y}$ is a predicted label.
 The value of $\mathcal{L}(y,\hat{y})\to0$ as the fraction of correctly predicted values grows.
 Each final region which has not been subdivided is called a \textit{leaf}.
 A set of selections leading to a leaf is known as a \textit{branch}. 
-Therefore, at the end of every branch there is a node with two leaves.
+Therefore, at the end of every branch, there is a node with two leaves.
 The maximum number of selections in a branch is called the \textit{depth} of the classifier.
 
-The tree could be grown indefinitely, and it is obvious that this will quickly lead to overtraining, highlighting the aforementioned bias-variance trade-off.
+The tree could be grown indefinitely, and this will quickly lead to overtraining, highlighting the aforementioned bias-variance trade-off.
 In practice, a technique called \textit{pruning} is employed, which removes nodes from the tree based on their overall impact on the performance of the decision tree.
 This produces a smaller tree and the `strength' of pruning is tunable with appropriate parameters.
 
-Decision trees are easily interpretable as they mimic human logic in terms of a number of sequential binary decisions.
-However, they also tend to be highly-dependant on the statistical fluctuations of the training dataset.
-With pruning, their performance on independent samples usually turns out to be weaker than many other \MVA{s}, and the misclassification rate only slightly better than random guesses.
+Decision trees are easily interpretable as they are a series of binary decisions that are intuitive and closely resemble human reasoning.
+However, they also tend to be highly dependent on the statistical fluctuations of the training dataset.
+With pruning, their performance on independent samples usually turns out to be weaker than many other \MVA{s}, and the misclassification rate is only slightly better than random guesses.
 A single decision tree is, therefore, considered a \textit{weak classifier}.
 
 This and other problems surrounding decision trees are addressed by employing \textit{boosting} and forming boosted decision trees (\BDT{s}).
@@ -286,7 +286,7 @@ Boosting enhances the performance of an ensemble of weak classifiers by combinin
 The performance of such a boosted ensemble can be much better even when all the input classifiers are weak.
 
 During the first training iteration of a \BDT, a regular decision tree would be trained, as explained before, with a shallow limit on the depth.
-However, after that there would follow a second training iteration, where the events that were misclassified in the last training iteration are given a larger weight.
+Next, there would follow a second training iteration, where the events that were misclassified in the last training iteration are given a larger weight.
 The procedure is repeated $M$ times to train a set of classifiers $g_{m}(x)$, where $m=1,2,..,M$.
 The final output is a weighted `majority vote' of all these classifiers:
 \begin{equation}\label{eq:boosted_classifier}
@@ -308,7 +308,7 @@ by minimising the loss function for parameter $\alpha_m$:
 One way to solve \Cref{eq:minimize_loss} in a numerically-optimal way is to compute the gradient of the loss function.
 Consequentially, a classifier built this way is called \textit{gradient-boosted} decision tree \cite{FRIEDMAN1013203451}.
 
-To further increase robustness of gradient-\BDT{s}, one may only sample (without replacement) a part of the dataset in each training iteration.
+To further increase the robustness of gradient-\BDT{s}, one may only sample (without replacement) a part of the dataset in each training iteration.
 In this case, any statistical fluctuations would average out over the sum of all trees. 
 This technique is called stochastic gradient-\BDT{s} \cite{FRIEDMAN2002367}.
 The fraction of data used at every training iteration is called the \textit{sampling rate}.
@@ -353,7 +353,7 @@ The main method in high-energy physics is to extract an implicit form of this fu
 \caption{\label{fig:smearing_illustration} 
 A visual illustration of the smearing of an arbitrary observable.
 Considering some `true' distribution (blue, full line), depicted by a sharp Lorentzian, the experimentally observed result (grey, full line) will be affected by, usually, unknown detector-response and resolution effects.
-In this case, the unknown experimental effects are illustrated by a Gaussian (dotted) and Crystal Ball (dashed) functions.}
+In this case, the unknown experimental effects are illustrated by Gaussian (dotted) and Crystal Ball (dashed) functions.}
 \end{figure}
 
 In science, experimental data are often presented in the form of a histogram. 
@@ -372,18 +372,18 @@ where:
 In general, \Cref{eq:fredholm_integral,eq:unfolding_linear_equation} may contain additional terms dependent on $y$ corresponding to background contributions and statistical fluctuations.
 
 The elements $A_{ij}$ of $\hat{A}$ correspond to a probability to measure an event in bin $j$ that was produced in bin $i$.
-In particle physics, the response matrix is generally built using Monte Carlo simulated samples that generate particle collisions, and simulate signal processing and detector effects.
+In particle physics, the response matrix is generally built using Monte Carlo techniques by using simulated particle collision samples and modelling the detector response.
 Consider the number of simulated events generated in a bin $i$, $N_i^{\mathrm{gen}}$. 
 In general, some of these events may be measured in a different bin $j$, and the number of such events is denoted as $N_{ij}^{\mathrm{meas}}$.
 Then one builds the response matrix as:
 \begin{equation}\label{eq:response_matrix_element}
     A_{ij} = \frac{N_{ij}^{\mathrm{meas}}}{N_j^{\mathrm{gen}}}.
 \end{equation}
-There are a number of methods to solve \Cref{eq:unfolding_linear_equation}, discussed in the following sections.
+There are several methods to solve \Cref{eq:unfolding_linear_equation}, discussed in the following sections.
 
 \subsection{Bin-by-bin unfolding}
 
-The simplest approach is to scale the measured distribution in each bin $i$ by a factor determined from simulation:
+The simplest approach is to scale the measured distribution in each bin $i$ by a factor determined from simulated samples:
 \begin{equation}\label{eq:bin_by_bin_unfolding}
  x_i = y_i \cdot \frac{N_i^{\mathrm{gen}}}{N_i^{\mathrm{meas}}},
 \end{equation}
@@ -396,7 +396,7 @@ where $\Delta x_i$ and $\Delta y_i$ are uncertainties associated with these quan
 
 This method is only possible if the number of bins in the true distribution is equal to the number of bins in the measured distribution.
 Furthermore, it does not take any cross-bin effects into account, i.e. effectively treats each bin as uncorrelated.
-Therefore, it is usually used when the necessary corrections are small or when the statistical uncertainty dominates the experimental result.
+Therefore, it is usually used when the necessary corrections are small or when statistical uncertainty dominates the experimental result.
 The method is referred to as \textit{bin-by-bin} unfolding, or bin-by-bin correction method.
 It has been the main method applied in the works of this thesis (see \Cref{sec:signal_unfolding}).
 
@@ -411,19 +411,19 @@ While the result is statistically fully correct, it tends to introduce large neg
 The simple reasoning for this is the fact that Poissonian fluctuations in neighbouring bins will get amplified/suppressed by the matrix multiplication, creating an ``oscillatory'' pattern.
 This effect is undesirable and goes against the common sense that (generally) smooth distributions are expected in nature.
 The correction of such correlations is called \textit{regularisation}\footnote{Note that regularisation in the context of machine learning usually refers to techniques that prevent overfitting.
-The term used here refers to unfolding regularisation of inverse problems.
+The term used here refers to the unfolding regularisation of inverse problems.
 }.
 
 \subsection{Other unfolding methods and regularisation}
 As discussed in the last Subsection, unfolding introduces large correlations, leading to `non-physical' shapes of unfolded distributions.
-Regularisation is a delicate task because, roughly put, the scientist has a prejudice towards smooth measured distributions and therefore artificially adds a bias to smoothen them.
+Regularisation is a delicate task because it arises from a conscious prejudice towards smooth measured distributions and the artificial introduction of a bias to smoothen them.
 Unsurprisingly, there exist many methods to perform regularisation.
-Although an in-depth discussion is irrelevant for the purpose of the work presented in this thesis, some of the most common ones in particle physics are listed here:
+Although an in-depth discussion is irrelevant to the work presented in this thesis, some of the most common ones in particle physics are listed here:
 \begin{itemize}
     \item \texttt{TUnfold} method \cite{Schmitt:2012kp}: performs a least-squares minimisation of $\vec{y}-\hat{A}{\vec{x}}$ and includes a damping term for oscillations in $x$;
     \item D'Agostini method \cite{d2010improved,DAgostini:1994fjx}: inversion of response matrix using Bayes' theorem and iterative improvement of the unfolding result, stopping iterations early to not require regularisation;
     \item Iterative dynamically-stabilised method \cite{Malaescu:2009dm}: combines elements of d'Agostini's and bin-by-bin correction methods, preserving the normalisation of data in each bin;
-    \item Singular value decomposition method \cite{Hocker:1995kb}: solves \Cref{eq:unfolding_linear_equation} by decomposing the response matrix into its singular values, adds a weighted prior condition to the solution.
+    \item Singular value decomposition method \cite{Hocker:1995kb}: solves \Cref{eq:unfolding_linear_equation} by decomposing the response matrix into its singular values, and adds a weighted prior condition to the solution.
 \end{itemize}
 In particle physics, unfolding is often implemented using the \texttt{RooUnfold} package \cite{Brenner:2019lmf}, which can perform all the methods described in \Cref{sec:unfolding}.
 In the analysis presented in this thesis, regularisation was not applied following the results of studies in \Cref{sec:signal_unfolding}.
@@ -435,8 +435,8 @@ Such a bias can occur when using the analysed data directly to perform optimisat
 An experimenter may enhance statistical or unknown systematic effects (even unintentionally) which bias the sample to give a desired or expected result.
 
 Generally, one restricts access to the analysed sample until after the measurement setup is finalised.
-In particle physics, this is done by firstly performing the analysis on simulated data, 
-and then using independent data samples to ensure that appropriate test metrics are matched.
+In particle physics, this is done by first performing the analysis on simulated data, 
+and next using independent data samples to ensure that appropriate test metrics are matched.
 Normally, a certain range of an interesting observable is hidden, for example, in the case of \BtoXsgamma analysis presented here, it can be the photon energy, \Egamma.
 This method is well-suited when performing measurements where the signal region is known in advance, as is the case in this thesis.
 The removal of a constraint and the application of the analysis technique on real data is called \textit{unblinding}.
