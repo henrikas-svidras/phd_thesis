@@ -72,7 +72,8 @@ The solutions of \Cref{eq:likelihood_derivative} are maximum likelihood estimate
 In practice, numerical procedures and dedicated software packages for optimisation are usually used.
 Many optimisers used in modern day computers tend to minimise functions, rather than maximise them, therefore a \textit{negative log-likelihood} function is often used.
 Maximum-likelihood method is unbiased and consistent as the number of measurements grows, i.e. $N\ra\infty$.
-However, it requires a good knowledge of the form of the \PDF $f(x;a)$, as otherwise the result might be incorrect.
+However, it requires a good knowledge of the form of the \PDF $f(x;a)$ that the data follows. 
+If the assumed distribution is incorrect, the results can be unreliable.
 
 \subsection{Variance of the maximum likelihood method}\label{sec:mle_variance}
 
@@ -212,7 +213,8 @@ After the optimal training point of the classifier is reached,
 further training will only degrade the performance of the classifier on the validation sample.
 This regime is called \textit{overtraining} and needs to be avoided.
 There are many ways to test for overtraining, but all of them usually rely on comparing the classifier performance between the training sample and an additional, independent \textit{testing sample}.
-In particle physics, it is common to use the validation sample also as a testing sample, which is acceptable in the case of large training samples.
+In particle physics, it is common to use the validation sample also as a testing sample.
+This is only acceptable in the case of large training samples, where statistical fluctuations of data are negligible, making the validation and testing samples statistically equivalent.
 
 \begin{figure}[htbp!]
     \centering
@@ -324,7 +326,7 @@ Any hypothetical detector is therefore subjected to random effects related to it
 Consequentially, the measured results (distributions) will be convoluted with these effects (\textit{smeared}).
 If two different experiments are comparing their measurements, it only makes sense if external factors are of minimal importance.
 The process of disentangling the true distribution from the measured distribution is called \textit{unfolding}.
-In this way, it can be considered the `opposite' of measurement.
+In this way, it can be considered the \textit{opposite} of measurement.
 
 This section provides a brief overview of the main concepts that feature in the results presenting this thesis.
 A thorough summary of the theory behind unfolding methods can be found in \cite{Behnke:2013pga,Blobel_Lohrmann_1998} and a comparison of different methodologies common in particle physics in \cite{Schmitt:2016orm,Cowan:2002in,Brenner:2019lmf}.
@@ -373,12 +375,11 @@ The elements $A_{ij}$ of $\hat{A}$ correspond to a probability to measure an eve
 In particle physics, the response matrix is generally built using Monte Carlo simulated samples that generate particle collisions, and simulate signal processing and detector effects.
 Consider the number of simulated events generated in a bin $i$, $N_i^{\mathrm{gen}}$. 
 In general, some of these events may be measured in a different bin $j$, and the number of such events is denoted as $N_{ij}^{\mathrm{meas}}$.
-Then:
+Then one builds the response matrix as:
 \begin{equation}\label{eq:response_matrix_element}
-    A_{ij} = \frac{N_{ij}^{\mathrm{meas}}}{N_j^{\mathrm{gen}}},
+    A_{ij} = \frac{N_{ij}^{\mathrm{meas}}}{N_j^{\mathrm{gen}}}.
 \end{equation}
-builds the response matrix.
-There are a number of methods solve \Cref{eq:unfolding_linear_equation}, discussed in the following sections.
+There are a number of methods to solve \Cref{eq:unfolding_linear_equation}, discussed in the following sections.
 
 \subsection{Bin-by-bin unfolding}
 
@@ -397,7 +398,7 @@ This method is only possible if the number of bins in the true distribution is e
 Furthermore, it does not take any cross-bin effects into account, i.e. effectively treats each bin as uncorrelated.
 Therefore, it is usually used when the necessary corrections are small or when the statistical uncertainty dominates the experimental result.
 The method is referred to as \textit{bin-by-bin} unfolding, or bin-by-bin correction method.
-It has been the main method applied in the works of this thesis.
+It has been the main method applied in the works of this thesis (see \Cref{sec:signal_unfolding}).
 
 \subsection{Matrix inversion method}
 The matrix inversion method is the simplest method which does not include assumptions about the measured data (e.g. uncorrelated bins).
@@ -414,10 +415,10 @@ The term used here refers to unfolding regularisation of inverse problems.
 }.
 
 \subsection{Other unfolding methods and regularisation}
-As discussed in the last subsection, unfolding introduces large correlations, leading to `non-physical' shapes of unfolded distributions.
-Regularisation is a delicate task because, roughly put, the scientist has a prejudice towards smooth measured distribution and therefore artificially adds a bias to smoothen it.
-Unsurprisingly, there exist many methods to perform this.
-Although an in-depth discussion is irrelevant for the purpose of the works presented in this thesis, some of the most common ones in particle physics are listed here:
+As discussed in the last Subsection, unfolding introduces large correlations, leading to `non-physical' shapes of unfolded distributions.
+Regularisation is a delicate task because, roughly put, the scientist has a prejudice towards smooth measured distributions and therefore artificially adds a bias to smoothen them.
+Unsurprisingly, there exist many methods to perform regularisation.
+Although an in-depth discussion is irrelevant for the purpose of the work presented in this thesis, some of the most common ones in particle physics are listed here:
 \begin{itemize}
     \item \texttt{TUnfold} method \cite{Schmitt:2012kp}: performs a least-squares minimisation of $\vec{y}-\hat{A}{\vec{x}}$ and includes a damping term for oscillations in $x$;
     \item D'Agostini method \cite{d2010improved,DAgostini:1994fjx}: inversion of response matrix using Bayes' theorem and iterative improvement of the unfolding result, stopping iterations early to not require regularisation;
@@ -429,7 +430,7 @@ In the analysis presented in this thesis, regularisation was not applied followi
 
 \section{Blinded analysis}\label{sec:blinding}
 
-In order to avoid an experimenter's bias analyses are often performed in a \textit{blinded} way \cite{Roodman:2003rw}.
+In order to avoid an experimenter's bias, analyses are often performed in a \textit{blinded} way \cite{Roodman:2003rw}.
 Such a bias can occur when using the analysed data directly to perform optimisations or compare several techniques.
 An experimenter may enhance statistical or unknown systematic effects (even unintentionally) which bias the sample to give a desired or expected result.
 
@@ -437,7 +438,7 @@ Generally, one restricts access to the analysed sample until after the measureme
 In particle physics, this is done by firstly performing the analysis on simulated data, 
 and then using independent data samples to ensure that appropriate test metrics are matched.
 Normally, a certain range of an interesting observable is hidden, for example, in the case of \BtoXsgamma analysis presented here, it can be the photon energy, \Egamma.
-This method is well-suited when performing measurements where the signal region is known in advance, as is the case in the example I mentioned.
+This method is well-suited when performing measurements where the signal region is known in advance, as is the case in this thesis.
 The removal of a constraint and the application of the analysis technique on real data is called \textit{unblinding}.
 It is usually performed as the last step, once other steps in the analysis have been scrutinised and validated.
 This is also the procedure that was applied in the inclusive \BtoXsgamma studies described in this thesis.

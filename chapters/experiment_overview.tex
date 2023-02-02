@@ -6,9 +6,9 @@ Another method, which is a mixture of the two methods, is known as the \textit{s
 Theoretical motivations for inclusive measurements of \BtoXsgamma have already been discussed in \Cref{sec:btosgamma_totalrate_theory,sec:btosgamma_spectrum_theory}.
 Similar motivations hold true for other electroweak decay channels, such as $B\to X_s\ell\bar{\ell}$ ($\ell\in\{\mu^-,e^-,\nu\}$).
 However, compared to the latter, $B\rightarrow X_s\gamma$ contains one fewer interaction vertex and is therefore enhanced by two orders of magnitude, which makes it experimentally accessible with smaller datasets.
-In this chapter, I will introduce the main methods of performing an inclusive measurement, while focusing solely on \BtoXsgamma, although, generally, these methods are applicable for other decay channels as well.
+In this chapter, the main methods of performing an inclusive measurement are introduced while focusing predominantly on \BtoXsdgamma, although, generally, these methods are applicable for other decay channels as well.
 
-\section{Past measurements of \safeBtoXsgamma decays}
+\section{Past measurements of \safeBtoXsdgamma decays}
 
 Inclusive measurements target a wide selection of decay products; in the case of $X_{sd}$, the sum of all states that originate in $b\to s$ or $b\to d$ transitions.
 Such states include resonant and non-resonant particles.
@@ -47,7 +47,7 @@ However, even in the case of a relatively isolated decay channel, such as \BtoKs
 }
 
 Currently, inclusive measurements are only attainable at $B$ factories.
-The relatively low-background environment offered by $\epem$ collisions allows to treat the $X_{sd}$ system as a `missing-energy' system with few explicit requirements.
+The relatively low-background environment offered by $\epem$ collisions enables treating the $X_{s/d}$ system as a `missing-momentum' system with few explicit requirements.
 Although the process of event reconstruction may introduce biases to the inclusive system, this is expected to be a much smaller effect than other experimental factors, such as finite resolution or statistical fluctuations.
 Conversely, at hadron colliders,
 large proton-proton collision background makes it complicated to select an unbiased and model-independent inclusive sample.
@@ -129,7 +129,7 @@ In the past, these analysis techniques achieved an average signal reconstruction
     signal events (red, thick and short dashed), 
     cross-feed (red, thin and short dashed), 
     peaking $\BB$ (green, thick and long dashed), 
-    non-peaking $\BB$ (green, thin and long ashed)
+    non-peaking $\BB$ (green, thin and long dashed)
     and $\qqbar$ background events (blue, dash-dotted).
     }
 \end{figure}
@@ -143,13 +143,13 @@ For the rest of the thesis \textit{untagged} is used to stress the difference be
 Although the concept of this approach is simple, the measurement is highly challenging experimentally.
 In particle collisions and subsequent decay processes, high-energy photons can originate through a number of ways, such as initial \epem state radiation, \epem\ra\qqbar decays, $B$ decays etc.
 In the previously introduced sum-of-exclusive technique this problem is solved by using the information of decays of $X_s$ and using observables such as \Mbc and \DeltaE to suppresses incorrect photon candidates. 
-Conversely, in the inclusive case $X_s$ is treated in a `missing-momentum' way, and therefore the background suppression procedure must be performed such that no selection bias is introduced to the $X_s$ system.
+Conversely, in the inclusive case $X_s$ is treated as unreconstructed, and therefore a background suppression procedure is performed such that no selection bias is introduced to the $X_s$ system.
 An example spectrum based on Belle~II simulation is shown in \Cref{fig:untagged_btosgamma_background}, which highlights the signal-to-background difference.
 
 The predominant background originates from events where no $B$ mesons are created.
 In $\epem\to\qqbar$ events ($q\in\{u,d,s,c\}$), where a \piz is created through hadronisation or decays of other hadrons.
 The \piz then decays asymmetrically into two photons, which mimics the isolated high-energy photon of \BtoXsgamma decays.
-In particular, $q={u,c}$ processes contribute strongly, due to the fact that they tend to produce energetic \piz or charm mesons (which subsequently decay to \piz).
+In particular, $q={u,c}$ processes contribute strongly, due to the fact that they tend to produce energetic \piz or charm mesons (whose decay chains include \piz).
 Semileptonic and hadronic $B$ decays that produce \piz, $\eta$ and $\rho$ mesons, are also among the main sources of background contribution.
 
 The usual way to perform this analysis involves using boosted decision trees or other multivariate methods (see \Cref{sec:classification}) to suppress highly prominent backgrounds.
@@ -157,7 +157,7 @@ For example, the technique applied in Refs.~\cite{CLEO:2001gsa,Belle:2009nth} co
 The contributions from \epem\ra\qqbar are suppressed by parametrising the different decay topologies that are observed for \BB and \qqbar events (see \Cref{sec:continuum_suppression}).
 Data samples collected below the \FourS resonance, containing only $\epem\ra\qqbar$ events, are used to subtract the non-\BB contributions remaining after the background treatment.
 The \BB background contribution is usually removed using simulation.
-An example result of the extracted \BtoXsgamma spectrum from Belle~II data using $63.1~\invfb$, which is a work that I was involved in during the doctoral research, is shown in \Cref{fig:untagged_btosgamma_measured}~\cite{Collaboration:2302}.
+An example result of the extracted \BtoXsgamma spectrum from Belle~II data using $63.1~\invfb$, which is a work that I was involved in during the doctoral research~\cite{Collaboration:2302}, is shown in \Cref{fig:untagged_btosgamma_measured}.
 
 The strength of the untagged technique is the `truly' inclusive approach, which ensures that all $X_s$ states are selected, as well as a large signal reconstruction efficiency.
 Previous analyses (e.g. Ref.~\cite{Belle:2009nth}) report an average selection efficiency in their final sample of $\sim10\%$ (increasing with photon energy), which is several times higher than the sum-of-exclusive approach.
@@ -186,12 +186,12 @@ To reach the theoretically more desirable $B$ meson decay frame, additional mode
 
 To overcome multiple of the issues that come with untagged measurements presented in \Cref{sec:untagged} while still selecting an inclusive $X_s$ sample (conversely to \Cref{sec:sum_of_exclusive}), 
 additional information pertaining to the second $B$ meson from the \FourS decay can be used.
-The naming and the idea stems from the \textit{tag-and-probe} methods.
+The naming stems from the similarity to the \textit{tag-and-probe} methods.
 In this approach, the partnering $B$ meson is fully reconstructed, or some of its decay products are identified.
 This $B$ meson will henceforth be referred to as the \textit{tag}-$B$ meson.
 The application of kinematic constraints on the event arising from the tag-$B$ is called \textit{tagging}.
 The schematic idea of tagging is shown in \Cref{fig:tagging_schematic}.
-There are three main tagging-techniques that have been used in the past at $B$ factories:
+There are three tagging-techniques that have been used in the past at $B$ factories:
 \begin{itemize}
     \item \textit{lepton-tagging}, where a lepton originating from tag-$B$ decays is reconstructed;
     \item \textit{semileptonic-tagging}, where the tag-$B$ is reconstructed as a semileptonic $B$ decay of the form $B\to D^{(*)}\ell\bar{\nu}$;
