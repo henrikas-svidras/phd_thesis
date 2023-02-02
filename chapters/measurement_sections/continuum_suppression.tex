@@ -3,9 +3,9 @@ as well as selection to suppress events
 where the photon is misidentified or originates in sources different from \BtoXsgamma.
 However, as was seen before in, for example, \Cref{fig:spectrum_after_reco},
 \epem\ra\qqbar events provide the vast majority of photon candidates.
-Therefore, a dedicated event-selection for this type of background was devised.
-It takes advantage of  different event topologies expected for $\FourS\to\qqbar$ and $\epem\ra\qqbar$ events.
-Loosely speaking, events where a $\FourS\to\BB$ decay is present tend to be more `spherical', when compared with $\epem\ra\qqbar$ events that exhibit a `jet-like' distribution.
+Therefore, a dedicated event selection for this type of background was devised.
+It takes advantage of different event topologies expected for $\FourS\to\qqbar$ and $\epem\ra\qqbar$ events.
+Events, where a $\FourS\to\BB$ decay is present, tend to be more `spherical' when compared with $\epem\ra\qqbar$ events exhibiting a `jet-like' distribution.
 This is related to the fact that \epem collisions at $B$ factory experiments have just enough energy to produce a $B$ pair almost at rest, which means that its decays products, on average, tend to be distributed uniformly in polar and azimuthal angle.
 On the other hand, light-quark pairs, produced in \epem collision events, also gain a substantial amount of back-to-back momentum which tends to spread their decay products. 
 The schematic idea of this is shown in \Cref{fig:continuum_schematic}.
@@ -15,7 +15,7 @@ This section will provide an in-depth discussion on how the discrimination betwe
     \centering
     \includegraphics[width=0.6\textwidth]{figures/continuum_suppression/figure_continuum_suppression_event_shapes.pdf}
     \caption{\label{fig:continuum_schematic} Schematic illustration of continuum and \BB events created after an \epem collision in $B$ factories.
-    Events where a $B$ meson is produced are generally more spherical, due to the fact that \FourS is produced at rest and its decays products tend to not have a preferred direction.
+    Events, where a $B$ meson is produced, are generally more spherical since the \FourS is produced at rest and its decay products tend to not have a preferred direction.
     Typical momenta of light-quark and \BB mesons are shown.
     The specific directions shown are illustrative only. 
     }
@@ -24,7 +24,7 @@ This section will provide an in-depth discussion on how the discrimination betwe
 \subsection{Training event pre-selection}\label{sec:preselection}
 
 Before a \BDT is trained, it is generally desirable to prepare the datasets such that the classifier 
-is able to learn based on relevant data.
+learns based on relevant data.
 Such data preprocessing will be performed based on variables described in \Cref{sec:photon_selection}.
 The classifier will then be trained on the reduced dataset
 
@@ -41,7 +41,7 @@ In both equations, $\mathsf{S}$ is the number of signal events after selection,
 $\mathsf{B}$ is the number of background events after selection, 
 and $\mathsf{S}_0$ is the number of signal events before selection.
 Although \Cref{eq:punzi_fom} was derived with search-like analyses in mind, 
-it is utilised in this analysis to minimise signal model dependency: the ratio $\mathsf{S}/\mathsf{S}_0$ present in the definition reduces out many model-dependant effects.
+it is utilised in this analysis to minimise signal model dependency: the ratio $\mathsf{S}/\mathsf{S}_0$ present in the definition reduces many model-dependant effects.
 
 For each figure of merit calculation, background events ($\mathsf{B}$) are calculated based on generic \MC,
 whereas signal events, $\mathsf{S}$, are calculated based on signal \MC, to ensure a high statistics sample.
@@ -79,18 +79,18 @@ The resulting optimal selections are also shown in the Figures.
     For \BptoXsgamma events the tests are shown
     in \Cref{fig:bp_zmva_optimisation,fig:bp_piveto_optimisation,fig:bp_etaveto_optimisation},
     and for \BztoXsgamma in \Cref{fig:bz_zmva_optimisation,fig:bz_piveto_optimisation,fig:bz_etaveto_optimisation}.
-    The figures show efficiency and $\mathrm{FOM}_2$ score calculated for 200 selections of \piVeto, \etaVeto and \ZMVA.
+    The figures show the efficiency and $\mathrm{FOM}_2$ score calculated for 200 selections of \piVeto, \etaVeto and \ZMVA.
     The maximum value of $\mathrm{FOM}_2$, the corresponding selection and efficiency are shown as well.
     }
 \end{figure}
 
 The results between \Bp and \Bz modes, as well as using $\mathrm{FOM}_1$ and $\mathrm{FOM}_2$ are consistent, with only marginal differences.
-Therefore, due to the model-independance of $\mathrm{FOM}_2$, this figure-of-merit will be the only one discussed henceforth.
+Therefore, due to the model independence of $\mathrm{FOM}_2$, this figure-of-merit will be the only one discussed henceforth.
 At this stage, it is unnecessary to choose the `best' selection, 
 as another simultaneous optimisation will be performed later, together with continuum suppression \BDT output in \Cref{sec:final_optimisation}.
 The main goal is to reduce the sample size to include only relevant data, such that the trained \BDT can make decisions for difficult cases that are not easily distinguishable using simple selection.
 Based on \Cref{fig:selection_optimisations}, pre-selections are chosen, which suppress background but retain most of the signal.
-The requirement for a loose selection are tailored such that more roughly 75\% of \BtoXsgamma candidates are retained and are shown in \Cref{tab:preselections}.
+The requirements for a loose selection are tailored such that more roughly 75\% of \BtoXsgamma candidates are retained and are shown in \Cref{tab:preselections}.
 They are chosen to be no tighter than their optimal selection and preferably considerably looser.
 
 \begin{table}[htbp!]
@@ -103,9 +103,8 @@ They are chosen to be no tighter than their optimal selection and preferably con
 \end{table}
 
 The pre-selections improve the signal-to-background ratio by roughly an order of magnitude.
-This can be clearly seen by comparing \Cref{fig:preselected_photons} with \Cref{fig:spectrum_after_reco}.
-The scale at which \BtoXsgamma signal \MC scaled differs at about a factor of 10, meaning that the background reduced by approximately that amount due to these selections.
-
+This is seen by comparing \Cref{fig:preselected_photons} with \Cref{fig:spectrum_after_reco}.
+The \BtoXsgamma signal \MC scale differs by about a factor of 10, highlighting the background suppression efficiency.
 
 \begin{figure}[htbp!]
     \centering
@@ -122,28 +121,29 @@ The scale at which \BtoXsgamma signal \MC scaled differs at about a factor of 10
     }
 \end{figure}
 
-Finally, many combinatorial tag-side candidates in \BB events may still appear contribute to the analysis at this stage.
+Finally, many combinatorial tag-side candidates in \BB events may still contribute to the analysis at this stage.
 A more detailed definition for a `well-reconstructed' tag will be explored later in \Cref{sec:good_tag_definition}.
-At this stage, it is sufficient to acknowledge the fact that the vast majority of correctly reconstructed tag-side candidates is expected to have $\Mbc>5.27~\gevcc$.
+At this stage, it is sufficient to acknowledge that the vast majority of correctly reconstructed tag-side candidates are expected to have $\Mbc>5.27~\gevcc$.
 Therefore, this requirement is also adopted for optimisation studies and training in \Cref{sec:continuum_features,sec:continuum_training,sec:continuum_validation}.
 
 \subsection{Continuum suppression feature selection}\label{sec:continuum_features}
 
 $B$ factory experiments and Belle II have a large selection of observables that can be utilised for continuum suppression and are suitable to be input as variables to a \BDT.
-These observables combine describe the event-topology or particles in the event and are optimised to provide separation between \BB and \qqbar events.
-There are two caveats that have to be kept in mind for the \BtoXsgamma analysis:
+These observables describe the event topology and other collective particle decay properties. 
+They are optimised to provide optimal separation between \BB and \qqbar events.
+Two caveats have to be kept in mind for the \BtoXsgamma analysis:
 \begin{itemize}
     \item Generally, \BtoXsgamma event-topology may be different compared to \BB events. 
     \BtoXsgamma decays have a single jet-like $X_s$ system (while the other $B$ meson decays hadronically).
     This leads to a somewhat middle-case between a generic-\BB event and an \epem\ra\qqbar event, as it was illustrated in \Cref{fig:continuum_schematic}.
     \item Many of these observables contain momenta, angles or other parameters of some (or even all) particles in the event -- including the $X_s$ system and the photon.
-    This may lead to a bias to the spectrum of $X_s$ system.
+    This may lead to a bias in the \EB spectrum.
     Furthermore, even relatively small biases over many training features may be learnt by the \BDT and introduced to the spectrum.
-    \item Some features may perform differently in real-data compared to simulation, due to unexpected differences in alignment, calibration or background distributions.
+    \item Some features may perform differently in real data compared to simulation, due to unexpected differences in alignment, calibration or background distributions.
     As we use simulated data sets to train a \BDT in this analysis, such a comparison is crucial.
 \end{itemize}
 Given the mentioned points, it is important to test that observables used for the training provide adequate separation between \BtoXsgamma and \qqbar, while no bias is introduced to the photon energy spectrum.
-Furthermore, this has to be well-represented in data.
+Furthermore, this has to be well-represented in Belle~II data.
 
 In this analysis, the following observable categories are considered for separation between \epem\ra\qqbar and \BtoXsgamma:
 \begin{itemize}
@@ -182,21 +182,21 @@ Two tests are performed:
     This test is only performed if \textbf{Test~1} is passed.
     As this is a blinded analysis, off-resonance data samples are used, which only contain \epem\ra\qqbar events.
     In this case, the Jensen-Shannon distance is calculated between 
-    the area-normalised distribution of a training feature in off-resonance data set,
+    the area-normalised distribution of a training feature in the off-resonance data set
     and the area-normalised distribution of a training feature in \epem\ra\qqbar simulation.
     The metric is required to be no more than 10\%.
-    The looser requirement is adopted here, due to the fact that some difference is expected between the distributions,
-    as the collision energy in off-resonance data set is different to the one in on-resonance simulation that is used in this analysis.
-    Furthermore, an overall smaller off-resonance data set ($\sim19~\invfb$, see \Cref{sec:data_samples}) may have certain difference due to poissonian fluctuations.
+    The looser requirement is adopted here because some difference is expected between the distributions:
+    the collision energy in the off-resonance data set is different to the one in the on-resonance simulation that is used in this analysis.
+    Furthermore, an overall smaller off-resonance data set ($\sim19~\invfb$, see \Cref{sec:data_samples}) may have certain differences due to statistical fluctuations.
 \end{itemize}
 
-The tested distributions have the selections from \Cref{sec:preselection} included, except for the case of off-resonance dataset, where the $\Mbc>5.27~\gevcc$ requirement is lifted.
+The tested distributions have the selections from \Cref{sec:preselection} included, except for the case of the off-resonance dataset, where the $\Mbc>5.27~\gevcc$ requirement is lifted.
 For every event, when more than one tag-side candidate $B$ candidate exists, a random one is picked.
 The application of \textbf{Test~1} with exact definitions for the 81 observables are shown in \Cref{sec:appendix_continuum_features}.
 
 Out of 75 potential training features, 27 pass through the requirements of \textbf{Test~1}.
-These are passed to \textbf{Test~2}
-\textbf{Test~2}, owing to excellent calibration and simulation quality of Belle II, removes a single feature.
+These are passed to \textbf{Test~2}.
+Owing to the excellent calibration and simulation quality of Belle II, this requirement only removes a single feature.
 The results for the 26 final observables that pass both test requirements and will be used as features in the \BDT training
 are shown in \Cref{tab:passing_test1}.
 
@@ -205,7 +205,7 @@ are shown in \Cref{tab:passing_test1}.
     \caption{\label{tab:passing_test1}The training features for the \epem\ra\qqbar suppression
     that pass the requirements of \textbf{Test~1} (see \Cref{sec:appendix_continuum_features}) and \textbf{Test~2} (see \Cref{sec:appendix_continuum_features_datamc}).
     The table also shows the value of the Jensen-Shannon distances for each observable for the different requirements of both tests.
-    Exact definitions of these quantities is provided in \Cref{sec:appendix_continuum_features}.
+    Exact definitions of these quantities are provided in \Cref{sec:appendix_continuum_features}.
     Observable groups follow those introduced in the text.
     }   
     \input{tables/test1_passes.tex}
@@ -230,7 +230,7 @@ The target variable for the training is defined as a $\mathtt{flag}$, which foll
       1,\quad \mathrm{for}~\BtoXsgamma~\mathrm{events}.
       \end{cases}
 \end{equation}
-Half of the \epem\ra\qqbar training sample is taken \feiBp mode, and the other half is from \feiBz modes. 
+Half of the \epem\ra\qqbar training sample is taken from the \feiBp mode, and the other half is from \feiBz modes. 
 For signal, half is taken from $\BptoXsgamma$ signal mode, the other half from $B^0$, irrespective of the \FEI mode.
 An equivalent sample is prepared as the testing sample for the training.
 
@@ -246,7 +246,7 @@ Hyperparameter optimisation is performed in a grid-like search, based on two qua
 where $\mathtt{AUC}_{\mathrm{train}/\mathrm{test}}$ is the \AUC score for training or testing samples.
 A set of hyperparameters is sought, such that $ \mathtt{AUC}_{\mathrm{test}}$ is maximised, while $\Delta \mathtt{AUC}$ is minimised.
 The results of hyperparameter optimisation are summarised in \Cref{tab:grid_search} and shown in \Cref{fig:hyper_param}
-Larger depths, number of trees values are not explored, to avoid non-linear correlations which may be learnt by the classifier and would require additional studies to pinpoint.
+Larger depth or number of trees are not explored to avoid non-linear correlations which may be learnt by the classifier and would require additional studies to pinpoint.
 Large shrinkage values are undesired, to ensure a slower learning rate of the classifier.
 
 \begin{table}[htbp!]
@@ -254,7 +254,7 @@ Large shrinkage values are undesired, to ensure a slower learning rate of the cl
     \caption{\label{tab:grid_search}Hyperparameter optimisation based on a grid-search method.
     The four hyperparameters for the \texttt{FastBDT} algorithm are defined in \Cref{sec:BDTs_theory}.
     The optimal values are chosen based on criteria defined in \Cref{eq:optimisation_criteria}.
-    They are shown in the right most column are taken as the parameters for the training.
+    They are shown in the rightmost column and taken as the parameters for the training.
     The corresponding $\mathtt{AUC}_{\mathrm{test}}$ and $\Delta \mathtt{AUC}$ are shown in \Cref{fig:hyper_param} and \Cref{fig:roc_curve}.
     }
     \input{tables/hyperparameter_optimisation.tex}
@@ -270,13 +270,12 @@ Large shrinkage values are undesired, to ensure a slower learning rate of the cl
     }
 \end{figure}
 
-The training, with features from \Cref{tab:passing_test1} and hyperparameters from \Cref{tab:grid_search} is performed.
-The normalised classifier output for test and train samples is shown in.
-It is clearly seen that the classifier shows almost no bias, as the train and test samples agree very well.
-This is further alluded by inspecting the ROC curve in.
-The \AUC score is higher for the training sample (as expected in the case of a good training) but only by a minor amount.
-Furthermore, the ROC curves themselves are practically indistinguishable.
-
+The training is performed with features from \Cref{tab:passing_test1} and hyperparameters from \Cref{tab:grid_search}.
+The normalised classifier output for test and train samples is shown in \Cref{fig:separation_curve}.
+It is seen that the classifier shows almost no bias, as the train and test samples agree very well.
+This is further alluded to by inspecting the ROC curve in \Cref{fig:roc_curve}.
+Inspecting the ROC curves no significant differences are observed.
+The difference in the \AUC scores is smaller than 1\%.
 \begin{figure}[htbp!]
     \centering
     \subcaptionbox{\label{fig:separation_curve}}{
@@ -286,7 +285,7 @@ Furthermore, the ROC curves themselves are practically indistinguishable.
         \includegraphics[width=0.45\textwidth]{figures/continuum_suppression/roc_curve.png}
     }
     \caption{\label{fig:training_evaluation} The training evaluation for this analysis.
-    \Cref{fig:separation_curve} shows excellent separation between \epem\ra\qqbar and \BtoXsgamma samples, and excellent agreement between corresponding test and train samples.
+    \Cref{fig:separation_curve} shows excellent separation between \epem\ra\qqbar and \BtoXsgamma samples and excellent agreement between corresponding test and train samples.
     \Cref{fig:roc_curve} shows the \ROC curve of the training. 
     The test and train sample \AUC scores are close to unity and similar, alluding to a high-separation power that is observed, and no evidence of overtraining.
     }
@@ -295,8 +294,8 @@ Furthermore, the ROC curves themselves are practically indistinguishable.
 Using the tools provided by the \texttt{FastBDT} algorithm, a \textit{relative feature importance} is computed.
 Particularly for \texttt{FastBDT}, it is computed by evaluating the decrease of the \AUC score if the feature is not included in the training dataset (for more details see Ref.\cite{Keck:2017gsv}.)
 Therefore, it can be considered a quantitative measure of the impact of a feature on the final classifier output.
-The figure depicting relative training observable importances is shown in \Cref{fig:feature_importance}. 
-It is clearly seen that $\cos\theta_{\mathrm{TB}\wedge\mathrm{TO}}$ -- angle between thrust axis of the tag-$B$ candidate and everything else in the event. 
+The figure depicting relative training observable importance is shown in \Cref{fig:feature_importance}. 
+It is seen that $\cos\theta_{\mathrm{TB}\wedge\mathrm{TO}}$ -- angle between the thrust axis of the tag-$B$ candidate and everything else in the event. 
 -- has by far the largest impact on the classifier.
 This is not surprising after inspecting the individual separation power for the current problem in \Cref{sec:appendix_continuum_features_datamc}.
 Other important separation features come from  $\Delta z_B$ \&  $\Delta z_B$, related to the longitudinal distance between the decay vertices,
@@ -318,11 +317,10 @@ The resulting $\mathtt{BDT~output}$ is tested photon energy spectrum to further 
 Following the tests for bias of the average, median and $1\sigma$ percentiles in \Cref{sec:signal_photon_correlation},
 the same study is performed for the training classifier output.
 The result is shown in \Cref{fig:bdt_output_correlation} for the \BtoXsgamma admixture sample with the same requirements as the training sample.
-No significant bias to any of the photon-energy spectrum quantities is observed in any of the bin.
-In \Cref{fig:bdt_data_shape} the trained classifier output is also applied on off-resonance data to compare the shapes of off-resonance data and simulation.
-Adequate agreement is observed, particularly in the high-$\mathtt{BDT~output}$ region where most signal lies.
+No significant bias to any of the photon-energy spectrum quantities is observed in any of the intervals.
+In \Cref{fig:bdt_data_shape} the trained classifier output is also applied to the off-resonance data.
+Comparing the shapes of off-resonance data and simulation adequate agreement is observed, particularly in the high-$\mathtt{BDT~output}$ region where most signal lies.
 The results seen in \Cref{fig:bdt_validation} validate the fact that the \BDT is prepared in an unbiased way and strongly suppresses the continuum events.
-
 \begin{figure}[htbp!]
     \centering
     \subcaptionbox{\label{fig:bdt_output_correlation}}{
@@ -335,7 +333,7 @@ The results seen in \Cref{fig:bdt_validation} validate the fact that the \BDT is
     Validation of the training described in \Cref{sec:continuum_training}.
     In \Cref{fig:bdt_output_correlation}, correlation tests for the trained classifier output described in \Cref{sec:continuum_training}, depicted as a 2D histogram.
     Each row is normalised, such that all bins within that row add up to 1.
-    In red line, the average photon energy, $\expval{\EB}$, is shown as a function of the tested observable.
+    In the red line, the average photon energy, $\expval{\EB}$, is shown as a function of the tested observable.
     In black and black-dotted lines -- median and $\pm 1 \sigma$ percentile values of \EB, respectively.
     No strong dependence can be observed in any of the quantities or the 2D maps.
     In \Cref{fig:bdt_data_shape}, the shape of \epem\ra\qqbar and off-resonance data is compared.

@@ -12,8 +12,8 @@ using the Belle II Full Event Intepretation (\FEI) algorithm \cite{Keck:2017mui,
 It is a hierarchical six-stage reconstruction sequence, which begins with the identification of all tracks, displaced vertices (tracks that do not begin near the interaction point) and \ECL clusters.
 The algorithm begins by combining track and ECL cluster information to reconstruct final-state candidate particles,
 such as $\epm$, $\mupm$, $\gamma$,  $\pi^{\pm}$, $K^{\pm}$ and $K_L^0$.
-In the next stage, the final state particles are combined to form intermediate particles, such as $\piz,K_S^0,D^(*)$, or $B$ mesons.
-In later stages intermediate and final-state particles are combined into $B$ mesons.
+In the next stage, the final state particles are combined to form intermediate particles, such as $\piz, K_S^0, D^(*)$, or $B$ mesons.
+In later stages, intermediate and final-state particles are combined into $B$ mesons.
 At every stage of the procedure, the probability for the combined particle to be correct is evaluated by a \BDT,
 which maps input features related to the particle (four-momentum, vertex position, angles between daughter particles etc.) to a single classifier
 output score. The final output score related to the quality of reconstruction of the $B$ meson is denoted as \feiProb. 
@@ -30,7 +30,7 @@ The schematic visualisation of the reconstruction process is shown in \Cref{fig:
 \end{figure}
 
 In total, \FEI reconstructs $\order(10000)$ distinct decay chains and provides $B^+$ meson candidates in 36 decay modes, and $B^0$ candidates in 32 decay modes.
-As a result two \FEI modes are differentiated: 
+As a result, two \FEI modes are differentiated: 
 \feiBp, which combines \Bpm meson candidates,
 \feiBz, which combines \Bz meson candidates.
 Each event may have more than one candidate reconstructed in the same and/or different decay channels and/or \FEI modes.
@@ -50,7 +50,7 @@ This thesis uses data and simulation samples following the standard Belle II app
 In order to make the \FEI algorithm run-time and computation more efficient, event selections are made which reject events highly incompatible with one of the $B$ mesons decaying hadronically.
 This decision is based on tracks and clusters as per standard Belle II reconstruction guidelines with additional selections, summarised in \Cref{tab:fei_objects}.
 In essence, they ensure that only energetic tracks originating from the interaction point are selected;
-and to minimise the impact of beam-background clusters, or clusters where no track information can be associated (outside of CDC acceptance).
+and to minimise the impact of beam-background clusters or clusters where no track information can be associated (outside of CDC acceptance).
 
 \begin{table}[htbp!]
     \centering
@@ -86,22 +86,22 @@ The requirements are summarised in \Cref{tab:fei_precuts}.
      Number of cleaned \ECL clusters in event \quad & $\geq 3$\\
      Total measured center-of-mass energy in the event \quad & $> 4~\gev$\\
      Total energy of cleaned \ECL clusters \quad &\multirow{2}{*}{$2~\gev<E<7~\gev$}\\
-     and deposits associated with with cleaned track \quad & \\
+     and deposits associated with cleaned tracks \quad & \\
      \hline
     \end{tabular}
      }
 \end{table}
-The requirements to have at least 3 clean tracks in the event and at least 3 clean \ECL clusters is based on the fact, that a hadronic day will produce many charged tracks and photons.
-Furthermore, measured energy in the event in the \epem collision center-of-mass frame is required to exceed 4~\gev.
+The requirement to have at least 3 clean tracks in the event and at least 3 clean \ECL clusters is based on the fact, that a hadronic day will produce many charged tracks and photons.
+Furthermore, measured energy in the event in the \epem collision centre-of-mass frame is required to exceed 4~\gev.
 This is a purely pragmatic requirement: based on the fact that no neutrinos or missing-momentum are present in a hadronic decay, the energy cannot be much lower than 5.28~\gev.
 Finally, the total deposited energy registered by the \ECL in the event is required to lay between 2 and 7~\gev.
 Hadronic events are expected to deposit significantly more energy than 2~\gev.
 On the other hand, many lower-energetic particles should be stopped within \PXD, \SVD, \CDC or \TOP, meaning that their energy deposit in the \ECL would be negligible.
-Therefore, a 7~\gev \ECL energy upper limit ensures that low-multiplicity events, such as \epem\ra\epem, are removed early for a better optimised workflow.
+Therefore, a 7~\gev \ECL energy upper limit ensures that low-multiplicity events, such as \epem\ra\epem, are removed early for a better-optimised workflow.
 
 The events that pass through requirements of \Cref{tab:fei_precuts} are further passed to be analysed by the \FEI algorithm.
-In each event multiple \FEI candidates can be reconstructed (see \Cref{fig:fei_tag_reco_candidates}).
-To focus only on the candidates that have been correctly reconstructed, selection on \DeltaE and \Mbc are made, as well as a loose-requirement on \feiProb.
+In each event, multiple \FEI candidates can be reconstructed (see \Cref{fig:fei_tag_reco_candidates}).
+To focus only on the candidates that have been correctly reconstructed, selections on \DeltaE and \Mbc are made, as well as a loose requirement on \feiProb.
 The selections shown in \Cref{tab:fei_skim_cuts} are standard selections that are applied on Belle II \FEI skimmed data sets.
 
 \begin{table}[htbp!]
@@ -109,7 +109,8 @@ The selections shown in \Cref{tab:fei_skim_cuts} are standard selections that ar
      \caption{\label{tab:fei_skim_cuts} 
      Additional selections that reduce the datasets after applying \FEI, focusing only on well-reconstructed tag-side candidates.
      These \FEI skim selections are nominal ones, which are applied on all \FEI skimmed data sets in Belle II.
-     In this analysis, only the selection on the tag-side \B meson is slightly tightened in order to remove the edge effects nea the 5.24~\gev cutoff point which arise after applying a kinematic fit on the tag-side products.
+     In this analysis, only the selection on the tag-side \B meson is tightened in order to remove the edge effects near the 5.24~\gev cutoff point.
+     Such effects arise after applying a kinematic fit on the tag-side products.
      }
      \resizebox{0.75\textwidth}{!}{
         \input{tables/loose_tag_selection.tex}
@@ -132,7 +133,7 @@ or lower \feiProb (compared to \Cref{tab:fei_skim_cuts}) are not expected to be 
 \subsection{Candidate photon reconstruction}\label{sec:gamma_reconstruction}
 
 As discussed, besides the tag-side reconstruction in $B$-hadronic modes, only the photon from \BtoXsgamma can be reconstructed while ensuring a model-independent inclusive measurement.
-In order to reduce the quickly growing number of background-photon candidates, only events where there is at least photon with $\Estar>1.2~\gev$ are considered.
+In order to reduce the quickly growing number of background-photon candidates, only events where at least one photon with $\Estar>1.2~\gev$ are considered.
 The photons must also be within the CDC acceptance ($17-150~\degrees$).
 These requirements are summarised in \Cref{tab:photon_requirements}.
 \begin{table}[htbp!]
@@ -153,7 +154,7 @@ Reconstructed photon energy is transformed, based on XXX.
 \subsection{Overview of the selected sample}\label{sec:reconstruction_overview}
 
 After reconstruction, based on \MC samples, there can be up to 20 tag-$B$ candidates.
-The sample is broken down to show the relative fraction of total number of tag-side $B$ meson candidates in 
+The sample is broken down to show the relative fraction of the total number of tag-side $B$ meson candidates in 
 \Cref{fig:fei_tag_reco_candidates}.
 About 62\%(72\%) of events for \Bp and \Bz \FEI modes have only 1 tag-side candidate.
 About 21\%(18\%) of events for \Bp and \Bz \FEI modes have two tag-side candidates and 8\%(5\%) has 3.
@@ -161,9 +162,9 @@ The number of candidates per event reduces quickly, but faster for \Bz modes, wi
 of events having more than 5 candidates for \Bp and \Bz.
 Note that the same event can have a \Bp and \Bz event reconstructed.
 
-A similar distribution for number of signal-side photon candidates is shown in \Cref{fig:photon_reco_candidates}.
-Contrary to the tag-side, here more than 98\% of time the highest-energy photon is the sole candidate in the event.
-In fact, studies on signal \MC, where a \BtoXsgamma event decay is always present, with a photon energy $\EB>1.4~\gev$, this is true more than  99.9\% of time.
+A similar distribution for the number of signal-side photon candidates is shown in \Cref{fig:photon_reco_candidates}.
+Contrary to the tag-side, the highest-energy photon is the sole candidate in the event in 98\% of the cases in generic \MC.
+Studies on \BtoXsgamma signal \MC with a threshold of $\EB>1.4~\gev$ show that a single high-energy photon is expected in 99.9\% of the cases.
 The $\EB>1.4~\gev$ selection is chosen pragmatically to maintain a reasonable data set memory size without losing signal events.
 As the number of photon candidates grows swiftly with decreasing energy, this threshold still provides access to the majority of \BtoXsgamma decay phase space.
 \begin{figure}[htbp!]
@@ -179,18 +180,18 @@ As the number of photon candidates grows swiftly with decreasing energy, this th
     reconstructed photon candidates (\Cref{fig:photon_reco_candidates}) in the generic \MC sample.
     In \Cref{fig:fei_tag_reco_candidates}, the overall volume of candidates is similar for \feiBp and \feiBz modes, 
     with around one in two events only having a single candidate per event.
-    Conversly, as depcited in \Cref{fig:photon_reco_candidates},
+    Conversely, as depicted in \Cref{fig:photon_reco_candidates},
     the vast majority of events contain only a single signal photon with $\EB>1.4~\gev$.
     Two or more photon candidates are present only $\mathcal{O}(1)\%$ of time.
-    For events which contain true \BtoXsgamma decays (not shown here) this number is at least an order of magnitude smaller.
     }
 \end{figure}
 
-The reconstructed \BtoXsgamma spectra on generic \MC, with the previously laid-out requirements are shown in \Cref{fig:spectrum_after_reco}.
+The reconstructed \BtoXsgamma spectra in generic \MC with the previously laid-out requirements are shown in \Cref{fig:spectrum_after_reco}.
 Note that these events in general can contain multiple combinations of a photon and tag-side candidate per event.
-Overall, it may appear that the \FEI \Bz mode has a higher signal-to-background ratio compared to \FEI \Bp.
-However, one has to take into account that in general, \FEI \Bp and \FEI \Bz modes are 
-resulting from different reconstruction chains and, furthermore, \FEI \Bz has fewer modes being reconstructed than \FEI \Bp (see \Cref{sec:tag_reconstruction}).
+Overall, it may seem that the \feiBz mode has a higher signal-to-background ratio compared to \feiBp.
+However, one has to take into account that in general, \feiBp and \feiBz modes result
+from different reconstruction chains.
+Furthermore, \feiBz has fewer modes being reconstructed than \feiBp (see \Cref{sec:tag_reconstruction}).
 Therefore without additional studies that fill follow in \Cref{sec:select_tag_between_modes,sec:select_best_candidate} such a conclusion cannot be unambiguously drawn. 
 On the other hand comparing \Cref{fig:untagged_btosgamma_background,fig:untagged_btosgamma_background} it is clear that a better signal-to-background ratio can already be observed without any following treatment.
 
@@ -209,13 +210,13 @@ On the other hand comparing \Cref{fig:untagged_btosgamma_background,fig:untagged
 \end{figure}
 
 The tag-side probability plots provided by the \FEI classifier are shown in \Cref{fig:sigprob_after_reco}.
-These further emphasise the differences between tag candidates reconstructed in \FEI \Bp and \FEI \Bz modes.
-Selecting on \feiProb variable is not trivial, 
-because even disregarding the differences between distributions for \FEI \Bp and \Bz modes, 
-they are also different for reconstruction for specific decay channels reconstructed for the same-charge $B$ mode.
-This is shown and discussed in \Cref{sec:appendix_fei_signal_probabilities} .
+These further emphasise the differences between tag candidates reconstructed in \feiBp and \feiBz modes.
+Selecting on \feiProb variable is not trivial;
+even after disregarding the differences between \feiBp and \feiBz modes, 
+the \feiProb values may be different within the same-charged $B$ mode.
+This is shown and discussed in \Cref{sec:appendix_fei_signal_probabilities}.
 Tight direct selections, as seen in \Cref{fig:feisigprobs1,fig:feisigprobs2,fig:feisigprobs3,fig:feisigprobs4}, will result in a bias for selected tag-side modes.
-Therefore, \feiProb is used in a `consultational' capacity in this analysis, with no direct selections applied on it.
+Therefore, no direct selections on \feiProb are applied in this analysis.
 
 \begin{figure}[htbp!]
     \centering
