@@ -1,25 +1,25 @@
 Most systematic uncertainties, or the grounds for introducing them, have already been introduced in this analysis.
-The main systematic uncertainties arise from selection, background modelling and efficiency corrections.
-Additional, subleading uncertainties that arise from unfolding and \BtoXdgamma component subtraction are included.
-At the moment, the systematic uncertainties (except for the low-\EB) are sub-dominant compared to the much larger statistical component.
+They mainly arise from selection, background modelling and efficiency corrections.
+Additional subleading uncertainties from unfolding and \BtoXdgamma component subtraction are included.
+Nonetheless, they remain subdominant compared to the much larger statistical component (except for the low-\EB region).
 Many systematic uncertainties are set to their conservative estimates, 
 which highlights that the analysis can be further optimised for future versions, as the Belle~II data set increases.
-In this Section the already presented information about systematic uncertainties will be condensed and finalised.
+In this Section, the already presented information about systematic uncertainties will be condensed and finalised.
 
 \subsection{Background modelling uncertainties}\label{sec:background_uncertainties}
 
-Background modelling encompass all uncertainties that are related to the background evaluation in Belle~II simulation.
+Background modelling encompasses all uncertainties that are related to the background evaluation in the Belle~II \MC.
 That involves two uncertainties that have been already discussed:
 \begin{itemize}
-    \item uncertainties due to background normalisation;
-    \item uncertainties due to backgrounds selection.
+    \item background normalisation differences in data and \MC;
+    \item background suppression efficiency differences in data and \MC.
 \end{itemize}
 Their values are provided in \Cref{tab:background_uncertainties} and the strategy to evaluate them is explained further in this subsection.
 
 \begin{table}[htbp!]
     \centering
     \caption{\label{tab:background_uncertainties} 
-    The remaining-\BB background estimates and the systematic uncertainties related to the  after the \Mbc fit.
+    The remaining-\BB background estimates and the systematic uncertainties related to the after the \Mbc fit.
     They are calculated in simulation, based on the strategy in \Cref{sec:background_subtraction}, 
     and the values shown here are scaled to those expected for 189~\invfb.
     The corrections and their uncertainties, related to \Cref{sec:corrections} are applied.
@@ -29,14 +29,14 @@ Their values are provided in \Cref{tab:background_uncertainties} and the strateg
     \input{tables/background_uncertainties.tex}
 \end{table}
 
-\subsubsection{Uncertainties due to background selection modelling}\label{sec:correction_systematic}
+\subsubsection{Uncertainties due to background suppression modelling}\label{sec:correction_systematic}
 
-The selection modelling affects the final result through background modelling, when it is subtracted from the \Mbc fit on Belle~II data.
+The selection modelling affects the final result through background modelling when it is subtracted from the \Mbc fit on Belle~II data.
 The available corrections based on results from independent studies are summarised in \Cref{sec:corrections}.
 The corresponding uncertainties from the corrections are propagated as systematic uncertainties.
-The background yields attain uncertainties from \FEI calibration factors, \piVeto and \etaVeto modelling, photon-detection efficiency, background modelling. 
+The background yields attain uncertainties from \FEI calibration factors, \piVeto and \etaVeto modelling, photon-detection efficiency, and background modelling. 
 
-All the different ucnertainties are considered as correlated between different \EB intervals.
+All the different uncertainties are considered as correlated between different \EB intervals.
 The background mode branching fraction uncertainties follow the correlations depicted in \Cref{fig:bbar_correlation_matrix}.
 The uncertainties related to other corrections are considered fully correlated across different \EB intervals.
 
@@ -46,8 +46,8 @@ The uncertainties related to other corrections are considered fully correlated a
 good tag-\B mesons in $\EB\in(1.4,1.8)$ in data and simulation differs by $8.7\%$.
 This difference is illustrated in \Cref{fig:sidebands_subtracted_figures}.
 This difference of 8.7\% may be partially correlated to the differences in the \Mbc endpoint (discussed broadly in \Cref{sec:bb_background_validation}).
-It could also partially be related to \ZMVA discrepancy, that is illustrated in \Cref{fig:zmva_discrepancy}.
-As these effects are difficult to disentangle without additional, independent studies of the, the full 8.7\% correction is assigned as a systematic uncertainty.
+It could also partially be related to \ZMVA discrepancy, which is illustrated in \Cref{fig:zmva_discrepancy}.
+As these effects are difficult to disentangle without additional independent studies, the full 8.7\% correction is assigned as a systematic uncertainty.
 Therefore the background expectations are varied by $\pm 8.7\%$, then subtracted from data, and the full extent of the variation is assigned as a systematic uncertainty to the measured \BtoXsgamma yields.
 The uncertainties are not considered correlated to account for the fact that the background shape can vary from that of simulation as a function of \EB.
 
@@ -57,8 +57,8 @@ The uncertainties are not considered correlated to account for the fact that the
 
 The \Mbc fitting model uncertainties are related to the choice of \PDF{s} 
 and the initialised parameter values of the model.
-Unlike other uncertainties, they are evaluated directly on data, and were calculated as a last step
-before the full unblinding the central-values of the \Mbc fit on data.
+Unlike other uncertainties, they are evaluated directly on data and are calculated as a last step
+before the full unblinding of the central values of the \Mbc fit on data.
 Two uncertainties are evaluated:
 \begin{itemize}
     \item uncertainties due to the \Mbc endpoint variation;
@@ -83,9 +83,9 @@ As discussed in \Cref{sec:bb_background_validation}, the fit model is modified t
 To account for an imperfect correction to the fit model, a systematic uncertainty is calculated here.
 The fit on data is performed with and without the \Mbc correction introduced.
 The full variation $\Delta\mathcal{N}_{\mathrm{CB}}$ between the estimated $\mathcal{N}_{\mathrm{CB}}$ in the two scenarios is assigned as a systematic uncertainty.
-The uncertainties are not considered correlated to account for possible changed in the model variations as a function of \EB.
+The uncertainties are not considered correlated to account for possible changes in the model variations as a function of \EB.
 
-The evaluation of theses uncertainties is performed in a blinded way (that is -- only $\Delta\mathcal{N}_{\mathrm{CB}}$  is evaluated).
+The evaluation of these uncertainties is performed in a blinded way (that is -- only $\Delta\mathcal{N}_{\mathrm{CB}}$  is evaluated).
 This also serves as a test ensuring that the fit converges on the full data set.
 
 \subsubsection{Uncertainties due to fixed parameters in the \texorpdfstring{\Mbc}{Mbc} fitting model}\label{sec:fitting_model_uncertainties}
@@ -94,9 +94,9 @@ After initialising the Chebyshev polynomial, described in \Cref{sec:chebyshev_pr
 Due to shape-difference variations and the fact that the Chebyshev polynomial is introduced on a finite sample size, the parametrisation is only an approximation.
 The \Mbc fitter provides an uncertainty estimation for each of the Chebyshev \PDF parameters, which is given in \Cref{tab:fitting_init_params_updated}.
 Variations of the central value of the parameter based on the uncertainties are performed, recomputing the $\mathcal{N}_{\mathrm{CB}}$ for every variation.
-This is performed directly on the Belle~II data, when unblinding the analysis.
+This is performed directly on the Belle~II data when unblinding the analysis.
 
-Normally, this would required to very each parameter combination upwards and downwards, resulting in $2\times3^5=486$.
+Normally, this requires varying each parameter combination upwards and downwards, resulting in $2\times3^5=486$.
 However, because the uncertainties for Chebyshev parameters $k_i$ are correlated, they are to be varied in their eigenspace simultaneously.
 For this, a principal analysis component approach is taken.
 Firstly, a covariance matrix of all 15 parameters, $M$, is evaluated.
@@ -108,12 +108,11 @@ Then, the correlated variations are calculated as:
 \end{equation}
 where $\lambda=\mathrm{diag}(\lambda_1, \lambda_2,...,\lambda_{15})$, and $\delta k$ is the correlated variation.
 For upper variations, a $+$ sign is chosen, whereas for negative variations a $-$ sign is chosen.
-Based on this result, an envelope (maximal variations in $\mathcal{N}_{\mathrm{CB}}$) are assigned as a systematic uncertainty.
+Based on this result, maximal variations in $\mathcal{N}_{\mathrm{CB}}$ are assigned as a systematic uncertainty.
 The evaluation is performed directly on data, only considering $\Delta\mathcal{N}_{\mathrm{CB}}$, without unblinding the central values of the \Mbc fit on Belle~II data.
-
-Note that while only a variation of the Chebyshev polynomial parameters is performed, 
+While only a variation of the Chebyshev polynomial parameters is performed, 
 due to a high correlation between signal and background \PDF shapes in the fit (see \Cref{fig:correlation_matrix}),
-the results can be interpreted as an evaluation of the validity of fitting model.
+the results can be interpreted as a general fitting model uncertainty.
 
 \subsection{\texorpdfstring{\BtoXsgamma}{B->Xs gamma} efficiency uncertainties}\label{sec:signal_selection_uncertainties}
 
@@ -130,7 +129,7 @@ The procedure and the results to evaluate the uncertainties are presented furthe
 
 The \BtoXsgamma selection modelling affects the final result through signal efficiency calculations.
 The efficiency obtains uncertainties from the same corrections as those listed in \Cref{sec:correction_systematic}, 
-with the exception of background branching fraction uncertainties, which are not applicable.
+except for background branching fraction uncertainties, which are not applicable.
 As before, all the different uncertainties are considered as fully correlated between different \EB intervals.
 
 Furthermore, uncertainties due to the $\mathtt{BDT~output}$ and \ZMVA modelling are included, based on \Cref{sec:validation_efficiency}.
@@ -160,27 +159,27 @@ The resulting uncertainty in \Cref{eq:tag_efficiency_with_uncertainty} is treate
 \subsection{Other uncertainties}\label{sec:other_uncertainties}
 
 Other uncertainties, that are not included in the previous categories are summarised here.
-Although individually these uncertainties are not related, they are sub-leading and therefore grouped together.
+Although individually these uncertainties are not related, they are sub-leading and therefore grouped.
 
 \subsubsection{Uncertainties due to \texorpdfstring{\BtoXdgamma}{B->Xd gamma}}\label{sec:xdgamma_systematic}
 
 The uncertainty due to \BtoXdgamma component modelling has the strategy largely discussed in \Cref{sec:xdgamma_modelling}.
 The measured number of $\BtoXsdgamma$ events is corrected based on the theoretical \BtoXdgamma expectation, which amounts to roughly 4\% of the value.
 The full difference $N(\BtoXdgamma) \equiv N(\BtoXsdgamma)-N(\BtoXsgamma)$ is assigned as a systematic uncertainty.
-The systematic uncertainty is considered as uncorrelated between different \EB bins to account for possible spectrum shape variations.
+The systematic uncertainty is considered uncorrelated between different \EB bins to account for possible spectrum shape variations.
 
 \subsubsection{\texorpdfstring{\EB}{EB} spectrum unfolding uncertainties}\label{sec:unfolding_systematic}
 
 The unfolding uncertainties are calculated for every unfolding factor calculated in \Cref{sec:signal_unfolding}.
-Each correction factor obtains an uncertainty based on the hybrid signal-model, shown in \Cref{fig:hybrid_uncertainty}.
+Each correction factor obtains an uncertainty based on the hybrid-signal model, shown in \Cref{fig:hybrid_uncertainty}.
 The resulting unfolding correction factors and their uncertainties are summarised in \Cref{tab:unfolding_uncertainties}.
-They are considered as correlated based on the correlation matrix evaluated when building the hybrid signal-model.
+They are considered correlated based on the correlation matrix evaluated when building the hybrid-signal model.
 
 \begin{table}[htbp!]
     \centering
     
     \caption{\label{tab:unfolding_uncertainties} Bin-by-bin correction factors for unfolding based on the setup in \Cref{fig:unfolding_setup}. 
-    They are calculated on large simulated sample and therefore have negligible statistical uncertainties.
+    They are calculated on a large simulated sample and therefore have negligible statistical uncertainties.
     The systematic uncertainty calculation approach includes \EB spectrum shape parameter uncertainties, 
     \BtoXsgamma and $B\to\Kstar(892)\gamma$ branching fraction uncertainties, as discussed in  \Cref{sec:signal_model}.
     }

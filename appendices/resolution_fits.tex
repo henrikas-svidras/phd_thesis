@@ -1,20 +1,20 @@
 \chapter{Fits of the true-to-reconstructed photon energy difference}\label{sec:appendix_resolution_fits}
 
-Each photon, whether simulated, has a `true' energy, $\tilde{E}_{\gamma}^B$, which is he real energy it was produced (in data) or generated (simulation).
-On the other hand, this `true' energy is not the generally the same as the measured energy, commonly denoted as \EB in this thesis.
+Each photon has a `true' energy, $\tilde{E}_{\gamma}^B$, which is the real energy it was produced at (in data) or generated (simulation).
+On the other hand, $\tilde{E}_{\gamma}^B$ is not generally the same as the measured energy, commonly denoted as \EB in this thesis.
 
-Based on these two quantities, the resolution of the photon energy measured in the signal-\B meson rest-frame is evaluated.
+Based on these two quantities, the resolution of the photon energy measured in the signal-\B meson rest frame is evaluated.
 The quantity from \Cref{eq:resolution} is fitted with a double-sided Crystal Ball function.
 A double-sided Crystal Ball is a generalised version of \Cref{eq:crystal_ball}, where an exponential tail is attached to both sides of the central Gaussian.
 This replaced the parameters $\{\alpha,n\}$ with $\{\alpha_L,\alpha_R, n_R, n_L\}$, where indices $R$ and $L$ denote that these parameters represent, correspondingly, `right' or `left' side of the Gaussian.
 The main parameter of interest when measuring the resolution is $\sigma$, which corresponds to the width of the central Gaussian and is directly interpreted as the resolution.
 
 The unbinned negative log-likelihood fits are performed in intervals of $\tilde{E}_{\gamma}^B$.
-Although all double-sided Crystal Ball parameters are estimated by the fitter, only $\sigma$ is focused on for the purpose of this study.
+Although all double-sided Crystal Ball parameters are estimated by the fitter, only $\sigma$ is focused on for this study.
 The hybrid signal-model samples are fitted, where a good tag-\B meson (based on \Cref{fig:good_tag_definitions}, 
 with one selected with maximum \feiProb) is used to evaluate the \EB.
 For comparison, the same is done where events are only taken if a `perfect' reconstruction of the tag-\B meson is achieved.
-The former visualised in \Cref{fig:resolution_fits}, wheras the latter in \Cref{fig:issignal_resolution_fits}.
+The former is visualised in \Cref{fig:resolution_fits}, whereas the latter is in \Cref{fig:issignal_resolution_fits}.
 The estimated parameters $\sigma$ and their corresponding uncertainties estimated by the fitter are then summarised in \Cref{fig:resolution_sigmas}.
 In \Cref{sec:resolution_studies} further discussion follows.
 
@@ -55,7 +55,7 @@ In \Cref{sec:resolution_studies} further discussion follows.
     on the hybrid signal-model dataset where good tag-\B mesons are used for \EB reconstruction.
     The parameter $\sigma$, corresponding to the width of the central Gaussian part is evaluated.
     This parameter is equated to the resolution of \EB in this analysis.
-    Note that the fits are performed in intervals of $\tilde{E}_{\gamma}^B$, and due to kinematic constraints
+    The fits are performed in intervals of $\tilde{E}_{\gamma}^B$ and, due to kinematic constraints,
     no \BtoXsgamma photons can be produced with $\tilde{E}_{\gamma}^B\gtrsim 2.6$.
     }
 \end{figure}
@@ -97,7 +97,7 @@ In \Cref{sec:resolution_studies} further discussion follows.
     on the hybrid signal-model dataset where only perfectly reconstructed tag-\B mesons are used for \EB reconstruction.
     The parameter $\sigma$, corresponding to the width of the central Gaussian part is evaluated.
     This parameter is equated to the resolution of \EB in this analysis.
-    Note that the fits are performed in intervals of $\tilde{E}_{\gamma}^B$, and due to kinematic constraints
+    Note that the fits are performed in intervals of $\tilde{E}_{\gamma}^B$, and due to kinematic constraints,
     no \BtoXsgamma photons can be produced with $\tilde{E}_{\gamma}^B\gtrsim 2.6$.
     }
 \end{figure}

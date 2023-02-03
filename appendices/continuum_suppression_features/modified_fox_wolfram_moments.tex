@@ -1,10 +1,10 @@
 The Fox-Wolfram moments, introduced in \Cref{sec:modified_fox_wolfram_moments} were shown to bias the photon-energy spectrum.
-This issue, and a fact that a better separation can be calculated if considering only certain subsets of particle momenta and energies in the event,
+This issue, and the fact that a better separation can be calculated if considering only certain subsets of particle momenta and energies in the event,
 motivated the introduction of modified Fox-Wolfram moments, also known as Kakuno-Super-Fox-Wolfram moments.
 They were originally introduced by the Belle collaboration in 2003 \cite{Belle:2003fgr} for charmless $B$ decay studies.
 Modified Fox-Wolfram moments are defined in terms of a set of momenta $\vec{p}^{s}_i$ that belong to a $B$-meson candidate.
 Another subset of momenta for different other particles not used in the reconstruction $\vec{p}^{o}_{jx}$, where $x$ represents a category.
-The categories in question are: charged particles ($c$), neutrals particles ($n$), missing momentum ($m$).
+The categories in question are charged particles ($c$), neutrals particles ($n$), and missing momentum ($m$).
 With this in mind, linear modified Fox-Wolfram moments 
 \begin{equation}
     H_{x,l}^{so} = \frac{1}{N} \sum_i \sum_{jx} Q^{l}_{ij}|p^o_{jx}|P_l(cos\theta_{i,jx}),
@@ -17,7 +17,7 @@ are defined.
 Here, 
 \begin{itemize}
 \item $N\equiv 2(\sqrt{s}-E^{*}_B)$ is a normalisation factor defined in terms of the collisions center-of-mass energy and the $B$ meson energy in the center-of-mass frame;
-\item $\sum_i$ runs over all particles used in reconstruction of the $B$ candidate;
+\item $\sum_i$ runs over all particles used in the reconstruction of the $B$ candidate;
 \item $\sum_j(x)$ runs over all other (or a category $x\in{c,n,m}$ of) particles in the event;
 \item $Q^{l}_ij$ is the product of the charges of candidates corresponding to $i$ and $j$ if $l$ is odd, otherwise 1;
 \item $q_{i(x)}$ are the charges of candidates corresponding to momentum $\vec{p}_{i(x)}$;
@@ -25,7 +25,7 @@ Here,
 \item $P_l$ are the Legendre polynomials.
 \end{itemize}
 As the charge for $x\in\{n,m\}$ is considered 0, they do not have odd $H^{so}_{\ell}$ moments.
-Two additional variables are inclded: the transverse momentum of the event, $\vec{p}_{T}$ and missing-mass of the event $m_{\mathrm{miss}}^2$,
+Two additional variables are included: the transverse momentum of the event, $\vec{p}_{T}$ and the missing mass of the event $m_{\mathrm{miss}}^2$,
 yielding a total of 18 variables suitable for continuum suppression.
 In this analysis, they are calculated in terms of the tag-$B$ meson candidate and shown in
 \Cref{fig:Btag_KSFW_hso00,fig:Btag_KSFW_hso01,fig:Btag_KSFW_hso02,fig:Btag_KSFW_hso03,fig:Btag_KSFW_hso04,fig:Btag_KSFW_hso10,fig:Btag_KSFW_hso12,fig:Btag_KSFW_hso14,fig:Btag_KSFW_hso20,fig:Btag_KSFW_hso22,fig:Btag_KSFW_hso24,fig:Btag_KSFW_hoo0,fig:Btag_KSFW_hoo1,fig:Btag_KSFW_hoo2,fig:Btag_KSFW_hoo3,fig:Btag_KSFW_hoo4,fig:Btag_KSFW_et,fig:Btag_KSFW_mm2}.
@@ -125,5 +125,5 @@ moments pass the requirements of \textbf{Test~1}.
 }
 \caption{\label{fig:modified_fox_wolframs_test1} The bias-test on \EB, \Estar and \Mbc for modified Fox-Wolfram moments.
 The test is performed based on \textbf{Test~1} strategy, defined in \Cref{sec:continuum_features}.
-Variable definitions are given in text.}
+Variable definitions are given in the text.}
 \end{figure}
