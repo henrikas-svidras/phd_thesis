@@ -10,7 +10,7 @@ In this chapter, the main methods of performing an inclusive measurement are int
 
 \section{Past measurements of \safeBtoXsdgamma decays}
 
-Inclusive measurements target a wide selection of decay products; in the case of $X_{sd}$, the sum of all states that originate in $b\to s$ or $b\to d$ transitions.
+Inclusive measurements target a wide selection of decay products; in the case of $X_{s/d}$, the sum of all states that originate in $b\to s$ or $b\to d$ transitions.
 Such states include resonant and non-resonant particles.
 A notable resonant state is $B\rightarrow \Kstar(892)\gamma$.
 Experimentally, it is highly accessible due to its narrow and isolated peak near the $b\to s\g$ two-body decay kinematic limit.
@@ -21,15 +21,15 @@ While the goal of an inclusive measurement is to measure the energy of photons f
 The world average values of inclusive radiative $B$ decay measurements are~\cite{Amhis:2022mac,Workman:2022ynf}:
 \begin{align}\label{eq:btosgamma_experimental}
     \begin{split}
-    \mathcal{B}(\BtoXsgamma)=(3.49\pm 0.19)\times10^{-4}\\
-    \mathcal{B}(\BtoXdgamma)=(0.09\pm 0.03)\times10^{-4}.
+    \mathcal{B}(\BtoXsgamma)&=(3.49\pm 0.19)\times10^{-4},\\
+    \mathcal{B}(\BtoXdgamma)&=(0.09\pm 0.03)\times10^{-4}.
     \end{split}
 \end{align}
 The values of \Cref{eq:btosgamma_experimental} can be compared to the theoretical prediction in \Cref{eq:btosgamma_theoretical,eq:btodgamma_theoretical}.
 \BtoXsgamma results show an excellent agreement between theory and experiment.
 For \BtoXdgamma, values agree within $2\sigma$, however, the dominant source of experimental uncertainty is statistical. 
 
-\Cref{tab:btosgamma_bfs} provides the experimental status of observed the most prominent observed \BtoXsdgamma decay channels as of December 2022.
+\Cref{tab:btosgamma_bfs} provides the experimental status of the most prominent observed \BtoXsdgamma decay channels as of writing this.
 Due to the final state similarity and overlap between various resonant and non-resonant decay modes, only the most prominent resonant decays have been measured.
 However, even in the case of a relatively isolated decay channel, such as \BtoKstargamma, the overall precision of inclusive measurements is higher (compare to \Cref{eq:btosgamma_experimental}).
 
@@ -63,7 +63,7 @@ Therefore, with several exceptions (e.g. \cite{Bellee:2019qbt}), the field of ra
 \section{Techniques for inclusive \safeBtoXsgamma measurements}\label{sec:btosgamma_techniques}
 Historically, three different techniques were applied for inclusive \BtoXsgamma analyses at $B$ factories: 
 sum-of-exclusive measurements,
-untagged inclusive measurements, and
+untagged inclusive measurements and
 tagged inclusive measurements.
 These experiment techniques are explained in more detail in this Section.
 The primary focus will be given to the hadronic-tagged technique, which is applied for the measurement described in this thesis.
@@ -73,7 +73,7 @@ The summary of the most precise measurements that are used in the experimental a
  \begin{table}[!htbp]
      \centering
      \caption{\label{tab:btosgamma_inclusive_summary}
-     The table shows different experiments and their most precise results using various techniques of measuring \BtoXsgamma.
+     Different experiments and their most precise results using various techniques of measuring \BtoXsgamma.
      These results are included in the total \BtoXsgamma world average (\Cref{eq:btosgamma_experimental}) \cite{Amhis:2022mac,Workman:2022ynf}.
      The thresholds of the photon energy in the decaying $B$ meson rest frame (\EB), quoted in the corresponding papers, are also provided.
      The branching fractions are extrapolated to 1.6~\gev, using extrapolation factors calculated in Ref.~\cite{Buchmuller:2005zv}.
@@ -98,11 +98,11 @@ Finally, a measurement performed this way is only `pseudo-inclusive', meaning th
 
 
 The main advantages of this method are due to the precise knowledge of the $X_s$ system, which gives additional information about the $B$ meson, and a higher degree of control of background.
-The knowledge of the charge and flavour of the decaying $B$ meson enables the measurement of the $\mathcal{CP}$ and isospin asymmetries \cite{BaBar:2014czi}.
-Furthermore, it is the only inclusive measurement technique that has been able to distinguish $X_s$ and $X_d$ states experimentally \cite{BaBar:2010vgu}.
-Direct reconstruction of the mass of the $X_s$ system, $M_{X_s}$, and decaying $B$ meson mass, $M_B$, allows expressing the photon energy directly in the signal $B$ meson rest frame:
+The knowledge of the charge and flavour of the decaying $B$ meson enables the measurement of the $\mathcal{CP}$ and isospin asymmetries~\cite{BaBar:2014czi}.
+Furthermore, it is the only inclusive measurement technique that has been able to distinguish $X_s$ and $X_d$ states experimentally~\cite{BaBar:2010vgu}.
+Direct reconstruction of the mass of the $X_s$ system, $m_{X_s}$, and decaying $B$ meson mass, $m_B$, allows expressing the photon energy directly in the signal $B$ meson rest frame:
 \begin{equation}\label{eq:mx_egamma_relation}
-    \EB = \frac{M_B^2 - M_{X_s}^2}{2M_B},
+    \EB = \frac{m_B^2 - m_{X_s}^2}{2m_B},
 \end{equation}
 which is otherwise only directly obtainable by hadronic-tagged inclusive measurements (see \Cref{sec:had_tagged_overview}).
 Furthermore, the full reconstruction of the candidate $B$ meson allows using the well-defined initial state of the \epem collision for additional background suppression.
@@ -110,7 +110,7 @@ Two observables can be defined:
 \begin{equation}\label{eq:deltae_inclusive}
     \Delta E \equiv E^*_B - \sqrt{s}/2,
 \end{equation}
-known as energy difference, expressed in terms of the energy of the $B$ meson in the collision centre-of-mass frame, $E^*_B$, and
+known as the energy difference, expressed in terms of the energy of the $B$ meson in the collision centre-of-mass frame, $E^*_B$, and
 \begin{equation}\label{eq:mbc_exclusive}
     M_{bc} \equiv \sqrt{(\sqrt{s}/2)^2 - (p^*_B)^2},
 \end{equation}
@@ -118,7 +118,7 @@ known as the beam-constrained mass, expressed in terms of the momentum of the $B
 From \Cref{eq:deltae_inclusive,eq:mbc_exclusive} it is clear that $B$ candidates which are reconstructed correctly tend to have a resonant behaviour in \Mbc and \DeltaE, with their distributions peaking at the nominal $B$ mass $\approx5.28~\gevcc$ and $0$, respectively.
 The backgrounds tend to have broader or even non-peaking shapes. 
 An \Mbc distribution is shown in \Cref{fig:mbc_sum_of_exclusive}, as measured by the Belle sum-of-exclusive measurement \cite{Belle:2014nmp}.
-In the past, these analysis techniques achieved an average signal reconstruction efficiency of 3.5\%~(larger for greater values of \EB), after correcting for missing $X_s$ modes \cite{Belle:2014nmp}.
+In the past, these analysis techniques achieved an average signal reconstruction efficiency of 3.5\%~(larger for greater values of \EB) after correcting for missing $X_s$ modes \cite{Belle:2014nmp}.
 
 \begin{figure}[htbp!]
     \centering
@@ -146,8 +146,8 @@ In the previously introduced sum-of-exclusive technique this problem is solved b
 Conversely, in the inclusive case, $X_s$ is treated as unreconstructed, and therefore a background suppression procedure is performed such that no selection bias is introduced to the $X_s$ system.
 An example spectrum based on Belle~II simulation is shown in \Cref{fig:untagged_btosgamma_background}, which highlights the signal-to-background difference.
 
-The predominant background originates from events where no $B$ mesons are created.
-In $\epem\to\qqbar$ events ($q\in\{u,d,s,c\}$), where a \piz is created through hadronisation or decays of other hadrons.
+The predominant background originates from events where no $B$ mesons are created,
+for example, in $\epem\to\qqbar$ events ($q\in\{u,d,s,c\}$), where a \piz is created through hadronisation or decays of other hadrons.
 The \piz then decays asymmetrically into two photons, which mimics the isolated high-energy photon of \BtoXsgamma decays.
 In particular, $q={u,c}$ processes contribute strongly, since they tend to produce energetic \piz or charm mesons (whose decay chains include \piz).
 Semileptonic and hadronic $B$ decays that produce \piz, $\eta$ and $\rho$ mesons, are also among the main sources of background contribution.
@@ -204,12 +204,19 @@ The main advantages of these techniques are summarised in \Cref{fig:tagging_adva
 \begin{figure}[htbp!]
     \centering
     \subcaptionbox{\label{fig:tagging_schematic}}{
-        \resizebox{0.25\textwidth}{!}{
+        \resizebox{0.3\textwidth}{!}{
             \input{tikz_diagrams/tagging.tex}
             }
     }
     \subcaptionbox{\label{fig:tagging_advantages}}{
-    \includegraphics[width=0.7\textwidth]{figures/experiment_overview/tagging_advantages.png}
+        \begin{tikzpicture}
+            \node[anchor = north west, inner sep=0] (image) at (current page.north west) 
+                {    \includegraphics[width=0.5\textwidth]{figures/experiment_overview/tagging_advantages_mod.png}};
+            \node[align = center, below = 1mm of image] (firsttext)% <---- 
+                {\scriptsize \textbf{Untagged} \tab \textbf{lepton-tagging} \tab \textbf{semileptonic-tagging} \tab \textbf{hadronic-tagging}};
+            % \node[align = center, below = 1mm of firsttext] (sectext)% <---- 
+            %     {\scriptsize $B\to\mathrm{anything}$ \tab $B\to D^(*)\ell\nu \mathrm{n}\cdot\pi$ \tab$B\to\mathrm{hadrons}$   };
+        \end{tikzpicture}
     }
     \caption{\label{fig:tagging_drawins} Schematic representation of tagging is shown in \Cref{fig:tagging_schematic}.
     The idea of tagging is using the tag-side $B$ decay products to apply kinematic constraints on the signal-side $B$ decay (\BtoXsgamma in the example).
@@ -233,17 +240,17 @@ Compared to other tagged and untagged inclusive techniques, this is the only met
 As a result, with the beam constraint requirements, one can calculate quantities such as \Mbc and \DeltaE (see \Cref{eq:mbc_exclusive,eq:deltae_inclusive}) for the tag-side $B$ meson.
 The ability to rely on these distributions and, in particular, perform a signal extraction fit, similar to the one given in \Cref{fig:mbc_sum_of_exclusive}, allows suppressing previously dominant $\epem\ra\qqbar$ component to negligible levels.
 
-Because both $B$ mesons at $B$ factories are created from a \FourS decay, 
+Because both $B$ mesons at $B$ factories are created from decays of \FourS, 
 the full knowledge of the tag-$B$ properties allows inferring the charge, momentum and flavour of the signal-$B$ meson, and consequentially, measuring the desired observables in the decaying-$B$ rest frame.
 A mathematical description of a Lorentz transformation using tag-$B$ constraints is provided in \Cref{sec:appendix_boosting_to_b_frame}.
 Therefore, one regains all the benefits that the sum-of-exclusive technique offers, while still ensuring that no selection requirements are imposed on the $X_s$ system.
 However, a complication that follows is the fact that hadrons can have thousands of decay chains and an efficient reconstruction of a statistically significant tag-$B$ sample is complicated.
-Compared to semileptonic tagging, the hadronic tagging technique has a several times lower efficiency, although this is compensated by a very high purity of the tagged data sample \cite{Belle-II:2018jsg}.
+Compared to semileptonic tagging, the hadronic tagging technique has a several times lower efficiency, although this is compensated by a very high purity of the tagged data sample~\cite{Belle-II:2018jsg}.
 The BaBar analysis achieved a signal efficiency of $\mbox{\sim 0.2\%}$ depending on the \EB interval (increasing with photon energy).
 
 
 Hadronic-tagged measurements of \BtoXsgamma have uncertainties that are mainly related to the modelling of \BB background, \Mbc fitting and correlation between tag-side decays and signal-side reconstruction.
-The previous hadronic-tagged BaBar measurement \cite{BaBar:2007yhb} achieved a $16\%$ systematic uncertainty and a $23\%$ statistical uncertainty.
+The previous hadronic-tagged BaBar measurement \cite{BaBar:2007yhb} achieved a $16\%$ systematic uncertainty and a $23\%$ statistical uncertainty of the branching fraction.
 Both uncertainties are expected to be improved with larger data samples.
 As evident from \Cref{tab:btosgamma_inclusive_summary}, historically, sum-of-exclusive and lepton-tagged methods have been the most precise measurements of the \BtoXsgamma spectrum.
 The uncertainty of the hadronic-tagged measurement is higher but comparable to that of untagged, leptonic-tagged and sum-of-exclusive measurements, even though the hadronic-tagged analysis has been performed with only half of available BaBar data.
