@@ -3,7 +3,7 @@
 \section{Parameter estimation}\label{sec:fitting_theory}
 
 The distributions of observables that are measured experimentally always contain a degree of statistical uncertainty.
-In Physics, observables are often modelled with smooth distributions, which can be parametrised by a set of numbers. 
+In physics, observables are often modelled with smooth distributions, which can be parametrised by a set of numbers. 
 Parameter estimation, henceforth referred to as \textit{fitting}, is a process of extraction of parameters from observed distributions. 
 It is one of the key tasks of statistical analyses and, consequentially, particle physics measurements. 
 Nearly every particle physics analysis features some kind of fitting for the result extraction. 
@@ -23,7 +23,6 @@ The material presented here only summarises the details found in these books and
 
 One of the most common and popular methods for parameter estimation is the maximum likelihood method. 
 It is also used widely in this analysis, as described in \Cref{ch:analysis}.
-
 A measured dataset can be defined as $x = (x_1, x_2,...,x_N)$, with $x_i$ being the $i$-th result of $N$ independent measurement following an unknown probability density function (\PDF),~$f(x)$.
 The shape of $f(x)$ is often parametrised as $f(x; a)$, where $a=(a_1,...,a_M)$ is an $M$-dimensional vector of unknown parameters. 
 For a fitting procedure, one has to construct an \textit{estimator}, which is a function of the observed data that can provide an estimated numerical value, $\hat{a}$, corresponding to the parameter vector $a$.
@@ -77,7 +76,7 @@ If the assumed distribution is incorrect, the results can be unreliable.
 
 \subsection{Variance of the maximum likelihood method}\label{sec:mle_variance}
 
-Assuming \Cref{eq:likelihood_derivative} is satisfied, the log-likelihood function can be expanded as a series at $a=\hat{a}$ and approximated as a following parabola:
+Assuming \Cref{eq:likelihood_derivative} is satisfied, the log-likelihood function can be expanded as a series at $a=\hat{a}$ and approximated as a parabola:
 \begin{equation}
     l(x;a_1,a_2,...,a_N) = l(x;\hat{a}_1,\hat{a}_2,...,\hat{a}_N) + \frac{1}{2}\sum_{i,k} \pdv{l}{a_i}{a_k} (a_i-\hat{a}_i)(a_k-\hat{a}_k)+...
 \end{equation}
@@ -88,7 +87,7 @@ any given $f(x;a)$ can have its likelihood function approximated with a multivar
 \end{equation}
 where $H$ is the Hessian matrix of the log-likelihood function. 
 
-In this case, the covariance matrix, $V(\hat{a})$, of the estimated parameter vector is approximated as the inverted Hessian matrix, taken at the maximum likelihood estimate $\hat{a}$:
+In this case, the covariance matrix, $V(\hat{a})$, of the estimated parameter vector is approximated as the inverted Hessian matrix taken at the maximum likelihood estimate $\hat{a}$:
 \begin{equation}
     V(\hat{a}) = \left[-\pdv[2]{l(x;a)}{a}\middle|^{}_{\ds a=\hat{a}}\right]^{-1} = H^{-1}.
 \end{equation}
@@ -123,7 +122,7 @@ It implements the Hessian matrix inversion as the \texttt{HESSE} method and the 
 In particle physics, it is common to not only parametrise the shape of an observable's distribution but also to measure its absolute rate (normalisation).
 The standard setup for the maximum likelihood method does not allow determining the absolute normalisation. 
 An additional term to the likelihood has to be introduced.
-In Nature, if a measurement is performed repeatedly, its rate will fluctuate according to Poissonian statistics.
+In nature, if a measurement is performed repeatedly, its rate will fluctuate according to Poissonian statistics.
 Hence, the \Cref{eq:likelihood_equation}, needs to have a Poisson term included:
 \begin{equation}\label{eq:extended_likelihood}
     \mathcal{L}(x;a) = \frac{\nu^N}{N!}\exp(-\nu)\prod_{i=1}^N f(x_i;a),
@@ -149,7 +148,7 @@ There are two ways that data can be arranged for a fit:
 The intervals are often referred to as \textit{bins}. 
 Consequentially, the techniques are referred to as \textit{unbinned} and \textit{binned} fits, respectively.
 In this thesis, unbinned maximum likelihood fits are used. 
-They are computationally more intensive but are a more general case of binned fits. 
+They are computationally more intensive but are a more general than binned fits. 
 
 Throughout this thesis, fitting is implemented using the \texttt{zfit} framework \cite{ESCHLE2020100508}. 
 It provides a Python-based library that is developed to fulfil particle physics fitting requirements.
@@ -195,7 +194,7 @@ Mathematically, a \textit{loss function} is desired which returns the discrepanc
 \begin{equation}\label{eq:loss_function}
     \mathcal{L}(y, \hat{y}) = \mathcal{L}(y, f(\vec{x};\vec{a})),
 \end{equation}
-where $\vec{a}$ is a set of internal degrees of freedom, describing the classification model.
+where $\vec{a}$ is a set of internal degrees of freedom describing the classification model.
 In classification problems, outputs of $f(\vec{x};\vec{a})$ are conventionally mapped to a continuous output between 0 and 1 to represent corresponding categories.
 In this formalism, one can minimise the loss to extract a set of parameters that provide the smallest difference between $y$ and $\hat{y}$.
 This problem is then equivalent to the one described in \Cref{sec:mle}, with a different choice of a likelihood function.
@@ -214,7 +213,8 @@ further training will only degrade the performance of the classifier on the vali
 This regime is called \textit{overtraining} and needs to be avoided.
 There are many ways to test for overtraining, but all of them usually rely on comparing the classifier performance between the training sample and an additional, independent \textit{testing sample}.
 In particle physics, it is common to use the validation sample also as a testing sample.
-This is only acceptable in the case of large training samples, where statistical fluctuations of data are negligible, making the validation and testing samples statistically equivalent.
+This is only acceptable in the case of large training samples, 
+where statistical fluctuations of data are negligible or where independent efficiency and background rejection studies are performed.
 
 \begin{figure}[htbp!]
     \centering
@@ -239,13 +239,13 @@ This is only acceptable in the case of large training samples, where statistical
 To assess the performance of a binary classifier, a receiver operating characteristic (\ROC) is often used.
 A \ROC curve represents the true positive rate as a function of the false positive rate and is calculated by iterating over different \MVA classifier thresholds.
 A visual representation of the meaning of \ROC curves is shown in \Cref{fig:rocs_examples}.
-Given an optimal classifier (no overtraining), one expects the \ROC curve calculated on training and testing data to be highly similar.
-This can be qualitatively by visually inspecting the corresponding curves, or, quantitatively, by defining an area-under-curve (\AUC) score which is computed by integrating the \ROC curve.
-An $\mathrm{\AUC}=1$ would represent a false positive rate of 0, and a true positive rate of 1 (see \Cref{fig:roc_curves})
+Given an optimal classifier (no overtraining), one expects the \ROC curve calculated on training and testing data to be similar.
+This can be qualitatively viewed by inspecting the corresponding curves, or, quantitatively, by defining an area-under-curve (\AUC) score which is computed by integrating the \ROC curve.
+An $\mathrm{\AUC}=1$ would represent a false positive rate of 0, and a true positive rate of 1 (see \Cref{fig:roc_curves}).
 The least-optimal classifier would provide a random guess and have a false positive and true positive rate of 0.5, and $\mathrm{\AUC}=0.5$.
 
-In high-energy physics, we often use alternative forms of false positive and true positive rates.
-Namely, we tend to express our results in terms of 
+In high-energy physics, alternative forms of false positive and true positive rates are popular.
+Namely, results are often expressed in terms of:
 \begin{itemize}
     \item \textit{efficiency}: equivalent to the true positive rate;
     \item \textit{background rejection}: equivalent to $1 - \mathrm{false~positive~rate}$;
@@ -273,7 +273,7 @@ Therefore, at the end of every branch, there is a node with two leaves.
 The maximum number of selections in a branch is called the \textit{depth} of the classifier.
 
 The tree could be grown indefinitely, and this will quickly lead to overtraining, highlighting the aforementioned bias-variance trade-off.
-In practice, a technique called \textit{pruning} is employed, which removes nodes from the tree based on their overall impact on the performance of the decision tree.
+In practice, a technique called \textit{pruning} is employed which removes nodes from the tree based on their overall impact on the performance of the decision tree.
 This produces a smaller tree and the `strength' of pruning is tunable with appropriate parameters.
 
 Decision trees are easily interpretable as they are a series of binary decisions that are intuitive and closely resemble human reasoning.
@@ -306,22 +306,22 @@ by minimising the loss function for parameter $\alpha_m$:
     \alpha_m = \arg\min_{\alpha_m}\left(\sum_{i=1}^N\mathcal{L}(y_i, G_{m-1}(x_i) + \alpha_mg_m(x_i))\right).
 \end{equation}
 One way to solve \Cref{eq:minimize_loss} in a numerically-optimal way is to compute the gradient of the loss function.
-Consequentially, a classifier built this way is called \textit{gradient-boosted} decision tree \cite{FRIEDMAN1013203451}.
+Consequentially, a classifier built this way is called a \textit{gradient boosted} decision tree \cite{FRIEDMAN1013203451}.
 
 To further increase the robustness of gradient-\BDT{s}, one may only sample (without replacement) a part of the dataset in each training iteration.
 In this case, any statistical fluctuations would average out over the sum of all trees. 
 This technique is called stochastic gradient-\BDT{s} \cite{FRIEDMAN2002367}.
 The fraction of data used at every training iteration is called the \textit{sampling rate}.
-Boosted Decision Trees (\BDT{s}) are often considered as `black box' models because their inner structure is
+\BDT{s} are often considered as `black box' models because their inner structure is
 not easily interpretable, making it difficult to understand how they arrive at their predictions. 
 This can be seen as a disadvantage because the model's transparency is limited.
 
 In the analyses present in this thesis, \texttt{FastBDT} \cite{Keck:2017gsv} is used as the \MVA for training stochastic gradient-\BDT{s}.
-For the training of the classifier, \texttt{FastBDT} employs 4 parameters that were described in this chapter: number of trees ($M$), maximum depth of each tree, shrinkage and sampling rate. 
+For the training of the classifier, \texttt{FastBDT} employs 4 parameters that were described in this Section: number of trees, maximum depth of each tree, shrinkage and sampling rate. 
 
 \section{Unfolding}\label{sec:unfolding}
 
-In physics, we are only able to probe Nature through the experimental setup that we build.
+In physics, we are only able to probe nature through the experimental setup that we build.
 Any hypothetical detector is therefore subjected to random effects related to its finite resolution and acceptance.
 Consequentially, the measured results (distributions) will be convoluted with these effects (\textit{smeared}).
 If two different experiments are comparing their measurements, it only makes sense if external factors are of minimal importance.
@@ -352,12 +352,12 @@ The main method in high-energy physics is to extract an implicit form of this fu
 \includegraphics[width=0.45\textwidth]{figures/analysis_techniques/experimental_smearing.pdf}
 \caption{\label{fig:smearing_illustration} 
 A visual illustration of the smearing of an arbitrary observable.
-Considering some `true' distribution (blue, full line), depicted by a sharp Lorentzian, the experimentally observed result (grey, full line) will be affected by, usually, unknown detector-response and resolution effects.
+Considering some `true' distribution (blue, full line), depicted by a sharp Lorentzian, the experimentally observed result (grey, full line) will be affected by, usually, unknown detector response and resolution effects.
 In this case, the unknown experimental effects are illustrated by Gaussian (dotted) and Crystal Ball (dashed) functions.}
 \end{figure}
 
 In science, experimental data are often presented in the form of a histogram. 
-The results are integrated over several shorter intervals (\textit{bins}) and only the integral values are shown at the centre of each bin.
+The results are integrated over several shorter intervals (bins) and only the integral values are shown at the centre of each bin.
 As a result, a simpler matrix form of \Cref{eq:fredholm_integral} can be used which allows a numerical solution:
 \begin{equation}\label{eq:unfolding_linear_equation}
 \hat{A}\vec{x}=\vec{y},
@@ -408,7 +408,7 @@ In this case the \Cref{eq:unfolding_linear_equation} is solved by inverting the 
 \end{equation}
 The number of bins of the true and the measured distribution must be the same, as only square matrices may be inverted.
 While the result is statistically fully correct, it tends to introduce large negative correlations between neighbouring bins in the unfolded distribution $\vec{x}$ \cite{Schmitt:2016orm}.
-The simple reasoning for this is the fact that Poissonian fluctuations in neighbouring bins will get amplified/suppressed by the matrix multiplication, creating an ``oscillatory'' pattern.
+The simple reasoning for this is the fact that statistical fluctuations in neighbouring bins will get amplified/suppressed by the matrix multiplication, creating an ``oscillatory'' pattern.
 This effect is undesirable and goes against the common sense that (generally) smooth distributions are expected in nature.
 The correction of such correlations is called \textit{regularisation}\footnote{Note that regularisation in the context of machine learning usually refers to techniques that prevent overfitting.
 The term used here refers to the unfolding regularisation of inverse problems.
@@ -423,7 +423,7 @@ Although an in-depth discussion is irrelevant to the work presented in this thes
     \item \texttt{TUnfold} method \cite{Schmitt:2012kp}: performs a least-squares minimisation of $\vec{y}-\hat{A}{\vec{x}}$ and includes a damping term for oscillations in $x$;
     \item D'Agostini method \cite{d2010improved,DAgostini:1994fjx}: inversion of response matrix using Bayes' theorem and iterative improvement of the unfolding result, stopping iterations early to not require regularisation;
     \item Iterative dynamically-stabilised method \cite{Malaescu:2009dm}: combines elements of d'Agostini's and bin-by-bin correction methods, preserving the normalisation of data in each bin;
-    \item Singular value decomposition method \cite{Hocker:1995kb}: solves \Cref{eq:unfolding_linear_equation} by decomposing the response matrix into its singular values, and adds a weighted prior condition to the solution.
+    \item Singular value decomposition method \cite{Hocker:1995kb}: solves \Cref{eq:unfolding_linear_equation} by decomposing the response matrix into its singular values and adds a weighted prior condition to the solution.
 \end{itemize}
 In particle physics, unfolding is often implemented using the \texttt{RooUnfold} package \cite{Brenner:2019lmf}, which can perform all the methods described in \Cref{sec:unfolding}.
 In the analysis presented in this thesis, regularisation was not applied following the results of studies in \Cref{sec:signal_unfolding}.
