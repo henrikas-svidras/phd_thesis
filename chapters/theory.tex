@@ -1,9 +1,9 @@
 \chapter{Theoretical overview}\label{ch:theory}
 
 In this Chapter, the theoretical overview of the Standard Model, 
-flavour physics and \BtoXsgamma will be presented.
-\Cref{sec:standard_model} defines the main particle physics terminology that will be used throughout the thesis, by a synthesis of 
-information of well-established concepts about the Standard Model which can be found detailed in e.g. Refs.~\cite{Peskin:1995ev,Thomson:2013zua,Griffiths:2008zz}.
+flavour physics and \BtoXsgamma is presented.
+\Cref{sec:standard_model} defines the main particle physics terminology that will be used throughout the thesis by a synthesis of 
+information of well-established concepts about the Standard Model which can be found detailed, e.g., in Refs.~\cite{Peskin:1995ev,Thomson:2013zua,Griffiths:2008zz}.
 \Cref{sec:flavour_physics} introduces the concept of flavour physics in the Standard Model and some main challenges related to it.
 \Cref{sec:bphysics_case} introduces the main points of interest in the study of $B$ meson decays concerning flavour physics.
 Finally, the rest of the Chapter in \Cref{sec:btosgamma_totalrate_theory,sec:btosgamma_spectrum_theory,sec:btosgamma_bsm} provides the reader with an introduction of the theoretical foundation and the status of inclusive radiative decays.
@@ -11,12 +11,12 @@ Finally, the rest of the Chapter in \Cref{sec:btosgamma_totalrate_theory,sec:bto
 
 \section{The Standard Model of Particle Physics} \label{sec:standard_model}
 
-The Standard Model (\SM) is a quantum field theory based on a local gauge invariance given by the symmetry group $SU(3)\times~SU(2)\times~U(1)$.
+The Standard Model (\SM) is a quantum field theory based on a local gauge invariance given by the symmetry group $SU(3)\times SU(2)\times U(1)$.
 In quantum field theory, all particles are described as excitations of fields, $\psi(x)$, 
 where $x=\{\vec{x},t\}$ is a space-time coordinate.
-The Lagrangian, $\mathcal{L}=\mathcal{L}(\psi,\partial_{\mu}\psi)$, describes the dynamics originating from the excitations of field $\phi$,
+The Lagrangian, $\mathcal{L}=\mathcal{L}(\psi,\partial_{\mu}\psi)$, describes the dynamics originating from the excitations of a field $\phi$,
 where $\partial_{\mu}=\{\frac{\partial}{\partial \vec{x}},\frac{\partial}{\partial t}\}$.
-In particular, it encodes the interactions and the free-propagation of particles which are visually represented using Feynman diagrams.
+In particular, it encodes the interactions and the free propagation of particles which are visually represented using Feynman diagrams.
 % The Lagrangian follows the principle of the least action, which results in Euler-Lagrange equations describing the evolution of the physical system:
 % \begin{equation}
 %     \partial_{\mu} \left(\frac{\partial\mathcal{L}}{\partial(\partial_{\mu}\phi)}\right) - \frac{\partial\mathcal{L}}{\partial\phi}.
@@ -45,6 +45,7 @@ Their spin, charge, mass and notation are summarised in \Cref{fig:standard_model
     All the masses are approximate even if more precise measurements are available.
     They are based on the current knowledge of particle physics, as summarised in Ref.~\cite{Workman:2022ynf}.
     Note that quark masses are not well-defined as they cannot be observed in Nature independently.
+    This provides their masses in the $\overline{\mathrm{MS}}$ renormalisation scheme.
     See Ref.~\cite{Workman:2022ynf} for more information on the values.
     This is a modified version of the diagram of Ref.~\cite{sm_diagram}.
     }
@@ -52,7 +53,7 @@ Their spin, charge, mass and notation are summarised in \Cref{fig:standard_model
 
 Quarks and leptons are organised in three \textit{generations}, 
 where each generation contains a charged lepton, a neutral lepton, an up-type quark, and a down-type quark.
-Each species of fermion has a distinct \textit{flavour}, resulting in six quark and six lepton flavours in \SM.
+Each species of fermion has a distinct \textit{flavour}, resulting in six quark and six lepton flavours in the \SM.
 The strong and electromagnetic interactions do not change the flavour of particles, 
 however, this can be achieved via the weak interaction.
 On the other hand, a transition between two generations is not possible for charged leptons
@@ -64,8 +65,8 @@ The generations only differ by their masses, where a mass hierarchy is observed:
 \end{align*}
 For quarks and charged leptons, only the first generation is stable and constitutes the absolute majority of the stable matter observed in the universe.
 On the other hand, all three generations of neutrinos appear to be stable.
-While leptons exist as free particles in Nature, quarks are not observed free, due to the confinement effect, 
-but as combinations of two or more quarks, collectively known as \textit{hadrons}.
+While leptons exist as free particles in nature, quarks are not observed free, due to the confinement effect, 
+but rather as combinations of two or more quarks, collectively known as \textit{hadrons}.
 The combinations of a quark and an anti-quark pair are called \textit{mesons}, while combinations of three (anti-)quarks are called \textit{baryons}.
 Some hadrons that will be commonly mentioned in this thesis are shown in \Cref{tab:hadrons}.
 \begin{table}[htbp!]
@@ -133,13 +134,13 @@ It has been experimentally observed that the weak interactions violate the $\mat
 % The $\gamma^5$ matrix is defined as a product of the four Dirac matrices $i\gamma^0\gamma^1\gamma^2\gamma^3\gamma^4$.
 
 After the violation of charge ($\mathcal{C}$) and parity ($\mathcal{P}$) symmetries by the weak interaction became clear~\cite{Wu:1957my},
-it was initially assumed thought that their combination, $\mathcal{CP}$ symmetry is conserved.
+it was initially assumed that their combination, $\mathcal{CP}$ symmetry, is conserved.
 In 1964, it was observed that the weak interaction can violate the combined charge-parity symmetry~\cite{Christenson:1964fg}.
 To incorporate $\mathcal{CP}$ violation into the \SM, M. Kobayashi and T. Maskawa~\cite{Kobayashi:1973fv} built upon the predecessor work by N. Cabibo \cite{Cabibbo:1963yz},
 introducing the quark-mixing model based on the Cabibbo-Kobayashi-Maskawa (\CKM) matrix. 
 The model introduces a difference between the $\d,\s,\b$ quark states when they propagate freely (mass eigenstate) and their $\d',\s',\b'$ states when they interact
 via the weak interaction (weak eigenstate).
-Specifically, they show that weak eigenstates of the quarks are linear combinations of the quark mass-eigenstates:
+Specifically, they show that weak eigenstates of the quarks are linear combinations of the quark mass eigenstates:
 \begin{equation}
     \begin{pmatrix}
         d'\\
@@ -173,9 +174,9 @@ The unitarity constraint implies:
     \end{split}
 \end{align}
 for any generation $k$.
-As a unitary matrix, it can be fully described by 9 parameters, however, each quark field can absorb a complex phase related to the matrix,
+As a $3\times3$ unitary matrix, it can be fully described by 9 parameters, however, each quark field can absorb a complex phase related to the matrix,
 which leaves only a single global complex phase.
-Therefore, the \CKM matrix can be expressed in terms of the three quark-mixing angles and $\mathcal{CP}$-violating complex phase.
+Therefore, the \CKM matrix can be expressed in terms of the three quark-mixing angles and a $\mathcal{CP}$-violating complex phase.
 The standard representation of the \CKM matrix is:
 \begin{align}
     \begin{split}
@@ -217,7 +218,7 @@ As of writing this thesis, the experimental magnitudes (omitting uncertainties) 
     \end{pmatrix}.
 \end{equation}
 The diagonal values of the \CKM matrix are the largest, which represents that flavour changes between the same generations are favoured.
-On the other hand, the off-diagonal elements are much smaller, indicating that transitions between different generations are highly suppressed,
+On the other hand, the off-diagonal elements are much smaller, indicating that transitions between different generations are highly suppressed.
 
 Precise measurements of the \CKM matrix elements have been performed to test the validity of the \SM.
 One way to summarise the experimental status of flavour physics is through the so-called unitarity triangle.
@@ -291,7 +292,8 @@ One possible beyond-\SM scenario where this transition is mediated by a charged 
 
 Since \BtoXsdgamma decays proceed via $b\ra s(d)\g$ transitions, they are sensitive probes for beyond-Standard-Model (\BSM) particles. 
 The leading contributions in the \SM only happen via one-loop diagrams, as seen in \Cref{fig:b_to_s_gamma_diagrams}.
-The electroweak loop can get contributions from all the quarks but is dominated by the much heavier top quark \cite{Mannel:2001vn} as followed by the Glashow-Iliopoulos-Maiani mechanism~\cite{Glashow:1970gm}. 
+The electroweak loop can get contributions from $u,c,t$ quarks but they are suppressed as followed by the Glashow-Iliopoulos-Maiani mechanism~\cite{Glashow:1970gm}.
+Therefore, the loop is dominated by the much heavier top quark \cite{Mannel:2001vn}. 
 The masses of possible \BSM weakly-interacting particles that can appear in the loops may be as high as \order{(100~\tev)} \cite{Misiak:2020vlo} which makes studying these decays appealing.
 
 The decay rate of \BtoXsdgamma involves both weak and strong interactions.
@@ -302,7 +304,7 @@ An effective Lagrangian describing the $\b\to\s(d)\g$ can be written as~\cite{Ka
     \mathcal{L}_{\mathrm{eff}} = \frac{4G_F}{\sqrt{2}}V_{tq}^*V_{tb}\left[\sum^{8}_{i=1}\mathcal{C}_i(\mu)\mathcal{O}_i(\mu)
                                                 + \frac{V^*_{uq}V_{ub}}{V^*_{tq}V_{tb}}\sum^{2}_{i=1}\mathcal{C}_i(\mu)(\mathcal{O}_i(\mu)-\mathcal{O}_i^u(\mu))\right],
 \end{equation}
-where $G_F$ is the Fermi constant and $q\in\{s,d\}$, and $V_{ij}$ are the appropriate \CKM matrix elements.
+where $G_F$ is the Fermi constant, $q\in\{s,d\}$, and $V_{ij}$ are the appropriate \CKM matrix elements.
 The factors $\mathcal{C}_i$, known as \textit{Wilson coefficients}, encode the high-energy weak contributions and can be calculated perturbatively.
 The operators $\mathcal{O}_i$ describe the effective point-like interactions vertices in the effective field theory.
 The renormalisation scale, $\mu$, needs to be chosen close to the typical energies of the studied process.
@@ -313,7 +315,7 @@ The exact expressions of operators $\mathcal{O}_i$, relevant for \btosgamma tran
     \input{tikz_diagrams/b_to_s_gamma_effective.tex}
 \caption{\label{fig:b_to_s_gamma_effective}
 Schematic representation of the \SM effective $\mathcal{L}$ governing to \BtoXsgamma. 
-The effective interactions are normalised by the Wilson coefficients, $C_j$, and described by operators, $O_j$ (see \Cref{sec:appendix_local_opperators}) whose sketches are shown here.
+The effective interactions are normalised by the Wilson coefficients, $C_i$, and described by operators $O_i$ (see \Cref{sec:appendix_local_opperators}) whose sketches are shown here.
 They correspond to the effective Lagrangian in \Cref{eq:effective_lagrangian}.
 }
 \end{figure}
@@ -330,21 +332,21 @@ In particular, additional non-perturbative components need to be considered for 
 \end{equation}
 $\Gamma(b\ra s\g)$ is the perturbatively calculable rate of $b$ quarks decaying into charmless partons, 
 and $\partial\Gamma_{non-p.}$ is the non-perturbative contribution arising outside of local operator product expansion when accounting for the fact that the $b$ quark is not stationary inside the bound $B$ meson state.
-As long as an appropriately low photon energy threshold (in the decaying $B$ meson rest frame), \EB, is chosen, the non-perturbative effects in \Cref{eq:btosgammarate_nonp} can be considered smaller as they `average out' over the spectrum.
+As long as an appropriately low photon energy threshold (in the decaying $B$ meson rest frame) is chosen, the non-perturbative effects in \Cref{eq:btosgammarate_nonp} can be considered smaller as they `average out' over the spectrum.
 Due to contributions from $\ccbar$ resonances at low-\Egamma, the threshold is conventionally chosen at $\Egamma>1.6~\gev$ \cite{Misiak:2009nr}.
 Until recently, a 5\% uncertainty was associated with this assumption \cite{Benzke:2010js}. 
 However, recent developments in understanding the non-perturbative effects \cite{Gunawardana:2019gep} led to an improved treatment of these uncertainties \cite{Misiak:2020vlo}.
 One notable example of non-perturbative effects that are retained in total branching fraction calculations is the so-called resolved photon contributions.
 These contributions are a result of the photon coupling directly to partons instead of the effective weak interaction vertex.
 The origin of the non-perturbative contribution will be further discussed with the differential decay rate in \Cref{sec:btosgamma_spectrum_theory}.
-It will also be seen that the threshold for \EB is motivated also from the experimental side, as a large background process contamination is present in the low-\EB region.
+It will also be seen that the threshold for \Egamma is motivated also from the experimental side, as a large background process contamination is present in the low-\Egamma region.
 
 Using operator product expansion, one can calculate the matrix element $|\mel*{s\g}{\mathcal{L}_{\mathrm{eff}}}{b}|^2$ and integrate it from a chosen energy threshold, $\Egamma>E_0$. 
 Then the perturbative decay rate can be written as \cite{Misiak:2020vlo}:
 \begin{equation}\label{eq:theory_decay_rate}
     \Gamma(b\ra\s\g) = \frac{G^2_F m_{\mathrm{b}}^5 \alpha_{\mathrm{em}}}{32\pi^4}|V_{ts}^*V_{tb}|^2\sum_{i,j=1}^8\mathcal{C}^{\mathrm{eff}}_{i}(\mu_b)\mathcal{C}^{\mathrm{eff}}_{j}(\mu_b)\hat{G}_{ij}(E_0,\mu_b),
 \end{equation}
-where $m_{\mathrm{b}}$ is the $b$-quark pole mass, and $\alpha_{\mathrm{em}}$ is the fine-structure constant.
+where $m_{\mathrm{b}}$ is the $b$ quark pole mass, and $\alpha_{\mathrm{em}}$ is the fine-structure constant.
 The $C_{i}^{\mathrm{eff}}(\mu_b)$ coefficients represent effective Wilson coefficients \cite{Buras:1993xp} that are independent of the renormalisation scheme and defined through linear combinations of the Wilson coefficients of \Cref{eq:effective_lagrangian}.
 Finally, the functions $\hat{G}_{ij}$ encapsulate the terms describing the interference between the operators $\mathcal{O}_{i,j}$, which arise in the squared matrix element.
 As already mentioned before, the dominant terms arise from a handful of operators $\mathcal{O}_i$, and the combined efforts to calculate them have brought \BtoXsgamma theoretical estimates to the next-to-next-to-leading-order precision.
@@ -374,11 +376,11 @@ The additional semileptonic phase-space factor:
 \begin{equation}
     C = \left|\frac{V_{ub}}{V_{cb}}\right|^2 \frac{\Gamma(\B\to X_c\ell\bar{\nu})}{\Gamma(\B\to X_u\ell\bar{\nu})},
 \end{equation}  
-accounts for the choice to use the $B\rightarrow X_c\ell\bar{\nu}$ as a normalisation channel for the total-decay rate. 
+accounts for the choice to use the $B\rightarrow X_c\ell\bar{\nu}$ as a normalisation channel for the total decay rate. 
 It is determined using the experimental value of the branching ratio of $\B\to X_c \ell\bar{\nu}$, which is known to a high precision \cite{Alberti:2014yda,Workman:2022ynf}.
-This choice is preferable compared to the $|V_{ub}|$-suppressed and more model-dependant $\B\to X_u\ell\bar{\nu}$.
+This choice is preferable compared to the \mbox{$|V_{ub}|$-suppressed} and more model-dependant $\B\to X_u\ell\bar{\nu}$.
 
-At the leading-order, where non-perturbative effects are disregarded, effects from $\mathcal{C}_{2,7,8}$ are most important and this can be expressed in a compact form \cite{Buras:1993xp}:
+At the leading-order, where non-perturbative effects are disregarded, effects from $\mathcal{C}_{2,7,8}$ are the most important and this can be expressed in a compact form \cite{Buras:1993xp}:
 \begin{equation}\label{eq:total_decay_rate_leading_order}
     \frac{\mathcal{B}(\BtoXsgamma)}{\mathcal{B}(\B\to X_c\ell\nu_\ell)} = \left|\frac{V_{ts}^*V_{tb}}{V_{cb}}\right|^2\frac{6\alpha_{\mathrm{em}}}{\pi C}|\mathcal{C}_{7}^{(0)\mathrm{eff}}(\mu)|^2.
 \end{equation}
@@ -397,12 +399,12 @@ where the \SM coefficients $\mathcal{C}_{2,7,8}^{(0)}$ are expressed in terms of
 \end{align}
 The coefficient $\eta$ is expressed as $\eta=\alpha_s(m_W)/\alpha_s(\mu)$, whereas $h_i$ and $a_i$ are the eigenvalues of a scheme-independent matrix $\gamma^{(0)\mathrm{eff}}$, 
 which is defined in Appendix A of Ref.~\cite{Buras:1993xp}.
-The matrix $\gamma^{(0)\mathrm{eff}}$ governs the leading-order \QCD corrections to $\b\ra\s\g$, and its elements appear in the renormalisation group equation of the effective Wilson coefficients.
+The matrix $\gamma^{(0)\mathrm{eff}}$ governs the leading-order strong interaction corrections to $\b\ra\s\g$, and its elements appear in the renormalisation group equation of the effective Wilson coefficients.
 
 Considering the effective interactions in \Cref{fig:b_to_s_gamma_effective}, it may seem peculiar that $\mathcal{O}_{2,8}$ are important at the leading-order.
 However, because \BtoXsgamma receives Glashow-Iliopoulos-Maiani suppression terms $(\sim m_q^2/m_W^2)$, two-loop contributions involving a gluon exchange $(\sim\ln m_t^2/m_b^2)$ are important \cite{Bertolini:1986th}.
-In the absence of \QCD effects, one has $\eta=1$ and \BtoXsgamma decays are governed solely by the photonic dipole exchange.
-Consider evaluating \Cref{eq:effective_c7} explicitly for $m_t=170~\gevcc$, $\mu=5~\gevcc$, $\alpha_s(M_Z)=0.118$~\cite{Buras:1998raa}:
+In the absence of \QCD, one has $\eta=1$ and \BtoXsgamma decays are governed solely by the photonic dipole exchange.
+Consider evaluating \Cref{eq:effective_c7} explicitly for $m_t=170~\gevcc$, $\mu=5~\gevcc$, $\alpha_s(m_Z)=0.118$~\cite{Buras:1998raa}:
 \begin{align}
     \begin{split}
         \mathcal{C}_7^{(0)\mathrm{eff}}(\mu_b) &\approx 0.695 \cdot \mathcal{C}_7^{(0)}(\mu) + 0.085 \cdot \mathcal{C}_8^{(0)}(\mu) - 0.158 \cdot \mathcal{C}_2^{(0)}(\mu)  \\ 
@@ -435,13 +437,13 @@ It is necessary to remove the dependence on $m_c$ interpolation and improve the 
 \section{The photon energy spectrum of \texorpdfstring{\BtoXsdgamma}{B->Xsg}}\label{sec:btosgamma_spectrum_theory}
 
 It was already briefly discussed (when introducing \Cref{eq:btosgammarate_nonp}) that theoretical and experimental evaluations of the total \BtoXsgamma decay rate employ a photon energy threshold.
-The non-perturbative effects that occur at different energy scales compared to the effective $b\ra\s\g$ transition can be integrated out in a treatment of the total decay rate.
+The non-perturbative effects that occur at different energy scales compared to the effective $b\ra\s\g$ transition can be partially integrated out in a treatment of the total decay rate.
 However, the choice of a lower threshold spoils this approximation and introduces non-perturbative corrections.
 These effects directly manifest as differences in the shape of the photon energy spectrum.
 
 At the leading-order, $b\ra\s(\d) \g$ is a two-body decay, which means that the differential decay rate peaks near the half of $b$ quark mass, $m_b/2\sim E_{\g}$.
 It is also clear that photon energies larger than half of the $B$ meson mass, $E_{\g}>m_B/2$ are not allowed.
-Higher-order effects, such as gluonstrahlung, and the Fermi motion of the $b$ quark within the $B$ meson smear the distribution.
+Higher-order effects, such as gluonstrahlung and the Fermi motion of the $b$ quark within the $B$ meson, smear the distribution.
 The necessity to account for all of these effects occurring at different energy scales motivates the use of soft-collinear effective theory to describe the \BtoXsgamma photon energy spectrum \cite{Neubert:2004qw,Ligeti:2008ac}.
 It allows factorising different contributions to the decay rate, $d\Gamma$, into terms originating from effective hard-interaction vertices, collinear particles and soft particles:
 \begin{equation}\label{eq:differential_decay_rate_SCET}
@@ -458,7 +460,7 @@ This is shown graphically in \Cref{fig:xsgamma_theory_sketches}, which sketches 
 
 Due to the larger \BtoXsgamma decay rate and an overall smaller background process rate, experimental values have the highest precision around the peak region.
 However, from the theory side, the peak part is mostly governed by non-perturbative effects, encoded within the shape function \cite{Ligeti:2008ac}.
-The shape function encodes the $b$-quark residual momentum distribution within the $B$-meson. 
+The shape function encodes the $b$ quark residual momentum distribution within the $B$ meson. 
 Therefore, a reliable theoretical description of the shape function is critical to make sensible experimental and theoretical comparisons of the photon energy spectrum. 
 
 \begin{figure}[htbp!]
@@ -472,7 +474,7 @@ Therefore, a reliable theoretical description of the shape function is critical 
     \caption{\label{fig:xsgamma_theory_sketches} 
     The schematic representation of the theoretical \BtoXsgamma spectrum components and the comparison of them in data.
     Note that the figures are presented only for illustration purposes and do not represent a highly-accurate depiction.
-    \Cref{fig:theory_to_experiment} represent the leading-order $\partial$ function spectrum, the non-perturbative shape function effects, and the convolution of these effects with the perturbatively calculable ones.
+    \Cref{fig:theory_to_experiment} represents the leading-order $\delta$ function spectrum, the non-perturbative shape function effects, and the convolution of these effects with the perturbatively calculable ones.
     It also includes the experimental effects, such as finite detector resolution.
     \Cref{fig:theory_ingredients_schematic} illustrates the origin of perturbative and non-perturbative effects in a \BtoXsgamma decay.
     Credit to Dr. Frank Tackmann for the Figures. 
@@ -506,7 +508,7 @@ and therefore integrating out the momentum $k$:
     \frac{d\Gamma}{d\Egamma} \propto |\mathcal{C}_7^{\mathrm{eff}}|^2 \mathcal{F}(x).
 \end{equation}
 This shows, as stated before, that the peak region (close to $m_b/2$) is governed by the shape function.
-In this case, $|\mathcal{C}_7|$ is the normalisation of the spectrum.
+In this case, $|\mathcal{C}_7^{\mathrm{eff}}|$ is the normalisation of the spectrum.
 The shape function can be formally expanded in its moments as \cite{PhysRevD.50.2037,Ligeti:2008ac}:
 \begin{equation}\label{eq:shape_function_expansion}
     \mathcal{F}(x) = \sum_n \frac{(-1)^n}{n!} A_n \dv[n]{\delta(x)}{x},
@@ -518,7 +520,7 @@ where
 \Cref{eq:moments_of_shape_function} is the expression for the $n$-th moment of the shape function, where 
 $A_0=1$ is fixed because the shape function is chosen to be normalised.
 Note that if one naively neglects $n>1$ terms, the integral over the total $\Egamma$ of \Cref{eq:integrated_egamma} would take the form $\Gamma\sim|\mathcal{C}_7^{\mathrm{eff}}|^2$, which is consistent with \Cref{eq:total_decay_rate_leading_order}.
-Therefore, for total decay rate calculations (such as the ones sketched in \Cref{sec:btosgamma_totalrate_theory}) it is enough to know the first moments of the shape function, as the more delicate $\mathcal{F}(k)$ dependence is suppressed at higher-orders.
+Therefore, for total decay rate calculations (such as the ones sketched in \Cref{sec:btosgamma_totalrate_theory}) it is enough to know the first moments of the shape function, as the more delicate $\mathcal{F}(k)$ dependence is suppressed at leading-orders.
 
 For example, consider taking only terms up to the first order.
 In such case, using the definition of an average,
@@ -531,7 +533,7 @@ As shown in Refs.~\cite{Bauer:1997fe,Kapustin:1995fk} (and others) two important
 \begin{equation}
     \expval{\Egamma} \sim m_b/2+\order(\Lambda_{\mathrm{QCD}}); \quad \expval{\Egamma^2}-\expval{\Egamma}^2 \sim \lambda_1/3+\order(\Lambda_{\mathrm{QCD}}),
 \end{equation}
-with the $b$-quark pole mass, $m_b$, and the $b$-quark kinetic energy parameter, $\lambda_1$ and $\Lambda_{\mathrm{QCD}}$ is the chosen strong interaction energy scale.
+with the $b$ quark pole mass, $m_b$, the $b$ quark kinetic energy parameter, $\lambda_1$, and $\Lambda_{\mathrm{QCD}}$ is the chosen strong interaction energy scale.
 
 The form of the shape function is not well-known and is non-perturbative, unlike the Wilson coefficients.
 Therefore, theoretical and experimental comparisons always lead to modelling-related uncertainties.
@@ -539,7 +541,7 @@ There are many works which propose different ways to describe it \cite{Benson:20
 For example, Ref.~\cite{Andersen:2005mj} describes it based on a technique called dressed gluon exponentiation.
 The result of Ref.~\cite{Lange:2005yw} provides several functional forms of the shape function, based on the leading-order shape function that can be extracted from \BtoXsgamma decays.
 An analysis by the SIMBA collaboration \cite{Bernlochner:2020jlt} describes a model-independent treatment of the shape function based on \Cref{eq:differential_decay_simba}.
-In particular, any chosen shape function is expanded in a complete set of orthonormal basis functions, and can therefore be extracted, together with the normalisation, from a global-fit to the available experimental results.
+In particular, any chosen shape function is expanded in a complete set of orthonormal basis functions, and can therefore be extracted, together with the normalisation, from a global fit to the available experimental results.
 The strength of this approach is a consistent method to combine several experimental inputs for the extraction of the shape function and its moments.
 
 One of the most commonly chosen inclusive \BtoXsgamma models for experimental analyses is known as the Kagan-Neubert model \cite{Kagan:1998ym}.
@@ -552,7 +554,7 @@ The shape function satisfies the necessary moment constraints through these rela
 The parameter $a$ is also related to $A_2=(m_B-m_b)/(1+a)$.
 Therefore, the shape function can be fully described by two free parameters $m_b$ and $\lambda_1$.
 This functional expression is easy to implement and interpret.
-Furthermore, the Kagan-Neubert model is readily available in the \texttt{EvtGen} Monte Carlo generator, commonly used by $B$-factories \cite{Ryd:2005zz}.
+Furthermore, the Kagan-Neubert model is readily available in the \texttt{EvtGen} Monte Carlo generator, commonly used by $B$ factories \cite{Ryd:2005zz}.
 The \BtoXsgamma inclusive decay is implemented as the \texttt{BTOXSGAMMA} model within the generator. 
 These points made it the conventional choice for an experimental description of the inclusive \Egamma spectrum in many past measurements.
 The spectra, generated with varied values of $\lambda_1$ and $m_b$, using the kinetic scheme, are shown in \Cref{fig:knmodel_variation}, otherwise using the default \texttt{BTOXSGAMMA} setup.
@@ -569,8 +571,8 @@ The spectra, generated with varied values of $\lambda_1$ and $m_b$, using the ki
     \Cref{fig:knmodel_lambda_variation} depicts the inverse scenario.
     The values here are provided in the kinetic scheme and correspond to those used by the authors of Ref.~\cite{Kagan:1998ym}.
     The generated spectra correspond to $10^6$ events of both $B^+$ and $B^0$ decay modes.
-    The full-line curves correspond to the default setup used by \texttt{BTOXSGAMMA}.
-    The model generates the $\Egamma$ spectrum for $m_{X_s}>1.1~\gevcc$, which corresponds to $\Egamma\lessapprox2.52~\gev$ (see \Cref{eq:mx_egamma_relation}.)}
+    The full line corresponda to the default setup used by \texttt{BTOXSGAMMA}.
+    The model generates the $\Egamma$ spectrum for $m_{X_s}>1.1~\gevcc$, which corresponds to $\Egamma\lessapprox2.52~\gev$ (see \Cref{eq:mx_egamma_relation}).}
 \end{figure}
 
 The previous argument may also be used inversely: an accurate experimental measurement of the \BtoXsgamma spectrum
@@ -582,7 +584,7 @@ The evaluated values of $m_b$ and $\lambda_1$ by the SIMBA collaboration from fi
     m_b^{1S} =4.750 \pm 0.043~\gevcc;  \quad \lambda^{\mathrm{inv}}_1 = -0.210\pm0.083~\gev^2/c^4, 
 \end{equation}
 where fitting, theoretical and parametric uncertainties are combined.
-These results originate directly from experimental data fits and have slightly larger than world-average uncertainties.
+These results originate directly from experimental data fits and have slightly larger than world average uncertainties.
 The superscripts $1S$ and `$\mathrm{inv}$' indicate a renormalisation scheme that is chosen by the authors.
 
 The works presented in this thesis will use the Kagan-Neubert model to generate the inclusive photon energy spectrum.
@@ -600,12 +602,12 @@ In the low-\Egamma region non-resonant and resonant decays are effectively indis
 The inclusive model describes the spectrum as an average of all the states, and this is further enhanced by resolution effects in experimental data (see \Cref{sec:unfolding}).
 In the high-\Egamma region, however, the spectrum is dominated by several resonances, most notably the well-separated $B\rightarrow\Kstar(892)\gamma$.
 A study by the authors of the Kagan-Neubert model \cite{Kagan:1998ym} shows that the inclusive model for $m_{X_s}\gtrsim 1.1~\gevcc$ should be supplemented by the resonant decays.
-We will follow this approach when implementing a model for the analysis in \Cref{sec:signal_model}
+This approach is followed when implementing a model for the analysis in \Cref{sec:signal_model}
 
 \section{New-physics opportunities in \safeBtoXsgamma decays}\label{sec:btosgamma_bsm}
 
-The last Section introduced that \BtoXsgamma is important to constrain \SM parameters, 
-such as $m_b$, through the description of the $B$-meson shape function and its moments.
+The last Section introduced that \BtoXsgamma is important to constrain the \SM parameters, 
+such as $m_b$, through the description of the $B$ meson shape function and its moments.
 However, one of the main motivations to study \BtoXsgamma decays is their sensitivity to \BSM models.
 Considering the \SM diagrams in \Cref{fig:b_to_s_gamma_diagrams}, any non-\SM particles that couple to quarks and/or photons could contribute.
 
@@ -627,11 +629,11 @@ models with extra dimensions \cite{Buras:2003mk,Agashe:2004cp,Haisch:2007vb,Frei
 the littlest Higgs models \cite{Buras:2006wk,Blanke:2006sb},
 and so-called 331 models \cite{Promberger:2008xg}.
 
-One of the most-compelling Standard-Model extensions is the set of the \TwoHDM models.
+One of the most compelling \SM extensions is the set of the \TwoHDM models.
 A thorough overview of different types of \TwoHDM models is presented in Ref.~\cite{Branco:2011iw}.
 The model is attractive because it can be incorporated into many theories that provide insight into the long-standing issues of the \SM.
 In supersymmetric theories, a second Higgs doublet is required to give masses to both $u$- and $d$-type quarks.
-Furthermore, having a second Higgs doublet could allow solving the strong CP problem.
+Furthermore, having a second Higgs doublet could allow solving the strong $\mathcal{CP}$ problem.
 Finally, it may also provide answers to the baryon asymmetry observed in the Universe.
 An example of a charged Higgs boson, a prediction of (but not exclusively) \TwoHDM models, contributing to the \btosgamma transition is shown in \Cref{fig:bsm_diagrams}.
 
@@ -656,8 +658,8 @@ whereas for type-II \TwoHDM:
 These couplings are expressed in terms of $\tan\beta$, which is the ratio of Higgs vacuum expectation values of the two doublets in these theories.
 At the leading-order, the interactions are fully described by $\tan\beta$ and the mass of the charged Higgs, $m_{H^+}$, but these receive corrections at higher-orders related to other parameters in \TwoHDM or super-symmetric theories \cite{Feng:1996xv}.
 
-The decay rate calculation for the \TwoHDM model, with the above-described procedure, 
-then proceeds similarly as described in \Cref{sec:btosgamma_totalrate_theory}, by modifying the effective Wilson coefficients based on \Cref{eq:corr_wilson} and calculating appropriate corrections \cite{Ciuchini:1997xe}:
+The decay rate calculation for the \TwoHDM model in the above-described cases proceeds similarly as described in \Cref{sec:btosgamma_totalrate_theory}. 
+By modifying the effective Wilson coefficients based on \Cref{eq:corr_wilson} and calculating appropriate corrections \cite{Ciuchini:1997xe}:
 \begin{equation}\label{eq:partial_wilson_2hdm}
     \partial C_i^{(0)\TwoHDM} = 
     \begin{cases}
@@ -672,7 +674,7 @@ where $F_i^{(1)}(y)$ have already been defined in \Cref{eq:leading_order_wilson_
     F_8^{(2)}(y) &= \frac{-y}{2(y-1)^3}\ln y + \frac{-y^2+3y}{4(y-1^2)},\\
     \end{split}
 \end{align}
-and $y = m_t^2/m_{H^+}^2$.
+with $y = m_t^2/m_{H^+}^2$.
 Using \Cref{eq:type1_hdm_couplings}, in the case of type-I \TwoHDM, the charged Higgs contribution takes the form $A\cot^2\beta-B\cot^2\beta$ which interferes with the \SM value destructively.
 On the other hand, type-II \TwoHDM (\Cref{eq:type1_hdm_couplings}) will take the form $A\cot^2\beta+B$ which is always constructive \cite{Misiak:2017bgg}.
 
@@ -693,7 +695,7 @@ The dependence of the \BtoXsgamma decay rate on $m_{H^+}$ is shown in \Cref{fig:
     \Cref{fig:xsgamma_2hdm_type1} shows the dependence for a type-I \TwoHDM model, whereas \Cref{fig:xsgamma_2hdm_type2} shows that for type-II \TwoHDM.
     The predictions are made assuming $\tan\beta=1$ and $\tan\beta=50$ for both types, respectively.
     The experimental bounds, as well as theoretical ones (not the most up-to-date), are shown as well.
-    Taken from \cite{Misiak:2017bgg}.}
+    The Figures are taken from \cite{Misiak:2017bgg}.}
 \end{figure}
 
 \todo[inline]{if M.Misiak gets back to me maybe I can update these plots to have the most up to date value.}
@@ -709,7 +711,7 @@ The bounds imposed by next-to-next-to-leading-order \BtoXsgamma results on the $
         \includegraphics[width=0.5\textwidth]{figures/theory/xsgamma_2hdm_both_types.png}
     \caption{\label{fig:2hdm_limits} 
     Excluded (lower bound) for type-I and type-II \TwoHDM models in the $\tan\beta-m_{H^+}$ parameter space.
-    The figure begins at $\tan\beta>0.4$ as better alternative bounds exist below that range.
+    The Figure begins at $\tan\beta>0.4$ as better alternative bounds exist below that range.
     The Figure is taken from \cite{Misiak:2017bgg}.}
 \end{figure}
 
