@@ -1,29 +1,29 @@
-\sloppy The last two Sections introduced the selection to suppress photons originating in non-\mbox{\BtoXsgamma} decays, particularly from \piz and \eta decays (\Cref{sec:photon_selection}),
+The last two Sections introduced the selection to suppress photons originating in non-\mbox{$\BtoXsgamma$} decays, particularly from \piz and $\eta$ decays (\Cref{sec:photon_selection}),
 and the strategy suppress \mbox{\epem\ra\qqbar} events which were the dominant component in the selected data set (\Cref{sec:continuum_suppression}).
 Although a preselection was already developed to prepare an adequate training sample for the \BDT, a more optimal (`tighter') selection is desired to ensure the optimal efficiency and purity of the selected sample.
-This section will describe the approach taken to find this optimal selection, and calculate the efficiency loss for all applied selections.
+This Section describes the approach taken to find such optimal selection and calculate the efficiency loss for all applied selections.
 
 \subsection{Simultaneous selection optimisation}\label{sec:simultaneous_optimisation}
 
 After the pre-selection that prepared the data for training a \BDT in \Cref{tab:preselections}, a more robust strategy for tighter selections is developed.
-In particular, \BDT output, \piVeto, \etaVeto and \ZMVA may be interconnected, in the sense that applying the selection on one of them, may influence a selection on the others. 
-To find an optimal selection point, each selection is optimised in an iteration-based approach, 
-where each requirement is optimised to a value that gives the best figure-of-merit score individually,
+In particular, \BDT output, \piVeto, \etaVeto and \ZMVA may be interconnected in the sense that applying the selection on one of them influences a selection on the others. 
+To find an optimal selection point, each threshold is optimised in an iteration-based approach. 
+At each step, one variable threshold is optimised to a value that gives the best figure-of-merit score,
 while keeping the other requirements unvaried.
-The individual optimisation is equivalent to that shown in \Cref{fig:selection_optimisations} and uses figure-of-merit $\mathtt{FOM}_2$, defined in \Cref{eq:punzi_fom}.
+Then, this is repeated for other variables.
+Each individual optimisation is equivalent to that shown in \Cref{fig:selection_optimisations} and uses figure-of-merit $\mathtt{FOM}_2$, defined in \Cref{eq:punzi_fom}.
 
-
-In order to maximise the efficiency of events on kinematically well-reconstructed events, without adhering to a more strict definition at this stage, 
-this procedure is performed on peaking events ($\Mbc >5.27~\gevcc$) and a single combination of the highest energy photon with a randomly selected tag candidate per event.
-The starting point for each selection corresponds to values in \Cref{tab:preselections}.
+In order to maximise the efficiency of the optimisation on correctly reconstructed events without adhering to a more strict definition at this stage, 
+this procedure is performed on one randomly selected peaking tag-$B$ candidate per event ($\Mbc >5.27~\gevcc$) combined with the highest energy photon.
+The starting point for each selection corresponds to the values in \Cref{tab:preselections}.
 The starting $\mathtt{BDT~output}$ selection is chosen at 0.5. 
 The \BtoXsgamma admixture of charged and neutral modes is used.
 The \epem\ra\qqbar and generic \BB background events from \feiBp and \feiBz modes are merged.
-This aims to reproduce `realistic' data conditions, where different efficiencies may be related due to different \FEI and selection behaviour on charged and neutral modes.
+This aims to reproduce `realistic' data conditions, where different background efficiencies may be observed due to different behaviours of \feiBp and \feiBz modes.
 
-After performing the optimisation for each selection, the optimisation round is repeated 9 more times.
+After performing the optimisation for each selection, the optimisation steps are repeated 9 more times.
 The selections converge and do not vary after round 3 of optimisation.
-The converged value that is found is shown in \Cref{tab:interative_optimisation}.
+The converged values are shown in \Cref{tab:interative_optimisation}.
 
 \begin{table}[htbp!]
     \centering
@@ -45,42 +45,42 @@ Other selections are retained based on the optimal value from the initial 10 ite
 
 \subsection{Summary and efficiency of all analysis selections}\label{sec:selection_summary}
 
-A table, summarising all the selections and \BDT training results from \Cref{sec:photon_selection,sec:continuum_suppression,sec:final_optimisation},
-and listing the final \BtoXsgamma candidate retention, is shown in \Cref{tab:cutflow}.
+\Cref{tab:cutflow} summarises all the selections and \BDT training results from \Cref{sec:photon_selection,sec:continuum_suppression,sec:final_optimisation},
+and lists the final \BtoXsgamma candidate retention.
 The retention, in this case, is defined as:
 \begin{equation}\label{eq:loose_efficiency}
     r_{\mathrm{cand}} = \frac{N_{\BtoXsgamma}~\mathrm{candidates~after~cut}}{N_{\BtoXsgamma}~\mathrm{no~cut}},
 \end{equation}
-which is an estimate, as it may include multiple tag-side $B$ candidates.
-For the calculation of this table, the $\Mbc>5.27~\gevcc$ requirement is no longer applied and all tag-$B$ meson candidates are maintained (i.e. high-energy photon candidates may contribute more than once per event).
+which is an approximation as it may include multiple tag-$B$ candidates.
+In the table, the $\Mbc>5.27~\gevcc$ requirement is no longer applied and all tag-$B$ meson candidates are kept (i.e. high energy photon candidates may contribute more than once per event).
 
 \begin{table}[htbp!]
     \centering
     \caption{\label{tab:cutflow} The summary table of all selections and their retentions, based on \Cref{eq:loose_efficiency}.
     The selections listed here are applied on official Belle II \feiBp and \feiBz samples, described in \Cref{sec:reconstruction_overview}.
     The columns show efficiency costs for \BtoXsgamma events, calculated on signal \MC, continuum and \BB events, both of which are calculated on generic \MC.
-    It can be seen that continuum events are suppressed by roughly two orders of magnitude, whereas generic-\BB decays -- by more than an order of magnitude.
+    It can be seen that continuum events are suppressed by roughly two orders of magnitude, whereas generic-\BB decays by more than an order of magnitude.
     }
     \input{tables/cutflow_btosgamma.tex}
 \end{table}
 
 \Cref{tab:cutflow} shows that the background suppression procedure roughly halves the number of available \BtoXsgamma events in the sample.
-However, the background candidates from \epem\ra\qqbar processes are reduced 200 times, to less than 0.5\% of the original value.
-Furthermore, generic-\BB event contribution is estimated at 7\% of the original, which means more than an order of magnitude suppression is achieved.
+However, the background candidates from \mbox{$\epem\ra\qqbar$} processes are reduced 200 times: to less than 0.5\% of the original value.
+Furthermore, generic-\BB event contribution is estimated at 7\% of the original, which means more that an order of magnitude suppression is achieved.
 The photon energy spectrum, after these selections have been applied is shown in \Cref{fig:spectrum_after_optimisation}.
-Compared with previous iterations of this figure, e.g.\Cref{fig:spectrum_after_reco}, a much better signal-to-background ratio is visible.
+Compared with previous iterations of this Figure, e.g.\Cref{fig:spectrum_after_reco}, a much better signal-to-background ratio is visible.
 
 \begin{figure}[htbp!]
     \centering
     \subcaptionbox{\label{fig:spectrum_after_optimisation_bp}}{
-        \includegraphics[width=0.4\textwidth]{figures/final_optimisation/Bp_tagged_background_optimal.pdf}
+        \includegraphics[width=0.45\textwidth]{figures/final_optimisation/Bp_tagged_background_optimal.pdf}
     }    
     \subcaptionbox{\label{fig:spectrum_after_optimisation_bz}}{
-        \includegraphics[width=0.4\textwidth]{figures/final_optimisation/Bz_tagged_background_optimal.pdf}
+        \includegraphics[width=0.45\textwidth]{figures/final_optimisation/Bz_tagged_background_optimal.pdf}
     }    
     \caption{\label{fig:spectrum_after_optimisation}
-    \BtoXsgamma spectrum in generic \MC after event reconstruction with optimal background-suppression selections listed in \Cref{tab:cutflow}.
+    \BtoXsgamma spectrum in generic \MC after event reconstruction in \feiBp and \feiBz modes with optimal background suppression selections listed in \Cref{tab:cutflow}.
     Overlaid are events from signal \MC where the photon comes from \BtoXsgamma, multiplied by a scaling factor, with the same selections applied.
-    These figures may include a high-energy photon combined with multiple tag entries per event and can be compared directly with \Cref{fig:spectrum_after_reco}.
-    Compared to the post-reconstruction figure, the scaling factor for \BtoXsgamma is 100 times lower.}
+    These figures may include a high energy photon combined with multiple tag-$B$ entries per event and can be compared directly with \Cref{fig:spectrum_after_reco} where it is seen that
+    the signal-to-background ratio for \BtoXsgamma is 100 times higher.}
 \end{figure}
