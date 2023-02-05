@@ -1,4 +1,4 @@
-\Cref{sec:photon_selection} introduced the best-photon candidate strategy, 
+\Cref{sec:photon_selection} introduced the best photon candidate strategy, 
 as well as selection to suppress events 
 where the photon is misidentified or originates in sources different from \BtoXsgamma.
 However, as was seen before in, for example, \Cref{fig:spectrum_after_reco},
@@ -6,16 +6,16 @@ However, as was seen before in, for example, \Cref{fig:spectrum_after_reco},
 Therefore, a dedicated event selection for this type of background was devised.
 It takes advantage of different event topologies expected for $\FourS\to\qqbar$ and $\epem\ra\qqbar$ events.
 Events, where a $\FourS\to\BB$ decay is present, tend to be more `spherical' when compared with $\epem\ra\qqbar$ events exhibiting a `jet-like' distribution.
-This is related to the fact that \epem collisions at $B$ factory experiments have just enough energy to produce a $B$ pair almost at rest, which means that its decays products, on average, tend to be distributed uniformly in polar and azimuthal angle.
-On the other hand, light-quark pairs, produced in \epem collision events, also gain a substantial amount of back-to-back momentum which tends to spread their decay products. 
+This is related to the fact that \epem collisions at $B$ factory experiments have just enough energy to produce a $B$ pair almost at rest, which means that its decays products, on average, tend to be distributed uniformly in polar and azimuthal angles.
+On the other hand, light quark pairs, produced in \epem collision events, also gain a substantial amount of back-to-back momentum which tends to spread their decay products. 
 The schematic idea of this is shown in \Cref{fig:continuum_schematic}.
 This section will provide an in-depth discussion on how the discrimination between \BtoXsgamma and continuum is achieved using a \BDT.
 
 \begin{figure}[htbp!]
     \centering
     \includegraphics[width=0.6\textwidth]{figures/continuum_suppression/figure_continuum_suppression_event_shapes.pdf}
-    \caption{\label{fig:continuum_schematic} Schematic illustration of continuum and \BB events created after an \epem collision in $B$ factories.
-    Events, where a $B$ meson is produced, are generally more spherical since the \FourS is produced at rest and its decay products tend to not have a preferred direction.
+    \caption{\label{fig:continuum_schematic} Schematic illustration of continuum and \BB events created in an \epem collision in $B$ factories.
+    Events where a $B$ meson is produced are generally more spherical since the \FourS is produced at rest and its decay products tend to not have a preferred direction.
     Typical momenta of light-quark and \BB mesons are shown.
     The specific directions shown are illustrative only. 
     }
@@ -25,15 +25,15 @@ This section will provide an in-depth discussion on how the discrimination betwe
 
 Before a \BDT is trained, it is generally desirable to prepare the datasets such that the classifier 
 learns based on relevant data.
-Such data preprocessing will be performed based on variables described in \Cref{sec:photon_selection}.
+Such data preprocessing will be performed based on the variables described in \Cref{sec:photon_selection}.
 The classifier will then be trained on the reduced dataset
 
-In order to find optimal selections, a figure-of-merit study is performed for each observable.
-Two figure-of-merit options were considered for this analysis, a more standard figure-of-merit $\mathrm{FOM}_1$:
+In order to find the optimal selections, a figure-of-merit study is performed for each observable.
+Two figure-of-merit options were considered for this analysis: a more standard figure-of-merit $\mathrm{FOM}_1$:
 \begin{equation}\label{eq:soversqrtsplusb}
     \mathrm{FOM}_1 = \frac{\mathsf{S}}{\sqrt{\mathsf{S}+\mathsf{B}}},
 \end{equation}
-and $\mathrm{FOM}_2$ defined in Ref.\cite{Punzi:2003bu} (often referred to as `Punzi' figure-of-merit):
+and $\mathrm{FOM}_2$ defined in Ref.~\cite{Punzi:2003bu} (often referred to as `Punzi' figure-of-merit):
 \begin{equation}\label{eq:punzi_fom}
     \mathrm{FOM}_2 = \frac{\mathsf{S}}{\mathsf{S}_0} \frac{1}{\frac{3}{2}+\sqrt{\mathsf{B}}}.
 \end{equation}
@@ -43,60 +43,59 @@ and $\mathsf{S}_0$ is the number of signal events before selection.
 Although \Cref{eq:punzi_fom} was derived with search-like analyses in mind, 
 it is utilised in this analysis to minimise signal model dependency: the ratio $\mathsf{S}/\mathsf{S}_0$ present in the definition reduces many model-dependant effects.
 
-For each figure of merit calculation, background events ($\mathsf{B}$) are calculated based on generic \MC,
-whereas signal events, $\mathsf{S}$, are calculated based on signal \MC, to ensure a high statistics sample.
+For each figure-of-merit calculation, background events ($\mathsf{B}$) are counted based on generic \MC,
+whereas signal events, $\mathsf{S}$, are counted based on signal \MC to ensure a significant sample size.
 In the case of \Cref{eq:soversqrtsplusb}, an appropriate scaling for $\mathsf{S}$ is also used.
-Each dataset has duplicate tag-candidate events randomly removed, by picking a random tag-side candidate.
-Each figure of merit is then calculated for 200 equally spaced selections in the target observable.
+Each dataset has duplicate tag-$B$ candidates randomly removed by picking a random tag-side candidate.
+Each figure-of-merit is then calculated for 200 equally spaced selections in the target observable.
 The maximum figure-of-merit point is taken as the optimal pre-selection for each of the variables.
 This procedure is shown for $\mathrm{FOM}_2$ in \Cref{fig:selection_optimisations}.
 Results for $\mathrm{FOM}_1$ are used as a cross-check for $\mathrm{FOM_2}$ but turn out to be consistent.
-Equivalent procedure for $\mathrm{FOM}_1$ is shown in \Cref{sec:appendix_sqrtsplusb_optimisation}.
-The resulting optimal selections are also shown in the Figures.
-
+This is shown in \Cref{sec:appendix_sqrtsplusb_optimisation}.
 \begin{figure}[htbp!]
     \centering
     \subcaptionbox{\label{fig:bp_zmva_optimisation}}{
-            \includegraphics[width=0.3\textwidth]{figures/continuum_suppression/Bp_zernikeMVA_optimisation_punzi.pdf}
+            \includegraphics[width=0.30\textwidth]{figures/continuum_suppression/Bp_zernikeMVA_optimisation_punzi.pdf}
         }
     \subcaptionbox{\label{fig:bp_piveto_optimisation}}{
-            \includegraphics[width=0.3\textwidth]{figures/continuum_suppression/Bp_piVeto_optimisation_punzi.pdf}
+            \includegraphics[width=0.30\textwidth]{figures/continuum_suppression/Bp_piVeto_optimisation_punzi.pdf}
         }
     \subcaptionbox{\label{fig:bp_etaveto_optimisation}}{
-            \includegraphics[width=0.3\textwidth]{figures/continuum_suppression/Bp_etaVeto_optimisation_punzi.pdf}
+            \includegraphics[width=0.30\textwidth]{figures/continuum_suppression/Bp_etaVeto_optimisation_punzi.pdf}
         }
     \subcaptionbox{\label{fig:bz_zmva_optimisation}}{
-            \includegraphics[width=0.3\textwidth]{figures/continuum_suppression/Bz_zernikeMVA_optimisation_punzi.pdf}
+            \includegraphics[width=0.30\textwidth]{figures/continuum_suppression/Bz_zernikeMVA_optimisation_punzi.pdf}
         }
     \subcaptionbox{\label{fig:bz_piveto_optimisation}}{
-            \includegraphics[width=0.3\textwidth]{figures/continuum_suppression/Bz_piVeto_optimisation_punzi.pdf}
+            \includegraphics[width=0.30\textwidth]{figures/continuum_suppression/Bz_piVeto_optimisation_punzi.pdf}
         }
     \subcaptionbox{\label{fig:bz_etaveto_optimisation}}{
-            \includegraphics[width=0.3\textwidth]{figures/continuum_suppression/Bz_etaVeto_optimisation_punzi.pdf}
+            \includegraphics[width=0.30\textwidth]{figures/continuum_suppression/Bz_etaVeto_optimisation_punzi.pdf}
         }
     \caption{\label{fig:selection_optimisations} Optimal selection calculation for observables
     described in \Cref{sec:photon_selection} based on $\mathrm{FOM}_2$ (see \Cref{eq:punzi_fom}).
     For \BptoXsgamma events the tests are shown
     in \Cref{fig:bp_zmva_optimisation,fig:bp_piveto_optimisation,fig:bp_etaveto_optimisation},
     and for \BztoXsgamma in \Cref{fig:bz_zmva_optimisation,fig:bz_piveto_optimisation,fig:bz_etaveto_optimisation}.
-    The figures show the efficiency and $\mathrm{FOM}_2$ score calculated for 200 selections of \piVeto, \etaVeto and \ZMVA.
-    The maximum value of $\mathrm{FOM}_2$, the corresponding selection and efficiency are shown as well.
+    The figures show the efficiency and $\mathrm{FOM}_2$ score calculated by scanning 200 thresholds of \piVeto, \etaVeto and \ZMVA.
+    The maximum value of $\mathrm{FOM}_2$, the corresponding threshold and efficiency are shown as well.
     }
 \end{figure}
 
-The results between \Bp and \Bz modes, as well as using $\mathrm{FOM}_1$ and $\mathrm{FOM}_2$ are consistent, with only marginal differences.
-Therefore, due to the model independence of $\mathrm{FOM}_2$, this figure-of-merit will be the only one discussed henceforth.
+The results are consistent between the two figure-of-merits as well as \Bp and \Bz modes.
+Therefore, due to the model independence of $\mathrm{FOM}_2$, this figure-of-merit is the only one discussed henceforth.
 At this stage, it is unnecessary to choose the `best' selection, 
-as another simultaneous optimisation will be performed later, together with continuum suppression \BDT output in \Cref{sec:final_optimisation}.
-The main goal is to reduce the sample size to include only relevant data, such that the trained \BDT can make decisions for difficult cases that are not easily distinguishable using simple selection.
-Based on \Cref{fig:selection_optimisations}, pre-selections are chosen, which suppress background but retain most of the signal.
-The requirements for a loose selection are tailored such that more roughly 75\% of \BtoXsgamma candidates are retained and are shown in \Cref{tab:preselections}.
-They are chosen to be no tighter than their optimal selection and preferably considerably looser.
+as another simultaneous optimisation will be performed  in \Cref{sec:final_optimisation}, together with continuum suppression \BDT output.
+The main goal is to reduce the sample size to include only relevant data such that the trained \BDT can make decisions for difficult cases that are not easily distinguishable using a simple selection.
+Based on \Cref{fig:selection_optimisations}, pre-selections are chosen to suppress background but retain most of the signal.
+They are set to be considerably looser than their optimal selection.
+Specifically, the requirements for a loose selection are tailored such that roughly 75\% of \BtoXsgamma candidates are retained.
+They are shown in \Cref{tab:preselections}.
 
 \begin{table}[htbp!]
     \centering
     \caption{\label{tab:preselections} Selections that remove background and misreconstructed candidates,
-    preparing the reconstructed datasets \Cref{sec:reconstruction_overview} for continuum \BDT training (\Cref{sec:continuum_training}).
+    preparing the reconstructed datasets (\Cref{sec:reconstruction_overview}) for continuum \BDT training (\Cref{sec:continuum_training}).
     A later optimisation will be used for a final candidate selection in \Cref{sec:final_optimisation}.
     }
     \input{tables/loose_selections.tex}
@@ -114,16 +113,17 @@ The \BtoXsgamma signal \MC scale differs by about a factor of 10, highlighting t
     \subcaptionbox{\label{fig:bz_preselected_photons}}{
         \includegraphics[width=0.395\textwidth]{figures/continuum_suppression/Bz_tagged_background_preselection.pdf}
         }
-    \caption{\label{fig:preselected_photons} \BtoXsgamma spectrum in generic \MC after pre-selection for training the continuum suppression \BDT classifier.
+    \caption{\label{fig:preselected_photons} \BtoXsgamma spectrum in generic \MC reconstructed in \feiBp and \feiBz modes
+    after pre-selection for training of the continuum \BDT classifier.
     Overlaid are events from signal \MC where the photon comes from \BtoXsgamma, multiplied by a scaling factor.
     Compared to \Cref{fig:spectrum_after_reco}, the effectiveness of background suppression so far is apparent.
-    These figures may include multiple tag entries per event.
+    These figures may include multiple tag-$B$ entries per event.
     }
 \end{figure}
 
 Finally, many combinatorial tag-side candidates in \BB events may still contribute to the analysis at this stage.
 A more detailed definition for a `well-reconstructed' tag will be explored later in \Cref{sec:good_tag_definition}.
-At this stage, it is sufficient to acknowledge that the vast majority of correctly reconstructed tag-side candidates are expected to have $\Mbc>5.27~\gevcc$.
+At this stage, it is sufficient to acknowledge that the vast majority of correctly reconstructed tag-side candidates are expected to have \mbox{$\Mbc>5.27~\gevcc$}.
 Therefore, this requirement is also adopted for optimisation studies and training in \Cref{sec:continuum_features,sec:continuum_training,sec:continuum_validation}.
 
 \subsection{Continuum suppression feature selection}\label{sec:continuum_features}

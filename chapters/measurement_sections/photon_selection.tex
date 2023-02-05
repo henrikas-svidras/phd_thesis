@@ -1,11 +1,11 @@
 The previous section overviewed the samples that are reconstructed using basic requirements laid out in \Cref{sec:tag_reconstruction,sec:gamma_reconstruction}.
-In this section concrete selections will be discussed that will lead to background suppression and the best photon candidate
-and best tag-candidate selection.
+In this Section concrete selections are discussed that lead to background suppression, the best photon candidate
+and the best tag candidate selections.
 
 \subsection{Primary photon candidate selection}\label{sec:primary_photon_candidate_selection}
 Contrary to the tag side, a selection of the best photon candidate in the range $\EB>1.4~\gev$ 
 is effectively trivial based on the discussion in \Cref{sec:event_reconstruction}.
-For more than\% and 99\% of the signal \MC sample the highest \EB photon 
+For more than 99\% of the signal \MC sample, the highest \EB photon 
 is the correct photon originating from \BtoXsgamma decay.
 Therefore, it is chosen as the best photon candidate requirement with virtually no signal efficiency loss.
 Judging from \Cref{fig:photon_reco_candidates}, this provides an approximately 3\% background suppression.
@@ -28,24 +28,24 @@ Note that some photon candidates can be misidentified (in particular neutrons).
 This is further discussed in \Cref{sec:selection_clusZMVA}.
 
 The reason why $\piz\ra\g\g$ and $\eta\ra\g\g$ decays are such a prominent background is related to the fact that they can often be produced in hadronic decays and tend to decay asymmetrically -- where one photon has much larger energy than the other.
-The hadronic decay, overall, mimics the hadronised $X_s$ system, whereas the more energetic photon is taken as the high-energy photon candidate.
-However, for \B decays, this background drops off rapidly with photon energy, and at high-\EB becomes negligibly small because processes producing photons with $\EB\approx m_B/2$ in \B decays are rare.
+The hadronic decay, overall, mimics the hadronised $X_s$ system, whereas the more energetic photon is taken as the high energy photon candidate.
+However, for \B decays, this background drops off rapidly with photon energy, and at high-\EB becomes negligibly small because processes producing photons with $\EB\approx m_b/2$ in \B decays are rare.
 No such constraint exists for continuum events where light hadrons can be created in large numbers.
-Therefore, \piz and \eta suppression, while important for \B decays, also highly coincides with continuum event suppression.
+Therefore, \piz and $\eta$ suppression, while important for \B decays, also highly coincides with continuum event suppression.
 
 \begin{figure}[htbp!]
-    \ centring
+    \centering
     \subcaptionbox{\label{fig:bp_photon_sources}}{
-        \includegraphics[width=0.395\textwidth]{figures/event_selection/Bp_photon_sources.pdf}
+        \includegraphics[width=0.45\textwidth]{figures/event_selection/Bp_photon_sources.pdf}
     }
     \subcaptionbox{\label{fig:bz_photon_sources}}{
-        \includegraphics[width=0.395\textwidth]{figures/event_selection/Bz_photon_sources.pdf}
+        \includegraphics[width=0.45\textwidth]{figures/event_selection/Bz_photon_sources.pdf}
         }
-    \caption{\label{fig:photon_sources} The background photon distribution after reconstruction, stacked by the photon mother-particle species.
+    \caption{\label{fig:photon_sources} The background photon distribution after reconstruction in \feiBp and \feiBz modes, stacked by the photon mother-particle species.
     A scaled \BtoXsgamma spectrum is also overlaid.
     Only one photon candidate per event is shown, but it may still be paired with multiple tag-side candidates.
-    Roughly 85\% of candidates originate in \pi\ra\g\g or \eta\ra\g\g decays.
-    Other important backgrounds are photons from initial-state radiation and bremsstrahlung; and neutron-annihilation processes.
+    Roughly 85\% of candidates originate in $\piz\ra\g\g$ or $\eta\ra\g\g$ decays.
+    Other important backgrounds are photons from initial-state radiation, bremsstrahlung, and neutron-annihilation processes.
     These account for approximately 3\% each.
     The leftover 10\% originate in various other decays.}
 \end{figure}
@@ -63,7 +63,7 @@ To reduce the discussed background components the following strategy is adopted:
 
 Neutrons, $K_L^0$, protons, electrons and other charged hadrons where tracking for the particle did not succeed may leave clusters in the \ECL which are misidentified as photons.
 The photon misidentification rate is given in \Cref{tab:misidentified_photons}.
-The main misidentified photon candidates originate from neutrons, with a small contribution from electron and $K_L^0$ showers.
+The main misidentified photon candidates originate from neutrons with a small contribution from electron and $K_L^0$ showers.
 
 \begin{table}[htbp!]
     \centering
@@ -73,73 +73,73 @@ The main misidentified photon candidates originate from neutrons, with a small c
     \input{tables/misidentification.tex}
 \end{table}
 
-The interactions of these particle species in the \ECL \textit{shower} -- produce a cascade of secondary particles which may produce tertiary particles etc.
+The interactions of these particle species in the \ECL shower -- produce a cascade of secondary particles which may produce tertiary particles etc.
 Generally, the total energy deposit and distribution between \ECL crystals, also known as \textit{shower-shape}, is different depending on the particle species due to their different radiation lengths.
 This can be used to distinguish photon clusters using \MVA methods.
-A technique achieving this, which uses the moments of Zernike polynomials, is documented in Ref.\cite{Hershenhorn:2468}.
-This approach is implemented in Belle II analysis software and used in this analysis.
-Here, I provide a condensed overview of the approach.
+A technique achieving this, which uses the moments of Zernike polynomials, is documented in Ref.~\cite{Hershenhorn:2468}.
+This approach is implemented in \basftwo and used in this analysis.
+Here, a condensed overview of the approach is provided.
 
 A complete set of complex two-dimensional polynomials is defined as:
 \begin{equation}
-    V_nm(\rho\cos\alpha,\rho\sin\alpha) = R_{nm}(\rho)\exp{im\alpha},
+    V_{nm}(\rho\cos\alpha,\rho\sin\alpha) = R_{nm}(\rho)e^{im\alpha},
 \end{equation}
 where ${x=\rho\cos\alpha, y=\rho\sin\alpha}$ are polar coordinates, $m$ is an integer and $R_{nm}(\rho)=V(\rho,0)$ is a polynomial of degree $n$.
 The expression for a Zernike polynomial is given as:
 \begin{equation}
     R_{nm}(\rho) = \sum^{\frac{n-|m|}{2}}_{s=0}(-1)^s \frac{(n-s)!}{ s! \left(\frac{n+|m|}{2}-s \right) ! \left( \frac{n-|m|}{2}-s\right) !}\rho^{n-2s}.
 \end{equation}
-The moments of a function $f(\rho\cos\alpha,\rho\sin\alpha)$ is expressed in terms of $V_{nm}$ as:
+The moments of a function $f(\rho\cos\alpha,\rho\sin\alpha)$ are expressed in terms of $V_{nm}$ as:
 \begin{equation}
     Z_{nm} = \frac{n+1}{\pi} \int_0^{2\pi}\int^1_0 V^*_{nm}(\rho\cos\alpha,\rho\sin\alpha)f(\rho\cos\alpha, \rho\sin\alpha)\rho d\rho d\alpha.
 \end{equation}
 $Z_{nm}$ are called Zernike moments.
-They have many useful properties that make them usable in image recognition, the field of optics, and more importantly, particle physics particle identification algorithms (see. Ref.\cite{Hershenhorn:2468} and references therein).
+They have many useful properties that make them usable in image recognition, the field of optics, and more importantly, particle identification algorithms (see. Ref.~\cite{Hershenhorn:2468} and references therein).
 
 A Dirac comb function is defined to parametrise a particle shower in the \ECL as:
 \begin{equation}
     f(\vec{x}) = \sum_i \delta(\vec{x}-\vec{x}_i)\frac{w_iE_i}{\sum w_iE_i},
 \end{equation}
-where $x$ is a dimensionless crystal position in the perpendicular plane, $i$ is a crystal index, summing over all crystals in a given particle shower, and $E_i$ is the energy of the $i$-th crystal.
+where $\vec{x}$ is a dimensionless crystal position in the perpendicular plane, $i$ is a crystal index, summing over all crystals in a given particle shower, and $E_i$ is the energy of the $i$-th crystal.
 As showers can overlap, $w_i$ is the fraction of energy in a crystal that is associated with the currently investigated shower.
 It can be shown, that Zernike moments for \ECL showers can then be expressed as:
 \begin{equation}
-    |Z_{nm}| = \frac{n+1}{\pi}\frac{1}{\sum_iw_iE_i}\left|\sum_iR_{nm}(\rho_i)\exp(-im\alpha_i)w_iE_i\right|.
+    |Z_{nm}| = \frac{n+1}{\pi}\frac{1}{\sum_iw_iE_i}\left|\sum_iR_{nm}(\rho_i)e^{-im\alpha_i}w_iE_i\right|.
 \end{equation}
 
-The work in Ref.\cite{Hershenhorn:2468} selects the best combination of eleven $|Z_{nm}|$ which provides the strongest separation between hadronic showers and electromagnetic showers.
+The work in Ref.~\cite{Hershenhorn:2468} selects the best combination of eleven $|Z_{nm}|$ which provides the strongest separation between hadronic showers and electromagnetic showers.
 The chosen combination of $|Z_{nm}|$ is combined using a \BDT and produces a single output, hereafter referred to as $\ZMVA\in(0,1)$.
-The \ZMVA distribution for \BtoXsgamma candidates in generic \MC and signal \MC events are shown in \Cref{fig:zmva_distribution}.
+The \ZMVA distributions for \BtoXsgamma candidates in generic \MC and signal \MC events are shown in \Cref{fig:zmva_distribution}.
 
 \begin{figure}[htbp!]
     \centering
     \subcaptionbox{\label{fig:bp_zmva_distribution}}{
-        \includegraphics[width=0.395\textwidth]{figures/event_selection/Bp_zernikeMVA_mcPDG.pdf}
+        \includegraphics[width=0.45\textwidth]{figures/event_selection/Bp_zernikeMVA_mcPDG.pdf}
     }
     \subcaptionbox{\label{fig:bz_zmva_distribution}}{
-        \includegraphics[width=0.395\textwidth]{figures/event_selection/Bz_zernikeMVA_mcPDG.pdf}
+        \includegraphics[width=0.45\textwidth]{figures/event_selection/Bz_zernikeMVA_mcPDG.pdf}
         }
-    \caption{\label{fig:zmva_distribution} The distributions of the \ZMVA for different particle species that are reconstructed as photon candidates.
-    The candidates presented in these figures are the same as those in \Cref{fig:photon_sources}.
+    \caption{\label{fig:zmva_distribution} The distributions of the \ZMVA for different particle species that are reconstructed as photon candidates in \feiBp and \feiBz modes.
+    The candidates presented in these Figures are the same as those in \Cref{fig:photon_sources}.
     A scaled \ZMVA distribution for \BtoXsgamma events is overlaid.
     A good separation is observed between real photons and hadronic showers misidentified as photons.}
 \end{figure}
 
-\ZMVA provides a good separation against real photon candidates that originate in neutron annihilation events.
-Overall, for true \BtoXsgamma photons this distribution is strongly peaking in the $0.8-1$ region.
+Overall, for true photons this distribution is strongly peaking in the $0.8-1$ region.
+Misidentified hadrons peak close to 0.
 For non-\BtoXsgamma photon candidates, this distribution remains relatively uniform in the $0-0.8$ region.
-The \ZMVA candidate for true photon candidates exclusively is shown in \Cref{fig:zmva_distribution_sources}.
-Therefore, this variable efficiently separates candidates that are fake-photon or photons originating in some undesired processes.
+Moreover, \ZMVA provides a good separation against real photon candidates that originate in neutron annihilation events.
+This is shown by a \ZMVA distribution exclusively for true photon candidates in \Cref{fig:zmva_distribution_sources}.
 
 \begin{figure}[htbp!]
     \centering
     \subcaptionbox{\label{fig:bp_zmva_distribution_sources}}{
-        \includegraphics[width=0.395\textwidth]{figures/event_selection/Bp_zernikeMVA_true_photons_only.pdf}
+        \includegraphics[width=0.45\textwidth]{figures/event_selection/Bp_zernikeMVA_true_photons_only.pdf}
     }
     \subcaptionbox{\label{fig:bz_zmva_distribution_sources}}{
-        \includegraphics[width=0.395\textwidth]{figures/event_selection/Bz_zernikeMVA_true_photons_only.pdf}
+        \includegraphics[width=0.45\textwidth]{figures/event_selection/Bz_zernikeMVA_true_photons_only.pdf}
         }
-    \caption{\label{fig:zmva_distribution_sources} The distributions of the \ZMVA for different photon sources in generic \MC.
+    \caption{\label{fig:zmva_distribution_sources} The distributions of the \ZMVA for different photon sources in generic \MC reconstructed in \feiBp and \feiBz modes.
     The candidates presented here are only those which are true photons in \Cref{fig:zmva_distribution}.
     A scaled \ZMVA distribution for \BtoXsgamma events is overlaid.
     Photons associated with neutron annihilation events are separated.}
@@ -148,22 +148,22 @@ Therefore, this variable efficiently separates candidates that are fake-photon o
 \subsection{Suppression of \texorpdfstring{\piz}{pi0} and \texorpdfstring{\eta}{eta} diphoton decays}\label{sec:selection_vetos}
 
 85\% of background photons in this analysis originate from photons that are produced in $\piz\ra\g\g$ or $\eta\ra\g\g$ decays.
-A lot of such light mesons originate in continuum events, but even in \BB events many \piz and \eta decays are produced.
-Therefore an efficient mechanism to suppress \piz- and $\eta$-related photon candidates is required.
+A lot of such light mesons originate in continuum events, but they are prominent even in \BB events.
+Therefore, an efficient mechanism to suppress \piz- and $\eta$-related photon candidates is required.
 
 In this analysis, a suppression tool, called \textit{\piz~and~\eta~veto} is utilised.
 It is implemented as part of \basftwo and is a standard Belle II approach for suppressions of radiative backgrounds from light mesons.
 Here, an overview of the training and the validation process is provided which is performed by an independent analysis.
 
-The general idea of the \textit{\piz~and~\eta~veto} tool is to pair the high-energy photon signal candidate (\textit{hard} photon) candidate with lower-energy photons (\textit{soft} photons) in the event.
+The general idea of the \piz~and~\eta~veto is to pair the high energy photon signal candidate (\textit{hard} photon) candidate with lower energy photons (\textit{soft} photons) in the event.
 The compatibility of the combination with a $\piz\ra\g\g$ or $\eta\ra\g\g$ decay is evaluated and a probability-like quantity is calculated to quantify it.
 
-The soft-photon candidate is selected with an energy $30~\mev$ ($40~\mev$ in backward \ECL endcap) for $\piz$ or $60~\mev$ for $\eta$.
+The soft photon candidate is selected with an energy $30~\mev$ ($40~\mev$ in backward \ECL endcap) for $\piz$ or $60~\mev$ for $\eta$.
 The photon is also required to have deposited the energy in 2 or more crystals.
 Furthermore, photon candidates are required to have an associated cluster time less than one standard deviation away from 0.
-These selections ensure that beam background photons, neutral hadrons misidentified as photons and misreconstructed charged particles are not included in the soft-photon sample.
+These selections ensure that beam background photons, neutral hadrons misidentified as photons and misreconstructed charged particles are not included in the soft photon sample.
 
-The soft photons that pass these selections are combined with the high-energy photon signal candidate.
+The soft photons that pass these selections are combined with the hard photon candidate.
 The following observables are then calculated and used to train a \MVA classifier:
 \begin{itemize}
     \item Invariant mass of the soft photon and hard photon combination;
@@ -181,27 +181,26 @@ The classifier for $\eta\ra\g\g$ includes additional observables to increase the
 For every combination of a soft and hard photon, the \MVA produces an output between 0 and 1.
 The same hard photon is paired with all soft photons in a given event, and the largest \MVA output is assigned to it as the $\piz$ or $\eta$ probability.
 This \MVA output is denoted as \piVeto or \etaVeto, respectively.
-Note that despite the nomenclature, this variable is only probability-like (i.e. $\mathcal{P}\in(0-1)$), and does not truly represent a probability.
-
+Note that despite the nomenclature, this variable is only probability-like (i.e. $\mathcal{P}\in(0,1)$) but does not truly represent a probability.
 The distributions for \piVeto and \etaVeto are shown in \Cref{fig:vetos}.
-In all cases, \BtoXsgamma can be seen to be strongly peaking near 0, consistent with photons that do not originate from light-unflavoured meson decay.
+In all cases, \BtoXsgamma can be seen to be strongly peaking near 0, consistent with photons that do not originate from light unflavoured meson decay.
 
 \begin{figure}[htbp!]
     \centering
     \subcaptionbox{\label{fig:bp_piveto}}{
-        \includegraphics[width=0.395\textwidth]{figures/event_selection/Bp_piVeto.pdf}
+        \includegraphics[width=0.45\textwidth]{figures/event_selection/Bp_piVeto.pdf}
         }
     \subcaptionbox{\label{fig:bz_piveto}}{
-        \includegraphics[width=0.395\textwidth]{figures/event_selection/Bz_piVeto.pdf}
+        \includegraphics[width=0.45\textwidth]{figures/event_selection/Bz_piVeto.pdf}
         }
     \subcaptionbox{\label{fig:bp_etaveto}}{
-            \includegraphics[width=0.395\textwidth]{figures/event_selection/Bp_etaVeto.pdf}
+            \includegraphics[width=0.45\textwidth]{figures/event_selection/Bp_etaVeto.pdf}
         }
     \subcaptionbox{\label{fig:bz_etaveto}}{
-            \includegraphics[width=0.395\textwidth]{figures/event_selection/Bz_etaVeto.pdf}
+            \includegraphics[width=0.45\textwidth]{figures/event_selection/Bz_etaVeto.pdf}
         }
-    \caption{\label{fig:vetos} The distributions of \piVeto (\Cref{fig:bp_piveto,fig:bz_piveto}) and \etaVeto \Cref{fig:bp_etaveto,fig:bz_etaveto} 
-    for different photon sources in generic \MC stacked.
+    \caption{\label{fig:vetos} The distributions of \piVeto (\Cref{fig:bp_piveto,fig:bz_piveto}) and \etaVeto (\Cref{fig:bp_etaveto,fig:bz_etaveto}) 
+    for different photon sources in generic \MC reconstructed in \feiBp and \feiBz modes.
     This is shown for all photon candidates included in \Cref{fig:photon_sources}.
     Scaled respective veto probability distributions for \BtoXsgamma events are overlaid.
     The separation power of \etaVeto is hidden by a large number of $\piz\ra\g\g$ events in \Cref{fig:bp_etaveto,fig:bz_etaveto}.
@@ -219,14 +218,14 @@ Removing $\piz\ra\g\g$ decays from the sample, a clear separation of photon cand
 \begin{figure}[htbp!]
     \centering
     \subcaptionbox{\label{fig:bp_etaveto_nopi}}{
-            \includegraphics[width=0.395\textwidth]{figures/event_selection/Bp_etaVeto_nopi.pdf}
+            \includegraphics[width=0.45\textwidth]{figures/event_selection/Bp_etaVeto_nopi.pdf}
         }
     \subcaptionbox{\label{fig:bz_etaveto_nopi}}{
-            \includegraphics[width=0.395\textwidth]{figures/event_selection/Bz_etaVeto_nopi.pdf}
+            \includegraphics[width=0.45\textwidth]{figures/event_selection/Bz_etaVeto_nopi.pdf}
         }
-    \caption{\label{fig:vetos_nopi} The distributions of \etaVeto \Cref{fig:bp_etaveto,fig:bz_etaveto} 
-    for different photon sources in generic \MC stacked, but with photons that are associated with $\piz\ra\g\g$ removed.
-    This is equivalent to \Cref{fig:bp_etaveto,fig:bz_etaveto} with the aforementioned event stack not included.
+    \caption{\label{fig:vetos_nopi} The distributions of \etaVeto
+    for different photon sources in generic \MC reconstructed in \feiBp and \feiBz, but with photons that are associated with $\piz\ra\g\g$ removed.
+    This is equivalent to \Cref{fig:bp_etaveto,fig:bz_etaveto} with the \piz component not included.
     A scaled \etaVeto distribution for \BtoXsgamma events is overlaid.
     Although the separation power is not as strong as in the case of \piVeto (\Cref{fig:bp_piveto,fig:bz_piveto}), a clear peak at low-\etaVeto can be seen for \BtoXsgamma.
     }
@@ -238,44 +237,44 @@ Even though no direct selection is applied on the $X_s$ system, through direct o
 To ensure that no such correlation is introduced, a correlation study is performed for \piVeto, \etaVeto and \ZMVA observables.
 In principle, it is not important if the selection introduces a bias to the background -- as long as this bias is well reproduced in simulation.
 The latter will be validated in \Cref{sec:corrections,sec:signal_modelling}.
-Therefore the study is performed exclusively for signal \MC, only focusing on \BtoXsgamma events, as it was aimed to ensure that the photon energy spectrum itself is minimally biased.
+Therefore, the study is performed exclusively focusing on \BtoXsgamma events, as it was aimed to ensure that the photon energy spectrum itself is minimally biased.
 
 \begin{figure}[htbp!]
     \centering
     \subcaptionbox{\label{fig:bp_zmva_correlation}}{
-            \includegraphics[width=0.3\textwidth]{figures/event_selection/Bp_zernikeMVA_correlation.pdf}
+            \includegraphics[width=0.31\textwidth]{figures/event_selection/Bp_zernikeMVA_correlation.pdf}
         }
     \subcaptionbox{\label{fig:bp_piveto_correlation}}{
-            \includegraphics[width=0.3\textwidth]{figures/event_selection/Bp_piVeto_correlation.pdf}
+            \includegraphics[width=0.31\textwidth]{figures/event_selection/Bp_piVeto_correlation.pdf}
         }
     \subcaptionbox{\label{fig:bp_etaveto_correlation}}{
-            \includegraphics[width=0.3\textwidth]{figures/event_selection/Bp_etaVeto_correlation.pdf}
+            \includegraphics[width=0.31\textwidth]{figures/event_selection/Bp_etaVeto_correlation.pdf}
         }
     \subcaptionbox{\label{fig:bz_zmva_correlation}}{
-            \includegraphics[width=0.3\textwidth]{figures/event_selection/Bz_zernikeMVA_correlation.pdf}
+            \includegraphics[width=0.31\textwidth]{figures/event_selection/Bz_zernikeMVA_correlation.pdf}
         }
     \subcaptionbox{\label{fig:bz_piveto_correlation}}{
-            \includegraphics[width=0.3\textwidth]{figures/event_selection/Bz_piVeto_correlation.pdf}
+            \includegraphics[width=0.31\textwidth]{figures/event_selection/Bz_piVeto_correlation.pdf}
         }
     \subcaptionbox{\label{fig:bz_etaveto_correlation}}{
-            \includegraphics[width=0.3\textwidth]{figures/event_selection/Bz_etaVeto_correlation.pdf}
+            \includegraphics[width=0.31\textwidth]{figures/event_selection/Bz_etaVeto_correlation.pdf}
         }
     \caption{\label{fig:selection_correlations} Correlation tests for background suppression observables described in \Cref{sec:photon_selection}, depicted as a 2D histogram.
-    Each row is normalised, such that all bins within that row add up to 1.
-    For signal \MC \BptoXsgamma events the tests are shown
+    Each row is normalised such that all bins within that row add up to 1.
+    For signal \BptoXsgamma events, the tests are shown
     in \Cref{fig:bp_zmva_correlation,fig:bp_piveto_correlation,fig:bp_etaveto_correlation},
     and for \BztoXsgamma in \Cref{fig:bz_zmva_correlation,fig:bz_piveto_correlation,fig:bz_etaveto_correlation}.
     All figures share the same legend provided in \Cref{fig:bp_zmva_correlation}.
     In the red line, the average photon energy, $\expval{\EB}$, is shown as a function of the tested observable.
-    In black and black-dotted lines -- median and $\pm 1 \sigma$ percentile values of \EB, respectively.
+    In black and black-dotted lines: median and $\pm 1 \sigma$ percentile values of \EB, respectively.
     No strong dependence can be observed in any of the quantities or the 2D maps.
     }
 \end{figure}
 
 A two-dimensional map of ${\piVeto,\etaVeto,\ZMVA}$ versus \EB is given in \Cref{fig:selection_correlations}.
-Because the distributions of the three variables used for background suppression are not uniform, each row is normalised, such that the sum of each row is equal to unity.
+Because the distributions of the three variables used for background suppression are not uniform, each row is normalised such that the sum of each row is equal to unity.
 This makes the comparison between differently populated bins simpler.
-The figure also denotes the average, the median and $\pm 1\sigma$ percentiles of \EB.
+The Figure also denotes the average, the median and $\pm 1\sigma$ percentiles of \EB.
 No strong bias is introduced by any of the observables to any of these quantities.
 Furthermore, the structure itself remains constant across all bins and no clear dependence on \EB can be seen.
 No significant differences between different \FEI modes are observed.
