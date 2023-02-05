@@ -127,11 +127,11 @@ Consequentially, the \textit{signal region} of the analysis is defined as $\EB\i
 \subsection{\texorpdfstring{\Mbc}{Mbc} fit model building}\label{sec:fitting_setup}
 
 The functions introduced in \Cref{sec:appendix_fitting_functions} are now considered in terms of the defined binning in \Cref{sec:binning}.
-Using them an \Mbc fit model for the total data set is built.
-The implementation of an $N$-th order Chebyshev polynomial, a Crystal Ball function and an ARGUS function for every \EB bin results
-in $N+6$ model parameters and 3 normalisation parameters for each bin.
+Using them, an \Mbc fit model for the total data set is built.
+The implementation of an $N$-th order Chebyshev polynomial, a Crystal Ball function and an ARGUS function results
+in $N+6$ model parameters and 3 normalisation parameters for each \EB bin.
 For fit stability purposes, it is desirable to reduce this number.
-Therefore, first, a primary fit model, where some of the parameters can be pre-determined or shared amongst the bins is prepared.
+Therefore, first, a primary fit model is prepared, where some of the parameters can be pre-determined or shared amongst the bins.
 The key idea is that all the functions are fitted once, separately, on the subsets of the simulated data that they aim to describe.
 This also provides the initialisation values of the parameters that will be used on the final fit of the total (combined) data set.
 The primary fits for every component are discussed in the following Subsections.
@@ -145,8 +145,8 @@ This hypothesis is tested in \Cref{fig:crystal_ball_par_test}.
 It can be seen that strong correlations between \EB and parameters $\mu$ and $\sigma$ are absent.
 This test is not performed on parameters $\alpha$ and $n$, as they tend to be less stable than $\mu$ and $\sigma$, depending more on the fluctuations of the data set.
 It is therefore concluded that a single Crystal Ball shape all \EB bins should share the same shape parameters.
-The discussed primary fits are performed simultaneously on the peaking tag-$B$ meson \Mbc distributions in all \EB bins.
-The primary Crystal Ball fits for every \EB interval are shown in \Cref{fig:primary_cb_fits}.
+The discussed primary fits are performed simultaneously on the peaking tag-$B$ meson \Mbc distributions in \MC for all \EB bins.
+They are shown in \Cref{fig:primary_cb_fits}.
 The evaluated shape parameters are fixed for the final \Mbc fit model.
 The parameter values and uncertainties from the primary fit are shown in \Cref{tab:fitting_init_params}.
 
@@ -195,36 +195,33 @@ The coefficients $k_{1-5}$ of the Chebyshev polynomial cannot be easily connecte
 and therefore it is hard to evaluate their dependence on \EB.
 As such, 3 different Chebyshev PDFs are evaluated for the following intervals: $\EB\in(1.4,1.6)$, $\EB\in(1.6,1.8)$, $\EB>1.8$ \gev.
 The last interval is not subdivided further because of the data set size (see \Cref{tab:expected_events}) -- each interval is optimised to contain an approximately equal expected number of events.
-The discussed primary fits are performed simultaneously on combinatorial \BB \Mbc distributions in all \EB bins.
-The primary Chebyshev fits for every \EB interval are shown in \Cref{fig:primary_cheb_fits}.
-The coefficients $k_{1-5}$ are fixed for the final \Mbc fit model.
+The discussed primary fits are performed simultaneously on the \Mbc distributions of the combinatorial \BB in all \EB bins.
+They are shown in \Cref{fig:primary_cheb_fits}.
+The determined coefficients $k_{1-5}$ are fixed for the final \Mbc fit model.
 The primary fit values are presented in \Cref{tab:fitting_init_params}.
 
 \subsubsection{ARGUS primary fit}\label{sec:argus_prefit}
 
 Similarly to the previous cases, the ARGUS function has 2 parameters, $c$ and $m_0$, and a normalisation $\mathcal{N}$ (\Cref{eq:argus_function}).
-Unlike the coefficients of the Chebyshev, the $c$ and $m_0$ are easier to understand intuitively: with $m_0$ corresponding to max \Mbc values in the distribution and $c$ to the shape of continuum background.
+Unlike the coefficients of the Chebyshev, $c$ and $m_0$ are easier to understand intuitively: with $m_0$ corresponding to max \Mbc values in the distribution and $c$ to the shape of continuum background.
 More generally, the variation of $c$ and $m_0$ accounts for possible background shape differences between \MC and data.
 It offers an additional layer of flexibility through a variation of relative ARGUS and Chebyshev normalisation values.
 This means that allowing a degree of variation in the ARGUS shape is beneficial to account for possible background differences in data.
 
-Following these considerations, a similar setup is adopted, with independent shapes for  $\EB\in(1.4,1.6)$, $\EB\in(1.6,1.8)$, $\EB>1.8$ \gev.
+Following these considerations, a setup is adopted with independent shapes for  $\EB\in(1.4,1.6)$, $\EB\in(1.6,1.8)$, $\EB>1.8$ \gev.
 In each respective range, one single shape parameter $c^{(1.4-1.6)}$, $c^{(1.6-1.8)}$, $c^{(>1.8)}$ is determined from the total fit.
-To account for possible endpoint differences (differences between simulated and data $\sqrt{s}$), the $m_0$ parameter is shared between all bins and is also determined from the fit of the combined data set.
+To account for possible ifferences between simulated and data $\sqrt{s}$, the $m_0$ parameter is shared between all bins and is also determined from the fit of the combined data set.
 The discussed primary fits are performed simultaneously on continuum \Mbc distributions in all \EB bins.
-The primary ARGUS fits for every \EB interval are shown in \Cref{fig:primary_argus_fits}.
+They are shown in \Cref{fig:primary_argus_fits}.
 The initial values for the final \Mbc fit model are presented in \Cref{tab:fitting_init_params}.
 
 \subsubsection{Final fit model}
 
-Based on the primary fits on the subcomponents,
-certain fitting parameters are shared betweem different \EB intervals, reducing the number of free parameters.
-Other parameters are kept at their initialised value and not varied.
-This setup reduces the number of free parameters and makes the final \Mbc fit more stable.
-
+Based on the primary fits of the subcomponents of the total data set, the number of fitting parameters is reduced:
+certain fit parameters are shared between different \EB intervals, whereas other parameters are kept at their initialised value and not varied.
 The final \Mbc fitting model for the analysis is summarised in \Cref{tab:fitting_init_params}.
-It also shows the initial values for each parameter.
-This fitting model is then applied to the total data set in \Cref{sec:mbc_fit_full_mc} 
+It shows the initial values for each parameter and highlights which parameters are kept fixed in the final \Mbc fit.
+The fitting model is then applied to the total data set in \Cref{sec:mbc_fit_full_mc} 
 in order to estimate the main parameter of interest: 
 normalisations of the Crystal Ball in every \EB bin (i.e. the number of good tag-$B$ in each \EB bin).
 The primary \Mbc fits determining the parameters in 
@@ -247,8 +244,8 @@ The primary \Mbc fits determining the parameters in
 The prepared fitter, discussed in \Cref{sec:fitting_setup}, is applied to the total generic \MC data set.
 The initial values of the fit are given in \Cref{tab:fitting_init_params} and all bins are fitted simultaneously.
 The fit results are shown in \Cref{fig:primary_full_fits}.
-The overall \Mbc distributions are accurately described across all \EB bins, irrespective of the overall number of data points that are being fitted.
-This is already an important achievement -- a single fitting setup is adaptive enough to cover different signal-to-background ratios, statistical sample sizes and overall shapes of the distributions.
+The overall \Mbc distributions are accurately described for all \EB bins, irrespective of the overall number of data points that are being fitted.
+This is already an important achievement: a single fitting setup is adaptive enough to cover different signal-to-background ratios, statistical sample sizes and overall shapes of the distributions.
 \begin{figure}[htbp!]
     \centering
     \subcaptionbox{\label{fig:mbc_full_1p4}}{
@@ -293,9 +290,8 @@ This is already an important achievement -- a single fitting setup is adaptive e
 As was already mentioned, the main goal of the \Mbc fitter introduced in this Section is to extract the good tag-\B counts in each \EB bin.
 This is equivalent to the normalisation parameter of the Crystal Ball \PDF, $\mathcal{N}_{\mathrm{CB}}$.
 These normalisations are shown in \Cref{fig:generic_mc_fit_yield_comparisons}.
-
-Theexact values of the rest of the parameters are not needed for further analysis as long as an unbiased and accurate description of good tag-\B counts is achieved through $\mathcal{N}_{\mathrm{CB}}$.
-Particularly, the main goal of including those parameters in the fitter as degrees of freedom is to ensure that the \Mbc background shape and yield estimations are sufficiently flexible to account for potential data-simulation discrepancies.
+The exact values of the rest of the parameters are not needed for further analysis as long as an unbiased and accurate description of good tag-\B counts is achieved through $\mathcal{N}_{\mathrm{CB}}$.
+The main goal of keeping them as free parameters in the fitter is to ensure that the \Mbc background shape and yield estimations are sufficiently flexible to account for potential data-simulation discrepancies.
 Therefore, for the rest of the thesis, other parameters will not be explicitly mentioned, unless their values are relevant to the discussion.
 
 To ensure that the fit is receptive to changes of \BtoXsgamma signal, two simple tests are devised, where the fit is performed on generic \MC but
@@ -304,8 +300,8 @@ To ensure that the fit is receptive to changes of \BtoXsgamma signal, two simple
     \item \BtoXsgamma signal shape in generic \MC is reweighted using the hybrid model weights.
 \end{itemize}
 The results are shown in \Cref{fig:no_bxsgamma_mc_fit_yield_comparisons,fig:weighted_mc_fit_yield_comparisons}.
-It is clear, that if the \BtoXsgamma events are completely removed or reweighted, the \Mbc fitter presented in this Subsection responds appropriately.
-This hints, but will be further explored, that although a particular simulation model was used when preparing the sample, no particular bias towards any \BtoXsgamma model is introduced.
+It is clear that if the \BtoXsgamma events are completely removed or reweighted, the \Mbc fitter presented in this Subsection responds appropriately.
+Therefore, although a particular simulation model was used when preparing the fitter, no particular bias towards any \BtoXsgamma model is introduced.
 
 \begin{figure}[htbp!]
     \subcaptionbox{\label{fig:generic_mc_fit_yield_comparisons}}{
