@@ -77,8 +77,8 @@ even if the primary goal of the fit is not signal extraction.
 
 Three scenarios are tested for $\EB\in(1.4,2.8)~\gev$: 50~\mev, 100~\mev and 200~\mev wide bins.
 The test is performed by evaluating the statistical significance, with a definition equivalent to \Cref{eq:soversqrtsplusb}, on a data set scaled to 189~\invfb.
-In this case, the background is considered what is anticipated after the \Mbc fit: only correctly-tagged \BB events (no combinatorial or continuum background).
-The result of the study of statistical significance for the hybrid-signal model (\Cref{sec:signal_model}) is shown in \Cref{fig:binning_significance}.
+In this case, the background is considered as non-\BtoXsgamma events that remain after the \Mbc fit: only correctly tagged \BB events (no combinatorial or continuum background).
+The result of the study of the statistical significance for the hybrid-signal model (\Cref{sec:signal_model}) is shown in \Cref{fig:binning_significance}.
 
 \begin{figure}[htbp!]
     \centering
@@ -93,10 +93,10 @@ The result of the study of statistical significance for the hybrid-signal model 
 
 In general, the highest statistical significance is observed with the widest bins, but this method, by definition, contains the least amount of information about the spectrum.
 Irrespective of the bin width,  $\EB\in(1.4,1.8)$ and $\EB>2.7~\gev$ show a statistical significance lower than unity, therefore the selected binning should attempt to maximise it.
-In the case of $\EB\in(1.8,2.0)~\gev$ bin, it is observed that a similar statistical significance can be achieved with a $\EB\in(1.9,2.0)~\gev$ bin.
+In the case of $\EB\in(1.9,2.0)~\gev$, it is observed that a similar statistical significance can be achieved in $\EB\in(1.8,2.0)~\gev$.
 This motivates choosing the wider bin to achieve a lower threshold than the one in the analysis by BaBar~\cite{BaBar:2007yhb}.
 On the other hand, later studies performed in \Cref{sec:resolution_studies} showed that the resolution of \EB is expected to be roughly $30-40~\mev$.
-The coarse intervals of \EB compared to the resolution may lead to complications in the unfolding procedure.
+Choosing a fine binning \EB compared to the resolution may lead to complications in the unfolding procedure.
 As the simpler bin-by-bin unfolding is employed in this analysis, the 50~\mev bins were not considered.
 
 These considerations led to choosing the following eleven \EB bins for the analysis:
@@ -126,7 +126,7 @@ Consequentially, the \textit{signal region} of the analysis is defined as $\EB\i
 
 \subsection{\texorpdfstring{\Mbc}{Mbc} fit model building}\label{sec:fitting_setup}
 
-The functions introduced in \Cref{sec:appendix_fitting_functions} are now considered in terms of the defined binning in \Cref{sec:binning}.
+The functions introduced in \Cref{sec:fitting_components} and \Cref{sec:appendix_fitting_functions} are now considered in terms of the defined binning in \Cref{sec:binning}.
 Using them, an \Mbc fit model for the total data set is built.
 The implementation of an $N$-th order Chebyshev polynomial, a Crystal Ball function and an ARGUS function results
 in $N+6$ model parameters and 3 normalisation parameters for each \EB bin.
@@ -135,7 +135,6 @@ Therefore, first, a primary fit model is prepared, where some of the parameters 
 The key idea is that all the functions are fitted once, separately, on the subsets of the simulated data that they aim to describe.
 This also provides the initialisation values of the parameters that will be used on the final fit of the total (combined) data set.
 The primary fits for every component are discussed in the following Subsections.
-The Figures related to the primary fits are shown in \Cref{sec:appendix_primary_fits}.
 
 \subsubsection{Crystal Ball primary fit}\label{sec:crystal_ball_prefit}
 
@@ -144,7 +143,7 @@ In principle, the reconstruction of the tag-\B meson should not be strongly infl
 This hypothesis is tested in \Cref{fig:crystal_ball_par_test}.
 It can be seen that strong correlations between \EB and parameters $\mu$ and $\sigma$ are absent.
 This test is not performed on parameters $\alpha$ and $n$, as they tend to be less stable than $\mu$ and $\sigma$, depending more on the fluctuations of the data set.
-It is therefore concluded that a single Crystal Ball shape all \EB bins should share the same shape parameters.
+It is therefore concluded that a single Crystal Ball shape is sufficient, where all \EB bins share the same shape parameters.
 The discussed primary fits are performed simultaneously on the peaking tag-$B$ meson \Mbc distributions in \MC for all \EB bins.
 They are shown in \Cref{fig:primary_cb_fits}.
 The evaluated shape parameters are fixed for the final \Mbc fit model.
@@ -210,7 +209,7 @@ This means that allowing a degree of variation in the ARGUS shape is beneficial 
 
 Following these considerations, a setup is adopted with independent shapes for  $\EB\in(1.4,1.6)$, $\EB\in(1.6,1.8)$, $\EB>1.8$ \gev.
 In each respective range, one single shape parameter $c^{(1.4-1.6)}$, $c^{(1.6-1.8)}$, $c^{(>1.8)}$ is determined from the total fit.
-To account for possible ifferences between simulated and data $\sqrt{s}$, the $m_0$ parameter is shared between all bins and is also determined from the fit of the combined data set.
+To account for possible differences between simulated and data $\sqrt{s}$, the $m_0$ parameter is shared between all bins and is also determined from the fit of the combined data set.
 The discussed primary fits are performed simultaneously on continuum \Mbc distributions in all \EB bins.
 They are shown in \Cref{fig:primary_argus_fits}.
 The initial values for the final \Mbc fit model are presented in \Cref{tab:fitting_init_params}.
@@ -221,6 +220,7 @@ Based on the primary fits of the subcomponents of the total data set, the number
 certain fit parameters are shared between different \EB intervals, whereas other parameters are kept at their initialised value and not varied.
 The final \Mbc fitting model for the analysis is summarised in \Cref{tab:fitting_init_params}.
 It shows the initial values for each parameter and highlights which parameters are kept fixed in the final \Mbc fit.
+It can be seen, that the previously introduced $11\cdot(5+2+4+3)=154$ parameters are reduced to $37$ fitting parameters.
 The fitting model is then applied to the total data set in \Cref{sec:mbc_fit_full_mc} 
 in order to estimate the main parameter of interest: 
 normalisations of the Crystal Ball in every \EB bin (i.e. the number of good tag-$B$ in each \EB bin).
@@ -230,11 +230,11 @@ The primary \Mbc fits determining the parameters in
     \centering
     \caption{\label{tab:fitting_init_params} 
     The summary of the fitting model used in this analysis for the \Mbc fit.
-    The parameters are initialised at the values that are listed, corresponding to the ones determined in the primary fitting steps, explained in \Cref{sec:crystal_ball_prefit,sec:chebyshev_prefit,sec:argus_prefit}.
-    The values that are bolded in the table are not estimated from the final \Mbc fit but are kept at their initialised values.
-    On the other hand, all non-bolded values are estimated from the final fitter.
-    The uncertainties are those estimated using the \texttt{HESSE} method.
-    \todo[inline]{finish this table}
+    For the final \Mbc fit, the parameters are initialised at the values that are listed, corresponding to the ones determined in the primary fitting steps, explained in \Cref{sec:crystal_ball_prefit,sec:chebyshev_prefit,sec:argus_prefit}.
+    The values that are bolded in the Table are not estimated from the final \Mbc fit but are kept at their initialised values.
+    On the other hand, all non-bolded values can vary in the final fitter.
+    Uncertainties are evaluated using the \texttt{HESSE} method in the primary fitting steps.
+    They are omitted if the relative uncertainty is lower than $0.1\%$.
     }
 \input{tables/fit_model.tex}
 \end{table}
