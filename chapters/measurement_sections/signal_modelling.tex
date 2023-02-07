@@ -41,7 +41,8 @@ As a direct connection between $\EtildeB$ and $\EB$ is difficult to evaluate, th
     \varepsilon_{\mathrm{FEI}} = 0.006659 \pm 0.000006,
 \end{equation}
 where the uncertainty is statistical.
-The signal modelling uncertainty is expected to be small because any deviations would be suppressed in the ratio in \Cref{eq:fei_tagging_efficiency}.
+The correction and the systematic uncertainty related to \FEI calibration is evaluated in \Cref{sec:signal_selection_uncertainties}.
+Conversely, the signal modelling uncertainty is expected to be small because any deviations would be suppressed in the ratio in \Cref{eq:fei_tagging_efficiency}.
 \begin{figure}[htbp!]
     \centering
     \subcaptionbox{\label{fig:epsilon_fei}}{
@@ -76,7 +77,7 @@ Finally, the results of \Cref{fig:epsilon} are combined to evaluated the total s
 \subsection{Validation of \texorpdfstring{\BtoXsgamma}{B->Xs gamma} efficiency}\label{sec:validation_efficiency}
 
 The results of \Cref{sec:signal_efficiency} are based on Belle~II simulation only, therefore, have to be validated on data.
-Some selections, such as \piz and $\eta$ suppression tools, photon-detection efficiency and \FEI are validated in external and independent studies.
+Some selections, such as \piz and $\eta$ suppression tools, photon detection efficiency and \FEI are validated in external and independent studies.
 However, the selection on \texttt{BDT~output} and \ZMVA do not have such dedicated studies (and with the latter some hints of performance differences were discussed).
 To perform the validation for these quantities yet maintain the analysis blinded, ratio-based efficiency tests are used on data:
 \begin{equation}\label{eq:signal_validation}
@@ -138,21 +139,21 @@ efficiency.
 
 \subsection{Resolution studies of \texorpdfstring{\BtoXsgamma}{B->Xs gamma} events}\label{sec:resolution_studies}
 
-The resolution of \EB is related to both photon-detection resolution and tag-side \B meson reconstruction.
+The resolution of \EB is related to both photon detection resolution and tag-side \B meson reconstruction.
 Therefore, it can depend on the choice of a good tag-\B meson definition.
 
 The resolution is modelled as the width of the distribution related to
 \begin{equation}\label{eq:resolution}
     \tilde{E}_{\gamma}^{B} - E_{\gamma}^{B}
 \end{equation}
-where $\tilde{E}_{\gamma}^{B}$ is the generated (`true') energy of a photon in the signal-\B meson rest frame,
-and $E_{\gamma}^{B}$ is the measured photon energy in the signal \B meson rest frame.
+where $\tilde{E}_{\gamma}^{B}$ is the true energy of a photon in the signal-\B meson rest frame,
+and $E_{\gamma}^{B}$ is the measured photon energy in the signal-\B meson rest frame.
 To extract the width of the distribution, a double-sided Crystal Ball function is fitted.
 The double-sided Crystal Ball function follows the same definition as previously discussed in \Cref{sec:crystal_Ball},
-however, it includes two additional parameters $alpha_2$ and $n_2$, which introduce a polynomial behaviour to both sides of the central Gaussian.
-The width, as usual, is represented by the Gaussian width parameter $\sigma$.
+however, it includes two additional parameters $\alpha_2$ and $n_2$, which introduce a polynomial behaviour to both sides of the central Gaussian.
+The resolution is assumed to be represented by the Gaussian width parameter $\sigma$.
 
-The fitting strategy on the hybrid-signal model sample with a full selection used in this analysis is presented in \Cref{sec:appendix_resolution_fits}.
+The fitting strategy of the hybrid-signal model sample with a full selection used in this analysis is presented in \Cref{sec:appendix_resolution_fits}.
 Each fit is performed in $\tilde{E}_{\gamma}^{B}$ intervals and estimates the parameter $\sigma$ and its uncertainty.
 The summary of the results is given in \Cref{fig:resolution_sigmas}.
 The fits are with two choices of tag-\B mesons: firstly, with the good tag-\B mesons as defined in \Cref{sec:good_tag_definition},
@@ -160,27 +161,25 @@ and secondly, for comparison, with tag-\B mesons that have been reconstructed pe
 The photon energy resolution grows with \EB from $25~\mev$ to $40~\mev$
 but the ratio $\sigma/\tilde{E}_{\gamma}^{B}$ stays approximately constant.
 The use of good tag-\B mesons degrades the efficiency by approximately $10\%$.
-As the evaluated resolution is $<50~\mev$, this (retroactively) justifies the selection of 100~\mev wide bins in \Cref{sec:binning}, which are more than twice as wide.
+As the evaluated resolution is $\order(10~\mev)$, this (retroactively) justifies the selection of 100~\mev wide bins in \Cref{sec:binning}.
 
 \begin{figure}[htbp!]
     \centering
     \includegraphics[width=0.45\textwidth]{figures/signal_validation/resolution_bin_by_bin_withkstar.pdf}
     \caption{\label{fig:resolution_sigmas} The resolution of $\tilde{E}_{\gamma}^{B}$, 
     as estimated from the fits in \Cref{fig:resolution_fits} and \Cref{fig:issignal_resolution_fits}.
-    Comparing the resolution of \EB using the good tag-\B meson definition, and using only perfectly reconstructed tag-\B mesons a $\sim10\%$ difference is seen.
-    The resolution grows linearly with $\tilde{E}_{\gamma}^{B}$.
-    The ratio $\sigma/\tilde{E}_{\gamma}^{B}$ stays approximately constant at $\mathcal{O}(1\%)$.
+    Comparing the resolution of \EB using the good tag-\B meson definition, with that using only perfectly reconstructed tag-\B mesons a $\sim10\%$ difference is seen.
+    The resolution grows approximately linearly with $\tilde{E}_{\gamma}^{B}$.
     }
 \end{figure}
 
 \subsection{Tag-side and signal-side correlation study}\label{sec:inclusivity_study}
 
-The main goal and purpose of this analysis is the inclusive measurement of the \BtoXsgamma decays, i.e.,
-an unbiased $X_s$ sample.
-Although careful validation checks for any potential biases to the photon energy spectrum are performed at all stages,
+The purpose of this analysis is an unbiased inclusive measurement of the \BtoXsgamma decays.
+Although careful validation for any potential biases to the photon energy spectrum is performed at all stages,
 the correlation of the tag-\B and signal-\B has so far not been investigated in depth.
-This is tested by counting \BtoXsgamma events in an untagged sample and one with \FEI tagging applied, similar to \Cref{sec:validation_efficiency}.
-The number of daughter particles of events that the $X_s$ system hadronises to is then evaluated in the inclusive \BtoXsgamma signal model.
+This is tested by counting \BtoXsgamma events in an untagged sample and that with \FEI tagging applied, similar to \Cref{sec:validation_efficiency}.
+The number of daughter particles that the $X_s$ system hadronises to is then evaluated in the inclusive \BtoXsgamma signal model.
 The results are shown in \Cref{tab:xs_multiplicity}.
 
 \begin{table}[htbp!]
@@ -189,7 +188,7 @@ The results are shown in \Cref{tab:xs_multiplicity}.
         Fraction of events with a given $X_s$ multiplicity in \FEI tagged and untagged sample. 
         Although \FEI tagging slightly prefers lower multiplicities, the overall inclusivity is retained with no strong biases.
         }
-    \begin{tabular}{c|c|c}
+    \begin{tabular}{|c|c|c|}
         \hline
             \multirow{2}{*}{$X_s$ multiplicity} & \multicolumn{2}{c|}{Fraction of sample}  \\
                                                 & \FEI tagged & Untagged  \\
@@ -202,7 +201,7 @@ The results are shown in \Cref{tab:xs_multiplicity}.
     \end{tabular}
 \end{table}
 
-It can be seen that although \BtoXsgamma decay channels where $X_s$ hadronises to two particles are slightly preferred over others,
+It can be seen that although \BtoXsgamma decay channels where $X_s$ hadronises to two particles are slightly preferred over other cases,
 the overall composition of the sample is not strongly affected.
 Indeed, such behaviour seems expected: the more neutral and charged final-state particles that are produced in the detector, the more (incorrect) combinations to reconstruct a tag-\B meson become available for the \FEI chain of classifiers.
 
@@ -213,11 +212,10 @@ The other differences that are related to tag-side efficiency mismodelling would
 
 \subsection{Modelling of \texorpdfstring{\BtoXdgamma}{B->Xd gamma} component}\label{sec:xdgamma_modelling}
 
-The goal of the analysis is an extraction of the \BtoXsgamma spectrum:
-nevertheless, as part of the inclusive analysis, a separation between $X_s$ and $X_d$ is challenging.
-Up until now, the $X_d$ component has been neglected and not included in the simulation.
-However, when extracting the photon energy spectrum in Belle~II data, the presence of the $X_d$ component will be unavoidable,
-and without additional consideration, the measured result could only be interpreted as \BtoXsdgamma.
+As part of the inclusive analysis, a separation between $X_s$ and $X_d$ is challenging.
+Up until now, the $X_d$ component has been neglected and not included in the discussion.
+However, when extracting the photon energy spectrum in Belle~II data, the presence of the $X_d$ componentis unavoidable.
+Without additional consideration, the measured result could only be interpreted as \BtoXsdgamma.
 
 The measured branching fraction of \BtoXdgamma, 
 as seen in \Cref{eq:btosgamma_experimental} and \Cref{eq:btosgamma_theoretical}, is at least an order of magnitude smaller than \BtoXsgamma,
@@ -234,7 +232,7 @@ Two assumptions are made in this analysis:
 \end{itemize}
 These assumptions are a valid approximation because the same underlying processes (electroweak radiative transitions) govern the decay.
 While the endpoint region for the spectra $\EB\gtrsim2.6$ would be different  ($X_d$ is dominated by $\rho(770)$ 
-which is wider than $K^*(982)$), at the experimental precision anticipated for this analysis the difference is not expected to be significant.
+which is wider than $K^*(892)$), at the experimental precision anticipated, the difference is not expected to be significant.
 
 Therefore, the measured \BtoXsdgamma branching fractions will be lowered by an amount equivalent to \Cref{eq:btodgamma_suppression}:
 \begin{align}\label{eq:btodgamma_subtraction}
@@ -243,17 +241,17 @@ Therefore, the measured \BtoXsdgamma branching fractions will be lowered by an a
                     &=\frac{1}{1.042} N_{\BtoXsdgamma}.
     \end{split}
 \end{align}
-The full value of the correction, i.e. $(1-1/1.042) \cdot N_{\BtoXsdgamma}$, will be assigned as a systematic uncertainty related to the modelling of \BtoXdgamma.
+The full value of the correction, $(1-1/1.042) \cdot N_{\BtoXsdgamma}$, is assigned as a systematic uncertainty related to the modelling of \BtoXdgamma.
 
 \subsection{Unfolding of the measured photon energy spectrum} \label{sec:signal_unfolding}
 
 The measured \EB spectrum is smeared due to resolution effects.
-This can be seen in \Cref{fig:btosgamma_resolution}, where the reconstructed and measured photon energies are compared.
+This can be seen in \Cref{fig:btosgamma_resolution}, where the true and measured photon energies are compared.
 In both cases, the hybrid-signal model is used.
-The overall shape of the spectrum shifts towards lower-\EB after a measurement.
+The overall peak of the spectrum is shifted towards lower-\EB after a measurement.
 Therefore, the measured result on Belle~II data (where the `true' values are by definition unknown) has to be unfolded.
 Unfolding was already introduced in \Cref{sec:unfolding}.
-The unfolding strategy of the \EB spectrum to the `true' energy $\tilde{E}_{\gamma}^B$ is presented in this section.
+The unfolding strategy of the \EB spectrum to the true energy $\tilde{E}_{\gamma}^B$ is presented in this section.
 
 Firstly, a response matrix (see \Cref{eq:response_matrix_element}) is calculated.
 It shows the fraction of events that are generated in a given $\tilde{E}_{\gamma}^B$ interval but are measured in a given \EB interval.
@@ -275,21 +273,21 @@ The response matrix is shown in \Cref{fig:migration_matrix}.
     }
 \end{figure}
 
-As was discussed in \Cref{sec:unfolding}, in this analysis the bin-by-bin correction method is used for unfolding.
+As was discussed in \Cref{sec:unfolding}, the bin-by-bin correction method is used for unfolding.
 It was chosen after testing several unfolding techniques, including those that involve a regularisation of the unfolded result.
-An exemplary comparison of the singular value decomposition, matrix inversion and bin-by-bin unfolding techniques is shown in \Cref{fig:unfolding_comparison}.
+An example comparison of the singular value decomposition, matrix inversion and bin-by-bin unfolding techniques is shown in \Cref{fig:unfolding_comparison}.
 The singular value decomposition method also includes a regularisation strength parameter, $k=7$.
-The figure shows the expected \BtoXsgamma photon energy spectrum (based on the hybrid-signal model) before and after measuring.
-The unfolded points follow the `true' distribution perfectly in this case, as the hybrid-signal model is also what is used for the calculation of the response matrix.
+The Figure shows the expected \BtoXsgamma photon energy spectrum (based on the hybrid-signal model) before and after measuring.
+The unfolded points follow the true distribution perfectly in this case, as the hybrid-signal model is also what is used for the calculation of the response matrix.
 
-The measurement uncertainties are evaluated as the average uncertainty from pseudodata fits in \Cref{sec:background_subtraction_validation_mc}, scaled for lower luminosity, and corrected for background and signal modelling based on discussions in \Cref{sec:corrections,sec:signal_modelling}.
-They are then propagated through the full unfolding result.
+The statistical and total uncertainties are evaluated as the average uncertainty from pseudodata fits in \Cref{sec:background_subtraction_validation_mc}, corrected for background and signal modelling based on discussions in \Cref{sec:corrections,sec:signal_modelling}.
+They are then propagated through the full unfolding procedure.
 For bin-by-bin unfolding the propagation is governed by \Cref{eq:bin_by_bin_unfolding,eq:bin_by_bin_unfolding_error}.
 The resulting uncertainties due to the matrix inversion method are larger by more than a factor of two compared to the bin-by-bin unfolding method in many photon energy intervals.
-This increase in uncertainties is reduced by introducing a weak regularisation requirement with the singular value decomposition method.
+This increase in uncertainties is reduced by introducing a weak regularisation requirement using the singular value decomposition method.
 However, the uncertainties are generally larger than those offered by the bin-by-bin method.
 As the analysis results are statistically limited, the correlation of the expected number of events between different \EB intervals is small.
-Therefore, it is concluded that for this analysis bin-by-bin unfolding method is sufficient, as it does not inflate the uncertainties and does not introduce correlations between bins due to regularisation.
+Therefore, it is concluded that for this analysis bin-by-bin unfolding method is sufficient, as it does not inflate the uncertainties and does not introduce additional correlations between bins via regularisation.
 
 \begin{figure}[htbp!]
     \centering
@@ -300,10 +298,9 @@ Therefore, it is concluded that for this analysis bin-by-bin unfolding method is
     The solid lines represent the true and measured expected photon energy spectra, based on the hybrid-signal model.
     As this model is also used to build the response matrix (see \Cref{fig:migration_matrix}), the data points, corresponding to different unfolding methods 
     line up exactly with the true result.
-    The shaded area represents the expected measurement uncertainties, based on the toy study in \Cref{sec:background_subtraction_validation_mc}.
-    The statistical uncertainty corresponds to components that can be decreased with larger Belle~II data or simulation samples.
+    The shaded area represents the expected measurement uncertainties, based on the pseudodata study in \Cref{sec:background_subtraction_validation_mc}.
+    The statistical uncertainty is shown as the inner shaded area and the total uncertainty as the outer shaded area.
     The systematic uncertainty involves corrections for background and signal simulation discussed in \Cref{sec:corrections,sec:signal_modelling}.
-    The large statistical uncertainties motivate the choice of the bin-by-bin unfolding method.
     }
 \end{figure}
 
