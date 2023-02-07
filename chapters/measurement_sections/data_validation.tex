@@ -37,7 +37,7 @@ The resulting continuum-only \EB distributions are shown in \Cref{fig:offresonan
     Excellent agreement is observed in \feiBp (\Cref{fig:bplus_offresonance_eb}), \feiBz (\Cref{fig:bzero_offresonance_eb})
     and the combined sample (\Cref{fig:bboth_offresonance_eb}).
     The uncertainty for data contains only the statistical component.
-    The simulation uncertainty contains statistical and systematic uncertainties corresponding to \Cref{tab:correction_table}.
+    The \MC also contains systematic uncertainties corresponding to \Cref{tab:correction_table}.
     }
 \end{figure}
 
@@ -74,7 +74,7 @@ The resulting \EB spectra for both \FEI modes are shown in \Cref{fig:qqbar_enhan
     Adequate agreement is observed in \feiBp (\Cref{fig:bplus_offresonance_eb}), \feiBz (\Cref{fig:bzero_offresonance_eb})
     and the combined sample (\Cref{fig:bboth_offresonance_eb}).
     The uncertainty for data contains only the statistical component.
-    The simulation uncertainty contains statistical and systematic uncertainties corresponding to \Cref{tab:correction_table}.
+    The \MC uncertainty also contains systematic uncertainties corresponding to \Cref{tab:correction_table}.
     }
 \end{figure}
 
@@ -127,9 +127,9 @@ Therefore, a correction is only necessary for the \Mbc distribution \textit{and}
 An \textit{ad hoc} approach is developed, where the \Mbc distribution for \MC events is shifted manually. 
 The procedure is as follows:
 \begin{itemize}
-    \item Count the frequencies of each $\sqrt{s}$ value occurring in the Belle II on-resonance dataset;
-    \item Randomly remove half of the beam energies in the simulated Belle II dataset of \textit{events where no good tag-\B mesons are present};
-    \item Replace the removed beam energies with the values of the first step, based on the frequencies they occur at in the Belle~II on-resonance dataset.
+    \item Count the frequencies of each $\sqrt{s}$ value occurring in the Belle II on-resonance data set;
+    \item Randomly remove half of the beam energies in the simulated Belle II data set of \textit{events where no good tag-\B mesons are present};
+    \item Replace the removed beam energies with the values of the first step, based on the frequencies they occur at in the Belle~II on-resonance data set.
 \end{itemize}
 Only $50\%$ of energies are replaced to minimise any potential conscious bias that such a procedure could introduce.
 Note that the replacement of $\sqrt{s}$ only affects the \Mbc calculation and not other observables which may rely on $\sqrt{s}$ in their definition.
@@ -146,13 +146,13 @@ This is evident when comparing \Cref{fig:qqbar_enhanced_mbccorrected} and \Cref{
 
 A key point to discuss here is the effect the different \Mbc shape may have on the \Mbc fitter.
 The differences in the tail and the end-point are expected to not strongly affect the result because the \Mbc fitter is prepared with shape differences in mind (see \Cref{sec:fitting_setup}).
-However, the initial parameters of the \Mbc fitter in \Cref{tab:fitting_init_params} have to be updated to emphasise that a different corrected-\Mbc is the new fitting observable.
+However, the initial parameters of the \Mbc fitter in \Cref{tab:fitting_init_params} have to be updated to emphasise that a different corrected \Mbc is the new fitting observable.
 The \Mbc fitter is therefore updated, following the same procedures as \Cref{sec:fitting_setup} and the new values are given in \Cref{tab:fitting_init_params_updated}.
 \begin{table}[htbp!]
     \centering
-    \caption{\label{tab:fitting_init_params_updated} The summary of the \Mbc fitting model used in this analysis after updating the fitting variable to the corrected-\Mbc.
-    The parameters are initialised at the values that are listed, corresponding to the ones determined in the primary fitting steps, explained in \Cref{sec:crystal_ball_prefit,sec:chebyshev_prefit,sec:argus_prefit}, with \Mbc replaced by a `corrected'-\Mbc value.
-    The values that are bolded in the Table are not estimated from the final corrected-\Mbc fit but are kept at their initialised values.
+    \caption{\label{tab:fitting_init_params_updated} The summary of the \Mbc fitting model used in this analysis after updating the fitting variable to the corrected \Mbc.
+    The parameters are initialised at the values that are listed, corresponding to the ones determined in the primary fitting steps, explained in \Cref{sec:crystal_ball_prefit,sec:chebyshev_prefit,sec:argus_prefit}, with \Mbc replaced by a corrected \Mbc value.
+    The values that are bolded in the Table are not estimated from the final corrected \Mbc fit but are kept at their initialised values.
     On the other hand, all non-bolded values can vary in the final fitter.
     Uncertainties are evaluated using the \texttt{HESSE} method in the primary fitting steps.
     They are omitted if the relative uncertainty is lower than $0.1\%$.
@@ -171,40 +171,40 @@ to describe the slight difference in \Mbc shapes between \MC and real data, with
 \begin{figure}[htbp!]
     \centering
     \subcaptionbox{\label{fig:mbc_qqbar_ehnhanced_data_1p4}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/qqbar_ehnaced_fits/full_MbcFit_1p4to1p6ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/qqbar_ehnaced_fits/full_MbcFit_1p4to1p6ppdf.pdf}
     }
     \subcaptionbox{\label{fig:mbc_qqbar_ehnhanced_data_1p6}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/qqbar_ehnaced_fits/full_MbcFit_1p6to1p8ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/qqbar_ehnaced_fits/full_MbcFit_1p6to1p8ppdf.pdf}
     }
     \subcaptionbox{\label{fig:mbc_qqbar_ehnhanced_data_1p8}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/qqbar_ehnaced_fits/full_MbcFit_1p8to2p0ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/qqbar_ehnaced_fits/full_MbcFit_1p8to2p0ppdf.pdf}
     }
     \subcaptionbox{\label{fig:mbc_qqbar_ehnhanced_data_2p0}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/qqbar_ehnaced_fits/full_MbcFit_2p0to2p1ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/qqbar_ehnaced_fits/full_MbcFit_2p0to2p1ppdf.pdf}
     }
     \subcaptionbox{\label{fig:mbc_qqbar_ehnhanced_data_2p1}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/qqbar_ehnaced_fits/full_MbcFit_2p1to2p2ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/qqbar_ehnaced_fits/full_MbcFit_2p1to2p2ppdf.pdf}
     }
     \subcaptionbox{\label{fig:mbc_qqbar_ehnhanced_data_2p2}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/qqbar_ehnaced_fits/full_MbcFit_2p2to2p3ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/qqbar_ehnaced_fits/full_MbcFit_2p2to2p3ppdf.pdf}
     }
     \subcaptionbox{\label{fig:mbc_qqbar_ehnhanced_data_2p3}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/qqbar_ehnaced_fits/full_MbcFit_2p3to2p4ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/qqbar_ehnaced_fits/full_MbcFit_2p3to2p4ppdf.pdf}
     }
     \subcaptionbox{\label{fig:mbc_qqbar_ehnhanced_data_2p4}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/qqbar_ehnaced_fits/full_MbcFit_2p4to2p5ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/qqbar_ehnaced_fits/full_MbcFit_2p4to2p5ppdf.pdf}
     }
     \subcaptionbox{\label{fig:mbc_qqbar_ehnhanced_data_2p5}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/qqbar_ehnaced_fits/full_MbcFit_2p5to2p6ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/qqbar_ehnaced_fits/full_MbcFit_2p5to2p6ppdf.pdf}
     }
     \subcaptionbox{\label{fig:mbc_qqbar_ehnhanced_data_2p6}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/qqbar_ehnaced_fits/full_MbcFit_2p6to2p7ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/qqbar_ehnaced_fits/full_MbcFit_2p6to2p7ppdf.pdf}
     }
     \subcaptionbox{\label{fig:mbc_qqbar_ehnhanced_data_2p7}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/qqbar_ehnaced_fits/full_MbcFit_2p7to5p0ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/qqbar_ehnaced_fits/full_MbcFit_2p7to5p0ppdf.pdf}
     }
-    \caption{\label{fig:mbc_qqbar_ehnhanced_fits}The fits on Belle II dataset corresponding to 189~\invfb with selections that enhance \epem\ra\qqbar events, as discussed in \Cref{sec:continuum_spectrum_validation}.
-    The fitting model from \Cref{tab:fitting_init_params_updated} is used, defined on the `corrected'-\Mbc to account for variations of $\sqrt{s}$ in Belle II data.
+    \caption{\label{fig:mbc_qqbar_ehnhanced_fits}The fits on Belle II data set corresponding to 189~\invfb with selections that enhance \epem\ra\qqbar events, as discussed in \Cref{sec:continuum_mbc_validation}.
+    The fitting model from \Cref{tab:fitting_init_params_updated} is used, defined on the corrected \Mbc to account for variations of $\sqrt{s}$ in Belle II data.
     A good description of the \Mbc distributions can be seen throughout the \EB bins.
     As the continuum component in each \EB bin is enhanced, no good tag-\B mesons are expected.
     }
@@ -234,27 +234,28 @@ by the requirements of \texttt{BDT~output}.
 \begin{figure}[htbp!]
     \centering
     \subcaptionbox{\label{fig:Bplus_bbbar_enhanced_eb}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/Bplus_bbbar_enhanced_eb.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/Bplus_bbbar_enhanced_eb.pdf}
     }
     \subcaptionbox{\label{fig:Bzero_bbbar_enhanced_eb}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/Bzero_bbbar_enhanced_eb.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/Bzero_bbbar_enhanced_eb.pdf}
     }
     \subcaptionbox{\label{fig:Bboth_bbbar_enhanced_eb}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/Bboth_bbbar_enhanced_eb.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/Bboth_bbbar_enhanced_eb.pdf}
     }
     \caption{\label{fig:bbbar_enhanced_eb} The \EB distribution of \BB-background enhanced samples (see \Cref{sec:bb_background_validation}).
     Compared to \Cref{fig:bboth_offresonance_eb}, it is clear that the \BB background drops off faster with increasing \EB than \epem\ra\qqbar.
-    Overall, the data-simulation agreement is excellent and this is attributed to the fact that continuum events, which were accredited to causing a discrepancy in \Cref{sec:continuum_spectrum_validation}, are highly suppressed in the \BB-background enhanced sample.
+    Overall, the data-simulation agreement is excellent and this is attributed to the fact that continuum events, which were accredited to causing a discrepancy in \Cref{sec:continuum_mbc_validation}, are highly suppressed in the \BB-background enhanced sample.
+    The uncertainties in data are statistical, whereas \MC includes statistical and systematic uncertainties from the corrections in \Cref{tab:correction_table}.
     }
 \end{figure}
 
 Following the observations in \Cref{sec:continuum_mbc_validation}, similar modifications to \Mbc are necessary here, too.
-The corrected-\Mbc distribution is shown in \Cref{fig:bbbar_enhanced_mbccorrected}.
+The corrected \Mbc distribution is shown in \Cref{fig:bbbar_enhanced_mbccorrected}.
 The results are shown for the combined \feiBp and \feiBz sample only, although the individual \FEI modes also show similar results.
-In particular, one can see that the agreement between data and simulation is closer than what was observed in \Cref{sec:continuum_mbc_validation}.
-This goes in line with the previous statements that \epem\ra\qqbar modelling was related to the discrepancies observed so far, which are not strongly pronounced here due to their suppression.
-Observing the pull distribution in \Cref{fig:bbbar_enhanced_mbccorrected} it is clear that, generally, fewer events seem to be present in the peak region and more in the tail region.
-Again, this is in line with the expectation: the variations of $\sqrt{s}$ in real data modify the \BB-production and \epem\ra\qqbar cross-sections.
+In particular, one can see that the agreement between data and \MC is closer than what was observed in \Cref{sec:continuum_mbc_validation}.
+This goes in line with the previous explanation related to the discrepancy of \epem\ra\qqbar modelling which is not apparent here due to their suppression.
+Observing the Data/\MC ratio distribution in the subpanel of \Cref{fig:bbbar_enhanced_mbccorrected} it is clear that, generally, fewer events seem to be present in the peak region and more in the tail region.
+Again, this is in line with the previous explanation: the variations of $\sqrt{s}$ in real data modify the \FourS and \epem\ra\qqbar production cross-sections.
 \begin{figure}[htbp!]
     \centering
     \includegraphics[width=0.45\textwidth]{figures/data_validation/Bboth_bbbar_enhanced_mbccorrected.pdf}
@@ -262,107 +263,108 @@ Again, this is in line with the expectation: the variations of $\sqrt{s}$ in rea
     where an \Mbc correction has been applied to the simulated distribution.
     Only the \feiBp and \feiBz combined sample is shown, but the individual ones show similar results.
     Due to a lower number of \epem\ra\qqbar events, the low-\Mbc region disagreement is less pronounced than in \Cref{fig:qqbar_enhanced_mbccorrected}.
+    The uncertainties in data are statistical, whereas \MC also includes systematic uncertainties from the corrections in \Cref{tab:correction_table}.
     }
 \end{figure}
 
-Finally, a fit of the \BB-enhanced performed of the \Mbc distributions, according to the modified \Mbc fitter model in \Cref{tab:fitting_init_params_updated}.
-Unlike in \Cref{fig:mbc_qqbar_ehnhanced_fits}, the number of expected-\BB events is no longer expected to be negligible.
-Therefore, this validation serves as a test of fit-bias and background-subtraction procedure.
-The fits on Belle II simulation are shown in \Cref{fig:mbc_bbar_ehnhanced_fits_mc}, whereas the fits on Belle II data \Cref{fig:mbc_bbar_ehnhanced_fits_data}.
-The figures also show the extracted good tag-\B meson counts as normalisations of the Crystal Ball \PDF, $\mathcal{N}_{\mathrm{CB}}$.
+Finally, a fit of the \BB-enhanced \Mbc distributions is performed, according to the corrected \Mbc fitting model in \Cref{tab:fitting_init_params_updated}.
+Unlike in \Cref{fig:mbc_qqbar_ehnhanced_fits}, the number of expected \BB events is no longer negligible.
+Therefore, this validation serves as a test of the fit bias and the background subtraction procedure.
+The \Mbc fits on Belle II \MC and data are shown in \Cref{fig:mbc_bbar_ehnhanced_fits_mc,fig:mbc_bbar_ehnhanced_fits_data}, respectively.
+The Figures also show the extracted good tag-\B meson counts as normalisations of the Crystal Ball \PDF, $\mathcal{N}_{\mathrm{CB}}$.
 \begin{figure}[htbp!]
     \centering
     \subcaptionbox{\label{fig:mbc_bbar_ehnhanced_mc_1p4}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/bbbar_enhanced_fits/MC_MbcFit_1p4to1p6ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/bbbar_enhanced_fits/MC_MbcFit_1p4to1p6ppdf.pdf}
     }
     \subcaptionbox{\label{fig:mbc_bbar_ehnhanced_mc_1p6}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/bbbar_enhanced_fits/MC_MbcFit_1p6to1p8ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/bbbar_enhanced_fits/MC_MbcFit_1p6to1p8ppdf.pdf}
     }
     \subcaptionbox{\label{fig:mbc_bbar_ehnhanced_mc_1p8}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/bbbar_enhanced_fits/MC_MbcFit_1p8to2p0ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/bbbar_enhanced_fits/MC_MbcFit_1p8to2p0ppdf.pdf}
     }
     \subcaptionbox{\label{fig:mbc_bbar_ehnhanced_mc_2p0}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/bbbar_enhanced_fits/MC_MbcFit_2p0to2p1ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/bbbar_enhanced_fits/MC_MbcFit_2p0to2p1ppdf.pdf}
     }
     \subcaptionbox{\label{fig:mbc_bbar_ehnhanced_mc_2p1}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/bbbar_enhanced_fits/MC_MbcFit_2p1to2p2ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/bbbar_enhanced_fits/MC_MbcFit_2p1to2p2ppdf.pdf}
     }
     \subcaptionbox{\label{fig:mbc_bbar_ehnhanced_mc_2p2}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/bbbar_enhanced_fits/MC_MbcFit_2p2to2p3ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/bbbar_enhanced_fits/MC_MbcFit_2p2to2p3ppdf.pdf}
     }
     \subcaptionbox{\label{fig:mbc_bbar_ehnhanced_mc_2p3}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/bbbar_enhanced_fits/MC_MbcFit_2p3to2p4ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/bbbar_enhanced_fits/MC_MbcFit_2p3to2p4ppdf.pdf}
     }
     \subcaptionbox{\label{fig:mbc_bbar_ehnhanced_mc_2p4}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/bbbar_enhanced_fits/MC_MbcFit_2p4to2p5ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/bbbar_enhanced_fits/MC_MbcFit_2p4to2p5ppdf.pdf}
     }
     \subcaptionbox{\label{fig:mbc_bbar_ehnhanced_mc_2p5}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/bbbar_enhanced_fits/MC_MbcFit_2p5to2p6ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/bbbar_enhanced_fits/MC_MbcFit_2p5to2p6ppdf.pdf}
     }
     \subcaptionbox{\label{fig:mbc_bbar_ehnhanced_mc_2p6}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/bbbar_enhanced_fits/MC_MbcFit_2p6to2p7ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/bbbar_enhanced_fits/MC_MbcFit_2p6to2p7ppdf.pdf}
     }
     \subcaptionbox{\label{fig:mbc_bbar_ehnhanced_mc_2p7}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/bbbar_enhanced_fits/MC_MbcFit_2p7to5p0ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/bbbar_enhanced_fits/MC_MbcFit_2p7to5p0ppdf.pdf}
     }
     \caption{\label{fig:mbc_bbar_ehnhanced_fits_mc}
-    The fits on Belle II simulation corresponding to 1.6~\invfb with the selection 
-    that enhances non-\BtoXsgamma events, as discussed in \Cref{sec:continuum_spectrum_validation}.
+    The fits on Belle II simulation corresponding to 1.6~\invab with the selection 
+    that enhances non-\BtoXsgamma events, as discussed in \Cref{sec:bb_background_validation}.
     The fitting model from \Cref{tab:fitting_init_params_updated} is used,
-    which is defined on the `corrected'-\Mbc to account for variations $\sqrt{s}$ in Belle II data.
+    which is defined on the corrected \Mbc to account for variations of $\sqrt{s}$ in Belle II data.
     A good description of the \Mbc distributions can be seen throughout the \EB bins.
     }
 \end{figure}
 \begin{figure}[htbp!]
     \centering
     \subcaptionbox{\label{fig:mbc_bbar_ehnhanced_data_1p4}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/bbbar_enhanced_fits/DATA_MbcFit_1p4to1p6ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/bbbar_enhanced_fits/DATA_MbcFit_1p4to1p6ppdf.pdf}
     }
     \subcaptionbox{\label{fig:mbc_bbar_ehnhanced_data_1p6}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/bbbar_enhanced_fits/DATA_MbcFit_1p6to1p8ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/bbbar_enhanced_fits/DATA_MbcFit_1p6to1p8ppdf.pdf}
     }
     \subcaptionbox{\label{fig:mbc_bbar_ehnhanced_data_1p8}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/bbbar_enhanced_fits/DATA_MbcFit_1p8to2p0ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/bbbar_enhanced_fits/DATA_MbcFit_1p8to2p0ppdf.pdf}
     }
     \subcaptionbox{\label{fig:mbc_bbar_ehnhanced_data_2p0}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/bbbar_enhanced_fits/DATA_MbcFit_2p0to2p1ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/bbbar_enhanced_fits/DATA_MbcFit_2p0to2p1ppdf.pdf}
     }
     \subcaptionbox{\label{fig:mbc_bbar_ehnhanced_data_2p1}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/bbbar_enhanced_fits/DATA_MbcFit_2p1to2p2ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/bbbar_enhanced_fits/DATA_MbcFit_2p1to2p2ppdf.pdf}
     }
     \subcaptionbox{\label{fig:mbc_bbar_ehnhanced_data_2p2}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/bbbar_enhanced_fits/DATA_MbcFit_2p2to2p3ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/bbbar_enhanced_fits/DATA_MbcFit_2p2to2p3ppdf.pdf}
     }
     \subcaptionbox{\label{fig:mbc_bbar_ehnhanced_data_2p3}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/bbbar_enhanced_fits/DATA_MbcFit_2p3to2p4ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/bbbar_enhanced_fits/DATA_MbcFit_2p3to2p4ppdf.pdf}
     }
     \subcaptionbox{\label{fig:mbc_bbar_ehnhanced_data_2p4}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/bbbar_enhanced_fits/DATA_MbcFit_2p4to2p5ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/bbbar_enhanced_fits/DATA_MbcFit_2p4to2p5ppdf.pdf}
     }
     \subcaptionbox{\label{fig:mbc_bbar_ehnhanced_data_2p5}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/bbbar_enhanced_fits/DATA_MbcFit_2p5to2p6ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/bbbar_enhanced_fits/DATA_MbcFit_2p5to2p6ppdf.pdf}
     }
     \subcaptionbox{\label{fig:mbc_bbar_ehnhanced_data_2p6}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/bbbar_enhanced_fits/DATA_MbcFit_2p6to2p7ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/bbbar_enhanced_fits/DATA_MbcFit_2p6to2p7ppdf.pdf}
     }
     \subcaptionbox{\label{fig:mbc_bbar_ehnhanced_data_2p7}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/bbbar_enhanced_fits/DATA_MbcFit_2p7to5p0ppdf.pdf}
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/bbbar_enhanced_fits/DATA_MbcFit_2p7to5p0ppdf.pdf}
     }
     \caption{\label{fig:mbc_bbar_ehnhanced_fits_data}
     The fits on Belle II data corresponding to 189~\invfb with the selection 
-    that enhances non-\BtoXsgamma events, as discussed in \Cref{sec:continuum_spectrum_validation}.
+    that enhances non-\BtoXsgamma events, as discussed in \Cref{sec:bb_background_validation}.
     The fitting model from \Cref{tab:fitting_init_params_updated} is used,
-    which is defined on the `corrected'-\Mbc to account for variations $\sqrt{s}$ in Belle II data.
+    which is defined on the corrected \Mbc to account for variations of $\sqrt{s}$ in Belle II data.
     A good description of the \Mbc distributions can be seen throughout the \EB bins.
     }
 \end{figure}
 
 Despite a vastly varying number of events and shapes of the total distribution throughout different \EB intervals,
 the fitter performs well.
-The extracted $\mathcal{N}_{\mathrm{CB}}^{\mathrm{DATA}}$ $\mathcal{N}_{\mathrm{CB}}^{\mathrm{MC}}$ (corresponding to good tag-\B meson yields in data and simulation, respectively)
+The extracted $\mathcal{N}_{\mathrm{CB}}^{\mathrm{DATA}}$ and $\mathcal{N}_{\mathrm{CB}}^{\mathrm{MC}}$ (corresponding to good tag-\B meson yields in data and simulation, respectively)
 are directly compared.
 Correcting the simulation based on \Cref{tab:correction_table} (with inverted \piVeto and \etaVeto correction as shown in \Cref{eq:correction_transform}) and calculating the difference between the two is expected to yield a value consistent with zero.
-The resulting difference, with appropriate statistical and correction uncertainties applied, is shown in \Cref{fig:bbar_enhanced_background_subtraction}.
+The resulting difference, with appropriate statistical and systematic uncertainties applied, is shown in \Cref{fig:bbar_enhanced_background_subtraction}.
 The hypothesised result is observed, confirming the adequacy of the fitter, the validity of the background subtraction procedure and the applied corrections.
 
 \begin{figure}[htbp!]
@@ -370,27 +372,28 @@ The hypothesised result is observed, confirming the adequacy of the fitter, the 
     \includegraphics[width=0.45\textwidth]{figures/data_validation/bbar_enhanced_event_counts.pdf}
     \caption{\label{fig:bbar_enhanced_background_subtraction}
     The number of events after subtracting good tag-\B meson counts extracted from fits in Belle~II simulation (\Cref{fig:mbc_bbar_ehnhanced_fits_mc}),
-    from that in Belle~II data (\Cref{fig:mbc_bbar_ehnhanced_fits_data}).
+    from that in Belle~II data (\Cref{fig:mbc_bbar_ehnhanced_fits_data}) in the \BB-background enhanced samples (see \Cref{sec:bb_background_validation}).
     The simulated values are corrected for luminosity and to better represent data based on studies in \Cref{sec:corrections}.
     The background subtraction procedure is further detailed in \Cref{sec:background_subtraction,sec:background_subtraction_validation_mc}.
     Here, an agreement with 0 is expected in all \EB bins (no \BtoXsgamma events are present).
+    The inner (outer) error bars correspond to the statistical (total) uncertainty.
     }
 \end{figure}
 
-\subsection{Validation outside of the \texorpdfstring{\EB}{EB} signal-region}\label{sec:sidebands_validation}
+\subsection{Validation outside of the \texorpdfstring{\EB}{EB} signal region}\label{sec:sidebands_validation}
 
 In \Cref{sec:continuum_spectrum_validation,sec:continuum_mbc_validation,sec:bb_background_validation} it was seen that the background simulation of \qqbar and \BB events,
 although not perfect, is described adequately by the \Mbc fitter yielding a correct and valid estimation of good tag-\B mesons in data and simulation.
 The last validation performed for background simulation is done outside of the \EB signal region.
-As discussed in \Cref{sec:binning}, the $\EB\in(1.4-1.8)~\gev$ and $2.7<\EB~\gev$ intervals were selected as sideband regions, 
+As discussed in \Cref{sec:binning}, the $\EB\in(1.4-1.8)~\gev$ and $\EB>2.7~\gev$ intervals are selected as sideband regions, 
 due to a small number of \BtoXsgamma events and a low signal-to-background ratio expected there.
 The same argumentation makes the regions excellent for background validation.
 
 The \EB distribution for the three \EB sideband intervals is shown in \Cref{fig:sidebands_eb}.
 A striking difference in normalisation of nearly 20\% is observed, 
-which seems similar to that observed in \Cref{fig:qqbar_enhanced_eb_validation}.
+seemingly similar to that observed in \Cref{fig:qqbar_enhanced_eb_validation}.
 Interestingly, here, the \epem\ra\qqbar component is thought to be strongly suppressed by \texttt{BDT~output}.
-To better understand this discrepancy, the corrected-\Mbc distributions in each \EB sideband bin are inspected.
+To better understand this discrepancy, the corrected \Mbc distributions in each \EB sideband bin are inspected.
 This is shown in \Cref{fig:sidebands_mbc}.
 \begin{figure}[htbp!]
     \centering
@@ -407,6 +410,7 @@ This is shown in \Cref{fig:sidebands_mbc}.
     The \EB distribution of the \EB sideband regions (see \Cref{sec:sidebands_validation}).
     The low-\EB region side sees a roughly 20\% discrepancy.
     The shaded area represents the signal region which is blinded: during the validation step, it was not analysed or viewed.
+    The uncertainties in data are statistical, whereas \MC also includes systematic uncertainties from the corrections in \Cref{tab:correction_table}.
     }
 \end{figure}
 \begin{figure}[htbp!]
@@ -418,26 +422,28 @@ This is shown in \Cref{fig:sidebands_mbc}.
         \includegraphics[width=0.31\textwidth]{figures/data_validation/sidebands_mbc_2.pdf}
     }
     \subcaptionbox{\label{fig:sidebands_mbc3}}{
-        \includegraphics[width=0.3\textwidth]{figures/data_validation/sidebands_mbc_3.pdf}
-    }1
+        \includegraphics[width=0.31\textwidth]{figures/data_validation/sidebands_mbc_3.pdf}
+    }
     \caption{\label{fig:sidebands_mbc} 
     The \Mbc distribution of the \EB sideband regions (see \Cref{sec:sidebands_validation}).
-    The figures showcase different \EB ranges, as indicated in the right corner of each Figure.
+    The Figures showcase different \EB ranges, as indicated in the left corner of each Figure.
     Interestingly, a similar low-\Mbc discrepancy is observed with the enhanced-continuum sample, shown in \Cref{fig:qqbar_enhanced_mbc}.
+    The uncertainties in data are statistical, whereas \MC also includes systematic uncertainties from the corrections in \Cref{tab:correction_table}.
     }
 \end{figure}
 
 The results of \Cref{fig:sidebands_eb,fig:sidebands_mbc} indicate that Belle~II data, especially the low-\Mbc region, has a clear excess compared to simulation.
 While some discrepancy is expected considering the results of \Cref{fig:qqbar_enhanced_mbccorrected},
-the larger scale of the discrepancy is confusing -- given the fact that this was not observed in \Cref{fig:bbbar_enhanced_mbccorrected}.
+the larger scale of the discrepancy is confusing, given the fact that this was not observed in \Cref{fig:bbbar_enhanced_mbccorrected}.
 Although more studies on this subject are necessary to fully understand the discrepancy, 
-it is attributed to a \BB-background component which is not well modelled in Belle~II simulation, the potential origin of which is shortly discussed here.
+it is attributed to a \BB-background component which is not captured in the Belle~II simulation. 
+The potential origin of which is shortly discussed here.
 
 In particular, consider the removal of \texttt{zernikeMVA} selection.
 The resulting \EB sideband distribution and the \Mbc distribution are shown in \Cref{fig:nozmva_test}.
 In this case, the agreement between data and simulation in the \EB-sideband spectrum appears to be near-perfect, as seen in \Cref{fig:sideband_eb_nozmva}.
 Indeed, even considering the \Mbc distribution for $\EB\in(1.4,1.6)~\gev$ in \Cref{fig:sideband_mbc_nozmva}, one clearly observes a better overall-agreement.
-These observations strongly support the previous hypothesis that a hadronic cluster is not well-modelled in simulation.
+These observations strongly support a hypothesis that hadronic clusters targeted by \ZMVA are differently affected in \MC and data.
 The component cannot be common to \epem\ra\qqbar events, because the effect was not seen in off-resonance data in \Cref{sec:continuum_spectrum_validation}.
 As a result, this component is suppressed in Belle~II simulation by a selection on the \texttt{zernikeMVA} observable, but this does happen in Belle~II data.
 \begin{figure}[htbp!]
@@ -451,27 +457,30 @@ As a result, this component is suppressed in Belle~II simulation by a selection 
         \includegraphics[width=0.31\textwidth]{figures/data_validation/Bboth_sidebands_zmva.pdf}
     }
     \caption{\label{fig:nozmva_test}   The \EB distributions in the \EB sideband region (\Cref{fig:sideband_eb_nozmva})
-    and the \Mbc distribution in $1.4<\EB<1.6~\gev$ regions in both cases the optimised requirement on $\mathtt{zernikeMVA}$.
-    \Cref{fig:zmva_discrepancy} is the full-range of the \ZMVA distribution.
+    and the \Mbc distribution in $1.4<\EB<1.6~\gev$ regions.
+    In both cases, the requirement on the $\mathtt{zernikeMVA}$ is removed.
+    \Cref{fig:zmva_discrepancy} is the full range of the \ZMVA distribution.
     The \Cref{fig:sideband_eb_nozmva,fig:sideband_mbc_nozmva} can be directly compared with \Cref{fig:Bboth_sidebands_eb,fig:sidebands_mbc3}, respectively.
-    Without the $\mathtt{zernikeMVA}$ the agreement between data and simulation appears to be improved indicating that a component in data is not simulated adequately.
+    Without the $\mathtt{zernikeMVA}$, the agreement between data and simulation appears to be improved.
+    This indicates that a component in data is not simulated adequately.
     The presence of a mismodelled component in the Belle~II simulation is apparent when inspecting the \ZMVA distribution.
     }
 \end{figure}
 
-These considerations are supported by inspecting the \ZMVA distribution in the $\mbox{\EB\in(1.4,1.8)~\gev}$ region, as seen in \Cref{fig:zmva_discrepancy}.
-While simulation contains a sharp peak near 0, this is not evident in Belle~II data, which on the other hand has an excess at high-\ZMVA.
+These considerations are supported by inspecting the \ZMVA distribution in the \mbox{$\EB\in(1.4,1.8)~\gev$} region, as seen in \Cref{fig:zmva_discrepancy}.
+While simulation contains a sharp peak near~0, this is not evident in Belle~II data, which has an excess at larger values of \ZMVA.
 Hence, the background suppression efficiency is not well-represented in \MC.
 These results are also conflated with the differences in the \Mbc endpoint, making an exact evaluation of the effect difficult at this stage.
 Independent studies of the \ZMVA distributions, performed similarly to the photon detection efficiency study described in \Cref{sec:photon_efficiency}, did not observe the presence of such a peak.
 This may imply that this type of selection is particular for photon candidates from \BB events misidentified as high-energy photons.
-Therefore, it was concluded that additional studies of \ZMVA in the context of radiative and inclusive analyses will be necessary for future iterations of this analysis.
+Therefore, it was concluded that additional studies of \ZMVA in the context of radiative and inclusive analyses will be necessary for future versions of this analysis.
 
-While these observations are alarming, so far all the results have shown that the \Mbc fitter and background-subtraction procedure were robust against the
+While these observations are alarming, so far all the results have shown that the \Mbc fitter and background subtraction procedure are robust against the
 continuum \Mbc distribution shape differences, as seen in \Cref{sec:continuum_mbc_validation,sec:bb_background_validation}.
 Therefore, this analysis does not replace or remove the \ZMVA requirement.
 
-The fit is performed on the full sample of data, however, the results from the signal region, $\EB\in(1.8,2.7)$ are hidden and not investigated at this stage.
+The validity of such an assumption is tested by performing the \Mbc fit on the full sample of data. 
+The results from the signal region, $\EB\in(1.8,2.7)$ remain blinded at this stage.
 The individual \Mbc fits on the \EB sideband regions are shown for data in \Cref{fig:sideband_data_fit}, and for simulation in \Cref{fig:sideband_mc_fit}.
 \begin{figure}[htbp!]
     \centering
@@ -488,7 +497,7 @@ The individual \Mbc fits on the \EB sideband regions are shown for data in \Cref
     The \Mbc fits on Belle II data corresponding to 189~\invfb of data in \EB sideband regions,
     as discussed in \Cref{sec:sidebands_validation}.
     The fitting model from \Cref{tab:fitting_init_params_updated} is used,
-    which is defined on the `corrected'-\Mbc to account for variations $\sqrt{s}$ in Belle II data.
+    which is defined on the corrected \Mbc to account for variations of $\sqrt{s}$ in Belle II data.
     A good description of the \Mbc distributions can be seen throughout the \EB bins.
     }
 \end{figure}
@@ -504,30 +513,30 @@ The individual \Mbc fits on the \EB sideband regions are shown for data in \Cref
         \includegraphics[width=0.31\textwidth]{figures/data_validation/sidebands_fit/NOSIGNALMC_MbcFit_2p7to5p0ppdf.pdf}
     }
     \caption{\label{fig:sideband_mc_fit}    
-    The \Mbc fits on Belle II simulation corresponding to 189~\invfb of data in \EB sideband regions,
+    The \Mbc fits on Belle II simulation corresponding to 1.6~\invab of data in the \EB sideband regions,
     as discussed in \Cref{sec:sidebands_validation}.
-    These distributions contain no \BtoXsgamma events, but the number of radiative transitions in these energy ranges is negligible, regardless.
+    Any \BtoXsgamma events in these datasets are removed.
     The fitting model from \Cref{tab:fitting_init_params_updated} is used,
-    which is defined on the `corrected'-\Mbc to account for variations $\sqrt{s}$ in Belle II data.
+    which is defined on the `corrected'-\Mbc to account for variations of $\sqrt{s}$ in Belle II data.
     A good description of the \Mbc distributions can be seen throughout the \EB bins.
     }
 \end{figure}
 
 The summarised results of the good tag-\B meson yields estimated in the \Mbc fits are shown in \Cref{fig:sidebands_background_versus_data}.
-In the high-\EB sideband, no peaking tag-\B mesons are observed in data or simulation, which is exactly consistent with the naive expectations.
+In the high-\EB sideband, no peaking tag-\B mesons are observed in data or simulation, which is exactly consistent with the expectations.
 In the low-\EB region, a large number of events is observed.
 The data points are compatible with the background expectation, although the estimates in both intervals are higher than the expected background.
-Subtracting the background expectation from the good tag-\B meson yield in data results in \Cref{fig:sidebands_subtracted}.
+Subtracting the background expectation from the good tag-\B meson count in data results in \Cref{fig:sidebands_subtracted}.
 A similar observation follows: although both values are (nearly) compatible with zero,
-the central values are slightly positive.
+the central values tend to positive values.
 
 \begin{figure}[htbp!]
     \centering
     \includegraphics[width=0.45\textwidth]{figures/data_validation/sidebands_background_vs_data.pdf}
     \caption{\label{fig:sidebands_background_versus_data} The results of fitting the \Mbc on the sideband region in data (see \Cref{sec:sidebands_validation}).
     The values corresponding to data fits are estimated through an \Mbc fit shown in \Cref{fig:sideband_data_fit}.
-    The remaining-\BB background expectations are estimated through \Mbc fits in \Cref{fig:sideband_mc_fit} and \Cref{fig:nosignal_fits_signal}.
-    The signal region in this figure is blinded, therefore only simulation results are shown.
+    The remaining \BB background expectations are estimated through \Mbc fits in \Cref{fig:sideband_mc_fit} and \Cref{fig:nosignal_fits_signal}.
+    The signal region in this Figure is blinded.
     The extracted results from the data fit and simulated background expectations 
     are compatible within their full uncertainty, but both points are higher than the background estimation.
     }
@@ -541,7 +550,7 @@ the central values are slightly positive.
     \subcaptionbox{\label{fig:sidebands_subtracted_corrected}}{
         \includegraphics[width=0.45\textwidth]{figures/data_validation/sideband_event_counts_corrected.pdf}
     }
-    \caption{\label{fig:sidebands_subtracted_figures} The results of subtraction of the remaining-\BB background after the fit on Belle~II data.
+    \caption{\label{fig:sidebands_subtracted_figures} The results of subtraction of the remaining \BB background after the fit on Belle~II data.
     \Cref{fig:sidebands_subtracted} show the results with no correction factor applied.
     \Cref{fig:sidebands_subtracted_corrected} includes an 8.7\% scaling factor for the simulated background values.
     The signal region, denoted by the shaded area, is blinded at this stage.
@@ -552,10 +561,10 @@ the central values are slightly positive.
 \end{figure}
 
 The total number of events in the low-\EB sideband is $2698\pm139$ (expected to be predominantly background, see \Cref{sec:binning}).
-The background expectation from simulation in the same region is $2483\pm130$.
+The background expectation from \MC in the same region is $2483\pm130$.
 Taking the ratio of these values yields $1.087\pm0.080$.
-As this value is not compatible with unity within $1\sigma$, a background scaling of 8.7\% is adopted.
-100\% of the scaling will also be adopted as a systematic uncertainty later.
+As this value is not compatible with unity within $1$ standard deviation, a background scaling of 8.7\% is adopted.
+100\% of the scaling is also be adopted as a systematic uncertainty later.
 The scaled-background-subtracted data fit yields are shown in \Cref{fig:sidebands_subtracted_corrected}.
 By construction, they are fully compatible with zero.
 
