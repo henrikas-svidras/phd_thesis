@@ -155,17 +155,24 @@ The uncertainty of the hybrid model is evaluated by taking into account:
     \item Inclusive model parameter variation envelope, as shown in \Cref{fig:inclusive_reweighted}, $\sigma_{\mathrm{var}}$.
 \end{itemize}
 These components are evaluated based on the values discussed in this Section and \Cref{tab:btosgamma_bfs}.
-They are visually shown for a selected \BtoXsgamma photon energy spectrum binning in \Cref{fig:hybrid_uncertainty}.
+They are visually shown for a selected \BtoXsgamma photon energy spectrum binning in \Cref{fig:hybrid_uncertainty_all}.
 The uncertainty is dominated by \BtoXsgamma model variation uncertainties, except in the interval where $\B\ra\Kstar(892)\gamma$ dominates.
 There the branching fraction uncertainty of the resonant decay is leading.
 The uncertainty related to the \BtoXsgamma inclusive branching fraction model is smaller than the other two.
 \begin{figure}[htbp!]
     \centering
+    \subcaptionbox{\label{fig:hybrid_uncertainty}}{%
     \includegraphics[width=0.45\textwidth]{figures/data_samples/hybrid_model_uncertainties.pdf}
-    \caption{\label{fig:hybrid_uncertainty}The inclusive $X_s$ model based on \Cref{eq:simba_result_kinetic}
-    overlaid with uncertainties from the resonant, inclusive branching fractions and the inclusive model parameters.
-    The definitions of the uncertainties are given in the text.
+    }
+    \subcaptionbox{\label{fig:hybrid_uncertainty_correlation}}{%
+    \includegraphics[width=0.45\textwidth]{figures/data_samples/unfolding_correlation.pdf}
+    }
+    \caption{\label{fig:hybrid_uncertainty_all}
+    The inclusive $X_s$ model based on \Cref{eq:simba_result_kinetic} is shown in \Cref{fig:hybrid_uncertainty}.
     For comparison, the Kagan-Neubert model with the same parameters is also shown.
+    The hybrid-signal model is overlaid with uncertainties from the resonant, inclusive branching fractions and the inclusive model parameters.
+    The definitions of the uncertainties are given in the text.
+    The correlation of the total uncertainty is given in \Cref{fig:hybrid_uncertainty_correlation}.
     }
 \end{figure}
 

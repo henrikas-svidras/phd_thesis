@@ -171,17 +171,15 @@ The systematic uncertainty is considered uncorrelated between different \EB bins
 The unfolding uncertainties are calculated for every unfolding factor calculated in \Cref{sec:signal_unfolding}.
 Each correction factor obtains an uncertainty based on the hybrid-signal model, shown in \Cref{fig:hybrid_uncertainty}.
 The resulting unfolding correction factors and their uncertainties are summarised in \Cref{tab:unfolding_uncertainties}.
-They are considered correlated based on the correlation matrix evaluated when building the hybrid-signal model.
+They are considered correlated based on the correlation matrix evaluated when building the hybrid-signal model as seen in \Cref{fig:hybrid_uncertainty_all}.
 
 \begin{table}[htbp!]
     \centering
-    
     \caption{\label{tab:unfolding_uncertainties} Bin-by-bin correction factors for unfolding based on \Cref{fig:unfolding_setup}. 
     They are calculated on a large simulated sample and therefore have negligible statistical uncertainties.
     The systematic uncertainty calculation approach includes \EB spectrum shape parameter uncertainties, 
     \BtoXsgamma and $B\to\Kstar(892)\gamma$ branching fraction uncertainties as discussed in  \Cref{sec:signal_model}.
     }
-
     \input{tables/unfolding_uncertainties.tex}
 \end{table}
 
@@ -191,5 +189,5 @@ The number of \B mesons in the analysed Belle~II data sample is estimated by an 
 with a data-driven method in which off-resonance data are used to subtract the non-\BB contribution from the on-resonance data.
 It is found to be:
 \begin{equation}\label{eq:b_meson_count}
-    N_B = 2\times(198\pm3)\times10^6.
+    N_B = 2\cdot(198\pm3)\cdot10^6.
 \end{equation}
