@@ -41,3 +41,21 @@
             doi=true,
             dashed=false
             block=none]{biblatex}
+
+% Collaboration field
+\DeclareSourcemap{
+    \maps[datatype=bibtex,overwrite=true]{
+        \map{
+        \step[fieldsource=Collaboration, final=true]
+        \step[fieldset=usera, origfieldval, final=true]
+        }
+    }
+    }
+    \renewbibmacro*{author}{%
+        \iffieldundef{usera}{%
+        \printnames{author}%
+        }{%
+        \printnames{author}, \texttt{\printfield{usera}} collaboration%
+        }%
+    }%
+    
