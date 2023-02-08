@@ -9,8 +9,8 @@ This Section presents the results of the analysis.
 Following the \Mbc fitting strategy described in \Cref{sec:fitting_setup} and the model in \Cref{tab:fitting_init_params_updated},
 the fits on the signal region of Belle~II data are performed.
 They are shown in \Cref{fig:data_fits_signal}.
-Together with fits in \Cref{fig:sideband_data_fit}, it gives all the fits for the defined \EB intervals in \Cref{sec:binning}.
-The extracted $\mathcal{N}_{\mathrm{CB}}$ are shown in the top right corner of each figure.
+Together with fits in \Cref{fig:sideband_data_fit}, it gives all the data fits for the defined \EB intervals in \Cref{sec:binning}.
+The extracted $\mathcal{N}_{\mathrm{CB}}$ are shown in the top right corner of each Figure.
 \begin{figure}[htbp!]
     \centering
     \subcaptionbox{\label{fig:data_fit_1p8_2p0}}{
@@ -41,15 +41,15 @@ The extracted $\mathcal{N}_{\mathrm{CB}}$ are shown in the top right corner of e
     The \EB signal region fits on the Belle~II data, based on the fitting model in \Cref{tab:fitting_init_params_updated}.
     The fits are performed as unbinned negative log-likelihood fits.
     The different \EB intervals are shown in the top right corner of each Figure, 
-    together with the extracted good tag-\B meson yield, $\mathcal{N}_{\mathrm{CB}}$, which in this case corresponds to remaining good tag-\B backgrounds including \BtoXsgamma and other \BB decay channels.
+    together with the extracted good tag-\B meson yield, $\mathcal{N}_{\mathrm{CB}}$, which in this case corresponds to \BtoXsdgamma and other \BB decay channels.
     The fits outside of the signal region are provided in \Cref{fig:sideband_data_fit}.
     }
 \end{figure}
 
-The fit results on the Belle~II simulation, with all \BtoXsgamma events removed, are shown in \Cref{fig:nosignal_fits_signal}.
-The extracted number of \BB background events is shown in the top right corner of each figure.
+The fit results on the Belle~II \MC with all \BtoXsgamma events removed are shown in \Cref{fig:nosignal_fits_signal}.
+The extracted number of \BB background events is shown in the top right corner of each Figure.
 These values are corrected, scaled, and are equal to the ones listed in \Cref{tab:background_uncertainties}.
-Together with fits in \Cref{fig:sideband_mc_fit}, it gives all the fits for the defined \EB intervals in \Cref{sec:binning}.
+Together with fits in \Cref{fig:sideband_mc_fit}, it gives all the \MC fits for the defined \EB intervals in \Cref{sec:binning}.
 \begin{figure}[htbp!]
     \centering
     \subcaptionbox{\label{fig:nosignal_fit_1p8_2p0}}{
@@ -81,17 +81,17 @@ Together with fits in \Cref{fig:sideband_mc_fit}, it gives all the fits for the 
     The fitting model is summarised in \Cref{tab:fitting_init_params_updated}.
     The fits are performed as unbinned negative log-likelihood fits.
     The different \EB intervals are shown in the top right corner of each Figure, 
-    together with the extracted good tag-\B meson yield, $\mathcal{N}_{\mathrm{CB}}$, which in this case corresponds only to non-\BtoXsdgamma events with good tag-\B mesons.
+    together with the extracted good tag-\B meson yield, $\mathcal{N}_{\mathrm{CB}}$, which in this case corresponds only to non-\BtoXsdgamma events.
     The fits outside of the signal region are provided in \Cref{fig:sideband_data_fit}.
     }
 \end{figure}
 
 The number of good tag-\B events, evaluated from fits in Belle~II data (\Cref{fig:sideband_data_fit,fig:data_fits_signal}),
 are summarised in \Cref{fig:final_fit_results}.
-The figure also includes results from fots on Belle~II simulation with all \BtoXsgamma events removed (\Cref{fig:sideband_mc_fit,fig:nosignal_fits_signal}).
+The figure also includes results from fits on Belle~II \MC with all \BtoXsgamma events removed (\Cref{fig:sideband_mc_fit,fig:nosignal_fits_signal}).
 The latter provides the expectations of \BB backgrounds that remain in Belle~II data after the fit.
 The simulation is corrected as discussed in \Cref{sec:corrections}, with appropriate uncertainties from \Cref{sec:systematic_uncertainty} included.
-The \Cref{fig:final_fit_results_lin} shows the $\mathcal{N}_{\mathrm{CB}}$ in linear axis, which makes the comparison of low-\EB region easier. 
+The \Cref{fig:final_fit_results_lin} shows the $\mathcal{N}_{\mathrm{CB}}$ in linear scale, which makes the comparison of low-\EB region easier. 
 In this region, the number of signal events is expected to be much larger than any contribution from \BtoXsgamma events.
 On the other hand, \Cref{fig:final_fit_results_log} shows the results in a logarithmic axis, which makes it evident that an excess over the remaining \BB background is present.
 This excess in data is evidence of \BtoXsdgamma events.
@@ -105,10 +105,10 @@ This excess in data is evidence of \BtoXsdgamma events.
         \includegraphics[width=0.45\textwidth]{figures/final_results/background_vs_data_final_log.pdf}
     }
     \caption{\label{fig:final_fit_results}
-        The results of fits \Cref{fig:sideband_data_fit,fig:sideband_mc_fit,fig:data_fits_signal,fig:nosignal_fits_signal}.
+        The results of fits in \Cref{fig:sideband_data_fit,fig:sideband_mc_fit,fig:data_fits_signal,fig:nosignal_fits_signal}.
         All corrections discused in \Cref{tab:correction_table} are applied, 
         and relevant uncertainties from \Cref{tab:background_uncertainties,tab:fit_uncertainties} are included.
-        \Cref{fig:final_fit_results_lin} show the results in a linear, whereas \Cref{fig:final_fit_results_log} in a logarithmic axis.
+        \Cref{fig:final_fit_results_lin} show the results in a linear, whereas \Cref{fig:final_fit_results_log} in a logarithmic scale.
         The excess seen in Belle~II data is evidence of the presence of \BtoXsdgamma events.
     }
 \end{figure}
@@ -129,13 +129,13 @@ The background-subtracted photon energy spectrum is shown in \Cref{fig:subtracte
         \includegraphics[width=0.45\textwidth]{figures/final_results/reco_spectrum_overlayed_signal_region.pdf}
     }
     \caption{\label{fig:subtracted_results}
-        The subtracted spectrum extracted from the Belle~II data after subtracting the remaining non-\BtoXsdgamma background,
+        The counts of events consistent with radiative decays extracted from the fitted Belle~II data after subtracting the remaining non-\BtoXsdgamma background,
         based on results summarised in \Cref{fig:final_fit_results}.
-        The total uncertainty, which includes background subtraction and fitting uncertainties is included, without efficiency corrections or unfolding.
-        The data points are overlaid with the simulated expectation, which shows the hybrid-signal model, defined in \Cref{sec:signal_model}.
+        The total uncertainty includes background subtraction and fitting uncertainties, without efficiency corrections or unfolding.
+        The data points are overlaid with the simulated expectation which shows the hybrid-signal model, defined in \Cref{sec:signal_model}.
         \Cref{fig:subtracted_spectrum} shows all data points, including the sideband region.
         \Cref{fig:subtracted_spectrum_signal_region} is focused only on the signal region.
-        The legend is shared for both figures.
+        The legend is shared for both Figures.
     }
 \end{figure}
 
@@ -143,21 +143,21 @@ The background-subtracted photon energy spectrum includes all systematic uncerta
 to background subtraction (\Cref{sec:background_uncertainties})
 and fitting uncertainties (\Cref{sec:fit_uncertainties}).
 The results agree very well with the simulated expectation from the hybrid-signal model.
-The pulls (see \Cref{eq:pull_distribution}) calculated with respect to the hybrid-signal model expectation are evaluated 
+The pulls (see \Cref{eq:pull_distribution}) are calculated with respect to the hybrid-signal model expectation are evaluated 
 and show that all the measured data points agree with the expectation within $1$ to $2\sigma$.
 
 The measured number of events for the signal region in each \EB interval, as well as a cumulative count are given in \Cref{tab:observed_events}.
 The statistical and total uncertainties are depicted separately.
-The cumulative count is performed starting at the high-\EB intervals and cumulatively adding the contributions from lower-\EB intervals (with systematic uncertainties summed appropriately to their correlation).
+The cumulative count is performed starting at the high-\EB intervals and cumulatively adding the contributions from lower \EB intervals (with systematic uncertainties summed appropriately to their correlation).
 This is done because the low end of the \EB spectrum has the highest uncertainties and the smallest precision.
 Using \Cref{eq:btodgamma_subtraction}, the \BtoXsdgamma counts are transformed to \BtoXsgamma event counts.
-The cumulative and binned results show excellent agreement with the expectation from the hybrid-signal model.
+The cumulative and binned results show excellent agreement with the expectation of the hybrid-signal model.
 
 \begin{table}
     \caption{\label{tab:observed_events}
     The observed number of events (without unfolding) that are consistent with \BtoXsdgamma events in 189~\invfb of Belle~II data.
-    The first half of the table shows the central value, statistical uncertainty and total uncertainty (in brackets) for each \EB interval.
-    The second half of the table shows the cumulative observed number of events (the summation is done from high-\EB, where uncertainties are lower).
+    The first half of the Table shows the central value, statistical uncertainty and total uncertainty (in brackets) for each \EB interval.
+    The second half of the Table shows the cumulative observed number of events (the summation is done from high-\EB, where uncertainties are lower).
     The transformation between \BtoXsdgamma and \BtoXsgamma is performed using the relation in \Cref{eq:btodgamma_subtraction}.
     The expected number of \BtoXsgamma events is provided based on the central values of the hybrid-signal model.
     All results are consistent with the expectations.
@@ -168,33 +168,33 @@ The cumulative and binned results show excellent agreement with the expectation 
 
 \subsection{Partial branching fraction measurement results}\label{sec:partial_branching_fraction_results}
 
-The measurement results provided in \Cref{tab:observed_events} and visualised in \Cref{fig:subtracted_spectrum},
+The measurement results, provided in \Cref{tab:observed_events} and visualised in \Cref{fig:subtracted_spectrum},
 are used to calculate the partial branching fractions of \BtoXsgamma decays.
 To this end they are corrected for efficiency and unfolded.
 The efficiency used for the calculations is provided in \Cref{sec:signal_selection_uncertainties}, 
 whereas the unfolding factors and strategy are described in \Cref{sec:unfolding_systematic}.
 Note that up until now \EB and $\tilde{E}_{\gamma}^B$ were used to explicitly differentiate
-the measured and the `true' (unfolded) photon energy, respectively.
-\textit{In the following two sections only} the \EB notation is used to denote the unfolded photon energy (i.e. the tilde notation is omitted).
+the measured and the true (unfolded) photon energy, respectively.
+\textit{In the following Sections only} the \EB notation is used to denote the unfolded photon energy (i.e. the tilde notation is omitted).
 
-Combining all the results presented in this thesis leads to the following equation for the partial branching fraction:
+Combining all the results presented in this thesis leads to the following form of \Cref{eq:branching_fraction_recipe} for the partial branching fraction:
 \begin{equation}\label{eq:branching_fraction}
-    \frac{\Delta\mathcal{B}(\BtoXsgamma)_i}{\Delta {E^B_{\g}}_{,i}} = \frac{\mathcal{U}_i\times\left(\mathcal{N}^{\mathrm{DATA}}_{\mathrm{CB},i} - 
+    \frac{\Delta\mathcal{B}(\BtoXsgamma)_i}{\Delta {E^B_{\g}}_{,i}} = \frac{\mathcal{U}_i\cdot\left(\mathcal{N}^{\mathrm{DATA}}_{\mathrm{CB},i} - 
                                                                               \mathcal{N}^{\mathrm{non-}\BtoXsdgamma}_{\mathrm{CB},i} - 
                                                                               N_i^{\BtoXdgamma}\right)}
-                                                         {\varepsilon_i \times N_B},
+                                                         {\varepsilon_i \cdot N_B},
 \end{equation}
-where (left to right, top to bottom)
+where (left to right, top to bottom):
 \begin{itemize}
-    \item $i$ is a given \EB interval,
-    \item $\mathcal{U}_i$ is an unfolding factor for interval $i$, based on \Cref{tab:unfolding_uncertainties},
+    \item $i$ is a given \EB interval;
+    \item $\mathcal{U}_i$ is an unfolding factor for interval $i$, based on \Cref{tab:unfolding_uncertainties};
     \item $\mathcal{N}^{\mathrm{DATA}}_{\mathrm{CB},i}$ is the number of good tag-\B mesons in Belle~II data for interval $i$.
-    These values are given in \Cref{tab:observed_events}.
+    These values are given in \Cref{tab:observed_events};
     \item $\mathcal{N}^{\mathrm{non-}\BtoXsgamma}_{\mathrm{CB},i}$ is the number of good tag-\B meson candidates where the signal \B meson does not decay as \BtoXsdgamma, evaluated in Belle~II simulation (corrected for differences in luminosity and modelling) for an interval $i$.
-    These values are given in \Cref{tab:background_uncertainties}.
-    \item $N_i^{\BtoXdgamma}$ is the number of \BtoXdgamma events contributing in for an interval $i$,
-    \item $\varepsilon_i$ is the factorised signal efficiency for interval $i$, defined in \Cref{eq:factorisable_signal_efficiency}, 
-    with values taken from \Cref{tab:signal_selection_uncertainties} and \Cref{eq:tag_efficiency_with_uncertainty},
+    These values are given in \Cref{tab:background_uncertainties};
+    \item $N_i^{\BtoXdgamma}$ is the number of \BtoXdgamma events contributing to an interval $i$;
+    \item $\varepsilon_i$ is the factorised signal efficiency for interval $i$, defined in \Cref{eq:factorisable_signal_efficiency}; 
+    with values taken from \Cref{tab:signal_selection_uncertainties} and \Cref{eq:tag_efficiency_with_uncertainty};
     \item $N_B$ as the number of $B$ mesons in the analysed Belle~II data sample, as given in \Cref{eq:b_meson_count}.
 \end{itemize}
 
@@ -209,8 +209,8 @@ because the unfolding factor for it is 0 (see \Cref{tab:unfolding_uncertainties}
     \centering
     \caption{\label{tab:partial_branching_fractions}
     Results of the partial branching fraction measurement presented in this thesis, based on \Cref{eq:branching_fraction}. 
-    The first part of the table shows the partial branching fractions for each \EB interval, their statistical and systematic uncertainty components.
-    The second part of the table shows the breakdown of the systematic uncertainty, into groups that are defined in \Cref{sec:systematic_uncertainty}. 
+    The first part of the Table shows the partial branching fractions for each \EB interval, their statistical and systematic uncertainty components.
+    The second part of the Table shows the breakdown of the systematic uncertainty into groups that are defined in \Cref{sec:systematic_uncertainty}. 
     Statistical uncertainties remain the dominant component in the analysis.
     Note that signal efficiency and background modelling uncertainties are correlated due to the same correction factors used (see \Cref{sec:corrections}).
     }
@@ -242,15 +242,14 @@ As the results have a large statistical uncertainty component, the correlation o
         \includegraphics[width=0.45\textwidth]{figures/final_results/correlation_matrix_uncertainties.pdf}
     }
     \caption{\label{fig:partial_and_correlation} 
-    The visualisation of results in  \Cref{tab:partial_branching_fractions}.
-    \Cref{fig:partial_branching_fraction} shows th partial branching fractions of \BtoXsgamma 
+    The visualisation of the results in \Cref{tab:partial_branching_fractions}.
+    \Cref{fig:partial_branching_fraction} shows the partial branching fractions of \BtoXsgamma 
     as a function of \EB, measured in 189~\invfb Belle~II data.
     The inner error bars correspond to the statistical uncertainty, whereas the outer ones to the total.
     The measurement results are overlaid with the expectations for the hybrid-signal model, and the associated uncertainty to it, evaluated in \Cref{sec:signal_model}.
     The data results show excellent agreement with the model.
     \Cref{fig:correlation_uncertainty_matrix} shows 
-    the correlation matrix of the partial branching fraction uncertainties.
-    The systematic and statistical correlation is combined.
+    the correlation matrix of the partial branching fraction total uncertainties.
     As the results are statistically dominated, the correlations between different \EB bins are low.
     }
 \end{figure}
@@ -261,28 +260,28 @@ As the measurement employs a selection of $\EB>1.4~\gev$, a full $\mathcal{B}(\B
 Furthermore, the $\EB\in(1.4,1.8)~\gev$ range has a large systematic and statistical uncertainty component.
 Therefore, only an evaluation in the $\EB\in(1.8,2.6)~\gev$ interval from experimental data is feasible.
 The results for thresholds of $1.8~\gev$, $2.0~\gev$ and $2.1~\gev$ are given in \Cref{tab:integrated_branching_fractions}.
-The combined value of the correlated uncertainties becomes dominant at the lowest-\EB threshold, but remains comparable to the statistical uncertainty.
+The combined value of the correlated systematic uncertainties becomes dominant at the low-\EB threshold but remains comparable to the statistical uncertainty.
 
 To compare with the results of other experiments and theoretical values,
-one can use the theoretical extrapolation factors provided in Ref. \cite{Buchmuller:2005zv},
+one can use the theoretical extrapolation factors, provided in Ref.~\cite{Buchmuller:2005zv},
 to evaluate the branching fraction at the threshold of $\EB>1.6~\gev$.
 As it was discussed in \Cref{sec:btosgamma_totalrate_theory}, for \BtoXsgamma total rate evaluation, $\EB>1.6~\gev$ is a conventionally chosen threshold.
-The extrapolated results are also provided in the last column on \Cref{tab:integrated_branching_fractions}.
+The extrapolated results are also provided in the last column of \Cref{tab:integrated_branching_fractions}.
 
 \begin{table}[htbp!]
     \centering
     \caption{\label{tab:integrated_branching_fractions}
-    The integrated \BtoXsgamma branching fractions for different lower-\EB thresholds measured on $189~\invfb$ of Belle~II data.
+    The integrated \BtoXsgamma branching fractions for different low-\EB thresholds measured on $189~\invfb$ of Belle~II data.
     They are evaluated by summing the partial branching fractions in \Cref{tab:partial_branching_fractions}.
     The systematic and statistical uncertainties are denoted in the brackets.
     }
     \input{tables/total_branching_fractions.tex}
 \end{table}
 
-The results presented in \Cref{sec:results} are the main goal of the analysis.
+The results presented in \Cref{sec:results} are the main result of the analysis.
 The discussion related to them, their interpretation and future prospects for \BtoXsgamma are discussed in \Cref{ch:overview}.
 
-\footnotetext[1]{The extrapolation factor is not provided for $\EB=2.1~\gev$ threshold in \cite{Buchmuller:2005zv}.
+\footnotetext[1]{The extrapolation factor is not provided for the $\EB=2.1~\gev$ threshold in \cite{Buchmuller:2005zv}.
                 This result is evaluated by extrapolating linearly and assuming a monotonic increase in uncertainty.
                 This results in an extrapolation factor of $0.870\pm0.024$. 
                 The number should be interpreted with the aforementioned caveats in mind only.}
@@ -293,11 +292,11 @@ The discussion related to them, their interpretation and future prospects for \B
 As discussed in \Cref{sec:btosgamma_totalrate_theory,sec:btosgamma_spectrum_theory} the moments of the \BtoXsgamma
 spectrum are important for the understanding of \BtoXsgamma decay properties.
 The first and second moments of the \BtoXsgamma spectrum are calculated based on the results in \Cref{tab:partial_branching_fractions}.
-They are approximated as a weighted sum of the centre value of \EB intervals, $\mathrm{\Delta\EB}$,
+They are approximated as a weighted sum of the centre value of \EB intervals, $\Delta\EB$,
 with weights corresponding to the partial branching fractions in that \EB interval:
 \begin{align}\label{eq:weighted_sum_moments}
     \begin{split}
-        \expval{\EB} &= \frac{\sum_i f_c(\Delta\EB^{}_{,i})\times  
+        \expval{\EB} &= \frac{\sum_i f_c(\Delta\EB^{}_{,i})\cdot  
                                \frac{\Delta\mathcal{B}(\BtoXsgamma)_i}
                                     {\Delta {E^B_{\g}}_{,i}}}
                              {\sum_i \frac{\Delta\mathcal{B}(\BtoXsgamma)_i}{\Delta {E^B_{\g}}_{,i}}},
@@ -305,23 +304,23 @@ with weights corresponding to the partial branching fractions in that \EB interv
 \end{align} 
 where $f_c$ is used as a loose notation for a function that returns the central point of an interval.
 The calculated values of the first and second moments of \EB for different lower thresholds are given in \Cref{tab:moments}.
-The systematic and statistical uncertainties match those in earlier subsections, and their correlation is accounted as discussed before.
+The systematic and statistical uncertainty sources match those in earlier Subsections, and their correlation is accounted as discussed before.
 
-Note that the results strongly depend on the threshold -- particularly for the second moment.
+% Note that the results strongly depend on the threshold -- particularly for the second moment.
 The measured values of the first moment in \Cref{tab:moments} (average of the photon energy spectrum) slightly decrease with the \EB threshold as additional
 low energy \EB intervals bring the value lower.
 The total uncertainty changes from 2\% to 4\% as the \EB lower threshold decreases from 2.1~\gev to 1.8~\gev.
-On the other hand, the second moment (the variance of the spectrum) highly depends on the threshold chosen, 
-and the uncertainties grow swiftly with a decreasing \EB threshold.
-While the uncertainty with a 2.0~\gev \EB threshold is at 25\%, this increases to 46\% at 1.8~\gev.
-A larger uncertainty is attributed to the fact that the dispersion of the possible \EB energies highly depends on a precise measurement of the tail,
-whereas in the case of the first moment, the peak region carries the highest importance.
+On the other hand, the second moment (the variance of the spectrum) highly depends on the threshold chosen.
+The uncertainties grow swiftly with a decreasing \EB threshold.
+While the uncertainty with a $\EB=2.0~\gev$ threshold is at 25\%, this increases to 46\% at 1.8~\gev.
+A larger uncertainty is attributed to the fact that the dispersion of the possible \EB energies highly depends on a precise measurement of the tail.
+Conversely, in the case of the first moment, the peak region carries the highest importance.
 
 
 \begin{table}[htbp!]
     \centering
     \caption{\label{tab:moments}
-    The moments of the integrated \BtoXsgamma photon energy spectrum for different lower-\EB thresholds measured on $189~\invfb$ of Belle~II data.
+    The moments of the integrated \BtoXsgamma photon energy spectrum for different low-\EB thresholds measured on $189~\invfb$ of Belle~II data.
     They are evaluated by a weighted sum of the partial branching fractions in \Cref{tab:partial_branching_fractions} according to \Cref{eq:weighted_sum_moments}.
     The systematic and statistical uncertainties are denoted in the brackets.
     }

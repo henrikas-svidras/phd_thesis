@@ -1,7 +1,7 @@
 Belle II flavour tagger is an algorithm that uses \MVA methods to determine the flavour of a $B$ that is not reconstructed.
 In particular, it uses the information of the tag-$B$ meson to infer information about the signal-$B$ meson, in our case the \BtoXsgamma candidate.
-The exact procedure is rather complicated and outside of the scope of this thesis, but can be followed up in Ref.\cite{Belle-II:2021zvj}.
-The general idea these observables are tested for \epem\ra\qqbar suppression is that a correctly reconstructed $B$-meson should, on average, perform better than a combinatorial \qqbar candidate.
+The exact procedure is outside of the scope of this thesis, but can be followed up in Ref.~\cite{Belle-II:2021zvj}.
+The general reassoning why these observables are tested for \epem\ra\qqbar suppression is that a correctly reconstructed $B$ meson should, on average, perform better than a combinatorial \qqbar candidate.
 The flavour tagger outputs two distributions: $\mathtt{FT}_{\mathrm{BDT}}$ and $\mathtt{FT}_{\mathrm{NN}}$ which differ by the internal model that the flavour tagger uses (\BDT versus neural network).
 The results for \textbf{Test~1} are given in \Cref{fig:Btag_FBDT_qrCombined,fig:Btag_FANN_qrCombined}.
 While these variables would offer some separation power, the resulting bias is just above the threshold.
@@ -15,5 +15,7 @@ While these variables would offer some separation power, the resulting bias is j
     }
     \caption{\label{fig:flavour_tagger_outputs} The bias-test on \EB, \Estar and \Mbc for flavour tagger outputs.
     The test is performed based on \textbf{Test~1} strategy, defined in \Cref{sec:continuum_features}.
-    Variable definitions are given in the text.}
+    Variable definitions are given in the text.
+    The Jensen Shannon distance as introduced in \Cref{eq:js_distance} is given for each distribution.
+    }
 \end{figure}
