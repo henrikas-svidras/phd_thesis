@@ -22,3 +22,12 @@
 }%
 
 \newcommand\tab[1][3mm]{\hspace*{#1}}
+
+% Abstracts
+\newenvironment{abstractpage}[1]
+{
+\clearpage
+\thispagestyle{empty}
+{\vspace*{1.0cm}\Huge\textbf{#1}} % 2.2cm
+\par\bigskip
+}{\clearpage}
