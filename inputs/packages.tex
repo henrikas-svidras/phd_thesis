@@ -42,6 +42,38 @@
             dashed=false
             block=none]{biblatex}
 
+            % ISBN field
+\DeclareBibliographyDriver{book}{%
+            \usebibmacro{bibindex}%
+            \usebibmacro{begentry}%
+            \usebibmacro{author/editor}%
+            \setunit{\labelnamepunct}\newblock
+            \usebibmacro{title}%
+            \newunit
+            \printlist{language}%
+            \newunit\newblock
+            \usebibmacro{byauthor}%
+            \newunit\newblock
+            \usebibmacro{publisher+location+date}%
+            \newunit\newblock
+            \space\printfield{isbn}% <-- add this line
+            \newunit\newblock
+            \usebibmacro{chapter+pages}%
+            \newunit
+            \printfield{pagetotal}%
+            \newunit\newblock
+            \iftoggle{bbx:isbn}
+              {\printfield{issn}}
+              {}%
+            \newunit\newblock
+            \usebibmacro{doi+eprint+url}%
+            \newunit\newblock
+            \usebibmacro{addendum+pubstate}%
+            \setunit{\bibpagerefpunct}\newblock
+            \usebibmacro{pageref}%
+            \usebibmacro{finentry}}
+          
+
 % Collaboration field
 \DeclareSourcemap{
     \maps[datatype=bibtex,overwrite=true]{
