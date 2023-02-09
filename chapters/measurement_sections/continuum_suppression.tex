@@ -6,7 +6,7 @@ However, as was seen before in, for example, \Cref{fig:spectrum_after_reco},
 Therefore, a dedicated event selection for this type of background was devised.
 It takes advantage of different event topologies expected for $\FourS\to\qqbar$ and $\epem\ra\qqbar$ events.
 Events, where a $\FourS\to\BB$ decay is present, tend to be more `spherical' when compared with $\epem\ra\qqbar$ events exhibiting a `jet-like' distribution.
-This is related to the fact that \epem collisions at $B$ factory experiments have just enough energy to produce a $B$ pair almost at rest, which means that its decays products, on average, tend to be distributed uniformly in polar and azimuthal angles.
+This is related to the fact that \epem collisions at $B$ factory experiments have just enough energy to produce a $B$ pair almost at rest, which means that its decay products, on average, tend to be distributed uniformly in polar and azimuthal angles.
 On the other hand, light quark pairs, produced in \epem collision events, also gain a substantial amount of back-to-back momentum which tends to spread their decay products. 
 The schematic idea of this is shown in \Cref{fig:continuum_schematic}.
 This section will provide an in-depth discussion on how the discrimination between \BtoXsgamma and continuum is achieved using a \BDT.
@@ -50,7 +50,7 @@ Each dataset has duplicate tag-$B$ candidates randomly removed by picking a rand
 Each figure-of-merit is then calculated for 200 equally spaced selections in the target observable.
 The maximum figure-of-merit point is taken as the optimal pre-selection for each of the variables.
 This procedure is shown for $\mathrm{FOM}_2$ in \Cref{fig:selection_optimisations}.
-Results for $\mathrm{FOM}_1$ are used as a cross-check for $\mathrm{FOM_2}$ but turn out to be consistent.
+Results for $\mathrm{FOM}_1$ are used as a cross-check for $\mathrm{FOM_2}$ and turn out to be consistent.
 This is shown in \Cref{sec:appendix_sqrtsplusb_optimisation}.
 \begin{figure}[htbp!]
     \centering
@@ -86,7 +86,7 @@ The results are consistent between the two figure-of-merits as well as \Bp and \
 Therefore, due to the model independence of $\mathrm{FOM}_2$, this figure-of-merit is the only one discussed henceforth.
 At this stage, it is unnecessary to choose the `best' selection, 
 as another simultaneous optimisation will be performed  in \Cref{sec:final_optimisation}, together with continuum suppression \BDT output.
-The main goal is to reduce the sample size to include only relevant data such that the trained \BDT can make decisions for difficult cases that are not easily distinguishable using a simple selection.
+The main goal is to reduce the sample size to include only relevant data such that the trained \BDT can make decisions for difficult cases that are not easily distinguishable using a simple selections.
 Based on \Cref{fig:selection_optimisations}, pre-selections are chosen to suppress background but retain most of the signal.
 They are set to be considerably looser than their optimal selection.
 Specifically, the requirements for a loose selection are tailored such that roughly 75\% of \BtoXsgamma candidates are retained.
@@ -128,7 +128,7 @@ Therefore, this requirement is also adopted for optimisation studies and trainin
 
 \subsection{Continuum suppression feature selection}\label{sec:continuum_features}
 
-Belle II has a large selection of observables that can be utilised for continuum suppression that are suitable to be input as features to a \BDT.
+Belle~II has a large selection of observables that can be utilised for continuum suppression that are suitable to be input as features to a \BDT.
 These observables describe the event topology and other collective particle decay properties. 
 They are optimised to provide optimal separation between \BB and \qqbar events.
 Two caveats have to be kept in mind for the \BtoXsgamma analysis:
@@ -184,7 +184,7 @@ Two tests are performed:
     As this is a blinded analysis, off-resonance data samples are used, which only contain \epem\ra\qqbar events.
     In this case, the Jensen-Shannon distance is calculated between 
     the area-normalised distribution of a training feature in the off-resonance data set
-    and the area-normalised distribution of a training feature in \epem\ra\qqbar simulation.
+    and the area-normalised distribution of a training feature in the continuum \MC.
     The metric is required to be no more than $0.1$.
     The looser requirement is adopted here because some difference is expected between the distributions:
     the collision energy in the off-resonance data set is different to the one in the on-resonance simulation.
@@ -197,7 +197,7 @@ The application of \textbf{Test~1} with exact definitions for the 75 observables
 
 Out of 75 potential training features, 27 pass through the requirements of \textbf{Test~1}.
 These are passed to \textbf{Test~2}.
-Owing to the excellent calibration and simulation quality of Belle II, this requirement only removes a single feature.
+Owing to the excellent calibration and simulation quality of Belle~II, this requirement only removes a single feature.
 The results for the 26 final observables that pass both test requirements and are used as features in the \BDT training
 are shown in \Cref{tab:passing_test1}.
 
@@ -220,7 +220,7 @@ Although these differences are not large, as seen in \Cref{sec:appendix_continuu
 A more effective setup is to remove \BB events from generic \MC and supplement the leftover events with \BtoXsgamma events from signal \MC. 
 In such a scenario, the classifier learns to distinguish between the signal decays and continuum events without the additional ambiguity of including generic \BB decays.
 
-The training samples are prepared by creating a mixture of $100000$ \epem\ra\qqbar events and 100000 \BtoXsgamma events from the signal MC sample.
+The training samples are prepared by creating a mixture of $100 000$ \epem\ra\qqbar events and $100 000$ \BtoXsgamma events from the signal MC sample.
 All selections from \Cref{tab:preselections} are employed for the training datasets.
 In each event, one $\gamma$ and $\B_{\mathrm{tag}}$ candidate combination is randomly chosen.
 This requirement ensures that the same event cannot contribute multiple training entries.
@@ -232,11 +232,11 @@ The target variable for the training is defined as a $\mathtt{flag}$ which follo
       \end{cases}
 \end{equation}
 Half of the \epem\ra\qqbar training sample is taken from the \feiBp mode, and the other half is from \feiBz modes. 
-For signal, half is taken from $\BptoXsgamma$ signal mode, the other half from $B^0$, irrespective of the \FEI mode.
+For signal, half is taken from the $\BptoXsgamma$ signal mode, the other half from the $B^0$, irrespective of the \FEI mode.
 An equivalent sample is prepared as the testing sample for the training.
 
 The training is performed using a \texttt{FastBDT} algorithm, introduced in \Cref{sec:BDTs_theory}.
-Four hyperparameters within \texttt{FastBDT} framework have to be chosen.
+Four hyperparameters within the \texttt{FastBDT} framework have to be chosen.
 Hyperparameter optimisation is performed in a grid-like search, based on two quantities:
 \begin{align}\label{eq:optimisation_criteria}
     \begin{split}
@@ -244,7 +244,7 @@ Hyperparameter optimisation is performed in a grid-like search, based on two qua
     \Delta \mathtt{AUC} \equiv |\mathtt{AUC}_{\mathrm{train}}& - \mathtt{AUC}_{\mathrm{test}}|,\\
     \end{split}
 \end{align}
-where $\mathtt{AUC}_{\mathrm{train}/\mathrm{test}}$ is the \AUC score for training or testing samples.
+where $\mathtt{AUC}_{\mathrm{train}/\mathrm{test}}$ is the \AUC score for the training or testing samples.
 A set of hyperparameters is sought, such that $ \mathtt{AUC}_{\mathrm{test}}$ is maximised while $\Delta \mathtt{AUC}$ is minimised.
 The results of hyperparameter optimisation are summarised in \Cref{tab:grid_search} and shown in \Cref{fig:hyper_param}.
 Larger depth or number of trees are not explored to avoid non-linear correlations which may be learnt by the classifier and would require additional studies to pinpoint.

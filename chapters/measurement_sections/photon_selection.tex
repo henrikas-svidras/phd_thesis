@@ -3,7 +3,7 @@ In this Section concrete selections are discussed that lead to background suppre
 and the best tag candidate selections.
 
 \subsection{Primary photon candidate selection}\label{sec:primary_photon_candidate_selection}
-Contrary to the tag side, a selection of the best photon candidate in the range $\EB>1.4~\gev$ 
+Contrary to the tag-side, a selection of the best photon candidate in the range $\EB>1.4~\gev$ 
 is effectively trivial based on the discussion in \Cref{sec:event_reconstruction}.
 For more than 99\% of the signal \MC sample, the highest \EB photon 
 is the correct photon originating from \BtoXsgamma decay.
@@ -11,7 +11,7 @@ Therefore, it is chosen as the best photon candidate requirement with virtually 
 Judging from \Cref{fig:photon_reco_candidates}, this provides an approximately 3\% background suppression.
 For the rest of the thesis, this selection of photon candidates is always implied.
 
-\subsection{Main photon backgroundes sources}\label{sec:main_background_sources}
+\subsection{Main photon background sources}\label{sec:main_background_sources}
 
 Based on \Cref{fig:spectrum_after_reco}, the number of photon and tag candidates originating 
 in non-\BB events is significantly larger than that of \B meson events.
@@ -21,7 +21,7 @@ and 91.7\% to 8.3\% for \feiBz.
 The majority of background photon candidates originate in $\piz\ra\g\g$ or $\eta\ra\g\g$ decays.
 This in total accounts for roughly 85\% of background photon candidates.
 Photon candidates, broken down by their mother particle, are shown in \Cref{fig:photon_sources}.
-Other sources, such as initial-state radiation, neutron annihilation, parton shower final-state radiation, $\omega(782)$, $\eta'$ decays (in decreasing order) individually make 0.5\%-3\% of the sample.
+Other sources, such as initial-state radiation, neutron annihilation, parton shower final-state radiation, $\omega(782)$, $\eta'$ decays (in decreasing order) individually make $0.5-3\%$ of the sample.
 All other sources individually make up less than 0.5\% and include various hadron decays that are produced in the continuum or \B events.
 The backgrounds are similar for both \feiBp and \feiBz modes.
 Note that some photon candidates can be misidentified (in particular neutrons). 
@@ -96,7 +96,7 @@ The moments of a function $f(\rho\cos\alpha,\rho\sin\alpha)$ are expressed in te
 $Z_{nm}$ are called Zernike moments.
 They have many useful properties that make them usable in image recognition, the field of optics, and more importantly, particle identification algorithms (see. Ref.~\cite{Hershenhorn:2468} and references therein).
 
-A Dirac comb function is defined to parametrise a particle shower in the \ECL as:
+A Dirac comb is defined to parametrise a particle shower in the \ECL as:
 \begin{equation}
     f(\vec{x}) = \sum_i \delta(\vec{x}-\vec{x}_i)\frac{w_iE_i}{\sum w_iE_i},
 \end{equation}
@@ -152,13 +152,13 @@ A lot of such light mesons originate in continuum events, but they are prominent
 Therefore, an efficient mechanism to suppress \piz- and $\eta$-related photon candidates is required.
 
 In this analysis, a suppression tool, called \textit{\piz~and~\eta~veto} is utilised.
-It is implemented as part of \basftwo and is a standard Belle II approach for suppressions of radiative backgrounds from light mesons.
+It is implemented as part of \basftwo and is a standard Belle~II approach for suppressions of radiative backgrounds from light mesons.
 Here, an overview of the training and the validation process is provided which is performed by an independent analysis.
 
-The general idea of the \piz~and~\eta~veto is to pair the high energy photon signal candidate (\textit{hard} photon) candidate with lower energy photons (\textit{soft} photons) in the event.
+The general idea of the \piz~and~\eta~veto is to pair the high energy photon signal candidate (\textit{hard} photon) with lower energy photons (\textit{soft} photons) in the event.
 The compatibility of the combination with a $\piz\ra\g\g$ or $\eta\ra\g\g$ decay is evaluated and a probability-like quantity is calculated to quantify it.
 
-The soft photon candidate is selected with an energy $30~\mev$ ($40~\mev$ in backward \ECL endcap) for $\piz$ or $60~\mev$ for $\eta$.
+The soft photon candidate is selected with an energy of $30~\mev$ ($40~\mev$ in the backward \ECL endcap) for $\piz$ or $60~\mev$ for $\eta$.
 The photon is also required to have deposited the energy in 2 or more crystals.
 Furthermore, photon candidates are required to have an associated cluster time less than one standard deviation away from 0.
 These selections ensure that beam background photons, neutral hadrons misidentified as photons and misreconstructed charged particles are not included in the soft photon sample.
@@ -183,7 +183,7 @@ The same hard photon is paired with all soft photons in a given event, and the l
 This \MVA output is denoted as \piVeto or \etaVeto, respectively.
 Note that despite the nomenclature, this variable is only probability-like (i.e. $\mathcal{P}\in(0,1)$) but does not truly represent a probability.
 The distributions for \piVeto and \etaVeto are shown in \Cref{fig:vetos}.
-In all cases, \BtoXsgamma can be seen to be strongly peaking near 0, consistent with photons that do not originate from light unflavoured meson decay.
+In all cases, \BtoXsgamma can be seen to be strongly peaking near 0, consistent with photons that do not originate from light unflavoured meson decays.
 
 \begin{figure}[htbp!]
     \centering
@@ -235,9 +235,9 @@ Removing $\piz\ra\g\g$ decays from the sample, a clear separation of photon cand
 
 Even though no direct selection is applied on the $X_s$ system, through direct or higher-order correlations with \EB, a bias may be introduced to the photon energy.
 To ensure that no such correlation is introduced, a correlation study is performed for \piVeto, \etaVeto and \ZMVA observables.
-In principle, it is not important if the selection introduces a bias to the background -- as long as this bias is well reproduced in simulation.
+In principle, it is acceptable if the selection introduces a bias to the background -- as long as this bias is well reproduced in simulation.
 The latter will be validated in \Cref{sec:corrections,sec:signal_modelling}.
-Therefore, the study is performed exclusively focusing on \BtoXsgamma events, as it was aimed to ensure that the photon energy spectrum itself is minimally biased.
+Therefore, the study is performed exclusively focusing on \BtoXsgamma events, as it is aimed to ensure that the photon energy spectrum itself is minimally biased.
 
 \begin{figure}[htbp!]
     \centering
@@ -279,4 +279,4 @@ No strong bias is introduced by any of the observables to any of these quantitie
 Furthermore, the structure itself remains constant across all bins and no clear dependence on \EB can be seen.
 No significant differences between different \FEI modes are observed.
 It is therefore concluded that the selections are unbiasing and suitable for signal-side photon background suppression.
-The exact selections on these observables will be optimised simultaneously with continuum event suppression in \Cref{sec:final_optimisation}.
+The exact selections on these observables are optimised simultaneously with continuum event suppression in \Cref{sec:final_optimisation}.
