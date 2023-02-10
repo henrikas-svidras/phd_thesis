@@ -1,5 +1,5 @@
 This Section serves as an overview of the analysis
-and is intended to guide the reader through different analysis steps in extracting the \BtoXsgamma photon energy spectrum.
+and is intended to guide the reader through different steps in extracting the \BtoXsgamma photon energy spectrum.
 It also introduces key terminology that is used throughout the entire text.
 In this entire Chapter, superscripts are used to denote observables in a particular frame of reference.
 Given an observable $\mathcal{X}$ (laboratory frame), the same value in the frame of colliding electrons (centre-of-mass) is denoted as $\mathcal{X}^*$.
@@ -17,16 +17,16 @@ $N_B$ is the total number of $B$ mesons in the analysed sample,
 and $\mathcal{U}_i$ are unfolding correction factors (bin-by-bin unfolding is implied here).
 The results of the integrated branching fraction, $\mathcal{B}(\BtoXsgamma)$, are evaluated by performing a sum over partial branching fractions computed in every interval $i$.
 
-First, the analysed data sets are introduced in \Cref{sec:data_samples}.
+The analysed data sets are introduced in \Cref{sec:data_samples}.
 A simulated data set, based on the expectations of the Standard Model, is used to prepare the analysis procedure.
 Only after the full analysis procedure is set up, the results on the Belle~II data will be unblinded (see \Cref{sec:blinding}).
 
 \Cref{sec:event_reconstruction} introduces the reconstruction of Belle II experimental and simulated \BtoXsgamma samples.
 It also discusses the main processes which mimic \BtoXsgamma signal (backgrounds) and the strategies to suppress them.
-In general, background for \BtoXsgamma can be divided as:
+The background sources for \BtoXsgamma can be divided as:
 \begin{itemize}
     \item \textit{Signal-side background}: where a photon candidate is originating in a non-\BtoXsgamma decay.
-    In particular, either \epem\ra\qqbar ($\q\in\{\u,\d,\s,\c\}$), henceforth -- \textit{continuum}, or from a different \B decay, e.g. where a $\piz$ is created in the decay chain that decays into 2 photons, henceforth -- \textit{generic} $B$ background;
+    In particular, either \epem\ra\qqbar ($\q\in\{\u,\d,\s,\c\}$), henceforth -- \textit{continuum}, or from a different \B decay, e.g. where a $\piz\to\g\g$ is created in the decay chain, henceforth -- \textit{generic} $B$ background;
     \item \textit{Tag-side background}: where the $B$, recoiling against the candidate \BtoXsgamma, is reconstructed incorrectly, or \epem\ra\qqbar collision products are combined to resemble a \B decay.
     Such decays are referred to as \textit{combinatorial} $B$ or continuum background, respectively;
     \item \BtoXdgamma component: which is an irreducible background at the current analysis setup. 
@@ -35,7 +35,7 @@ In general, background for \BtoXsgamma can be divided as:
 The
 multivariate optimisation strategies for signal and tag-$B$ meson background suppression are described in 
 \Cref{sec:photon_selection,sec:continuum_suppression,sec:final_optimisation,sec:tag_selection}.
-It relies on selections to suppress the signal-side background and a dedicated \BDT training which aims to suppress tag-side backgrounds.
+They rely on selections to suppress the signal-side background and a dedicated \BDT training which aims to suppress tag-side backgrounds.
 
 After the full background suppression procedure, a thorough setup of the fitting model is described in \Cref{sec:fitting_mbc}.
 The fitting procedure is aimed at removing the combinatorial tag-$B$ meson backgrounds, and hence the fit of the \Mbc variable is performed (\Cref{eq:mbc_exclusive}).
@@ -43,7 +43,7 @@ The fitting procedure is aimed at removing the combinatorial tag-$B$ meson backg
 Lastly, an irreducible signal-side background component remains, particularly from generic signal-$B$ meson decays.
 The \EB spectrum is extracted by the simulation-dependant subtraction of remaining background processes as described in \Cref{sec:background_subtraction}.
 
-\Cref{sec:MC_validation} describes the validation procedure of the analysis technique on Belle~II simulated samples,
+\Cref{sec:MC_validation} explains the validation procedure of the analysis technique on Belle~II simulated samples,
 whereas \Cref{sec:corrections,sec:validation,sec:signal_modelling} explore that on the Belle~II recorded data samples.
 \Cref{sec:systematic_uncertainty} condenses the observations from the validation and quantitively assigns systematic uncertainties.
 The unblinding and the final extraction of results and unfolding of Belle~II data is presented in \Cref{sec:results}.

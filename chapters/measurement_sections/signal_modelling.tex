@@ -40,7 +40,7 @@ As a direct connection between $\EtildeB$ and $\EB$ is difficult to evaluate, th
 \begin{equation}\label{eq:avg_efficiency_fei}
     \varepsilon_{\mathrm{FEI}} = 0.006659 \pm 0.000006,
 \end{equation}
-where the uncertainty is statistical.
+where the uncertainty is only statistical.
 The correction and the systematic uncertainty related to \FEI calibration is evaluated in \Cref{sec:signal_selection_uncertainties}.
 Conversely, the signal modelling uncertainty is expected to be small because any deviations would be suppressed in the ratio in \Cref{eq:fei_tagging_efficiency}.
 \begin{figure}[htbp!]
@@ -69,7 +69,7 @@ the background suppression selections, given in \Cref{tab:interative_optimisatio
 This is evaluated on three models: the Kagan-Neubert model, the Belle~II generic \MC signal model and the hybrid-signal model.
 The results are shown in \Cref{fig:epsilon_selection}.
 All three models show compatible results.
-The $\varepsilon_{\mathrm{selection}}$ grows approximately linearly from 30\% at 1.4~\gev to 60\% at 2.6~\gev and begins to drop
+The $\varepsilon_{\mathrm{selection}}$ grows approximately linearly from 30\% at 1.4~\gev to 60\% at 2.6~\gev and begins to drop.
 The values of the hybrid-signal model are chosen as central values of efficiency.
 
 Finally, the results of \Cref{fig:epsilon} are combined to evaluated the total simulated efficiency based on \Cref{eq:factorisable_signal_efficiency}.
@@ -79,14 +79,14 @@ Finally, the results of \Cref{fig:epsilon} are combined to evaluated the total s
 The results of \Cref{sec:signal_efficiency} are based on Belle~II simulation only, therefore, have to be validated on data.
 Some selections, such as \piz and $\eta$ suppression tools, photon detection efficiency and \FEI are validated in external and independent studies.
 However, the selection on \texttt{BDT~output} and \ZMVA do not have such dedicated studies (and with the latter some hints of performance differences were discussed).
-To perform the validation for these quantities yet maintain the analysis blinded, ratio-based efficiency tests are used on data:
+To perform the validation for these quantities, yet maintain the analysis blinded, ratio-based efficiency tests are used on data:
 \begin{equation}\label{eq:signal_validation}
     \varepsilon' = \frac{N_{\mathrm{with~selection}}(\Mbc>5.27)}{N_{\mathrm{with~looser~selection}} (\Mbc>5.27)},
 \end{equation}
 where $N_{\mathrm{with~selection}}$ is the number of events in Belle~II data, given some selection,
 and $N_{\mathrm{with~looser~selection}}$ is the number of events recomputed with a looser selection.
 In both cases, this is evaluated with an $\Mbc>5.27~\gevcc$ requirement to ensure that the focus is mainly on good tag-\B mesons.
-Finally, in order to maximise the number of \BtoXsgamma events, the $2.5<\EB<2.6~\gev$ interval is used, as it contains primarily \BtoXsgamma events and very low background expectations (see \Cref{tab:expected_events})
+Finally, in order to maximise the number of \BtoXsgamma events, the $2.5<\EB<2.6~\gev$ interval is used, as it contains primarily \BtoXsgamma events and very low background contamination (see \Cref{tab:expected_events})
 
 Four selection configurations are tested:
 \begin{itemize}
@@ -111,14 +111,14 @@ The results are shown in \Cref{tab:blinded_efficiency}.
 
 Overall, the patterns of variations in efficiencies in simulation, $\varepsilon_{\mathrm{MC}}$, and data, $\varepsilon_{\mathrm{DATA}}$, show similar behaviour.
 The central values are generally compatible within $1\sigma-2\sigma$.
-The largest difference between $\varepsilon_{\mathrm{SIM}}$ and $\varepsilon_{\mathrm{DATA}}$ for \ZMVA is observed in tighter/regular configuration, which is consistent with observations of \Cref{fig:zmva_discrepancy}.
-Tightening the selection suppresses additional background in data but not in \MC, where such component is not present, causing different $\epsilon'$ behaviour.
-Based on these observations, a variation $\Delta\varepsilon\approx0.069\pm0.039$ is observed
+The largest difference between $\varepsilon_{\mathrm{SIM}}$ and $\varepsilon_{\mathrm{DATA}}$ for \ZMVA is observed between tighter and regular configurations, which is consistent with observations of \Cref{fig:zmva_discrepancy}.
+Tightening the selection suppresses additional background in data, but not in \MC, where such component is not present, causing different $\epsilon'$ behaviour.
+Based on these observations, a variation \mbox{$\Delta\varepsilon\approx0.069\pm0.039$} is observed
 (the asymmetric binomial uncertainty has been symmetrised here).
 For a conservative approach, this analysis, therefore, adopts a 10\% efficiency uncertainty based on \ZMVA modelling.
 
 The \texttt{BDT~output} variations are smaller, with the largest variation observed in the regular/looser configuration.
-The variation is evaluated at $\Delta\varepsilon\approx0.024\pm0.043$ is observed.
+The variation is evaluated at \mbox{$\Delta\varepsilon\approx0.024\pm0.043$} is observed.
 For a conservative approach, a 3\% efficiency uncertainty is adopted related to the \texttt{BDT~output} modelling.
 
 The results of this Section, \Cref{sec:signal_efficiency} and corrections from \Cref{sec:corrections}
@@ -214,7 +214,7 @@ The other differences that are related to tag-side efficiency mismodelling would
 
 As part of the inclusive analysis, a separation between $X_s$ and $X_d$ is challenging.
 Up until now, the $X_d$ component has been neglected and not included in the discussion.
-However, when extracting the photon energy spectrum in Belle~II data, the presence of the $X_d$ componentis unavoidable.
+However, when extracting the photon energy spectrum in Belle~II data, the presence of the $X_d$ component is unavoidable.
 Without additional consideration, the measured result could only be interpreted as \BtoXsdgamma.
 
 The measured branching fraction of \BtoXdgamma, 
@@ -284,8 +284,7 @@ The statistical and total uncertainties are evaluated as the average uncertainty
 They are then propagated through the full unfolding procedure.
 For bin-by-bin unfolding the propagation is governed by \Cref{eq:bin_by_bin_unfolding,eq:bin_by_bin_unfolding_error}.
 The resulting uncertainties due to the matrix inversion method are larger by more than a factor of two compared to the bin-by-bin unfolding method in many photon energy intervals.
-This increase in uncertainties is reduced by introducing a weak regularisation requirement using the singular value decomposition method.
-However, the uncertainties are generally larger than those offered by the bin-by-bin method.
+At the same time, this increase in uncertainties is reduced by introducing a weak regularisation requirement using the singular value decomposition method.
 As the analysis results are statistically limited, the correlation of the expected number of events between different \EB intervals is small.
 Therefore, it is concluded that for this analysis bin-by-bin unfolding method is sufficient, as it does not inflate the uncertainties and does not introduce additional correlations between bins via regularisation.
 

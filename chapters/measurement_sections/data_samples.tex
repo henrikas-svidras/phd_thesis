@@ -15,7 +15,7 @@ The on-resonance data set contains approximately $198$ million \BB pairs.
 
 In order to prepare the analysis procedure, calculate the signal-selection efficiencies and perform a validation adhering to the principles of a blinded analysis, 
 large simulated samples are utilised.
-These samples are significantly larger than the data sets that were anticipated to be analysed by this analysis to ensure that uncertainties due to limited simulation samples are minimal.
+These samples are significantly larger than the data sets that were anticipated to be analysed by this analysis, to ensure that uncertainties due to limited simulation samples are minimal.
 The overview of the samples is discussed in this Subsection, but a quick overview is provided in \Cref{tab:simulated_samples}.
 
 \begin{table}[htbp!]
@@ -25,9 +25,9 @@ More in-depth discussion for each sample is present in the text.}
 \input{tables/simulated_samples.tex}
 \end{table}
 
-All the simulated samples correspond to the 14th official Belle II simulation production campaign and are based on Monte Carlo methods.
+All the simulated samples correspond to the official Belle II simulation production campaign and are based on Monte Carlo methods.
+Therefore, henceforth, the simulated samples are referred to as \MC.
 In all cases, the detector response and readout are simulated using \texttt{Geant~4} \cite{GEANT4:2002zbu}.
-Therefore, henceforth refer the simulated samples are referred to as \MC.
 The following samples are used for the analysis:
 \begin{itemize}
     \item four \epem\ra\qqbar ($\q\in\{\u,\d,\s,\c\}$) simulated sample categories, referred to as continuum \MC,
@@ -47,14 +47,14 @@ For this reason, additional samples are used:
     \item 10 million \BpBm samples, where at least one $B$ is guaranteed to decay as $\Bpm\ra\Kstar(892)^{\pm}\gamma$~based on the \texttt{EvtGen SVP\_HELAMP} model \cite{Ryd:2005zz};
     \item 10 million \BzBzb samples, where at least one $B$ is guaranteed to decay as $\Bz\ra\Kstar(892)^{\pm}\gamma$~based on the \texttt{EvtGen HELAMP} model \cite{Ryd:2005zz}.
 \end{itemize}
-The first two are used for general analysis setup in 
-\Cref{sec:event_reconstruction,sec:photon_selection,sec:continuum_suppression,sec:final_optimisation,sec:tag_selection} and similar studies.
-The $B\to\Kstar\gamma$ samples will be combined in with \BtoXsgamma in a hybrid model approach \cite{Ramirez:1989yk} discussed in \Cref{sec:signal_model}.
+The first two are used for general analysis setup, reported in 
+\Cref{sec:event_reconstruction,sec:photon_selection,sec:continuum_suppression,sec:final_optimisation,sec:tag_selection}, and related studies.
+The $B\to\Kstar\gamma$ samples is combined with \BtoXsgamma in a hybrid model approach \cite{Ramirez:1989yk} discussed in \Cref{sec:signal_model}.
 
 \subsection{Signal model}\label{sec:signal_model}
 
 As it was introduced in \Cref{sec:btosgamma_spectrum_theory}, inclusive decay models, by design, assume quark-hadron duality and therefore do not describe specific resonances but a smooth spectrum.
-For \BtoXsgamma this is an excellent approximation, given the experimental resolution, as well as the fact that many different decay resonances combine and interfere.
+For \BtoXsgamma this is an excellent approximation given the experimental resolution, as well as the fact that many different decay resonances combine and interfere.
 
 A model based on all measured resonances (\Cref{tab:btosgamma_bfs}) that are included in the Belle II official \MC for generic-$B$ is shown in \Cref{fig:generic_Xs_model}.
 The generic-$B$ model includes resonances based on their branching fractions given in \Cref{tab:btosgamma_bfs} and scales down the Kagan-Neubert model globally to account for the inclusion of these.
@@ -77,8 +77,8 @@ Furthermore, the generic-$B$ model uses older \BtoXsgamma photon energy spectrum
     }
     }
     \caption{\label{fig:generic_Xs_model} The model for \BtoXsgamma used in the Belle II official generic-\Bp (\Cref{fig:generic_Xsp_model}) and generic-\Bz (\Cref{fig:generic_Xsz_model}) \MC.
-    Although only several resonances are included, one can see that their structure is smoothed out.
-    Unknown/unmeasured resonances as well as non-resonant decays are modelled with the inclusive Kagan-Neubert model, but the model is globally scaled down to account for the phase space covered by the exclusive decays.
+    Although only several resonances are included, their structure is smoothed out.
+    Unknown or unmeasured resonances, as well as non-resonant decays, are modelled with the inclusive Kagan-Neubert model, but the model is globally scaled down to account for the phase space covered by the exclusive decays.
     The branching fractions used here are taken from \Cref{tab:btosgamma_bfs} or upper-limits from Refs.~\cite{Workman:2022ynf,Amhis:2022mac}.
     The dashed line shows the Kagan-Neubert model.
     The figures are produced using 500 000 event data sets for each mode produced by \texttt{EvtGen} equivalently to the Belle II simulation.
@@ -101,9 +101,9 @@ As mentioned before, for the $I_i$ part, the Kagan-Neubert model is used (\Cref{
 In order to use more up-to-date parameters of the spectrum, the spectrum is reweighted to be compatible with parameters from \Cref{eq:simba_result}.
 In the kinetic scheme, compatible with \texttt{EvtGen} implementation of the Kagan-Neubert model, this amounts to:
 \begin{equation}\label{eq:simba_result_kinetic}
-    m_b^{kin} =4.624 \pm 0.045~\gevcc;  \quad \lambda^{\mathrm{kin}}_1 = -0.35\pm0.08~\gev^2/c^4.
+    m_b^{\mathrm{kin}} =4.624 \pm 0.045~\gevcc;  \quad \lambda^{\mathrm{kin}}_1 = -0.35\pm0.08~\gev^2/c^4.
 \end{equation}
-Taking into account the correlation of these parameters as described in Ref.~\cite{Bernlochner:2020jlt}, 4 additional up and down variations in the eigendirections are generated. 
+Taking into account the correlation of these parameters as described in Ref.~\cite{Bernlochner:2020jlt}, four additional up and down variations in the eigendirections are generated. 
 The envelope of the variations is used as the inclusive model uncertainty in this analysis.
 The reweighted inclusive model is shown in \Cref{fig:inclusive_reweighted}.
 \begin{figure}[htbp!]
