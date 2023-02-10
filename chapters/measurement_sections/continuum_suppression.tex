@@ -7,7 +7,7 @@ Therefore, a dedicated event selection for this type of background was devised.
 It takes advantage of different event topologies expected for $\FourS\to\qqbar$ and $\epem\ra\qqbar$ events.
 Events, where a $\FourS\to\BB$ decay is present, tend to be more `spherical' when compared with $\epem\ra\qqbar$ events exhibiting a `jet-like' distribution.
 This is related to the fact that \epem collisions at $B$ factory experiments have just enough energy to produce a $B$ pair almost at rest, which means that its decay products, on average, tend to be distributed uniformly in polar and azimuthal angles.
-On the other hand, light quark pairs, produced in \epem collision events, also gain a substantial amount of back-to-back momentum which tends to spread their decay products. 
+On the other hand, light quark pairs, produced in \epem collision events, also gain a substantial amount of back-to-back momentum and, as a result, the decay products are collimated along a symmetry axis. 
 The schematic idea of this is shown in \Cref{fig:continuum_schematic}.
 This section will provide an in-depth discussion on how the discrimination between \BtoXsgamma and continuum is achieved using a \BDT.
 
@@ -23,10 +23,10 @@ This section will provide an in-depth discussion on how the discrimination betwe
 
 \subsection{Training event pre-selection}\label{sec:preselection}
 
-Before a \BDT is trained, it is generally desirable to prepare the datasets such that the classifier 
+Before a \BDT is trained, it is generally desirable to prepare the data sets such that the classifier 
 learns based on relevant data.
 Such data preprocessing will be performed based on the variables described in \Cref{sec:photon_selection}.
-The classifier will then be trained on the reduced dataset
+The classifier will then be trained on the reduced data set
 
 In order to find the optimal selections, a figure-of-merit study is performed for each observable.
 Two figure-of-merit options were considered for this analysis: a more standard figure-of-merit $\mathrm{FOM}_1$:
@@ -41,12 +41,12 @@ In both equations, $\mathsf{S}$ is the number of signal events after selection,
 $\mathsf{B}$ is the number of background events after selection, 
 and $\mathsf{S}_0$ is the number of signal events before selection.
 Although \Cref{eq:punzi_fom} was derived with search-like analyses in mind, 
-it is utilised in this analysis to minimise signal model dependency: the ratio $\mathsf{S}/\mathsf{S}_0$ present in the definition reduces many model-dependant effects.
+it is utilised in this analysis to minimise signal model dependency: the ratio $\mathsf{S}/\mathsf{S}_0$ present in the definition reduces many model-dependent effects.
 
 For each figure-of-merit calculation, background events ($\mathsf{B}$) are counted based on generic \MC,
 whereas signal events, $\mathsf{S}$, are counted based on signal \MC to ensure a significant sample size.
 In the case of \Cref{eq:soversqrtsplusb}, an appropriate scaling for $\mathsf{S}$ is also used.
-Each dataset has duplicate tag-$B$ candidates randomly removed by picking a random tag-side candidate.
+Each data set has duplicate tag-$B$ candidates randomly removed by picking a random tag-side candidate.
 Each figure-of-merit is then calculated for 200 equally spaced selections in the target observable.
 The maximum figure-of-merit point is taken as the optimal pre-selection for each of the variables.
 This procedure is shown for $\mathrm{FOM}_2$ in \Cref{fig:selection_optimisations}.
@@ -55,29 +55,29 @@ This is shown in \Cref{sec:appendix_sqrtsplusb_optimisation}.
 \begin{figure}[htbp!]
     \centering
     \subcaptionbox{\label{fig:bp_zmva_optimisation}}{
-            \includegraphics[width=0.30\textwidth]{figures/continuum_suppression/Bp_zernikeMVA_optimisation_punzi.pdf}
+            \includegraphics[width=0.31\textwidth]{figures/continuum_suppression/Bp_zernikeMVA_optimisation_punzi.pdf}
         }
     \subcaptionbox{\label{fig:bp_piveto_optimisation}}{
-            \includegraphics[width=0.30\textwidth]{figures/continuum_suppression/Bp_piVeto_optimisation_punzi.pdf}
+            \includegraphics[width=0.31\textwidth]{figures/continuum_suppression/Bp_piVeto_optimisation_punzi.pdf}
         }
     \subcaptionbox{\label{fig:bp_etaveto_optimisation}}{
-            \includegraphics[width=0.30\textwidth]{figures/continuum_suppression/Bp_etaVeto_optimisation_punzi.pdf}
+            \includegraphics[width=0.31\textwidth]{figures/continuum_suppression/Bp_etaVeto_optimisation_punzi.pdf}
         }
     \subcaptionbox{\label{fig:bz_zmva_optimisation}}{
-            \includegraphics[width=0.30\textwidth]{figures/continuum_suppression/Bz_zernikeMVA_optimisation_punzi.pdf}
+            \includegraphics[width=0.31\textwidth]{figures/continuum_suppression/Bz_zernikeMVA_optimisation_punzi.pdf}
         }
     \subcaptionbox{\label{fig:bz_piveto_optimisation}}{
-            \includegraphics[width=0.30\textwidth]{figures/continuum_suppression/Bz_piVeto_optimisation_punzi.pdf}
+            \includegraphics[width=0.31\textwidth]{figures/continuum_suppression/Bz_piVeto_optimisation_punzi.pdf}
         }
     \subcaptionbox{\label{fig:bz_etaveto_optimisation}}{
-            \includegraphics[width=0.30\textwidth]{figures/continuum_suppression/Bz_etaVeto_optimisation_punzi.pdf}
+            \includegraphics[width=0.31\textwidth]{figures/continuum_suppression/Bz_etaVeto_optimisation_punzi.pdf}
         }
     \caption{\label{fig:selection_optimisations} Optimal selection calculation for observables
     described in \Cref{sec:photon_selection} based on $\mathrm{FOM}_2$ (see \Cref{eq:punzi_fom}).
     For \BptoXsgamma events the tests are shown
     in \Cref{fig:bp_zmva_optimisation,fig:bp_piveto_optimisation,fig:bp_etaveto_optimisation},
     and for \BztoXsgamma in \Cref{fig:bz_zmva_optimisation,fig:bz_piveto_optimisation,fig:bz_etaveto_optimisation}.
-    The figures show the efficiency and $\mathrm{FOM}_2$ score calculated by scanning 200 thresholds of \piVeto, \etaVeto and \ZMVA.
+    The Figures show the efficiency and $\mathrm{FOM}_2$ score calculated by scanning 200 thresholds of \piVeto, \etaVeto and \ZMVA.
     The maximum value of $\mathrm{FOM}_2$, the corresponding threshold and efficiency are shown as well.
     }
 \end{figure}
@@ -95,7 +95,7 @@ They are shown in \Cref{tab:preselections}.
 \begin{table}[htbp!]
     \centering
     \caption{\label{tab:preselections} Selections that remove background and misreconstructed candidates,
-    preparing the reconstructed datasets (\Cref{sec:reconstruction_overview}) for continuum \BDT training (\Cref{sec:continuum_training}).
+    preparing the reconstructed data sets (\Cref{sec:reconstruction_overview}) for continuum \BDT training (\Cref{sec:continuum_training}).
     A later optimisation will be used for a final candidate selection in \Cref{sec:final_optimisation}.
     }
     \input{tables/loose_selections.tex}
@@ -128,7 +128,7 @@ Therefore, this requirement is also adopted for optimisation studies and trainin
 
 \subsection{Continuum suppression feature selection}\label{sec:continuum_features}
 
-Belle~II has a large selection of observables that can be utilised for continuum suppression that are suitable to be input as features to a \BDT.
+Belle~II has a large selection of observables that can be utilised for continuum suppression that are suitable to be used as input features to a \BDT.
 These observables describe the event topology and other collective particle decay properties. 
 They are optimised to provide optimal separation between \BB and \qqbar events.
 Two caveats have to be kept in mind for the \BtoXsgamma analysis:
@@ -143,11 +143,11 @@ Two caveats have to be kept in mind for the \BtoXsgamma analysis:
     As simulated data sets are used to train a \BDT in this analysis, such a comparison is crucial.
 \end{itemize}
 Given the mentioned points, it is important to test that observables used for the training provide adequate separation between \BtoXsgamma and \qqbar, while no bias is introduced to the photon energy spectrum.
-Furthermore, this has to be well-represented in Belle~II data.
+Furthermore, this has to be well reproduced in Belle~II data.
 
 In this analysis, the following observable categories are considered for separation between \epem\ra\qqbar and \BtoXsgamma:
 \begin{itemize}
-    \item Various thrust-based observables (\Cref{sec:thrusts});
+    \item Thrust-based observables (\Cref{sec:thrusts});
     \item Sphericity and aplanarity (\Cref{sec:sphericity_aplanarity});
     \item Harmonic moments (\Cref{sec:harmonic_moments});
     \item Fox-Wolfram moments (\Cref{sec:fox_wolfram_moments});
@@ -175,7 +175,7 @@ Two tests are performed:
     each potential training feature is separated into 5 equally populated regions (\textit{slices}) of \BtoXsgamma events in signal \MC.
     For this test, \BptoXsgamma and \BztoXsgamma are merged.
     In each of these regions, the slices of \EB, \Estar and \Mbc are compared.
-    The Jensen-Shannon distance is required to not be larger than 6\% between any two given slices of a training feature.
+    The Jensen-Shannon distance is required to not be larger than $0.06$ between any two given slices of a training feature.
     The requirement to pass \textbf{Test 1} has been chosen by observing the typical values of the agreement shown by the tested unbiased distributions.
     If this requirement is not passed by at least one of the distributions (\EB, \Estar or \Mbc), the feature is excluded from the list of final \BDT training features.
     \item \textbf{Test 2}: $\mathbf{\epem\ra\qqbar~data\mbox{-}simulation~similarity~test}$:
@@ -185,19 +185,19 @@ Two tests are performed:
     In this case, the Jensen-Shannon distance is calculated between 
     the area-normalised distribution of a training feature in the off-resonance data set
     and the area-normalised distribution of a training feature in the continuum \MC.
-    The metric is required to be no more than $0.1$.
-    The looser requirement is adopted here because some difference is expected between the distributions:
-    the collision energy in the off-resonance data set is different to the one in the on-resonance simulation.
+    The metric is required to be no larger than $0.1$.
+    A looser requirement is adopted here because some difference is expected between the distributions:
+    the collision energy in the off-resonance data is different to the one in the on-resonance simulation.
     Furthermore, an overall smaller off-resonance data set ($\sim19~\invfb$, see \Cref{sec:data_samples}) may have certain differences due to statistical fluctuations.
 \end{itemize}
 
-The tested distributions include the selections from \Cref{sec:preselection}, except for the case of the off-resonance dataset, where the $\Mbc>5.27~\gevcc$ requirement is lifted.
+The tested distributions include the selections from \Cref{sec:preselection}, except for the case of the off-resonance data, where the $\Mbc>5.27~\gevcc$ requirement is lifted.
 For every event, when more than one tag-side candidate $B$ candidate exists, a random one is picked.
-The application of \textbf{Test~1} with exact definitions for the 75 observables are shown in \Cref{sec:appendix_continuum_features}.
+The procedure of \textbf{Test~1} with exact definitions for the 75 observables is given in \Cref{sec:appendix_continuum_features}.
 
-Out of 75 potential training features, 27 pass through the requirements of \textbf{Test~1}.
+Out of 75 potential training features, 29 pass the requirements of \textbf{Test~1}.
 These are passed to \textbf{Test~2}.
-Owing to the excellent calibration and simulation quality of Belle~II, this requirement only removes a single feature.
+This requirement only removes a single feature which attests to the good representation of data by the Belle~II \MC.
 The results for the 26 final observables that pass both test requirements and are used as features in the \BDT training
 are shown in \Cref{tab:passing_test1}.
 
@@ -221,7 +221,7 @@ A more effective setup is to remove \BB events from generic \MC and supplement t
 In such a scenario, the classifier learns to distinguish between the signal decays and continuum events without the additional ambiguity of including generic \BB decays.
 
 The training samples are prepared by creating a mixture of $100 000$ \epem\ra\qqbar events and $100 000$ \BtoXsgamma events from the signal MC sample.
-All selections from \Cref{tab:preselections} are employed for the training datasets.
+All selections from \Cref{tab:preselections} are employed for the training data sets.
 In each event, one $\gamma$ and $\B_{\mathrm{tag}}$ candidate combination is randomly chosen.
 This requirement ensures that the same event cannot contribute multiple training entries.
 The target variable for the training is defined as a $\mathtt{flag}$ which follows
@@ -232,7 +232,7 @@ The target variable for the training is defined as a $\mathtt{flag}$ which follo
       \end{cases}
 \end{equation}
 Half of the \epem\ra\qqbar training sample is taken from the \feiBp mode, and the other half is from \feiBz modes. 
-For signal, half is taken from the $\BptoXsgamma$ signal mode, the other half from the $B^0$, irrespective of the \FEI mode.
+For signal, half is taken from the $\BptoXsgamma$ signal mode, the other half from the $\BztoXsgamma$, irrespective of the \FEI mode.
 An equivalent sample is prepared as the testing sample for the training.
 
 The training is performed using a \texttt{FastBDT} algorithm, introduced in \Cref{sec:BDTs_theory}.
@@ -292,9 +292,9 @@ The difference in the \AUC scores is smaller than 1\%.
 \end{figure}
 
 Using the tools provided by the \texttt{FastBDT} algorithm, a \textit{relative feature importance} is computed.
-Particularly for \texttt{FastBDT}, it is computed by evaluating the decrease of the \AUC score if the feature is not included in the training dataset (for more details see Ref.~\cite{Keck:2017gsv}).
+Particularly for \texttt{FastBDT}, it is computed by evaluating the decrease of the \AUC score if the feature is not included in the training data set (for more details see Ref.~\cite{Keck:2017gsv}).
 Therefore, it can be considered a quantitative measure of the impact of a feature on the final classifier output.
-The figure depicting relative training observable importance is shown in \Cref{fig:feature_importance}. 
+The relative training observable importance is shown in \Cref{fig:feature_importance}. 
 It is seen that $\cos\theta_{\mathrm{TB}\wedge\mathrm{TO}}$ (angle between the thrust axis of the tag-$B$ candidate and everything else in the event) has by far the largest impact on the classifier.
 This is not surprising after inspecting the individual separation power for the current problem in \Cref{sec:appendix_continuum_features_datamc}.
 Other important separation features come from  $\Delta z_B$ \&  $\Delta z_B$, related to the longitudinal distance between the decay vertices,
@@ -312,7 +312,7 @@ For consistency, the events used in the training are removed from further analys
 
 \subsection{Continuum suppression validation}\label{sec:continuum_validation}
 
-The resulting $\mathtt{BDT~output}$ is tested to not bias the photon energy spectrum to further ensure the validity of the training.
+The resulting $\mathtt{BDT~output}$ is tested to not bias the photon energy spectrum, further ensuring the validity of the training.
 Following the tests for bias of the average, median and $1\sigma$ percentiles in \Cref{sec:signal_photon_correlation},
 the same study is performed for the training classifier output.
 The result is shown in \Cref{fig:bdt_output_correlation} for the \BtoXsgamma admixture sample with the same requirements as the training sample.
@@ -332,7 +332,7 @@ The results seen in \Cref{fig:bdt_validation} validate the fact that the \BDT is
     Validation of the training described in \Cref{sec:continuum_training}.
     In \Cref{fig:bdt_output_correlation}, correlation tests for the trained classifier output described in \Cref{sec:continuum_training} are depicted as a 2D histogram.
     Each row is normalised such that all bins within that row add up to 1.
-    In the red line, the average photon energy, $\expval{\EB}$, is shown as a function of the tested observable.
+    In the red line, the average photon energy, $\expval**{\EB}$, is shown as a function of the tested observable.
     In black and black-dotted lines: median and $\pm 1 \sigma$ percentile values of \EB, respectively.
     No strong dependence can be observed in any of the quantities or the 2D maps.
     In \Cref{fig:bdt_data_shape}, the shape of \epem\ra\qqbar and off-resonance data is compared.
