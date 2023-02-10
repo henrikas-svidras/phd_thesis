@@ -28,6 +28,10 @@
 \usepackage{enumitem}
 \usepackage{siunitx}
 
+% % make math bold in titles but not in TOC
+% \usepackage{sectsty}
+% \allsectionsfont{\boldmath}
+
 \usepackage[backend=biber,
             hyperref=true,
             sortcites=true,
@@ -41,6 +45,8 @@
             doi=true,
             dashed=false
             block=none]{biblatex}
+
+
 
             % ISBN field
 \DeclareBibliographyDriver{book}{%

@@ -1,4 +1,4 @@
-All the discussion thus far involved either \MC samples, Belle~II data samples with negligible \BtoXsgamma events,
+All the discussion thus far involved either \MC samples, Belle~II data samples with a negligible amount of \BtoXsgamma events,
 or with the signal region ($\EB\in(1.8,2.7)~\gev$) hidden.
 After preparing the analysis on simulation, performing extensive validation and evaluating systematic uncertainties, 
 the signal region is ready to be unblinded, as it was shown that no significant biases are expected.
@@ -9,7 +9,7 @@ This Section presents the results of the analysis.
 Following the \Mbc fitting strategy described in \Cref{sec:fitting_setup} and the model in \Cref{tab:fitting_init_params_updated},
 the fits on the signal region of Belle~II data are performed.
 They are shown in \Cref{fig:data_fits_signal}.
-Together with fits in \Cref{fig:sideband_data_fit}, it gives all the data fits for the defined \EB intervals in \Cref{sec:binning}.
+Together with fits in \Cref{fig:sideband_data_fit}, it gives all the data fits for the \EB intervals defined in \Cref{sec:binning}.
 The extracted $\mathcal{N}_{\mathrm{CB}}$ are shown in the top right corner of each Figure.
 \begin{figure}[htbp!]
     \centering
@@ -106,7 +106,7 @@ This excess in data is evidence of \BtoXsdgamma events.
     }
     \caption{\label{fig:final_fit_results}
         The results of fits in \Cref{fig:sideband_data_fit,fig:sideband_mc_fit,fig:data_fits_signal,fig:nosignal_fits_signal}.
-        All corrections discused in \Cref{tab:correction_table} are applied, 
+        All corrections discussed in \Cref{tab:correction_table} are applied, 
         and relevant uncertainties from \Cref{tab:background_uncertainties,tab:fit_uncertainties} are included.
         \Cref{fig:final_fit_results_lin} show the results in a linear, whereas \Cref{fig:final_fit_results_log} in a logarithmic scale.
         The excess seen in Belle~II data is evidence of the presence of \BtoXsdgamma events.
@@ -115,11 +115,11 @@ This excess in data is evidence of \BtoXsdgamma events.
 
 \subsection{Remaining-\texorpdfstring{\BB}{BB} background subtraction results}\label{sec:background_subtraction_results}
 
-The excess that is observed in Belle~II data fits over background-only Belle~II simulation fits is attributed to the presence of \BtoXsdgamma events.
+The excess observed in Belle~II data fits over background-only Belle~II simulation fits is attributed to the presence of \BtoXsdgamma events.
 Following the background subtraction strategy shown in \Cref{sec:background_subtraction,sec:background_subtraction_validation_mc},
 the remaining good tag-\B meson backgrounds are subtracted.
-Simply put, this corresponds to the subtraction of the filled (green) histogram from data points in \Cref{fig:final_fit_results}.
-Within uncertainties, the resulting difference can only be related to photons that originate in \BtoXsdgamma decays.
+This corresponds to the subtraction of the filled (green) histogram from data points in \Cref{fig:final_fit_results}.
+Within uncertainties, the resulting difference is attributed to photons that originate in \BtoXsdgamma decays.
 The background-subtracted photon energy spectrum is shown in \Cref{fig:subtracted_results}.
 \begin{figure}[htbp]
     \subcaptionbox{\label{fig:subtracted_spectrum}}{
@@ -170,7 +170,7 @@ The cumulative and binned results show excellent agreement with the expectation 
 
 The measurement results, provided in \Cref{tab:observed_events} and visualised in \Cref{fig:subtracted_spectrum},
 are used to calculate the partial branching fractions of \BtoXsgamma decays.
-To this end they are corrected for efficiency and unfolded.
+To this end, observed \BtoXsgamma events are corrected for efficiency and unfolded.
 The efficiency used for the calculations is provided in \Cref{sec:signal_selection_uncertainties}, 
 whereas the unfolding factors and strategy are described in \Cref{sec:unfolding_systematic}.
 Note that up until now \EB and $\tilde{E}_{\gamma}^B$ were used to explicitly differentiate
@@ -195,15 +195,15 @@ where (left to right, top to bottom):
     \item $N_i^{\BtoXdgamma}$ is the number of \BtoXdgamma events contributing to an interval $i$;
     \item $\varepsilon_i$ is the factorised signal efficiency for interval $i$, defined in \Cref{eq:factorisable_signal_efficiency}; 
     with values taken from \Cref{tab:signal_selection_uncertainties} and \Cref{eq:tag_efficiency_with_uncertainty};
-    \item $N_B$ as the number of $B$ mesons in the analysed Belle~II data sample, as given in \Cref{eq:b_meson_count}.
+    \item $N_B$ is the number of $B$ mesons in the analysed Belle~II data sample, as given in \Cref{eq:b_meson_count}.
 \end{itemize}
 
 The results of the calculations based on \Cref{eq:branching_fraction} with all 
 results discussed and derived in this thesis are shown in \Cref{tab:partial_branching_fractions}.
-The statistical and systematic uncertainty is included, where the latter is broken down into four categories presented in \Cref{sec:systematic_uncertainty}.
+The statistical and systematic uncertainties are included, where the latter is broken down into four categories presented in \Cref{sec:systematic_uncertainty}.
 The calculations are only performed for the signal region $\EB\in(1.8,2.7)~\gev$ where the unfolding factors are available.
 Furthermore, the $\EB\in(2.6,2.7)~\gev$ interval is not given in \Cref{tab:partial_branching_fractions}, 
-because the unfolding factor for it is 0 (see \Cref{tab:unfolding_uncertainties}).
+because the corresponding unfolding factor is 0 (see \Cref{tab:unfolding_uncertainties}).
 
 \begin{table}[htbp!]
     \centering
@@ -263,7 +263,7 @@ The results for thresholds of $1.8~\gev$, $2.0~\gev$ and $2.1~\gev$ are given in
 The combined value of the correlated systematic uncertainties becomes dominant at the low-\EB threshold but remains comparable to the statistical uncertainty.
 
 To compare with the results of other experiments and theoretical values,
-one can use the theoretical extrapolation factors, provided in Ref.~\cite{Buchmuller:2005zv},
+the theoretical extrapolation factors are used, as provided in Ref.~\cite{Buchmuller:2005zv},
 to evaluate the branching fraction at the threshold of $\EB>1.6~\gev$.
 As it was discussed in \Cref{sec:btosgamma_totalrate_theory}, for \BtoXsgamma total rate evaluation, $\EB>1.6~\gev$ is a conventionally chosen threshold.
 The extrapolated results are also provided in the last column of \Cref{tab:integrated_branching_fractions}.
@@ -304,7 +304,7 @@ with weights corresponding to the partial branching fractions in that \EB interv
 \end{align} 
 where $f_c$ is used as a loose notation for a function that returns the central point of an interval.
 The calculated values of the first and second moments of \EB for different lower thresholds are given in \Cref{tab:moments}.
-The systematic and statistical uncertainty sources match those in earlier Subsections, and their correlation is accounted as discussed before.
+The systematic and statistical uncertainty sources match those in earlier Subsections, and their correlation is accounted for as discussed before.
 
 % Note that the results strongly depend on the threshold -- particularly for the second moment.
 The measured values of the first moment in \Cref{tab:moments} (average of the photon energy spectrum) slightly decrease with the \EB threshold as additional
@@ -321,7 +321,7 @@ Conversely, in the case of the first moment, the peak region carries the highest
     \centering
     \caption{\label{tab:moments}
     The moments of the integrated \BtoXsgamma photon energy spectrum for different low-\EB thresholds measured on $189~\invfb$ of Belle~II data.
-    They are evaluated by a weighted sum of the partial branching fractions in \Cref{tab:partial_branching_fractions} according to \Cref{eq:weighted_sum_moments}.
+    These moments are evaluated by a weighted sum of the partial branching fractions in \Cref{tab:partial_branching_fractions} according to \Cref{eq:weighted_sum_moments}.
     The systematic and statistical uncertainties are denoted in the brackets.
     }
     \input{tables/moments.tex}
