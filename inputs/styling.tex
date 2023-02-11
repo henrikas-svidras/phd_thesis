@@ -31,3 +31,16 @@
 {\vspace*{1.0cm}\Huge\textbf{#1}} % 2.2cm
 \par\bigskip
 }{\clearpage}
+
+% parts not indexed
+\renewcommand\thepart{}
+% \makeatletter
+% \xpatchcmd{\sv@part}{\huge \bfseries \partname \nobreakspace \thepart \par \vskip 20\p@ \fi \Huge \bfseries #2}{\fi \tiny \bfseries \thepart. #2}{}{}
+% \makeatother
+
+\titleformat{\part}
+[display]
+{\centering\normalfont\Huge\bfseries}
+{\thepart}
+{0pt}
+{}
