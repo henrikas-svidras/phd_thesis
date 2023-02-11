@@ -1,10 +1,10 @@
 The fitter and background subtraction procedure, introduced in \Cref{sec:fitting_setup,sec:background_subtraction},
 have been thoroughly validated in \Cref{sec:MC_validation} in \MC.
 The real challenge, as usual, is ensuring that the conclusions and results observed in \MC generalise correctly to real Belle~II data.
-The key concept of a blinded analysis dictates that one must validate the analysis procedure in control samples or regions: collections of data that are abundant, well-understood and provide insight into the behaviour of signal in the detector.
-In this Section, the discussion about \FEI validation, 
+The key concept of a blinded analysis dictates that one must validate the analysis procedure in control samples or regions: collections of data that are abundant, well-understood and provide insight into the behaviour of signal in the detector while being signal free.
+In this Section, \FEI validation, 
 \piz and $\eta$ veto validation, photon detection efficiency and background modelling is presented.
-The combined results from all Sections are shown in \Cref{tab:correction_table}.
+The combined results from \Crefrange{sec:fei_calibration}{sec:remaining_bb_background_modelling} are shown in \Cref{tab:correction_table}.
 
 \begin{table}[htbp!]
     \centering
@@ -14,7 +14,7 @@ The combined results from all Sections are shown in \Cref{tab:correction_table}.
     The photon detection efficiency study is described in \Cref{sec:photon_efficiency}.
     Background modelling corrections are calculated in \Cref{sec:remaining_bb_background_modelling}.
     The \FEI, \piz and \g corrections are averaged values corresponding to the respective \EB bin,
-    as the event-level information is lost after estimating good tag-\B counts using the \Mbc fit and performing the leftover \BB background subtraction.
+    as the candidate-level information is lost after the \Mbc fit.
     }
     \input{tables/correction_table.tex}
 \end{table}
@@ -23,17 +23,17 @@ The combined results from all Sections are shown in \Cref{tab:correction_table}.
 \subsection{Calibration of the \texorpdfstring{\FEI}{FEI} algorithm}\label{sec:fei_calibration}
 
 The working principle of \FEI has already been discussed in \Cref{sec:tag_reconstruction}.
-It combines many classifiers which perform reconstructions in various decay chains of the hadronic decays of \B mesons.
+It combines many classifiers which perform reconstructions of the hadronic decays of \B mesons in various decay chains.
 Furthermore, the training of the algorithm happens in \MC.
 To ensure that the algorithm appropriately acts on Belle~II data, its performance must be studied or \textit{calibrated}.
-The calibration study is performed on data collected by the Belle~II, for every simulation campaign, and the work is not part of the original work presented in this thesis.
+The calibration study is performed on data collected by Belle~II, for every simulation campaign, and the work is not part of the original work presented in this thesis.
 Full details of the calibration method are presented in Ref.~\cite{Belle-II:2020fst}, but the main details that are relevant to the work of the thesis are summarised here.
 
 The calibration study uses $B\rightarrow X_{u/c} \ell \nu$ decays due to the branching fraction of almost 20~\% and a clean experimental signature, 
 where $X_{u/c}$ denotes an inclusive state originating from the $c$ or $u$ quark, similarly to the $X_{s/d}$ notation.
 Firstly, in each event, only the highest \FEI probability tag-\B candidate is selected with loose requirements on Fox-Wolfram moments (see \Cref{sec:fox_wolfram_moments}) and $\Delta E$ to ensure adequate \epem\ra\qqbar suppression.
 Next, a high energy lepton $p_{\ell}^B>1~\gevc$ is required in each event.
-This lepton candidate is required to originate near the interaction point and its identification information from all sub-detectors is required to be consistent with a lepton.
+This candidate is required to originate near the interaction point and its identification information from all sub-detectors is required to be consistent with a lepton.
 
 After the selection, a binned likelihood fit for \Mbc is set up, which contains three binned \PDF{s}: signal $B\rightarrow X_{u/c}\ell\nu$ decays, 
 secondary or misidentified leptons, and \epem\ra\qqbar events. 
@@ -51,24 +51,16 @@ This is shown in \Cref{fig:fei_calib}.
 \begin{figure}[htbp!]
     \centering
     \subcaptionbox{\label{fig:fei_calib_bpluseminus}}{
-        \clipbox*{{0\width} {0.5\height} {0.5\width} {1\height}}{%
-            \includegraphics[width=0.9\textwidth]{figures/data_sim_corrections/tag_calibration.png}
-        }
+            \includegraphics[width=0.45\textwidth]{figures/data_sim_corrections/BpXenu_pl_fit_All_data_postfiterrs.pdf}
     }
     \subcaptionbox{\label{fig:fei_calib_bplusmuminus}}{
-        \clipbox*{{0.5\width} {0.5\height} {1\width} {1\height}}{%
-            \includegraphics[width=0.9\textwidth]{figures/data_sim_corrections/tag_calibration.png}
-        }
+            \includegraphics[width=0.45\textwidth]{figures/data_sim_corrections/BpXmunu_pl_fit_All_data_postfiterrs.pdf}
     }
     \subcaptionbox{\label{fig:fei_calib_bzeroeminus}}{
-        \clipbox*{{0\width} {0\height} {0.5\width} {0.5\height}}{%
-            \includegraphics[width=0.9\textwidth]{figures/data_sim_corrections/tag_calibration.png}
-        }
+            \includegraphics[width=0.45\textwidth]{figures/data_sim_corrections/B0Xenu_pl_fit_All_data_postfiterrs.pdf}
     }
     \subcaptionbox{\label{fig:fei_calib_bzeromuminus}}{
-        \clipbox*{{0.5\width} {0\height} {1\width} {0.5\height}}{%
-            \includegraphics[width=0.9\textwidth]{figures/data_sim_corrections/tag_calibration.png}
-        }
+                \includegraphics[width=0.45\textwidth]{figures/data_sim_corrections/B0Xenu_pl_fit_All_data_postfiterrs.pdf}
     }
     \caption{\label{fig:fei_calib} Illustration of the fits to \B\to$X_{u/c}\ell\nu$ decays in the \FEI calibration study.
     Results for the combinations of charged and neutral tag-$B$ modes with $e^-$ and $\mu^-$
@@ -79,33 +71,33 @@ This is shown in \Cref{fig:fei_calib}.
 \end{figure}
 
 The branching fractions of $B\rightarrow X_{u/c}\ell\nu$ are evaluated from the fitted distributions.
-These values are then directly compared with the experimentally known values of branching fractions of the respective decays.
-A correction factor, $\mathcal{C}_{\mathrm{FEI}}$, is derived such that the two values are compatible.
+These values are then directly compared with the world average values.
+A correction factor, $\mathcal{C}_{\mathrm{FEI}}$, is derived such that the two values become compatible.
 The leading evaluated systematic uncertainties come from the imperfect experimental knowledge of the $B\rightarrow X_u\ell\nu$ branching fractions and their form factors, the fit model composition, tracking and particle identification uncertainties.
-For the Belle II simulation campaign used in this analysis, and averaged for both lepton modes, the result is as follows:
+For the Belle~II simulation campaign used in this analysis, and averaged for both lepton modes, the result is as follows:
 \begin{equation}\label{eq:fei_calibration}
-    \mathcal{C}_{\mathrm{FEI}}(B^+) = 0.6599 \pm 0.225; \quad \mathcal{C}_{\mathrm{FEI}}(B^0) = 0.6695 \pm 0.0237,
+    \mathcal{C}_{\mathrm{FEI}}(B^+) = 0.6599 \pm 0.0225; \quad \mathcal{C}_{\mathrm{FEI}}(B^0) = 0.6695 \pm 0.0237,
 \end{equation}
 where two different calibration factors are presented for \feiBp and \feiBz modes, respectively.
-Therefore, for an adequate comparison with Belle II data, any Belle II simulation involving the use of \FEI is henceforth scaled appropriately.
+Therefore, for an adequate comparison with Belle~II data, any Belle~II simulation involving the use of \FEI is henceforth scaled appropriately.
 
 \subsection{Calibration of \texorpdfstring{\piz}{pi0} and \texorpdfstring{$\eta$}{eta} suppression tools}\label{sec:piz_eta_calibration}
 It was seen in \Cref{sec:selection_vetos} that one of the strongest tools for background suppression in this analysis is the $\piz$ and $\eta$ suppression tool.
 Consequentially, any data-simulation discrepancies have a high impact on the final result.
-The calibration of the \piz and $\eta$ is performed in an independent study and is not part of the original work presented in this thesis 
+The calibration of the \piz and $\eta$ veto is performed in an independent study and is not part of the original work presented in this thesis 
 but the relevant calibration study is discussed in this Section.
-Although the calibration study only studies \piVeto, it is assumed that the corrections are also valid for \etaVeto selections.
+Although the calibration analysis only studies \piVeto, it is assumed that the corrections are also valid for \etaVeto selections.
 The main concern for the \BtoXsgamma analysis is the primary (signal) photon efficiency: the number of photons that do not originate in light meson decays and get rejected given a certain \piVeto selection.
 
 The calibration study uses $B^+\to \bar{D}^0[\to K^+\pi^-]\pi^+$ and $B^0\to D^-[\to K^+\pi^-\pi^-]\pi^+$ decays, where the square brackets denote a subdecay of the $D$ meson.
 The $\pi^+$, originating in the primary $B$ decay, is combined with all other photon candidates in the event in a strategy described in \Cref{sec:selection_vetos} assuming a null-mass hypothesis.
 This produces many \piz-like combinations ($\mathit{pseudo}\mathrm{-}\piz$) which yield a \piVeto score with minimal background from real \piz decays.
 
-The reconstruction requires all charged tracks to have good-quality tracks that originate near the interaction point.
-The identification information from Belle II subdetectors is used to distinguish pions and kaons.
-Because $\pi^+$ from the primary $B$ decay is combined with other photons, a massless hypothesis is used for calculations of invariant mass and the helicity angles for the MVA.
-After constructing the pseudo-\piz, selections on \piVeto are performed, corresponding to selections chosen in the analysis.
-Therefore a distribution with no \piVeto requirement, and a subset distribution with $\piVeto<0.4$ are created.
+The reconstruction requires good-quality tracks that originate near the interaction point.
+The identification information from Belle~II subdetectors is used to distinguish between pions and kaons.
+Because the $\pi^+$ from the primary $B$ decay is combined with other photons, a massless hypothesis is used for calculations of the invariant mass and the helicity angles for the MVA.
+After constructing the pseudo-\piz, selections on \piVeto are performed accordingly to those chosen in this analysis.
+Therefore, two distributions are created: one with no \piVeto requirement, and a subset distribution with $\piVeto<0.4$.
 In both cases, the charged and neutral $B$ channels are combined.
 
 An unbinned \Mbc fit is performed on distributions with and without the \piVeto selections.
@@ -123,11 +115,11 @@ The fits on data in the case of no \piVeto selection, and a $\piVeto<0.95$ selec
     \subcaptionbox{\label{fig:pivetofit_cut}}{
         \includegraphics[width=0.45\textwidth]{figures/data_sim_corrections/data_fit_pi0_with_cut.png}
         }
-    \caption{\label{fig:pivetofit} The fit estimating the number of $B\to D \pi^+$ events in Belle II data.
+    \caption{\label{fig:pivetofit} The fit estimating the number of $B\to D \pi^+$ events in Belle~II data.
     Different \PDF{s} used in the fit are shown in the legend and explained in the text.
-    The fit is performed on a sample without (\Cref{fig:pivetofit_nocut}) and with (\Cref{fig:pivetofit_cut}) \piVeto selection applied.
+    The fit is performed on a sample without (\Cref{fig:pivetofit_nocut}) and with (\Cref{fig:pivetofit_cut}) the \piVeto selection applied.
     The extracted values from simulation and data are then combined to calculate \piVeto correction factors (see \Cref{eq:piveto_correction}).
-    These Figures are produced by a Belle II internal study of the \piz veto and are not part of the original work in this thesis.
+    These Figures are produced by a Belle~II internal study of the \piz veto and are not part of the original work in this thesis.
     Only the labels and legends have been adapted.    
     }
 \end{figure}
@@ -143,28 +135,28 @@ Results for corresponding to selection chosen in this analysis are given in \Cre
 The internal Belle~II study providing these corrections was only performed in the range of 1.8 to 3.0~\gev in the laboratory frame energy of the primary $\pi^+$.
 A linear extrapolation is performed to estimate the values outside the range.
 It is observed that the linear extrapolation is consistent, within errors, with the corrections in $1.8-3.0~\gev$.
-Therefore, a correction factor of $1.1\pm0.5$ is chosen for events outside the range covered by the calibration study.
+Therefore, a correction factor of $1.10\pm0.05$ is chosen for events outside the range covered by the calibration study.
 This value is consistent with the correction factors in other \Egamma bins.
 \begin{figure}[htbp!]
     \centering
     \includegraphics[width=0.45\textwidth]{figures/data_sim_corrections/pi0veto_corrections.pdf}
     \caption{\label{fig:piveto_corrections} The corrections $R_{\piVeto}$ for the $\piVeto<0.4$ selection used in this analysis.
-    The results cover $1.8-3.0~\gev$ energies in the \textit{laboratory frame}, $\Egamma$.
+    The results cover $1.8-3.0~\gev$ energies in the laboratory frame, $\Egamma$.
     Because the laboratory frame energies cannot be trivially transformed to the $B$ meson rest frame energies, a linear extrapolation to lower energies is performed as identified by the dashed line.
     }
 \end{figure}
 
-\subsection{Belle II calorimeter photon detection efficiency}\label{sec:photon_efficiency}
+\subsection{Belle~II calorimeter photon detection efficiency}\label{sec:photon_efficiency}
 
 One of the main necessities of a measurement involving photons in the final state, is, of course, a precise and accurate simulation of the \ECL.
 Although it is designed with precision and resolution suitable for flavour physics studies, 
 exact data-simulation differences have to be evaluated.
 A Belle~II calorimeter photon detection efficiency study has been performed.
 The initial setup of the analysis has been prepared by Dr.~Natalia Kovalchuk and Dr.~Torben Ferber. 
-However, as part of the original work presented in this thesis, the analysis was updated and reworked for later versions of Belle II data. 
+However, as part of the original work presented in this thesis, the analysis was updated and reworked for later versions of Belle~II data. 
 It also supplemented the initial studies with a full systematic uncertainty evaluation.
 While it is a critical study for the \BtoXsgamma analysis, the results are also routinely used in other analyses that utilise photons in their final states.
-The study is summarised in a Belle II public note \cite{Henrikas:2604}.
+The study is summarised in a Belle~II public note \cite{Henrikas:2604}.
 Here, the main measurement concepts and the results relevant to the measurement of \BtoXsgamma are presented.
 
 To measure the photon detection efficiency, one must first have the knowledge that a photon has been created in an event and then search for it within the calorimeter.
@@ -179,7 +171,7 @@ The concept of the efficiency measurement is sketched in \Cref{fig:photon_effici
     \subcaptionbox{\label{fig:measurement_principle_gammaeff}}{
         \includegraphics[width=0.4\textwidth]{figures/data_sim_corrections/measurement_principle.png}
         }
-    \caption{\label{fig:photon_efficiency_measurement} The main concepts of the measurement of the Belle II photon detection efficiency.
+    \caption{\label{fig:photon_efficiency_measurement} The main concepts of the measurement of the Belle~II photon detection efficiency.
     The \Cref{fig:eemumugamma_feynman} shows the Feynman diagram of the $\epem\ra\mumu$ events, where a photon is radiated in the initial collision state.
     Due to the radiated photon, the resulting dimuon system will have a missing momentum with respect to the usual collision energy $\sqrt{s}\approx10.58~\gev$.
     The direction of the missing momentum can be extrapolated to search for photon clusters in the calorimeter, as sketched in \Cref{fig:measurement_principle_gammaeff}.
@@ -198,7 +190,7 @@ which can be evaluated as a function of missing momentum with a magnitude $|\vec
 
 Many background processes degrade the efficiency by producing events with sufficient recoil momentum.
 A notable example is the $\epem\ra\tautau$ events which may produce two muons and four neutrinos through subsequent $\tau$ decays.
-The presence of neutrinos creates a missing momentum which fakes the recoil that originates from an \ISR photon.
+The presence of neutrinos creates a missing momentum which mimics the recoil that originates from an \ISR photon.
 Furthermore, tracking inefficiencies can lead to an incorrect measurement of the direction or magnitude of the recoil vector.
 Finally, two or more \ISR photons per event further complicate the photon finding procedure, resulting in an overall drop in efficiency.
 Therefore, \Cref{eq:photon_efficiency} is more correctly referred to as \textit{photon finding efficiency}, rather than photon detection efficiency.
@@ -244,7 +236,7 @@ The distribution of events where the recoil is successfully matched to a photon 
     \subcaptionbox{\label{fig:matched_photon_data_mc}}{
         \includegraphics[width=0.4\textwidth]{figures/data_sim_corrections/pyth_data_normalisation_to_mc_comparison_pRecoil_matched_repaired.pdf}
     }
-    \caption{\label{fig:normalisation_data_mc} Distribution of $\epem\ra\mumu$ events with a photon radiated in the initial interaction state, as a function of the magnitude of the missing momentum of the dimuon system (which corresponds to the energy of the radiated photon).
+    \caption{\label{fig:normalisation_data_mc} Distribution of $\epem\ra\mumu$ events with a photon radiated in the initial interaction state, as a function of the magnitude of the missing momentum of the dimuon system.
     \Cref{fig:selected_photon_data_mc} shows events where a missing momentum has been found.
     \Cref{fig:matched_photon_data_mc} shows events where a missing momentum has been found and it was consistent with a photon in the calorimeter, as discussed in the text.
     Various sources of background events are also included, and they can be seen to be at a low level.
@@ -303,7 +295,7 @@ These requirements encompass 53 \Bp modes and 39 \Bz decay modes.
 They are listed in \Cref{tab:leftover_bp} and \Cref{tab:leftover_bz}, respectively.
 These Tables also contain their relative abundances in every given bin.
 As hundreds of $B$ decay modes contribute at $\order(<1\%)$ relative abundance, these requirements may not cover all background modes. 
-However, it is assumed that the corrections for non-dominant background modes should on average be 1, as large branching fraction differences in Belle~II simulation are not expected.
+However, it is assumed that the corrections for non-dominant background modes should on average be unity, as large branching fraction differences in Belle~II simulation are not expected.
 
 The main sources of background photons come from various $B\to D$ transitions, where photons originate from either subsequent $D$ decays or the accompanying particle, e.g. $B\to D\rho$.
 Semileptonic $B$ decays are also a major source of background.
@@ -345,7 +337,7 @@ Particles that are not from the primary collision but are produced by the intera
 and residual gas in the beam pipe or the material of the detector.},
 and products of previous collision events are not included in the candidate photon selection.
 Such machine-related backgrounds vary based on the experimental conditions and these effects are not well captured by the Belle~II run-period independent simulation that is used in preparation for this analysis.
-Therefore, a timing selection, requires the photon to be registered in a time window $|\tau_{\gamma}|<200~\ns$ around the collision time.
+Therefore, a timing selection requires the photon to be registered in a time window $|\tau_{\gamma}|<200~\ns$ around the collision time.
 Furthermore, to reject photons associated with low-quality cluster reconstruction, a $|\tau_{\gamma}|/\Delta\tau_{\gamma}<2$ requirement is added, 
 where $\Delta\tau_{\gamma}$ is the uncertainty of the photon timing measurement.
 Using a technique analogous to $\epem\ra\mumu$ recoil study, it is observed that it degrades the photon finding efficiency by less than 2\%.
