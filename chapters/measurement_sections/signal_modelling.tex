@@ -71,7 +71,6 @@ The results are shown in \Cref{fig:epsilon_selection}.
 All three models show compatible results.
 The $\varepsilon_{\mathrm{selection}}$ grows approximately linearly from 30\% at 1.4~\gev to 60\% at 2.6~\gev and begins to drop.
 The values of the hybrid-signal model are chosen as central values of efficiency.
-
 Finally, the results of \Cref{fig:epsilon} are combined to evaluated the total simulated efficiency based on \Cref{eq:factorisable_signal_efficiency}.
 
 \subsection{Validation of \texorpdfstring{\BtoXsgamma}{B->Xs gamma} efficiency}\label{sec:validation_efficiency}
@@ -122,7 +121,7 @@ The variation is evaluated at \mbox{$\Delta\varepsilon\approx0.024\pm0.043$} is 
 For a conservative approach, a 3\% efficiency uncertainty is adopted related to the \texttt{BDT~output} modelling.
 
 The results of this Section, \Cref{sec:signal_efficiency} and corrections from \Cref{sec:corrections}
-are combined in \Cref{eq:signal_efficiency} to calculate the selection efficiency on \BtoXsgamma as a function of \EB.
+are combined in \Cref{eq:signal_efficiency} to calculate the selection efficiency of \BtoXsgamma as a function of \EB.
 The results are visualised in \Cref{fig:corrected_signal_efficiency}.
 Using the factorised relation in \Cref{eq:factorisable_signal_efficiency} to combine the result with the average \FEI tagging efficiency (given in \Cref{eq:avg_efficiency_fei}), these values form the final
 efficiency.
@@ -156,7 +155,7 @@ The resolution is assumed to be represented by the Gaussian width parameter $\si
 The fitting strategy of the hybrid-signal model sample with a full selection used in this analysis is presented in \Cref{sec:appendix_resolution_fits}.
 Each fit is performed in $\tilde{E}_{\gamma}^{B}$ intervals and estimates the parameter $\sigma$ and its uncertainty.
 The summary of the results is given in \Cref{fig:resolution_sigmas}.
-The fits are with two choices of tag-\B mesons: firstly, with the good tag-\B mesons as defined in \Cref{sec:good_tag_definition},
+The fits are done with two choices of tag-\B mesons: firstly, with the good tag-\B mesons as defined in \Cref{sec:good_tag_definition},
 and secondly, for comparison, with tag-\B mesons that have been reconstructed perfectly.
 The photon energy resolution grows with \EB from $25~\mev$ to $40~\mev$
 but the ratio $\sigma/\tilde{E}_{\gamma}^{B}$ stays approximately constant.
@@ -249,12 +248,12 @@ The measured \EB spectrum is smeared due to resolution effects.
 This can be seen in \Cref{fig:btosgamma_resolution}, where the true and measured photon energies are compared.
 In both cases, the hybrid-signal model is used.
 The overall peak of the spectrum is shifted towards lower-\EB after a measurement.
-Therefore, the measured result on Belle~II data (where the `true' values are by definition unknown) has to be unfolded.
+Therefore, the measured result of the Belle~II data has to be unfolded.
 Unfolding was already introduced in \Cref{sec:unfolding}.
 The unfolding strategy of the \EB spectrum to the true energy $\tilde{E}_{\gamma}^B$ is presented in this section.
 
 Firstly, a response matrix (see \Cref{eq:response_matrix_element}) is calculated.
-It shows the fraction of events that are generated in a given $\tilde{E}_{\gamma}^B$ interval but are measured in a given \EB interval.
+It shows the fraction of events that are generated in a given $\tilde{E}_{\gamma}^B$ interval, but are measured in a given \EB interval.
 The response matrix is shown in \Cref{fig:migration_matrix}.
 
 \begin{figure}[htbp!]
@@ -285,7 +284,7 @@ They are then propagated through the full unfolding procedure.
 For bin-by-bin unfolding the propagation is governed by \Cref{eq:bin_by_bin_unfolding,eq:bin_by_bin_unfolding_error}.
 The resulting uncertainties due to the matrix inversion method are larger by more than a factor of two compared to the bin-by-bin unfolding method in many photon energy intervals.
 At the same time, this increase in uncertainties is reduced by introducing a weak regularisation requirement using the singular value decomposition method.
-As the analysis results are statistically limited, the correlation of the expected number of events between different \EB intervals is small.
+As the analysis results are statistically limited, the observed correlation of the expected number of events in different \EB intervals is small.
 Therefore, it is concluded that for this analysis bin-by-bin unfolding method is sufficient, as it does not inflate the uncertainties and does not introduce additional correlations between bins via regularisation.
 
 \begin{figure}[htbp!]
@@ -298,7 +297,6 @@ Therefore, it is concluded that for this analysis bin-by-bin unfolding method is
     As this model is also used to build the response matrix (see \Cref{fig:migration_matrix}), the data points, corresponding to different unfolding methods 
     line up exactly with the true result.
     The shaded area represents the expected measurement uncertainties, based on the pseudodata study in \Cref{sec:background_subtraction_validation_mc}.
-    The statistical uncertainty is shown as the inner shaded area and the total uncertainty as the outer shaded area.
     The systematic uncertainty involves corrections for background and signal simulation discussed in \Cref{sec:corrections,sec:signal_modelling}.
     }
 \end{figure}
