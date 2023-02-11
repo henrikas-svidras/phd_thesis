@@ -21,14 +21,14 @@ and 91.7\% to 8.3\% for \feiBz.
 The majority of background photon candidates originate in $\piz\ra\g\g$ or $\eta\ra\g\g$ decays.
 This in total accounts for roughly 85\% of background photon candidates.
 Photon candidates, broken down by their mother particle, are shown in \Cref{fig:photon_sources}.
-Other sources, such as initial-state radiation, neutron annihilation, parton shower final-state radiation, $\omega(782)$, $\eta'$ decays (in decreasing order) individually make $0.5-3\%$ of the sample.
-All other sources individually make up less than 0.5\% and include various hadron decays that are produced in the continuum or \B events.
+Other sources, such as (in decreasing order) initial-state radiation, neutron annihilation, parton shower final-state radiation, $\omega(782)$, $\eta'$ decays each make up $0.5-3\%$ of the sample.
+All other sources individually make up less than 0.5\% and include various hadron decays that are produced in continuum or \B events.
 The backgrounds are similar for both \feiBp and \feiBz modes.
-Note that some photon candidates can be misidentified (in particular neutrons). 
+Note that some photon candidates can be misidentified, in particular neutrons. 
 This is further discussed in \Cref{sec:selection_clusZMVA}.
 
 The reason why $\piz\ra\g\g$ and $\eta\ra\g\g$ decays are such a prominent background is related to the fact that they can often be produced in hadronic decays.
-Because the \piz and $\eta$ are produced boosted, their diphoton decays are usually asymmetric in the \epem collision rest-frame -- where one photon has a much larger energy than the other.
+Because the \piz and $\eta$ are produced boosted, their diphoton decays can be asymmetric in the \epem collision rest-frame, where one photon has a much larger energy than the other.
 The hadronic decay, overall, mimics the hadronised $X_s$ system, whereas the more energetic photon is taken as the high energy photon candidate.
 However, for \B decays, this background drops off rapidly with photon energy, and at high-\EB becomes negligibly small because processes producing photons with $\EB\approx m_b/2$ in \B decays are rare.
 No such constraint exists for continuum events where light hadrons can be created in large numbers.
@@ -47,7 +47,7 @@ Therefore, \piz and $\eta$ suppression, while important for \B decays, also high
     Only one photon candidate per event is shown, but it may still be paired with multiple tag-side candidates.
     Roughly 85\% of candidates originate in $\piz\ra\g\g$ or $\eta\ra\g\g$ decays.
     Other important backgrounds are photons from initial-state radiation, bremsstrahlung, and neutron-annihilation processes.
-    These account for approximately 3\% each.
+    These account for approximately 3\%, each.
     The leftover 10\% originate in various other decays.}
 \end{figure}
 
@@ -74,8 +74,7 @@ The main misidentified photon candidates originate from neutrons with a small co
     \input{tables/misidentification.tex}
 \end{table}
 
-The interactions of these particle species produce a cascade of secondary particles which may produce tertiary particles etc., collectively called a particle shower.
-Generally, the total energy deposit and distribution between \ECL crystals, also known as \textit{shower shape}, is different depending on the particle species due to their different radiation lengths.
+Generally, the total energy deposit and distribution between \ECL crystals, also known as the \textit{shower shape}, is different depending on the particle species due to their different radiation lengths.
 This can be used to distinguish photon clusters using \MVA methods.
 A technique achieving this, which uses the moments of Zernike polynomials, is documented in Ref.~\cite{Hershenhorn:2468}.
 This approach is implemented in \basftwo and used in this analysis.
@@ -160,8 +159,8 @@ The general idea of the \piz~and~\eta~veto is to pair the high energy photon sig
 The compatibility of the combination with a $\piz\ra\g\g$ or $\eta\ra\g\g$ decay is evaluated and a probability-like quantity is calculated to quantify it.
 
 The soft photon candidate is selected with an energy of $30~\mev$ ($40~\mev$ in the backward \ECL endcap) for $\piz$ or $60~\mev$ for $\eta$.
-The photon is also required to have deposited the energy in 2 or more crystals.
-Furthermore, photon candidates are required to have an associated cluster time less than one standard deviation away from 0.
+The photon is also required to have deposited the energy in two or more crystals.
+Furthermore, photon candidates are required to have an associated cluster time less than one standard deviation away from zero.
 These selections ensure that beam background photons, neutral hadrons misidentified as photons and misreconstructed charged particles are not included in the soft photon sample.
 
 The soft photons that pass these selections are combined with the hard photon candidate.
@@ -236,7 +235,7 @@ Removing $\piz\ra\g\g$ decays from the sample, a clear separation of photon cand
 
 Even though no direct selection is applied on the $X_s$ system, through direct or higher-order correlations with \EB, a bias may be introduced to the photon energy.
 To ensure that no such correlation is introduced, a correlation study is performed for \piVeto, \etaVeto and \ZMVA observables.
-In principle, it is acceptable if the selection introduces a bias to the background -- as long as this bias is well reproduced in simulation.
+In principle, it is acceptable if the selection introduces a bias to the background, as long as this bias is well reproduced in simulation.
 The latter will be validated in \Cref{sec:corrections,sec:signal_modelling}.
 Therefore, the study is performed exclusively focusing on \BtoXsgamma events, as it is aimed to ensure that the photon energy spectrum itself is minimally biased.
 
@@ -265,9 +264,8 @@ Therefore, the study is performed exclusively focusing on \BtoXsgamma events, as
     For signal \BptoXsgamma events, the tests are shown
     in the upper panels (\Cref{fig:bp_zmva_correlation,fig:bp_piveto_correlation,fig:bp_etaveto_correlation}),
     and for \BztoXsgamma in the lower ones (\Cref{fig:bz_zmva_correlation,fig:bz_piveto_correlation,fig:bz_etaveto_correlation}).
-    All figures share the same legend provided in \Cref{fig:bp_zmva_correlation}.
     In the red line, the average photon energy, $\expval**{\EB}$, is shown as a function of the tested observable.
-    In black and black-dotted lines: median and $\pm 1 \sigma$ percentile values of \EB, respectively.
+    In black and black-dotted lines: the median and $\pm 1 \sigma$ percentile values of \EB, respectively.
     No strong dependence can be observed in any of the quantities or the 2D maps.
     }
 \end{figure}

@@ -6,7 +6,7 @@ This Section describes the approach taken to find such optimal selection and cal
 \subsection{Simultaneous selection optimisation}\label{sec:simultaneous_optimisation}
 
 After the pre-selection that prepared the data for training a \BDT in \Cref{tab:preselections}, a more robust strategy for tighter selections is developed.
-In particular, \BDT output, \piVeto, \etaVeto and \ZMVA may be interconnected in the sense that applying the selection on one of them influences a selection on the others. 
+In particular, the \BDT output, \piVeto, \etaVeto and \ZMVA may be interconnected in the sense that applying the selection on one of them influences a selection on the others. 
 To find an optimal selection point, each threshold is optimised in an iteration-based approach. 
 At each step, one variable threshold is optimised to a value that gives the best figure-of-merit score,
 while keeping the other requirements unvaried.
@@ -52,7 +52,7 @@ The retention, in this case, is defined as:
     r_{\mathrm{cand}} = \frac{N_{\BtoXsgamma}~\mathrm{candidates~after~cut}}{N_{\BtoXsgamma}~\mathrm{no~cut}},
 \end{equation}
 which is an approximation as it may include multiple tag-$B$ candidates.
-In the table, the $\Mbc>5.27~\gevcc$ requirement is no longer applied and all tag-$B$ meson candidates are kept (i.e. high energy photon candidates may contribute more than once per event).
+In the table, the $\Mbc>5.27~\gevcc$ requirement is no longer applied and all tag-$B$ meson candidates are kept (i.e. the same high energy photon candidates may contribute more than once).
 
 \begin{table}[htbp!]
     \centering
@@ -65,10 +65,10 @@ In the table, the $\Mbc>5.27~\gevcc$ requirement is no longer applied and all ta
 \end{table}
 
 \Cref{tab:cutflow} shows that the background suppression procedure roughly halves the number of available \BtoXsgamma events in the sample.
-However, the background candidates from \mbox{$\epem\ra\qqbar$} processes are reduced 200 times: to less than 0.5\% of the original value.
+However, the background candidates from \mbox{$\epem\ra\qqbar$} processes are reduced 200 times.
 Furthermore, generic-\BB event contribution is estimated at 7\% of the original, which means more that an order of magnitude suppression is achieved.
-The photon energy spectrum, after these selections have been applied is shown in \Cref{fig:spectrum_after_optimisation}.
-Compared with the previous versions of this Figure, e.g.\Cref{fig:spectrum_after_reco}, a much better signal-to-background ratio is visible.
+The photon energy spectrum, after these selections, is shown in \Cref{fig:spectrum_after_optimisation}.
+Compared with the previous versions of this Figure, e.g. \Cref{fig:spectrum_after_reco}, a much better signal-to-background ratio is obtained.
 
 \begin{figure}[htbp!]
     \centering

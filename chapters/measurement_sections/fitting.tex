@@ -7,13 +7,13 @@ In this Section, a thorough overview of the \Mbc fit is presented which extracts
 All fits shown in this Section are unbinned extended negative log-likelihood fits, as presented in \Cref{sec:fitting_theory}.
 
 
-\subsection{Components in the data set}\label{sec:fitting_components}
+\subsection{Components in the selected data set}\label{sec:fitting_components}
 
-There are three types of events in \epem collision data set following all the selections described so far:
+There are three types of events in the \epem collision data set following all the selections described so far:
 \begin{itemize}
     \item Generic \BB (including \BtoXsgamma) that are tagged with a good tag-$B$;
     \item Generic \BB (including \BtoXsgamma) that are tagged with a misreconstructed tag-$B$;
-    \item Photons candidates originating in $\epem\ra\qqbar$.
+    \item Photon candidates originating in $\epem\ra\qqbar$.
 \end{itemize}
 These three components are referred to as `peaking', `combinatorial \BB' and `continuum' throughout \Cref{sec:fitting_mbc}.
 These components, extracted from generic \MC, are visualised in \Cref{fig:tag_component_fits}.
@@ -49,11 +49,11 @@ The strategy to describe each component is as follows:
     This function is used to describe $\epem\ra\qqbar$ simulated backgrounds in this analysis and shown in \Cref{fig:argus_tags_fit}.
     \item The particular shape of the combinatorial \BB background is generally dependent on the signal mode and does not have a conventional method of description.
     In this analysis, the usage of \FEI and the fact that background events are conservatively suppressed to avoid signal-side biases lead to a wide but slightly peaking shape.
-    Several options were assessed, but it was found that it is suitably described by a Chebyshev polynomial, which can be adapted to a necessary functional shape.
+    Several options were assessed, but it was found to be suitably described by a Chebyshev polynomial, which can be adapted to a necessary functional shape.
     The definition of Chebyshev polynomials is given in \Cref{sec:chebyshev_distribution}.
     A 5th-order polynomial describes the combinatorial \BB background distribution in \Cref{fig:combinatorial_tags_fit},
 \end{itemize}
-In \Cref{fig:tag_component_fits} the subpanels show the pull distribution, defined as:
+In \Cref{fig:tag_component_fits}, the subpanels show the pull distribution, defined as:
 \begin{equation}\label{eq:pull_distribution}
     \mathrm{pull}(x) = \frac{x-\mu}{\sigma}. 
 \end{equation}
@@ -64,14 +64,14 @@ Therefore, any dependencies or structures observed in the pull distribution woul
 
 It is clear from \Cref{fig:spectrum_after_optimisation} that the signal-to-background ratio changes across all \EB intervals.
 Furthermore, even continuum-to-\BB event fractions are not constant.
-This is a result of the fact that photons related to \epem\ra\qqbar backgrounds are more likely to extend to high-\EB values because they do not originate from a \B meson which is always produced with $\approx\sqrt{s}/2$ at Belle II.
+This is a result of the fact that photons related to \epem\ra\qqbar backgrounds are more likely to extend to high-\EB values because they do not originate from a \B meson which is always produced with an energy $\approx\sqrt{s}/2$ at Belle~II.
 The goal of the fit, as discussed in the introduction of this Section, is to remove combinatorial \BB and continuum events from further analysis.
 While an overall \Mbc fit could be performed, such an approach necessarily loses event-level information, such as the energies of individual photons, and only provides the event counts in the fitted \EB region.
 Moreover, the background composition is expected to vary with \EB, hence such an overall fit may generally be suboptimal.
 
 Instead, in this analysis, the photon spectrum is divided into multiple \EB intervals, and the \Mbc distributions belonging to each interval are fitted using the functions described in \Cref{sec:fitting_components}.
 This approach reduces the existing data set to multiple \EB intervals with known good tag-\B counts, completely removing continuum and combinatorial \BB events from the data set.
-Such an approach means that the final photon energy spectrum will be provided in the binning used for fitting.
+Such an approach means that the final photon energy spectrum is provided with the same binning as used for fitting.
 It is therefore important to optimise the chosen intervals for the fit with respect to the expected \BtoXsgamma signal-to-background ratio, 
 even if the primary goal of the fit is not signal extraction.
 
@@ -83,10 +83,11 @@ The result of the study of the statistical significance for the hybrid-signal mo
 \begin{figure}[htbp!]
     \centering
     \includegraphics[width=0.5\textwidth]{figures/fitting/binning_significance.pdf}
-    \caption{\label{fig:binning_significance}The results of statistical significance, based on \Cref{eq:soversqrtsplusb}.
-    Here the $S$ is taken as the number of \BtoXsgamma events after fitting and $B$ is taken as non-\BtoXsgamma events expected after fitting in each \EB interval.
+    \caption{\label{fig:binning_significance}
+    The statistical significance based on \Cref{eq:soversqrtsplusb}.
+    Here, $S$ is taken as the number of \BtoXsgamma events after fitting and $B$ is taken as non-\BtoXsgamma events expected after fitting in each \EB interval.
     Three scenarios are tested: 50~\mev, 100~\mev and 200~\mev wide bins.
-    The final binning chosen is a hybrid scenario described in the text of \Cref{sec:binning}.
+    The final binning chosen is a hybrid scenario described in \Cref{sec:binning}.
     The hybrid model described in \Cref{sec:signal_model} is used for this study.
     }    
 \end{figure}
@@ -95,7 +96,7 @@ In general, the highest statistical significance is observed with the widest bin
 Irrespective of the bin width,  $\EB\in(1.4,1.8)$ and $\EB>2.7~\gev$ show a statistical significance lower than unity, therefore the selected binning should attempt to maximise it.
 In the case of $\EB\in(1.9,2.0)~\gev$, it is observed that a similar statistical significance can be achieved in $\EB\in(1.8,2.0)~\gev$.
 This motivates choosing the wider bin to achieve a lower threshold than the one in the analysis by BaBar~\cite{BaBar:2007yhb}.
-On the other hand, later studies performed in \Cref{sec:resolution_studies} showed that the resolution of \EB is expected to be roughly $30-40~\mev$.
+On the other hand, the studies performed in \Cref{sec:resolution_studies} showed that the resolution of \EB is expected to be roughly $30-40~\mev$.
 Choosing a fine binning \EB compared to the resolution may lead to complications in the unfolding procedure.
 As the simpler bin-by-bin unfolding is employed in this analysis, the 50~\mev bins were not considered.
 
@@ -109,7 +110,7 @@ This choice provides a compromise between statistical significance, \EB spectrum
 The expected continuum, combinatorial, correctly-tagged non-\BtoXsgamma and correctly-tagged \BtoXsgamma event count expectations for the chosen binning are provided in \Cref{tab:expected_events}.
 The Table entry containing combinatorial tag-\B backgrounds may include events where \BtoXsgamma are present.
 However, they are rejected as background in the \Mbc fits.
-On the other hand, peaking-\BB background, which is not rejected by the \Mbc fit and will be treated in \Cref{sec:background_subtraction}, is separated from \BtoXsgamma.
+On the other hand, the peaking-\BB background, which is not rejected by the \Mbc fit and treated in \Cref{sec:background_subtraction}, is separated from \BtoXsgamma.
 The Table also highlights the importance of a valid binning; several bins can achieve a comparable statistical significance to what could be achieved if just a single bin was used.
 
 \begin{table}[htbp!]
@@ -120,20 +121,20 @@ The Table also highlights the importance of a valid binning; several bins can ac
     \input{tables/expected_events.tex}
 \end{table}
 
-Because of the low expected statistical significance, the $\EB\in(1.4,1.8)$ and $\EB>2.7~\gev$ are chosen as validation regions.
-They will later be referred to as \textit{sidebands}.
-Consequentially, the \textit{signal region} of the analysis is defined as $\EB\in(1.8,2.7)~\gev$.
+Because of the low expected statistical significance, $\EB\in(1.4,1.8)$ and $\EB>2.7~\gev$ are chosen as validation regions.
+They are referred to as \textit{sidebands}.
+The \textit{signal region} of the analysis is defined as $\EB\in(1.8,2.7)~\gev$.
 
 \subsection{\texorpdfstring{\Mbc}{Mbc} fit model building}\label{sec:fitting_setup}
 
 The functions introduced in \Cref{sec:fitting_components} and \Cref{sec:appendix_fitting_functions} are now considered in terms of the defined binning in \Cref{sec:binning}.
-Using them, an \Mbc fit model for the total data set is built.
+They are used to build an \Mbc fit model for the total data set.
 The implementation of an $N$-th order Chebyshev polynomial, a Crystal Ball function and an ARGUS function results
 in $N+6$ model parameters and 3 normalisation parameters for each \EB bin.
 For fit stability purposes, it is desirable to reduce this number.
-Therefore, first, a primary fit model is prepared, where some of the parameters can be pre-determined or shared amongst the bins.
+Firstly, a primary fit model is prepared, where some of the parameters can be pre-determined or shared amongst the bins.
 The key idea is that all the functions are fitted once, separately, on the subsets of the simulated data that they aim to describe.
-This also provides the initialisation values of the parameters that will be used on the final fit of the total (combined) data set.
+This also provides the initialisation values of the parameters that are used on the final fit of the total entire data set.
 The primary fits for every component are discussed in the following Subsections.
 
 \subsubsection{Crystal Ball primary fit}\label{sec:crystal_ball_prefit}
@@ -169,11 +170,11 @@ The parameter values and uncertainties from the primary fit are shown in \Cref{t
 \subsubsection{Chebyshev polynomial primary fit}\label{sec:chebyshev_prefit}
 
 The Chebyshev \PDF takes $N$ parameters, $k_i$ ($i=\{1,..N\}$), and a normalisation, $\mathcal{N}$ (\Cref{eq:chebyshev_pdf}).
-The $N$ is therefore referred to as the \textit{order} of the Chebyshev \PDF.
-3-rd, 4-th and 5-th order Chebyshev polynomials are tested for suitability to describe the combinatorial \BB background distribution.
-The 5th-order result is already introduced in \Cref{fig:combinatorial_tags_fit}.
+$N$ is therefore referred to as the \textit{order} of the Chebyshev \PDF.
+Third, fourth and fifth order Chebyshev polynomials are tested for suitability to describe the combinatorial \BB background distribution.
+The fifth-order result was already introduced in \Cref{fig:combinatorial_tags_fit}.
 The results of the best fit for lower-order polynomials are presented in \Cref{fig:lower_order_chebyshev}.
-From the pull distributions in the subpanels and the general inspection of the fit, it is clear that using a polynomial of order lower than 5 is insufficient for an adequate description of combinatorial \BB events.
+From the pull distributions in the subpanels and the general inspection of the fit, it is clear that using a polynomial of order lower than five is insufficient for an adequate description of combinatorial \BB events.
 
 \begin{figure}[htbp!]
     \centering
@@ -183,7 +184,7 @@ From the pull distributions in the subpanels and the general inspection of the f
     \subcaptionbox{\label{fig:4th_order_chebyshev}}{
         \includegraphics[width=0.4\textwidth]{figures/fitting/4th_order_chebyshev_polynomial.pdf}
     }
-    \caption{\label{fig:lower_order_chebyshev}The \Mbc fits of combinatorial \BB events when a Chebyshev \PDF of order 3 (\Cref{fig:3rd_order_chebyshev}) or 4 (\Cref{fig:4th_order_chebyshev}) is used.
+    \caption{\label{fig:lower_order_chebyshev}The \Mbc fits of combinatorial \BB events with a third-order Chebyshev \PDF (\Cref{fig:3rd_order_chebyshev}) or 4 (\Cref{fig:4th_order_chebyshev}).
     These figures can be compared to \Cref{fig:combinatorial_tags_fit}.
     Lower-order Chebyshev polynomials are unable to accurately describe the combinatorial \BB data.
     }
@@ -192,8 +193,8 @@ From the pull distributions in the subpanels and the general inspection of the f
 
 The coefficients $k_{1-5}$ of the Chebyshev polynomial cannot be easily connected to physical observables,
 and therefore it is hard to evaluate their dependence on \EB.
-As such, 3 different Chebyshev PDFs are evaluated for the following intervals: $\EB\in(1.4,1.6)$, $\EB\in(1.6,1.8)$, $\EB>1.8$ \gev.
-The last interval is not subdivided further because of the data set size (see \Cref{tab:expected_events}) -- each interval is optimised to contain an approximately equal expected number of events.
+As such, three different Chebyshev PDFs are evaluated for the following intervals: $\EB\in(1.4,1.6)$, $\EB\in(1.6,1.8)$, $\EB>1.8$ \gev.
+The last interval is not subdivided further because of the data set size (see \Cref{tab:expected_events}), each interval is optimised to contain an approximately equal expected number of events.
 The discussed primary fits are performed simultaneously on the \Mbc distributions of the combinatorial \BB in all \EB bins.
 They are shown in \Cref{fig:primary_cheb_fits}.
 The determined coefficients $k_{1-5}$ are fixed for the final \Mbc fit model.
@@ -202,12 +203,12 @@ The primary fit values are presented in \Cref{tab:fitting_init_params}.
 \subsubsection{ARGUS primary fit}\label{sec:argus_prefit}
 
 Similarly to the previous cases, the ARGUS function has 2 parameters, $c$ and $m_0$, and a normalisation $\mathcal{N}$ (\Cref{eq:argus_function}).
-Unlike the coefficients of the Chebyshev, $c$ and $m_0$ are easier to understand intuitively: with $m_0$ corresponding to max \Mbc values in the distribution and $c$ to the shape of continuum background.
+Unlike the coefficients of the Chebyshev, $c$ and $m_0$ are easier to understand intuitively: with $m_0$ corresponding to the maximum allowed \Mbc values in the distribution and $c$ to the shape of continuum background.
 More generally, the variation of $c$ and $m_0$ accounts for possible background shape differences between \MC and data.
 It offers an additional layer of flexibility through a variation of relative ARGUS and Chebyshev normalisation values.
 This means that allowing a degree of variation in the ARGUS shape is beneficial to account for possible background differences in data.
 
-Following these considerations, a setup is adopted with independent shapes for  $\EB\in(1.4,1.6)$, $\EB\in(1.6,1.8)$, $\EB>1.8$ \gev.
+Following these considerations, a setup is adopted with independent shapes for  \mbox{$\EB\in(1.4,1.6)$~\gev}, \mbox{$\EB\in(1.6,1.8)$~\gev}, $\EB>1.8$~\gev.
 In each respective range, one single shape parameter $c^{(1.4-1.6)}$, $c^{(1.6-1.8)}$, $c^{(>1.8)}$ is determined from the total fit.
 To account for possible differences between simulated and data $\sqrt{s}$, the $m_0$ parameter is shared between all bins and is also determined from the fit of the combined data set.
 The discussed primary fits are performed simultaneously on continuum \Mbc distributions in all \EB bins.
@@ -232,7 +233,7 @@ The primary \Mbc fits determining the parameters in
     The summary of the fitting model used in this analysis for the \Mbc fit.
     For the final \Mbc fit, the parameters are initialised at the values that are listed, corresponding to the ones determined in the primary fitting steps, explained in \Cref{sec:crystal_ball_prefit,sec:chebyshev_prefit,sec:argus_prefit}.
     The values that are bolded in the Table are not estimated from the final \Mbc fit but are kept at their initialised values.
-    On the other hand, all non-bolded values can vary in the final fitter.
+    On the other hand, all non-bolded values can vary in the final fit.
     Uncertainties are evaluated using the \texttt{HESSE} method in the primary fitting steps.
     They are omitted if the relative uncertainty is lower than $0.1\%$.
     }
@@ -241,7 +242,7 @@ The primary \Mbc fits determining the parameters in
 
 \subsection{\texorpdfstring{\Mbc}{Mbc} fit on the total simulated data set}\label{sec:mbc_fit_full_mc}
 
-The prepared fitter, discussed in \Cref{sec:fitting_setup}, is applied to the total generic \MC data set.
+The prepared fit, discussed in \Cref{sec:fitting_setup}, is applied to the total generic \MC data set.
 The initial values of the fit are given in \Cref{tab:fitting_init_params} and all bins are fitted simultaneously.
 The fit results are shown in \Cref{fig:primary_full_fits}.
 The overall \Mbc distributions are accurately described for all \EB bins, irrespective of the overall number of data points that are being fitted.
@@ -281,17 +282,17 @@ This is already an important achievement: a single fitting setup is adaptive eno
     \subcaptionbox{\label{fig:mbc_full_2p7}}{
         \includegraphics[width=0.3\textwidth]{figures/fitting/fits/full_MbcFit_2p7to5p0ppdf.pdf}
     }
-    \caption{\label{fig:primary_full_fits}The fits on the $1.6~\invab$ data set of generic \MC, using the fitting model from \Cref{tab:fitting_init_params}.
+    \caption{\label{fig:primary_full_fits}The fits of the $1.6~\invab$ data set of generic \MC, using the fitting model from \Cref{tab:fitting_init_params}.
     A good description of the \Mbc distributions can be seen throughout the \EB bins.
-    This highlights that the fit setup accurately describes the simulated data set that was used to initialise it.
+    This highlights that the fit setup accurately describes large simulated data samples.
     }
 \end{figure}
 
-As was already mentioned, the main goal of the \Mbc fitter introduced in this Section is to extract the good tag-\B counts in each \EB bin.
+As was already mentioned, the main goal of the \Mbc fit introduced in this Section is to extract the good tag-\B counts in each \EB bin.
 This is equivalent to the normalisation parameter of the Crystal Ball \PDF, $\mathcal{N}_{\mathrm{CB}}$.
 These normalisations are shown in \Cref{fig:generic_mc_fit_yield_comparisons}.
-The exact values of the rest of the parameters are not needed for further analysis as long as an unbiased and accurate description of good tag-\B counts is achieved through $\mathcal{N}_{\mathrm{CB}}$.
-The main goal of keeping them as free parameters in the fitter is to ensure that the \Mbc background shape and yield estimations are sufficiently flexible to account for potential data-simulation discrepancies.
+The exact values of the rest of the parameters are not needed for further analysis, as long as an unbiased and accurate description of good tag-\B counts is achieved through $\mathcal{N}_{\mathrm{CB}}$.
+The main goal of keeping them as free parameters in the fit is to ensure that the \Mbc background shape and yield estimations are sufficiently flexible to account for potential data-simulation discrepancies.
 Therefore, for the rest of the thesis, other parameters will not be explicitly mentioned, unless their values are relevant to the discussion.
 
 To ensure that the fit is receptive to changes of \BtoXsgamma signal, two simple tests are devised, where the fit is performed on generic \MC but
@@ -300,8 +301,8 @@ To ensure that the fit is receptive to changes of \BtoXsgamma signal, two simple
     \item \BtoXsgamma signal shape in generic \MC is reweighted using the hybrid model weights.
 \end{itemize}
 The results are shown in \Cref{fig:no_bxsgamma_mc_fit_yield_comparisons,fig:weighted_mc_fit_yield_comparisons}.
-It is clear that if the \BtoXsgamma events are completely removed or reweighted, the \Mbc fitter presented in this Subsection responds appropriately.
-Therefore, although a particular simulation model was used when preparing the fitter, no particular bias towards any \BtoXsgamma model is introduced.
+It is clear that if the \BtoXsgamma events are completely removed or reweighted, the \Mbc fit presented in this Subsection responds appropriately.
+Therefore, although a particular simulation model was used when preparing the fit, no particular bias towards any \BtoXsgamma model is introduced.
 
 \begin{figure}[htbp!]
     \subcaptionbox{\label{fig:generic_mc_fit_yield_comparisons}}{
@@ -317,7 +318,7 @@ Therefore, although a particular simulation model was used when preparing the fi
     for the total 1.6~\invab generic~\MC data set (\Cref{fig:generic_mc_fit_yield_comparisons}).
     Additionally, results are shown for the fits on the generic \MC data set but with all \BtoXsgamma events removed (\Cref{fig:no_bxsgamma_mc_fit_yield_comparisons}),
     and for generic \MC data set but with the hybrid-signal model reweighting introduced (\Cref{fig:weighted_mc_fit_yield_comparisons}).
-    In each case, the uncertainties are $\texttt{HESSE}$ uncertainties estimated by the fitter.
+    In each case, the uncertainties are $\texttt{HESSE}$ uncertainties estimated by the fit.
     It can be seen that the fit is receptive to the expected count of peaking tag-$B$ mesons.
     Larger uncertainties in \Cref{fig:weighted_mc_fit_yield_comparisons} are due to known issues in weighted error estimation.
     They do not affect this analysis as weighted fits are not performed later.
