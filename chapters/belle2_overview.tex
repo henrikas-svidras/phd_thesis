@@ -31,7 +31,7 @@ On the other hand, positrons are created by directing the second electron beam t
 The positrons are singled out using the magnetic field and accelerated to 1.1~\gev, injected into the damping ring and, finally,
 accelerated by the linear accelerator to 4~\gev before entering the main positron ring.
 The subsequent collision occurs inside the Belle~II detector, where the electron and positron rings meet (see \Cref{sec:belle2}).
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \includegraphics[width=0.6\textwidth]{figures/experimental_setup/super_kekb.png}
     \caption{\label{fig:superkekb}
@@ -56,7 +56,7 @@ It is important to emphasise that an \epem collision at $10.58~\gev$ can produce
 Many other processes occur, such as $\epem\ra\ell^+\ell^-$ or $\epem\ra\qqbar$, and the production 
 cross-section of all these processes depends on $\sqrt{s}$.
 This is shown for \mbox{$\sqrt{s}\approx10.58~\gev$} in \Cref{fig:cross_sections}, with more details about the exact values of the cross-sections provided in \Cref{sec:appendix_major_production_cross_sections}.
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \includegraphics[width=1\textwidth]{figures/experimental_setup/corss_sections.pdf}
     \caption{\label{fig:cross_sections} Relative comparison of the largest $\epem\ra\ X$ production cross-sections at $B$~factories.
     The absolute scale of the cross-section is $\mathcal{O}(\nb^{-1})$.
@@ -84,7 +84,7 @@ The colliding beams are supplied by the SuperKEKB accelerator as discussed in~\C
 The experiment is designed to collect 50~\invab of collision data, which will be nearly 50 times that of the combined datasets of all $B$ factories so far.
 Belle~II consists of several detector subsystems (\Crefrange{sec:pxd}{sec:klm}) arranged cylindrically around the beam pipe. 
 The visual representation of the detector is given in \Cref{fig:belle2_detector} and shows the components of the detector with their acronyms.
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \includegraphics[width=1\textwidth]{figures/experimental_setup/belle2.png}
     \caption{\label{fig:belle2_detector} The schematic representation of the Belle~II detector.
     The Belle~II cylinder is approximately 7 meters in diameter and 7.5 meters long.
@@ -94,7 +94,6 @@ The visual representation of the detector is given in \Cref{fig:belle2_detector}
     }
 \end{figure}
 
-\vspace{-12pt}
 The coordinate system of Belle~II is defined as follows: the $x$ axis is defined to be horizontal and points to the outside of the tunnel with respect to the accelerator's
 main rings, the $y$ axis is vertically upward, and the $z$ axis is defined in the direction of the electron beam. 
 The azimuthal angle, $\phi$, and the polar angle, $\theta$, are defined with respect to the $z$ axis. 
@@ -123,7 +122,7 @@ radiation dose and have a $\sim 0.2\%$ radiation length per layer \cite{Belle-II
 while maintaining an average spatial resolution of approximately $15~\si{\micro\meter}$ and a hit efficiency of 99\% after 4 years of data taking \cite{Belle-IIDEPFET:2022wis}.
 The subdetector is shown in \Cref{fig:pxd}, whereas its schematic location in the Belle~II detector is depicted in \Cref{fig:vxd}.
 
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \subcaptionbox{\label{fig:pxd}}{
         \includegraphics[width=0.45\textwidth]{figures/experimental_setup/pxd.png}
@@ -132,7 +131,7 @@ The subdetector is shown in \Cref{fig:pxd}, whereas its schematic location in th
         \includegraphics[width=0.45\textwidth]{figures/experimental_setup/svd.png}
     }
     \caption{\label{fig:pxd_svd} 
-    The Belle~II pixel (\Cref{fig:pxd}) and silicon vertex (\Cref{fig:svd}) detectors.
+    The Belle~II pixel (\subref{fig:pxd}) and silicon vertex (\subref{fig:svd}) detectors.
     They are installed in the Belle~II detector as shown in \Cref{fig:vxd}.
     The \PXD is arranged into two layers that are designed to contain 16 modules in the first layer and 24 in the second.
     The \SVD is composed of four layers around the \PXD, with a total of 172 double-sided silicon strip sensors.
@@ -160,7 +159,7 @@ The visual representation of the \SVD is shown in \Cref{fig:svd}, whereas its sc
 As charged particles pass through the \SVD sensors, the electrons and holes created through ionisation drift to $p$ and $n$ strips, respectively.
 The perpendicularity of the strips ensures that the spatial coordinates of the passing particle can be inferred.
 
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \includegraphics[width=0.6\textwidth]{figures/experimental_setup/vxd.png}
     \caption{\label{fig:vxd}
@@ -190,7 +189,7 @@ The grouping of layers is shown in \Cref{fig:cdc_quadrant}, whereas \Cref{fig:cd
 The \CDC covers $\theta\in(17,150)^{\circ}$ range and provides a highly accurate measurement of charged particle trajectories with a spatial resolution of $0.1-0.2~\cm$
 and a transverse momentum resolution of $0.5\%$ for the majority of particles resulting from \B meson decays \cite{Kandra:2019qlz}.
 
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \subcaptionbox{\label{fig:cdc_quadrant}}{
         \includegraphics[width=0.45\textwidth]{figures/experimental_setup/cdc_quadrant.png}
@@ -200,9 +199,9 @@ and a transverse momentum resolution of $0.5\%$ for the majority of particles re
     }
     \caption{\label{fig:cdc}
     The Belle~II central drift chamber schematic representation.
-    \Cref{fig:cdc_quadrant} shows a quadrant of the \CDC in the $r$-$\phi$ plane.
+    In \subref{fig:cdc_quadrant}, a quadrant of the \CDC in the $r$-$\phi$ plane is shown.
     Different axial and skewed layer groups are visible.
-    \Cref{fig:cdc_wires} shows the axial (upper) and (skewed) wires.
+    In \subref{fig:cdc_wires}, the axial (upper) and skewed (lower) wires are shown.
     The skew is exaggerated for illustrative purposes.
     Credit to Ref.~\cite{BelleIITrackingGroup:2020hpx}.
     }
@@ -226,7 +225,7 @@ given the refractive index of the radiator material, $n$:
 The velocity information, combined with the knowledge of the particle's momentum from the \CDC, \SVD and \PXD allows identifying the species of a particle through its mass.
 \ARICH is designed to provide separation information for $\pi^{\pm}$ and $K^{\pm}$ in $(0.4,4)~\gevc$ momentum range, and for $\pi^{\pm},\mu^{\pm},e^{\pm}$ below 1~\gevc.
 
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \subcaptionbox{\label{fig:arich}}{
         \includegraphics[width=0.4\textwidth]{figures/experimental_setup/arich.png}
@@ -235,7 +234,7 @@ The velocity information, combined with the knowledge of the particle's momentum
         \includegraphics[width=0.45\textwidth]{figures/experimental_setup/top.png}
     }
     \caption{\label{fig:pid}
-    The schematic working principle of the Belle~II particle identification detectors: aerogel ring-imaging Cherenkov counter (\Cref{fig:arich}) and a time of propagation chamber.
+    The schematic working principle of the Belle~II particle identification detectors: aerogel ring-imaging Cherenkov counter (\subref{fig:arich}) and a time of propagation chamber (\subref{fig:top}).
     \ARICH covers the forward endcap region, whereas \TOP covers the barrel.
     Credit to Refs.~\cite{Yusa:2014tua} and \cite{Fast:2017pff}, respectively.
     }
@@ -272,7 +271,7 @@ The sketch of a single \ECL crystal is given in \Cref{fig:ecl}.
 The \ECL has excellent performance: a photon energy resolution which varies from 4~\% at 100~\mev \cite{Miyabayashi:2020xzp} to 2~\% at 5~\gev \cite{Aulchenko:2015nvy},
 a position resolution of $5-10~\mm$ \cite{Miyabayashi:2020xzp}, and a mass-resolution of 5~\mevcc(12~\mevcc) for the composite \piz ($\eta$) meson \cite{Miyabayashi:2020xzp}.
 
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \includegraphics[width=0.45\textwidth]{figures/experimental_setup/ecl.png}
     \caption{\label{fig:ecl}
@@ -312,7 +311,7 @@ This process may already occur in the \ECL, which is why it is also a part of $K
 Minimum ionising particles, such as $\mu$ with momentum larger than 0.6~\gevc, traverse the detector in a straight line, 
 depositing only small amounts of energy in the system.
 
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \subcaptionbox{\label{fig:rpc_klm}}{
         \includegraphics[width=0.45\textwidth]{figures/experimental_setup/rpc_klm.png}
     }
@@ -320,7 +319,7 @@ depositing only small amounts of energy in the system.
         \includegraphics[width=0.45\textwidth]{figures/experimental_setup/scintilator_klm.png}
     }
     \caption{\label{fig:klm}
-        The Belle~II $K_L^0$ and $\mu$ detector active detector layers in the barrel (\Cref{fig:rpc_klm}) and the endcap regions (\Cref{fig:scintilator_klm}).
+        The Belle~II $K_L^0$ and $\mu$ detector active detector layers in the barrel (\subref{fig:rpc_klm}) and the endcap regions (\subref{fig:scintilator_klm}).
         Iron plates are sandwiched between the detector layers.
         Credit to Refs.~\cite{Krohn:317929} and \cite{Aushev:2014spa}, respectively.
     }
@@ -346,7 +345,7 @@ Each particle trajectory is modelled by a helix with 5 parameters (track):
     \item $\tan\lambda$: the tangent of the track dip angle (see \Cref{fig:sz_helix}).
 \end{itemize}
 These track parameters are visualised in \Cref{fig:helix}.
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \subcaptionbox{\label{fig:xy_helix}}{
         \clipbox*{0 {0\height} {.32\width} {1\height}}{%
@@ -378,7 +377,7 @@ Particles showering in the \ECL material deposit energy into the \ECL crystals.
 The deposited energy and the time of each energy deposit are recorded by the calorimeter.
 Clusters are sets of energy deposits in the \ECL that are associated with the interactions of a single particle.
 A graphical illustration of the cluster reconstruction in an experimental environment is shown in \Cref{fig:clustering}.
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \subcaptionbox{\label{fig:clustering1}}{
     \includegraphics[width=0.4\textwidth]{figures/experimental_setup/clustering1.png}
@@ -390,9 +389,9 @@ A graphical illustration of the cluster reconstruction in an experimental enviro
     The Belle~II calorimeter in the $(\theta,\phi)$ plane is visualised, 
     showcasing energy deposits in a single simulated photon event in the centre of the image.
     Each point corresponds to a single \ECL crystal.
-    The low-energy deposits resulting from beam background radiation are included.
+    The low-energy deposits resulting from beam background radiation are included in (\subref{fig:clustering1}).
     The cluster reconstruction algorithm of \basftwo singles out the cluster from the photon, 
-    rejecting background as seen in \Cref{fig:clustering2}.
+    rejecting background as seen in (\subref{fig:clustering2}).
     Credit to Belle~II Neutrals group.
     }
 \end{figure}

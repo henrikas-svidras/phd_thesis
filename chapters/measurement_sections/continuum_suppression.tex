@@ -11,7 +11,7 @@ On the other hand, light quark pairs, produced in \epem collision events, also g
 The schematic idea of this is shown in \Cref{fig:continuum_schematic}.
 This Section will provide an in-depth discussion on how the discrimination between \BtoXsgamma and continuum is achieved using a \BDT.
 
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \includegraphics[width=0.6\textwidth]{figures/continuum_suppression/figure_continuum_suppression_event_shapes.pdf}
     \caption{\label{fig:continuum_schematic} Schematic illustration of continuum and \BB events created in an \epem collision in $B$ factories.
@@ -52,7 +52,7 @@ The maximum figure-of-merit point is taken as the optimal pre-selection for each
 This procedure is shown for $\mathrm{FOM}_2$ in \Cref{fig:selection_optimisations}.
 Results for $\mathrm{FOM}_1$ are used as a cross-check for $\mathrm{FOM_2}$ and turn out to be consistent.
 This is shown in \Cref{sec:appendix_sqrtsplusb_optimisation}.
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \subcaptionbox{\label{fig:bp_zmva_optimisation}}{
             \includegraphics[width=0.31\textwidth]{figures/continuum_suppression/Bp_zernikeMVA_optimisation_punzi.pdf}
@@ -75,8 +75,8 @@ This is shown in \Cref{sec:appendix_sqrtsplusb_optimisation}.
     \caption{\label{fig:selection_optimisations} Optimal selection calculation for observables
     described in \Cref{sec:photon_selection} based on $\mathrm{FOM}_2$ (see \Cref{eq:punzi_fom}).
     For \BptoXsgamma events the tests are shown
-    in \Cref{fig:bp_zmva_optimisation,fig:bp_piveto_optimisation,fig:bp_etaveto_optimisation},
-    and for \BztoXsgamma in \Cref{fig:bz_zmva_optimisation,fig:bz_piveto_optimisation,fig:bz_etaveto_optimisation}.
+    in \mbox{(\subref{fig:bp_zmva_optimisation}) -- (\subref{fig:bp_etaveto_optimisation})},
+    and for \BztoXsgamma in \mbox{(\subref{fig:bz_zmva_optimisation}) -- (\subref{fig:bz_etaveto_optimisation})}.
     The Figures show the efficiency and $\mathrm{FOM}_2$ score calculated by scanning 200 thresholds of \piVeto, \etaVeto and \ZMVA.
     The maximum value of $\mathrm{FOM}_2$, the corresponding threshold and efficiency are shown as well.
     }
@@ -93,7 +93,7 @@ They are set to be considerably looser than their optimal selection.
 Specifically, the requirements for a loose selection are tailored such that roughly 75\% of \BtoXsgamma candidates are retained.
 They are shown in \Cref{tab:preselections}.
 
-\begin{table}[htbp!]
+\begin{table}[hbtp!]
     \centering
     \caption{\label{tab:preselections} Selections that remove background and misreconstructed candidates,
     preparing the reconstructed data sets (\Cref{sec:reconstruction_overview}) for continuum \BDT training (\Cref{sec:continuum_training}).
@@ -106,13 +106,13 @@ The pre-selections improve the signal-to-background ratio by roughly an order of
 This is seen by comparing \Cref{fig:preselected_photons} with \Cref{fig:spectrum_after_reco}.
 The \BtoXsgamma signal \MC scale differs by about a factor of 10, highlighting the background suppression efficiency.
 
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \subcaptionbox{\label{fig:bp_preselected_photons}}{
-        \includegraphics[width=0.395\textwidth]{figures/continuum_suppression/Bp_tagged_background_preselection.pdf}
+        \includegraphics[width=0.45\textwidth]{figures/continuum_suppression/Bp_tagged_background_preselection.pdf}
     }
     \subcaptionbox{\label{fig:bz_preselected_photons}}{
-        \includegraphics[width=0.395\textwidth]{figures/continuum_suppression/Bz_tagged_background_preselection.pdf}
+        \includegraphics[width=0.45\textwidth]{figures/continuum_suppression/Bz_tagged_background_preselection.pdf}
         }
     \caption{\label{fig:preselected_photons} \BtoXsgamma spectrum in generic \MC reconstructed in \feiBp and \feiBz modes
     after pre-selection for training of the continuum \BDT classifier.
@@ -202,7 +202,7 @@ This requirement only removes a single feature which attests to the good represe
 The results for the 26 final observables that pass both test requirements and are used as features in the \BDT training
 are shown in \Cref{tab:passing_test1}.
 
-\begin{table}[htbp!]
+\begin{table}[hbtp!]
     \centering
     \caption{\label{tab:passing_test1}The training features for the \epem\ra\qqbar suppression
     that pass the requirements of \textbf{Test~1} (see \Cref{sec:appendix_continuum_features}) and \textbf{Test~2} (see \Cref{sec:appendix_continuum_features_datamc}).
@@ -250,7 +250,7 @@ A set of hyperparameters is sought, such that $ \mathtt{AUC}_{\mathrm{test}}$ is
 The results of hyperparameter optimisation are summarised in \Cref{tab:grid_search} and shown in \Cref{fig:hyper_param}.
 Larger depth or number of trees are not explored to avoid non-linear biases which may be learnt by the classifier and would require additional studies to pinpoint.
 Large shrinkage values are undesired to ensure an adequate learning rate of the classifier.
-\begin{table}[htbp!]
+\begin{table}[hbtp!]
     \centering
     \caption{\label{tab:grid_search}Hyperparameter optimisation based on a grid-search method.
     The four hyperparameters for the \texttt{FastBDT} algorithm are defined in \Cref{sec:BDTs_theory}.
@@ -260,7 +260,7 @@ Large shrinkage values are undesired to ensure an adequate learning rate of the 
     }
     \input{tables/hyperparameter_optimisation.tex}
 \end{table}
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \includegraphics[width=0.45\textwidth]{figures/continuum_suppression/hyperpar_optimisation.png}
     \caption{\label{fig:hyper_param}Hyperparameter optimisation as a function of quantities defined in \Cref{eq:optimisation_criteria}.
@@ -275,7 +275,7 @@ The normalised classifier output for test and train samples is shown in \Cref{fi
 It is seen that the classifier shows almost no bias, as the train and test samples agree very well.
 This is further alluded to by inspecting the ROC curve in \Cref{fig:roc_curve}, where no significant differences are observed.
 The difference in the \AUC scores is smaller than 1\%.
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \subcaptionbox{\label{fig:separation_curve}}{
     \includegraphics[width=0.45\textwidth]{figures/continuum_suppression/separation_curves.pdf}
@@ -284,8 +284,8 @@ The difference in the \AUC scores is smaller than 1\%.
         \includegraphics[width=0.45\textwidth]{figures/continuum_suppression/roc_curve.png}
     }
     \caption{\label{fig:training_evaluation} The training evaluation for this analysis.
-    \Cref{fig:separation_curve} shows excellent separation between \epem\ra\qqbar and \BtoXsgamma samples and excellent agreement between corresponding test and train samples.
-    \Cref{fig:roc_curve} shows the \ROC curve of the training. 
+    Excellent separation between \mbox{\epem\ra\qqbar} and \mbox{\BtoXsgamma} samples and good agreement between corresponding test and train samples is seen in (\subref{fig:separation_curve}).
+    The \ROC curve of the training is shown in (\subref{fig:roc_curve}).
     The test and train sample \AUC scores are above $0.9$ and differ little, alluding to a high-separation power that is observed and no evidence of overtraining.
     }
 \end{figure}
@@ -300,9 +300,9 @@ Other important separation features come from  $\Delta z_B$ \&  $\Delta z_B$, re
 thrust of the tag-$B$ meson, $T_B$, and CLEO cone variables $\mathtt{CC}_i$. 
 For consistency, the events used in the training are removed from further analysis.
 
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
-    \includegraphics[width=0.45\textwidth]{figures/continuum_suppression/feature_importance.pdf}
+    \includegraphics[width=0.55\textwidth]{figures/continuum_suppression/feature_importance.pdf}
     \caption{\label{fig:feature_importance} The relative feature importances of different observables used in the training.
     The definitions of these observables are provided in \Cref{sec:appendix_continuum_features}.
     The feature importance highlights a relative change in \AUC score when the observable is not included in the training.
@@ -319,7 +319,7 @@ No significant bias to any of the photon energy spectrum quantities is observed 
 In \Cref{fig:bdt_data_shape}, the trained classifier output is also applied to the off-resonance data.
 Comparing the shapes of off-resonance data and simulation an adequate agreement is observed, particularly in the high-$\mathtt{BDT~output}$ region where most signal lies.
 The results seen in \Cref{fig:bdt_validation} validate the fact that the \BDT is prepared in an unbiased way and strongly suppresses the continuum events.
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \subcaptionbox{\label{fig:bdt_output_correlation}}{
     \includegraphics[width=0.4\textwidth]{figures/continuum_suppression/BDT_output_correlation.pdf}
@@ -329,12 +329,12 @@ The results seen in \Cref{fig:bdt_validation} validate the fact that the \BDT is
         }
     \caption{\label{fig:bdt_validation} 
     Validation of the training described in \Cref{sec:continuum_training}.
-    \Cref{fig:bdt_output_correlation} shows correlation tests as a 2D histogram for the trained classifier output described in \Cref{sec:continuum_training}.
+    The correlation test as a 2D histogram for the trained classifier output is shown in (\subref{fig:bdt_output_correlation}).
     Each row is normalised such that all bins within that row add up to 1.
     The red line shows  the average photon energy, $\expval**{\EB}$, as a function of the tested observable.
     In black and black-dotted lines: median and $\pm 1 \sigma$ percentile values of \EB, respectively.
     No strong dependence can be observed in any of the quantities or the 2D maps.
-    In \Cref{fig:bdt_data_shape}, the shape of \epem\ra\qqbar and off-resonance data is compared.
+    The shape of \mbox{\epem\ra\qqbar} and off-resonance data is compared in (\subref{fig:bdt_data_shape}).
     It is seen that both simulated and off-resonance data sets are well separated from \BB and \BtoXsgamma simulation.
     }
 \end{figure}

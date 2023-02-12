@@ -11,7 +11,7 @@ The hybrid-signal model is then used to derive unfolding correction factors.
 
 \subsection{Efficiency of \texorpdfstring{\BtoXsgamma}{B->Xs gamma} decays}\label{sec:signal_efficiency}
 
-The \BtoXsgamma selection efficiency is evaluated using the Belle~II simulation and corrected
+The \BtoXsgamma selection efficiency is evaluated using the Belle~II \MC and corrected
 based on the studies that have been discussed in \Cref{sec:corrections}.
 The signal efficiency is assumed to be factorisable:
 \begin{equation}\label{eq:factorisable_signal_efficiency}
@@ -43,7 +43,7 @@ As a direct connection between $\EtildeB$ and $\EB$ is difficult to evaluate, th
 where the uncertainty is only statistical.
 The correction and the systematic uncertainty related to \FEI calibration is evaluated in \Cref{sec:signal_selection_uncertainties}.
 Conversely, the signal modelling uncertainty is expected to be small because any deviations would be suppressed in the ratio in \Cref{eq:fei_tagging_efficiency}.
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \subcaptionbox{\label{fig:epsilon_fei}}{
         \includegraphics[width=0.45\textwidth]{figures/signal_validation/epsilon_fei.pdf}
@@ -53,8 +53,8 @@ Conversely, the signal modelling uncertainty is expected to be small because any
     }
     \caption{\label{fig:epsilon} The efficiency evaluation of \BtoXsgamma events in simulated samples based on the two factorised components in
     \Cref{eq:factorisable_signal_efficiency}.
-    $\varepsilon_{\mathrm{FEI}}$, shown in \Cref{fig:epsilon_fei}, is seen to vary lightly, no more than 10\% accross the $\EtildeB$ range.
-    $\varepsilon_{\mathrm{selection}}$, shown in \Cref{fig:epsilon_selection} for three different models,
+    $\varepsilon_{\mathrm{FEI}}$, shown in (\subref{fig:epsilon_fei}), is seen to vary lightly, no more than 10\% accross the $\EtildeB$ range.
+    $\varepsilon_{\mathrm{selection}}$, shown in (\subref{fig:epsilon_selection}) for three different models,
     grows with \EB approximately linearly and starts to drop at $\EB\approx2.6~\gev$.
     The three models show consistent results, strengthening the argument of a signal model-independent analysis.
     }
@@ -96,7 +96,7 @@ Four selection configurations are tested:
 \end{itemize}
 These selection configurations are then used to compute efficiencies and the binomial uncertainties based on \Cref{eq:signal_validation}.
 The results are shown in \Cref{tab:blinded_efficiency}.
-\begin{table}[htbp!]
+\begin{table}[hbtp!]
     \centering
     \caption{\label{tab:blinded_efficiency} 
     Resulting efficiencies in simulation, $\varepsilon_{\mathrm{MC}}$ and data, $\varepsilon_{\mathrm{DATA}}$,
@@ -126,7 +126,7 @@ The results are visualised in \Cref{fig:corrected_signal_efficiency}.
 Using the factorised relation in \Cref{eq:factorisable_signal_efficiency} to combine the result with the average \FEI tagging efficiency (given in \Cref{eq:avg_efficiency_fei}), these values form the final
 efficiency.
 
-\begin{figure}[htbp!]  
+\begin{figure}[hbtp!]  
     \centering
     \includegraphics[width=0.45\textwidth]{figures/signal_validation/corrected_selection_efficiency.pdf}
     \caption{\label{fig:corrected_signal_efficiency} \BtoXsgamma signal selection efficiency, evaluated using \Cref{eq:signal_efficiency}.
@@ -162,7 +162,7 @@ but the ratio $\sigma/\tilde{E}_{\gamma}^{B}$ stays approximately constant.
 The use of good tag-\B mesons degrades the efficiency by approximately $10\%$.
 As the evaluated resolution is $\order(10~\mev)$, this (retroactively) justifies the selection of 100~\mev wide bins in \Cref{sec:binning}.
 
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \includegraphics[width=0.45\textwidth]{figures/signal_validation/resolution_bin_by_bin_withkstar.pdf}
     \caption{\label{fig:resolution_sigmas} The resolution of $\tilde{E}_{\gamma}^{B}$, 
@@ -181,7 +181,7 @@ This is tested by counting \BtoXsgamma events in an untagged sample and that wit
 The number of daughter particles that the $X_s$ system hadronises to is then evaluated in the inclusive \BtoXsgamma signal model.
 The results are shown in \Cref{tab:xs_multiplicity}.
 
-\begin{table}[htbp!]
+\begin{table}[hbtp!]
     \centering
         \caption{\label{tab:xs_multiplicity} 
         Fraction of events with a given $X_s$ multiplicity in \FEI tagged and untagged sample. 
@@ -256,7 +256,7 @@ Firstly, a response matrix (see \Cref{eq:response_matrix_element}) is calculated
 It shows the fraction of events that are generated in a given $\tilde{E}_{\gamma}^B$ interval, but are measured in a given \EB interval.
 The response matrix is shown in \Cref{fig:migration_matrix}.
 
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \subcaptionbox{\label{fig:btosgamma_resolution}}{
         \includegraphics[width=0.45\textwidth]{figures/signal_validation/reco_vs_true_spectrum.pdf}
@@ -265,9 +265,9 @@ The response matrix is shown in \Cref{fig:migration_matrix}.
         \includegraphics[width=0.45\textwidth]{figures/signal_validation/migration_matrix.pdf}
     }
     \caption{\label{fig:unfolding_setup} The comparison of true photon energy ($\tilde{E}_{\gamma}^B$),
-    and the measured photon energy (\EB) is seen in \Cref{fig:btosgamma_resolution}.
+    and the measured photon energy (\EB) is seen in (\subref{fig:btosgamma_resolution}).
     The spectrum is slightly shifted to lower energies after the measurement.
-    A corresponding response matrix is built for these distributions and shown in \Cref{fig:migration_matrix}.
+    A corresponding response matrix is built for these distributions and shown in (\subref{fig:migration_matrix}).
     The largest \BtoXsgamma event fractions reside on the diagonal, meaning that resolution effects are not larger than the photon energy interval size.
     }
 \end{figure}
@@ -287,7 +287,7 @@ At the same time, this increase in uncertainties is reduced by introducing a wea
 As the analysis results are statistically limited, the observed correlation of the expected number of events in different \EB intervals is small.
 Therefore, it is concluded that for this analysis bin-by-bin unfolding method is sufficient, as it does not inflate the uncertainties and does not introduce additional correlations between bins via regularisation.
 
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \includegraphics[width=0.45\textwidth]{figures/signal_validation/bin_by_bin_svd_comparison_cov_mtx.pdf}
     \caption{\label{fig:unfolding_comparison}

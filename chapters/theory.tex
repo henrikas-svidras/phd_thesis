@@ -34,7 +34,7 @@ The fermions are further split into two additional groups: quarks and leptons, w
 With the possible exception of neutrinos, all fermion fields have a left- and right-handed component, as the weak interaction only interacts with
 left-handed particles or right-handed antiparticles.
 Their spin, charge, mass and notation are summarised in \Cref{fig:standard_model}.
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \input{tikz_diagrams/standard_model.tex}
     \caption{\label{fig:standard_model} All the particles of the Standard Model of Particle Physics.
@@ -69,7 +69,7 @@ While leptons exist as free particles in nature, quarks are not observed free, d
 but rather as combinations of two or more quarks, collectively known as \textit{hadrons}.
 The combinations of a quark and an anti-quark pair are called \textit{mesons}, while combinations of three (anti-)quarks are called \textit{baryons}.
 Some hadrons that will be commonly mentioned in this thesis are shown in \Cref{tab:hadrons}.
-\begin{table}[htbp!]
+\begin{table}[hbtp!]
     \centering
     \caption{\label{tab:hadrons}
     Examples of common mesons and baryons, with a focus on those mentioned in the thesis often.
@@ -271,7 +271,7 @@ One of the decay channels used to study these transitions is the so-called rare 
 Due to the confinement effect and the hadronisation of the quarks, in reality, they manifest as \BtoXsgamma or \BtoXdgamma, where $X_s$ and $X_d$ denote any meson state originating from the $s$ or $d$ quark hadronisation.
 The leading \SM diagrams for \BtoXsdgamma (used to collectively identify $X_s$ and $X_d$ states) processes are shown in \Cref{fig:sm_diagrams}.
 
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
 \resizebox{0.66\textwidth}{!}{
     \subcaptionbox{\label{fig:sm_diagrams}}{
         \input{tikz_diagrams/b_to_s_gamma_W.tex}
@@ -311,7 +311,7 @@ The renormalisation scale, $\mu$, needs to be chosen close to the typical energi
 For the calculations of the total decay rate of radiative $B$ meson decays it is conventionally set to be of the order of the $b$ quark mass: $\mu\sim m_b$.
 
 The exact expressions of operators $\mathcal{O}_i$, relevant for \btosgamma transitions, are given in \Cref{sec:appendix_local_opperators}, while the sketches of effective processes that they represent are given in \Cref{fig:b_to_s_gamma_effective}.
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \input{tikz_diagrams/b_to_s_gamma_effective.tex}
 \caption{\label{fig:b_to_s_gamma_effective}
 Schematic representation of the \SM effective $\mathcal{L}$ governing to \BtoXsgamma. 
@@ -463,7 +463,7 @@ However, from the theory side, the peak part is mostly governed by non-perturbat
 The shape function encodes the $b$ quark residual momentum distribution within the $B$ meson. 
 Therefore, a reliable theoretical description of the shape function is critical to make sensible experimental and theoretical comparisons of the photon energy spectrum. 
 
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \subcaptionbox{\label{fig:theory_to_experiment}}{
         \includegraphics[width=0.45\textwidth]{figures/theory/xsgamma_theory_to_experiment.png}
@@ -474,11 +474,11 @@ Therefore, a reliable theoretical description of the shape function is critical 
     \caption{\label{fig:xsgamma_theory_sketches} 
     The schematic representation of the theoretical \BtoXsgamma spectrum components and the comparison of them in data.
     Note that the figures are presented only for illustration purposes and do not represent a highly-accurate depiction.
-    \Cref{fig:theory_to_experiment} represents the leading-order $\delta$ function spectrum, the non-perturbative shape function effects, and the convolution of these effects with the perturbatively calculable ones.
+    In (\subref{fig:theory_to_experiment}), the leading-order $\delta$ function spectrum, the non-perturbative shape function effects, and the convolution of these effects with the perturbatively calculable ones are represented.
     It also includes the experimental effects, such as finite detector resolution.
-    \Cref{fig:theory_ingredients_schematic} illustrates the origin of perturbative and non-perturbative effects in a \BtoXsgamma decay.
+    In (\subref{fig:theory_ingredients_schematic}), the origin of perturbative and non-perturbative effects in a \BtoXsgamma decay are illustrated.
     Credit to Dr. Frank Tackmann for the Figures. 
-    The data points in \Cref{fig:theory_to_experiment} correspond to the Belle measurement in \cite{Belle:2009nth}.}
+    The data points in (\subref{fig:theory_to_experiment}) correspond to the Belle measurement in \cite{Belle:2009nth}.}
 \end{figure}
 
 An additional motivation to study the shape function is the fact that it is a universal property of the $B$ meson at the leading-order in $1/m_b$ \cite{Neubert:1993um,Bigi:1993ex}.
@@ -558,7 +558,7 @@ Furthermore, the Kagan-Neubert model is readily available in the \texttt{EvtGen}
 The \BtoXsgamma inclusive decay is implemented as the \texttt{BTOXSGAMMA} model within the generator. 
 These points made it the conventional choice for an experimental description of the inclusive \Egamma spectrum in many past measurements.
 The spectra, generated with varied values of $\lambda_1$ and $m_b$, using the kinetic scheme, are shown in \Cref{fig:knmodel_variation}, otherwise using the default \texttt{BTOXSGAMMA} setup.
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \subcaptionbox{\label{fig:knmodel_mb_variation}}{
         \includegraphics[width=0.45\textwidth]{figures/theory/xsgamma_spectrum_mb_variation.pdf}
     }
@@ -567,8 +567,8 @@ The spectra, generated with varied values of $\lambda_1$ and $m_b$, using the ki
     }
     \caption{\label{fig:knmodel_variation}
     The \BtoXsgamma spectrum predicted by the Kagan-Neubert model, generated using the \texttt{EvtGen} generator's \texttt{BTOXSGAMMA} model.
-    \Cref{fig:knmodel_mb_variation} shows how variations of $m_b$ affect the spectrum while keeping $\lambda_1$ constant.
-    \Cref{fig:knmodel_lambda_variation} depicts the inverse scenario.
+    In (\subref{fig:knmodel_mb_variation}), variations of $m_b$ affecting the spectrum while keeping $\lambda_1$ constant are shown.
+    In (\subref{fig:knmodel_lambda_variation}), the inverse scenario is depicted.
     The values here are provided in the kinetic scheme and correspond to those used by the authors of Ref.~\cite{Kagan:1998ym}.
     The generated spectra correspond to $10^6$ events of both $B^+$ and $B^0$ decay modes.
     The full line corresponda to the default setup used by \texttt{BTOXSGAMMA}.
@@ -682,7 +682,7 @@ Higher-order corrections for \TwoHDM are provided in Refs.~\cite{Ciuchini:1997xe
 Based on \Cref{eq:partial_wilson_2hdm} and higher-order corrections, one can quantify the effect such models would have on the \BtoXsgamma branching fraction.
 The dependence of the \BtoXsgamma decay rate on $m_{H^+}$ is shown in \Cref{fig:xsgamma_br_2hdm} for two particular cases of $\tan\beta$ (see later \Cref{fig:2hdm_limits}).
 
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \subcaptionbox{\label{fig:xsgamma_2hdm_type1}}{
         \includegraphics[width=0.48\textwidth]{figures/theory/xsgamma_2hdm_type1.png}
@@ -692,10 +692,10 @@ The dependence of the \BtoXsgamma decay rate on $m_{H^+}$ is shown in \Cref{fig:
     }
     \caption{\label{fig:xsgamma_br_2hdm} 
     Variations of the \BtoXsgamma total decay rate (normalised by $B\rightarrow X_c \ell\bar{\nu}$ decay rate) as a function of the mass of the charged Higgs boson.
-    \Cref{fig:xsgamma_2hdm_type1} shows the dependence for a type-I \TwoHDM model, whereas \Cref{fig:xsgamma_2hdm_type2} shows that for type-II \TwoHDM.
+    In (\subref{fig:xsgamma_2hdm_type1}), the dependence for a type-I \TwoHDM model is shown, whereas (\subref{fig:xsgamma_2hdm_type2}) shows that for type-II \TwoHDM.
     The predictions are made assuming $\tan\beta=1$ and $\tan\beta=50$ for both types, respectively.
     The experimental bounds, as well as theoretical ones (not the most up-to-date), are shown as well.
-    The Figures are taken from \cite{Misiak:2017bgg}.}
+    The Figures are taken from Ref.~\cite{Misiak:2017bgg}.}
 \end{figure}
 
 The destructive (constructive) interference predicted by the type-I (type-II) \TwoHDM{s} is apparent in \Cref{fig:xsgamma_br_2hdm}.
@@ -704,13 +704,13 @@ In both cases, as the charged Higgs mass increases, the predicted total decay ra
 This is because, in the $m_H^+\rightarrow\infty$ regime, the charged Higgs is effectively decoupled from the \SM.
 The bounds imposed by next-to-next-to-leading-order \BtoXsgamma results on the $(m_{H^+},\tan\beta)$ space are shown in \Cref{fig:2hdm_limits}.
 
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
         \includegraphics[width=0.5\textwidth]{figures/theory/xsgamma_2hdm_both_types.png}
     \caption{\label{fig:2hdm_limits} 
     Excluded (lower bound) for type-I and type-II \TwoHDM models in the $\tan\beta-m_{H^+}$ parameter space.
     The Figure begins at $\tan\beta>0.4$ as better alternative bounds exist below that range.
-    The Figure is taken from \cite{Misiak:2017bgg}.}
+    The Figure is taken from Ref.~\cite{Misiak:2017bgg}.}
 \end{figure}
 
 It can be seen that $(\tan\beta,m_{H^+})$ space is well-bounded for type-I and type-II \TwoHDM results.

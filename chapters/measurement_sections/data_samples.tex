@@ -18,7 +18,7 @@ large simulated samples are utilised.
 These samples are significantly larger than the data sets that were anticipated to be analysed by this analysis, to ensure that uncertainties due to limited simulation samples are minimal.
 The overview of the samples is discussed in this Subsection, but a quick overview is provided in \Cref{tab:simulated_samples}.
 
-\begin{table}[htbp!]
+\begin{table}[hbtp!]
     \centering
 \caption{\label{tab:simulated_samples}The overview of simulated samples used in the measurement described by this thesis.
 More in-depth discussion for each sample is present in the text.}
@@ -64,7 +64,7 @@ Although this model proves a slightly better explanation of the high-\EB region,
 This is because a global scaling is applied to \BtoXsgamma, whereas most of the added resonances lie in the high-\EB region (resonances at lower-\EB have not yet been observed).
 Furthermore, the generic-$B$ model uses older \BtoXsgamma photon energy spectrum parameters $m_b$ and $\lambda_1$ (see \Cref{sec:btosgamma_spectrum_theory}), which makes the spectrum description suboptimal.
 
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \subcaptionbox{\label{fig:generic_Xsp_model}}{
     \clipbox*{{0.0\width} {0\height} {0.5\width} {1\height}}{%
@@ -76,7 +76,7 @@ Furthermore, the generic-$B$ model uses older \BtoXsgamma photon energy spectrum
     \includegraphics[width=0.95\textwidth]{figures/data_samples/generic_Xs_simulation.pdf}
     }
     }
-    \caption{\label{fig:generic_Xs_model} The model for \BtoXsgamma used in the Belle II official generic-\Bp (\Cref{fig:generic_Xsp_model}) and generic-\Bz (\Cref{fig:generic_Xsz_model}) \MC.
+    \caption{\label{fig:generic_Xs_model} The model for \BtoXsgamma used in the Belle II official generic-\Bp (\subref{fig:generic_Xsp_model}) and generic-\Bz (\subref{fig:generic_Xsz_model}) \MC.
     Although only several resonances are included, their structure is smoothed out.
     Unknown or unmeasured resonances, as well as non-resonant decays, are modelled with the inclusive Kagan-Neubert model, but the model is globally scaled down to account for the phase space covered by the exclusive decays.
     The branching fractions used here are taken from \Cref{tab:btosgamma_bfs} or upper-limits from Refs.~\cite{Workman:2022ynf,Amhis:2022mac}.
@@ -106,7 +106,7 @@ In the kinetic scheme, compatible with \texttt{EvtGen} implementation of the Kag
 Taking into account the correlation of these parameters as described in Ref.~\cite{Bernlochner:2020jlt}, four additional up and down variations in the eigendirections are generated. 
 The envelope of the variations is used as the inclusive model uncertainty in this analysis.
 The reweighted inclusive model is shown in \Cref{fig:inclusive_reweighted}.
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \includegraphics[width=0.45\textwidth]{figures/data_samples/xs_model_inclusive.pdf}
     \caption{\label{fig:inclusive_reweighted}The inclusive $X_s$ model based on \Cref{eq:simba_result_kinetic}.
@@ -125,7 +125,7 @@ The finer 0.1~\gev-wide bins in between contain small amounts of $\B\to\Kstar(89
 In each \EB bin, an appropriate hybrid weight is calculated, such that the sum of the reweighted inclusive model (\Cref{fig:inclusive_reweighted}) and \mbox{$\B\to\Kstar(892)\gamma$} contribution matches the partial branching fraction within that \EB bin, based on \Cref{eq:hybrid_model_definition}.
 This captures the desired description of the low-\EB region with the inclusive model, and a \Kstar(892)-dominated behaviour at high-\EB.
 
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \subcaptionbox{\label{fig:hybrid_binned_model}}{%
         \includegraphics[width=0.45\textwidth]{figures/data_samples/normalised_signal_model_hybrid_binning.pdf}
     }
@@ -134,8 +134,8 @@ This captures the desired description of the low-\EB region with the inclusive m
         }
     \caption{\label{fig:hybrid_bins_and_model} The hybrid model constructed for this analysis 
     shown in two different binnings.
-    \Cref{fig:hybrid_binned_model} shows it for a binning that matches the hybrid binning; 
-    and \Cref{fig:hybrid_binned_analysis_model} shows it for a binning that will 
+    In (\subref{fig:hybrid_binned_model}), the binning that matches the hybrid binning is chosen; 
+    in (\subref{fig:hybrid_binned_analysis_model}), the binning that will 
     be chosen in this analysis (see \Cref{sec:binning} and \Cref{tab:expected_events}).
     In both cases, the spectra are normalised such that the total area under them is 1.
     The hybrid model describes the tail adequately, 
@@ -159,7 +159,7 @@ They are visually shown for a selected \BtoXsgamma photon energy spectrum binnin
 The uncertainty is dominated by \BtoXsgamma model variation uncertainties, except in the interval where $\B\ra\Kstar(892)\gamma$ dominates.
 There the branching fraction uncertainty of the resonant decay is leading.
 The uncertainty related to the \BtoXsgamma inclusive branching fraction model is smaller than the other two.
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \subcaptionbox{\label{fig:hybrid_uncertainty}}{%
     \includegraphics[width=0.45\textwidth]{figures/data_samples/hybrid_model_uncertainties.pdf}
@@ -168,11 +168,11 @@ The uncertainty related to the \BtoXsgamma inclusive branching fraction model is
     \includegraphics[width=0.45\textwidth]{figures/data_samples/unfolding_correlation.pdf}
     }
     \caption{\label{fig:hybrid_uncertainty_all}
-    The inclusive $X_s$ model based on \Cref{eq:simba_result_kinetic} is shown in \Cref{fig:hybrid_uncertainty}.
+    The inclusive $X_s$ model based on \Cref{eq:simba_result_kinetic} is shown in (\subref{fig:hybrid_uncertainty}).
     For comparison, the Kagan-Neubert model with the same parameters is also shown.
     The hybrid-signal model is overlaid with uncertainties from the resonant, inclusive branching fractions and the inclusive model parameters.
     The definitions of the uncertainties are given in the text.
-    The correlation of the total uncertainty is given in \Cref{fig:hybrid_uncertainty_correlation}.
+    The correlation of the total uncertainty is given in (\subref{fig:hybrid_uncertainty_correlation}).
     }
 \end{figure}
 

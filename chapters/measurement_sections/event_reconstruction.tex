@@ -18,7 +18,7 @@ At every stage of the procedure, the probability for the combined particle to be
 which maps input features related to the particle (four-momentum, vertex position, angles between daughter particles etc.) to a single classifier
 output score. The final output score related to the quality of reconstruction of the $B$ meson is denoted as \feiProb. 
 The schematic visualisation of the reconstruction process is shown in \Cref{fig:fei_schematic}.
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \includegraphics[width=0.45\textwidth]{figures/event_reconstruction/FEI_tagging.png}
     \caption{\label{fig:fei_schematic} 
@@ -52,7 +52,7 @@ This decision is based on tracks and clusters as per standard Belle~II reconstru
 Overeall, they ensure that only energetic tracks originating from the interaction point are selected.
 They also minimise the impact of beam background clusters or clusters for which no track information can be associated (outside of \CDC acceptance).
 
-\begin{table}[htbp!]
+\begin{table}[hbtp!]
     \centering
      \caption{\label{tab:fei_objects} Definitions for objects used in \FEI selections.}
      \resizebox{0.75\textwidth}{!}{
@@ -77,7 +77,7 @@ Finally, the total deposited energy registered by the \ECL in the event is requi
 Hadronic events are expected to deposit significantly more energy than 2~\gev.
 On the other hand, many lower energy particles should be stopped within \PXD, \SVD, \CDC or \TOP, meaning that their energy deposit in the \ECL would be negligible.
 Therefore, a 7~\gev \ECL energy upper limit ensures that low-multiplicity events, such as \epem\ra\epem, are immediately removed to ensure a better-optimised workflow.
-\begin{table}[htbp!]
+\begin{table}[hbtp!]
     \centering
      \caption{\label{tab:fei_precuts} Selections applied before running the \FEI algorithm.
      Cleaned tracks and clusters are defined in \Cref{tab:fei_objects}.
@@ -102,7 +102,7 @@ In each event, multiple \FEI candidates can be reconstructed (see \Cref{fig:fei_
 To focus only on the candidates that are correctly reconstructed, selections on \DeltaE and \Mbc are made, as well as a loose requirement on \feiProb.
 The selections shown in \Cref{tab:fei_skim_cuts} are standard selections that are applied on the Belle~II \FEI skims.
 
-\begin{table}[htbp!]
+\begin{table}[hbtp!]
     \centering
      \caption{\label{tab:fei_skim_cuts} 
      Additional selections that reduce the datasets after applying \FEI, focusing only on well-reconstructed tag-side candidates.
@@ -134,7 +134,7 @@ In order to reduce the quickly growing number of background photon candidates, o
 Photons must also be within the \CDC acceptance ($17-150~\degrees$).
 These requirements are summarised in \Cref{tab:photon_requirements}.
 Reconstructed photon energy is boosted to the signal $B$ meson rest frame based on the Lorentz transformation in \Cref{sec:appendix_boosting_to_b_frame}.
-\begin{table}[htbp!]
+\begin{table}[hbtp!]
     \centering
      \caption{\label{tab:photon_requirements} Requirements for photons in reconstructed events.}
      \resizebox{0.75\textwidth}{!}{
@@ -165,7 +165,7 @@ The highest energy photon is the sole candidate in the event in 98\% of the case
 Similar studies on signal \MC show that the highest energy photon is expected to come from \BtoXsgamma in 99.9\% of the cases.
 The $\EB>1.4~\gev$ selection is chosen pragmatically to maintain a reasonable data set memory size without losing signal events.
 As the number of photon candidates grows swiftly with decreasing energy, this threshold still provides access to the majority of the \BtoXsgamma decay phase space.
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \subcaptionbox{\label{fig:fei_tag_reco_candidates}}{
     \includegraphics[width=0.45\textwidth]{figures/event_reconstruction/Bboth_total_tag_candidates.pdf}
@@ -174,11 +174,11 @@ As the number of photon candidates grows swiftly with decreasing energy, this th
         \includegraphics[width=0.45\textwidth]{figures/event_reconstruction/Bboth_total_photon_candidates.pdf}
     }
     \caption{\label{fig:reco_candidates} Relative fractions of events for the number of 
-    reconstructed \B meson candidates (\Cref{fig:fei_tag_reco_candidates}) and
-    reconstructed photon candidates (\Cref{fig:photon_reco_candidates}) in the generic \MC sample.
-    In \Cref{fig:fei_tag_reco_candidates}, the overall volume of candidates is similar for \feiBp and \feiBz modes, 
+    reconstructed \B meson candidates (\subref{fig:fei_tag_reco_candidates}) and
+    reconstructed photon candidates (\subref{fig:photon_reco_candidates}) in the generic \MC sample.
+    In (\subref{fig:fei_tag_reco_candidates}), the overall volume of candidates is similar for \feiBp and \feiBz modes, 
     with around one in two events only having a single candidate per event.
-    Conversely, as depicted in \Cref{fig:photon_reco_candidates},
+    Conversely, as depicted in (\subref{fig:photon_reco_candidates}),
     the vast majority of events contain only a single signal photon with $\EB>1.4~\gev$.
     Two or more photon candidates are present only $\mathcal{O}(1)\%$ of the time.
     }
@@ -193,7 +193,7 @@ Furthermore, \feiBz has fewer modes than \feiBp (see \Cref{sec:tag_reconstructio
 Therefore, without additional studies that follow in \Cref{sec:select_tag_between_modes,sec:select_best_candidate} such a conclusion cannot be unambiguously drawn. 
 On the other hand, inspecting \Cref{fig:untagged_btosgamma_background,fig:spectrum_after_reco}, it is clear that a better signal-to-background ratio can already be observed even without any additional background treatment.
 
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \subcaptionbox{\label{fig:spectrum_after_reco_bplus}}{
         \includegraphics[width=0.45\textwidth]{figures/event_reconstruction/Bp_tagged_background.pdf}
@@ -216,7 +216,7 @@ This is shown and discussed in \Cref{sec:appendix_fei_signal_probabilities}.
 Tight direct selection may result in a selection of reconstruction channels but not necessarily the quality of reconstruction, as seen in \Cref{fig:feisigprobs1,fig:feisigprobs2,fig:feisigprobs3,fig:feisigprobs4}.
 To avoid such bias, further \feiProb thresholds are not considered in this analysis.
 
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \subcaptionbox{\label{fig:sigprob_after_reco_bplus}}{
         \includegraphics[width=0.45\textwidth]{figures/event_reconstruction/Bp_tagged_background_feiSigProb.pdf}

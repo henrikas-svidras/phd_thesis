@@ -216,7 +216,7 @@ In particle physics, it is common to use the validation sample also as a testing
 This is only acceptable in the case of large training samples, 
 where statistical fluctuations of data are negligible or where independent efficiency and background rejection studies are performed.
 
-\begin{figure}[htbp!]
+\begin{figure}[htpb!]
     \centering
     \subcaptionbox{\label{fig:distributions_separation}}{
         \includegraphics[width=0.45\textwidth]{figures/analysis_techniques/separation_boundary.pdf}
@@ -225,11 +225,11 @@ where statistical fluctuations of data are negligible or where independent effic
         \includegraphics[width=0.45\textwidth]{figures/analysis_techniques/roc_curve.pdf}
     }
     \caption{\label{fig:rocs_examples}
-    Two-dimensional distributions (red/green) in an example feature space are shown in \Cref{fig:distributions_separation} for four different example datasets (0-3).
+    Two-dimensional distributions (red/green) in an example feature space are shown in (\subref{fig:distributions_separation}) for four different example datasets (0-3).
     Each distribution is represented by a contour plot of 20\% isoproportion lines.
     Dashed lines show the different selection thresholds for an example \MVA model.
-    \Cref{fig:roc_curves} shows corresponding \ROC curves, calculated for examples 0-3.
-    The working points that represent the dashed lines of \Cref{fig:distributions_separation} are shown in the same colour, for each of the four curves.
+    In (\subref{fig:roc_curves}), the corresponding \ROC curves are shown, calculated for examples 0-3.
+    The working points that represent the dashed lines of (\subref{fig:distributions_separation}) are shown in the same colour, for each of the four curves.
     A perfect classifier unambiguously separates green and red distributions, similar to example~3.
     On the other hand, a poor classifier would only be able to perform marginally better than random guessing, similar to example~0.    
     }
@@ -347,7 +347,7 @@ These effects, which would contribute to the form of the $A(y,x)$, are not alway
 as they include resolution effects, interactions with detector material, impurities in experimental setup etc.
 The main method in high-energy physics is to extract an implicit form of this function from simulated samples.
 
-\begin{figure}[htbp!]
+\begin{figure}[htpb!]
     \centering
 \includegraphics[width=0.45\textwidth]{figures/analysis_techniques/experimental_smearing.pdf}
 \caption{\label{fig:smearing_illustration} 

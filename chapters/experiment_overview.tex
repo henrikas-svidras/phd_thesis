@@ -34,7 +34,7 @@ Due to the final state similarity and overlap between various resonant and non-r
 However, even in the case of a relatively isolated decay channel, such as \BtoKstargamma, the overall precision of inclusive measurements is higher (compare to \Cref{eq:btosgamma_experimental}).
 
 {\renewcommand{\arraystretch}{1.2}
-\begin{table}[!htbp]
+\begin{table}[hbtp!]
     \centering
     \caption{\label{tab:btosgamma_bfs} 
     Branching fractions of \BtoXsgamma modes for charged and neutral modes.
@@ -70,7 +70,7 @@ The primary focus will be given to the hadronic-tagged technique, which is appli
 The summary of the most precise measurements that are used in the experimental average of \Cref{eq:btosgamma_experimental} is given in \Cref{tab:btosgamma_inclusive_summary}.
 
 {\renewcommand{\arraystretch}{1.2}
- \begin{table}[!htbp]
+ \begin{table}[hbtp!]
      \centering
      \caption{\label{tab:btosgamma_inclusive_summary}
      Different experiments and their most precise results using various techniques of measuring \BtoXsgamma.
@@ -120,7 +120,7 @@ The backgrounds tend to have broader or even non-peaking shapes.
 An \Mbc distribution is shown in \Cref{fig:mbc_sum_of_exclusive}, as measured by the Belle sum-of-exclusive measurement \cite{Belle:2014nmp}.
 In the past, these analysis techniques achieved an average signal reconstruction efficiency of 3.5\%~(larger for greater values of \EB) after correcting for missing $X_s$ modes \cite{Belle:2014nmp}.
 
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \includegraphics[width=0.4\textwidth]{figures/experiment_overview/Mbc_sum_exclusive_Belle.png}
     \caption{\label{fig:mbc_sum_of_exclusive} 
@@ -165,7 +165,7 @@ On the other hand, the missing kinematic information of the $X_s$ system yields 
 Moreover, the kinematic information of the $B$ decay cannot be accessed, which only allows a measurement of the photon energy in the \epem collision frame.
 To reach the theoretically more desirable $B$ meson decay frame, additional modelling uncertainties have to be introduced.
 
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \subcaptionbox{\label{fig:untagged_btosgamma_background}}{
         \includegraphics[width=0.45\textwidth]{figures/experiment_overview/untagged_background.pdf}
@@ -174,12 +174,12 @@ To reach the theoretically more desirable $B$ meson decay frame, additional mode
     \includegraphics[width=0.45\textwidth]{figures/experiment_overview/untagged_btosgamma.pdf}
     }
     \caption{\label{fig:untagged_btosgamma}
-    Photon energy spectra in \BtoXsgamma decays before (\Cref{fig:untagged_btosgamma_background}) and after (\Cref{fig:untagged_btosgamma_measured}) background suppression.
+    Photon energy spectra in \BtoXsgamma decays before (\subref{fig:untagged_btosgamma_background}) and after (\subref{fig:untagged_btosgamma_measured}) background suppression.
     Before the background suppression is performed, the signal fraction is roughly 1000 times smaller than the background.
     After background suppression, subtracting the remaining continuum (\epem\ra\qqbar decays) and \BB background yields the \BtoXsgamma spectrum (bottom panel).
     Both Figures show Belle~II simulated data.
-    \Cref{fig:untagged_btosgamma_measured} also includes official Belle~II data from Ref.~\cite{Collaboration:2302}.
-    \Cref{fig:untagged_btosgamma_background} was produced for illustrative purposes only. 
+    In (\subref{fig:untagged_btosgamma_measured}), official Belle~II data from Ref.~\cite{Collaboration:2302} is shown.
+    \Cref{fig:untagged_btosgamma_background} is produced for illustrative purposes only. 
     }
 \end{figure}
 
@@ -201,7 +201,7 @@ Three main tagging techniques have been used in the past at $B$ factories:
 \end{itemize}
 The main advantages of these techniques are summarised in \Cref{fig:tagging_advantages}.
 
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \subcaptionbox{\label{fig:tagging_schematic}}{
         \resizebox{0.3\textwidth}{!}{
@@ -218,9 +218,9 @@ The main advantages of these techniques are summarised in \Cref{fig:tagging_adva
             %     {\scriptsize $B\to\mathrm{anything}$ \tab $B\to D^(*)\ell\nu \mathrm{n}\cdot\pi$ \tab$B\to\mathrm{hadrons}$   };
         \end{tikzpicture}
     }
-    \caption{\label{fig:tagging_drawins} Schematic representation of tagging is shown in \Cref{fig:tagging_schematic}.
-    The idea of tagging is using the tag-side $B$ decay products to apply kinematic constraints on the signal-side $B$ decay (\BtoXsgamma in the example).
-    \Cref{fig:tagging_advantages} highlights the advantages and disadvantages related to using different $B$ decay products for tagging at $B$ factories.
+    \caption{\label{fig:tagging_drawins} Schematic representation of tagging is shown in (\subref{fig:tagging_schematic}).
+    The idea of tagging is using the tag-side $B$ decay products to apply kinematic constraints on the signal-side $B$ decay (\mbox{\BtoXsgamma} in the example).
+    In (\subref{fig:tagging_advantages}), the advantages and disadvantages related to using different $B$ decay products for tagging at $B$ factories are highlighted.
     A detailed discussion of these techniques is given in the text.
     Credit to Dr. Markus Röhrken for \Cref{fig:tagging_advantages}.}
 \end{figure}

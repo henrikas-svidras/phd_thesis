@@ -6,7 +6,7 @@ In this Section, \FEI validation,
 \piz and $\eta$ veto validation, photon detection efficiency and background modelling is presented.
 The combined results from \Crefrange{sec:fei_calibration}{sec:remaining_bb_background_modelling} are shown in \Cref{tab:correction_table}.
 
-\begin{table}[htbp!]
+\begin{table}[hbtp!]
     \centering
     \caption{\label{tab:correction_table} The corrections for background (and signal in \Cref{sec:validation_efficiency}) efficiency in the hadronic-tagged \BtoXsgamma photon energy spectrum measurement.
     \FEI calibration calculations are discussed in \Cref{sec:fei_calibration}.
@@ -15,6 +15,7 @@ The combined results from \Crefrange{sec:fei_calibration}{sec:remaining_bb_backg
     Background modelling corrections are calculated in \Cref{sec:remaining_bb_background_modelling}.
     The \FEI, \piz and \g corrections are averaged values corresponding to the respective \EB bin,
     as the candidate-level information is lost after the \Mbc fit.
+    The signal region is highlighted.
     }
     \input{tables/correction_table.tex}
 \end{table}
@@ -48,7 +49,7 @@ The fit is performed separately for the following combinations of tag-\B mesons 
     \item $B^0$ and $\mu^-$.
 \end{itemize}
 This is shown in \Cref{fig:fei_calib}.
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \subcaptionbox{\label{fig:fei_calib_bpluseminus}}{
             \includegraphics[width=0.45\textwidth]{figures/data_sim_corrections/BpXenu_pl_fit_All_data_postfiterrs.pdf}
@@ -63,8 +64,7 @@ This is shown in \Cref{fig:fei_calib}.
                 \includegraphics[width=0.45\textwidth]{figures/data_sim_corrections/B0Xenu_pl_fit_All_data_postfiterrs.pdf}
     }
     \caption{\label{fig:fei_calib} Illustration of the fits to \B\to$X_{u/c}\ell\nu$ decays in the \FEI calibration study.
-    Results for the combinations of charged and neutral tag-$B$ modes with $e^-$ and $\mu^-$
-    are shown in \Cref{fig:fei_calib_bpluseminus,fig:fei_calib_bplusmuminus,fig:fei_calib_bzeroeminus,fig:fei_calib_bzeromuminus}.
+    Results are shown for the combinations of charged and neutral tag-$B$ modes with $e^-$ ((\subref{fig:fei_calib_bpluseminus}) and (\subref{fig:fei_calib_bzeroeminus})) and $\mu^-$ ((\subref{fig:fei_calib_bplusmuminus}) and (\subref{fig:fei_calib_bzeromuminus})).
     Different fit components are shown in the legend and the subpanels contain the pulls of the fit.
     Figures are taken from Ref.~\cite{Belle-II:2020fst}.
     }
@@ -107,7 +107,7 @@ An additional \PDF to model the peaking non-signal \BB components is used.
 This \PDF is initialised in simulation as a sum of a Gaussian and an Argus.
 The shape parameters and normalisation of the \BB background \PDF are not estimated but kept at the initialised values.
 The fits on data in the case of no \piVeto selection, and a $\piVeto<0.95$ selection are given in \Cref{fig:pivetofit}.
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \subcaptionbox{\label{fig:pivetofit_nocut}}{
     \includegraphics[width=0.45\textwidth]{figures/data_sim_corrections/data_fit_pi0_no_cut.png}
@@ -117,7 +117,7 @@ The fits on data in the case of no \piVeto selection, and a $\piVeto<0.95$ selec
         }
     \caption{\label{fig:pivetofit} The fit estimating the number of $B\to D \pi^+$ events in Belle~II data.
     Different \PDF{s} used in the fit are shown in the legend and explained in the text.
-    The fit is performed on a sample without (\Cref{fig:pivetofit_nocut}) and with (\Cref{fig:pivetofit_cut}) the \piVeto selection applied.
+    The fit is performed on a sample without (\subref{fig:pivetofit_nocut}) and with (\subref{fig:pivetofit_cut}) the \piVeto selection applied.
     The extracted values from simulation and data are then combined to calculate \piVeto correction factors (see \Cref{eq:piveto_correction}).
     These Figures are produced by a Belle~II internal study of the \piz veto and are not part of the original work in this thesis.
     Only the labels and legends have been adapted.    
@@ -137,7 +137,7 @@ A linear extrapolation is performed to estimate the values outside the range.
 It is observed that the linear extrapolation is consistent, within errors, with the corrections in $1.8-3.0~\gev$.
 Therefore, a correction factor of $1.10\pm0.05$ is chosen for events outside the range covered by the calibration study.
 This value is consistent with the correction factors in other \Egamma bins.
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \includegraphics[width=0.45\textwidth]{figures/data_sim_corrections/pi0veto_corrections.pdf}
     \caption{\label{fig:piveto_corrections} The corrections $R_{\piVeto}$ for the $\piVeto<0.4$ selection used in this analysis.
@@ -163,7 +163,7 @@ To measure the photon detection efficiency, one must first have the knowledge th
 In this efficiency study, $\epem\ra\mumu$ scattering events are employed.
 In particular, collision events where a high energy photon is radiated in the initial state are sought.
 The concept of the efficiency measurement is sketched in \Cref{fig:photon_efficiency_measurement}.
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \subcaptionbox{\label{fig:eemumugamma_feynman}}{
     \includegraphics[width=0.4\textwidth]{figures/data_sim_corrections/eemumugamma.png}
@@ -172,9 +172,9 @@ The concept of the efficiency measurement is sketched in \Cref{fig:photon_effici
         \includegraphics[width=0.4\textwidth]{figures/data_sim_corrections/measurement_principle.png}
         }
     \caption{\label{fig:photon_efficiency_measurement} The main concepts of the measurement of the Belle~II photon detection efficiency.
-    The \Cref{fig:eemumugamma_feynman} shows the Feynman diagram of the $\epem\ra\mumu$ events, where a photon is radiated in the initial collision state.
+    The Feynman diagram of the $\epem\ra\mumu$ events, where a photon is radiated in the initial collision state, is shown in (\subref{fig:eemumugamma_feynman}).
     Due to the radiated photon, the resulting dimuon system will have a missing momentum with respect to the usual collision energy $\sqrt{s}\approx10.58~\gev$.
-    The direction of the missing momentum can be extrapolated to search for photon clusters in the calorimeter, as sketched in \Cref{fig:measurement_principle_gammaeff}.
+    The direction of the missing momentum can be extrapolated to search for photon clusters in the calorimeter, as sketched in (\subref{fig:measurement_principle_gammaeff}).
     }
 \end{figure}
 
@@ -228,17 +228,17 @@ The recoil candidates are matched to photon clusters in the \ECL via two matchin
 \end{itemize}
 If both requirements are fulfilled the event is considered to have a \textit{photon found}.
 The distribution of events where the recoil is successfully matched to a photon is given in \Cref{fig:matched_photon_data_mc}.
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \subcaptionbox{\label{fig:selected_photon_data_mc}}{
-    \includegraphics[width=0.4\textwidth]{figures/data_sim_corrections/pyth_data_normalisation_to_mc_comparison_pRecoil_selected_repaired.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/data_sim_corrections/pyth_data_normalisation_to_mc_comparison_pRecoil_selected_repaired.pdf}
     }
     \subcaptionbox{\label{fig:matched_photon_data_mc}}{
-        \includegraphics[width=0.4\textwidth]{figures/data_sim_corrections/pyth_data_normalisation_to_mc_comparison_pRecoil_matched_repaired.pdf}
+        \includegraphics[width=0.45\textwidth]{figures/data_sim_corrections/pyth_data_normalisation_to_mc_comparison_pRecoil_matched_repaired.pdf}
     }
     \caption{\label{fig:normalisation_data_mc} Distribution of $\epem\ra\mumu$ events with a photon radiated in the initial interaction state, as a function of the magnitude of the missing momentum of the dimuon system.
-    \Cref{fig:selected_photon_data_mc} shows events where a missing momentum has been found.
-    \Cref{fig:matched_photon_data_mc} shows events where a missing momentum has been found and it was consistent with a photon in the calorimeter, as discussed in the text.
+    Events where a missing momentum has been found are shown in (\subref{fig:selected_photon_data_mc}).
+    Events where a missing momentum has been found and it was consistent with a photon in the calorimeter, as discussed in the text, are shown in (\subref{fig:matched_photon_data_mc}).
     Various sources of background events are also included, and they can be seen to be at a low level.
     Overall, the signal and background events describe data accurately.
     The subpanels show the data-to-simulation ratio.
@@ -254,7 +254,7 @@ The results are shown in \Cref{fig:data_mc_photon_eff}.
 The data-to-simulation ratio is generally high and approximately equal to unity for photons above 1~\gev.
 A drop-off for low energy photons (low \pRecoil) is attributed to the presence of soft \ISR photons in the event which affect the direction of the recoil.
 This effect becomes larger with the lower photon energy, where the impact of a second \ISR photon grows.
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \includegraphics[width=0.45\textwidth]{figures/data_sim_corrections/pyth_data_mc_agreement_pRecoil.pdf}
     \caption{\label{fig:data_mc_photon_eff} The photon finding efficiency as a function of the missing momentum of the dimuon system, \pRecoil.
@@ -318,7 +318,7 @@ The final correction factors and their uncertainties are shown in \Cref{tab:corr
 The values are (nearly) all consistent with unity, as expected considering the high quality of the Belle~II simulation.
 
 The correlation matrix of the correction factors arising from the fact that similar decay modes occur across many bins is shown in \Cref{fig:bbar_correlation_matrix}.
-\begin{figure}[htbp!]
+\begin{figure}[hbtp!]
     \centering
     \includegraphics[width=0.5\textwidth]{figures/data_sim_corrections/bbar_correlation_matrix.pdf}
     \caption{\label{fig:bbar_correlation_matrix} The correlation matrix of \BB corrections.
