@@ -1,6 +1,6 @@
 \chapter{Experimental setup}\label{ch:belle2}
 
-An important strategy to study \B meson decays is by dedicated colliders, known as $B$ factories.
+An common strategy to study \B meson decays is using dedicated colliders, known as $B$ factories.
 $B$~factory experiments operate by producing large quantities of \BB pairs, through the creation of \FourS mesons that primarily decay to a \B meson pair (\BB) \cite{Workman:2022ynf}.
 Historically, two $B$ factory experiments operated:
 \begin{itemize}
@@ -22,15 +22,15 @@ This chapter provides an overview of Belle~II and introduces the main concepts o
 \section{The SuperKEKB accelerator}\label{sec:superkekb}
 
 The SuperKEKB accelerator, discussed in detail in Ref.~\cite{Akai:2018mbz}, is a double-ring electron-positron collider.
-It is an upgraded version of the KEKB collider \cite{Oide:2009zz} that operated with the Belle experiment, a predecessor to Belle~II.
+It is an upgraded version of the KEKB collider \cite{Oide:2009zz} that operated with the Belle experiment.
 The SuperKEKB accelerator complex is schematically shown in \Cref{fig:superkekb}.
 A photo-cathode radio-frequency gun produces two electron beams.
 The first beam is subsequently accelerated to 7~\gev by a linear accelerator into the electron ring.
 On the other hand, positrons are created by directing the second electron beam to a tungsten target.
 %, producing bremsstrahlung photons which create electron and positron pairs.
-The positrons are singled out using the magnetic field and accelerated to 1.1~\gev, injected into the damping ring and, finally,
-accelerated by the linear accelerator to 4~\gev before entering the main positron ring.
-The subsequent collision occurs inside the Belle~II detector, where the electron and positron rings meet (see \Cref{sec:belle2}).
+The positrons are singled out using a magnetic field and accelerated to 1.1~\gev, injected into the damping ring and, finally,
+accelerated again by the linear accelerator to 4~\gev before entering the main positron ring.
+The subsequent collision occurs in the interaction region inside the Belle~II detector, where the electron and positron rings meet (see \Cref{sec:belle2}).
 \begin{figure}[hbtp!]
     \centering
     \includegraphics[width=0.6\textwidth]{figures/experimental_setup/super_kekb.png}
@@ -74,16 +74,16 @@ In such cases, the continuum events are the events of interest.}.
 
 SuperKEKB has a design luminosity of $L=8\times10^{35}\cm^{-2}s^{-1}$, which is 40 times higher than the maximum achieved by KEKB~\cite{Funakoshi:2022dai}.
 Currently, SuperKEKB holds the instantaneous luminosity world record, which at the time of writing this thesis is $L = 4.65\times10^{34}\cm^{-2}s^{-1}$.
-This is enabled by the increased beam intensity, upgraded beam focusing technique (nano-beam) and other improvements which are beyond the scope of this thesis.
+This is enabled by the increased beam intensity, upgraded beam focusing technique (nano-beam scheme) and other improvements which are beyond the scope of this thesis.
 
 
 \section{The Belle~II experiment}\label{sec:belle2}
 The Belle~II detector, discussed in detail in Ref.~\cite{Belle-II:2010dht}, is designed to reconstruct the final states of \epem collisions.
 Belle~II operates since 2018 and has collected 364~\invfb of on-resonance and 42~\invfb of off-resonance data by the time of writing this thesis.
 The colliding beams are supplied by the SuperKEKB accelerator as discussed in~\Cref{sec:superkekb}.
-The experiment is designed to collect 50~\invab of collision data, which will be nearly 50 times that of the combined datasets of all $B$ factories so far.
-Belle~II consists of several detector subsystems (\Crefrange{sec:pxd}{sec:klm}) arranged cylindrically around the beam pipe. 
-The visual representation of the detector is given in \Cref{fig:belle2_detector} and shows the components of the detector with their acronyms.
+The experiment is designed to collect 50~\invab of collision data, which will be nearly 50 times that of Belle.
+Belle~II consists of several detector subsystems (\Crefrange{sec:pxd}{sec:klm}) arranged cylindrically around the interaction region. 
+The visual representation of the Belle~II detector is given in \Cref{fig:belle2_detector} and shows the subdetectors with their acronyms.
 \begin{figure}[hbtp!]
     \includegraphics[width=1\textwidth]{figures/experimental_setup/belle2.png}
     \caption{\label{fig:belle2_detector} The schematic representation of the Belle~II detector.
@@ -105,22 +105,22 @@ Three regions in the detector are defined based on $\theta$:
 \end{itemize}
 
 
-\subsection{Pixel detector}\label{sec:pxd}
+\subsection{Pixel vertex detector}\label{sec:pxd}
 
-Closest to the collision point is the Belle~II Pixel Detector (\PXD)~\cite{Belle-II:2010dht}.
+Closest to the interaction region is the pixel vertex detector (\PXD)~\cite{Belle-II:2010dht}.
 Its main purpose is the high-precision measurement of short-lived particle decay vertices, such as that of $B$ mesons.
 
 The \PXD contains two layers of depleted $p$-channel field-effect transistors (\DEPFET) to detect charged particles that pass through it \cite{Kemmer:1986vh}.
-The first layer is located at a 14~\mm radius from the collision point, whereas the second is at 22~\mm.
-Each layer consists of 16 and 24 sensor modules, which are glued in pairs to make 8 and 12 ladders\footnote{Until the scheduled 2023 Belle~II upgrade the outer layer contained only 2 ladders.}, respectively.
+The first layer is located at a 14~\mm radius from the interaction region, whereas the second is at 22~\mm.
+Each layer consists of 16 and 24 sensor modules, which are glued in pairs along the short edge to make 8 and 12 ladders\footnote{Until the scheduled 2023 Belle~II upgrade the outer layer contained only 2 ladders.}, respectively.
 Each module contains $768\times250$ \DEPFET pixels.
 
-The \PXD is designed to operate in large radiation conditions due to the proximity to the collision point,
+The \PXD is designed to operate in harsh radiation conditions due to the proximity to the interaction region,
 while maintaining high-precision vertex reconstruction and a low material budget.
 The sensors can withstand a $20~\si{\mega\radian}$ 
 radiation dose and have a $\sim 0.2\%$ radiation length per layer \cite{Belle-II:2010dht},
-while maintaining an average spatial resolution of approximately $15~\si{\micro\meter}$ and a hit efficiency of 99\% after 4 years of data taking \cite{Belle-IIDEPFET:2022wis}.
-The subdetector is shown in \Cref{fig:pxd}, whereas its schematic location in the Belle~II detector is depicted in \Cref{fig:vxd}.
+while maintaining an average spatial resolution of approximately $15~\si{\micro\meter}$ and a hit efficiency of 98\% after 4 years of data taking \cite{Belle-IIDEPFET:2022wis}.
+The \PXD is shown in \Cref{fig:pxd}, whereas its schematic location in the Belle~II detector is depicted in \Cref{fig:vxd}.
 
 \begin{figure}[hbtp!]
     \centering
@@ -131,7 +131,7 @@ The subdetector is shown in \Cref{fig:pxd}, whereas its schematic location in th
         \includegraphics[width=0.45\textwidth]{figures/experimental_setup/svd.png}
     }
     \caption{\label{fig:pxd_svd} 
-    The Belle~II pixel (\subref{fig:pxd}) and silicon vertex (\subref{fig:svd}) detectors.
+    The pixel (\subref{fig:pxd}) and silicon (\subref{fig:svd}) vertex detectors.
     They are installed in the Belle~II detector as shown in \Cref{fig:vxd}.
     The \PXD is arranged into two layers that are designed to contain 16 modules in the first layer and 24 in the second.
     The \SVD is composed of four layers around the \PXD, with a total of 172 double-sided silicon strip sensors.
@@ -199,9 +199,9 @@ and a transverse momentum resolution of $0.5\%$ for the majority of particles re
     }
     \caption{\label{fig:cdc}
     The Belle~II central drift chamber schematic representation.
-    In \subref{fig:cdc_quadrant}, a quadrant of the \CDC in the $r$-$\phi$ plane is shown.
+    In (\subref{fig:cdc_quadrant}), a quadrant of the \CDC in the $r$-$\phi$ plane is shown.
     Different axial and skewed layer groups are visible.
-    In \subref{fig:cdc_wires}, the axial (upper) and skewed (lower) wires are shown.
+    In (\subref{fig:cdc_wires}), the axial (upper) and skewed (lower) wires are shown.
     The skew is exaggerated for illustrative purposes.
     Credit to Ref.~\cite{BelleIITrackingGroup:2020hpx}.
     }
@@ -228,7 +228,7 @@ The velocity information, combined with the knowledge of the particle's momentum
 \begin{figure}[hbtp!]
     \centering
     \subcaptionbox{\label{fig:arich}}{
-        \includegraphics[width=0.4\textwidth]{figures/experimental_setup/arich.png}
+        \includegraphics[width=0.45\textwidth]{figures/experimental_setup/arich.png}
     }
     \subcaptionbox{\label{fig:top}}{
         \includegraphics[width=0.45\textwidth]{figures/experimental_setup/top.png}
@@ -242,11 +242,10 @@ The velocity information, combined with the knowledge of the particle's momentum
 
 The \TOP detector \cite{Fast:2017pff} consists of sixteen $270 \times 45 \times 2$~\cm quartz radiator bars.
 The working principle is illustrated in \Cref{fig:top}.
+Due to the high refractive index of quartz, the Cherenkov light emitted by passing particles undergoes total internal reflection.
 One end of the quartz crystal contains a spherical mirror that reflects the light to the opposite end containing microchannel plate photomultiplier tube arrays.
 The photon time of arrival is the sum of the time of flight of
-the charged particle to the quartz radiator and the time of propagation.
-Due to the high refractive index of quartz, the Cherenkov light emitted by passing particles undergoes total internal reflection.
-As a result, it propagates to the microchannel plate photomultiplier tubes. 
+the charged particle to the quartz radiator and the time of propagation in the crystal.
 Given a precisely known angle of the incoming particle, the time of propagation inside the chamber is a function of~$\theta_C$.
 The time of arrival of the photons is compared to the expected distributions for different particle hypotheses ($e^{\pm},\mu^{\pm},\pi^{\pm},K^{\pm},p^{\pm}$) and corresponding likelihood values are computed for each (see Ref.~\cite{Yonenaga:2020eby} for details).
 
@@ -257,7 +256,7 @@ The \ARICH has a 94\% efficiency for $K^{\pm}$ identification with a $\pi^{\pm}$
 
 Belle~II reuses the calorimeter of Belle, with upgraded readout electronics \cite{Belle-II:2010dht}.
 The electromagnetic calorimeter (\ECL) surrounds the previously mentioned detector systems and covers the barrel and both endcap regions.
-It is the main subdetector for photon detection and energy measurements.
+It is the main subdetector for photon detection and their energy measurements.
 Furthermore, the \ECL provides information necessary to differentiate electrons from hadrons, participates in $K_L^0$ detection together with the \KLM (see \Cref{sec:klm}),
 supplies triggering information, and measures the luminosity collected by the detector.
 
@@ -292,7 +291,7 @@ enabling a transverse momentum measurement and charge separation.
 The magnetic field is directed along the $z$ direction 
 and was measured to be homogeneous and vary less than $\order(1\%)$ in the entire volume \cite{BelleIITrackingGroup:2020hpx}.
 
-\subsection{\texorpdfstring{$K_L^0$}{KL} and \texorpdfstring{\mu}{mu} detector}\label{sec:klm}
+\subsection{\texorpdfstring{$K_L^0$}{KL} and \texorpdfstring{$\mu$}{mu} detector}\label{sec:klm}
 
 The $K_L^0$ and $\mu$ detector (\KLM) \cite{Aushev:2014spa} is the outermost subsystem of Belle~II.
 The \KLM is composed of alternating layers of up to $4.7~\cm$ thick iron plates and detector active parts.
