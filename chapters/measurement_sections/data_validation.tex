@@ -1,6 +1,6 @@
 Up until now the discussion of the analysis revolved around \MC studies.
 The full analysis procedure using simulation is defined and produces an unbiased, stable result in \Cref{sec:MC_validation}.
-Then, \Cref{sec:corrections} looked at the corrections required to accurately correct differences expected in simulation to better represent data.
+Then, \Cref{sec:corrections} looked at the corrections required to accurately correct differences expected in \MC to better represent data.
 At this stage, all appropriate measures have been taken so that the analysis can be fully applied to Belle~II data.
 The concepts of a blinded analysis, however, dictate that to ensure no biases are present, the full analysis procedure must be performed in validation samples.
 For the \BtoXsgamma analysis, four validation samples are defined:
@@ -41,7 +41,7 @@ The resulting continuum-only \EB distributions are shown in \Cref{fig:offresonan
     }
 \end{figure}
 
-Overall, the agreement between continuum data and simulation is good.
+Overall, the agreement between continuum data and \MC is good.
 Due to the rather low size of the off-resonance data sample and the strong continuum suppression in this analysis, the statistical uncertainty is relatively large.
 It is concluded that the \EB distribution of \epem\ra\qqbar events is well-modelled in simulation and follows the expectations seen in earlier Sections.
 
@@ -117,7 +117,7 @@ For good tag-\B mesons, the shift would not occur.
 This is a result of the fact that $p_B^*$ (as seen in \Cref{eq:mbc_exclusive}) is directly related to the total energy of the collision.
 The resonant-like behaviour in \Mbc is driven by the \B meson mass and, therefore, for correctly reconstructed objects is valid irrespective of $\sqrt{s}$. 
 Such constraints are not present for misreconstructed events, therefore, the shifts are expected to happen there.
-Although the most robust solution is the usage of data-taking period dependent simulation, at the time of preparation of this analysis such simulation was not yet available at Belle~II.
+Although the most robust solution is the usage of data-taking period dependent simulation, at the time of preparation of this analysis such \MC was not yet available at Belle~II.
 While future studies will be able to rely on it, in this analysis additional steps were taken to account for for the lack of it.
 
 While \Mbc is strongly affected, the \EB spectrum is still well-described.
@@ -226,7 +226,7 @@ In particular, the corresponding corrections for the \piVeto and \etaVeto are pr
 \end{equation}
 
 The \EB distribution of the \BB-enhanced sample is shown in \Cref{fig:bbbar_enhanced_eb}.
-Overall, the distributions show excellent agreement between data and simulation.
+Overall, the distributions show excellent agreement between data and \MC.
 The previously seen discrepancy in normalisation (see \Cref{fig:qqbar_enhanced_eb_validation}) is no longer apparent.
 This can be interpreted based on the fact that \epem\ra\qqbar events are strongly suppressed, namely 
 by the requirements of \texttt{BDT~output}.
@@ -307,7 +307,7 @@ The Figures also show the extracted good tag-\B meson counts as normalisations o
         \includegraphics[width=0.31\textwidth]{figures/data_validation/bbbar_enhanced_fits/MC_MbcFit_2p7to5p0ppdf.pdf}
     }
     \caption{\label{fig:mbc_bbar_ehnhanced_fits_mc}
-    The fits on Belle~II simulation corresponding to 1.6~\invab with the selection 
+    The fits of Belle~II \MC corresponding to 1.6~\invab with the selection 
     that enhances non-\BtoXsgamma events, as discussed in \Cref{sec:bb_background_validation}.
     The fitting model from \Cref{tab:fitting_init_params_updated} is used,
     which is defined on the corrected \Mbc to account for variations of $\sqrt{s}$ in Belle~II data.
@@ -381,7 +381,7 @@ The hypothesised result is observed, confirming the adequacy of the fitter, the 
 \subsection{Validation outside of the \texorpdfstring{\EB}{EB} signal region}\label{sec:sidebands_validation}
 
 In \Cref{sec:continuum_spectrum_validation,sec:continuum_mbc_validation,sec:bb_background_validation} it was seen that the background simulation of \qqbar and \BB events,
-although not perfect, is described adequately by the \Mbc fitter yielding a correct and valid estimation of good tag-\B mesons in data and simulation.
+although not perfect, is described adequately by the \Mbc fitter yielding a correct and valid estimation of good tag-\B mesons in data and \MC.
 The last validation performed for background simulation is done outside of the \EB signal region.
 As discussed in \Cref{sec:binning}, the $\EB\in(1.4-1.8)~\gev$ and $\EB>2.7~\gev$ intervals are selected as sideband regions, 
 due to a small number of \BtoXsgamma events and a low signal-to-background ratio expected there.
@@ -430,17 +430,17 @@ This is shown in \Cref{fig:sidebands_mbc}.
     }
 \end{figure}
 
-The results of \Cref{fig:sidebands_eb,fig:sidebands_mbc} indicate that Belle~II data, especially the low-\Mbc region, has a clear excess compared to simulation.
+The results of \Cref{fig:sidebands_eb,fig:sidebands_mbc} indicate that Belle~II data, especially the low-\Mbc region, has a clear excess compared to \MC.
 While some discrepancy is expected considering the results of \Cref{fig:qqbar_enhanced_mbccorrected},
 the larger scale of the discrepancy is confusing, given the fact that this was not observed in \Cref{fig:bbbar_enhanced_mbccorrected}.
 Although more studies on this subject are necessary to fully understand the discrepancy, 
-it is attributed to a \BB-background component which is not captured in the Belle~II simulation. 
+it is attributed to a \BB-background component which is not captured in the Belle~II \MC. 
 The potential origin is shortly discussed here.
 
 In particular, consider the removal of the \texttt{zernikeMVA} selection.
 The resulting \EB sideband distribution and the \Mbc distribution are shown in \Cref{fig:nozmva_test}.
 In this case, the agreement between data and simulation in the \EB-sideband spectrum appears to be near-perfect, as seen in \Cref{fig:sideband_eb_nozmva}.
-Indeed, even considering the \Mbc distribution for $\EB\in(1.4,1.6)~\gev$ in \Cref{fig:sideband_mbc_nozmva}, one clearly observes a better overall agreement.
+Indeed, even considering the \Mbc distribution for $\EB\in(1.4,1.6)~\gev$ in \Cref{fig:sideband_mbc_nozmva}, one observes a better overall agreement.
 These observations strongly support the hypothesis that hadronic clusters targeted by \ZMVA are differently affected in \MC and data.
 The component cannot be common to \epem\ra\qqbar events, because the effect was not seen in off-resonance data in \Cref{sec:continuum_spectrum_validation}.
 As a result, this component is suppressed in \MC by a selection on the \texttt{zernikeMVA} observable, but this does not happen in data.
@@ -466,7 +466,7 @@ As a result, this component is suppressed in \MC by a selection on the \texttt{z
 \end{figure}
 
 These considerations are supported by inspecting the \ZMVA distribution in the \mbox{$\EB\in(1.4,1.8)~\gev$} region, as seen in \Cref{fig:zmva_discrepancy}.
-While simulation contains a sharp peak near~0, this is not evident in Belle~II data, which has an excess at larger values of \ZMVA.
+While \MC contains a sharp peak near~0, this is not evident in Belle~II data, which has an excess at larger values of \ZMVA.
 Hence, the background suppression efficiency is not well-represented in \MC.
 These results are also conflated with the differences in the \Mbc endpoint, making an exact evaluation of the effect difficult at this stage.
 Independent studies of the \ZMVA distributions, performed similarly to the photon detection efficiency study described in \Cref{sec:photon_efficiency}, did not indicate the presence of such a peak.
@@ -479,7 +479,7 @@ Therefore, this analysis does not replace or remove the \ZMVA requirement.
 
 The validity of such an assumption is tested by performing the \Mbc fit on the full sample of data. 
 The results from the signal region, $\EB\in(1.8,2.7)$ remain blinded at this stage.
-The individual \Mbc fits on the \EB sideband regions are shown for data in \Cref{fig:sideband_data_fit}, and for simulation in \Cref{fig:sideband_mc_fit}.
+The individual \Mbc fits on the \EB sideband regions are shown for data in \Cref{fig:sideband_data_fit}, and for \MC in \Cref{fig:sideband_mc_fit}.
 \begin{figure}[hbtp!]
     \centering
     \subcaptionbox{\label{fig:sideband_data_fit_1}}{
@@ -492,7 +492,7 @@ The individual \Mbc fits on the \EB sideband regions are shown for data in \Cref
         \includegraphics[width=0.31\textwidth]{figures/data_validation/sidebands_fit/DATA_MbcFit_2p7to5p0ppdf.pdf}
     }
     \caption{\label{fig:sideband_data_fit}    
-    The \Mbc fits on Belle~II data corresponding to 189~\invfb of data in \EB sideband regions,
+    The \Mbc fits of Belle~II data corresponding to 189~\invfb of data in \EB sideband regions,
     as discussed in \Cref{sec:sidebands_validation}.
     The fitting model from \Cref{tab:fitting_init_params_updated} is used,
     which is defined on the corrected \Mbc to account for variations of $\sqrt{s}$ in Belle~II data.
@@ -511,7 +511,7 @@ The individual \Mbc fits on the \EB sideband regions are shown for data in \Cref
         \includegraphics[width=0.31\textwidth]{figures/data_validation/sidebands_fit/NOSIGNALMC_MbcFit_2p7to5p0ppdf.pdf}
     }
     \caption{\label{fig:sideband_mc_fit}    
-    The \Mbc fits on Belle~II simulation corresponding to 1.6~\invab of data in the \EB sideband regions,
+    The \Mbc fits of Belle~II \MC corresponding to 1.6~\invab of data in the \EB sideband regions,
     as discussed in \Cref{sec:sidebands_validation}.
     Any \BtoXsgamma events in these data sets are removed.
     The fitting model from \Cref{tab:fitting_init_params_updated} is used,
@@ -521,7 +521,7 @@ The individual \Mbc fits on the \EB sideband regions are shown for data in \Cref
 \end{figure}
 
 The summarised results of the good tag-\B meson yields estimated in the \Mbc fits are shown in \Cref{fig:sidebands_background_versus_data}.
-In the high-\EB sideband, no peaking tag-\B mesons are observed in data or simulation, which is exactly consistent with the expectations.
+In the high-\EB sideband, no peaking tag-\B mesons are observed in data or \MC, which is exactly consistent with the expectations.
 In the low-\EB region, a large number of events is observed.
 The data points are compatible with the background expectation, although the estimates in both intervals are higher than the expected background.
 Subtracting the background expectation from the good tag-\B meson count in data results in \Cref{fig:sidebands_subtracted}.

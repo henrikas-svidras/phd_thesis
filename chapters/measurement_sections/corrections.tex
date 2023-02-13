@@ -79,7 +79,7 @@ For the Belle~II simulation campaign used in this analysis, and averaged for bot
     \mathcal{C}_{\mathrm{FEI}}(B^+) = 0.6599 \pm 0.0225; \quad \mathcal{C}_{\mathrm{FEI}}(B^0) = 0.6695 \pm 0.0237,
 \end{equation}
 where two different calibration factors are presented for \feiBp and \feiBz modes, respectively.
-Therefore, for an adequate comparison with Belle~II data, any Belle~II simulation involving the use of \FEI is henceforth scaled appropriately.
+Therefore, for an adequate comparison with Belle~II data, any Belle~II \MC involving the use of \FEI is henceforth scaled appropriately.
 
 \subsection{Calibration of \texorpdfstring{\piz}{pi0} and \texorpdfstring{$\eta$}{eta} suppression tools}\label{sec:piz_eta_calibration}
 It was seen in \Cref{sec:selection_vetos} that one of the strongest tools for background suppression in this analysis is the $\piz$ and $\eta$ suppression tool.
@@ -104,7 +104,7 @@ An unbinned \Mbc fit is performed on distributions with and without the \piVeto 
 The \Mbc is modelled by a Crystal Ball function for signal decays and an ARGUS function for continuum background.
 All parameters of Crystal Ball and continuum are unconstrained.
 An additional \PDF to model the peaking non-signal \BB components is used.
-This \PDF is initialised in simulation as a sum of a Gaussian and an Argus.
+This \PDF is initialised in \MC as a sum of a Gaussian and an Argus.
 The shape parameters and normalisation of the \BB background \PDF are not estimated but kept at the initialised values.
 The fits on data in the case of no \piVeto selection, and a $\piVeto<0.95$ selection are given in \Cref{fig:pivetofit}.
 \begin{figure}[hbtp!]
@@ -118,7 +118,7 @@ The fits on data in the case of no \piVeto selection, and a $\piVeto<0.95$ selec
     \caption{\label{fig:pivetofit} The fit estimating the number of $B\to D \pi^+$ events in Belle~II data.
     Different \PDF{s} used in the fit are shown in the legend and explained in the text.
     The fit is performed on a sample without (\subref{fig:pivetofit_nocut}) and with (\subref{fig:pivetofit_cut}) the \piVeto selection applied.
-    The extracted values from simulation and data are then combined to calculate \piVeto correction factors (see \Cref{eq:piveto_correction}).
+    The extracted values from \MC and data are then combined to calculate \piVeto correction factors (see \Cref{eq:piveto_correction}).
     These Figures are produced by a Belle~II internal study of the \piz veto and are not part of the original work in this thesis.
     Only the labels and legends have been adapted.    
     }
@@ -259,7 +259,7 @@ This effect becomes larger with the lower photon energy, where the impact of a s
     \includegraphics[width=0.45\textwidth]{figures/data_sim_corrections/pyth_data_mc_agreement_pRecoil.pdf}
     \caption{\label{fig:data_mc_photon_eff} The photon finding efficiency as a function of the missing momentum of the dimuon system, \pRecoil.
     The subpanel shows the ratio of data and simulation finding efficiencies, as per \Cref{eq:photon_data_mc}.
-    The Figures include systematic uncertainties, which are correlated between data and simulation.
+    The Figures include systematic uncertainties, which are correlated between data and \MC.
     They show the results for the data sets of a size equivalent to the ones used in this analysis.
     }
 \end{figure}
