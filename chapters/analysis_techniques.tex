@@ -100,13 +100,13 @@ This method is always an approximation of the true covariance matrix, because th
 A different approach is to profile the likelihood function in order to calculate a likelihood-based confidence interval.
 A likelihood ratio for a single parameter, $a_k$, and a set $a$ (excluding $a_k$) is defined as:
 \begin{equation}\label{eq:profile}
-    \lambda_{\mu}(a_k) = -2 \times \ln\left(\frac{\mathcal{L}(x;a_k,\hat{\hat{a}})}{\mathcal{L}(x;\hat{a}_k,\hat{a})}\right),
+    \lambda_{\mu}(a_k) = -2 \cdot \ln\left(\frac{\mathcal{L}(x;a_k,\hat{\hat{a}})}{\mathcal{L}(x;\hat{a}_k,\hat{a})}\right),
 \end{equation} 
 where the numerator is the log-likelihood for a set of parameters $\hat{\hat{a}}$ estimated for some given value of $a_k$.
 The denominator with optimal values $\hat{a}$ and $\hat{a}_k$ is the likelihood evaluated at its global extremum. 
 Given that $\lambda_{\mu}(a_k)$ is distributed according to a $\chi^2$ distribution (Wilks' theorem) \cite{Wilks:1938dza},
 one finds the minimum and maximum value of $a_k$ that correspond to $\lambda_{\mu}(a_k)<\chi^2_{1,1-\alpha}$, where $1-\alpha$ is the desired confidence interval.
-For example, for a 95\% confidence interval, $\lambda_{\mu}(a_k)\lesssim3.84$.
+For example, for a 68\% confidence interval (one standard deviation), $\lambda_{\mu}(a_k)\lesssim1$.
 
 In general, this leads to an asymmetric uncertainty interval with respect to the central extremum value $\hat{a}_k$.
 Note that in the asymptotic limit, both the profiling and Hessian matrix inversion methods provide the same results.
