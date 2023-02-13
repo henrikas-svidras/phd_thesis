@@ -12,7 +12,7 @@ One of the most common examples is the fitting of a particle species invariant m
 It was, for example, used in some of the most precise of the Higgs boson mass measurements \cite{ATLAS:2018tdk,CMS:2020xrn}, in the $\H\ra\Z\Zstar\ra 4\ell$ and $\H\ra\g\g$ decay channels.
 
 Fitting consists of two main steps: point estimation and uncertainty (confidence interval) estimation. 
-In the former, the best estimate for a set of parameters is derived, which describes a given dataset.
+In the former, the best estimate for a set of parameters is derived, which describes a given data set.
 The latter sets the confidence interval on each parameter estimate in the set. 
 
 This Section gives a brief overview of the most relevant method that was used in the work presented in this thesis. 
@@ -23,7 +23,7 @@ The material presented here only summarises the details found in these books and
 
 One of the most common and popular methods for parameter estimation is the maximum likelihood method. 
 It is also used widely in this analysis, as described in \Cref{ch:analysis}.
-A measured dataset can be defined as $x = (x_1, x_2,...,x_N)$, with $x_i$ being the $i$-th result of $N$ independent measurement following an unknown probability density function (\PDF),~$f(x)$.
+A measured data set can be defined as $x = (x_1, x_2,...,x_N)$, with $x_i$ being the $i$-th result of $N$ independent measurement following an unknown probability density function (\PDF),~$f(x)$.
 The shape of $f(x)$ is often parametrised as $f(x; a)$, where $a=(a_1,...,a_M)$ is an $M$-dimensional vector of unknown parameters. 
 For a fitting procedure, one has to construct an \textit{estimator}, which is a function of the observed data that can provide an estimated numerical value, $\hat{a}$, corresponding to the parameter vector $a$.
 % Any estimator should satisfy four main criteria:
@@ -156,8 +156,8 @@ The \texttt{zfit} framework implements minimisation using the \texttt{iminuit} m
 
 \section{Classification}\label{sec:classification}
 When collecting data in measurements, many independent observations (\textit{events}) are usually performed in order to get a statistically significant sample.
-Resulting datasets generally contain a component of interest, often referred to as \textit{signal}, and multiple other components which might show similar behaviour as the signal in certain distributions. 
-The latter is commonly referred to as \textit{background}. Disentangling the signal and background contributions in a given dataset is an extremely important task in Big Data fields, where there may be thousands of subcomponents contributing to background that may be misclassified as signal.
+Resulting data sets generally contain a component of interest, often referred to as \textit{signal}, and multiple other components which might show similar behaviour as the signal in certain distributions. 
+The latter is commonly referred to as \textit{background}. Disentangling the signal and background contributions in a given data set is an extremely important task in Big Data fields, where there may be thousands of subcomponents contributing to background that may be misclassified as signal.
 
 In particle physics, the signal component usually refers to a single or a group of decay channels, whose properties are being measured. 
 The most straightforward approach is to separate signal and background events by imposing requirements on observables that are typical or expected for signal.
@@ -167,7 +167,7 @@ Therefore, a multidimensional observable space is often desired.
 However, as the number of observables used in the selection grows, the tuning of such a multidimensional selection becomes increasingly difficult.
 
 
-This section introduces some relevant techniques to combine the information of many observables of an event. 
+This Section introduces some relevant techniques to combine the information of many observables of an event. 
 Particularly, it overviews multivariate classification algorithm (\MVA) concepts and boosted decision trees (\BDT{s}). 
 The material presented here is only a summary detailing techniques used in the analyses presented in the thesis.
 For a detailed overview of multivariate classification techniques, the reader is referred to Ref.~\cite{Behnke:2013pga}, and for their underlying statistical framework to \cite{Hastie_Tibshirani_Friedman_2001,bishop_2016}.
@@ -225,7 +225,7 @@ where statistical fluctuations of data are negligible or where independent effic
         \includegraphics[width=0.45\textwidth]{figures/analysis_techniques/roc_curve.pdf}
     }
     \caption{\label{fig:rocs_examples}
-    Two-dimensional distributions (red/green) in an example feature space are shown in (\subref{fig:distributions_separation}) for four different example datasets (0-3).
+    Two-dimensional distributions (red/green) in an example feature space are shown in (\subref{fig:distributions_separation}) for four different example data sets (0-3).
     Each distribution is represented by a contour plot of 20\% isoproportion lines.
     Dashed lines show the different selection thresholds for an example \MVA model.
     In (\subref{fig:roc_curves}), the corresponding \ROC curves are shown, calculated for examples 0-3.
@@ -277,7 +277,7 @@ In practice, a technique called \textit{pruning} is employed which removes nodes
 This produces a smaller tree and the `strength' of pruning is tunable with appropriate parameters.
 
 Decision trees are easily interpretable as they are a series of binary decisions that are intuitive and closely resemble human reasoning.
-However, they also tend to be highly dependent on the statistical fluctuations of the training dataset.
+However, they also tend to be highly dependent on the statistical fluctuations of the training data set.
 With pruning, their performance on independent samples usually turns out to be weaker than many other \MVA{s}, and the misclassification rate is only slightly better than random guesses.
 A single decision tree is, therefore, considered a \textit{weak classifier}.
 
@@ -308,7 +308,7 @@ by minimising the loss function for parameter $\alpha_m$:
 One way to solve \Cref{eq:minimize_loss} in a numerically-optimal way is to compute the gradient of the loss function.
 Consequentially, a classifier built this way is called a \textit{gradient boosted} decision tree \cite{FRIEDMAN1013203451}.
 
-To further increase the robustness of gradient-\BDT{s}, one may only sample (without replacement) a part of the dataset in each training iteration.
+To further increase the robustness of gradient-\BDT{s}, one may only sample (without replacement) a part of the data set in each training iteration.
 In this case, any statistical fluctuations would average out over the sum of all trees. 
 This technique is called stochastic gradient-\BDT{s} \cite{FRIEDMAN2002367}.
 The fraction of data used at every training iteration is called the \textit{sampling rate}.
@@ -328,7 +328,7 @@ If two different experiments are comparing their measurements, it only makes sen
 The process of disentangling the true distribution from the measured distribution is called \textit{unfolding}.
 In this way, it can be considered the \textit{opposite} of measurement.
 
-This section provides a brief overview of the main concepts that feature in the results presenting this thesis.
+This Section provides a brief overview of the main concepts that feature in the results presenting this thesis.
 A thorough summary of the theory behind unfolding methods can be found in Refs.~\cite{Behnke:2013pga,Blobel_Lohrmann_1998} and a comparison of different methodologies common in particle physics in Refs.~\cite{Schmitt:2016orm,Cowan:2002in,Brenner:2019lmf}.
 
 \subsection{Mathematical basis}
@@ -379,7 +379,7 @@ Then one builds the response matrix as:
 \begin{equation}\label{eq:response_matrix_element}
     A_{ij} = \frac{N_{ij}^{\mathrm{meas}}}{N_j^{\mathrm{gen}}}.
 \end{equation}
-There are several methods to solve \Cref{eq:unfolding_linear_equation}, discussed in the following sections.
+There are several methods to solve \Cref{eq:unfolding_linear_equation}, discussed in the following Sections.
 
 \subsection{Bin-by-bin unfolding}
 
