@@ -32,12 +32,17 @@
 \par\bigskip
 }{\clearpage}
 
-% parts not indexed
-\renewcommand\thepart{}
-% \makeatletter
-% \xpatchcmd{\sv@part}{\huge \bfseries \partname \nobreakspace \thepart \par \vskip 20\p@ \fi \Huge \bfseries #2}{\fi \tiny \bfseries \thepart. #2}{}{}
-% \makeatother
+% Abstracts
+\newenvironment{totallyempty}[1]
+{
+\clearpage
+\thispagestyle{empty}
+{} % 2.2cm
+\par\bigskip
+}{\clearpage}
 
+% parts not indexed and dont appear 
+\renewcommand\thepart{}
 \titleformat{\part}
 [display]
 {\centering\normalfont\Huge\bfseries}
