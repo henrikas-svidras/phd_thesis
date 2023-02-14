@@ -290,7 +290,7 @@ Next, there would follow a second training iteration, where the events that were
 The procedure is repeated $M$ times to train a set of classifiers $g_{m}(x)$, where $m=1,2,..,M$.
 The final output is a weighted `majority vote' of all these classifiers:
 \begin{equation}\label{eq:boosted_classifier}
-    G(x, \alpha_m) = \mathrm{sign}(\sum_{m=1}^M\alpha_mg_m(x)),
+    G(x, \alpha_m) = \mathrm{sign}\left(\sum_{m=1}^M\alpha_mg_m(x)\right),
 \end{equation}
 with $\alpha_m$ being the weight of the $m$-th weak classifier.
 Conventionally, the output of the classifier is transformed, such that $G(x)\ra G'(x)\in[0,1]$.
@@ -333,7 +333,7 @@ A thorough summary of the theory behind unfolding methods can be found in Refs.~
 
 \subsection{Mathematical basis}
 
-Consider a true distribution $f(x)$ of observable $x$ being measured in some space $a<x<b$.
+Consider a true distribution $f(x)$ of observable $x$ being measured in some space \mbox{$a<x<b$}.
 The corresponding measured distribution $g(y)$ as a function of the measured value $y$ is related to $f(x)$ as:
 \begin{equation}\label{eq:fredholm_integral}
     g(y) =  \int_a^b A(y,x) f(x) dx,

@@ -11,8 +11,8 @@ In this Section, the already presented information about systematic uncertaintie
 Background modelling encompasses all uncertainties that are related to the background evaluation in the Belle~II \MC.
 That involves two uncertainties that have been already discussed:
 \begin{itemize}
-    \item background suppression efficiency differences in data and \MC.
-    \item background normalisation differences in data and \MC;
+    \item background suppression efficiency differences in data and \MC;
+    \item background normalisation differences in data and \MC.
 \end{itemize}
 Their values are provided in \Cref{tab:background_uncertainties} and the strategy to evaluate them is explained further in this Subsection.
 
@@ -81,7 +81,7 @@ Their values are provided in \Cref{tab:fit_uncertainties} and the strategy to ev
 
 As discussed in \Cref{sec:bb_background_validation}, the fit model is modified to account for $\sqrt{s}$ fluctuations in Belle~II data manifesting as a shift in \Mbc.
 To account for an imperfect correction to \MC, a systematic uncertainty is assigned.
-The fit on data is performed with and without the \Mbc correction introduced, with the two fit models \Cref{tab:fitting_init_params,tab:fitting_init_params_updated}, respectively.
+The fit on data is performed with and without the \Mbc correction introduced, with the two fit models in \Cref{tab:fitting_init_params,tab:fitting_init_params_updated}, respectively.
 The full variation $\Delta\mathcal{N}_{\mathrm{CB}}$ between the estimated $\mathcal{N}_{\mathrm{CB}}$ in the two scenarios is assigned as a systematic uncertainty.
 The uncertainties are considered uncorrelated to account for possible changes in the model variations as a function of \EB.
 The evaluation of these uncertainties is performed in a blinded way, i.e., only the $\Delta\mathcal{N}_{\mathrm{CB}}$ is evaluated without the absolute counts.
@@ -89,8 +89,8 @@ This also serves as a test ensuring that the fit converges on the full data set.
 
 \subsubsection{Uncertainties due to fixed parameters in the \texorpdfstring{\Mbc}{Mbc} fitting model}\label{sec:fitting_model_uncertainties}
 
-After initialising the Chebyshev polynomial, described in \Cref{sec:chebyshev_prefit}, the estimated parameters are fixed in further fitting steps.
-Due to shape variations and the fact that the Chebyshev polynomial is introduced on a finite sample size, the parametrisation is only an approximation.
+After initialising the Chebyshev \PDF, described in \Cref{sec:chebyshev_prefit}, the estimated parameters are fixed in further fitting steps.
+Due to potential shape differences in data and the fact that the Chebyshev polynomial is introduced on a finite sample size, the parametrisation is only an approximation.
 The \Mbc fitter provides an uncertainty estimation for each of the Chebyshev \PDF parameters which are given in \Cref{tab:fitting_init_params_updated}.
 Variations of the central value of the parameters $k_{1,..,5}$ based on their primary fit uncertainties are performed, recomputing $\mathcal{N}_{\mathrm{CB}}$ for every variation.
 This is performed directly on the Belle~II data when unblinding the analysis.

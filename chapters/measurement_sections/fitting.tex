@@ -16,7 +16,8 @@ There are three types of events in the \epem collision data set following all th
     \item Photon candidates originating in $\epem\ra\qqbar$.
 \end{itemize}
 These three components are referred to as `peaking', `combinatorial \BB' and `continuum' throughout \Cref{sec:fitting_mbc}.
-These components, extracted from generic \MC, are visualised in \Cref{fig:tag_component_fits}.
+%These components, extracted from generic \MC, are visualised in \Cref{fig:tag_component_fits}.
+Extracted from generic \MC, they are visualised \Cref{fig:tag_component_fits}.
 
 \begin{figure}[hbtp!]
     \centering
@@ -62,11 +63,11 @@ Therefore, any dependencies or structures observed in the pull distribution woul
 
 \subsection{Photon energy intervals for the fit}\label{sec:binning}
 
-It is clear from \Cref{fig:spectrum_after_optimisation} that the signal-to-background ratio changes across all \EB intervals.
+It is clear from \Cref{fig:spectrum_after_optimisation} that the signal-to-background ratio changes across all \EB bins.
 Furthermore, even continuum-to-\BB event fractions are not constant.
-This is a result of the fact that photons related to \epem\ra\qqbar backgrounds are more likely to extend to high-\EB values because they do not originate from a \B meson which is always produced with an energy $\approx\sqrt{s}/2$ at Belle~II.
+This results from photons related to \epem\ra\qqbar backgrounds which can extend to high-\EB values because they do not originate from a \B meson which is always produced with an \mbox{energy $\approx\sqrt{s}/2$} at Belle~II.
 The goal of the fit, as discussed in the introduction of this Section, is to remove combinatorial \BB and continuum events from further analysis.
-While an overall \Mbc fit could be performed, such an approach necessarily loses event-level information, such as the energies of individual photons, and only provides the event counts in the fitted \EB region.
+While a total \Mbc fit could be performed, this approach loses event-level information, such as the energies of individual photons, and only provides the event counts in the fitted \EB region.
 Moreover, the background composition is expected to vary with \EB, hence such an overall fit may generally be suboptimal.
 
 Instead, in this analysis, the photon spectrum is divided into multiple \EB intervals, and the \Mbc distributions belonging to each interval are fitted using the functions described in \Cref{sec:fitting_components}.
@@ -96,11 +97,10 @@ In general, the highest statistical significance is observed with the widest bin
 Irrespective of the bin width,  $\EB\in(1.4,1.8)$ and $\EB>2.7~\gev$ show a statistical significance lower than unity, therefore the selected binning should attempt to maximise it.
 In the case of $\EB\in(1.9,2.0)~\gev$, it is observed that a similar statistical significance can be achieved in $\EB\in(1.8,2.0)~\gev$.
 This motivates choosing the wider bin to achieve a lower threshold than the one in the analysis by BaBar~\cite{BaBar:2007yhb}.
-On the other hand, the studies performed in \Cref{sec:resolution_studies} showed that the resolution of \EB is expected to be roughly $30-40~\mev$.
-Choosing a fine binning \EB compared to the resolution may lead to complications in the unfolding procedure.
-As the simpler bin-by-bin unfolding is employed in this analysis, the 50~\mev bins were not considered.
-
-These considerations led to choosing the following eleven \EB bins for the analysis:
+On the other hand, the studies performed in \Cref{sec:resolution_studies} show that the resolution of \EB is around $40~\mev$.
+Choosing a finely binned \EB, compared to the resolution, may lead to complications in the unfolding procedure.
+As bin-by-bin unfolding is employed in this analysis, the 50~\mev bins were not considered.
+These considerations lead to choosing the following eleven \EB bins for the analysis:
 \begin{itemize}
     \item Three 200~\mev bins for $\EB\in(1.4,2.0)~\gev$;
     \item Seven 100~\mev bins for $\EB\in(2.0,2.7)~\gev$;
@@ -197,8 +197,8 @@ As such, three different Chebyshev PDFs are evaluated for the following interval
 The last interval is not subdivided further because of the data set size (see \Cref{tab:expected_events}), each interval is optimised to contain an approximately equal expected number of events.
 The discussed primary fits are performed simultaneously on the \Mbc distributions of the combinatorial \BB in all \EB bins.
 They are shown in \Cref{fig:primary_cheb_fits}.
-The determined coefficients $k_{1-5}$ are fixed for the final \Mbc fit model.
-The primary fit values are presented in \Cref{tab:fitting_init_params}.
+The determined coefficients $k_{1-5}$ are fixed in the final \Mbc fit model.
+The primary fit results are presented in \Cref{tab:fitting_init_params}.
 
 \subsubsection{ARGUS primary fit}\label{sec:argus_prefit}
 
