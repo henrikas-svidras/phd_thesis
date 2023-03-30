@@ -1,7 +1,7 @@
 \chapter{Theoretical overview}\label{ch:theory}
 
 In this Chapter, the theoretical overview of the Standard Model, 
-flavour physics and \BtoXsgamma is presented.
+flavour physics and $\makebox{\BtoXsgamma}$ is presented.
 \Cref{sec:standard_model} defines the main particle physics terminology that will be used throughout the thesis by a synthesis of 
 information of well-established concepts about the Standard Model which can be found detailed, e.g., in Refs.~\cite{Peskin:1995ev,Thomson:2013zua,Griffiths:2008zz}.
 \Cref{sec:flavour_physics} introduces the concept of flavour physics in the Standard Model and some main challenges related to it.
@@ -14,7 +14,7 @@ Finally, the rest of the Chapter in \Cref{sec:btosgamma_totalrate_theory,sec:bto
 The Standard Model (\SM) is a quantum field theory based on a local gauge invariance given by the symmetry group $SU(3)\times SU(2)\times U(1)$.
 In quantum field theory, all particles are described as excitations of fields, $\psi(x)$, 
 where $x=\{\vec{x},t\}$ is a space-time coordinate.
-The Lagrangian, $\mathcal{L}=\mathcal{L}(\psi,\partial_{\mu}\psi)$, describes the dynamics originating from the excitations of a field $\phi$,
+The Lagrangian, $\mathcal{L}=\mathcal{L}(\psi,\partial_{\mu}\psi)$, describes the dynamics originating from the excitations of a field $\psi$,
 where $\partial_{\mu}=\{\frac{\partial}{\partial \vec{x}},\frac{\partial}{\partial t}\}$.
 In particular, it encodes the interactions and the free propagation of particles which are visually represented using Feynman diagrams.
 % The Lagrangian follows the principle of the least action, which results in Euler-Lagrange equations describing the evolution of the physical system:
@@ -136,7 +136,7 @@ It has been experimentally observed that the weak interactions violate the $\mat
 After the violation of charge ($\mathcal{C}$) and parity ($\mathcal{P}$) symmetries by the weak interaction became clear~\cite{Wu:1957my},
 it was initially assumed that their combination, $\mathcal{CP}$ symmetry, is conserved.
 In 1964, it was observed that the weak interaction can violate the combined charge-parity symmetry~\cite{Christenson:1964fg}.
-To incorporate $\mathcal{CP}$ violation into the \SM, M. Kobayashi and T. Maskawa~\cite{Kobayashi:1973fv} built upon the predecessor work by N. Cabibo \cite{Cabibbo:1963yz},
+To incorporate $\mathcal{CP}$ violation into the \SM, M. Kobayashi and T. Maskawa~\cite{Kobayashi:1973fv} built upon the predecessor work by N. Cabibbo \cite{Cabibbo:1963yz},
 introducing the quark-mixing model based on the Cabibbo-Kobayashi-Maskawa (\CKM) matrix. 
 The model introduces a difference between the $\d,\s,\b$ quark states when they propagate freely (mass eigenstate) and their $\d',\s',\b'$ states when they interact
 via the weak interaction (weak eigenstate).
@@ -160,7 +160,7 @@ Specifically, they show that weak eigenstates of the quarks are linear combinati
     \end{pmatrix},
 \end{equation}
 where $V_{ij}$ are the elements of a $3\times3$ unitary matrix known as the \CKM matrix.
-Cabibo initially introduced a real and unitary $2\times2$ matrix in order to universally explain the weak interactions of
+Cabibbo initially introduced a real and unitary $2\times2$ matrix in order to universally explain the weak interactions of
 the then-known two generations of leptons, up, down and strange quarks.
 Kobayashi's and Maskawa's work extended this and showed that at least three generations of quarks are required 
 (the existence of $b$ and $t$ was not known at the time) to incorporate the observed $\mathcal{CP}$ violation.
@@ -174,7 +174,7 @@ The unitarity constraint implies:
     \end{split}
 \end{align}
 for any generation $k$.
-As a $3\times3$ unitary matrix, it can be fully described by 9 parameters, however, each quark field can absorb a complex phase related to the matrix,
+As a $3\times3$ unitary matrix, it can be fully described by 9 parameters, however, five quark fields can absorb a complex phase related to the matrix,
 which leaves only a single global complex phase.
 Therefore, the \CKM matrix can be expressed in terms of the three quark-mixing angles and a $\mathcal{CP}$-violating complex phase.
 The standard representation of the \CKM matrix is:
@@ -213,8 +213,8 @@ As of writing this thesis, the experimental magnitudes (omitting uncertainties) 
     (|V_{\mathrm{CKM}}|) \approx 
     \begin{pmatrix}
         0.974 \quad 0.224 \quad 0.004\\
-        0.218 \quad 0.997 \quad 0.042\\
-        0.008 \quad 0.039 \quad 1.019\\
+        0.221 \quad 0.975 \quad 0.042\\
+        0.009 \quad 0.042 \quad 1.014\\
     \end{pmatrix}.
 \end{equation}
 The diagonal values of the \CKM matrix are the largest, which represents that flavour changes between the same generations are favoured.
@@ -249,7 +249,7 @@ As can be seen in \Cref{fig:unitarity_triangle}, experimental results show incre
 
 The $B$ meson is the lightest hadron that contains a $b$ quark.
 The decay of the unstable $b$ quark always contains a flavour-changing process via weak interaction.
-Therefore, the study of their decays opens the possibility of measuring a wide range of parameters of the \SM, including the \CKM matrix, $\mathcal{CP}$ violation measurements, lepton mass measurements etc.
+Therefore, the study of their decays opens the possibility of measuring a wide range of parameters of the \SM, including the \CKM matrix, $\mathcal{CP}$ violation measurements, lepton universality measurements etc.
 Furthermore, significant inconsistencies from the theoretical expectations may lead to breakthroughs in the theoretical understanding of Nature.
 Some of the questions that are pursued through the study of $B$ mesons ($B$ physics) are \cite{Belle-II:2018jsg}:
 \begin{itemize}
@@ -529,9 +529,9 @@ In such case, using the definition of an average,
 \end{equation}
 the shape function is directly related to the average of the photon energy spectrum.
 Similarly, the variance (and higher-order moments) contribute if more terms from \Cref{eq:shape_function_expansion} are considered.
-As shown in Refs.~\cite{Bauer:1997fe,Kapustin:1995fk} (and others) two important relations emerge:
+As shown in Refs.~\cite{Bauer:1997fe,Kapustin:1995fk,Benson:2004sg} (and others) two important relations emerge:
 \begin{equation}
-    \expval{\Egamma} \sim m_b/2+\order(\Lambda_{\mathrm{QCD}}); \quad \expval{\Egamma^2}-\expval{\Egamma}^2 \sim \lambda_1/3+\order(\Lambda_{\mathrm{QCD}}),
+    \expval{\Egamma} \sim m_b/2+\order(\Lambda_{\mathrm{QCD}}); \quad \expval{\Egamma^2}-\expval{\Egamma}^2 \sim \lambda_1/12+\order(\Lambda_{\mathrm{QCD}}),
 \end{equation}
 with the $b$ quark pole mass, $m_b$, the $b$ quark kinetic energy parameter, $\lambda_1$, and $\Lambda_{\mathrm{QCD}}$ is the chosen strong interaction energy scale.
 
